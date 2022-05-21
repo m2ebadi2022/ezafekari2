@@ -87,6 +87,13 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("fast_run_layout")
 sc_view1.Panel.LoadLayout("item_fast_run")
 	
+	If(Main.moon_num<7)Then
+		et_rozeKari.Text=31
+	Else
+		et_rozeKari.Text=30
+	End If
+	
+	
 	get_data_hogogi
 	
 	

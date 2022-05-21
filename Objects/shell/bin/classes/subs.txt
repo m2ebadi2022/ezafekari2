@@ -1131,75 +1131,75 @@ eidi_activity,process_globals,0,1,6,10
 
 
 
-fast_run_activity,activity_create,1,0,79,117
-,pan_all,,pan_hed_fast_run,,sc_view1,,wb_show_result,,et_kosorat,,et_mazaya,,et_olad,,et_paye,,et_rozekari,,et_sanavat,,et_time_h,,et_time_m,,et_vahed_ezafekari,,sp_olad,,paye,,sanavat,,mazaya_end,,ksorat_end,,imm,,imm2,main,color4,dbcode,res,dbcode,sql,,maskan,,olad,,fani,,masoliat,,bon,,sarparasti,,mazaya,,bime_takmil,,ksorat,main,persiandate,,paye_end,,sanavat_end,,vahed_ezafekari,main,size_f1,main,size_f2,main,size_f3,main,main_font
+fast_run_activity,activity_create,1,1,79,124
+,pan_all,,pan_hed_fast_run,,sc_view1,,wb_show_result,,et_kosorat,,et_mazaya,,et_olad,,et_paye,,et_rozekari,,et_sanavat,,et_time_h,,et_time_m,,et_vahed_ezafekari,,sp_olad,main,moon_num,,paye,,sanavat,,mazaya_end,,ksorat_end,,imm,,imm2,main,color4,dbcode,res,dbcode,sql,,maskan,,olad,,fani,,masoliat,,bon,,sarparasti,,mazaya,,bime_takmil,,ksorat,main,persiandate,,paye_end,,sanavat_end,,vahed_ezafekari,main,size_f1,main,size_f2,main,size_f3,main,main_font
 ,pan_all,,pan_hed_fast_run,,sc_view1,,wb_show_result,,et_kosorat,,et_mazaya,,et_olad,,et_paye,,et_rozekari,,et_sanavat,,et_time_h,,et_time_m,,et_vahed_ezafekari,,sp_olad,dbcode,res,,paye,,sanavat,,maskan,,olad,,fani,,masoliat,,bon,,sarparasti,,mazaya,,bime_takmil,,ksorat,,mazaya_end,,ksorat_end,,paye_end,,sanavat_end,,vahed_ezafekari
 ,get_data_hogogi,myfunc,show_num_pool,,calc_vahed_ezafekari,,box_control,myfunc,set_font,dbcode,connect_db,dbcode,all_ezafekari_mah,myfunc,font_filename
-fast_run_activity,get_data_hogogi,1,0,216,327
+fast_run_activity,get_data_hogogi,1,0,223,334
 dbcode,res,dbcode,sql,,paye,,sanavat,,maskan,,olad,,fani,,masoliat,,bon,,sarparasti,,mazaya,,bime_takmil,,ksorat,,et_olad,,sp_olad,,mazaya_end,,ksorat_end,main,persiandate,,et_time_h,,et_time_m
 dbcode,res,,paye,,sanavat,,maskan,,olad,,fani,,masoliat,,bon,,sarparasti,,mazaya,,bime_takmil,,ksorat,,mazaya_end,,ksorat_end
 dbcode,connect_db,myfunc,show_num_pool,dbcode,all_ezafekari_mah
-fast_run_activity,calc_vahed_ezafekari,1,0,477,494
+fast_run_activity,calc_vahed_ezafekari,1,0,484,501
 ,et_paye,,et_sanavat,,et_rozekari,,paye_end,,sanavat_end,,vahed_ezafekari,,et_vahed_ezafekari
 ,paye_end,,sanavat_end,,vahed_ezafekari
 myfunc,show_num_pool
-fast_run_activity,box_control,1,0,426,470
+fast_run_activity,box_control,1,0,433,477
 ,et_paye,,imm,,et_sanavat,,et_olad,,et_mazaya,,et_kosorat,,et_rozekari,,imm2,,et_time_h,,et_time_m
 
 
-fast_run_activity,activity_keypress,0,0,137,150
+fast_run_activity,activity_keypress,0,0,144,157
 ,pan_all
 
 ,lbl_back_click
-fast_run_activity,lbl_back_click,0,0,129,132
+fast_run_activity,lbl_back_click,0,0,136,139
 
 
 
-fast_run_activity,activity_pause,0,0,125,127
+fast_run_activity,activity_pause,0,0,132,134
 
 
 
-fast_run_activity,activity_resume,0,0,121,123
+fast_run_activity,activity_resume,0,0,128,130
 
 
 
-fast_run_activity,btn_run_click,1,0,162,209
+fast_run_activity,btn_run_click,1,0,169,216
 ,et_rozekari,,paye_end,,sanavat_end,,olad_end,,mazaya_end,,ksorat_end,,bime_tamin_end,,jame_kosorat,,hogog_nakhales,,hogog_khales,,wb_show_result,,pan_all,,et_paye,,imm,,et_sanavat,,et_olad,,et_mazaya,,et_kosorat,,imm2,,et_time_h,,et_time_m,,vahed_ezafekari,,et_vahed_ezafekari,,ezafekari_end,,maliat_end,,bime_takmil,,ksorat
 ,vahed_ezafekari,,ezafekari_end,,paye_end,,sanavat_end,,olad_end,,mazaya_end,,hogog_nakhales,,bime_tamin_end,,maliat_end,,jame_kosorat,,hogog_khales
 ,box_control,,mohasebe,myfunc,en2fa,,show_num_pool,,mohasebe_maliat
-fast_run_activity,mohasebe,0,0,333,383
+fast_run_activity,mohasebe,0,0,340,390
 ,vahed_ezafekari,,et_vahed_ezafekari,,ezafekari_end,,et_time_h,,et_time_m,,paye_end,,et_paye,,et_rozekari,,sanavat_end,,et_sanavat,,olad_end,,et_olad,,mazaya_end,,et_mazaya,,hogog_nakhales,,bime_tamin_end,,maliat_end,,jame_kosorat,,bime_takmil,,ksorat,,hogog_khales
 ,vahed_ezafekari,,ezafekari_end,,paye_end,,sanavat_end,,olad_end,,mazaya_end,,hogog_nakhales,,bime_tamin_end,,maliat_end,,jame_kosorat,,hogog_khales
 ,mohasebe_maliat
-fast_run_activity,show_num_pool,0,0,328,330
+fast_run_activity,show_num_pool,0,0,335,337
 
 
 
-fast_run_activity,et_kosorat_textchanged,1,0,546,549
+fast_run_activity,et_kosorat_textchanged,1,0,553,556
 ,et_kosorat
 
 myfunc,change_formater
-fast_run_activity,et_mazaya_textchanged,1,0,541,544
+fast_run_activity,et_mazaya_textchanged,1,0,548,551
 ,et_mazaya
 
 myfunc,change_formater
-fast_run_activity,et_olad_textchanged,1,0,536,539
+fast_run_activity,et_olad_textchanged,1,0,543,546
 ,et_olad
 
 myfunc,change_formater
-fast_run_activity,et_paye_textchanged,1,0,503,513
+fast_run_activity,et_paye_textchanged,1,0,510,520
 ,et_paye,,et_sanavat,,et_rozekari,,paye_end,,sanavat_end,,vahed_ezafekari,,et_vahed_ezafekari,,imm,,et_olad,,et_mazaya,,et_kosorat,,imm2,,et_time_h,,et_time_m
 ,paye_end,,sanavat_end,,vahed_ezafekari
 myfunc,change_formater,,calc_vahed_ezafekari,,box_control,myfunc,show_num_pool
-fast_run_activity,et_rozekari_textchanged,1,0,527,534
+fast_run_activity,et_rozekari_textchanged,1,0,534,541
 ,et_paye,,et_sanavat,,et_rozekari,,paye_end,,sanavat_end,,vahed_ezafekari,,et_vahed_ezafekari,,imm,,et_olad,,et_mazaya,,et_kosorat,,imm2,,et_time_h,,et_time_m
 ,paye_end,,sanavat_end,,vahed_ezafekari
 ,calc_vahed_ezafekari,,box_control,myfunc,show_num_pool
-fast_run_activity,et_sanavat_textchanged,1,0,515,525
+fast_run_activity,et_sanavat_textchanged,1,0,522,532
 ,et_sanavat,,et_paye,,et_rozekari,,paye_end,,sanavat_end,,vahed_ezafekari,,et_vahed_ezafekari
 ,paye_end,,sanavat_end,,vahed_ezafekari
 myfunc,change_formater,,calc_vahed_ezafekari,myfunc,show_num_pool
-fast_run_activity,et_vahed_ezafekari_textchanged,1,0,551,554
+fast_run_activity,et_vahed_ezafekari_textchanged,1,0,558,561
 ,et_vahed_ezafekari
 
 myfunc,change_formater
@@ -1207,35 +1207,35 @@ fast_run_activity,globals,0,1,12,77
 
 
 
-fast_run_activity,lbl_close_click,0,0,158,160
+fast_run_activity,lbl_close_click,0,0,165,167
 ,pan_all
 
 
-fast_run_activity,lbl_help_1_click,1,0,566,568
+fast_run_activity,lbl_help_1_click,1,0,573,575
 
 
 myfunc,help_man
-fast_run_activity,lbl_help_2_click,1,0,561,564
+fast_run_activity,lbl_help_2_click,1,0,568,571
 
 
 myfunc,help_man
-fast_run_activity,lbl_help_3_click,1,0,556,559
+fast_run_activity,lbl_help_3_click,1,0,563,566
 
 
 myfunc,help_man
-fast_run_activity,lbl_refresh_vahed_click,1,0,472,474
+fast_run_activity,lbl_refresh_vahed_click,1,0,479,481
 ,et_paye,,et_sanavat,,et_rozekari,,paye_end,,sanavat_end,,vahed_ezafekari,,et_vahed_ezafekari
 ,paye_end,,sanavat_end,,vahed_ezafekari
 ,calc_vahed_ezafekari,myfunc,show_num_pool
-fast_run_activity,mohasebe_maliat,0,0,386,424
+fast_run_activity,mohasebe_maliat,0,0,393,431
 
 
 
-fast_run_activity,pan_all_click,0,0,211,213
+fast_run_activity,pan_all_click,0,0,218,220
 ,pan_all
 
 ,lbl_close_click
-fast_run_activity,panel4_click,0,0,154,156
+fast_run_activity,panel4_click,0,0,161,163
 
 
 
@@ -1243,7 +1243,7 @@ fast_run_activity,process_globals,0,1,6,10
 
 
 
-fast_run_activity,sp_olad_itemclick,1,0,497,501
+fast_run_activity,sp_olad_itemclick,1,0,504,508
 ,et_olad
 
 myfunc,show_num_pool
