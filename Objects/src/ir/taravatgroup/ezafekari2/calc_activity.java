@@ -642,7 +642,7 @@ mostCurrent._totallb.setText(BA.ObjectToCharSequence(mostCurrent._total+mostCurr
        catch (Exception e23) {
 			processBA.setLastException(e23);RDebugUtils.currentLine=14221339;
  //BA.debugLineNum = 14221339;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("314221339",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("014221339",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
 RDebugUtils.currentLine=14221343;
  //BA.debugLineNum = 14221343;BA.debugLine="End Sub";

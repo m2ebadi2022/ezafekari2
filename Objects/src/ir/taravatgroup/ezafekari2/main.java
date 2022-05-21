@@ -735,7 +735,7 @@ mostCurrent._inapp.Initialize(processBA,"inapp",mostCurrent._key);
        catch (Exception e4) {
 			processBA.setLastException(e4);RDebugUtils.currentLine=131079;
  //BA.debugLineNum = 131079;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("3131079",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("0131079",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
 RDebugUtils.currentLine=131084;
  //BA.debugLineNum = 131084;BA.debugLine="dbCode.init_notfound(\"ksorat\",0)";
@@ -2073,7 +2073,7 @@ RDebugUtils.currentLine=1441811;
 mostCurrent._list_gozareshat_id.Add((Object)(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id")));
 RDebugUtils.currentLine=1441812;
  //BA.debugLineNum = 1441812;BA.debugLine="Log(dbCode.res.GetString(\"id\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("31441812",mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("01441812",mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id"),0);
  }
 ;
 RDebugUtils.currentLine=1441814;
@@ -2710,7 +2710,7 @@ mostCurrent._img_help.setBitmap((android.graphics.Bitmap)(mostCurrent._bit_img4.
 default: {
 RDebugUtils.currentLine=4980753;
  //BA.debugLineNum = 4980753;BA.debugLine="Log(\"error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("34980753","error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("04980753","error",0);
  break; }
 }
 ;
@@ -3001,7 +3001,7 @@ RDebugUtils.currentLine=5046274;
 _b = (anywheresoftware.b4a.objects.LabelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.LabelWrapper(), (android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Sender(mostCurrent.activityBA)));
 RDebugUtils.currentLine=5046275;
  //BA.debugLineNum = 5046275;BA.debugLine="Log(b.Tag)";
-anywheresoftware.b4a.keywords.Common.LogImpl("35046275",BA.ObjectToString(_b.getTag()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("05046275",BA.ObjectToString(_b.getTag()),0);
 RDebugUtils.currentLine=5046276;
  //BA.debugLineNum = 5046276;BA.debugLine="current_id_edit=b.Tag";
 _current_id_edit = (int)(BA.ObjectToNumber(_b.getTag()));

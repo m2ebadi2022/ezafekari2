@@ -352,6 +352,7 @@ public anywheresoftware.b4a.objects.RuntimePermissions _rp = null;
 public ir.taravatgroup.ezafekari2.b4xloadingindicator _b4xloadingindicator1 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pan_all = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pan_hed_show_gozaresh = null;
+public anywheresoftware.b4a.objects.PdfDocumentWrapper.Printer _printer = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
@@ -476,6 +477,22 @@ RDebugUtils.currentLine=28377088;
  //BA.debugLineNum = 28377088;BA.debugLine="Sub Activity_Resume";
 RDebugUtils.currentLine=28377090;
  //BA.debugLineNum = 28377090;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_print_click() throws Exception{
+RDebugUtils.currentModule="show_gozaresh_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_print_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_print_click", null));}
+RDebugUtils.currentLine=31719424;
+ //BA.debugLineNum = 31719424;BA.debugLine="Private Sub lbl_print_Click";
+RDebugUtils.currentLine=31719426;
+ //BA.debugLineNum = 31719426;BA.debugLine="printer.Initialize(\"\")";
+mostCurrent._printer.Initialize(mostCurrent.activityBA,"");
+RDebugUtils.currentLine=31719429;
+ //BA.debugLineNum = 31719429;BA.debugLine="printer.PrintWebView(\"job\",WebView_gozaresh)";
+mostCurrent._printer.PrintWebView("job",(android.webkit.WebView)(mostCurrent._webview_gozaresh.getObject()));
+RDebugUtils.currentLine=31719430;
+ //BA.debugLineNum = 31719430;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_share_click() throws Exception{

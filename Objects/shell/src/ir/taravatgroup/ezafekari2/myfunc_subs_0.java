@@ -649,4 +649,40 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public static RemoteObject  _webviewassetfile(RemoteObject _ba,RemoteObject _filename) throws Exception{
+try {
+		Debug.PushSubsStack("WebViewAssetFile (myfunc) ","myfunc",1,_ba,myfunc.mostCurrent,249);
+if (RapidSub.canDelegate("webviewassetfile")) { return ir.taravatgroup.ezafekari2.myfunc.remoteMe.runUserSub(false, "myfunc","webviewassetfile", _ba, _filename);}
+RemoteObject _jo = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
+;
+Debug.locals.put("FileName", _filename);
+ BA.debugLineNum = 249;BA.debugLine="Sub WebViewAssetFile (FileName As String) As Strin";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 252;BA.debugLine="Dim jo As JavaObject";
+Debug.ShouldStop(134217728);
+_jo = RemoteObject.createNew ("anywheresoftware.b4j.object.JavaObject");Debug.locals.put("jo", _jo);
+ BA.debugLineNum = 253;BA.debugLine="jo.InitializeStatic(\"anywheresoftware.b4a.objects";
+Debug.ShouldStop(268435456);
+_jo.runVoidMethod ("InitializeStatic",(Object)(RemoteObject.createImmutable("anywheresoftware.b4a.objects.streams.File")));
+ BA.debugLineNum = 254;BA.debugLine="If jo.GetField(\"virtualAssetsFolder\") = Null Then";
+Debug.ShouldStop(536870912);
+if (RemoteObject.solveBoolean("n",_jo.runMethod(false,"GetField",(Object)(RemoteObject.createImmutable("virtualAssetsFolder"))))) { 
+ BA.debugLineNum = 255;BA.debugLine="Return \"file:///android_asset/\" & FileName.ToLow";
+Debug.ShouldStop(1073741824);
+if (true) return RemoteObject.concat(RemoteObject.createImmutable("file:///android_asset/"),_filename.runMethod(true,"toLowerCase"));
+ }else {
+ BA.debugLineNum = 257;BA.debugLine="Return \"file://\" & File.Combine(jo.GetField(\"vir";
+Debug.ShouldStop(1);
+if (true) return RemoteObject.concat(RemoteObject.createImmutable("file://"),myfunc.mostCurrent.__c.getField(false,"File").runMethod(true,"Combine",(Object)(BA.ObjectToString(_jo.runMethod(false,"GetField",(Object)(RemoteObject.createImmutable("virtualAssetsFolder"))))),(Object)(BA.ObjectToString(_jo.runMethod(false,"RunMethod",(Object)(BA.ObjectToString("getUnpackedVirtualAssetFile")),(Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_filename)})))))));
+ };
+ BA.debugLineNum = 260;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 }

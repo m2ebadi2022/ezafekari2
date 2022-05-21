@@ -167,7 +167,8 @@ str_web1.Initialize
 	str_web1.Append(" مالیات : مطابق قانون کار<br>")
 	str_web1.Append("  "&ls_onvanHa.Get(10)&" : "&myfunc.en2fa(show_num_pool(mazaya))&"<br>")
 	str_web1.Append("  "&ls_onvanHa.Get(11)&" : "&myfunc.en2fa(show_num_pool(ksorat))&"</td>")
-	str_web1.Append("</tr></table></body></html>")
+	str_web1.Append("</tr></table>")
+	str_web1.Append("</body></html>")
 	
 	WebView1.LoadHtml(str_web1)
 	
@@ -592,6 +593,8 @@ Private Sub lbl_run_mohasebe_Click
 	str1.Append("<span style='font-size: 11px;'> تومان </span>")
 	
 	str1.Append("<br></details></div>")
+	
+	str1.Append("<footer style=' text-align: center; '><h6> اپلیکیشن اضافه کاری من </h6></footer>")
 	
 	str1.Append("</body></html>")
 	

@@ -252,6 +252,19 @@ End Sub
 
 
 
+Sub WebViewAssetFile (FileName As String) As String
+	
+	
+	Dim jo As JavaObject
+	jo.InitializeStatic("anywheresoftware.b4a.objects.streams.File")
+	If jo.GetField("virtualAssetsFolder") = Null Then
+		Return "file:///android_asset/" & FileName.ToLowerCase
+	Else
+		Return "file://" & File.Combine(jo.GetField("virtualAssetsFolder"), _
+  jo.RunMethod("getUnpackedVirtualAssetFile", Array As Object(FileName)))
+	End If
+End Sub
+
 
 '' backup ----------------->>>
 

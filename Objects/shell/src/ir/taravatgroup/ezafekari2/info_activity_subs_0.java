@@ -164,7 +164,7 @@ info_activity.mostCurrent.__c.runVoidMethod ("StartActivity",info_activity.proce
        catch (Exception e9) {
 			BA.rdebugUtils.runVoidMethod("setLastException",info_activity.processBA, e9.toString()); BA.debugLineNum = 102;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(32);
-info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","39961486",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
+info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","09961486",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 103;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
 Debug.ShouldStop(64);
 info_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برنامه جمیل را نصب/فعال کنید")),(Object)(info_activity.mostCurrent.__c.getField(true,"False")));
@@ -210,7 +210,7 @@ info_activity.mostCurrent.__c.runVoidMethod ("StartActivity",info_activity.proce
        catch (Exception e8) {
 			BA.rdebugUtils.runVoidMethod("setLastException",info_activity.processBA, e8.toString()); BA.debugLineNum = 82;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(131072);
-info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","39895947",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
+info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","09895947",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 83;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
 Debug.ShouldStop(262144);
 info_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برنامه اینستاگرام را نصب کنید")),(Object)(info_activity.mostCurrent.__c.getField(true,"False")));
@@ -256,7 +256,7 @@ info_activity.mostCurrent.__c.runVoidMethod ("StartActivity",info_activity.proce
        catch (Exception e8) {
 			BA.rdebugUtils.runVoidMethod("setLastException",info_activity.processBA, e8.toString()); BA.debugLineNum = 63;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1073741824);
-info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","39830410",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
+info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","09830410",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 64;BA.debugLine="ToastMessageShow(\"برنامه واتساپ را نصب کنید\",Fal";
 Debug.ShouldStop(-2147483648);
 info_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برنامه واتساپ را نصب کنید")),(Object)(info_activity.mostCurrent.__c.getField(true,"False")));

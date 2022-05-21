@@ -1268,7 +1268,7 @@ mostCurrent._ls_note_moon.Add((Object)(anywheresoftware.b4a.keywords.Common.True
  }else {
 RDebugUtils.currentLine=26804322;
  //BA.debugLineNum = 26804322;BA.debugLine="Log(\"nooop data\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("326804322","nooop data",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("026804322","nooop data",0);
  };
 RDebugUtils.currentLine=26804327;
  //BA.debugLineNum = 26804327;BA.debugLine="For  j=start_day-1 To 0 Step -1";
@@ -1388,7 +1388,7 @@ _counter = (int) (_counter+1);
        catch (Exception e107) {
 			processBA.setLastException(e107);RDebugUtils.currentLine=26804403;
  //BA.debugLineNum = 26804403;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("326804403",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("026804403",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
 RDebugUtils.currentLine=26804407;
  //BA.debugLineNum = 26804407;BA.debugLine="End Sub";
@@ -2160,7 +2160,7 @@ anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
        catch (Exception e21) {
 			processBA.setLastException(e21);RDebugUtils.currentLine=27328547;
  //BA.debugLineNum = 27328547;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("327328547",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("027328547",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
 RDebugUtils.currentLine=27328548;
  //BA.debugLineNum = 27328548;BA.debugLine="ToastMessageShow(\"خطا در تاریخ\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در تاریخ"),anywheresoftware.b4a.keywords.Common.False);

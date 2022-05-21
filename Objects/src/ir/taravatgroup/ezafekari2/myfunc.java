@@ -567,4 +567,32 @@ RDebugUtils.currentLine=6946818;
  //BA.debugLineNum = 6946818;BA.debugLine="End Sub";
 return "";
 }
+public static String  _webviewassetfile(anywheresoftware.b4a.BA _ba,String _filename) throws Exception{
+RDebugUtils.currentModule="myfunc";
+if (Debug.shouldDelegate(null, "webviewassetfile", false))
+	 {return ((String) Debug.delegate(null, "webviewassetfile", new Object[] {_ba,_filename}));}
+anywheresoftware.b4j.object.JavaObject _jo = null;
+RDebugUtils.currentLine=31981568;
+ //BA.debugLineNum = 31981568;BA.debugLine="Sub WebViewAssetFile (FileName As String) As Strin";
+RDebugUtils.currentLine=31981571;
+ //BA.debugLineNum = 31981571;BA.debugLine="Dim jo As JavaObject";
+_jo = new anywheresoftware.b4j.object.JavaObject();
+RDebugUtils.currentLine=31981572;
+ //BA.debugLineNum = 31981572;BA.debugLine="jo.InitializeStatic(\"anywheresoftware.b4a.objects";
+_jo.InitializeStatic("anywheresoftware.b4a.objects.streams.File");
+RDebugUtils.currentLine=31981573;
+ //BA.debugLineNum = 31981573;BA.debugLine="If jo.GetField(\"virtualAssetsFolder\") = Null Then";
+if (_jo.GetField("virtualAssetsFolder")== null) { 
+RDebugUtils.currentLine=31981574;
+ //BA.debugLineNum = 31981574;BA.debugLine="Return \"file:///android_asset/\" & FileName.ToLow";
+if (true) return "file:///android_asset/"+_filename.toLowerCase();
+ }else {
+RDebugUtils.currentLine=31981576;
+ //BA.debugLineNum = 31981576;BA.debugLine="Return \"file://\" & File.Combine(jo.GetField(\"vir";
+if (true) return "file://"+anywheresoftware.b4a.keywords.Common.File.Combine(BA.ObjectToString(_jo.GetField("virtualAssetsFolder")),BA.ObjectToString(_jo.RunMethod("getUnpackedVirtualAssetFile",new Object[]{(Object)(_filename)})));
+ };
+RDebugUtils.currentLine=31981579;
+ //BA.debugLineNum = 31981579;BA.debugLine="End Sub";
+return "";
+}
 }

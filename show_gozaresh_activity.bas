@@ -33,6 +33,8 @@ Sub Globals
 	Private pan_all As Panel
 	Private pan_hed_show_gozaresh As Panel
 	
+	
+	Private printer As Printer
 End Sub
 
 
@@ -121,4 +123,15 @@ Private Sub lbl_share_Click
 	in.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION
 	StartActivity(in)
 End Sub
+
+
+
+Private Sub lbl_print_Click
+	
+	printer.Initialize("")
+
+	'printer.PrintHtml("job", str_file_matn)
+	printer.PrintWebView("job",WebView_gozaresh)
+End Sub
+
 

@@ -794,7 +794,7 @@ RDebugUtils.currentLine=21495826;
 _mande_ta_emroz = (int) (((_mande_d*mostCurrent._main._saat_kar_min /*int*/ )+(_mande_h*60)+_mande_m)+(_mor_dar_roz*mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianDay())-_morakhasi_estefade_esteh);
 RDebugUtils.currentLine=21495829;
  //BA.debugLineNum = 21495829;BA.debugLine="Log(morakhasi_estefade_esteh)";
-anywheresoftware.b4a.keywords.Common.LogImpl("321495829",BA.NumberToString(_morakhasi_estefade_esteh),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("021495829",BA.NumberToString(_morakhasi_estefade_esteh),0);
 RDebugUtils.currentLine=21495834;
  //BA.debugLineNum = 21495834;BA.debugLine="lbl_mande_ta_inEndMah.Text=min_to_str(mande_ta_en";
 mostCurrent._lbl_mande_ta_inendmah.setText(BA.ObjectToCharSequence(_min_to_str(_mande_ta_endmah)));

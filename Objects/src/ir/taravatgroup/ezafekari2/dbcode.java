@@ -74,7 +74,7 @@ try {RDebugUtils.currentLine=7471108;
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_taradod")));
 RDebugUtils.currentLine=7471109;
  //BA.debugLineNum = 7471109;BA.debugLine="Log( \"tbl taradod exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("37471109","tbl taradod exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("07471109","tbl taradod exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6);RDebugUtils.currentLine=7471112;
@@ -82,7 +82,7 @@ anywheresoftware.b4a.keywords.Common.LogImpl("37471109","tbl taradod exist",0);
 _sql.ExecNonQuery("CREATE TABLE 'tb_taradod' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date_from'	TEXT, 'date_to'	TEXT, 'time_from'	TEXT, 'time_to'	TEXT, 'end_tim_d'	INTEGER DEFAULT 0, 'end_tim_h'	INTEGER DEFAULT 0, 'end_tim_m'	INTEGER DEFAULT 0, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
 RDebugUtils.currentLine=7471114;
  //BA.debugLineNum = 7471114;BA.debugLine="Log ( \"tbl taradod created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("37471114","tbl taradod created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("07471114","tbl taradod created",0);
  };
 RDebugUtils.currentLine=7471117;
  //BA.debugLineNum = 7471117;BA.debugLine="End Sub";
@@ -104,7 +104,7 @@ try {RDebugUtils.currentLine=7536643;
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT id FROM 'my_calander' WHERE id=1")));
 RDebugUtils.currentLine=7536644;
  //BA.debugLineNum = 7536644;BA.debugLine="Log( \"tbl my_calander exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("37536644","tbl my_calander exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("07536644","tbl my_calander exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6);RDebugUtils.currentLine=7536646;
@@ -115,7 +115,7 @@ RDebugUtils.currentLine=7536648;
 _insert_calander_exl(_ba);
 RDebugUtils.currentLine=7536649;
  //BA.debugLineNum = 7536649;BA.debugLine="Log ( \"tbl myCalander created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("37536649","tbl myCalander created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("07536649","tbl myCalander created",0);
  };
 RDebugUtils.currentLine=7536652;
  //BA.debugLineNum = 7536652;BA.debugLine="End Sub";
@@ -153,7 +153,7 @@ _sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil', monasebat=' عید �
        catch (Exception e11) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e11);RDebugUtils.currentLine=7667729;
  //BA.debugLineNum = 7667729;BA.debugLine="Log(\"error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("37667729","error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("07667729","error",0);
  };
 RDebugUtils.currentLine=7667733;
  //BA.debugLineNum = 7667733;BA.debugLine="End Sub";
@@ -175,7 +175,7 @@ try {RDebugUtils.currentLine=7602179;
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT id FROM 'tbl_onvanha' WHERE id=1")));
 RDebugUtils.currentLine=7602180;
  //BA.debugLineNum = 7602180;BA.debugLine="Log( \"tbl tbl_onvanha exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("37602180","tbl tbl_onvanha exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("07602180","tbl tbl_onvanha exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6);RDebugUtils.currentLine=7602182;
@@ -222,7 +222,7 @@ RDebugUtils.currentLine=7602197;
 _sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('13', 'saatKar',  'ساعت کاری در روز','ساعت کاری در روز');");
 RDebugUtils.currentLine=7602201;
  //BA.debugLineNum = 7602201;BA.debugLine="Log ( \"tbl tbl_onvanha created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("37602201","tbl tbl_onvanha created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("07602201","tbl tbl_onvanha created",0);
  };
 RDebugUtils.currentLine=7602203;
  //BA.debugLineNum = 7602203;BA.debugLine="sql.Close";
@@ -596,7 +596,7 @@ if (true) return _res.GetInt("id");
        catch (Exception e9) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e9);RDebugUtils.currentLine=9240590;
  //BA.debugLineNum = 9240590;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("39240590",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("09240590",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
 RDebugUtils.currentLine=9240593;
  //BA.debugLineNum = 9240593;BA.debugLine="Return -1";
@@ -942,7 +942,7 @@ if (true) return anywheresoftware.b4a.keywords.Common.False;
        catch (Exception e10) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e10);RDebugUtils.currentLine=8978443;
  //BA.debugLineNum = 8978443;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("38978443",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("08978443",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
 RDebugUtils.currentLine=8978445;
  //BA.debugLineNum = 8978445;BA.debugLine="Return False";
@@ -980,7 +980,7 @@ if (true) return anywheresoftware.b4a.keywords.Common.False;
        catch (Exception e10) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e10);RDebugUtils.currentLine=9043979;
  //BA.debugLineNum = 9043979;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("39043979",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("09043979",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
 RDebugUtils.currentLine=9043982;
  //BA.debugLineNum = 9043982;BA.debugLine="Return False";
@@ -1018,7 +1018,7 @@ if (true) return anywheresoftware.b4a.keywords.Common.False;
        catch (Exception e10) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e10);RDebugUtils.currentLine=9109514;
  //BA.debugLineNum = 9109514;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("39109514",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("09109514",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
 RDebugUtils.currentLine=9109516;
  //BA.debugLineNum = 9109516;BA.debugLine="Return False";
@@ -1059,7 +1059,7 @@ if (true) return anywheresoftware.b4a.keywords.Common.True;
        catch (Exception e11) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e11);RDebugUtils.currentLine=9175054;
  //BA.debugLineNum = 9175054;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("39175054",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("09175054",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
 RDebugUtils.currentLine=9175057;
  //BA.debugLineNum = 9175057;BA.debugLine="Return False";

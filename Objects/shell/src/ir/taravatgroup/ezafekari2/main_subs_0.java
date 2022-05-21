@@ -23,7 +23,7 @@ main.mostCurrent._inapp.runVoidMethod ("Initialize",main.processBA,(Object)(BA.O
        catch (Exception e4) {
 			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e4.toString()); BA.debugLineNum = 256;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(-2147483648);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","3131079",BA.ObjectToString(main.mostCurrent.__c.runMethod(false,"LastException",main.mostCurrent.activityBA)),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","0131079",BA.ObjectToString(main.mostCurrent.__c.runMethod(false,"LastException",main.mostCurrent.activityBA)),0);
  };
  BA.debugLineNum = 261;BA.debugLine="dbCode.init_notfound(\"ksorat\",0)";
 Debug.ShouldStop(16);
@@ -1351,7 +1351,7 @@ Debug.ShouldStop(256);
 main.mostCurrent._list_gozareshat_id.runVoidMethod ("Add",(Object)((main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("id"))))));
  BA.debugLineNum = 1130;BA.debugLine="Log(dbCode.res.GetString(\"id\"))";
 Debug.ShouldStop(512);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","31441812",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("id"))),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","01441812",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("id"))),0);
  }
 ;
  BA.debugLineNum = 1132;BA.debugLine="dbCode.res.Close";
@@ -2245,7 +2245,7 @@ main.mostCurrent._img_help.runMethod(false,"setBitmap",(main.mostCurrent._bit_im
 default: {
  BA.debugLineNum = 2542;BA.debugLine="Log(\"error\")";
 Debug.ShouldStop(8192);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","34980753",RemoteObject.createImmutable("error"),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","04980753",RemoteObject.createImmutable("error"),0);
  break; }
 }
 ;
@@ -2520,7 +2520,7 @@ Debug.ShouldStop(2097152);
 _b = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.LabelWrapper"), main.mostCurrent.__c.runMethod(false,"Sender",main.mostCurrent.activityBA));Debug.locals.put("b", _b);
  BA.debugLineNum = 2551;BA.debugLine="Log(b.Tag)";
 Debug.ShouldStop(4194304);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","35046275",BA.ObjectToString(_b.runMethod(false,"getTag")),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","05046275",BA.ObjectToString(_b.runMethod(false,"getTag")),0);
  BA.debugLineNum = 2552;BA.debugLine="current_id_edit=b.Tag";
 Debug.ShouldStop(8388608);
 main._current_id_edit = BA.numberCast(int.class, _b.runMethod(false,"getTag"));
