@@ -42,7 +42,6 @@ views.get("pik_pan_day1").vw.setLeft((int)((45d / 100 * width)));
 views.get("pik_pan_day1").vw.setWidth((int)((60d / 100 * width) - ((45d / 100 * width))));
 views.get("pik_day_bala1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_day_bala1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
-//BA.debugLineNum = 39;BA.debugLine="pik_day1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
 views.get("pik_day1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_day1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
 //BA.debugLineNum = 40;BA.debugLine="pik_day_paeen1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]

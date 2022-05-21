@@ -17,69 +17,71 @@ File22=endwork.png
 File23=equal.png
 File24=eydi.png
 File25=fast_run_layout.bal
-File26=ganon.html
-File27=ganon_layout.bal
-File28=gift.jpg
-File29=gozaresh_layout.bal
+File26=fingerprint.png
+File27=ganon.html
+File28=ganon_layout.bal
+File29=gift.jpg
 File3=add_ezafe.png
-File30=help.png
-File31=help_font.png
-File32=hogog_layout.bal
-File33=home_item.bal
-File34=home_layout.bal
-File35=home-h0.jpg
-File36=home-h1.jpg
-File37=home-h2.jpg
-File38=home-h3.jpg
-File39=home-h4.jpg
+File30=gozaresh_layout.bal
+File31=help.png
+File32=help_font.png
+File33=hogog_layout.bal
+File34=home_item.bal
+File35=home_layout.bal
+File36=home-h0.jpg
+File37=home-h1.jpg
+File38=home-h2.jpg
+File39=home-h3.jpg
 File4=add_morakhasi.png
-File40=icon.png
-File41=info.png
-File42=info_layout.bal
-File43=item_darsad.bal
-File44=item_fast_run.bal
-File45=item_hogog.bal
-File46=item_list.bal
-File47=item_list_2.bal
-File48=list_layout.bal
-File49=m1.png
+File40=home-h4.jpg
+File41=icon.png
+File42=info.png
+File43=info_layout.bal
+File44=item_darsad.bal
+File45=item_fast_run.bal
+File46=item_hogog.bal
+File47=item_list.bal
+File48=item_list_2.bal
+File49=list_layout.bal
 File5=attention.png
-File50=m2.png
-File51=m3.png
-File52=main_layout.bal
-File53=mandeh.png
-File54=mohasebe_hogog.png
-File55=morakhasi_item.bal
-File56=morakhasi_layout.bal
-File57=my_calander.xls
-File58=newyear.jpg
-File59=noske_item.bal
+File50=m1.png
+File51=m2.png
+File52=m3.png
+File53=main_layout.bal
+File54=mandeh.png
+File55=mohasebe_hogog.png
+File56=morakhasi_item.bal
+File57=morakhasi_layout.bal
+File58=my_calander.xls
+File59=newyear.jpg
 File6=bg3.jpg
-File60=payankar_layout.bal
-File61=percentage.png
-File62=set_hogog.png
-File63=set_moh.png
-File64=sett_hogog_item.bal
-File65=setting.png
-File66=setting_hogog_layout.bal
-File67=setting_layout.bal
-File68=shift_layout.bal
-File69=shift_page_items.bal
+File60=noske_item.bal
+File61=payankar_layout.bal
+File62=percentage.png
+File63=set_hogog.png
+File64=set_moh.png
+File65=sett_hogog_item.bal
+File66=setting.png
+File67=setting_hogog_layout.bal
+File68=setting_layout.bal
+File69=shift_layout.bal
 File7=bkoodkbd.ttf
-File70=shift_work.png
-File71=show_gozaresh_layout.bal
-File72=speed_run.png
-File73=splash_layout.bal
-File74=sudan bd_mrt.ttf
-File75=SYEKAN.TTF
-File76=tab_layout_ezafekari.bal
-File77=tab_layout_morakhasi.bal
-File78=tab_layout_taradod.bal
-File79=textBox.png
+File70=shift_page_items.bal
+File71=shift_work.png
+File72=show_gozaresh_layout.bal
+File73=speed_run.png
+File74=splash_layout.bal
+File75=sudan bd_mrt.ttf
+File76=SYEKAN.TTF
+File77=tab_layout_ezafekari.bal
+File78=tab_layout_morakhasi.bal
+File79=tab_layout_taradod.bal
 File8=BNazanin.ttf
-File80=textbox2.png
-File81=transfer_time.png
-File82=Vazir.ttf
+File80=taradod_fast_layout.bal
+File81=textBox.png
+File82=textbox2.png
+File83=transfer_time.png
+File84=Vazir.ttf
 File9=book.png
 FileGroup1=Default Group
 FileGroup10=Default Group
@@ -162,6 +164,8 @@ FileGroup8=Default Group
 FileGroup80=Default Group
 FileGroup81=Default Group
 FileGroup82=Default Group
+FileGroup83=Default Group
+FileGroup84=Default Group
 FileGroup9=Default Group
 Group=Default Group
 Library1=contentresolver
@@ -202,7 +206,7 @@ Module6=eidi_activity
 Module7=fast_run_activity
 Module8=ganon_activity
 Module9=hogog_activity
-NumberOfFiles=82
+NumberOfFiles=84
 NumberOfLibraries=19
 NumberOfModules=18
 Version=11.5
@@ -453,6 +457,14 @@ Sub Globals
 	Dim tim_min As Int
 	
 	Private lbl_vesion_app As Label
+	Private lbl_date_FT As Label
+	Private lbl_vorod_FT As Label
+	Private lbl_khoroj_FT As Label
+	Private lbl_time_show_FT As Label
+	Private lbl_tim_khoroj_FT As Label
+	Private lbl_tim_vorod_FT As Label
+	Private ckb_ezaf_taradod_FT As CheckBox
+	Private pan_all_FT As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -3043,3 +3055,24 @@ Private Sub sp_year_gozaresh_ItemClick (Position As Int, Value As Object)
 End Sub
 
 
+
+
+Private Sub pan_add_taradod_fast_Click
+	Activity.LoadLayout("taradod_fast_layout")
+End Sub
+
+Private Sub lbl_close_FT_Click
+	pan_all_FT_Click
+End Sub
+
+Private Sub pan_all_FT_Click
+	pan_all_FT.Visible=False
+End Sub
+
+Private Sub lbl_vorod_FT_Click
+	Log(DateTime.Time(DateTime.Now))
+End Sub
+
+Private Sub lbl_khoroj_FT_Click
+	Log(DateTime.Time(DateTime.Now))
+End Sub

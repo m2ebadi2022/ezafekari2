@@ -55,6 +55,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=8
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=fast_run_activity,calc_vahed_ezafekari,480,0,Visual Designer,item_fast_run.bal,-100,1,fast_run_activity,get_data_hogogi,215,0,fast_run_activity,mohasebe,332,0,Main,Process_Globals,29,0,fast_run_activity,Globals,73,0,fast_run_activity,Activity_Create,93,6,dbCode,isexist_taradod_by_date,454,0,Main,add_taradod_sub,1551,6,Main,add_morakhasi_sub,1510,4,Main,add_ezafe_sub,1458,4
+NavigationStack=Visual Designer,home_item.bal,-100,3,Main,add_ezafe_sub,1459,4,Main,pan_add_taradod_fast_Click,2839,4,Main,Panel4_Click,1353,0,Main,lbl_close_FT_Click,2850,1,Visual Designer,taradod_fast_layout.bal,-100,4,Main,Globals,254,0,Main,pan_all_FT_Click,2854,4,Main,lbl_khoroj_FT_Click,2863,0,Main,lbl_vorod_FT_Click,2859,6
 SelectedBuild=0
 VisibleModules=12,5

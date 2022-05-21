@@ -701,6 +701,14 @@ public static int _current_id_edit = 0;
 public static boolean _is_for_edit = false;
 public static int _tim_min = 0;
 public anywheresoftware.b4a.objects.LabelWrapper _lbl_vesion_app = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lbl_date_ft = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lbl_vorod_ft = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lbl_khoroj_ft = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lbl_time_show_ft = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lbl_tim_khoroj_ft = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lbl_tim_vorod_ft = null;
+public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _ckb_ezaf_taradod_ft = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pan_all_ft = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
@@ -2871,6 +2879,32 @@ RDebugUtils.currentLine=720911;
  //BA.debugLineNum = 720911;BA.debugLine="End Sub";
 return "";
 }
+public static String  _lbl_close_ft_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_close_ft_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_close_ft_click", null));}
+RDebugUtils.currentLine=32112640;
+ //BA.debugLineNum = 32112640;BA.debugLine="Private Sub lbl_close_FT_Click";
+RDebugUtils.currentLine=32112641;
+ //BA.debugLineNum = 32112641;BA.debugLine="pan_all_FT_Click";
+_pan_all_ft_click();
+RDebugUtils.currentLine=32112642;
+ //BA.debugLineNum = 32112642;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pan_all_ft_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_all_ft_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_all_ft_click", null));}
+RDebugUtils.currentLine=32178176;
+ //BA.debugLineNum = 32178176;BA.debugLine="Private Sub pan_all_FT_Click";
+RDebugUtils.currentLine=32178177;
+ //BA.debugLineNum = 32178177;BA.debugLine="pan_all_FT.Visible=False";
+mostCurrent._pan_all_ft.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=32178178;
+ //BA.debugLineNum = 32178178;BA.debugLine="End Sub";
+return "";
+}
 public static String  _lbl_close_msgnewy_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_close_msgnewy_click", false))
@@ -3703,6 +3737,19 @@ RDebugUtils.currentLine=5308418;
  //BA.debugLineNum = 5308418;BA.debugLine="End Sub";
 return "";
 }
+public static String  _lbl_khoroj_ft_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_khoroj_ft_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_khoroj_ft_click", null));}
+RDebugUtils.currentLine=32309248;
+ //BA.debugLineNum = 32309248;BA.debugLine="Private Sub lbl_khoroj_FT_Click";
+RDebugUtils.currentLine=32309249;
+ //BA.debugLineNum = 32309249;BA.debugLine="Log(DateTime.Time(DateTime.Now))";
+anywheresoftware.b4a.keywords.Common.LogImpl("832309249",anywheresoftware.b4a.keywords.Common.DateTime.Time(anywheresoftware.b4a.keywords.Common.DateTime.getNow()),0);
+RDebugUtils.currentLine=32309250;
+ //BA.debugLineNum = 32309250;BA.debugLine="End Sub";
+return "";
+}
 public static String  _lbl_lite_menu_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_lite_menu_click", false))
@@ -4270,6 +4317,32 @@ RDebugUtils.currentLine=5373953;
 _lbl_vip_click();
 RDebugUtils.currentLine=5373954;
  //BA.debugLineNum = 5373954;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_vorod_ft_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_vorod_ft_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_vorod_ft_click", null));}
+RDebugUtils.currentLine=32243712;
+ //BA.debugLineNum = 32243712;BA.debugLine="Private Sub lbl_vorod_FT_Click";
+RDebugUtils.currentLine=32243713;
+ //BA.debugLineNum = 32243713;BA.debugLine="Log(DateTime.Time(DateTime.Now))";
+anywheresoftware.b4a.keywords.Common.LogImpl("832243713",anywheresoftware.b4a.keywords.Common.DateTime.Time(anywheresoftware.b4a.keywords.Common.DateTime.getNow()),0);
+RDebugUtils.currentLine=32243714;
+ //BA.debugLineNum = 32243714;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pan_add_taradod_fast_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_add_taradod_fast_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_add_taradod_fast_click", null));}
+RDebugUtils.currentLine=32047104;
+ //BA.debugLineNum = 32047104;BA.debugLine="Private Sub pan_add_taradod_fast_Click";
+RDebugUtils.currentLine=32047105;
+ //BA.debugLineNum = 32047105;BA.debugLine="Activity.LoadLayout(\"taradod_fast_layout\")";
+mostCurrent._activity.LoadLayout("taradod_fast_layout",mostCurrent.activityBA);
+RDebugUtils.currentLine=32047106;
+ //BA.debugLineNum = 32047106;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_all_litemenu_click() throws Exception{
