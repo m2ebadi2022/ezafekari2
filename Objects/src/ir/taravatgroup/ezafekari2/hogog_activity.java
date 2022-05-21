@@ -403,6 +403,7 @@ public anywheresoftware.b4a.objects.EditTextWrapper _et_vahed_ezafekari_vij = nu
 public anywheresoftware.b4a.objects.EditTextWrapper _et_time_h_vij = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _et_time_m_vij = null;
 public anywheresoftware.b4a.objects.collections.List _ls_onvanha = null;
+public anywheresoftware.b4a.objects.PdfDocumentWrapper.Printer _printer = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
@@ -989,6 +990,22 @@ RDebugUtils.currentLine=20840450;
 mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"روزهای جمعه که برای آن روز دیگری را تعطیل نکنند، اضافه کاری فوق العاده محسوب و با ضریب 1.8 محاسبه می شود.");
 RDebugUtils.currentLine=20840451;
  //BA.debugLineNum = 20840451;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_print_click() throws Exception{
+RDebugUtils.currentModule="hogog_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_print_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_print_click", null));}
+RDebugUtils.currentLine=32112640;
+ //BA.debugLineNum = 32112640;BA.debugLine="Private Sub lbl_print_Click";
+RDebugUtils.currentLine=32112642;
+ //BA.debugLineNum = 32112642;BA.debugLine="printer.Initialize(\"\")";
+mostCurrent._printer.Initialize(mostCurrent.activityBA,"");
+RDebugUtils.currentLine=32112645;
+ //BA.debugLineNum = 32112645;BA.debugLine="printer.PrintWebView(\"job\",WebView2)";
+mostCurrent._printer.PrintWebView("job",(android.webkit.WebView)(mostCurrent._webview2.getObject()));
+RDebugUtils.currentLine=32112646;
+ //BA.debugLineNum = 32112646;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_refresh_vahed_click() throws Exception{
@@ -1621,6 +1638,50 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("�
  };
 RDebugUtils.currentLine=20316187;
  //BA.debugLineNum = 20316187;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_share_click() throws Exception{
+RDebugUtils.currentModule="hogog_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_share_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_share_click", null));}
+String _filename = "";
+anywheresoftware.b4a.phone.Phone.Email _email = null;
+anywheresoftware.b4a.objects.IntentWrapper _in = null;
+RDebugUtils.currentLine=32047104;
+ //BA.debugLineNum = 32047104;BA.debugLine="Private Sub lbl_share_Click";
+RDebugUtils.currentLine=32047105;
+ //BA.debugLineNum = 32047105;BA.debugLine="Dim FileName As String =Main.current_gozaresh_id&";
+_filename = BA.NumberToString(mostCurrent._main._current_gozaresh_id /*int*/ )+".html";
+RDebugUtils.currentLine=32047108;
+ //BA.debugLineNum = 32047108;BA.debugLine="File.WriteString(Starter.Provider.SharedFolder,Fi";
+anywheresoftware.b4a.keywords.Common.File.WriteString(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,_filename,mostCurrent._str1.ToString());
+RDebugUtils.currentLine=32047110;
+ //BA.debugLineNum = 32047110;BA.debugLine="Dim email As Email";
+_email = new anywheresoftware.b4a.phone.Phone.Email();
+RDebugUtils.currentLine=32047111;
+ //BA.debugLineNum = 32047111;BA.debugLine="email.To.Add(\"aaa@bbb.com\")";
+_email.To.Add((Object)("aaa@bbb.com"));
+RDebugUtils.currentLine=32047112;
+ //BA.debugLineNum = 32047112;BA.debugLine="email.Subject = \"subject\"";
+_email.Subject = "subject";
+RDebugUtils.currentLine=32047113;
+ //BA.debugLineNum = 32047113;BA.debugLine="email.Body = \" گزارش حقوق \"&str1.ToString&CRLF&\"ا";
+_email.Body = " گزارش حقوق "+mostCurrent._str1.ToString()+anywheresoftware.b4a.keywords.Common.CRLF+"اپلیکیشن اضافه کاری من"+anywheresoftware.b4a.keywords.Common.CRLF+"دانلود از بازار";
+RDebugUtils.currentLine=32047114;
+ //BA.debugLineNum = 32047114;BA.debugLine="email.Attachments.Add(Starter.Provider.GetFileUri";
+_email.Attachments.Add(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._getfileuri /*Object*/ (null,_filename));
+RDebugUtils.currentLine=32047116;
+ //BA.debugLineNum = 32047116;BA.debugLine="Dim in As Intent = email.GetIntent";
+_in = new anywheresoftware.b4a.objects.IntentWrapper();
+_in = (anywheresoftware.b4a.objects.IntentWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.IntentWrapper(), (android.content.Intent)(_email.GetIntent()));
+RDebugUtils.currentLine=32047117;
+ //BA.debugLineNum = 32047117;BA.debugLine="in.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION";
+_in.setFlags((int) (1));
+RDebugUtils.currentLine=32047118;
+ //BA.debugLineNum = 32047118;BA.debugLine="StartActivity(in)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in.getObject()));
+RDebugUtils.currentLine=32047119;
+ //BA.debugLineNum = 32047119;BA.debugLine="End Sub";
 return "";
 }
 public static int  _mohasebe_maliat(int _hogog,int _year) throws Exception{

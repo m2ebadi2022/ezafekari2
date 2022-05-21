@@ -55,6 +55,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=8
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=Main,Globals,194,0,Main,Process_Globals,17,0,Visual Designer,show_gozaresh_layout.bal,-100,1,show_gozaresh_activity,Globals,30,0,show_gozaresh_activity,lbl_share_Click,107,0,hogog_activity,Activity_Create,163,6,show_gozaresh_activity,lbl_print_Click,131,5,myfunc,Min_to_saatMinRoz,247,0,myfunc,WebViewAssetFile,252,0,hogog_activity,lbl_run_mohasebe_Click,590,6
+NavigationStack=myfunc,WebViewAssetFile,252,0,show_gozaresh_activity,lbl_print_Click,131,5,hogog_activity,lbl_help_tatil_Click,880,0,Visual Designer,show_gozaresh_layout.bal,-100,1,Visual Designer,hogog_layout.bal,-100,1,hogog_activity,lbl_run_mohasebe_Click,600,6,hogog_activity,lbl_share_Click,890,0,show_gozaresh_activity,Activity_KeyPress,102,0,show_gozaresh_activity,Globals,30,0,hogog_activity,lbl_print_Click,905,1,hogog_activity,Globals,96,0
 SelectedBuild=0
 VisibleModules=12,5,10,17,9

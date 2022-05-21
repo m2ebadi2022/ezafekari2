@@ -137,8 +137,6 @@ show_gozaresh_activity.mostCurrent._webview_gozaresh = RemoteObject.createNew ("
 show_gozaresh_activity.mostCurrent._str_file_title = RemoteObject.createImmutable("");
  //BA.debugLineNum = 22;BA.debugLine="Dim str_file_matn As String";
 show_gozaresh_activity.mostCurrent._str_file_matn = RemoteObject.createImmutable("");
- //BA.debugLineNum = 25;BA.debugLine="Dim rp As RuntimePermissions";
-show_gozaresh_activity.mostCurrent._rp = RemoteObject.createNew ("anywheresoftware.b4a.objects.RuntimePermissions");
  //BA.debugLineNum = 26;BA.debugLine="Private B4XLoadingIndicator1 As B4XLoadingIndicat";
 show_gozaresh_activity.mostCurrent._b4xloadingindicator1 = RemoteObject.createNew ("ir.taravatgroup.ezafekari2.b4xloadingindicator");
  //BA.debugLineNum = 27;BA.debugLine="Private pan_all As Panel";

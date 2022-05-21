@@ -28,7 +28,7 @@ Sub Globals
 	Dim str_file_matn As String
 	
 	
-	Dim rp As RuntimePermissions
+	'Dim rp As RuntimePermissions
 	Private B4XLoadingIndicator1 As B4XLoadingIndicator
 	Private pan_all As Panel
 	Private pan_hed_show_gozaresh As Panel

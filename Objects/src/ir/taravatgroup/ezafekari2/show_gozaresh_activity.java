@@ -348,7 +348,6 @@ public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.WebViewWrapper _webview_gozaresh = null;
 public static String _str_file_title = "";
 public static String _str_file_matn = "";
-public anywheresoftware.b4a.objects.RuntimePermissions _rp = null;
 public ir.taravatgroup.ezafekari2.b4xloadingindicator _b4xloadingindicator1 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pan_all = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pan_hed_show_gozaresh = null;

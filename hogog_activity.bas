@@ -99,6 +99,8 @@ Sub Globals
 	Private et_time_h_vij As EditText
 	Private et_time_m_vij As EditText
 	Dim ls_onvanHa As List
+	
+	Private printer As Printer
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -884,3 +886,30 @@ Private Sub lbl_help_tatil_Click
 	myfunc.help_man("روزهای جمعه که برای آن روز دیگری را تعطیل نکنند، اضافه کاری فوق العاده محسوب و با ضریب 1.8 محاسبه می شود.")
 End Sub
 
+
+Private Sub lbl_share_Click
+	Dim FileName As String =Main.current_gozaresh_id&".html"
+	
+	
+	File.WriteString(Starter.Provider.SharedFolder,FileName,str1.ToString)
+	
+	Dim email As Email
+	email.To.Add("aaa@bbb.com")
+	email.Subject = "subject"
+	email.Body = " گزارش حقوق "&str1.ToString&CRLF&"اپلیکیشن اضافه کاری من" &CRLF& "دانلود از بازار"
+	email.Attachments.Add(Starter.Provider.GetFileUri(FileName))
+	
+	Dim in As Intent = email.GetIntent
+	in.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION
+	StartActivity(in)
+End Sub
+
+
+
+Private Sub lbl_print_Click
+	
+	printer.Initialize("")
+
+	'printer.PrintHtml("job", str_file_matn)
+	printer.PrintWebView("job",WebView2)
+End Sub

@@ -679,7 +679,7 @@ myfunc,show_num_pool,0,0,124,126
 
 
 
-myfunc,webviewassetfile,0,1,249,260
+myfunc,webviewassetfile,0,0,249,260
 
 
 
@@ -1275,107 +1275,115 @@ ganon_activity,process_globals,0,1,6,10
 
 
 
-hogog_activity,activity_create,1,0,98,173
+hogog_activity,activity_create,1,0,100,175
 ,b4xloadingindicator1,,et_name_gozaresh,,et_tozih_gozaresh,,pan_all,,pan_hed_gozaresh,,pan_hed_hogog,,pan_load,,pan_mohasebat,,scv_hogog,,webview2,,et_rozekari,,et_time_h,,et_time_h_vij,,et_time_m,,et_time_m_vij,,et_vahed_ezafekari,,et_vahed_ezafekari_vij,,pan_main_hed_hogog,,sp_moon,,sp_year,,webview1,main,time_page_load,main,persiandate,main,color4,,ls_onvanha,,str_web1,,paye,,maskan,,bon,,olad,,fani,,masoliat,,sarparasti,,sanavat,,shift,,bime_tamin,,bime_takmil,,mazaya,,ksorat,dbcode,res,dbcode,sql,,moon_num,,roze_kari,main,size_f1,main,size_f2,main,size_f3,main,main_font,,paye_end,,sanavat_end,,vahed_ezafekari,,vahed_ezafekari_vij
 ,b4xloadingindicator1,,et_name_gozaresh,,et_tozih_gozaresh,,pan_all,,pan_hed_gozaresh,,pan_hed_hogog,,pan_load,,pan_mohasebat,,scv_hogog,,webview2,,et_rozekari,,et_time_h,,et_time_h_vij,,et_time_m,,et_time_m_vij,,et_vahed_ezafekari,,et_vahed_ezafekari_vij,,pan_main_hed_hogog,,sp_moon,,sp_year,,webview1,,ls_onvanha,dbcode,res,,paye,,maskan,,olad,,fani,,masoliat,,bon,,bime_tamin,,bime_takmil,,shift,,sanavat,,sarparasti,,mazaya,,ksorat,,moon_num,,roze_kari,,paye_end,,sanavat_end,,vahed_ezafekari,,vahed_ezafekari_vij
 ,get_data_hogogi,b4xloadingindicator,show,myfunc,fa2en,,et_time_indb,myfunc,set_font,dbcode,read_onvan_db,myfunc,en2fa,,show_num_pool,,calc_vahed_ezafekari,,calc_vahed_ezafekari_vij,dbcode,connect_db,b4xloadingindicator,mainloop,b4xloadingindicator,draw_arc1,b4xloadingindicator,draw_arc2,b4xloadingindicator,draw_fiveball,b4xloadingindicator,draw_fivelines1,b4xloadingindicator,draw_followcircles,b4xloadingindicator,draw_followcircles2,b4xloadingindicator,draw_pacman,b4xloadingindicator,draw_singlecircle,b4xloadingindicator,draw_square,b4xloadingindicator,draw_squarerounded,b4xloadingindicator,draw_tencircles,b4xloadingindicator,draw_tenlines,b4xloadingindicator,draw_threecircles1,b4xloadingindicator,draw_threecircles2,b4xloadingindicator,draw_threecircles3,b4xloadingindicator,draw_xarc,b4xloadingindicator,setalpha,b4xloadingindicator,square,dbcode,all_ezafekari_mah,myfunc,font_filename,myfunc,show_num_pool
-hogog_activity,get_data_hogogi,0,0,317,380
+hogog_activity,get_data_hogogi,0,0,319,382
 dbcode,res,dbcode,sql,,paye,,maskan,,olad,,fani,,masoliat,,bon,,bime_tamin,,bime_takmil,,shift,,sanavat,,sarparasti,,mazaya,,ksorat
 dbcode,res,,paye,,maskan,,olad,,fani,,masoliat,,bon,,bime_tamin,,bime_takmil,,shift,,sanavat,,sarparasti,,mazaya,,ksorat
 dbcode,connect_db
-hogog_activity,et_time_indb,1,0,234,287
+hogog_activity,et_time_indb,1,0,236,289
 ,sp_moon,,moon_num,,sp_year,,et_time_h,,et_time_m,,et_time_h_vij,,et_time_m_vij,,roze_kari,,et_rozekari,dbcode,res,dbcode,sql
 ,moon_num,,roze_kari,dbcode,res
 dbcode,all_ezafekari_mah,dbcode,connect_db
-hogog_activity,show_num_pool,0,0,231,233
+hogog_activity,show_num_pool,0,0,233,235
 
 
 
-hogog_activity,calc_vahed_ezafekari,1,0,177,192
+hogog_activity,calc_vahed_ezafekari,1,0,179,194
 ,paye_end,,paye,,roze_kari,,sanavat_end,,sanavat,,vahed_ezafekari,,et_vahed_ezafekari
 ,paye_end,,sanavat_end,,vahed_ezafekari
 myfunc,show_num_pool
-hogog_activity,calc_vahed_ezafekari_vij,1,0,194,208
+hogog_activity,calc_vahed_ezafekari_vij,1,0,196,210
 ,paye_end,,paye,,roze_kari,,sanavat_end,,sanavat,,vahed_ezafekari_vij,,et_vahed_ezafekari_vij
 ,paye_end,,sanavat_end,,vahed_ezafekari_vij
 myfunc,show_num_pool
-hogog_activity,activity_keypress,0,0,303,315
+hogog_activity,activity_keypress,0,0,305,317
 ,pan_mohasebat
 
 ,lbl_back_click
-hogog_activity,lbl_back_click,0,0,297,300
+hogog_activity,lbl_back_click,0,0,299,302
 
 
 
-hogog_activity,activity_pause,0,0,292,294
+hogog_activity,activity_pause,0,0,294,296
 
 
 
-hogog_activity,activity_resume,0,0,288,290
+hogog_activity,activity_resume,0,0,290,292
 
 
 
-hogog_activity,et_vahed_ezafekari_textchanged,1,0,212,215
+hogog_activity,et_vahed_ezafekari_textchanged,1,0,214,217
 ,et_vahed_ezafekari
 
 myfunc,change_formater
-hogog_activity,et_vahed_ezafekari_vij_textchanged,1,0,217,220
+hogog_activity,et_vahed_ezafekari_vij_textchanged,1,0,219,222
 ,et_vahed_ezafekari_vij
 
 myfunc,change_formater
-hogog_activity,globals,0,1,12,96
+hogog_activity,globals,0,1,12,98
 ,moon_num
 ,moon_num
 
-hogog_activity,lbl_backto_hogog_click,0,0,843,846
+hogog_activity,lbl_backto_hogog_click,0,0,845,848
 ,pan_mohasebat
 
 
-hogog_activity,lbl_help_tatil_click,1,0,876,879
+hogog_activity,lbl_help_tatil_click,1,0,878,881
 
 
 myfunc,help_man
-hogog_activity,lbl_refresh_vahed_click,1,0,867,869
+hogog_activity,lbl_print_click,0,0,903,909
+,printer,,webview2
+
+
+hogog_activity,lbl_refresh_vahed_click,1,0,869,871
 ,paye_end,,paye,,roze_kari,,sanavat_end,,sanavat,,vahed_ezafekari,,et_vahed_ezafekari
 ,paye_end,,sanavat_end,,vahed_ezafekari
 ,calc_vahed_ezafekari,myfunc,show_num_pool
-hogog_activity,lbl_refresh_vahed_vij_click,1,0,871,873
+hogog_activity,lbl_refresh_vahed_vij_click,1,0,873,875
 ,paye_end,,paye,,roze_kari,,sanavat_end,,sanavat,,vahed_ezafekari_vij,,et_vahed_ezafekari_vij
 ,paye_end,,sanavat_end,,vahed_ezafekari_vij
 ,calc_vahed_ezafekari_vij,myfunc,show_num_pool
-hogog_activity,lbl_run_mohasebe_click,1,1,383,602
+hogog_activity,lbl_run_mohasebe_click,1,0,385,604
 ,et_rozekari,,roze_kari,,et_time_h,,et_time_m,,et_time_h_vij,,et_time_m_vij,,et_vahed_ezafekari,,et_vahed_ezafekari_vij,,pan_mohasebat,,str1,dbcode,res,dbcode,sql,,sp_year,,moon_num,,sp_moon,,ls_onvanha,,paye_end,,maskan_end,,bon_end,,olad_end,,sanavat_end,,fani_end,,masoliat_end,,sarparasti_end,,shift_end,,shift,,mazaya_end,,vahed_ezafekari,,ezafekari_end_vij,,vahed_ezafekari_vij,,ezafekari_end,,bime_tamin,,bime_tamin_end,,bime_takmil,,maliat_end,,ksorat,,hogog_nakhales,,jame_kosorat,,hogog_khales,,webview2,,paye,,sanavat,,maskan,,bon,,olad,,fani,,masoliat,,sarparasti,,mazaya,main,saat_kar_min
 ,roze_kari,dbcode,res,,paye_end,,sanavat_end,,vahed_ezafekari,,vahed_ezafekari_vij,,maskan_end,,bon_end,,olad_end,,fani_end,,masoliat_end,,sarparasti_end,,mazaya_end,,shift_end,,ezafekari_end,,ezafekari_end_vij,,hogog_nakhales,,bime_tamin_end,,maliat_end,,jame_kosorat,,hogog_khales
 ,calc_vahed_ezafekari,,calc_vahed_ezafekari_vij,,mohasebe,dbcode,connect_db,myfunc,en2fa,dbcode,all_morakhasi_mah,,show_num_pool,myfunc,show_num_pool,,mohasebe_maliat,dbcode,get_setting_byname,myfunc,min_to_saatminroz
-hogog_activity,mohasebe,0,0,604,703
+hogog_activity,mohasebe,0,0,606,705
 ,paye_end,,paye,,roze_kari,,sanavat_end,,sanavat,,maskan_end,,maskan,,bon_end,,bon,,olad_end,,olad,,fani_end,,fani,,masoliat_end,,masoliat,,sarparasti_end,,sarparasti,,mazaya_end,,mazaya,,shift_end,,shift,,vahed_ezafekari,,et_vahed_ezafekari,,ezafekari_end,,et_time_h,,et_time_m,,vahed_ezafekari_vij,,et_vahed_ezafekari_vij,,ezafekari_end_vij,,et_time_h_vij,,et_time_m_vij,,hogog_nakhales,,bime_tamin_end,,maliat_end,,sp_year,,jame_kosorat,,bime_takmil,,ksorat,,hogog_khales
 ,paye_end,,sanavat_end,,maskan_end,,bon_end,,olad_end,,fani_end,,masoliat_end,,sarparasti_end,,mazaya_end,,shift_end,,vahed_ezafekari,,ezafekari_end,,vahed_ezafekari_vij,,ezafekari_end_vij,,hogog_nakhales,,bime_tamin_end,,maliat_end,,jame_kosorat,,hogog_khales
 ,mohasebe_maliat
-hogog_activity,lbl_save_gozaresh_click,1,0,808,811
+hogog_activity,lbl_save_gozaresh_click,1,0,810,813
 ,et_name_gozaresh,,sp_moon,,sp_year,,pan_all
 
 
-hogog_activity,lbl_save_gozaresh_end_click,0,0,852,855
+hogog_activity,lbl_save_gozaresh_end_click,0,0,854,857
 ,pan_all,main,persiandate,,et_name_gozaresh,,et_tozih_gozaresh,,str1,,hogog_nakhales,,hogog_khales,main,buy_index,dbcode,res,dbcode,sql
 main,buy_index,dbcode,res
 ,save_gozaresh,myfunc,check_karid,myfunc,num_list,myfunc,fa2en,dbcode,add_gozaresh,dbcode,connect_db
-hogog_activity,save_gozaresh,0,0,813,840
+hogog_activity,save_gozaresh,0,0,815,842
 main,persiandate,,et_name_gozaresh,,et_tozih_gozaresh,,str1,,hogog_nakhales,,hogog_khales,main,buy_index,dbcode,res,dbcode,sql
 main,buy_index,dbcode,res
 myfunc,check_karid,myfunc,num_list,myfunc,fa2en,dbcode,add_gozaresh,dbcode,connect_db
-hogog_activity,mohasebe_maliat,0,0,704,797
+hogog_activity,lbl_share_click,0,0,884,899
+main,current_gozaresh_id,starter,provider,,str1
+
+fileprovider,getfileuri
+hogog_activity,mohasebe_maliat,0,0,706,799
 
 
 
-hogog_activity,pan_all_click,0,0,861,863
+hogog_activity,pan_all_click,0,0,863,865
 ,pan_all
 
 
-hogog_activity,pan_mohasebat_click,0,0,848,850
+hogog_activity,pan_mohasebat_click,0,0,850,852
 
 
 
-hogog_activity,panel7_click,0,0,857,859
+hogog_activity,panel7_click,0,0,859,861
 
 
 
@@ -1383,18 +1391,34 @@ hogog_activity,process_globals,0,1,6,10
 
 
 
-hogog_activity,sp_moon_itemclick,1,0,799,802
+hogog_activity,sp_moon_itemclick,1,0,801,804
 ,sp_moon,,moon_num,,sp_year,,et_time_h,,et_time_m,,et_time_h_vij,,et_time_m_vij,,roze_kari,,et_rozekari,dbcode,res,dbcode,sql
 ,moon_num,,roze_kari,dbcode,res
 ,et_time_indb,dbcode,all_ezafekari_mah,dbcode,connect_db
-hogog_activity,sp_year_itemclick,1,0,804,806
+hogog_activity,sp_year_itemclick,1,0,806,808
 ,sp_moon,,moon_num,,sp_year,,et_time_h,,et_time_m,,et_time_h_vij,,et_time_m_vij,,roze_kari,,et_rozekari,dbcode,res,dbcode,sql
 ,moon_num,,roze_kari,dbcode,res
 ,et_time_indb,dbcode,all_ezafekari_mah,dbcode,connect_db
-hogog_activity,time_page_load_tick,0,0,225,229
+hogog_activity,time_page_load_tick,0,0,227,231
 ,pan_load,,b4xloadingindicator1,main,time_page_load
 
 b4xloadingindicator,hide
+fileprovider,getfileuri,0,0,22,36
+
+
+
+fileprovider,initialize,0,0,8,19
+
+
+
+fileprovider,class_globals,0,0,2,6
+
+
+
+fileprovider,setfileuriasintentdata,0,0,40,44
+
+
+,getfileuri
 morakhasi_activity,activity_create,1,0,58,71
 ,pan_hed_mandemorakh,,scrollview1,,chk_manfi,,et_mande_d,,et_mande_h,,et_mande_m,,lbl_box_edit,,lbl_estehgag_darmah,,lbl_help_mandeh,,lbl_mah,,lbl_mande_show,,lbl_mande_ta_emroz,,lbl_mande_ta_inendmah,,lbl_morakhasi_bahogog,,lbl_morakhasi_bihogog,,lbl_morakhasi_estehgag,,lbl_morakhasi_estelaj,,pan_all_morakhasi,main,persiandate,main,color4,dbcode,res,dbcode,sql,,mande_d,,mande_h,,mande_m,,morkasidarmah_d,,morkasidarmah_h,,morkasidarmah_m,main,size_f1,main,size_f2,main,size_f3,main,main_font
 ,pan_hed_mandemorakh,,scrollview1,,chk_manfi,,et_mande_d,,et_mande_h,,et_mande_m,,lbl_box_edit,,lbl_estehgag_darmah,,lbl_help_mandeh,,lbl_mah,,lbl_mande_show,,lbl_mande_ta_emroz,,lbl_mande_ta_inendmah,,lbl_morakhasi_bahogog,,lbl_morakhasi_bihogog,,lbl_morakhasi_estehgag,,lbl_morakhasi_estelaj,,pan_all_morakhasi,dbcode,res,,mande_d,,mande_h,,mande_m,,morkasidarmah_d,,morkasidarmah_h,,morkasidarmah_m
@@ -1639,22 +1663,6 @@ setting_activity,skb_f3_valuechanged,0,0,362,364
 ,lbl_skb_f3
 
 
-fileprovider,getfileuri,0,0,22,36
-
-
-
-fileprovider,initialize,0,0,8,19
-
-
-
-fileprovider,class_globals,0,0,2,6
-
-
-
-fileprovider,setfileuriasintentdata,0,0,40,44
-
-
-,getfileuri
 shift_activity,activity_create,1,0,330,507
 ,et_note,,et_num_roz,,lbl_date_in_note,,lbl_hed_set_shift,,lbl_mah,,lbl_mah_end,,lbl_moon_name,,lbl_roz,,lbl_roz_end,,lbl_year_tagvim,,lbl_years,,lbl_years_end,,ls_set_shift,,pan_all_note,,pan_all_setsift,,pan_hed_shift,,scrol_v,,sp_noe_shift,,ez1,,ez10,,ez11,,ez12,,ez13,,ez14,,ez15,,ez16,,ez17,,ez18,,ez19,,ez2,,ez20,,ez21,,ez22,,ez23,,ez24,,ez25,,ez26,,ez27,,ez28,,ez29,,ez3,,ez30,,ez31,,ez32,,ez33,,ez34,,ez35,,ez36,,ez37,,ez38,,ez39,,ez4,,ez40,,ez41,,ez42,,ez5,,ez6,,ez7,,ez8,,ez9,,lb1,,lb10,,lb11,,lb12,,lb13,,lb14,,lb15,,lb16,,lb17,,lb18,,lb19,,lb2,,lb20,,lb21,,lb22,,lb23,,lb24,,lb25,,lb26,,lb27,,lb28,,lb29,,lb3,,lb30,,lb31,,lb32,,lb33,,lb34,,lb35,,lb36,,lb37,,lb38,,lb39,,lb4,,lb40,,lb41,,lb42,,lb5,,lb6,,lb7,,lb8,,lb9,,lbl_ezafekari_day,,lbl_morakhasi_day,,lbl_note_day,,lbl_taradod_day,,lbl_today,,lbl_today_monasebat,,no1,,no10,,no11,,no12,,no13,,no14,,no15,,no16,,no17,,no18,,no19,,no2,,no20,,no21,,no22,,no23,,no24,,no25,,no26,,no27,,no28,,no29,,no3,,no30,,no31,,no32,,no33,,no34,,no35,,no36,,no37,,no38,,no39,,no4,,no40,,no41,,no42,,no5,,no6,,no7,,no8,,no9,,p1,,p10,,p11,,p12,,p13,,p14,,p15,,p16,,p17,,p18,,p19,,p2,,p20,,p21,,p22,,p23,,p24,,p25,,p26,,p27,,p28,,p29,,p3,,p30,,p31,,p32,,p33,,p34,,p35,,p36,,p37,,p38,,p39,,p4,,p40,,p41,,p42,,p5,,p6,,p7,,p8,,p9,,sh1,,sh10,,sh11,,sh12,,sh13,,sh14,,sh15,,sh16,,sh17,,sh18,,sh19,,sh2,,sh20,,sh21,,sh22,,sh23,,sh24,,sh25,,sh26,,sh27,,sh28,,sh29,,sh3,,sh30,,sh31,,sh32,,sh33,,sh34,,sh35,,sh36,,sh37,,sh38,,sh39,,sh4,,sh40,,sh41,,sh42,,sh5,,sh6,,sh7,,sh8,,sh9,main,color4,,lbl0,,p0,,sh0,,ez0,,no0,,ls_shift_moon,,ls_tatili_moon,,ls_note_moon,,list_sift_olgo,,lb,,pa,,sh,,ez,,no,,this_year,,date,,this_moon,,this_day,,current_moon,,rspop_year_tagvim,,rspop_moon_tagvim,,rspop_year,,rspop_mah,,lbl_mah_tagid,,rspop_roz,,rspop_year_end,,rspop_mah_end,,lbl_mah_end_tagid,,rspop_roz_end,main,main_font,,selectedday_id,dbcode,res,dbcode,sql,,start_day,,index_i_today,main,size_f1,main,size_f2,main,size_f3
 ,et_note,,et_num_roz,,lbl_date_in_note,,lbl_hed_set_shift,,lbl_mah,,lbl_mah_end,,lbl_moon_name,,lbl_roz,,lbl_roz_end,,lbl_year_tagvim,,lbl_years,,lbl_years_end,,ls_set_shift,,pan_all_note,,pan_all_setsift,,pan_hed_shift,,scrol_v,,sp_noe_shift,,ez1,,ez10,,ez11,,ez12,,ez13,,ez14,,ez15,,ez16,,ez17,,ez18,,ez19,,ez2,,ez20,,ez21,,ez22,,ez23,,ez24,,ez25,,ez26,,ez27,,ez28,,ez29,,ez3,,ez30,,ez31,,ez32,,ez33,,ez34,,ez35,,ez36,,ez37,,ez38,,ez39,,ez4,,ez40,,ez41,,ez42,,ez5,,ez6,,ez7,,ez8,,ez9,,lb1,,lb10,,lb11,,lb12,,lb13,,lb14,,lb15,,lb16,,lb17,,lb18,,lb19,,lb2,,lb20,,lb21,,lb22,,lb23,,lb24,,lb25,,lb26,,lb27,,lb28,,lb29,,lb3,,lb30,,lb31,,lb32,,lb33,,lb34,,lb35,,lb36,,lb37,,lb38,,lb39,,lb4,,lb40,,lb41,,lb42,,lb5,,lb6,,lb7,,lb8,,lb9,,lbl_ezafekari_day,,lbl_morakhasi_day,,lbl_note_day,,lbl_taradod_day,,lbl_today,,lbl_today_monasebat,,no1,,no10,,no11,,no12,,no13,,no14,,no15,,no16,,no17,,no18,,no19,,no2,,no20,,no21,,no22,,no23,,no24,,no25,,no26,,no27,,no28,,no29,,no3,,no30,,no31,,no32,,no33,,no34,,no35,,no36,,no37,,no38,,no39,,no4,,no40,,no41,,no42,,no5,,no6,,no7,,no8,,no9,,p1,,p10,,p11,,p12,,p13,,p14,,p15,,p16,,p17,,p18,,p19,,p2,,p20,,p21,,p22,,p23,,p24,,p25,,p26,,p27,,p28,,p29,,p3,,p30,,p31,,p32,,p33,,p34,,p35,,p36,,p37,,p38,,p39,,p4,,p40,,p41,,p42,,p5,,p6,,p7,,p8,,p9,,sh1,,sh10,,sh11,,sh12,,sh13,,sh14,,sh15,,sh16,,sh17,,sh18,,sh19,,sh2,,sh20,,sh21,,sh22,,sh23,,sh24,,sh25,,sh26,,sh27,,sh28,,sh29,,sh3,,sh30,,sh31,,sh32,,sh33,,sh34,,sh35,,sh36,,sh37,,sh38,,sh39,,sh4,,sh40,,sh41,,sh42,,sh5,,sh6,,sh7,,sh8,,sh9,,lb,,pa,,sh,,ez,,no,,this_year,,this_moon,,this_day,,current_moon,,lbl_mah_tagid,,lbl_mah_end_tagid,,selectedday_id,dbcode,res,,start_day,,index_i_today
