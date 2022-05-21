@@ -8,7 +8,7 @@ public class info_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (info_activity) ","info_activity",3,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,22);
+		Debug.PushSubsStack("Activity_Create (info_activity) ","info_activity",11,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,22);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.info_activity.remoteMe.runUserSub(false, "info_activity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 22;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -37,7 +37,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (info_activity) ","info_activity",3,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,44);
+		Debug.PushSubsStack("Activity_KeyPress (info_activity) ","info_activity",11,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,44);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.info_activity.remoteMe.runUserSub(false, "info_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 44;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -50,11 +50,11 @@ Debug.ShouldStop(8192);
 _lbl_back_click();
  BA.debugLineNum = 47;BA.debugLine="Return True";
 Debug.ShouldStop(16384);
-if (true) return info_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return info_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 49;BA.debugLine="Return False";
 Debug.ShouldStop(65536);
-if (true) return info_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return info_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 51;BA.debugLine="End Sub";
 Debug.ShouldStop(262144);
@@ -68,7 +68,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (info_activity) ","info_activity",3,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,35);
+		Debug.PushSubsStack("Activity_Pause (info_activity) ","info_activity",11,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,35);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.info_activity.remoteMe.runUserSub(false, "info_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 35;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -85,7 +85,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (info_activity) ","info_activity",3,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,31);
+		Debug.PushSubsStack("Activity_Resume (info_activity) ","info_activity",11,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,31);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.info_activity.remoteMe.runUserSub(false, "info_activity","activity_resume");}
  BA.debugLineNum = 31;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(1073741824);
@@ -112,7 +112,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (info_activity) ","info_activity",3,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,39);
+		Debug.PushSubsStack("lbl_back_Click (info_activity) ","info_activity",11,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,39);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.info_activity.remoteMe.runUserSub(false, "info_activity","lbl_back_click");}
  BA.debugLineNum = 39;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(64);
@@ -131,7 +131,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_email_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_email_Click (info_activity) ","info_activity",3,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,88);
+		Debug.PushSubsStack("lbl_email_Click (info_activity) ","info_activity",11,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,88);
 if (RapidSub.canDelegate("lbl_email_click")) { return ir.taravatgroup.ezafekari2.info_activity.remoteMe.runUserSub(false, "info_activity","lbl_email_click");}
 RemoteObject _in2 = RemoteObject.declareNull("anywheresoftware.b4a.objects.IntentWrapper");
 RemoteObject _jo2 = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
@@ -164,7 +164,7 @@ info_activity.mostCurrent.__c.runVoidMethod ("StartActivity",info_activity.proce
        catch (Exception e9) {
 			BA.rdebugUtils.runVoidMethod("setLastException",info_activity.processBA, e9.toString()); BA.debugLineNum = 102;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(32);
-info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","09961486",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
+info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","819005454",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 103;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
 Debug.ShouldStop(64);
 info_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برنامه جمیل را نصب/فعال کنید")),(Object)(info_activity.mostCurrent.__c.getField(true,"False")));
@@ -181,7 +181,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_insta_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_insta_Click (info_activity) ","info_activity",3,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,71);
+		Debug.PushSubsStack("lbl_insta_Click (info_activity) ","info_activity",11,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,71);
 if (RapidSub.canDelegate("lbl_insta_click")) { return ir.taravatgroup.ezafekari2.info_activity.remoteMe.runUserSub(false, "info_activity","lbl_insta_click");}
 RemoteObject _in1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.IntentWrapper");
 RemoteObject _jo = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
@@ -210,7 +210,7 @@ info_activity.mostCurrent.__c.runVoidMethod ("StartActivity",info_activity.proce
        catch (Exception e8) {
 			BA.rdebugUtils.runVoidMethod("setLastException",info_activity.processBA, e8.toString()); BA.debugLineNum = 82;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(131072);
-info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","09895947",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
+info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","818939915",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 83;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
 Debug.ShouldStop(262144);
 info_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برنامه اینستاگرام را نصب کنید")),(Object)(info_activity.mostCurrent.__c.getField(true,"False")));
@@ -227,7 +227,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_whatsapp_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_whatsapp_Click (info_activity) ","info_activity",3,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,53);
+		Debug.PushSubsStack("lbl_whatsapp_Click (info_activity) ","info_activity",11,info_activity.mostCurrent.activityBA,info_activity.mostCurrent,53);
 if (RapidSub.canDelegate("lbl_whatsapp_click")) { return ir.taravatgroup.ezafekari2.info_activity.remoteMe.runUserSub(false, "info_activity","lbl_whatsapp_click");}
 RemoteObject _intent1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.IntentWrapper");
 RemoteObject _jo1 = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
@@ -256,7 +256,7 @@ info_activity.mostCurrent.__c.runVoidMethod ("StartActivity",info_activity.proce
        catch (Exception e8) {
 			BA.rdebugUtils.runVoidMethod("setLastException",info_activity.processBA, e8.toString()); BA.debugLineNum = 63;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1073741824);
-info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","09830410",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
+info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","818874378",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 64;BA.debugLine="ToastMessageShow(\"برنامه واتساپ را نصب کنید\",Fal";
 Debug.ShouldStop(-2147483648);
 info_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برنامه واتساپ را نصب کنید")),(Object)(info_activity.mostCurrent.__c.getField(true,"False")));

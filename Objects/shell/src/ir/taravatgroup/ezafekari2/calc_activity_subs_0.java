@@ -8,7 +8,7 @@ public class calc_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,43);
+		Debug.PushSubsStack("Activity_Create (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,43);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 43;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -43,7 +43,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,224);
+		Debug.PushSubsStack("Activity_KeyPress (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,224);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 224;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -56,11 +56,11 @@ Debug.ShouldStop(2);
 _lbl_back_click();
  BA.debugLineNum = 227;BA.debugLine="Return True";
 Debug.ShouldStop(4);
-if (true) return calc_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return calc_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 229;BA.debugLine="Return False";
 Debug.ShouldStop(16);
-if (true) return calc_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return calc_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 231;BA.debugLine="End Sub";
 Debug.ShouldStop(64);
@@ -74,7 +74,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,105);
+		Debug.PushSubsStack("Activity_Pause (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,105);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 105;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -91,7 +91,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,101);
+		Debug.PushSubsStack("Activity_Resume (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,101);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","activity_resume");}
  BA.debugLineNum = 101;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(16);
@@ -107,7 +107,7 @@ finally {
 		}}
 public static RemoteObject  _calcpnl_click() throws Exception{
 try {
-		Debug.PushSubsStack("calcpnl_Click (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,110);
+		Debug.PushSubsStack("calcpnl_Click (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,110);
 if (RapidSub.canDelegate("calcpnl_click")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","calcpnl_click");}
  BA.debugLineNum = 110;BA.debugLine="Sub calcpnl_Click";
 Debug.ShouldStop(8192);
@@ -123,7 +123,7 @@ finally {
 		}}
 public static RemoteObject  _docalc(RemoteObject _math,RemoteObject _newmath) throws Exception{
 try {
-		Debug.PushSubsStack("docalc (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,179);
+		Debug.PushSubsStack("docalc (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,179);
 if (RapidSub.canDelegate("docalc")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","docalc", _math, _newmath);}
 Debug.locals.put("math", _math);
 Debug.locals.put("newmath", _newmath);
@@ -192,7 +192,7 @@ calc_activity.mostCurrent._totallb.runMethod(true,"setText",BA.ObjectToCharSeque
        catch (Exception e23) {
 			BA.rdebugUtils.runVoidMethod("setLastException",calc_activity.processBA, e23.toString()); BA.debugLineNum = 206;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(8192);
-calc_activity.mostCurrent.__c.runVoidMethod ("LogImpl","014221339",BA.ObjectToString(calc_activity.mostCurrent.__c.runMethod(false,"LastException",calc_activity.mostCurrent.activityBA)),0);
+calc_activity.mostCurrent.__c.runVoidMethod ("LogImpl","813500443",BA.ObjectToString(calc_activity.mostCurrent.__c.runMethod(false,"LastException",calc_activity.mostCurrent.activityBA)),0);
  };
  BA.debugLineNum = 210;BA.debugLine="End Sub";
 Debug.ShouldStop(131072);
@@ -206,7 +206,7 @@ finally {
 		}}
 public static RemoteObject  _font_setting() throws Exception{
 try {
-		Debug.PushSubsStack("font_setting (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,58);
+		Debug.PushSubsStack("font_setting (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,58);
 if (RapidSub.canDelegate("font_setting")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","font_setting");}
 RemoteObject _font_name = RemoteObject.createImmutable("");
 RemoteObject _view1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ConcreteViewWrapper");
@@ -361,7 +361,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,216);
+		Debug.PushSubsStack("lbl_back_Click (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,216);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","lbl_back_click");}
  BA.debugLineNum = 216;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(8388608);
@@ -380,7 +380,7 @@ finally {
 		}}
 public static RemoteObject  _nrbtn_click() throws Exception{
 try {
-		Debug.PushSubsStack("nrbtn_Click (calc_activity) ","calc_activity",6,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,114);
+		Debug.PushSubsStack("nrbtn_Click (calc_activity) ","calc_activity",5,calc_activity.mostCurrent.activityBA,calc_activity.mostCurrent,114);
 if (RapidSub.canDelegate("nrbtn_click")) { return ir.taravatgroup.ezafekari2.calc_activity.remoteMe.runUserSub(false, "calc_activity","nrbtn_click");}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 RemoteObject _btntag = RemoteObject.createImmutable("");
@@ -455,7 +455,7 @@ calc_activity.mostCurrent._totallb.runMethod(true,"setText",BA.ObjectToCharSeque
  BA.debugLineNum = 145;BA.debugLine="If nr1 = \"\" Then Return 'exit if nr is empty";
 Debug.ShouldStop(65536);
 if (RemoteObject.solveBoolean("=",calc_activity.mostCurrent._nr1,BA.ObjectToString(""))) { 
-if (true) return RemoteObject.createImmutable("");};
+Debug.CheckDeviceExceptions();if (true) return RemoteObject.createImmutable("");};
  BA.debugLineNum = 148;BA.debugLine="Select btntag";
 Debug.ShouldStop(524288);
 switch (BA.switchObjectToInt(_btntag,BA.ObjectToString("plus"),BA.ObjectToString("minus"),BA.ObjectToString("mul"),BA.ObjectToString("div"),BA.ObjectToString("eq"),BA.ObjectToString("AC"),BA.ObjectToString("."))) {

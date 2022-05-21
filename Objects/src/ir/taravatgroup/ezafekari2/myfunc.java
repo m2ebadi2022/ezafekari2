@@ -15,18 +15,18 @@ public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
-public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
+public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
-public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
+public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
@@ -162,6 +162,27 @@ RDebugUtils.currentLine=6881312;
  //BA.debugLineNum = 6881312;BA.debugLine="End Sub";
 return null;
 }
+public static String  _help_man(anywheresoftware.b4a.BA _ba,String _matn) throws Exception{
+RDebugUtils.currentModule="myfunc";
+if (Debug.shouldDelegate(null, "help_man", false))
+	 {return ((String) Debug.delegate(null, "help_man", new Object[] {_ba,_matn}));}
+int _result = 0;
+RDebugUtils.currentLine=7208960;
+ //BA.debugLineNum = 7208960;BA.debugLine="Sub help_man(matn As String)";
+RDebugUtils.currentLine=7208962;
+ //BA.debugLineNum = 7208962;BA.debugLine="Dim result As Int";
+_result = 0;
+RDebugUtils.currentLine=7208963;
+ //BA.debugLineNum = 7208963;BA.debugLine="result = Msgbox2(matn, \"راهنما\", \"باشه\", \"\", \"\",";
+_result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence(_matn),BA.ObjectToCharSequence("راهنما"),"باشه","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"help.png").getObject()),_ba);
+RDebugUtils.currentLine=7208964;
+ //BA.debugLineNum = 7208964;BA.debugLine="If result = DialogResponse.Positive Then";
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
+ };
+RDebugUtils.currentLine=7208969;
+ //BA.debugLineNum = 7208969;BA.debugLine="End Sub";
+return "";
+}
 public static anywheresoftware.b4a.objects.collections.List  _min_to_saatminroz(anywheresoftware.b4a.BA _ba,int _min1) throws Exception{
 RDebugUtils.currentModule="myfunc";
 if (Debug.shouldDelegate(null, "min_to_saatminroz", false))
@@ -230,27 +251,6 @@ if (true) return _ls_saatmin;
 RDebugUtils.currentLine=7274525;
  //BA.debugLineNum = 7274525;BA.debugLine="End Sub";
 return null;
-}
-public static String  _help_man(anywheresoftware.b4a.BA _ba,String _matn) throws Exception{
-RDebugUtils.currentModule="myfunc";
-if (Debug.shouldDelegate(null, "help_man", false))
-	 {return ((String) Debug.delegate(null, "help_man", new Object[] {_ba,_matn}));}
-int _result = 0;
-RDebugUtils.currentLine=7208960;
- //BA.debugLineNum = 7208960;BA.debugLine="Sub help_man(matn As String)";
-RDebugUtils.currentLine=7208962;
- //BA.debugLineNum = 7208962;BA.debugLine="Dim result As Int";
-_result = 0;
-RDebugUtils.currentLine=7208963;
- //BA.debugLineNum = 7208963;BA.debugLine="result = Msgbox2(matn, \"راهنما\", \"باشه\", \"\", \"\",";
-_result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence(_matn),BA.ObjectToCharSequence("راهنما"),"باشه","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"help.png").getObject()),_ba);
-RDebugUtils.currentLine=7208964;
- //BA.debugLineNum = 7208964;BA.debugLine="If result = DialogResponse.Positive Then";
-if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
- };
-RDebugUtils.currentLine=7208969;
- //BA.debugLineNum = 7208969;BA.debugLine="End Sub";
-return "";
 }
 public static String  _set_font(anywheresoftware.b4a.BA _ba,anywheresoftware.b4a.objects.ActivityWrapper _activity1) throws Exception{
 RDebugUtils.currentModule="myfunc";
@@ -572,27 +572,27 @@ RDebugUtils.currentModule="myfunc";
 if (Debug.shouldDelegate(null, "webviewassetfile", false))
 	 {return ((String) Debug.delegate(null, "webviewassetfile", new Object[] {_ba,_filename}));}
 anywheresoftware.b4j.object.JavaObject _jo = null;
-RDebugUtils.currentLine=31981568;
- //BA.debugLineNum = 31981568;BA.debugLine="Sub WebViewAssetFile (FileName As String) As Strin";
-RDebugUtils.currentLine=31981571;
- //BA.debugLineNum = 31981571;BA.debugLine="Dim jo As JavaObject";
+RDebugUtils.currentLine=7340032;
+ //BA.debugLineNum = 7340032;BA.debugLine="Sub WebViewAssetFile (FileName As String) As Strin";
+RDebugUtils.currentLine=7340035;
+ //BA.debugLineNum = 7340035;BA.debugLine="Dim jo As JavaObject";
 _jo = new anywheresoftware.b4j.object.JavaObject();
-RDebugUtils.currentLine=31981572;
- //BA.debugLineNum = 31981572;BA.debugLine="jo.InitializeStatic(\"anywheresoftware.b4a.objects";
+RDebugUtils.currentLine=7340036;
+ //BA.debugLineNum = 7340036;BA.debugLine="jo.InitializeStatic(\"anywheresoftware.b4a.objects";
 _jo.InitializeStatic("anywheresoftware.b4a.objects.streams.File");
-RDebugUtils.currentLine=31981573;
- //BA.debugLineNum = 31981573;BA.debugLine="If jo.GetField(\"virtualAssetsFolder\") = Null Then";
+RDebugUtils.currentLine=7340037;
+ //BA.debugLineNum = 7340037;BA.debugLine="If jo.GetField(\"virtualAssetsFolder\") = Null Then";
 if (_jo.GetField("virtualAssetsFolder")== null) { 
-RDebugUtils.currentLine=31981574;
- //BA.debugLineNum = 31981574;BA.debugLine="Return \"file:///android_asset/\" & FileName.ToLow";
+RDebugUtils.currentLine=7340038;
+ //BA.debugLineNum = 7340038;BA.debugLine="Return \"file:///android_asset/\" & FileName.ToLow";
 if (true) return "file:///android_asset/"+_filename.toLowerCase();
  }else {
-RDebugUtils.currentLine=31981576;
- //BA.debugLineNum = 31981576;BA.debugLine="Return \"file://\" & File.Combine(jo.GetField(\"vir";
+RDebugUtils.currentLine=7340040;
+ //BA.debugLineNum = 7340040;BA.debugLine="Return \"file://\" & File.Combine(jo.GetField(\"vir";
 if (true) return "file://"+anywheresoftware.b4a.keywords.Common.File.Combine(BA.ObjectToString(_jo.GetField("virtualAssetsFolder")),BA.ObjectToString(_jo.RunMethod("getUnpackedVirtualAssetFile",new Object[]{(Object)(_filename)})));
  };
-RDebugUtils.currentLine=31981579;
- //BA.debugLineNum = 31981579;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7340043;
+ //BA.debugLineNum = 7340043;BA.debugLine="End Sub";
 return "";
 }
 }

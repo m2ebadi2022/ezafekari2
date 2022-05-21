@@ -8,7 +8,7 @@ public class eidi_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,24);
+		Debug.PushSubsStack("Activity_Create (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,24);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -70,7 +70,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,69);
+		Debug.PushSubsStack("Activity_KeyPress (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,69);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 69;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -83,11 +83,11 @@ Debug.ShouldStop(64);
 _lbl_back_click();
  BA.debugLineNum = 72;BA.debugLine="Return True";
 Debug.ShouldStop(128);
-if (true) return eidi_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return eidi_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 74;BA.debugLine="Return False";
 Debug.ShouldStop(512);
-if (true) return eidi_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return eidi_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 76;BA.debugLine="End Sub";
 Debug.ShouldStop(2048);
@@ -101,7 +101,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,59);
+		Debug.PushSubsStack("Activity_Pause (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,59);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 59;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -118,7 +118,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,55);
+		Debug.PushSubsStack("Activity_Resume (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,55);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","activity_resume");}
  BA.debugLineNum = 55;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(4194304);
@@ -134,7 +134,7 @@ finally {
 		}}
 public static RemoteObject  _btn_mohasebe_eidi_click() throws Exception{
 try {
-		Debug.PushSubsStack("btn_mohasebe_eidi_Click (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,78);
+		Debug.PushSubsStack("btn_mohasebe_eidi_Click (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,78);
 if (RapidSub.canDelegate("btn_mohasebe_eidi_click")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","btn_mohasebe_eidi_click");}
 RemoteObject _eidi_roz = RemoteObject.createImmutable(0);
 RemoteObject _rozha = RemoteObject.createImmutable(0);
@@ -205,7 +205,7 @@ finally {
 		}}
 public static RemoteObject  _change_formater(RemoteObject _old,RemoteObject _new,RemoteObject _et_name) throws Exception{
 try {
-		Debug.PushSubsStack("change_formater (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,163);
+		Debug.PushSubsStack("change_formater (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,163);
 if (RapidSub.canDelegate("change_formater")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","change_formater", _old, _new, _et_name);}
 RemoteObject _d = RemoteObject.createImmutable(0);
 RemoteObject _s = RemoteObject.createImmutable("");
@@ -265,7 +265,7 @@ finally {
 		}}
 public static RemoteObject  _et_payeh_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_payeh_TextChanged (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,178);
+		Debug.PushSubsStack("et_payeh_TextChanged (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,178);
 if (RapidSub.canDelegate("et_payeh_textchanged")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","et_payeh_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -304,7 +304,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,64);
+		Debug.PushSubsStack("lbl_back_Click (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,64);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","lbl_back_click");}
  BA.debugLineNum = 64;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(-2147483648);
@@ -323,7 +323,7 @@ finally {
 		}}
 public static RemoteObject  _mohasebe_maliat(RemoteObject _hogog,RemoteObject _year) throws Exception{
 try {
-		Debug.PushSubsStack("mohasebe_maliat (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,185);
+		Debug.PushSubsStack("mohasebe_maliat (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,185);
 if (RapidSub.canDelegate("mohasebe_maliat")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","mohasebe_maliat", _hogog, _year);}
 RemoteObject _all_maliat = RemoteObject.createImmutable(0);
 RemoteObject _state1 = RemoteObject.createImmutable(0);
@@ -503,7 +503,7 @@ Debug.ShouldStop(67108864);
 _all_maliat = RemoteObject.solve(new RemoteObject[] {_state1,_state2,_state3,_state4,_state5,_state6}, "+++++",5, 1);Debug.locals.put("all_maliat", _all_maliat);
  BA.debugLineNum = 252;BA.debugLine="Return all_maliat";
 Debug.ShouldStop(134217728);
-if (true) return _all_maliat;
+Debug.CheckDeviceExceptions();if (true) return _all_maliat;
  BA.debugLineNum = 254;BA.debugLine="End Sub";
 Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable(0);
@@ -521,14 +521,14 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _show_num_pool(RemoteObject _num) throws Exception{
 try {
-		Debug.PushSubsStack("show_num_pool (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,160);
+		Debug.PushSubsStack("show_num_pool (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,160);
 if (RapidSub.canDelegate("show_num_pool")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","show_num_pool", _num);}
 Debug.locals.put("num", _num);
  BA.debugLineNum = 160;BA.debugLine="Sub show_num_pool (num As Int) As String";
 Debug.ShouldStop(-2147483648);
  BA.debugLineNum = 161;BA.debugLine="Return NumberFormat(num,0,2)";
 Debug.ShouldStop(1);
-if (true) return eidi_activity.mostCurrent.__c.runMethod(true,"NumberFormat",(Object)(BA.numberCast(double.class, _num)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 2)));
+Debug.CheckDeviceExceptions();if (true) return eidi_activity.mostCurrent.__c.runMethod(true,"NumberFormat",(Object)(BA.numberCast(double.class, _num)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 2)));
  BA.debugLineNum = 162;BA.debugLine="End Sub";
 Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");
@@ -541,7 +541,7 @@ finally {
 		}}
 public static RemoteObject  _time_mohasebe(RemoteObject _date1,RemoteObject _date2) throws Exception{
 try {
-		Debug.PushSubsStack("time_mohasebe (eidi_activity) ","eidi_activity",9,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,105);
+		Debug.PushSubsStack("time_mohasebe (eidi_activity) ","eidi_activity",8,eidi_activity.mostCurrent.activityBA,eidi_activity.mostCurrent,105);
 if (RapidSub.canDelegate("time_mohasebe")) { return ir.taravatgroup.ezafekari2.eidi_activity.remoteMe.runUserSub(false, "eidi_activity","time_mohasebe", _date1, _date2);}
 RemoteObject _strfun = RemoteObject.declareNull("adr.stringfunctions.stringfunctions");
 RemoteObject _list_date_per1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");

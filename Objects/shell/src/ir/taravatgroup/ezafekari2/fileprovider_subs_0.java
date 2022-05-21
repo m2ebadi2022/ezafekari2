@@ -36,7 +36,7 @@ Debug.JustUpdateDeviceLine();
 _uri = RemoteObject.createNew ("anywheresoftware.b4j.object.JavaObject");Debug.locals.put("uri", _uri);
  BA.debugLineNum = 26;BA.debugLine="Return uri.InitializeStatic(\"android.net.Uri\").R";
 Debug.JustUpdateDeviceLine();
-if (true) return _uri.runMethod(false,"InitializeStatic",(Object)(RemoteObject.createImmutable("android.net.Uri"))).runMethod(false,"RunMethod",(Object)(BA.ObjectToString("parse")),(Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(RemoteObject.concat(RemoteObject.createImmutable("file://"),fileprovider.__c.getField(false,"File").runMethod(true,"Combine",(Object)(__ref.getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(_filename))))})));
+Debug.CheckDeviceExceptions();if (true) return _uri.runMethod(false,"InitializeStatic",(Object)(RemoteObject.createImmutable("android.net.Uri"))).runMethod(false,"RunMethod",(Object)(BA.ObjectToString("parse")),(Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(RemoteObject.concat(RemoteObject.createImmutable("file://"),fileprovider.__c.getField(false,"File").runMethod(true,"Combine",(Object)(__ref.getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(_filename))))})));
  }else {
  BA.debugLineNum = 28;BA.debugLine="Dim f As JavaObject";
 Debug.JustUpdateDeviceLine();
@@ -58,7 +58,7 @@ Debug.JustUpdateDeviceLine();
 _fp.runVoidMethod ("InitializeStatic",(Object)(RemoteObject.createImmutable("androidx.core.content.FileProvider")));
  BA.debugLineNum = 34;BA.debugLine="Return fp.RunMethod(\"getUriForFile\", Array(conte";
 Debug.JustUpdateDeviceLine();
-if (true) return _fp.runMethod(false,"RunMethod",(Object)(BA.ObjectToString("getUriForFile")),(Object)(RemoteObject.createNewArray("Object",new int[] {3},new Object[] {(_context.getObject()),(RemoteObject.concat(fileprovider.__c.getField(false,"Application").runMethod(true,"getPackageName"),RemoteObject.createImmutable(".provider"))),(_f.getObject())})));
+Debug.CheckDeviceExceptions();if (true) return _fp.runMethod(false,"RunMethod",(Object)(BA.ObjectToString("getUriForFile")),(Object)(RemoteObject.createNewArray("Object",new int[] {3},new Object[] {(_context.getObject()),(RemoteObject.concat(fileprovider.__c.getField(false,"Application").runMethod(true,"getPackageName"),RemoteObject.createImmutable(".provider"))),(_f.getObject())})));
  };
  BA.debugLineNum = 36;BA.debugLine="End Sub";
 Debug.JustUpdateDeviceLine();
@@ -104,7 +104,7 @@ __ref.setField ("_sharedfolder" /*RemoteObject*/ ,__ref.getField(false,"_rp" /*R
  };
  BA.debugLineNum = 18;BA.debugLine="Log($\"Using FileProvider? ${UseFileProvider}\"$)";
 Debug.JustUpdateDeviceLine();
-fileprovider.__c.runVoidMethod ("LogImpl","929163530",(RemoteObject.concat(RemoteObject.createImmutable("Using FileProvider? "),fileprovider.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((__ref.getField(true,"_usefileprovider" /*RemoteObject*/ )))),RemoteObject.createImmutable(""))),0);
+fileprovider.__c.runVoidMethod ("LogImpl","929425674",(RemoteObject.concat(RemoteObject.createImmutable("Using FileProvider? "),fileprovider.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((__ref.getField(true,"_usefileprovider" /*RemoteObject*/ )))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 19;BA.debugLine="End Sub";
 Debug.JustUpdateDeviceLine();
 return RemoteObject.createImmutable("");

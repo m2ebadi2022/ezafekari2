@@ -8,7 +8,7 @@ public class ganon_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (ganon_activity) ","ganon_activity",11,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,20);
+		Debug.PushSubsStack("Activity_Create (ganon_activity) ","ganon_activity",9,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,20);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.ganon_activity.remoteMe.runUserSub(false, "ganon_activity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 20;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -40,7 +40,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (ganon_activity) ","ganon_activity",11,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,50);
+		Debug.PushSubsStack("Activity_KeyPress (ganon_activity) ","ganon_activity",9,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,50);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.ganon_activity.remoteMe.runUserSub(false, "ganon_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 50;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -53,11 +53,11 @@ Debug.ShouldStop(524288);
 _lbl_back_click();
  BA.debugLineNum = 53;BA.debugLine="Return True";
 Debug.ShouldStop(1048576);
-if (true) return ganon_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return ganon_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 55;BA.debugLine="Return False";
 Debug.ShouldStop(4194304);
-if (true) return ganon_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return ganon_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 57;BA.debugLine="End Sub";
 Debug.ShouldStop(16777216);
@@ -71,7 +71,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (ganon_activity) ","ganon_activity",11,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,40);
+		Debug.PushSubsStack("Activity_Pause (ganon_activity) ","ganon_activity",9,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,40);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.ganon_activity.remoteMe.runUserSub(false, "ganon_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 40;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -88,7 +88,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (ganon_activity) ","ganon_activity",11,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,36);
+		Debug.PushSubsStack("Activity_Resume (ganon_activity) ","ganon_activity",9,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,36);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.ganon_activity.remoteMe.runUserSub(false, "ganon_activity","activity_resume");}
  BA.debugLineNum = 36;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(8);
@@ -113,7 +113,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (ganon_activity) ","ganon_activity",11,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,45);
+		Debug.PushSubsStack("lbl_back_Click (ganon_activity) ","ganon_activity",9,ganon_activity.mostCurrent.activityBA,ganon_activity.mostCurrent,45);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.ganon_activity.remoteMe.runUserSub(false, "ganon_activity","lbl_back_click");}
  BA.debugLineNum = 45;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(4096);

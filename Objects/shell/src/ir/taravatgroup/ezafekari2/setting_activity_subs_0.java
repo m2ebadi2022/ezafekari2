@@ -8,7 +8,7 @@ public class setting_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,48);
+		Debug.PushSubsStack("Activity_Create (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,48);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 48;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -70,7 +70,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,88);
+		Debug.PushSubsStack("Activity_KeyPress (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,88);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 88;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -106,11 +106,11 @@ _lbl_back_click();
 ;
  BA.debugLineNum = 102;BA.debugLine="Return True";
 Debug.ShouldStop(32);
-if (true) return setting_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return setting_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 104;BA.debugLine="Return False";
 Debug.ShouldStop(128);
-if (true) return setting_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return setting_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 106;BA.debugLine="End Sub";
 Debug.ShouldStop(512);
@@ -124,7 +124,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,84);
+		Debug.PushSubsStack("Activity_Pause (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,84);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 84;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -141,7 +141,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,80);
+		Debug.PushSubsStack("Activity_Resume (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,80);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","activity_resume");}
  BA.debugLineNum = 80;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(32768);
@@ -212,7 +212,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,108);
+		Debug.PushSubsStack("lbl_back_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,108);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_back_click");}
  BA.debugLineNum = 108;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(2048);
@@ -234,7 +234,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_backup_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_backup_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,115);
+		Debug.PushSubsStack("lbl_backup_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,115);
 if (RapidSub.canDelegate("lbl_backup_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_backup_click");}
 RemoteObject _filename = RemoteObject.createImmutable("");
 RemoteObject _email = RemoteObject.declareNull("anywheresoftware.b4a.phone.Phone.Email");
@@ -284,7 +284,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_close_help_font_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_close_help_font_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,383);
+		Debug.PushSubsStack("lbl_close_help_font_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,383);
 if (RapidSub.canDelegate("lbl_close_help_font_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_close_help_font_click");}
  BA.debugLineNum = 383;BA.debugLine="Private Sub lbl_close_help_font_Click";
 Debug.ShouldStop(1073741824);
@@ -303,7 +303,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_color_home_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_color_home_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,306);
+		Debug.PushSubsStack("lbl_color_home_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,306);
 if (RapidSub.canDelegate("lbl_color_home_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_color_home_click");}
  BA.debugLineNum = 306;BA.debugLine="Private Sub lbl_color_home_Click";
 Debug.ShouldStop(131072);
@@ -322,7 +322,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_color1_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_color1_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,161);
+		Debug.PushSubsStack("lbl_color1_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,161);
 if (RapidSub.canDelegate("lbl_color1_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_color1_click");}
  BA.debugLineNum = 161;BA.debugLine="Private Sub lbl_color1_Click";
 Debug.ShouldStop(1);
@@ -379,7 +379,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_font_pan_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_font_pan_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,314);
+		Debug.PushSubsStack("lbl_font_pan_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,314);
 if (RapidSub.canDelegate("lbl_font_pan_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_font_pan_click");}
  BA.debugLineNum = 314;BA.debugLine="Private Sub lbl_font_pan_Click";
 Debug.ShouldStop(33554432);
@@ -398,7 +398,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_help_font_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help_font_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,339);
+		Debug.PushSubsStack("lbl_help_font_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,339);
 if (RapidSub.canDelegate("lbl_help_font_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_help_font_click");}
  BA.debugLineNum = 339;BA.debugLine="Private Sub lbl_help_font_Click";
 Debug.ShouldStop(262144);
@@ -417,7 +417,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_rest_font_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_rest_font_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,323);
+		Debug.PushSubsStack("lbl_rest_font_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,323);
 if (RapidSub.canDelegate("lbl_rest_font_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_rest_font_click");}
  BA.debugLineNum = 323;BA.debugLine="Private Sub lbl_rest_font_Click";
 Debug.ShouldStop(4);
@@ -454,7 +454,7 @@ finally {
 		}}
 public static void  _lbl_restore_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_restore_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,136);
+		Debug.PushSubsStack("lbl_restore_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,136);
 if (RapidSub.canDelegate("lbl_restore_click")) { ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_restore_click"); return;}
 ResumableSub_lbl_restore_Click rsub = new ResumableSub_lbl_restore_Click(null);
 rsub.resume(null, null);
@@ -479,7 +479,7 @@ RemoteObject _result = RemoteObject.createImmutable(0);
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("lbl_restore_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,136);
+		Debug.PushSubsStack("lbl_restore_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,136);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -527,13 +527,13 @@ Debug.ShouldStop(4096);
 parent.mostCurrent.__c.getField(false,"File").runVoidMethod ("Copy",(Object)(_dir),(Object)(_filename),(Object)(parent.mostCurrent._starter._provider /*RemoteObject*/ .getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(RemoteObject.createImmutable("db2.db")));
  BA.debugLineNum = 143;BA.debugLine="Log( Dir)";
 Debug.ShouldStop(16384);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","023396359",_dir,0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","821561351",_dir,0);
  BA.debugLineNum = 144;BA.debugLine="Log(FileName)";
 Debug.ShouldStop(32768);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","023396360",_filename,0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","821561352",_filename,0);
  BA.debugLineNum = 145;BA.debugLine="Log(File.Exists(Starter.Provider.SharedFolder,\"d";
 Debug.ShouldStop(65536);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","023396361",BA.ObjectToString(parent.mostCurrent.__c.getField(false,"File").runMethod(true,"Exists",(Object)(parent.mostCurrent._starter._provider /*RemoteObject*/ .getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(RemoteObject.createImmutable("db2.db")))),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","821561353",BA.ObjectToString(parent.mostCurrent.__c.getField(false,"File").runMethod(true,"Exists",(Object)(parent.mostCurrent._starter._provider /*RemoteObject*/ .getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(RemoteObject.createImmutable("db2.db")))),0);
  BA.debugLineNum = 147;BA.debugLine="Dim result As Int";
 Debug.ShouldStop(262144);
 _result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
@@ -593,7 +593,7 @@ public static void  _cc_result(RemoteObject _success,RemoteObject _dir,RemoteObj
 }
 public static RemoteObject  _lbl_save_color_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_save_color_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,280);
+		Debug.PushSubsStack("lbl_save_color_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,280);
 if (RapidSub.canDelegate("lbl_save_color_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_save_color_click");}
  BA.debugLineNum = 280;BA.debugLine="Private Sub lbl_save_color_Click";
 Debug.ShouldStop(8388608);
@@ -636,7 +636,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_save_font_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_save_font_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,347);
+		Debug.PushSubsStack("lbl_save_font_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,347);
 if (RapidSub.canDelegate("lbl_save_font_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","lbl_save_font_click");}
  BA.debugLineNum = 347;BA.debugLine="Private Sub lbl_save_font_Click";
 Debug.ShouldStop(67108864);
@@ -661,7 +661,7 @@ finally {
 		}}
 public static RemoteObject  _pan_all_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_all_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,187);
+		Debug.PushSubsStack("pan_all_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,187);
 if (RapidSub.canDelegate("pan_all_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_all_click");}
  BA.debugLineNum = 187;BA.debugLine="Private Sub pan_all_Click";
 Debug.ShouldStop(67108864);
@@ -680,7 +680,7 @@ finally {
 		}}
 public static RemoteObject  _pan_all2_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_all2_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,374);
+		Debug.PushSubsStack("pan_all2_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,374);
 if (RapidSub.canDelegate("pan_all2_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_all2_click");}
  BA.debugLineNum = 374;BA.debugLine="Private Sub pan_all2_Click";
 Debug.ShouldStop(2097152);
@@ -699,7 +699,7 @@ finally {
 		}}
 public static RemoteObject  _pan_color1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_color1_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,266);
+		Debug.PushSubsStack("pan_color1_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,266);
 if (RapidSub.canDelegate("pan_color1_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_color1_click");}
  BA.debugLineNum = 266;BA.debugLine="Private Sub pan_color1_Click";
 Debug.ShouldStop(512);
@@ -739,7 +739,7 @@ finally {
 		}}
 public static RemoteObject  _pan_color2_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_color2_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,251);
+		Debug.PushSubsStack("pan_color2_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,251);
 if (RapidSub.canDelegate("pan_color2_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_color2_click");}
  BA.debugLineNum = 251;BA.debugLine="Private Sub pan_color2_Click";
 Debug.ShouldStop(67108864);
@@ -779,7 +779,7 @@ finally {
 		}}
 public static RemoteObject  _pan_color3_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_color3_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,236);
+		Debug.PushSubsStack("pan_color3_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,236);
 if (RapidSub.canDelegate("pan_color3_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_color3_click");}
  BA.debugLineNum = 236;BA.debugLine="Private Sub pan_color3_Click";
 Debug.ShouldStop(2048);
@@ -819,7 +819,7 @@ finally {
 		}}
 public static RemoteObject  _pan_color4_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_color4_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,221);
+		Debug.PushSubsStack("pan_color4_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,221);
 if (RapidSub.canDelegate("pan_color4_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_color4_click");}
  BA.debugLineNum = 221;BA.debugLine="Private Sub pan_color4_Click";
 Debug.ShouldStop(268435456);
@@ -859,7 +859,7 @@ finally {
 		}}
 public static RemoteObject  _pan_color5_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_color5_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,207);
+		Debug.PushSubsStack("pan_color5_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,207);
 if (RapidSub.canDelegate("pan_color5_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_color5_click");}
  BA.debugLineNum = 207;BA.debugLine="Private Sub pan_color5_Click";
 Debug.ShouldStop(16384);
@@ -899,7 +899,7 @@ finally {
 		}}
 public static RemoteObject  _pan_color6_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_color6_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,192);
+		Debug.PushSubsStack("pan_color6_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,192);
 if (RapidSub.canDelegate("pan_color6_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_color6_click");}
  BA.debugLineNum = 192;BA.debugLine="Private Sub pan_color6_Click";
 Debug.ShouldStop(-2147483648);
@@ -939,7 +939,7 @@ finally {
 		}}
 public static RemoteObject  _pan_colors_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_colors_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,310);
+		Debug.PushSubsStack("pan_colors_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,310);
 if (RapidSub.canDelegate("pan_colors_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_colors_click");}
  BA.debugLineNum = 310;BA.debugLine="Private Sub pan_colors_Click";
 Debug.ShouldStop(2097152);
@@ -955,7 +955,7 @@ finally {
 		}}
 public static RemoteObject  _pan_font_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_font_Click (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,378);
+		Debug.PushSubsStack("pan_font_Click (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,378);
 if (RapidSub.canDelegate("pan_font_click")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","pan_font_click");}
  BA.debugLineNum = 378;BA.debugLine="Private Sub pan_font_Click";
 Debug.ShouldStop(33554432);
@@ -978,7 +978,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _skb_f1_valuechanged(RemoteObject _value,RemoteObject _userchanged) throws Exception{
 try {
-		Debug.PushSubsStack("skb_f1_ValueChanged (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,370);
+		Debug.PushSubsStack("skb_f1_ValueChanged (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,370);
 if (RapidSub.canDelegate("skb_f1_valuechanged")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","skb_f1_valuechanged", _value, _userchanged);}
 Debug.locals.put("Value", _value);
 Debug.locals.put("UserChanged", _userchanged);
@@ -999,7 +999,7 @@ finally {
 		}}
 public static RemoteObject  _skb_f2_valuechanged(RemoteObject _value,RemoteObject _userchanged) throws Exception{
 try {
-		Debug.PushSubsStack("skb_f2_ValueChanged (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,366);
+		Debug.PushSubsStack("skb_f2_ValueChanged (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,366);
 if (RapidSub.canDelegate("skb_f2_valuechanged")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","skb_f2_valuechanged", _value, _userchanged);}
 Debug.locals.put("Value", _value);
 Debug.locals.put("UserChanged", _userchanged);
@@ -1020,7 +1020,7 @@ finally {
 		}}
 public static RemoteObject  _skb_f3_valuechanged(RemoteObject _value,RemoteObject _userchanged) throws Exception{
 try {
-		Debug.PushSubsStack("skb_f3_ValueChanged (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,362);
+		Debug.PushSubsStack("skb_f3_ValueChanged (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,362);
 if (RapidSub.canDelegate("skb_f3_valuechanged")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","skb_f3_valuechanged", _value, _userchanged);}
 Debug.locals.put("Value", _value);
 Debug.locals.put("UserChanged", _userchanged);
@@ -1041,7 +1041,7 @@ finally {
 		}}
 public static RemoteObject  _tik_all_dis() throws Exception{
 try {
-		Debug.PushSubsStack("tik_all_dis (setting_activity) ","setting_activity",15,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,297);
+		Debug.PushSubsStack("tik_all_dis (setting_activity) ","setting_activity",14,setting_activity.mostCurrent.activityBA,setting_activity.mostCurrent,297);
 if (RapidSub.canDelegate("tik_all_dis")) { return ir.taravatgroup.ezafekari2.setting_activity.remoteMe.runUserSub(false, "setting_activity","tik_all_dis");}
  BA.debugLineNum = 297;BA.debugLine="Sub tik_all_dis";
 Debug.ShouldStop(256);

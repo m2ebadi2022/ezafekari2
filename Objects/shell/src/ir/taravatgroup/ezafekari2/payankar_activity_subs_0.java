@@ -8,7 +8,7 @@ public class payankar_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,25);
+		Debug.PushSubsStack("Activity_Create (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,25);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -70,7 +70,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,67);
+		Debug.PushSubsStack("Activity_KeyPress (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,67);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 67;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -83,11 +83,11 @@ Debug.ShouldStop(16);
 _lbl_back_click();
  BA.debugLineNum = 70;BA.debugLine="Return True";
 Debug.ShouldStop(32);
-if (true) return payankar_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return payankar_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 72;BA.debugLine="Return False";
 Debug.ShouldStop(128);
-if (true) return payankar_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return payankar_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 74;BA.debugLine="End Sub";
 Debug.ShouldStop(512);
@@ -101,7 +101,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,58);
+		Debug.PushSubsStack("Activity_Pause (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,58);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 58;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -118,7 +118,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,54);
+		Debug.PushSubsStack("Activity_Resume (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,54);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","activity_resume");}
  BA.debugLineNum = 54;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(2097152);
@@ -134,7 +134,7 @@ finally {
 		}}
 public static RemoteObject  _btn_mohasebe_payankar_click() throws Exception{
 try {
-		Debug.PushSubsStack("btn_mohasebe_payankar_Click (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,77);
+		Debug.PushSubsStack("btn_mohasebe_payankar_Click (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,77);
 if (RapidSub.canDelegate("btn_mohasebe_payankar_click")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","btn_mohasebe_payankar_click");}
 RemoteObject _payankar_roz = RemoteObject.createImmutable(0);
 RemoteObject _rozha = RemoteObject.createImmutable(0);
@@ -191,7 +191,7 @@ finally {
 		}}
 public static RemoteObject  _change_formater(RemoteObject _old,RemoteObject _new,RemoteObject _et_name) throws Exception{
 try {
-		Debug.PushSubsStack("change_formater (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,161);
+		Debug.PushSubsStack("change_formater (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,161);
 if (RapidSub.canDelegate("change_formater")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","change_formater", _old, _new, _et_name);}
 RemoteObject _d = RemoteObject.createImmutable(0);
 RemoteObject _s = RemoteObject.createImmutable("");
@@ -251,7 +251,7 @@ finally {
 		}}
 public static RemoteObject  _et_payeh_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_payeh_TextChanged (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,176);
+		Debug.PushSubsStack("et_payeh_TextChanged (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,176);
 if (RapidSub.canDelegate("et_payeh_textchanged")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","et_payeh_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -290,7 +290,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,62);
+		Debug.PushSubsStack("lbl_back_Click (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,62);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","lbl_back_click");}
  BA.debugLineNum = 62;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(536870912);
@@ -314,14 +314,14 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _show_num_pool(RemoteObject _num) throws Exception{
 try {
-		Debug.PushSubsStack("show_num_pool (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,158);
+		Debug.PushSubsStack("show_num_pool (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,158);
 if (RapidSub.canDelegate("show_num_pool")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","show_num_pool", _num);}
 Debug.locals.put("num", _num);
  BA.debugLineNum = 158;BA.debugLine="Sub show_num_pool (num As Int) As String";
 Debug.ShouldStop(536870912);
  BA.debugLineNum = 159;BA.debugLine="Return NumberFormat(num,0,2)";
 Debug.ShouldStop(1073741824);
-if (true) return payankar_activity.mostCurrent.__c.runMethod(true,"NumberFormat",(Object)(BA.numberCast(double.class, _num)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 2)));
+Debug.CheckDeviceExceptions();if (true) return payankar_activity.mostCurrent.__c.runMethod(true,"NumberFormat",(Object)(BA.numberCast(double.class, _num)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 2)));
  BA.debugLineNum = 160;BA.debugLine="End Sub";
 Debug.ShouldStop(-2147483648);
 return RemoteObject.createImmutable("");
@@ -334,7 +334,7 @@ finally {
 		}}
 public static RemoteObject  _time_mohasebe(RemoteObject _date1,RemoteObject _date2) throws Exception{
 try {
-		Debug.PushSubsStack("time_mohasebe (payankar_activity) ","payankar_activity",14,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,102);
+		Debug.PushSubsStack("time_mohasebe (payankar_activity) ","payankar_activity",13,payankar_activity.mostCurrent.activityBA,payankar_activity.mostCurrent,102);
 if (RapidSub.canDelegate("time_mohasebe")) { return ir.taravatgroup.ezafekari2.payankar_activity.remoteMe.runUserSub(false, "payankar_activity","time_mohasebe", _date1, _date2);}
 RemoteObject _strfun = RemoteObject.declareNull("adr.stringfunctions.stringfunctions");
 RemoteObject _list_date_per1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");

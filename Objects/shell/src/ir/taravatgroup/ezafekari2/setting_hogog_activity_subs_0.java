@@ -8,7 +8,7 @@ public class setting_hogog_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,69);
+		Debug.PushSubsStack("Activity_Create (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,69);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","activity_create", _firsttime);}
 RemoteObject _sat1 = RemoteObject.createImmutable(0);
 RemoteObject _dag1 = RemoteObject.createImmutable(0);
@@ -298,7 +298,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,374);
+		Debug.PushSubsStack("Activity_KeyPress (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,374);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 374;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -311,11 +311,11 @@ Debug.ShouldStop(8388608);
 _lbl_back_click();
  BA.debugLineNum = 377;BA.debugLine="Return True";
 Debug.ShouldStop(16777216);
-if (true) return setting_hogog_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return setting_hogog_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 379;BA.debugLine="Return False";
 Debug.ShouldStop(67108864);
-if (true) return setting_hogog_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return setting_hogog_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 381;BA.debugLine="End Sub";
 Debug.ShouldStop(268435456);
@@ -329,7 +329,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,233);
+		Debug.PushSubsStack("Activity_Pause (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,233);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 233;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -346,7 +346,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,229);
+		Debug.PushSubsStack("Activity_Resume (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,229);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","activity_resume");}
  BA.debugLineNum = 229;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(16);
@@ -362,7 +362,7 @@ finally {
 		}}
 public static RemoteObject  _empty_fild(RemoteObject _et) throws Exception{
 try {
-		Debug.PushSubsStack("empty_fild (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,520);
+		Debug.PushSubsStack("empty_fild (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,520);
 if (RapidSub.canDelegate("empty_fild")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","empty_fild", _et);}
 Debug.locals.put("et", _et);
  BA.debugLineNum = 520;BA.debugLine="Sub empty_fild(et As EditText) As Boolean";
@@ -378,11 +378,11 @@ Debug.ShouldStop(1024);
 _et.runVoidMethod ("setColor",BA.numberCast(int.class, ((int)0x9fff4e4e)));
  BA.debugLineNum = 524;BA.debugLine="Return True";
 Debug.ShouldStop(2048);
-if (true) return setting_hogog_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return setting_hogog_activity.mostCurrent.__c.getField(true,"True");
  };
  BA.debugLineNum = 526;BA.debugLine="Return False";
 Debug.ShouldStop(8192);
-if (true) return setting_hogog_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return setting_hogog_activity.mostCurrent.__c.getField(true,"False");
  BA.debugLineNum = 527;BA.debugLine="End Sub";
 Debug.ShouldStop(16384);
 return RemoteObject.createImmutable(false);
@@ -395,7 +395,7 @@ finally {
 		}}
 public static RemoteObject  _et_bime_takmil_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_bime_takmil_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,478);
+		Debug.PushSubsStack("et_bime_takmil_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,478);
 if (RapidSub.canDelegate("et_bime_takmil_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_bime_takmil_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -419,7 +419,7 @@ finally {
 		}}
 public static RemoteObject  _et_bon_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_bon_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,483);
+		Debug.PushSubsStack("et_bon_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,483);
 if (RapidSub.canDelegate("et_bon_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_bon_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -443,7 +443,7 @@ finally {
 		}}
 public static RemoteObject  _et_fani_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_fani_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,498);
+		Debug.PushSubsStack("et_fani_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,498);
 if (RapidSub.canDelegate("et_fani_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_fani_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -467,7 +467,7 @@ finally {
 		}}
 public static RemoteObject  _et_ksorat_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_ksorat_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,473);
+		Debug.PushSubsStack("et_ksorat_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,473);
 if (RapidSub.canDelegate("et_ksorat_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_ksorat_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -491,7 +491,7 @@ finally {
 		}}
 public static RemoteObject  _et_maskan_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_maskan_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,508);
+		Debug.PushSubsStack("et_maskan_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,508);
 if (RapidSub.canDelegate("et_maskan_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_maskan_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -515,7 +515,7 @@ finally {
 		}}
 public static RemoteObject  _et_masoliat_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_masoliat_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,493);
+		Debug.PushSubsStack("et_masoliat_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,493);
 if (RapidSub.canDelegate("et_masoliat_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_masoliat_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -539,7 +539,7 @@ finally {
 		}}
 public static RemoteObject  _et_mazaya_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_mazaya_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,468);
+		Debug.PushSubsStack("et_mazaya_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,468);
 if (RapidSub.canDelegate("et_mazaya_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_mazaya_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -563,7 +563,7 @@ finally {
 		}}
 public static RemoteObject  _et_olad_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_olad_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,503);
+		Debug.PushSubsStack("et_olad_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,503);
 if (RapidSub.canDelegate("et_olad_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_olad_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -587,7 +587,7 @@ finally {
 		}}
 public static RemoteObject  _et_paye_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_paye_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,462);
+		Debug.PushSubsStack("et_paye_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,462);
 if (RapidSub.canDelegate("et_paye_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_paye_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -611,7 +611,7 @@ finally {
 		}}
 public static RemoteObject  _et_sanavat_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_sanavat_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,513);
+		Debug.PushSubsStack("et_sanavat_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,513);
 if (RapidSub.canDelegate("et_sanavat_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_sanavat_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -635,7 +635,7 @@ finally {
 		}}
 public static RemoteObject  _et_sarparast_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_sarparast_TextChanged (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,488);
+		Debug.PushSubsStack("et_sarparast_TextChanged (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,488);
 if (RapidSub.canDelegate("et_sarparast_textchanged")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","et_sarparast_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -659,7 +659,7 @@ finally {
 		}}
 public static RemoteObject  _ev_onv_longclick() throws Exception{
 try {
-		Debug.PushSubsStack("EV_onv_LongClick (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,564);
+		Debug.PushSubsStack("EV_onv_LongClick (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,564);
 if (RapidSub.canDelegate("ev_onv_longclick")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","ev_onv_longclick");}
 RemoteObject _this_onv = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
  BA.debugLineNum = 564;BA.debugLine="Private Sub EV_onv_LongClick";
@@ -694,7 +694,7 @@ finally {
 		}}
 public static RemoteObject  _get_onvan_byid(RemoteObject _id1) throws Exception{
 try {
-		Debug.PushSubsStack("get_onvan_byId (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,586);
+		Debug.PushSubsStack("get_onvan_byId (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,586);
 if (RapidSub.canDelegate("get_onvan_byid")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","get_onvan_byid", _id1);}
 RemoteObject _ls_result = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
 Debug.locals.put("id1", _id1);
@@ -723,7 +723,7 @@ Debug.ShouldStop(65536);
 _ls_result.runVoidMethod ("Add",(Object)((setting_hogog_activity.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("custom_name"))))));
  BA.debugLineNum = 594;BA.debugLine="Return ls_result";
 Debug.ShouldStop(131072);
-if (true) return _ls_result;
+Debug.CheckDeviceExceptions();if (true) return _ls_result;
  BA.debugLineNum = 595;BA.debugLine="End Sub";
 Debug.ShouldStop(262144);
 return RemoteObject.createImmutable(null);
@@ -825,7 +825,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,237);
+		Debug.PushSubsStack("lbl_back_Click (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,237);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","lbl_back_click");}
  BA.debugLineNum = 237;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(4096);
@@ -847,7 +847,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_help_onv_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help_onv_Click (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,603);
+		Debug.PushSubsStack("lbl_help_onv_Click (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,603);
 if (RapidSub.canDelegate("lbl_help_onv_click")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","lbl_help_onv_click");}
  BA.debugLineNum = 603;BA.debugLine="Private Sub lbl_help_onv_Click";
 Debug.ShouldStop(67108864);
@@ -866,7 +866,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_onv_def_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_onv_def_Click (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,598);
+		Debug.PushSubsStack("lbl_onv_def_Click (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,598);
 if (RapidSub.canDelegate("lbl_onv_def_click")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","lbl_onv_def_click");}
  BA.debugLineNum = 598;BA.debugLine="Private Sub lbl_onv_def_Click";
 Debug.ShouldStop(2097152);
@@ -885,7 +885,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_save_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_save_Click (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,243);
+		Debug.PushSubsStack("lbl_save_Click (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,243);
 if (RapidSub.canDelegate("lbl_save_click")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","lbl_save_click");}
 RemoteObject _exep = RemoteObject.createImmutable(false);
 RemoteObject _min_sat_kar = RemoteObject.createImmutable(0);
@@ -1130,7 +1130,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_save_onvan_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_save_onvan_Click (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,578);
+		Debug.PushSubsStack("lbl_save_onvan_Click (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,578);
 if (RapidSub.canDelegate("lbl_save_onvan_click")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","lbl_save_onvan_click");}
  BA.debugLineNum = 578;BA.debugLine="Private Sub lbl_save_onvan_Click";
 Debug.ShouldStop(2);
@@ -1158,7 +1158,7 @@ finally {
 		}}
 public static RemoteObject  _pan_all_onvanha_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_all_onvanHa_Click (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,555);
+		Debug.PushSubsStack("pan_all_onvanHa_Click (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,555);
 if (RapidSub.canDelegate("pan_all_onvanha_click")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","pan_all_onvanha_click");}
  BA.debugLineNum = 555;BA.debugLine="Private Sub pan_all_onvanHa_Click";
 Debug.ShouldStop(1024);
@@ -1177,7 +1177,7 @@ finally {
 		}}
 public static RemoteObject  _panel15_click() throws Exception{
 try {
-		Debug.PushSubsStack("Panel15_Click (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,560);
+		Debug.PushSubsStack("Panel15_Click (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,560);
 if (RapidSub.canDelegate("panel15_click")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","panel15_click");}
  BA.debugLineNum = 560;BA.debugLine="Private Sub Panel15_Click";
 Debug.ShouldStop(32768);
@@ -1198,7 +1198,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _read_onvan() throws Exception{
 try {
-		Debug.PushSubsStack("read_onvan (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,530);
+		Debug.PushSubsStack("read_onvan (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,530);
 if (RapidSub.canDelegate("read_onvan")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","read_onvan");}
 RemoteObject _ls_onv = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
  BA.debugLineNum = 530;BA.debugLine="Sub read_onvan";
@@ -1263,7 +1263,7 @@ finally {
 		}}
 public static RemoteObject  _show_help() throws Exception{
 try {
-		Debug.PushSubsStack("show_help (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,225);
+		Debug.PushSubsStack("show_help (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,225);
 if (RapidSub.canDelegate("show_help")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","show_help");}
  BA.debugLineNum = 225;BA.debugLine="Sub show_help";
 Debug.ShouldStop(1);
@@ -1282,7 +1282,7 @@ finally {
 		}}
 public static RemoteObject  _sp_ganon_kar_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("sp_ganon_kar_ItemClick (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,383);
+		Debug.PushSubsStack("sp_ganon_kar_ItemClick (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,383);
 if (RapidSub.canDelegate("sp_ganon_kar_itemclick")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","sp_ganon_kar_itemclick", _position, _value);}
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
@@ -1418,7 +1418,7 @@ finally {
 		}}
 public static RemoteObject  _sp_olad_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("sp_olad_ItemClick (setting_hogog_activity) ","setting_hogog_activity",4,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,456);
+		Debug.PushSubsStack("sp_olad_ItemClick (setting_hogog_activity) ","setting_hogog_activity",15,setting_hogog_activity.mostCurrent.activityBA,setting_hogog_activity.mostCurrent,456);
 if (RapidSub.canDelegate("sp_olad_itemclick")) { return ir.taravatgroup.ezafekari2.setting_hogog_activity.remoteMe.runUserSub(false, "setting_hogog_activity","sp_olad_itemclick", _position, _value);}
 RemoteObject _num = RemoteObject.createImmutable(0);
 Debug.locals.put("Position", _position);

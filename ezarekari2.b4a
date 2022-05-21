@@ -1664,20 +1664,22 @@ Sub add_ezafe_sub
 			
 			
 			If(is_for_edit=False)Then
-				
-			
-				dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_mod&et_tozihat.Text,state_mod)
-				
-				Dim ls_temp_time1 As List
-				ls_temp_time1.Initialize
-				
-				ls_temp_time1.Add(lbl_tim1.Text)
-				ls_temp_time1.Add(lbl_tim2.Text)
-				
-				File.WriteList(File.DirInternal,"temp_time1.txt",ls_temp_time1)
-				
-				ToastMessageShow ("اضافه شد",False)
-				btn_menu_home_Click
+				If(dbCode.isexist_ezafekari_by_date(date1)=True)Then
+					myfunc.help_man("برای این تاریخ اضافه کاری وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+				Else
+					dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_mod&et_tozihat.Text,state_mod)
+					
+					Dim ls_temp_time1 As List
+					ls_temp_time1.Initialize
+					
+					ls_temp_time1.Add(lbl_tim1.Text)
+					ls_temp_time1.Add(lbl_tim2.Text)
+					
+					File.WriteList(File.DirInternal,"temp_time1.txt",ls_temp_time1)
+					
+					ToastMessageShow ("اضافه شد",False)
+					btn_menu_home_Click
+				End If
 			Else
 				
 				dbCode.edit_ezafekari(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,state_mod)
@@ -1716,9 +1718,13 @@ Sub add_morakhasi_sub
 		
 			
 			If(is_for_edit=False)Then
-				dbCode.add_morakhasi(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_noe2&et_tozihat.Text,index_noe_morakhasi)
-				ToastMessageShow ("اضافه شد",False)
-				btn_menu_home_Click
+				If(dbCode.isexist_morakhasi_by_date(date1)=True)Then
+					myfunc.help_man("برای این تاریخ مرخصی وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+				Else
+					dbCode.add_morakhasi(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_noe2&et_tozihat.Text,index_noe_morakhasi)
+					ToastMessageShow ("اضافه شد",False)
+					btn_menu_home_Click
+				End If
 			Else
 				dbCode.edit_morakhasi(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,index_noe_morakhasi)
 				
@@ -1755,28 +1761,33 @@ Sub add_taradod_sub
 			ToastMessageShow("خطا! انتخاب زمان  ",True)
 		Else
 			
+			
+			
 			If(is_for_edit=False)Then
-				If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then
-				
-					
-					dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1))," تردد دارد- "&et_tozihat.Text,0)
-						
-					dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt," اضافه کاری دارد- "&et_tozihat.Text)
+				If(dbCode.isexist_taradod_by_date(date1)=True)Then
+					myfunc.help_man("برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
 				Else
-					dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text)		
+				
+					If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then	
+						
+						dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1))," تردد دارد- "&et_tozihat.Text,0)
+							
+						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt," اضافه کاری دارد- "&et_tozihat.Text)
+					Else
+						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text)		
+					End If
+					
+					Dim ls_temp_time2 As List
+					ls_temp_time2.Initialize
+						
+					ls_temp_time2.Add(lbl_tim1.Text)
+					ls_temp_time2.Add(lbl_tim2.Text)
+						
+					File.WriteList(File.DirInternal,"temp_time2.txt",ls_temp_time2)
+					
+					ToastMessageShow ("اضافه شد",False)
+					btn_menu_home_Click
 				End If
-				
-				Dim ls_temp_time2 As List
-				ls_temp_time2.Initialize
-					
-				ls_temp_time2.Add(lbl_tim1.Text)
-				ls_temp_time2.Add(lbl_tim2.Text)
-					
-				File.WriteList(File.DirInternal,"temp_time2.txt",ls_temp_time2)
-				
-				ToastMessageShow ("اضافه شد",False)
-				btn_menu_home_Click
-					
 			Else
 				dbCode.edit_taradod(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text)
 					
@@ -1786,9 +1797,8 @@ Sub add_taradod_sub
 			End If
 			
 			
-			
 			pan_all_Click
-		
+			
 		End If
 		
 	Catch
