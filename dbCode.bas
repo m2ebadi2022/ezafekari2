@@ -155,9 +155,9 @@ Sub add_morakhasi(date1 As String,date2 As String,time1 As String,time2 As Strin
 	Return True
 End Sub
 
-Sub add_taradod (date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String) As Boolean
+Sub add_taradod (date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
 	connect_db
-	sql.ExecNonQuery2("INSERT INTO tb_taradod (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat) VALUES (?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih))
+	sql.ExecNonQuery2("INSERT INTO tb_taradod (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat, state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state))
 	Return True
 End Sub
 
@@ -179,9 +179,9 @@ Sub edit_morakhasi(id1 As Int,date1 As String,date2 As String,time1 As String,ti
 	Return True
 End Sub
 
-Sub edit_taradod (id1 As Int,date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String) As Boolean
+Sub edit_taradod (id1 As Int,date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
 	connect_db
-	sql.ExecNonQuery2("UPDATE tb_taradod SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,id1))
+	sql.ExecNonQuery2("UPDATE tb_taradod SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =? ,state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state,id1))
 	Return True
 End Sub
 

@@ -1784,9 +1784,9 @@ Sub add_taradod_sub
 						
 						dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1))," تردد دارد- "&et_tozihat.Text,0)
 							
-						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt," اضافه کاری دارد- "&et_tozihat.Text)
+						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt," اضافه کاری دارد- "&et_tozihat.Text,0)
 					Else
-						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text)		
+						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,0)		
 					End If
 					
 					Dim ls_temp_time2 As List
@@ -1801,7 +1801,7 @@ Sub add_taradod_sub
 					btn_menu_home_Click
 				End If
 			Else
-				dbCode.edit_taradod(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text)
+				dbCode.edit_taradod(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,0)
 					
 				ToastMessageShow ("ویرایش شد",False)
 				btn_menu_list_Click
@@ -1996,7 +1996,142 @@ Sub time_show
 		
 	Catch
 		ToastMessageShow("خطا",False)
-		End Try
+	End Try
+End Sub
+
+
+
+Sub time_show2 (dat1 As String,dat2 As String, tim1 As String,tim2 As String)
+	
+	Try  
+	
+	
+	Dim list_date_per1 , list_date_per2 As List
+	Dim list_date_miladi1 ,list_date_miladi2 As List
+	Dim dat_mil_2 As String
+	Dim dat_mil_1 As String
+	
+	list_date_per1.Initialize
+	list_date_per2.Initialize
+	list_date_miladi1.Initialize
+	list_date_miladi1.Initialize
+	
+		Select pik_moon1.Tag
+			Case 1
+				pik_moon1.Tag="01"
+			Case 2
+				pik_moon1.Tag="02"
+			Case 3
+				pik_moon1.Tag="03"
+			Case 4
+				pik_moon1.Tag="04"
+			Case 5
+				pik_moon1.Tag="05"
+			Case 6
+				pik_moon1.Tag="06"
+			Case 7
+				pik_moon1.Tag="07"
+			Case 8
+				pik_moon1.Tag="08"
+			Case 9
+				pik_moon1.Tag="09"
+			Case 10
+				pik_moon1.Tag="10"
+			Case 11
+				pik_moon1.Tag="11"
+			Case 12
+				pik_moon1.Tag="12"
+		End Select
+		
+		
+		
+	
+		date1=dat1
+		date2=dat2
+		list_date_per1=strfun.Split(date1,"/")
+		list_date_per2=strfun.Split(date2,"/")
+	
+	
+	
+	dat_mil_2=persianDate.PersianToGregorian(list_date_per2.Get(0),list_date_per2.Get(1),list_date_per2.Get(2))
+	dat_mil_1=persianDate.PersianToGregorian(list_date_per1.Get(0),list_date_per1.Get(1),list_date_per1.Get(2))
+	
+	
+	list_date_miladi1=strfun.Split(dat_mil_1,"/")
+	list_date_miladi2=strfun.Split(dat_mil_2,"/")
+	
+	
+	Dim date_end1 ,date_end2 As String
+	Dim time_end1 ,time_end2 As String
+	
+	date_end2=list_date_miladi2.Get(1)&"/"&list_date_miladi2.Get(2)&"/"&list_date_miladi2.Get(0)
+	date_end1=list_date_miladi1.Get(1)&"/"&list_date_miladi1.Get(2)&"/"&list_date_miladi1.Get(0)
+	
+		time_end2=tim2&":00"
+		time_end1=tim1&":00"
+	
+	Dim tim1_long As Long
+	Dim tim2_long As Long
+		tim1_long=DateTime.DateTimeParse(myfunc.fa2en(date_end1),myfunc.fa2en(time_end1))
+		tim2_long=DateTime.DateTimeParse(myfunc.fa2en(date_end2),myfunc.fa2en(time_end2))
+	
+	
+	
+	Dim period_between As Period
+		period_between=DateUtils.PeriodBetween(myfunc.fa2en(tim1_long),myfunc.fa2en(tim2_long))
+	
+	
+	Dim str_show As StringBuilder
+	str_show.Initialize
+	
+		If (period_between.Years<>0)Then
+			str_show.Append(period_between.Years&" سال ").Append(" و ")
+		End If
+		If (period_between.Months<>0)Then
+			str_show.Append(period_between.Months&" ماه ").Append(" و ")
+		End If
+		If (period_between.Days<>0)Then
+			str_show.Append(period_between.Days&" روز ").Append(" و ")
+		End If
+		
+		str_show.Append(period_between.Hours&" ساعت ").Append(" و ")
+		str_show.Append(period_between.Minutes&" دقیقه ")
+		
+		
+		year_bt=period_between.Years
+		moon_bt=period_between.Months
+		day_bt=period_between.Days
+		hour_bt=period_between.Hours
+		min_bt=period_between.Minutes
+		
+		
+		lbl_time_show_FT.Text=str_show
+'		If(index_box=3)Then
+'			
+'			tim_min=(hour_bt*60)+min_bt
+'			
+'			
+'			'If(hour_bt>saat_kar Or (hour_bt=saat_kar And min_bt>0 )) Then
+'			If(tim_min>saat_kar_min) Then
+'				ckb_ezaf_taradod.Enabled=True
+'			
+'				
+'				'lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(hour_bt-saat_kar)&" ساعت و "& min_bt&" دقیقه "
+'				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))&" ساعت و "& myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)&" دقیقه "
+'				
+'			
+'			Else
+'				lbl_ezaf_taradod.Text=""
+'				ckb_ezaf_taradod.Enabled=False
+'			
+'			End If
+'
+'		End If
+'		
+		
+	Catch
+		ToastMessageShow("خطا",False)
+	End Try
 End Sub
 
 
@@ -3058,11 +3193,105 @@ End Sub
 
 
 Private Sub pan_add_taradod_fast_Click
-	Activity.LoadLayout("taradod_fast_layout")
+	pan_all_FT.Visible=True
+	lbl_date_FT.Text=myfunc.fa2en(persianDate.PersianShortDate)
+	DateTime.TimeFormat = "HH:mm"
+	
+	If(dbCode.isexist_taradod_by_date(lbl_date_FT.Text)=True)Then
+		dbCode.res=dbCode.sql.ExecQuery("SELECT * FROM tb_taradod WHERE date_from LIKE '"&lbl_date_FT.Text&"';")
+		dbCode.res.Position=0
+		
+		lbl_tim_vorod_FT.Text=dbCode.res.GetString("time_from")
+		lbl_tim_khoroj_FT.Text=dbCode.res.GetString("time_to")
+		
+		current_id_edit=dbCode.res.GetInt("id")
+		Log(dbCode.res.GetInt("state"))
+	
+		lbl_vorod_FT.TextColor=Colors.Gray
+		lbl_khoroj_FT.TextColor=Colors.Gray
+		
+	
+		If(dbCode.res.GetInt("state")=10)Then  ''vorod not ezafekari
+			lbl_vorod_FT.TextColor=Colors.Green
+			lbl_khoroj_FT.TextColor=Colors.Gray
+			ckb_ezaf_taradod_FT.Checked=False
+			ckb_ezaf_taradod_FT.Enabled=False
+			lbl_vorod_FT.Enabled=False
+		Else If (dbCode.res.GetInt("state")=20)Then  ''vorod yes ezafekari
+			lbl_vorod_FT.TextColor=Colors.Green
+			lbl_khoroj_FT.TextColor=Colors.Gray
+			ckb_ezaf_taradod_FT.Checked=True
+			ckb_ezaf_taradod_FT.Enabled=False
+			lbl_vorod_FT.Enabled=False
+		Else If (dbCode.res.GetInt("state")=11)Then  ''khoroj not ezafekari
+			lbl_vorod_FT.TextColor=Colors.Green
+			lbl_khoroj_FT.TextColor=Colors.Green
+			ckb_ezaf_taradod_FT.Checked=False
+			ckb_ezaf_taradod_FT.Enabled=False
+			lbl_vorod_FT.Enabled=False
+			lbl_khoroj_FT.Enabled=False
+			
+			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
+			
+			ToastMessageShow("تردد امروز ثبت شده است",False)
+		Else If (dbCode.res.GetInt("state")=21)Then  ''khoroj yes ezafekari
+			lbl_vorod_FT.TextColor=Colors.Green
+			lbl_khoroj_FT.TextColor=Colors.Green
+			ckb_ezaf_taradod_FT.Checked=True
+			ckb_ezaf_taradod_FT.Enabled=False
+			lbl_vorod_FT.Enabled=False
+			lbl_khoroj_FT.Enabled=False
+			
+			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
+			
+			ToastMessageShow("تردد امروز ثبت شده است",False)
+		Else If (dbCode.res.GetInt("state")=0)Then  ''dasty
+			lbl_vorod_FT.TextColor=Colors.Red
+			lbl_khoroj_FT.TextColor=Colors.Red
+			ckb_ezaf_taradod_FT.Checked=False
+			ckb_ezaf_taradod_FT.Enabled=False
+			lbl_vorod_FT.Enabled=False
+			lbl_khoroj_FT.Enabled=False
+			
+			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
+			
+			ToastMessageShow("برای امروز تردد دستی ثبت شده است",False)
+		End If	
+	Else
+		lbl_vorod_FT.TextColor=Colors.Gray
+		lbl_khoroj_FT.TextColor=Colors.Gray
+		lbl_vorod_FT.Enabled=True
+		lbl_khoroj_FT.Enabled=False
+		ckb_ezaf_taradod_FT.Checked=True
+		ckb_ezaf_taradod_FT.Enabled=True
+	End If
 End Sub
 
 Private Sub lbl_close_FT_Click
-	pan_all_FT_Click
+	
+	If(dbCode.isexist_taradod_by_date(myfunc.fa2en(persianDate.PersianShortDate))=True)Then
+		Dim result As Int
+		result = Msgbox2("تردد و اضافه کاری امروز پاک شود؟", "توجه", "بله", "", "خیر", LoadBitmap(File.DirAssets, "attention.png"))
+		If result = DialogResponse.Positive Then
+		
+			dbCode.connect_db
+			
+			dbCode.sql.ExecNonQuery("DELETE FROM tb_taradod WHERE date_from LIKE '%"&lbl_date_FT.Text&"%'; ")
+			
+			dbCode.sql.ExecNonQuery("DELETE FROM tb_ezafekari WHERE date_from LIKE '%"&lbl_date_FT.Text&"%'; ")
+			lbl_vorod_FT.TextColor=Colors.Gray
+			lbl_khoroj_FT.TextColor=Colors.Gray
+			lbl_vorod_FT.Enabled=True
+			lbl_khoroj_FT.Enabled=False
+			ckb_ezaf_taradod_FT.Checked=True
+			ckb_ezaf_taradod_FT.Enabled=True
+			lbl_tim_vorod_FT.Text="00:00"
+			lbl_tim_khoroj_FT.Text="00:00"
+		End If
+	Else
+		ToastMessageShow("برای امروز هنوز ترددی ثبت نشده است",False)	
+	End If
+	
 End Sub
 
 Private Sub pan_all_FT_Click
@@ -3070,9 +3299,83 @@ Private Sub pan_all_FT_Click
 End Sub
 
 Private Sub lbl_vorod_FT_Click
-	Log(DateTime.Time(DateTime.Now))
+
+	
+	lbl_tim_vorod_FT.Text=DateTime.Time(DateTime.Now)
+	ttsss
 End Sub
 
 Private Sub lbl_khoroj_FT_Click
-	Log(DateTime.Time(DateTime.Now))
+	lbl_tim_khoroj_FT.Text=DateTime.Time(DateTime.Now)
+	ttsss
 End Sub
+
+
+Sub ttsss 
+	
+Try
+		
+		If(dbCode.isexist_taradod_by_date(lbl_date_FT.Text)=False)Then
+			'' creat new
+			If (ckb_ezaf_taradod_FT.Checked=True)Then
+				
+						
+				dbCode.add_taradod(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,0,0,0,"ثبت سریع",20)
+			
+			Else
+				
+				dbCode.add_taradod(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,0,0,0,"ثبت سریع",10)
+			
+			End If			
+				
+			ToastMessageShow("ورود ثبت شد",False)	
+			lbl_vorod_FT.TextColor=Colors.Green
+			ckb_ezaf_taradod_FT.Enabled=False
+			lbl_vorod_FT.Enabled=False
+			lbl_khoroj_FT.Enabled=True
+				
+		Else
+			'' edit it
+			
+			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
+			
+			If (ckb_ezaf_taradod_FT.Checked=True)Then
+				
+				tim_min=(hour_bt*60)+min_bt
+			
+			
+				If(tim_min>saat_kar_min) Then
+					
+					dbCode.add_ezafekari(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1))," ثبت سریع-تردد دارد- ",0)
+					
+				End If
+				
+				dbCode.edit_taradod(current_id_edit,lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,day_bt,hour_bt,min_bt,"ثبت سریع-اضافه کاری دارد",21)
+			Else
+			
+				dbCode.edit_taradod(current_id_edit,lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,day_bt,hour_bt,min_bt,"ثبت سریع",11)
+			
+			End If
+			
+			ToastMessageShow("خروج ثبت شد",False)
+			lbl_khoroj_FT.TextColor=Colors.Green
+			lbl_khoroj_FT.Enabled=False
+			
+			
+		End If	
+				
+			
+			
+	Catch
+		ToastMessageShow("خطا",False)
+	End Try
+	
+	
+	End Sub
+
+Private Sub Panel6_Click
+	
+End Sub
+
+
+		

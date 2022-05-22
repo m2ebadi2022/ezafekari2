@@ -55,6 +55,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=8
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=Visual Designer,home_item.bal,-100,3,Main,add_ezafe_sub,1459,4,Main,pan_add_taradod_fast_Click,2839,4,Main,Panel4_Click,1353,0,Main,lbl_close_FT_Click,2850,1,Visual Designer,taradod_fast_layout.bal,-100,4,Main,Globals,254,0,Main,pan_all_FT_Click,2854,4,Main,lbl_khoroj_FT_Click,2863,0,Main,lbl_vorod_FT_Click,2859,6
+NavigationStack=Main,pan_all_liteMenu_Click,2834,0,Visual Designer,main_layout.bal,-100,6,Main,Panel1_Click,2838,0,Main,lbl_edit_from_list_Click,2597,0,Main,Activity_KeyPress,1654,0,Main,add_taradod_sub,1571,0,Main,Panel6_Click,3151,0,Main,time_show2,1790,6,Main,time_show,1762,0,Main,ttsss,3116,2,Main,pan_add_taradod_fast_Click,3043,0
 SelectedBuild=0
 VisibleModules=12,5

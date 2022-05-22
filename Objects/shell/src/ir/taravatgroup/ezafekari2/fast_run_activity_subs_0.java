@@ -8,7 +8,7 @@ public class fast_run_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,79);
+		Debug.PushSubsStack("Activity_Create (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,79);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 79;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -102,7 +102,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,144);
+		Debug.PushSubsStack("Activity_KeyPress (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,144);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 144;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -141,7 +141,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,132);
+		Debug.PushSubsStack("Activity_Pause (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,132);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 132;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -158,7 +158,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,128);
+		Debug.PushSubsStack("Activity_Resume (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,128);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","activity_resume");}
  BA.debugLineNum = 128;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(-2147483648);
@@ -174,7 +174,7 @@ finally {
 		}}
 public static RemoteObject  _box_control() throws Exception{
 try {
-		Debug.PushSubsStack("box_control (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,433);
+		Debug.PushSubsStack("box_control (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,433);
 if (RapidSub.canDelegate("box_control")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","box_control");}
 RemoteObject _chk = RemoteObject.createImmutable(false);
  BA.debugLineNum = 433;BA.debugLine="Sub box_control As Boolean";
@@ -289,7 +289,7 @@ finally {
 		}}
 public static RemoteObject  _btn_run_click() throws Exception{
 try {
-		Debug.PushSubsStack("btn_run_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,169);
+		Debug.PushSubsStack("btn_run_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,169);
 if (RapidSub.canDelegate("btn_run_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","btn_run_click");}
 RemoteObject _str_show = RemoteObject.declareNull("anywheresoftware.b4a.keywords.StringBuilderWrapper");
  BA.debugLineNum = 169;BA.debugLine="Private Sub btn_run_Click";
@@ -389,7 +389,7 @@ finally {
 		}}
 public static RemoteObject  _calc_vahed_ezafekari() throws Exception{
 try {
-		Debug.PushSubsStack("calc_vahed_ezafekari (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,484);
+		Debug.PushSubsStack("calc_vahed_ezafekari (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,484);
 if (RapidSub.canDelegate("calc_vahed_ezafekari")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","calc_vahed_ezafekari");}
 RemoteObject _a1 = RemoteObject.createImmutable(0);
 RemoteObject _a2 = RemoteObject.createImmutable(0);
@@ -437,7 +437,7 @@ finally {
 		}}
 public static RemoteObject  _et_kosorat_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_kosorat_TextChanged (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,553);
+		Debug.PushSubsStack("et_kosorat_TextChanged (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,553);
 if (RapidSub.canDelegate("et_kosorat_textchanged")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","et_kosorat_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -461,7 +461,7 @@ finally {
 		}}
 public static RemoteObject  _et_mazaya_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_mazaya_TextChanged (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,548);
+		Debug.PushSubsStack("et_mazaya_TextChanged (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,548);
 if (RapidSub.canDelegate("et_mazaya_textchanged")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","et_mazaya_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -485,7 +485,7 @@ finally {
 		}}
 public static RemoteObject  _et_olad_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_olad_TextChanged (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,543);
+		Debug.PushSubsStack("et_olad_TextChanged (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,543);
 if (RapidSub.canDelegate("et_olad_textchanged")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","et_olad_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -509,7 +509,7 @@ finally {
 		}}
 public static RemoteObject  _et_paye_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_paye_TextChanged (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,510);
+		Debug.PushSubsStack("et_paye_TextChanged (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,510);
 if (RapidSub.canDelegate("et_paye_textchanged")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","et_paye_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -546,7 +546,7 @@ finally {
 		}}
 public static RemoteObject  _et_rozekari_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_rozeKari_TextChanged (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,534);
+		Debug.PushSubsStack("et_rozeKari_TextChanged (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,534);
 if (RapidSub.canDelegate("et_rozekari_textchanged")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","et_rozekari_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -577,7 +577,7 @@ finally {
 		}}
 public static RemoteObject  _et_sanavat_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_sanavat_TextChanged (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,522);
+		Debug.PushSubsStack("et_sanavat_TextChanged (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,522);
 if (RapidSub.canDelegate("et_sanavat_textchanged")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","et_sanavat_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -611,7 +611,7 @@ finally {
 		}}
 public static RemoteObject  _et_vahed_ezafekari_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("et_vahed_ezafekari_TextChanged (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,558);
+		Debug.PushSubsStack("et_vahed_ezafekari_TextChanged (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,558);
 if (RapidSub.canDelegate("et_vahed_ezafekari_textchanged")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","et_vahed_ezafekari_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -635,7 +635,7 @@ finally {
 		}}
 public static RemoteObject  _get_data_hogogi() throws Exception{
 try {
-		Debug.PushSubsStack("get_data_hogogi (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,223);
+		Debug.PushSubsStack("get_data_hogogi (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,223);
 if (RapidSub.canDelegate("get_data_hogogi")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","get_data_hogogi");}
 RemoteObject _tedad_olad = RemoteObject.createImmutable(0);
 RemoteObject _moon_num = RemoteObject.createImmutable("");
@@ -932,7 +932,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,136);
+		Debug.PushSubsStack("lbl_back_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,136);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","lbl_back_click");}
  BA.debugLineNum = 136;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(128);
@@ -951,7 +951,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_close_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_close_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,165);
+		Debug.PushSubsStack("lbl_close_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,165);
 if (RapidSub.canDelegate("lbl_close_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","lbl_close_click");}
  BA.debugLineNum = 165;BA.debugLine="Private Sub lbl_close_Click";
 Debug.ShouldStop(16);
@@ -970,7 +970,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_help_1_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help_1_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,573);
+		Debug.PushSubsStack("lbl_help_1_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,573);
 if (RapidSub.canDelegate("lbl_help_1_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","lbl_help_1_click");}
  BA.debugLineNum = 573;BA.debugLine="Private Sub lbl_help_1_Click";
 Debug.ShouldStop(268435456);
@@ -989,7 +989,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_help_2_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help_2_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,568);
+		Debug.PushSubsStack("lbl_help_2_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,568);
 if (RapidSub.canDelegate("lbl_help_2_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","lbl_help_2_click");}
  BA.debugLineNum = 568;BA.debugLine="Private Sub lbl_help_2_Click";
 Debug.ShouldStop(8388608);
@@ -1008,7 +1008,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_help_3_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help_3_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,563);
+		Debug.PushSubsStack("lbl_help_3_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,563);
 if (RapidSub.canDelegate("lbl_help_3_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","lbl_help_3_click");}
  BA.debugLineNum = 563;BA.debugLine="Private Sub lbl_help_3_Click";
 Debug.ShouldStop(262144);
@@ -1027,7 +1027,7 @@ finally {
 		}}
 public static RemoteObject  _lbl_refresh_vahed_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_refresh_vahed_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,479);
+		Debug.PushSubsStack("lbl_refresh_vahed_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,479);
 if (RapidSub.canDelegate("lbl_refresh_vahed_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","lbl_refresh_vahed_click");}
  BA.debugLineNum = 479;BA.debugLine="Private Sub lbl_refresh_vahed_Click";
 Debug.ShouldStop(1073741824);
@@ -1046,7 +1046,7 @@ finally {
 		}}
 public static RemoteObject  _mohasebe() throws Exception{
 try {
-		Debug.PushSubsStack("mohasebe (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,340);
+		Debug.PushSubsStack("mohasebe (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,340);
 if (RapidSub.canDelegate("mohasebe")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","mohasebe");}
 RemoteObject _nak_mal = RemoteObject.createImmutable(0);
  BA.debugLineNum = 340;BA.debugLine="Sub mohasebe";
@@ -1113,7 +1113,7 @@ finally {
 		}}
 public static RemoteObject  _mohasebe_maliat(RemoteObject _hogog,RemoteObject _year) throws Exception{
 try {
-		Debug.PushSubsStack("mohasebe_maliat (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,393);
+		Debug.PushSubsStack("mohasebe_maliat (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,393);
 if (RapidSub.canDelegate("mohasebe_maliat")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","mohasebe_maliat", _hogog, _year);}
 RemoteObject _all_maliat = RemoteObject.createImmutable(0);
 RemoteObject _state1 = RemoteObject.createImmutable(0);
@@ -1215,7 +1215,7 @@ finally {
 		}}
 public static RemoteObject  _pan_all_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_all_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,218);
+		Debug.PushSubsStack("pan_all_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,218);
 if (RapidSub.canDelegate("pan_all_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","pan_all_click");}
  BA.debugLineNum = 218;BA.debugLine="Private Sub pan_all_Click";
 Debug.ShouldStop(33554432);
@@ -1234,7 +1234,7 @@ finally {
 		}}
 public static RemoteObject  _panel4_click() throws Exception{
 try {
-		Debug.PushSubsStack("Panel4_Click (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,161);
+		Debug.PushSubsStack("Panel4_Click (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,161);
 if (RapidSub.canDelegate("panel4_click")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","panel4_click");}
  BA.debugLineNum = 161;BA.debugLine="Private Sub Panel4_Click";
 Debug.ShouldStop(1);
@@ -1255,7 +1255,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _show_num_pool(RemoteObject _num) throws Exception{
 try {
-		Debug.PushSubsStack("show_num_pool (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,335);
+		Debug.PushSubsStack("show_num_pool (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,335);
 if (RapidSub.canDelegate("show_num_pool")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","show_num_pool", _num);}
 Debug.locals.put("num", _num);
  BA.debugLineNum = 335;BA.debugLine="Sub show_num_pool (num As Int) As String";
@@ -1275,7 +1275,7 @@ finally {
 		}}
 public static RemoteObject  _sp_olad_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("sp_olad_ItemClick (fast_run_activity) ","fast_run_activity",3,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,504);
+		Debug.PushSubsStack("sp_olad_ItemClick (fast_run_activity) ","fast_run_activity",8,fast_run_activity.mostCurrent.activityBA,fast_run_activity.mostCurrent,504);
 if (RapidSub.canDelegate("sp_olad_itemclick")) { return ir.taravatgroup.ezafekari2.fast_run_activity.remoteMe.runUserSub(false, "fast_run_activity","sp_olad_itemclick", _position, _value);}
 RemoteObject _num = RemoteObject.createImmutable(0);
 Debug.locals.put("Position", _position);

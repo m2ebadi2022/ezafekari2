@@ -8,7 +8,7 @@ public class comment_activity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (comment_activity) ","comment_activity",6,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,18);
+		Debug.PushSubsStack("Activity_Create (comment_activity) ","comment_activity",5,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,18);
 if (RapidSub.canDelegate("activity_create")) { return ir.taravatgroup.ezafekari2.comment_activity.remoteMe.runUserSub(false, "comment_activity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 18;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -28,7 +28,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (comment_activity) ","comment_activity",6,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,41);
+		Debug.PushSubsStack("Activity_KeyPress (comment_activity) ","comment_activity",5,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,41);
 if (RapidSub.canDelegate("activity_keypress")) { return ir.taravatgroup.ezafekari2.comment_activity.remoteMe.runUserSub(false, "comment_activity","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 41;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -59,7 +59,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (comment_activity) ","comment_activity",6,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,28);
+		Debug.PushSubsStack("Activity_Pause (comment_activity) ","comment_activity",5,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,28);
 if (RapidSub.canDelegate("activity_pause")) { return ir.taravatgroup.ezafekari2.comment_activity.remoteMe.runUserSub(false, "comment_activity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 28;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -76,7 +76,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (comment_activity) ","comment_activity",6,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,24);
+		Debug.PushSubsStack("Activity_Resume (comment_activity) ","comment_activity",5,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,24);
 if (RapidSub.canDelegate("activity_resume")) { return ir.taravatgroup.ezafekari2.comment_activity.remoteMe.runUserSub(false, "comment_activity","activity_resume");}
  BA.debugLineNum = 24;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(8388608);
@@ -97,7 +97,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lbl_back_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_back_Click (comment_activity) ","comment_activity",6,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,33);
+		Debug.PushSubsStack("lbl_back_Click (comment_activity) ","comment_activity",5,comment_activity.mostCurrent.activityBA,comment_activity.mostCurrent,33);
 if (RapidSub.canDelegate("lbl_back_click")) { return ir.taravatgroup.ezafekari2.comment_activity.remoteMe.runUserSub(false, "comment_activity","lbl_back_click");}
  BA.debugLineNum = 33;BA.debugLine="Private Sub lbl_back_Click";
 Debug.ShouldStop(1);
