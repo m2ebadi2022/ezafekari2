@@ -15,7 +15,7 @@ public class starter extends  android.app.Service{
 			android.content.Intent in = new android.content.Intent(context, starter.class);
 			if (intent != null)
 				in.putExtra("b4a_internal_intent", intent);
-            ServiceHelper.StarterHelper.startServiceFromReceiver (context, in, true, anywheresoftware.b4a.ShellBA.class);
+            ServiceHelper.StarterHelper.startServiceFromReceiver (context, in, true, BA.class);
 		}
 
 	}
@@ -30,7 +30,7 @@ public class starter extends  android.app.Service{
         super.onCreate();
         mostCurrent = this;
         if (processBA == null) {
-		    processBA = new anywheresoftware.b4a.ShellBA(this, null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.starter");
+		    processBA = new BA(this, null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.starter");
             if (BA.isShellModeRuntimeCheck(processBA)) {
                 processBA.raiseEvent2(null, true, "SHELL", false);
 		    }
@@ -125,8 +125,7 @@ public class starter extends  android.app.Service{
 @Override
 	public android.os.IBinder onBind(android.content.Intent intent) {
 		return null;
-	}
-public anywheresoftware.b4a.keywords.Common __c = null;
+	}public anywheresoftware.b4a.keywords.Common __c = null;
 public static ir.taravatgroup.ezafekari2.fileprovider _provider = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
@@ -148,62 +147,41 @@ public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
-RDebugUtils.currentModule="starter";
-if (Debug.shouldDelegate(processBA, "application_error", false))
-	 {return ((Boolean) Debug.delegate(processBA, "application_error", new Object[] {_error,_stacktrace}));}
-RDebugUtils.currentLine=29556736;
- //BA.debugLineNum = 29556736;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
-RDebugUtils.currentLine=29556737;
- //BA.debugLineNum = 29556737;BA.debugLine="Return True";
+ //BA.debugLineNum = 43;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
+ //BA.debugLineNum = 44;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=29556738;
- //BA.debugLineNum = 29556738;BA.debugLine="End Sub";
+ //BA.debugLineNum = 45;BA.debugLine="End Sub";
 return false;
 }
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 9;BA.debugLine="Dim Provider As FileProvider";
+_provider = new ir.taravatgroup.ezafekari2.fileprovider();
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
+return "";
+}
 public static String  _service_create() throws Exception{
-RDebugUtils.currentModule="starter";
-if (Debug.shouldDelegate(processBA, "service_create", false))
-	 {return ((String) Debug.delegate(processBA, "service_create", null));}
-RDebugUtils.currentLine=29360128;
- //BA.debugLineNum = 29360128;BA.debugLine="Sub Service_Create";
-RDebugUtils.currentLine=29360131;
- //BA.debugLineNum = 29360131;BA.debugLine="Provider.Initialize";
-_provider._initialize /*String*/ (null,processBA);
-RDebugUtils.currentLine=29360132;
- //BA.debugLineNum = 29360132;BA.debugLine="End Sub";
+ //BA.debugLineNum = 12;BA.debugLine="Sub Service_Create";
+ //BA.debugLineNum = 15;BA.debugLine="Provider.Initialize";
+_provider._initialize /*String*/ (processBA);
+ //BA.debugLineNum = 16;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_destroy() throws Exception{
-RDebugUtils.currentModule="starter";
-if (Debug.shouldDelegate(processBA, "service_destroy", false))
-	 {return ((String) Debug.delegate(processBA, "service_destroy", null));}
-RDebugUtils.currentLine=29622272;
- //BA.debugLineNum = 29622272;BA.debugLine="Sub Service_Destroy";
-RDebugUtils.currentLine=29622274;
- //BA.debugLineNum = 29622274;BA.debugLine="End Sub";
+ //BA.debugLineNum = 47;BA.debugLine="Sub Service_Destroy";
+ //BA.debugLineNum = 49;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_start(anywheresoftware.b4a.objects.IntentWrapper _startingintent) throws Exception{
-RDebugUtils.currentModule="starter";
-if (Debug.shouldDelegate(processBA, "service_start", false))
-	 {return ((String) Debug.delegate(processBA, "service_start", new Object[] {_startingintent}));}
-RDebugUtils.currentLine=29425664;
- //BA.debugLineNum = 29425664;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
-RDebugUtils.currentLine=29425681;
- //BA.debugLineNum = 29425681;BA.debugLine="Service.StopAutomaticForeground 'Starter service";
+ //BA.debugLineNum = 18;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
+ //BA.debugLineNum = 35;BA.debugLine="Service.StopAutomaticForeground 'Starter service";
 mostCurrent._service.StopAutomaticForeground();
-RDebugUtils.currentLine=29425682;
- //BA.debugLineNum = 29425682;BA.debugLine="End Sub";
+ //BA.debugLineNum = 36;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_taskremoved() throws Exception{
-RDebugUtils.currentModule="starter";
-if (Debug.shouldDelegate(processBA, "service_taskremoved", false))
-	 {return ((String) Debug.delegate(processBA, "service_taskremoved", null));}
-RDebugUtils.currentLine=29491200;
- //BA.debugLineNum = 29491200;BA.debugLine="Sub Service_TaskRemoved";
-RDebugUtils.currentLine=29491202;
- //BA.debugLineNum = 29491202;BA.debugLine="End Sub";
+ //BA.debugLineNum = 38;BA.debugLine="Sub Service_TaskRemoved";
+ //BA.debugLineNum = 40;BA.debugLine="End Sub";
 return "";
 }
 public void _onCreate() { //@cafetoseeh

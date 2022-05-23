@@ -34,7 +34,7 @@ public class comment_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.comment_activity");
+			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.comment_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class comment_activity extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
@@ -364,72 +355,61 @@ public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="comment_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=12255232;
- //BA.debugLineNum = 12255232;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=12255234;
- //BA.debugLineNum = 12255234;BA.debugLine="Activity.LoadLayout(\"comment_layout\")";
+ //BA.debugLineNum = 18;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 20;BA.debugLine="Activity.LoadLayout(\"comment_layout\")";
 mostCurrent._activity.LoadLayout("comment_layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=12255236;
- //BA.debugLineNum = 12255236;BA.debugLine="End Sub";
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
-RDebugUtils.currentModule="comment_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
-	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=12517376;
- //BA.debugLineNum = 12517376;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=12517377;
- //BA.debugLineNum = 12517377;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 41;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 42;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=12517378;
- //BA.debugLineNum = 12517378;BA.debugLine="lbl_back_Click";
+ //BA.debugLineNum = 43;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
-RDebugUtils.currentLine=12517379;
- //BA.debugLineNum = 12517379;BA.debugLine="Return True";
+ //BA.debugLineNum = 44;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=12517381;
- //BA.debugLineNum = 12517381;BA.debugLine="Return False";
+ //BA.debugLineNum = 46;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=12517383;
- //BA.debugLineNum = 12517383;BA.debugLine="End Sub";
+ //BA.debugLineNum = 48;BA.debugLine="End Sub";
 return false;
 }
-public static String  _lbl_back_click() throws Exception{
-RDebugUtils.currentModule="comment_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
-RDebugUtils.currentLine=12451840;
- //BA.debugLineNum = 12451840;BA.debugLine="Private Sub lbl_back_Click";
-RDebugUtils.currentLine=12451842;
- //BA.debugLineNum = 12451842;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
-RDebugUtils.currentLine=12451843;
- //BA.debugLineNum = 12451843;BA.debugLine="End Sub";
-return "";
-}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="comment_activity";
-RDebugUtils.currentLine=12386304;
- //BA.debugLineNum = 12386304;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=12386306;
- //BA.debugLineNum = 12386306;BA.debugLine="End Sub";
+ //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 30;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="comment_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=12320768;
- //BA.debugLineNum = 12320768;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=12320770;
- //BA.debugLineNum = 12320770;BA.debugLine="End Sub";
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 26;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 16;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_back_click() throws Exception{
+ //BA.debugLineNum = 33;BA.debugLine="Private Sub lbl_back_Click";
+ //BA.debugLineNum = 35;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ //BA.debugLineNum = 36;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 }
