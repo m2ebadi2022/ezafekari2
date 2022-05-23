@@ -439,7 +439,7 @@ main,timer1_tick,1,0,560,567
 ,ckb_ezaf_taradod,,ckb_ezaf_taradod_ft,,et_tozihat,,img_help,,lbl_box_title,,lbl_close_help,,lbl_date_ft,,lbl_date1,,lbl_date2,,lbl_ezaf_taradod,,lbl_khoroj_ft,,lbl_show_vip,,lbl_tim_khoroj_ft,,lbl_tim_vorod_ft,,lbl_tim1,,lbl_tim2,,lbl_time_as,,lbl_time_show,,lbl_time_show_ft,,lbl_time_ta,,lbl_title_msgpan,,lbl_vip_now,,lbl_vorod_ft,,pan_all,,pan_all_ft,,pan_all_litemenu,,pan_all_msgnewyear,,pan_all_noskhe,,pan_all2,,pan_ezaf_taradod,,pan_help,,pan_imag,,pan_main,,pan_notif,,pan_notifi_all,,pan_picker,,panel1,,pik_day1,,pik_hour_bala1,,pik_hour_paeen1,,pik_hour1,,pik_min_bala1,,pik_min_paeen1,,pik_min1,,pik_moon1,,pik_year1,,scroll_v_noskhe,,web_msg_show,,timer1,,cv_loader,,index_page,,img1,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,scv_home_item,,persiandate,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,dbcode,res,dbcode,sql,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img
 ,ckb_ezaf_taradod,,ckb_ezaf_taradod_ft,,et_tozihat,,img_help,,lbl_box_title,,lbl_close_help,,lbl_date_ft,,lbl_date1,,lbl_date2,,lbl_ezaf_taradod,,lbl_khoroj_ft,,lbl_show_vip,,lbl_tim_khoroj_ft,,lbl_tim_vorod_ft,,lbl_tim1,,lbl_tim2,,lbl_time_as,,lbl_time_show,,lbl_time_show_ft,,lbl_time_ta,,lbl_title_msgpan,,lbl_vip_now,,lbl_vorod_ft,,pan_all,,pan_all_ft,,pan_all_litemenu,,pan_all_msgnewyear,,pan_all_noskhe,,pan_all2,,pan_ezaf_taradod,,pan_help,,pan_imag,,pan_main,,pan_notif,,pan_notifi_all,,pan_picker,,panel1,,pik_day1,,pik_hour_bala1,,pik_hour_paeen1,,pik_hour1,,pik_min_bala1,,pik_min_paeen1,,pik_min1,,pik_moon1,,pik_year1,,scroll_v_noskhe,,web_msg_show,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,scv_home_item,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,dbcode,res,,index_curent_img
 b4xloadingindicator,hide,,btn_menu_home_click,myfunc,fa2en,dbcode,get_setting_byname,myfunc,help_man,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,myfunc,check_karid,,lbl_help_click,,get_today_shift,myfunc,set_font,dbcode,connect_db,myfunc,min_to_saatminroz,,img_slider,dbcode,get_day_id,myfunc,font_filename
-dbcode,init_notfound,0,0,128,135
+dbcode,init_notfound,0,0,146,153
 ,res,,sql
 ,res
 ,connect_db
@@ -451,7 +451,7 @@ dbcode,install_db_tbl_mycalander,0,0,36,48
 ,res,,sql,,workbook1,,sheet1
 ,res,,sheet1
 ,connect_db,,insert_calander_exl,myfunc,fa2en
-dbcode,cheng_tagvim,0,0,83,104
+dbcode,cheng_tagvim,0,1,83,122
 ,res,,sql
 ,res
 ,connect_db
@@ -459,51 +459,51 @@ dbcode,install_db_tbl_onvanha,0,0,50,78
 ,res,,sql
 ,res
 ,connect_db
-dbcode,isexist_ezafekari_by_date,0,0,420,436
+dbcode,isexist_ezafekari_by_date,0,0,438,454
 ,res,,sql
 ,res
 ,connect_db
-dbcode,add_ezafekari,0,0,138,142
+dbcode,add_ezafekari,0,0,156,160
 ,sql
 
 ,connect_db
-dbcode,edit_ezafekari,0,0,162,166
+dbcode,edit_ezafekari,0,0,180,184
 ,sql
 
 ,connect_db
-dbcode,isexist_morakhasi_by_date,0,0,438,453
+dbcode,isexist_morakhasi_by_date,0,0,456,471
 ,res,,sql
 ,res
 ,connect_db
-dbcode,add_morakhasi,0,0,145,150
+dbcode,add_morakhasi,0,0,163,168
 ,sql
 
 ,connect_db
-dbcode,edit_morakhasi,0,0,169,174
+dbcode,edit_morakhasi,0,0,187,192
 ,sql
 
 ,connect_db
-dbcode,isexist_taradod_by_date,0,0,455,470
+dbcode,isexist_taradod_by_date,0,0,473,488
 ,res,,sql
 ,res
 ,connect_db
-dbcode,add_taradod,0,0,152,156
+dbcode,add_taradod,0,0,170,174
 ,sql
 
 ,connect_db
-dbcode,edit_taradod,0,0,176,180
+dbcode,edit_taradod,0,0,194,198
 ,sql
 
 ,connect_db
-dbcode,get_setting_byname,0,0,243,251
+dbcode,get_setting_byname,0,0,261,269
 ,res,,sql
 ,res
 ,connect_db
-dbcode,all_ezafekari_mah,0,0,262,317
+dbcode,all_ezafekari_mah,0,0,280,335
 ,res,,sql
 ,res
 ,connect_db
-dbcode,all_morakhasi_mah,0,0,323,374
+dbcode,all_morakhasi_mah,0,0,341,392
 ,res,,sql,main,saat_kar_min
 ,res
 ,get_setting_byname,,connect_db,myfunc,min_to_saatminroz
@@ -511,47 +511,47 @@ dbcode,connect_db,0,0,14,20
 ,sql
 
 
-dbcode,get_day_id,0,0,500,519
+dbcode,get_day_id,0,0,518,537
 ,res,,sql
 ,res
 ,connect_db
-dbcode,delete_ezafekari,0,0,193,197
+dbcode,delete_ezafekari,0,0,211,215
 ,sql
 
 ,connect_db
-dbcode,delete_morakhasi,0,0,198,202
+dbcode,delete_morakhasi,0,0,216,220
 ,sql
 
 ,connect_db
-dbcode,delete_taradod,0,0,203,207
+dbcode,delete_taradod,0,0,221,225
 ,sql
 
 ,connect_db
-dbcode,delete_gozaresh,0,0,208,212
+dbcode,delete_gozaresh,0,0,226,230
 ,sql
 
 ,connect_db
-dbcode,all_taradod_mah,0,0,377,413
+dbcode,all_taradod_mah,0,0,395,431
 ,res,,sql
 ,res
 ,connect_db
-dbcode,add_gozaresh,0,0,187,191
+dbcode,add_gozaresh,0,0,205,209
 ,sql
 
 ,connect_db
-dbcode,add_setting_hogog,0,0,215,241
+dbcode,add_setting_hogog,0,0,233,259
 ,sql
 
 ,connect_db
-dbcode,add_setting_run,0,0,253,260
+dbcode,add_setting_run,0,0,271,278
 ,sql
 
 ,connect_db
-dbcode,insert_calander_exl,0,0,106,125
+dbcode,insert_calander_exl,0,0,124,143
 ,workbook1,,sheet1,,sql
 ,sheet1
 myfunc,fa2en
-dbcode,istatil_by_date,0,0,475,494
+dbcode,istatil_by_date,0,0,493,512
 ,res,,sql
 ,res
 ,connect_db
@@ -559,7 +559,7 @@ dbcode,process_globals,0,1,3,12
 
 
 
-dbcode,read_onvan_db,0,0,523,537
+dbcode,read_onvan_db,0,0,541,555
 ,res,,sql
 ,res
 ,connect_db

@@ -106,11 +106,11 @@ _lbl_back_click();
 ;
  BA.debugLineNum = 102;BA.debugLine="Return True";
 Debug.ShouldStop(32);
-if (true) return setting_activity.mostCurrent.__c.getField(true,"True");
+Debug.CheckDeviceExceptions();if (true) return setting_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 104;BA.debugLine="Return False";
 Debug.ShouldStop(128);
-if (true) return setting_activity.mostCurrent.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return setting_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 106;BA.debugLine="End Sub";
 Debug.ShouldStop(512);

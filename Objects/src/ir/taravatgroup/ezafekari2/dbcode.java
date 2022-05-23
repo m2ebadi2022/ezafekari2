@@ -132,31 +132,62 @@ RDebugUtils.currentLine=7733249;
 _connect_db(_ba);
 RDebugUtils.currentLine=7733251;
  //BA.debugLineNum = 7733251;BA.debugLine="Try";
-try {RDebugUtils.currentLine=7733252;
- //BA.debugLineNum = 7733252;BA.debugLine="res = sql.ExecQuery(\"SELECT * FROM 'my_calander'";
+try {RDebugUtils.currentLine=7733253;
+ //BA.debugLineNum = 7733253;BA.debugLine="res = sql.ExecQuery(\"SELECT * FROM 'my_calander'";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id=1141")));
-RDebugUtils.currentLine=7733253;
- //BA.debugLineNum = 7733253;BA.debugLine="res.Position=0";
+RDebugUtils.currentLine=7733254;
+ //BA.debugLineNum = 7733254;BA.debugLine="res.Position=0";
 _res.setPosition((int) (0));
-RDebugUtils.currentLine=7733256;
- //BA.debugLineNum = 7733256;BA.debugLine="If(res.GetString(\"state\")=\"tatil\")Then";
+RDebugUtils.currentLine=7733257;
+ //BA.debugLineNum = 7733257;BA.debugLine="If(res.GetString(\"state\")=\"tatil\")Then";
 if (((_res.GetString("state")).equals("tatil"))) { 
  }else {
-RDebugUtils.currentLine=7733260;
- //BA.debugLineNum = 7733260;BA.debugLine="sql.ExecNonQuery(\"UPDATE 'my_calander' SET stat";
-_sql.ExecNonQuery("UPDATE 'my_calander' SET state ='', monasebat='شهادت استاد مرتضی مطهری، روزمعلم' WHERE id=1139 ");
 RDebugUtils.currentLine=7733261;
  //BA.debugLineNum = 7733261;BA.debugLine="sql.ExecNonQuery(\"UPDATE 'my_calander' SET stat";
+_sql.ExecNonQuery("UPDATE 'my_calander' SET state ='', monasebat='شهادت استاد مرتضی مطهری، روزمعلم' WHERE id=1139 ");
+RDebugUtils.currentLine=7733262;
+ //BA.debugLineNum = 7733262;BA.debugLine="sql.ExecNonQuery(\"UPDATE 'my_calander' SET stat";
 _sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil', monasebat=' عید سعید فطر' WHERE id=1141 ");
  };
- } 
-       catch (Exception e11) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e11);RDebugUtils.currentLine=7733265;
- //BA.debugLineNum = 7733265;BA.debugLine="Log(\"error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("17733265","error",0);
- };
+RDebugUtils.currentLine=7733264;
+ //BA.debugLineNum = 7733264;BA.debugLine="res.Close";
+_res.Close();
+RDebugUtils.currentLine=7733266;
+ //BA.debugLineNum = 7733266;BA.debugLine="res = sql.ExecQuery(\"SELECT * FROM 'my_calander'";
+_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id=1163")));
+RDebugUtils.currentLine=7733267;
+ //BA.debugLineNum = 7733267;BA.debugLine="res.Position=0";
+_res.setPosition((int) (0));
 RDebugUtils.currentLine=7733269;
- //BA.debugLineNum = 7733269;BA.debugLine="End Sub";
+ //BA.debugLineNum = 7733269;BA.debugLine="If(res.GetString(\"state\")=\"tatil\")Then";
+if (((_res.GetString("state")).equals("tatil"))) { 
+RDebugUtils.currentLine=7733270;
+ //BA.debugLineNum = 7733270;BA.debugLine="sql.ExecNonQuery(\"UPDATE 'my_calander' SET stat";
+_sql.ExecNonQuery("UPDATE 'my_calander' SET state ='', monasebat='' WHERE id=1163 ");
+RDebugUtils.currentLine=7733271;
+ //BA.debugLineNum = 7733271;BA.debugLine="sql.ExecNonQuery(\"UPDATE 'my_calander' SET stat";
+_sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil', monasebat='شهادت امام جعفر صادق علیه السلام' WHERE id=1164 ");
+RDebugUtils.currentLine=7733273;
+ //BA.debugLineNum = 7733273;BA.debugLine="sql.ExecNonQuery(\"UPDATE 'my_calander' SET stat";
+_sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil' WHERE id=1216 ");
+RDebugUtils.currentLine=7733274;
+ //BA.debugLineNum = 7733274;BA.debugLine="sql.ExecNonQuery(\"UPDATE 'my_calander' SET stat";
+_sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil' WHERE id=1285 ");
+RDebugUtils.currentLine=7733275;
+ //BA.debugLineNum = 7733275;BA.debugLine="sql.ExecNonQuery(\"UPDATE 'my_calander' SET stat";
+_sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil' WHERE id=1287 ");
+ };
+RDebugUtils.currentLine=7733279;
+ //BA.debugLineNum = 7733279;BA.debugLine="res.Close";
+_res.Close();
+ } 
+       catch (Exception e22) {
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e22);RDebugUtils.currentLine=7733283;
+ //BA.debugLineNum = 7733283;BA.debugLine="Log(\"error\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("17733283","error",0);
+ };
+RDebugUtils.currentLine=7733287;
+ //BA.debugLineNum = 7733287;BA.debugLine="End Sub";
 return "";
 }
 public static String  _install_db_tbl_onvanha(anywheresoftware.b4a.BA _ba) throws Exception{

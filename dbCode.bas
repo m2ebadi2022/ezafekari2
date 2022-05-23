@@ -90,6 +90,7 @@ Sub cheng_tagvim
 	connect_db
 	
 	Try
+		''---------eslah1 eyd fete
 		res = sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id=1141")
 		res.Position=0
 		
@@ -101,6 +102,23 @@ Sub cheng_tagvim
 			sql.ExecNonQuery("UPDATE 'my_calander' SET state ='', monasebat='شهادت استاد مرتضی مطهری، روزمعلم' WHERE id=1139 ")
 			sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil', monasebat=' عید سعید فطر' WHERE id=1141 ")
 		End If
+		res.Close
+		''----------------------- eslah2
+		res = sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id=1163")
+		res.Position=0
+		
+		If(res.GetString("state")="tatil")Then
+			sql.ExecNonQuery("UPDATE 'my_calander' SET state ='', monasebat='' WHERE id=1163 ")
+			sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil', monasebat='شهادت امام جعفر صادق علیه السلام' WHERE id=1164 ")
+			
+			sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil' WHERE id=1216 ")
+			sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil' WHERE id=1285 ")
+			sql.ExecNonQuery("UPDATE 'my_calander' SET state ='tatil' WHERE id=1287 ")
+			
+			
+		End If
+		res.Close
+		
 		
 	Catch
 		Log("error")
