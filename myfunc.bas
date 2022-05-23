@@ -251,6 +251,26 @@ Sub Min_to_saatMinRoz(min1 As Int)As List
 End Sub
 
 
+Sub Min_to_saatMinRoz2_dontDay(min1 As Int)As List
+	Dim ls_saatMin As List
+	ls_saatMin.Initialize
+	
+	Dim sat As Int=0
+	Dim dag As Int=0
+	
+	
+	sat= min1/60
+	dag= min1 Mod 60
+	
+	
+	ls_saatMin.Add(sat)
+	ls_saatMin.Add(dag)
+
+	
+	Return ls_saatMin
+End Sub
+
+
 
 Sub WebViewAssetFile (FileName As String) As String
 	

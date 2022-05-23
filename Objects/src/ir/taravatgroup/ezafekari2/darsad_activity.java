@@ -34,7 +34,7 @@ public class darsad_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.darsad_activity");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.darsad_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,6 +335,15 @@ public class darsad_activity extends Activity implements B4AActivity{
             
     }
 
+
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _et_r1_asli = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _et_r1_darsad = null;
@@ -351,10 +360,10 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
-public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
@@ -366,198 +375,253 @@ public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 29;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 31;BA.debugLine="Activity.LoadLayout(\"darsad_layout\")";
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=14286848;
+ //BA.debugLineNum = 14286848;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=14286850;
+ //BA.debugLineNum = 14286850;BA.debugLine="Activity.LoadLayout(\"darsad_layout\")";
 mostCurrent._activity.LoadLayout("darsad_layout",mostCurrent.activityBA);
- //BA.debugLineNum = 32;BA.debugLine="ScrollView1.Panel.LoadLayout(\"item_darsad\")";
+RDebugUtils.currentLine=14286851;
+ //BA.debugLineNum = 14286851;BA.debugLine="ScrollView1.Panel.LoadLayout(\"item_darsad\")";
 mostCurrent._scrollview1.getPanel().LoadLayout("item_darsad",mostCurrent.activityBA);
- //BA.debugLineNum = 35;BA.debugLine="pan_hed_darsad.Color=Main.color4";
+RDebugUtils.currentLine=14286854;
+ //BA.debugLineNum = 14286854;BA.debugLine="pan_hed_darsad.Color=Main.color4";
 mostCurrent._pan_hed_darsad.setColor(mostCurrent._main._color4 /*int*/ );
- //BA.debugLineNum = 36;BA.debugLine="myfunc.set_font(Activity)";
+RDebugUtils.currentLine=14286855;
+ //BA.debugLineNum = 14286855;BA.debugLine="myfunc.set_font(Activity)";
 mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,mostCurrent._activity);
- //BA.debugLineNum = 37;BA.debugLine="End Sub";
+RDebugUtils.currentLine=14286856;
+ //BA.debugLineNum = 14286856;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 55;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 56;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
+	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
+RDebugUtils.currentLine=14548992;
+ //BA.debugLineNum = 14548992;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+RDebugUtils.currentLine=14548993;
+ //BA.debugLineNum = 14548993;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 57;BA.debugLine="lbl_back_Click";
+RDebugUtils.currentLine=14548994;
+ //BA.debugLineNum = 14548994;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
- //BA.debugLineNum = 58;BA.debugLine="Return True";
+RDebugUtils.currentLine=14548995;
+ //BA.debugLineNum = 14548995;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 60;BA.debugLine="Return False";
+RDebugUtils.currentLine=14548997;
+ //BA.debugLineNum = 14548997;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 62;BA.debugLine="End Sub";
+RDebugUtils.currentLine=14548999;
+ //BA.debugLineNum = 14548999;BA.debugLine="End Sub";
 return false;
 }
+public static String  _lbl_back_click() throws Exception{
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
+RDebugUtils.currentLine=14483456;
+ //BA.debugLineNum = 14483456;BA.debugLine="Private Sub lbl_back_Click";
+RDebugUtils.currentLine=14483458;
+ //BA.debugLineNum = 14483458;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+RDebugUtils.currentLine=14483459;
+ //BA.debugLineNum = 14483459;BA.debugLine="End Sub";
+return "";
+}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 43;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 45;BA.debugLine="End Sub";
+RDebugUtils.currentModule="darsad_activity";
+RDebugUtils.currentLine=14417920;
+ //BA.debugLineNum = 14417920;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=14417922;
+ //BA.debugLineNum = 14417922;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 39;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 41;BA.debugLine="End Sub";
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=14352384;
+ //BA.debugLineNum = 14352384;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=14352386;
+ //BA.debugLineNum = 14352386;BA.debugLine="End Sub";
 return "";
 }
 public static String  _et_r1_asli_textchanged(String _old,String _new) throws Exception{
- //BA.debugLineNum = 107;BA.debugLine="Private Sub et_R1_asli_TextChanged (Old As String,";
- //BA.debugLineNum = 108;BA.debugLine="et_R1_asli.Tag=New.Replace(\",\",\"\")";
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "et_r1_asli_textchanged", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "et_r1_asli_textchanged", new Object[] {_old,_new}));}
+RDebugUtils.currentLine=14811136;
+ //BA.debugLineNum = 14811136;BA.debugLine="Private Sub et_R1_asli_TextChanged (Old As String,";
+RDebugUtils.currentLine=14811137;
+ //BA.debugLineNum = 14811137;BA.debugLine="et_R1_asli.Tag=New.Replace(\",\",\"\")";
 mostCurrent._et_r1_asli.setTag((Object)(_new.replace(",","")));
- //BA.debugLineNum = 109;BA.debugLine="myfunc.change_formater(Old,New,et_R1_asli)";
+RDebugUtils.currentLine=14811138;
+ //BA.debugLineNum = 14811138;BA.debugLine="myfunc.change_formater(Old,New,et_R1_asli)";
 mostCurrent._myfunc._change_formater /*String*/ (mostCurrent.activityBA,_old,_new,mostCurrent._et_r1_asli);
- //BA.debugLineNum = 110;BA.debugLine="If(et_R1_asli.Text <> \"\" And et_R1_darsad.Text <>";
+RDebugUtils.currentLine=14811139;
+ //BA.debugLineNum = 14811139;BA.debugLine="If(et_R1_asli.Text <> \"\" And et_R1_darsad.Text <>";
 if (((mostCurrent._et_r1_asli.getText()).equals("") == false && (mostCurrent._et_r1_darsad.getText()).equals("") == false)) { 
- //BA.debugLineNum = 111;BA.debugLine="run1";
+RDebugUtils.currentLine=14811140;
+ //BA.debugLineNum = 14811140;BA.debugLine="run1";
 _run1();
  };
- //BA.debugLineNum = 114;BA.debugLine="End Sub";
-return "";
-}
-public static String  _et_r1_darsad_textchanged(String _old,String _new) throws Exception{
- //BA.debugLineNum = 99;BA.debugLine="Private Sub et_R1_darsad_TextChanged (Old As Strin";
- //BA.debugLineNum = 100;BA.debugLine="et_R1_asli.Tag=New.Replace(\",\",\"\")";
-mostCurrent._et_r1_asli.setTag((Object)(_new.replace(",","")));
- //BA.debugLineNum = 101;BA.debugLine="myfunc.change_formater(Old,New,et_R1_asli)";
-mostCurrent._myfunc._change_formater /*String*/ (mostCurrent.activityBA,_old,_new,mostCurrent._et_r1_asli);
- //BA.debugLineNum = 102;BA.debugLine="If(et_R1_asli.Text <> \"\" And et_R1_darsad.Text <>";
-if (((mostCurrent._et_r1_asli.getText()).equals("") == false && (mostCurrent._et_r1_darsad.getText()).equals("") == false)) { 
- //BA.debugLineNum = 103;BA.debugLine="run1";
-_run1();
- };
- //BA.debugLineNum = 105;BA.debugLine="End Sub";
-return "";
-}
-public static String  _et_r2_asli_textchanged(String _old,String _new) throws Exception{
- //BA.debugLineNum = 125;BA.debugLine="Private Sub et_R2_asli_TextChanged (Old As String,";
- //BA.debugLineNum = 126;BA.debugLine="et_R2_asli.Tag=New.Replace(\",\",\"\")";
-mostCurrent._et_r2_asli.setTag((Object)(_new.replace(",","")));
- //BA.debugLineNum = 127;BA.debugLine="myfunc.change_formater(Old,New,et_R2_asli)";
-mostCurrent._myfunc._change_formater /*String*/ (mostCurrent.activityBA,_old,_new,mostCurrent._et_r2_asli);
- //BA.debugLineNum = 130;BA.debugLine="If(et_R2_asli.Text <> \"\" And et_R2_joze.Text <> \"";
-if (((mostCurrent._et_r2_asli.getText()).equals("") == false && (mostCurrent._et_r2_joze.getText()).equals("") == false)) { 
- //BA.debugLineNum = 131;BA.debugLine="run2";
-_run2();
- };
- //BA.debugLineNum = 133;BA.debugLine="End Sub";
-return "";
-}
-public static String  _et_r2_joze_textchanged(String _old,String _new) throws Exception{
- //BA.debugLineNum = 117;BA.debugLine="Private Sub et_R2_joze_TextChanged (Old As String,";
- //BA.debugLineNum = 118;BA.debugLine="et_R2_joze.Tag=New.Replace(\",\",\"\")";
-mostCurrent._et_r2_joze.setTag((Object)(_new.replace(",","")));
- //BA.debugLineNum = 119;BA.debugLine="myfunc.change_formater(Old,New,et_R2_joze)";
-mostCurrent._myfunc._change_formater /*String*/ (mostCurrent.activityBA,_old,_new,mostCurrent._et_r2_joze);
- //BA.debugLineNum = 120;BA.debugLine="If(et_R2_asli.Text <> \"\" And et_R2_joze.Text <> \"";
-if (((mostCurrent._et_r2_asli.getText()).equals("") == false && (mostCurrent._et_r2_joze.getText()).equals("") == false)) { 
- //BA.debugLineNum = 121;BA.debugLine="run2";
-_run2();
- };
- //BA.debugLineNum = 123;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="Private et_R1_asli As EditText";
-mostCurrent._et_r1_asli = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Private et_R1_darsad As EditText";
-mostCurrent._et_r1_darsad = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Private et_R2_asli As EditText";
-mostCurrent._et_r2_asli = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Private et_R2_joze As EditText";
-mostCurrent._et_r2_joze = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Private lbl_R1_megdar_darsad As Label";
-mostCurrent._lbl_r1_megdar_darsad = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Private lbl_R1_megdar_kol As Label";
-mostCurrent._lbl_r1_megdar_kol = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Private lbl_R2_darsad As Label";
-mostCurrent._lbl_r2_darsad = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Private lbl_R2_result As Label";
-mostCurrent._lbl_r2_result = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 24;BA.debugLine="Private lbl_R1_result As Label";
-mostCurrent._lbl_r1_result = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 25;BA.debugLine="Private ScrollView1 As ScrollView";
-mostCurrent._scrollview1 = new anywheresoftware.b4a.objects.ScrollViewWrapper();
- //BA.debugLineNum = 26;BA.debugLine="Private pan_hed_darsad As Panel";
-mostCurrent._pan_hed_darsad = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 27;BA.debugLine="End Sub";
-return "";
-}
-public static String  _lbl_back_click() throws Exception{
- //BA.debugLineNum = 47;BA.debugLine="Private Sub lbl_back_Click";
- //BA.debugLineNum = 49;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
- //BA.debugLineNum = 50;BA.debugLine="End Sub";
-return "";
-}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+RDebugUtils.currentLine=14811143;
+ //BA.debugLineNum = 14811143;BA.debugLine="End Sub";
 return "";
 }
 public static String  _run1() throws Exception{
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "run1", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "run1", null));}
 long _a = 0L;
 double _b = 0;
 long _c = 0L;
 long _d = 0L;
- //BA.debugLineNum = 68;BA.debugLine="Private Sub run1";
- //BA.debugLineNum = 70;BA.debugLine="Dim a   As Long =0";
+RDebugUtils.currentLine=14614528;
+ //BA.debugLineNum = 14614528;BA.debugLine="Private Sub run1";
+RDebugUtils.currentLine=14614530;
+ //BA.debugLineNum = 14614530;BA.debugLine="Dim a   As Long =0";
 _a = (long) (0);
- //BA.debugLineNum = 71;BA.debugLine="Dim  b  As Double =0";
+RDebugUtils.currentLine=14614531;
+ //BA.debugLineNum = 14614531;BA.debugLine="Dim  b  As Double =0";
 _b = 0;
- //BA.debugLineNum = 73;BA.debugLine="Dim c,d As Long=0";
+RDebugUtils.currentLine=14614533;
+ //BA.debugLineNum = 14614533;BA.debugLine="Dim c,d As Long=0";
 _c = 0L;
 _d = (long) (0);
- //BA.debugLineNum = 74;BA.debugLine="a=et_R1_asli.tag";
+RDebugUtils.currentLine=14614534;
+ //BA.debugLineNum = 14614534;BA.debugLine="a=et_R1_asli.tag";
 _a = BA.ObjectToLongNumber(mostCurrent._et_r1_asli.getTag());
- //BA.debugLineNum = 75;BA.debugLine="b=et_R1_darsad.Text";
+RDebugUtils.currentLine=14614535;
+ //BA.debugLineNum = 14614535;BA.debugLine="b=et_R1_darsad.Text";
 _b = (double)(Double.parseDouble(mostCurrent._et_r1_darsad.getText()));
- //BA.debugLineNum = 78;BA.debugLine="c=a*(b/100)";
+RDebugUtils.currentLine=14614538;
+ //BA.debugLineNum = 14614538;BA.debugLine="c=a*(b/100)";
 _c = (long) (_a*(_b/(double)100));
- //BA.debugLineNum = 79;BA.debugLine="d=a-c";
+RDebugUtils.currentLine=14614539;
+ //BA.debugLineNum = 14614539;BA.debugLine="d=a-c";
 _d = (long) (_a-_c);
- //BA.debugLineNum = 81;BA.debugLine="lbl_R1_megdar_darsad.Text=myfunc.show_num_pool(c)";
+RDebugUtils.currentLine=14614541;
+ //BA.debugLineNum = 14614541;BA.debugLine="lbl_R1_megdar_darsad.Text=myfunc.show_num_pool(c)";
 mostCurrent._lbl_r1_megdar_darsad.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int) (_c))));
- //BA.debugLineNum = 82;BA.debugLine="lbl_R1_megdar_kol.Text=myfunc.show_num_pool(d)";
+RDebugUtils.currentLine=14614542;
+ //BA.debugLineNum = 14614542;BA.debugLine="lbl_R1_megdar_kol.Text=myfunc.show_num_pool(d)";
 mostCurrent._lbl_r1_megdar_kol.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int) (_d))));
- //BA.debugLineNum = 84;BA.debugLine="lbl_R1_result.Text=b&\" درصد از \"&myfunc.show_num_";
+RDebugUtils.currentLine=14614544;
+ //BA.debugLineNum = 14614544;BA.debugLine="lbl_R1_result.Text=b&\" درصد از \"&myfunc.show_num_";
 mostCurrent._lbl_r1_result.setText(BA.ObjectToCharSequence(BA.NumberToString(_b)+" درصد از "+mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int) (_a))+" برابر است با : "+mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int) (_c))));
- //BA.debugLineNum = 85;BA.debugLine="End Sub";
+RDebugUtils.currentLine=14614545;
+ //BA.debugLineNum = 14614545;BA.debugLine="End Sub";
+return "";
+}
+public static String  _et_r1_darsad_textchanged(String _old,String _new) throws Exception{
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "et_r1_darsad_textchanged", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "et_r1_darsad_textchanged", new Object[] {_old,_new}));}
+RDebugUtils.currentLine=14745600;
+ //BA.debugLineNum = 14745600;BA.debugLine="Private Sub et_R1_darsad_TextChanged (Old As Strin";
+RDebugUtils.currentLine=14745601;
+ //BA.debugLineNum = 14745601;BA.debugLine="et_R1_asli.Tag=New.Replace(\",\",\"\")";
+mostCurrent._et_r1_asli.setTag((Object)(_new.replace(",","")));
+RDebugUtils.currentLine=14745602;
+ //BA.debugLineNum = 14745602;BA.debugLine="myfunc.change_formater(Old,New,et_R1_asli)";
+mostCurrent._myfunc._change_formater /*String*/ (mostCurrent.activityBA,_old,_new,mostCurrent._et_r1_asli);
+RDebugUtils.currentLine=14745603;
+ //BA.debugLineNum = 14745603;BA.debugLine="If(et_R1_asli.Text <> \"\" And et_R1_darsad.Text <>";
+if (((mostCurrent._et_r1_asli.getText()).equals("") == false && (mostCurrent._et_r1_darsad.getText()).equals("") == false)) { 
+RDebugUtils.currentLine=14745604;
+ //BA.debugLineNum = 14745604;BA.debugLine="run1";
+_run1();
+ };
+RDebugUtils.currentLine=14745606;
+ //BA.debugLineNum = 14745606;BA.debugLine="End Sub";
+return "";
+}
+public static String  _et_r2_asli_textchanged(String _old,String _new) throws Exception{
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "et_r2_asli_textchanged", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "et_r2_asli_textchanged", new Object[] {_old,_new}));}
+RDebugUtils.currentLine=14942208;
+ //BA.debugLineNum = 14942208;BA.debugLine="Private Sub et_R2_asli_TextChanged (Old As String,";
+RDebugUtils.currentLine=14942209;
+ //BA.debugLineNum = 14942209;BA.debugLine="et_R2_asli.Tag=New.Replace(\",\",\"\")";
+mostCurrent._et_r2_asli.setTag((Object)(_new.replace(",","")));
+RDebugUtils.currentLine=14942210;
+ //BA.debugLineNum = 14942210;BA.debugLine="myfunc.change_formater(Old,New,et_R2_asli)";
+mostCurrent._myfunc._change_formater /*String*/ (mostCurrent.activityBA,_old,_new,mostCurrent._et_r2_asli);
+RDebugUtils.currentLine=14942213;
+ //BA.debugLineNum = 14942213;BA.debugLine="If(et_R2_asli.Text <> \"\" And et_R2_joze.Text <> \"";
+if (((mostCurrent._et_r2_asli.getText()).equals("") == false && (mostCurrent._et_r2_joze.getText()).equals("") == false)) { 
+RDebugUtils.currentLine=14942214;
+ //BA.debugLineNum = 14942214;BA.debugLine="run2";
+_run2();
+ };
+RDebugUtils.currentLine=14942216;
+ //BA.debugLineNum = 14942216;BA.debugLine="End Sub";
 return "";
 }
 public static String  _run2() throws Exception{
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "run2", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "run2", null));}
 long _a = 0L;
 long _b = 0L;
 double _c = 0;
- //BA.debugLineNum = 87;BA.debugLine="Private Sub run2";
- //BA.debugLineNum = 88;BA.debugLine="Dim a , b  As Long =0";
+RDebugUtils.currentLine=14680064;
+ //BA.debugLineNum = 14680064;BA.debugLine="Private Sub run2";
+RDebugUtils.currentLine=14680065;
+ //BA.debugLineNum = 14680065;BA.debugLine="Dim a , b  As Long =0";
 _a = 0L;
 _b = (long) (0);
- //BA.debugLineNum = 89;BA.debugLine="Dim c As Double=0";
+RDebugUtils.currentLine=14680066;
+ //BA.debugLineNum = 14680066;BA.debugLine="Dim c As Double=0";
 _c = 0;
- //BA.debugLineNum = 90;BA.debugLine="a=et_R2_asli.Tag";
+RDebugUtils.currentLine=14680067;
+ //BA.debugLineNum = 14680067;BA.debugLine="a=et_R2_asli.Tag";
 _a = BA.ObjectToLongNumber(mostCurrent._et_r2_asli.getTag());
- //BA.debugLineNum = 91;BA.debugLine="b=et_R2_joze.tag";
+RDebugUtils.currentLine=14680068;
+ //BA.debugLineNum = 14680068;BA.debugLine="b=et_R2_joze.tag";
 _b = BA.ObjectToLongNumber(mostCurrent._et_r2_joze.getTag());
- //BA.debugLineNum = 92;BA.debugLine="c=(b/a)*100";
+RDebugUtils.currentLine=14680069;
+ //BA.debugLineNum = 14680069;BA.debugLine="c=(b/a)*100";
 _c = (_b/(double)_a)*100;
- //BA.debugLineNum = 95;BA.debugLine="lbl_R2_darsad.Text=c & \"  درصد  \"";
+RDebugUtils.currentLine=14680072;
+ //BA.debugLineNum = 14680072;BA.debugLine="lbl_R2_darsad.Text=c & \"  درصد  \"";
 mostCurrent._lbl_r2_darsad.setText(BA.ObjectToCharSequence(BA.NumberToString(_c)+"  درصد  "));
- //BA.debugLineNum = 96;BA.debugLine="lbl_R2_result.Text=myfunc.show_num_pool(b)&\" براب";
+RDebugUtils.currentLine=14680073;
+ //BA.debugLineNum = 14680073;BA.debugLine="lbl_R2_result.Text=myfunc.show_num_pool(b)&\" براب";
 mostCurrent._lbl_r2_result.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int) (_b))+" برابر است با : "+BA.NumberToString(_c)+" درصد عدد "+mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int) (_a))));
- //BA.debugLineNum = 97;BA.debugLine="End Sub";
+RDebugUtils.currentLine=14680074;
+ //BA.debugLineNum = 14680074;BA.debugLine="End Sub";
+return "";
+}
+public static String  _et_r2_joze_textchanged(String _old,String _new) throws Exception{
+RDebugUtils.currentModule="darsad_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "et_r2_joze_textchanged", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "et_r2_joze_textchanged", new Object[] {_old,_new}));}
+RDebugUtils.currentLine=14876672;
+ //BA.debugLineNum = 14876672;BA.debugLine="Private Sub et_R2_joze_TextChanged (Old As String,";
+RDebugUtils.currentLine=14876673;
+ //BA.debugLineNum = 14876673;BA.debugLine="et_R2_joze.Tag=New.Replace(\",\",\"\")";
+mostCurrent._et_r2_joze.setTag((Object)(_new.replace(",","")));
+RDebugUtils.currentLine=14876674;
+ //BA.debugLineNum = 14876674;BA.debugLine="myfunc.change_formater(Old,New,et_R2_joze)";
+mostCurrent._myfunc._change_formater /*String*/ (mostCurrent.activityBA,_old,_new,mostCurrent._et_r2_joze);
+RDebugUtils.currentLine=14876675;
+ //BA.debugLineNum = 14876675;BA.debugLine="If(et_R2_asli.Text <> \"\" And et_R2_joze.Text <> \"";
+if (((mostCurrent._et_r2_asli.getText()).equals("") == false && (mostCurrent._et_r2_joze.getText()).equals("") == false)) { 
+RDebugUtils.currentLine=14876676;
+ //BA.debugLineNum = 14876676;BA.debugLine="run2";
+_run2();
+ };
+RDebugUtils.currentLine=14876678;
+ //BA.debugLineNum = 14876678;BA.debugLine="End Sub";
 return "";
 }
 }

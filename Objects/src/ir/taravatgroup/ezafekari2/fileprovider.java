@@ -10,7 +10,7 @@ public class fileprovider extends B4AClass.ImplB4AClass implements BA.SubDelegat
     private static java.util.HashMap<String, java.lang.reflect.Method> htSubs;
     private void innerInitialize(BA _ba) throws Exception {
         if (ba == null) {
-            ba = new BA(_ba, this, htSubs, "ir.taravatgroup.ezafekari2.fileprovider");
+            ba = new anywheresoftware.b4a.ShellBA(_ba, this, htSubs, "ir.taravatgroup.ezafekari2.fileprovider");
             if (htSubs == null) {
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
@@ -23,7 +23,14 @@ public class fileprovider extends B4AClass.ImplB4AClass implements BA.SubDelegat
             ba.raiseEvent2(null, true, "class_globals", false);
     }
 
- public anywheresoftware.b4a.keywords.Common __c = null;
+ 
+    public void  innerInitializeHelper(anywheresoftware.b4a.BA _ba) throws Exception{
+        innerInitialize(_ba);
+    }
+    public Object callSub(String sub, Object sender, Object[] args) throws Exception {
+        return BA.SubDelegator.SubNotFound;
+    }
+public anywheresoftware.b4a.keywords.Common __c = null;
 public String _sharedfolder = "";
 public boolean _usefileprovider = false;
 public anywheresoftware.b4a.objects.RuntimePermissions _rp = null;
@@ -31,11 +38,11 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
-public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
@@ -47,88 +54,130 @@ public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
-public String  _class_globals() throws Exception{
- //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";
- //BA.debugLineNum = 3;BA.debugLine="Public SharedFolder As String";
-_sharedfolder = "";
- //BA.debugLineNum = 4;BA.debugLine="Public UseFileProvider As Boolean";
-_usefileprovider = false;
- //BA.debugLineNum = 5;BA.debugLine="Private rp As RuntimePermissions";
-_rp = new anywheresoftware.b4a.objects.RuntimePermissions();
- //BA.debugLineNum = 6;BA.debugLine="End Sub";
-return "";
-}
-public Object  _getfileuri(String _filename) throws Exception{
+public Object  _getfileuri(ir.taravatgroup.ezafekari2.fileprovider __ref,String _filename) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="fileprovider";
+if (Debug.shouldDelegate(ba, "getfileuri", true))
+	 {return ((Object) Debug.delegate(ba, "getfileuri", new Object[] {_filename}));}
 anywheresoftware.b4j.object.JavaObject _uri = null;
 anywheresoftware.b4j.object.JavaObject _f = null;
 anywheresoftware.b4j.object.JavaObject _fp = null;
 anywheresoftware.b4j.object.JavaObject _context = null;
- //BA.debugLineNum = 22;BA.debugLine="Public Sub GetFileUri (FileName As String) As Obje";
- //BA.debugLineNum = 24;BA.debugLine="If UseFileProvider = False Then";
-if (_usefileprovider==__c.False) { 
- //BA.debugLineNum = 25;BA.debugLine="Dim uri As JavaObject";
+RDebugUtils.currentLine=29491200;
+ //BA.debugLineNum = 29491200;BA.debugLine="Public Sub GetFileUri (FileName As String) As Obje";
+RDebugUtils.currentLine=29491202;
+ //BA.debugLineNum = 29491202;BA.debugLine="If UseFileProvider = False Then";
+if (__ref._usefileprovider /*boolean*/ ==__c.False) { 
+RDebugUtils.currentLine=29491203;
+ //BA.debugLineNum = 29491203;BA.debugLine="Dim uri As JavaObject";
 _uri = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 26;BA.debugLine="Return uri.InitializeStatic(\"android.net.Uri\").R";
-if (true) return _uri.InitializeStatic("android.net.Uri").RunMethod("parse",new Object[]{(Object)("file://"+__c.File.Combine(_sharedfolder,_filename))});
+RDebugUtils.currentLine=29491204;
+ //BA.debugLineNum = 29491204;BA.debugLine="Return uri.InitializeStatic(\"android.net.Uri\").R";
+if (true) return _uri.InitializeStatic("android.net.Uri").RunMethod("parse",new Object[]{(Object)("file://"+__c.File.Combine(__ref._sharedfolder /*String*/ ,_filename))});
  }else {
- //BA.debugLineNum = 28;BA.debugLine="Dim f As JavaObject";
+RDebugUtils.currentLine=29491206;
+ //BA.debugLineNum = 29491206;BA.debugLine="Dim f As JavaObject";
 _f = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 29;BA.debugLine="f.InitializeNewInstance(\"java.io.File\", Array(Sh";
-_f.InitializeNewInstance("java.io.File",new Object[]{(Object)(_sharedfolder),(Object)(_filename)});
- //BA.debugLineNum = 30;BA.debugLine="Dim fp As JavaObject";
+RDebugUtils.currentLine=29491207;
+ //BA.debugLineNum = 29491207;BA.debugLine="f.InitializeNewInstance(\"java.io.File\", Array(Sh";
+_f.InitializeNewInstance("java.io.File",new Object[]{(Object)(__ref._sharedfolder /*String*/ ),(Object)(_filename)});
+RDebugUtils.currentLine=29491208;
+ //BA.debugLineNum = 29491208;BA.debugLine="Dim fp As JavaObject";
 _fp = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 31;BA.debugLine="Dim context As JavaObject";
+RDebugUtils.currentLine=29491209;
+ //BA.debugLineNum = 29491209;BA.debugLine="Dim context As JavaObject";
 _context = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 32;BA.debugLine="context.InitializeContext";
+RDebugUtils.currentLine=29491210;
+ //BA.debugLineNum = 29491210;BA.debugLine="context.InitializeContext";
 _context.InitializeContext(ba);
- //BA.debugLineNum = 33;BA.debugLine="fp.InitializeStatic(\"android.support.v4.content.";
+RDebugUtils.currentLine=29491211;
+ //BA.debugLineNum = 29491211;BA.debugLine="fp.InitializeStatic(\"android.support.v4.content.";
 _fp.InitializeStatic("androidx.core.content.FileProvider");
- //BA.debugLineNum = 34;BA.debugLine="Return fp.RunMethod(\"getUriForFile\", Array(conte";
+RDebugUtils.currentLine=29491212;
+ //BA.debugLineNum = 29491212;BA.debugLine="Return fp.RunMethod(\"getUriForFile\", Array(conte";
 if (true) return _fp.RunMethod("getUriForFile",new Object[]{(Object)(_context.getObject()),(Object)(__c.Application.getPackageName()+".provider"),(Object)(_f.getObject())});
  };
- //BA.debugLineNum = 36;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29491214;
+ //BA.debugLineNum = 29491214;BA.debugLine="End Sub";
 return null;
 }
-public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
+public String  _initialize(ir.taravatgroup.ezafekari2.fileprovider __ref,anywheresoftware.b4a.BA _ba) throws Exception{
+__ref = this;
 innerInitialize(_ba);
+RDebugUtils.currentModule="fileprovider";
+if (Debug.shouldDelegate(ba, "initialize", true))
+	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
 anywheresoftware.b4a.phone.Phone _p = null;
- //BA.debugLineNum = 8;BA.debugLine="Public Sub Initialize";
- //BA.debugLineNum = 9;BA.debugLine="Dim p As Phone";
+RDebugUtils.currentLine=29425664;
+ //BA.debugLineNum = 29425664;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=29425665;
+ //BA.debugLineNum = 29425665;BA.debugLine="Dim p As Phone";
 _p = new anywheresoftware.b4a.phone.Phone();
- //BA.debugLineNum = 10;BA.debugLine="If p.SdkVersion >= 24 Or File.ExternalWritable =";
+RDebugUtils.currentLine=29425666;
+ //BA.debugLineNum = 29425666;BA.debugLine="If p.SdkVersion >= 24 Or File.ExternalWritable =";
 if (_p.getSdkVersion()>=24 || __c.File.getExternalWritable()==__c.False) { 
- //BA.debugLineNum = 11;BA.debugLine="UseFileProvider = True";
-_usefileprovider = __c.True;
- //BA.debugLineNum = 12;BA.debugLine="SharedFolder = File.Combine(File.DirInternal, \"s";
-_sharedfolder = __c.File.Combine(__c.File.getDirInternal(),"shared");
- //BA.debugLineNum = 13;BA.debugLine="File.MakeDir(\"\", SharedFolder)";
-__c.File.MakeDir("",_sharedfolder);
+RDebugUtils.currentLine=29425667;
+ //BA.debugLineNum = 29425667;BA.debugLine="UseFileProvider = True";
+__ref._usefileprovider /*boolean*/  = __c.True;
+RDebugUtils.currentLine=29425668;
+ //BA.debugLineNum = 29425668;BA.debugLine="SharedFolder = File.Combine(File.DirInternal, \"s";
+__ref._sharedfolder /*String*/  = __c.File.Combine(__c.File.getDirInternal(),"shared");
+RDebugUtils.currentLine=29425669;
+ //BA.debugLineNum = 29425669;BA.debugLine="File.MakeDir(\"\", SharedFolder)";
+__c.File.MakeDir("",__ref._sharedfolder /*String*/ );
  }else {
- //BA.debugLineNum = 15;BA.debugLine="UseFileProvider = False";
-_usefileprovider = __c.False;
- //BA.debugLineNum = 16;BA.debugLine="SharedFolder = rp.GetSafeDirDefaultExternal(\"sha";
-_sharedfolder = _rp.GetSafeDirDefaultExternal("shared");
+RDebugUtils.currentLine=29425671;
+ //BA.debugLineNum = 29425671;BA.debugLine="UseFileProvider = False";
+__ref._usefileprovider /*boolean*/  = __c.False;
+RDebugUtils.currentLine=29425672;
+ //BA.debugLineNum = 29425672;BA.debugLine="SharedFolder = rp.GetSafeDirDefaultExternal(\"sha";
+__ref._sharedfolder /*String*/  = __ref._rp /*anywheresoftware.b4a.objects.RuntimePermissions*/ .GetSafeDirDefaultExternal("shared");
  };
- //BA.debugLineNum = 18;BA.debugLine="Log($\"Using FileProvider? ${UseFileProvider}\"$)";
-__c.LogImpl("929753354",("Using FileProvider? "+__c.SmartStringFormatter("",(Object)(_usefileprovider))+""),0);
- //BA.debugLineNum = 19;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29425674;
+ //BA.debugLineNum = 29425674;BA.debugLine="Log($\"Using FileProvider? ${UseFileProvider}\"$)";
+__c.LogImpl("929425674",("Using FileProvider? "+__c.SmartStringFormatter("",(Object)(__ref._usefileprovider /*boolean*/ ))+""),0);
+RDebugUtils.currentLine=29425675;
+ //BA.debugLineNum = 29425675;BA.debugLine="End Sub";
 return "";
 }
-public String  _setfileuriasintentdata(anywheresoftware.b4a.objects.IntentWrapper _intent,String _filename) throws Exception{
+public String  _class_globals(ir.taravatgroup.ezafekari2.fileprovider __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="fileprovider";
+RDebugUtils.currentLine=29360128;
+ //BA.debugLineNum = 29360128;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=29360129;
+ //BA.debugLineNum = 29360129;BA.debugLine="Public SharedFolder As String";
+_sharedfolder = "";
+RDebugUtils.currentLine=29360130;
+ //BA.debugLineNum = 29360130;BA.debugLine="Public UseFileProvider As Boolean";
+_usefileprovider = false;
+RDebugUtils.currentLine=29360131;
+ //BA.debugLineNum = 29360131;BA.debugLine="Private rp As RuntimePermissions";
+_rp = new anywheresoftware.b4a.objects.RuntimePermissions();
+RDebugUtils.currentLine=29360132;
+ //BA.debugLineNum = 29360132;BA.debugLine="End Sub";
+return "";
+}
+public String  _setfileuriasintentdata(ir.taravatgroup.ezafekari2.fileprovider __ref,anywheresoftware.b4a.objects.IntentWrapper _intent,String _filename) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="fileprovider";
+if (Debug.shouldDelegate(ba, "setfileuriasintentdata", true))
+	 {return ((String) Debug.delegate(ba, "setfileuriasintentdata", new Object[] {_intent,_filename}));}
 anywheresoftware.b4j.object.JavaObject _jo = null;
- //BA.debugLineNum = 40;BA.debugLine="Public Sub SetFileUriAsIntentData (Intent As Inten";
- //BA.debugLineNum = 41;BA.debugLine="Dim jo As JavaObject = Intent";
+RDebugUtils.currentLine=29556736;
+ //BA.debugLineNum = 29556736;BA.debugLine="Public Sub SetFileUriAsIntentData (Intent As Inten";
+RDebugUtils.currentLine=29556737;
+ //BA.debugLineNum = 29556737;BA.debugLine="Dim jo As JavaObject = Intent";
 _jo = new anywheresoftware.b4j.object.JavaObject();
 _jo = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_intent.getObject()));
- //BA.debugLineNum = 42;BA.debugLine="jo.RunMethod(\"setData\", Array(GetFileUri(FileName";
-_jo.RunMethod("setData",new Object[]{_getfileuri(_filename)});
- //BA.debugLineNum = 43;BA.debugLine="Intent.Flags = Bit.Or(Intent.Flags, 1) 'FLAG_GRAN";
+RDebugUtils.currentLine=29556738;
+ //BA.debugLineNum = 29556738;BA.debugLine="jo.RunMethod(\"setData\", Array(GetFileUri(FileName";
+_jo.RunMethod("setData",new Object[]{__ref._getfileuri /*Object*/ (null,_filename)});
+RDebugUtils.currentLine=29556739;
+ //BA.debugLineNum = 29556739;BA.debugLine="Intent.Flags = Bit.Or(Intent.Flags, 1) 'FLAG_GRAN";
 _intent.setFlags(__c.Bit.Or(_intent.getFlags(),(int) (1)));
- //BA.debugLineNum = 44;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29556740;
+ //BA.debugLineNum = 29556740;BA.debugLine="End Sub";
 return "";
-}
-public Object callSub(String sub, Object sender, Object[] args) throws Exception {
-BA.senderHolder.set(sender);
-return BA.SubDelegator.SubNotFound;
 }
 }
