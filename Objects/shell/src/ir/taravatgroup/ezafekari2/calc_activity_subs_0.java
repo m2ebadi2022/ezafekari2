@@ -56,11 +56,11 @@ Debug.ShouldStop(2);
 _lbl_back_click();
  BA.debugLineNum = 227;BA.debugLine="Return True";
 Debug.ShouldStop(4);
-Debug.CheckDeviceExceptions();if (true) return calc_activity.mostCurrent.__c.getField(true,"True");
+if (true) return calc_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 229;BA.debugLine="Return False";
 Debug.ShouldStop(16);
-Debug.CheckDeviceExceptions();if (true) return calc_activity.mostCurrent.__c.getField(true,"False");
+if (true) return calc_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 231;BA.debugLine="End Sub";
 Debug.ShouldStop(64);
@@ -192,7 +192,7 @@ calc_activity.mostCurrent._totallb.runMethod(true,"setText",BA.ObjectToCharSeque
        catch (Exception e23) {
 			BA.rdebugUtils.runVoidMethod("setLastException",calc_activity.processBA, e23.toString()); BA.debugLineNum = 206;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(8192);
-calc_activity.mostCurrent.__c.runVoidMethod ("LogImpl","313500443",BA.ObjectToString(calc_activity.mostCurrent.__c.runMethod(false,"LastException",calc_activity.mostCurrent.activityBA)),0);
+calc_activity.mostCurrent.__c.runVoidMethod ("LogImpl","414352411",BA.ObjectToString(calc_activity.mostCurrent.__c.runMethod(false,"LastException",calc_activity.mostCurrent.activityBA)),0);
  };
  BA.debugLineNum = 210;BA.debugLine="End Sub";
 Debug.ShouldStop(131072);
@@ -455,7 +455,7 @@ calc_activity.mostCurrent._totallb.runMethod(true,"setText",BA.ObjectToCharSeque
  BA.debugLineNum = 145;BA.debugLine="If nr1 = \"\" Then Return 'exit if nr is empty";
 Debug.ShouldStop(65536);
 if (RemoteObject.solveBoolean("=",calc_activity.mostCurrent._nr1,BA.ObjectToString(""))) { 
-Debug.CheckDeviceExceptions();if (true) return RemoteObject.createImmutable("");};
+if (true) return RemoteObject.createImmutable("");};
  BA.debugLineNum = 148;BA.debugLine="Select btntag";
 Debug.ShouldStop(524288);
 switch (BA.switchObjectToInt(_btntag,BA.ObjectToString("plus"),BA.ObjectToString("minus"),BA.ObjectToString("mul"),BA.ObjectToString("div"),BA.ObjectToString("eq"),BA.ObjectToString("AC"),BA.ObjectToString("."))) {

@@ -33,6 +33,7 @@ public static ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_a
 public static ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public static ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public static ir.taravatgroup.ezafekari2.starter _starter = null;
+public static ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public static ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"DateUtils",_ref.getField(false, "_dateutils"),"rp",_ref.getField(false, "_rp"),"SharedFolder",_ref.getField(false, "_sharedfolder"),"UseFileProvider",_ref.getField(false, "_usefileprovider")};

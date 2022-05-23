@@ -149,40 +149,41 @@ public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
+public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public static String  _completejob(int _taskid,boolean _success,String _errormessage) throws Exception{
 RDebugUtils.currentModule="httputils2service";
 if (Debug.shouldDelegate(processBA, "completejob", false))
 	 {return ((String) Debug.delegate(processBA, "completejob", new Object[] {_taskid,_success,_errormessage}));}
 ir.taravatgroup.ezafekari2.httpjob _job = null;
-RDebugUtils.currentLine=30146560;
- //BA.debugLineNum = 30146560;BA.debugLine="Sub CompleteJob(TaskId As Int, success As Boolean,";
-RDebugUtils.currentLine=30146564;
- //BA.debugLineNum = 30146564;BA.debugLine="Dim job As HttpJob = TaskIdToJob.Get(TaskId)";
+RDebugUtils.currentLine=30998528;
+ //BA.debugLineNum = 30998528;BA.debugLine="Sub CompleteJob(TaskId As Int, success As Boolean,";
+RDebugUtils.currentLine=30998532;
+ //BA.debugLineNum = 30998532;BA.debugLine="Dim job As HttpJob = TaskIdToJob.Get(TaskId)";
 _job = (ir.taravatgroup.ezafekari2.httpjob)(_taskidtojob.Get((Object)(_taskid)));
-RDebugUtils.currentLine=30146565;
- //BA.debugLineNum = 30146565;BA.debugLine="If job = Null Then";
+RDebugUtils.currentLine=30998533;
+ //BA.debugLineNum = 30998533;BA.debugLine="If job = Null Then";
 if (_job== null) { 
-RDebugUtils.currentLine=30146566;
- //BA.debugLineNum = 30146566;BA.debugLine="Log(\"HttpUtils2Service: job completed multiple t";
-anywheresoftware.b4a.keywords.Common.LogImpl("330146566","HttpUtils2Service: job completed multiple times - "+BA.NumberToString(_taskid),0);
-RDebugUtils.currentLine=30146567;
- //BA.debugLineNum = 30146567;BA.debugLine="Return";
+RDebugUtils.currentLine=30998534;
+ //BA.debugLineNum = 30998534;BA.debugLine="Log(\"HttpUtils2Service: job completed multiple t";
+anywheresoftware.b4a.keywords.Common.LogImpl("430998534","HttpUtils2Service: job completed multiple times - "+BA.NumberToString(_taskid),0);
+RDebugUtils.currentLine=30998535;
+ //BA.debugLineNum = 30998535;BA.debugLine="Return";
 if (true) return "";
  };
-RDebugUtils.currentLine=30146569;
- //BA.debugLineNum = 30146569;BA.debugLine="TaskIdToJob.Remove(TaskId)";
+RDebugUtils.currentLine=30998537;
+ //BA.debugLineNum = 30998537;BA.debugLine="TaskIdToJob.Remove(TaskId)";
 _taskidtojob.Remove((Object)(_taskid));
-RDebugUtils.currentLine=30146570;
- //BA.debugLineNum = 30146570;BA.debugLine="job.success = success";
+RDebugUtils.currentLine=30998538;
+ //BA.debugLineNum = 30998538;BA.debugLine="job.success = success";
 _job._success /*boolean*/  = _success;
-RDebugUtils.currentLine=30146571;
- //BA.debugLineNum = 30146571;BA.debugLine="job.errorMessage = errorMessage";
+RDebugUtils.currentLine=30998539;
+ //BA.debugLineNum = 30998539;BA.debugLine="job.errorMessage = errorMessage";
 _job._errormessage /*String*/  = _errormessage;
-RDebugUtils.currentLine=30146573;
- //BA.debugLineNum = 30146573;BA.debugLine="job.Complete(TaskId)";
+RDebugUtils.currentLine=30998541;
+ //BA.debugLineNum = 30998541;BA.debugLine="job.Complete(TaskId)";
 _job._complete /*String*/ (null,_taskid);
-RDebugUtils.currentLine=30146577;
- //BA.debugLineNum = 30146577;BA.debugLine="End Sub";
+RDebugUtils.currentLine=30998545;
+ //BA.debugLineNum = 30998545;BA.debugLine="End Sub";
 return "";
 }
 public static String  _hc_responseerror(anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse _response,String _reason,int _statuscode,int _taskid) throws Exception{
@@ -190,43 +191,43 @@ RDebugUtils.currentModule="httputils2service";
 if (Debug.shouldDelegate(processBA, "hc_responseerror", false))
 	 {return ((String) Debug.delegate(processBA, "hc_responseerror", new Object[] {_response,_reason,_statuscode,_taskid}));}
 ir.taravatgroup.ezafekari2.httpjob _job = null;
-RDebugUtils.currentLine=30081024;
- //BA.debugLineNum = 30081024;BA.debugLine="Sub hc_ResponseError (Response As OkHttpResponse,";
-RDebugUtils.currentLine=30081025;
- //BA.debugLineNum = 30081025;BA.debugLine="Log($\"ResponseError. Reason: ${Reason}, Response:";
-anywheresoftware.b4a.keywords.Common.LogImpl("330081025",("ResponseError. Reason: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_reason))+", Response: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_response.getErrorResponse()))+""),0);
-RDebugUtils.currentLine=30081026;
- //BA.debugLineNum = 30081026;BA.debugLine="Response.Release";
+RDebugUtils.currentLine=30932992;
+ //BA.debugLineNum = 30932992;BA.debugLine="Sub hc_ResponseError (Response As OkHttpResponse,";
+RDebugUtils.currentLine=30932993;
+ //BA.debugLineNum = 30932993;BA.debugLine="Log($\"ResponseError. Reason: ${Reason}, Response:";
+anywheresoftware.b4a.keywords.Common.LogImpl("430932993",("ResponseError. Reason: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_reason))+", Response: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_response.getErrorResponse()))+""),0);
+RDebugUtils.currentLine=30932994;
+ //BA.debugLineNum = 30932994;BA.debugLine="Response.Release";
 _response.Release();
-RDebugUtils.currentLine=30081027;
- //BA.debugLineNum = 30081027;BA.debugLine="Dim job As HttpJob = TaskIdToJob.Get(TaskId)";
+RDebugUtils.currentLine=30932995;
+ //BA.debugLineNum = 30932995;BA.debugLine="Dim job As HttpJob = TaskIdToJob.Get(TaskId)";
 _job = (ir.taravatgroup.ezafekari2.httpjob)(_taskidtojob.Get((Object)(_taskid)));
-RDebugUtils.currentLine=30081028;
- //BA.debugLineNum = 30081028;BA.debugLine="If job = Null Then";
+RDebugUtils.currentLine=30932996;
+ //BA.debugLineNum = 30932996;BA.debugLine="If job = Null Then";
 if (_job== null) { 
-RDebugUtils.currentLine=30081029;
- //BA.debugLineNum = 30081029;BA.debugLine="Log(\"HttpUtils2Service (hc_ResponseError): job c";
-anywheresoftware.b4a.keywords.Common.LogImpl("330081029","HttpUtils2Service (hc_ResponseError): job completed multiple times - "+BA.NumberToString(_taskid),0);
-RDebugUtils.currentLine=30081030;
- //BA.debugLineNum = 30081030;BA.debugLine="Return";
+RDebugUtils.currentLine=30932997;
+ //BA.debugLineNum = 30932997;BA.debugLine="Log(\"HttpUtils2Service (hc_ResponseError): job c";
+anywheresoftware.b4a.keywords.Common.LogImpl("430932997","HttpUtils2Service (hc_ResponseError): job completed multiple times - "+BA.NumberToString(_taskid),0);
+RDebugUtils.currentLine=30932998;
+ //BA.debugLineNum = 30932998;BA.debugLine="Return";
 if (true) return "";
  };
-RDebugUtils.currentLine=30081032;
- //BA.debugLineNum = 30081032;BA.debugLine="job.Response = Response";
+RDebugUtils.currentLine=30933000;
+ //BA.debugLineNum = 30933000;BA.debugLine="job.Response = Response";
 _job._response /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse*/  = _response;
-RDebugUtils.currentLine=30081033;
- //BA.debugLineNum = 30081033;BA.debugLine="If Response.ErrorResponse <> \"\" Then";
+RDebugUtils.currentLine=30933001;
+ //BA.debugLineNum = 30933001;BA.debugLine="If Response.ErrorResponse <> \"\" Then";
 if ((_response.getErrorResponse()).equals("") == false) { 
-RDebugUtils.currentLine=30081034;
- //BA.debugLineNum = 30081034;BA.debugLine="CompleteJob(TaskId, False, Response.ErrorRespons";
+RDebugUtils.currentLine=30933002;
+ //BA.debugLineNum = 30933002;BA.debugLine="CompleteJob(TaskId, False, Response.ErrorRespons";
 _completejob(_taskid,anywheresoftware.b4a.keywords.Common.False,_response.getErrorResponse());
  }else {
-RDebugUtils.currentLine=30081036;
- //BA.debugLineNum = 30081036;BA.debugLine="CompleteJob(TaskId, False, Reason)";
+RDebugUtils.currentLine=30933004;
+ //BA.debugLineNum = 30933004;BA.debugLine="CompleteJob(TaskId, False, Reason)";
 _completejob(_taskid,anywheresoftware.b4a.keywords.Common.False,_reason);
  };
-RDebugUtils.currentLine=30081038;
- //BA.debugLineNum = 30081038;BA.debugLine="End Sub";
+RDebugUtils.currentLine=30933006;
+ //BA.debugLineNum = 30933006;BA.debugLine="End Sub";
 return "";
 }
 public static String  _hc_responsesuccess(anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse _response,int _taskid) throws Exception{
@@ -235,120 +236,120 @@ if (Debug.shouldDelegate(processBA, "hc_responsesuccess", false))
 	 {return ((String) Debug.delegate(processBA, "hc_responsesuccess", new Object[] {_response,_taskid}));}
 ir.taravatgroup.ezafekari2.httpjob _job = null;
 anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper _out = null;
-RDebugUtils.currentLine=29949952;
- //BA.debugLineNum = 29949952;BA.debugLine="Sub hc_ResponseSuccess (Response As OkHttpResponse";
-RDebugUtils.currentLine=29949953;
- //BA.debugLineNum = 29949953;BA.debugLine="Dim job As HttpJob = TaskIdToJob.Get(TaskId)";
+RDebugUtils.currentLine=30801920;
+ //BA.debugLineNum = 30801920;BA.debugLine="Sub hc_ResponseSuccess (Response As OkHttpResponse";
+RDebugUtils.currentLine=30801921;
+ //BA.debugLineNum = 30801921;BA.debugLine="Dim job As HttpJob = TaskIdToJob.Get(TaskId)";
 _job = (ir.taravatgroup.ezafekari2.httpjob)(_taskidtojob.Get((Object)(_taskid)));
-RDebugUtils.currentLine=29949954;
- //BA.debugLineNum = 29949954;BA.debugLine="If job = Null Then";
+RDebugUtils.currentLine=30801922;
+ //BA.debugLineNum = 30801922;BA.debugLine="If job = Null Then";
 if (_job== null) { 
-RDebugUtils.currentLine=29949955;
- //BA.debugLineNum = 29949955;BA.debugLine="Log(\"HttpUtils2Service (hc_ResponseSuccess): job";
-anywheresoftware.b4a.keywords.Common.LogImpl("329949955","HttpUtils2Service (hc_ResponseSuccess): job completed multiple times - "+BA.NumberToString(_taskid),0);
-RDebugUtils.currentLine=29949956;
- //BA.debugLineNum = 29949956;BA.debugLine="Return";
+RDebugUtils.currentLine=30801923;
+ //BA.debugLineNum = 30801923;BA.debugLine="Log(\"HttpUtils2Service (hc_ResponseSuccess): job";
+anywheresoftware.b4a.keywords.Common.LogImpl("430801923","HttpUtils2Service (hc_ResponseSuccess): job completed multiple times - "+BA.NumberToString(_taskid),0);
+RDebugUtils.currentLine=30801924;
+ //BA.debugLineNum = 30801924;BA.debugLine="Return";
 if (true) return "";
  };
-RDebugUtils.currentLine=29949958;
- //BA.debugLineNum = 29949958;BA.debugLine="job.Response = Response";
+RDebugUtils.currentLine=30801926;
+ //BA.debugLineNum = 30801926;BA.debugLine="job.Response = Response";
 _job._response /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse*/  = _response;
-RDebugUtils.currentLine=29949959;
- //BA.debugLineNum = 29949959;BA.debugLine="Dim out As OutputStream = File.OpenOutput(TempFol";
+RDebugUtils.currentLine=30801927;
+ //BA.debugLineNum = 30801927;BA.debugLine="Dim out As OutputStream = File.OpenOutput(TempFol";
 _out = new anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper();
 _out = anywheresoftware.b4a.keywords.Common.File.OpenOutput(_tempfolder,BA.NumberToString(_taskid),anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=29949963;
- //BA.debugLineNum = 29949963;BA.debugLine="Response.GetAsynchronously(\"response\", out , _";
+RDebugUtils.currentLine=30801931;
+ //BA.debugLineNum = 30801931;BA.debugLine="Response.GetAsynchronously(\"response\", out , _";
 _response.GetAsynchronously(processBA,"response",(java.io.OutputStream)(_out.getObject()),anywheresoftware.b4a.keywords.Common.True,_taskid);
-RDebugUtils.currentLine=29949965;
- //BA.debugLineNum = 29949965;BA.debugLine="End Sub";
+RDebugUtils.currentLine=30801933;
+ //BA.debugLineNum = 30801933;BA.debugLine="End Sub";
 return "";
 }
 public static String  _response_streamfinish(boolean _success,int _taskid) throws Exception{
 RDebugUtils.currentModule="httputils2service";
 if (Debug.shouldDelegate(processBA, "response_streamfinish", false))
 	 {return ((String) Debug.delegate(processBA, "response_streamfinish", new Object[] {_success,_taskid}));}
-RDebugUtils.currentLine=30015488;
- //BA.debugLineNum = 30015488;BA.debugLine="Private Sub Response_StreamFinish (Success As Bool";
-RDebugUtils.currentLine=30015489;
- //BA.debugLineNum = 30015489;BA.debugLine="If Success Then";
+RDebugUtils.currentLine=30867456;
+ //BA.debugLineNum = 30867456;BA.debugLine="Private Sub Response_StreamFinish (Success As Bool";
+RDebugUtils.currentLine=30867457;
+ //BA.debugLineNum = 30867457;BA.debugLine="If Success Then";
 if (_success) { 
-RDebugUtils.currentLine=30015490;
- //BA.debugLineNum = 30015490;BA.debugLine="CompleteJob(TaskId, Success, \"\")";
+RDebugUtils.currentLine=30867458;
+ //BA.debugLineNum = 30867458;BA.debugLine="CompleteJob(TaskId, Success, \"\")";
 _completejob(_taskid,_success,"");
  }else {
-RDebugUtils.currentLine=30015492;
- //BA.debugLineNum = 30015492;BA.debugLine="CompleteJob(TaskId, Success, LastException.Messa";
+RDebugUtils.currentLine=30867460;
+ //BA.debugLineNum = 30867460;BA.debugLine="CompleteJob(TaskId, Success, LastException.Messa";
 _completejob(_taskid,_success,anywheresoftware.b4a.keywords.Common.LastException(processBA).getMessage());
  };
-RDebugUtils.currentLine=30015494;
- //BA.debugLineNum = 30015494;BA.debugLine="End Sub";
+RDebugUtils.currentLine=30867462;
+ //BA.debugLineNum = 30867462;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_create() throws Exception{
 RDebugUtils.currentModule="httputils2service";
 if (Debug.shouldDelegate(processBA, "service_create", false))
 	 {return ((String) Debug.delegate(processBA, "service_create", null));}
-RDebugUtils.currentLine=29687808;
- //BA.debugLineNum = 29687808;BA.debugLine="Sub Service_Create";
-RDebugUtils.currentLine=29687810;
- //BA.debugLineNum = 29687810;BA.debugLine="TempFolder = File.DirInternalCache";
+RDebugUtils.currentLine=30539776;
+ //BA.debugLineNum = 30539776;BA.debugLine="Sub Service_Create";
+RDebugUtils.currentLine=30539778;
+ //BA.debugLineNum = 30539778;BA.debugLine="TempFolder = File.DirInternalCache";
 _tempfolder = anywheresoftware.b4a.keywords.Common.File.getDirInternalCache();
-RDebugUtils.currentLine=29687811;
- //BA.debugLineNum = 29687811;BA.debugLine="Try";
-try {RDebugUtils.currentLine=29687812;
- //BA.debugLineNum = 29687812;BA.debugLine="File.WriteString(TempFolder, \"~test.test\", \"test";
+RDebugUtils.currentLine=30539779;
+ //BA.debugLineNum = 30539779;BA.debugLine="Try";
+try {RDebugUtils.currentLine=30539780;
+ //BA.debugLineNum = 30539780;BA.debugLine="File.WriteString(TempFolder, \"~test.test\", \"test";
 anywheresoftware.b4a.keywords.Common.File.WriteString(_tempfolder,"~test.test","test");
-RDebugUtils.currentLine=29687813;
- //BA.debugLineNum = 29687813;BA.debugLine="File.Delete(TempFolder, \"~test.test\")";
+RDebugUtils.currentLine=30539781;
+ //BA.debugLineNum = 30539781;BA.debugLine="File.Delete(TempFolder, \"~test.test\")";
 anywheresoftware.b4a.keywords.Common.File.Delete(_tempfolder,"~test.test");
  } 
        catch (Exception e6) {
-			processBA.setLastException(e6);RDebugUtils.currentLine=29687815;
- //BA.debugLineNum = 29687815;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("329687815",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(processBA)),0);
-RDebugUtils.currentLine=29687816;
- //BA.debugLineNum = 29687816;BA.debugLine="Log(\"Switching to File.DirInternal\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("329687816","Switching to File.DirInternal",0);
-RDebugUtils.currentLine=29687817;
- //BA.debugLineNum = 29687817;BA.debugLine="TempFolder = File.DirInternal";
+			processBA.setLastException(e6);RDebugUtils.currentLine=30539783;
+ //BA.debugLineNum = 30539783;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("430539783",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(processBA)),0);
+RDebugUtils.currentLine=30539784;
+ //BA.debugLineNum = 30539784;BA.debugLine="Log(\"Switching to File.DirInternal\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("430539784","Switching to File.DirInternal",0);
+RDebugUtils.currentLine=30539785;
+ //BA.debugLineNum = 30539785;BA.debugLine="TempFolder = File.DirInternal";
 _tempfolder = anywheresoftware.b4a.keywords.Common.File.getDirInternal();
  };
-RDebugUtils.currentLine=29687822;
- //BA.debugLineNum = 29687822;BA.debugLine="If hc.IsInitialized = False Then";
+RDebugUtils.currentLine=30539790;
+ //BA.debugLineNum = 30539790;BA.debugLine="If hc.IsInitialized = False Then";
 if (_hc.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
-RDebugUtils.currentLine=29687827;
- //BA.debugLineNum = 29687827;BA.debugLine="hc.Initialize(\"hc\")";
+RDebugUtils.currentLine=30539795;
+ //BA.debugLineNum = 30539795;BA.debugLine="hc.Initialize(\"hc\")";
 _hc.Initialize("hc");
  };
-RDebugUtils.currentLine=29687835;
- //BA.debugLineNum = 29687835;BA.debugLine="TaskIdToJob.Initialize";
+RDebugUtils.currentLine=30539803;
+ //BA.debugLineNum = 30539803;BA.debugLine="TaskIdToJob.Initialize";
 _taskidtojob.Initialize();
-RDebugUtils.currentLine=29687837;
- //BA.debugLineNum = 29687837;BA.debugLine="End Sub";
+RDebugUtils.currentLine=30539805;
+ //BA.debugLineNum = 30539805;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_destroy() throws Exception{
 RDebugUtils.currentModule="httputils2service";
 if (Debug.shouldDelegate(processBA, "service_destroy", false))
 	 {return ((String) Debug.delegate(processBA, "service_destroy", null));}
-RDebugUtils.currentLine=29818880;
- //BA.debugLineNum = 29818880;BA.debugLine="Sub Service_Destroy";
-RDebugUtils.currentLine=29818882;
- //BA.debugLineNum = 29818882;BA.debugLine="End Sub";
+RDebugUtils.currentLine=30670848;
+ //BA.debugLineNum = 30670848;BA.debugLine="Sub Service_Destroy";
+RDebugUtils.currentLine=30670850;
+ //BA.debugLineNum = 30670850;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_start(anywheresoftware.b4a.objects.IntentWrapper _startingintent) throws Exception{
 RDebugUtils.currentModule="httputils2service";
 if (Debug.shouldDelegate(processBA, "service_start", false))
 	 {return ((String) Debug.delegate(processBA, "service_start", new Object[] {_startingintent}));}
-RDebugUtils.currentLine=29753344;
- //BA.debugLineNum = 29753344;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
-RDebugUtils.currentLine=29753345;
- //BA.debugLineNum = 29753345;BA.debugLine="Service.StopAutomaticForeground";
+RDebugUtils.currentLine=30605312;
+ //BA.debugLineNum = 30605312;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
+RDebugUtils.currentLine=30605313;
+ //BA.debugLineNum = 30605313;BA.debugLine="Service.StopAutomaticForeground";
 mostCurrent._service.StopAutomaticForeground();
-RDebugUtils.currentLine=29753346;
- //BA.debugLineNum = 29753346;BA.debugLine="End Sub";
+RDebugUtils.currentLine=30605314;
+ //BA.debugLineNum = 30605314;BA.debugLine="End Sub";
 return "";
 }
 public static String  _submitjob(ir.taravatgroup.ezafekari2.httpjob _job) throws Exception{
@@ -356,34 +357,34 @@ RDebugUtils.currentModule="httputils2service";
 if (Debug.shouldDelegate(processBA, "submitjob", false))
 	 {return ((String) Debug.delegate(processBA, "submitjob", new Object[] {_job}));}
 int _taskid = 0;
-RDebugUtils.currentLine=29884416;
- //BA.debugLineNum = 29884416;BA.debugLine="Public Sub SubmitJob(job As HttpJob)";
-RDebugUtils.currentLine=29884417;
- //BA.debugLineNum = 29884417;BA.debugLine="If TaskIdToJob.IsInitialized = False Then Service";
+RDebugUtils.currentLine=30736384;
+ //BA.debugLineNum = 30736384;BA.debugLine="Public Sub SubmitJob(job As HttpJob)";
+RDebugUtils.currentLine=30736385;
+ //BA.debugLineNum = 30736385;BA.debugLine="If TaskIdToJob.IsInitialized = False Then Service";
 if (_taskidtojob.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
 _service_create();};
-RDebugUtils.currentLine=29884421;
- //BA.debugLineNum = 29884421;BA.debugLine="taskCounter = taskCounter + 1";
+RDebugUtils.currentLine=30736389;
+ //BA.debugLineNum = 30736389;BA.debugLine="taskCounter = taskCounter + 1";
 _taskcounter = (int) (_taskcounter+1);
-RDebugUtils.currentLine=29884422;
- //BA.debugLineNum = 29884422;BA.debugLine="Dim TaskId As Int = taskCounter";
+RDebugUtils.currentLine=30736390;
+ //BA.debugLineNum = 30736390;BA.debugLine="Dim TaskId As Int = taskCounter";
 _taskid = _taskcounter;
-RDebugUtils.currentLine=29884424;
- //BA.debugLineNum = 29884424;BA.debugLine="TaskIdToJob.Put(TaskId, job)";
+RDebugUtils.currentLine=30736392;
+ //BA.debugLineNum = 30736392;BA.debugLine="TaskIdToJob.Put(TaskId, job)";
 _taskidtojob.Put((Object)(_taskid),(Object)(_job));
-RDebugUtils.currentLine=29884425;
- //BA.debugLineNum = 29884425;BA.debugLine="If job.Username <> \"\" And job.Password <> \"\" Then";
+RDebugUtils.currentLine=30736393;
+ //BA.debugLineNum = 30736393;BA.debugLine="If job.Username <> \"\" And job.Password <> \"\" Then";
 if ((_job._username /*String*/ ).equals("") == false && (_job._password /*String*/ ).equals("") == false) { 
-RDebugUtils.currentLine=29884426;
- //BA.debugLineNum = 29884426;BA.debugLine="hc.ExecuteCredentials(job.GetRequest, TaskId, jo";
+RDebugUtils.currentLine=30736394;
+ //BA.debugLineNum = 30736394;BA.debugLine="hc.ExecuteCredentials(job.GetRequest, TaskId, jo";
 _hc.ExecuteCredentials(processBA,_job._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ (null),_taskid,_job._username /*String*/ ,_job._password /*String*/ );
  }else {
-RDebugUtils.currentLine=29884428;
- //BA.debugLineNum = 29884428;BA.debugLine="hc.Execute(job.GetRequest, TaskId)";
+RDebugUtils.currentLine=30736396;
+ //BA.debugLineNum = 30736396;BA.debugLine="hc.Execute(job.GetRequest, TaskId)";
 _hc.Execute(processBA,_job._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ (null),_taskid);
  };
-RDebugUtils.currentLine=29884430;
- //BA.debugLineNum = 29884430;BA.debugLine="End Sub";
+RDebugUtils.currentLine=30736398;
+ //BA.debugLineNum = 30736398;BA.debugLine="End Sub";
 return "";
 }
 }

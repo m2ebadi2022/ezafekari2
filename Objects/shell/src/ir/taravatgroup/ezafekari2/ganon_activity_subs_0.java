@@ -53,11 +53,11 @@ Debug.ShouldStop(524288);
 _lbl_back_click();
  BA.debugLineNum = 53;BA.debugLine="Return True";
 Debug.ShouldStop(1048576);
-Debug.CheckDeviceExceptions();if (true) return ganon_activity.mostCurrent.__c.getField(true,"True");
+if (true) return ganon_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 55;BA.debugLine="Return False";
 Debug.ShouldStop(4194304);
-Debug.CheckDeviceExceptions();if (true) return ganon_activity.mostCurrent.__c.getField(true,"False");
+if (true) return ganon_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 57;BA.debugLine="End Sub";
 Debug.ShouldStop(16777216);

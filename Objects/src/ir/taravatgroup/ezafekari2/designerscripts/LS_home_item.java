@@ -43,13 +43,15 @@ views.get("pan_darsad").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_d
 views.get("pan_calc").vw.setLeft((int)((views.get("pan_darsad").vw.getLeft() + views.get("pan_darsad").vw.getWidth())));
 //BA.debugLineNum = 33;BA.debugLine="pan_ganon.Right=pan_darsad.Left"[home_item/General script]
 views.get("pan_ganon").vw.setLeft((int)((views.get("pan_darsad").vw.getLeft()) - (views.get("pan_ganon").vw.getWidth())));
-//BA.debugLineNum = 35;BA.debugLine="pan_shift.Left=pan_calc.Left"[home_item/General script]
+//BA.debugLineNum = 35;BA.debugLine="pan_bime.HorizontalCenter=50%x"[home_item/General script]
+views.get("pan_bime").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_bime").vw.getWidth() / 2)));
+//BA.debugLineNum = 36;BA.debugLine="pan_shift.Left=pan_calc.Left"[home_item/General script]
 views.get("pan_shift").vw.setLeft((int)((views.get("pan_calc").vw.getLeft())));
-//BA.debugLineNum = 39;BA.debugLine="pan_comment.HorizontalCenter=50%x"[home_item/General script]
+//BA.debugLineNum = 40;BA.debugLine="pan_comment.HorizontalCenter=50%x"[home_item/General script]
 views.get("pan_comment").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_comment").vw.getWidth() / 2)));
-//BA.debugLineNum = 40;BA.debugLine="pan_setting.Left=pan_comment.Right"[home_item/General script]
+//BA.debugLineNum = 41;BA.debugLine="pan_setting.Left=pan_comment.Right"[home_item/General script]
 views.get("pan_setting").vw.setLeft((int)((views.get("pan_comment").vw.getLeft() + views.get("pan_comment").vw.getWidth())));
-//BA.debugLineNum = 41;BA.debugLine="pan_info.Right=pan_comment.Left"[home_item/General script]
+//BA.debugLineNum = 42;BA.debugLine="pan_info.Right=pan_comment.Left"[home_item/General script]
 views.get("pan_info").vw.setLeft((int)((views.get("pan_comment").vw.getLeft()) - (views.get("pan_info").vw.getWidth())));
 
 }

@@ -23,7 +23,7 @@ main.mostCurrent._inapp.runVoidMethod ("Initialize",main.processBA,(Object)(BA.O
        catch (Exception e4) {
 			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e4.toString()); BA.debugLineNum = 266;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(512);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","3131079",BA.ObjectToString(main.mostCurrent.__c.runMethod(false,"LastException",main.mostCurrent.activityBA)),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","4131079",BA.ObjectToString(main.mostCurrent.__c.runMethod(false,"LastException",main.mostCurrent.activityBA)),0);
  };
  BA.debugLineNum = 271;BA.debugLine="dbCode.init_notfound(\"ksorat\",0)";
 Debug.ShouldStop(16384);
@@ -261,11 +261,11 @@ main.mostCurrent.__c.runVoidMethod ("ExitApplication");
 ;
  BA.debugLineNum = 1671;BA.debugLine="Return True";
 Debug.ShouldStop(64);
-Debug.CheckDeviceExceptions();if (true) return main.mostCurrent.__c.getField(true,"True");
+if (true) return main.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 1673;BA.debugLine="Return False";
 Debug.ShouldStop(256);
-Debug.CheckDeviceExceptions();if (true) return main.mostCurrent.__c.getField(true,"False");
+if (true) return main.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 1675;BA.debugLine="End Sub";
 Debug.ShouldStop(1024);
@@ -730,91 +730,91 @@ finally {
 		}}
 public static RemoteObject  _add_taradod_fast() throws Exception{
 try {
-		Debug.PushSubsStack("add_taradod_fast (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3160);
+		Debug.PushSubsStack("add_taradod_fast (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3138);
 if (RapidSub.canDelegate("add_taradod_fast")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","add_taradod_fast");}
 RemoteObject _tim_min2 = RemoteObject.createImmutable(0);
 RemoteObject _dagige_fixed = RemoteObject.createImmutable(0);
 RemoteObject _saat_fixed = RemoteObject.createImmutable("");
- BA.debugLineNum = 3160;BA.debugLine="Sub add_taradod_fast";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 3162;BA.debugLine="Try";
-Debug.ShouldStop(33554432);
-try { BA.debugLineNum = 3164;BA.debugLine="If(dbCode.isexist_taradod_by_date(lbl_date_FT.Te";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 3138;BA.debugLine="Sub add_taradod_fast";
+Debug.ShouldStop(2);
+ BA.debugLineNum = 3140;BA.debugLine="Try";
+Debug.ShouldStop(8);
+try { BA.debugLineNum = 3142;BA.debugLine="If(dbCode.isexist_taradod_by_date(lbl_date_FT.Te";
+Debug.ShouldStop(32);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode.runMethod(true,"_isexist_taradod_by_date" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"))),main.mostCurrent.__c.getField(true,"False")))) { 
- BA.debugLineNum = 3166;BA.debugLine="If (ckb_ezaf_taradod_FT.Checked=True)Then";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 3144;BA.debugLine="If (ckb_ezaf_taradod_FT.Checked=True)Then";
+Debug.ShouldStop(128);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"getChecked"),main.mostCurrent.__c.getField(true,"True")))) { 
- BA.debugLineNum = 3169;BA.debugLine="dbCode.add_taradod(lbl_date_FT.Text,lbl_date_F";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 3147;BA.debugLine="dbCode.add_taradod(lbl_date_FT.Text,lbl_date_F";
+Debug.ShouldStop(1024);
 main.mostCurrent._dbcode.runVoidMethod ("_add_taradod" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText")),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.ObjectToString("ثبت سریع")),(Object)(BA.numberCast(int.class, 20)));
  }else {
- BA.debugLineNum = 3173;BA.debugLine="dbCode.add_taradod(lbl_date_FT.Text,lbl_date_F";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 3151;BA.debugLine="dbCode.add_taradod(lbl_date_FT.Text,lbl_date_F";
+Debug.ShouldStop(16384);
 main.mostCurrent._dbcode.runVoidMethod ("_add_taradod" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText")),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.ObjectToString("ثبت سریع")),(Object)(BA.numberCast(int.class, 10)));
  };
- BA.debugLineNum = 3176;BA.debugLine="Log(\"is frest\")";
-Debug.ShouldStop(128);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","335651600",RemoteObject.createImmutable("is frest"),0);
- BA.debugLineNum = 3177;BA.debugLine="ToastMessageShow(\"ورود ثبت شد\",False)";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 3154;BA.debugLine="Log(\"is frest\")";
+Debug.ShouldStop(131072);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","47012368",RemoteObject.createImmutable("is frest"),0);
+ BA.debugLineNum = 3155;BA.debugLine="ToastMessageShow(\"ورود ثبت شد\",False)";
+Debug.ShouldStop(262144);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("ورود ثبت شد")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 3180;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 3158;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
+Debug.ShouldStop(2097152);
 main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
- BA.debugLineNum = 3181;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 3159;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
+Debug.ShouldStop(4194304);
 main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
  }else {
- BA.debugLineNum = 3187;BA.debugLine="time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lb";
-Debug.ShouldStop(262144);
-_time_show2(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText"));
- BA.debugLineNum = 3189;BA.debugLine="If (ckb_ezaf_taradod_FT.Checked=True)Then";
-Debug.ShouldStop(1048576);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"getChecked"),main.mostCurrent.__c.getField(true,"True")))) { 
- BA.debugLineNum = 3191;BA.debugLine="Dim tim_min2 As Int=(hour_bt*60)+min_bt";
-Debug.ShouldStop(4194304);
-_tim_min2 = RemoteObject.solve(new RemoteObject[] {(RemoteObject.solve(new RemoteObject[] {main._hour_bt,RemoteObject.createImmutable(60)}, "*",0, 1)),main._min_bt}, "+",1, 1);Debug.locals.put("tim_min2", _tim_min2);Debug.locals.put("tim_min2", _tim_min2);
- BA.debugLineNum = 3194;BA.debugLine="If(tim_min2>saat_kar_min) Then";
-Debug.ShouldStop(33554432);
-if ((RemoteObject.solveBoolean(">",_tim_min2,BA.numberCast(double.class, main._saat_kar_min)))) { 
- BA.debugLineNum = 3196;BA.debugLine="Dim dagige_fixed As Int = tim_vorod_conv_ezaf";
-Debug.ShouldStop(134217728);
-_dagige_fixed = _tim_vorod_conv_ezaf(main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText"));Debug.locals.put("dagige_fixed", _dagige_fixed);Debug.locals.put("dagige_fixed", _dagige_fixed);
- BA.debugLineNum = 3197;BA.debugLine="Dim saat_fixed As String = (myfunc.Min_to_saa";
+ BA.debugLineNum = 3165;BA.debugLine="time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lb";
 Debug.ShouldStop(268435456);
-_saat_fixed = RemoteObject.concat((main.mostCurrent._myfunc.runMethod(false,"_min_to_saatminroz2_dontday" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(_dagige_fixed)).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))),RemoteObject.createImmutable(":"),(main.mostCurrent._myfunc.runMethod(false,"_min_to_saatminroz2_dontday" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(_dagige_fixed)).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1)))));Debug.locals.put("saat_fixed", _saat_fixed);Debug.locals.put("saat_fixed", _saat_fixed);
- BA.debugLineNum = 3199;BA.debugLine="dbCode.add_ezafekari(lbl_date_FT.Text,lbl_dat";
+_time_show2(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText"));
+ BA.debugLineNum = 3167;BA.debugLine="If (ckb_ezaf_taradod_FT.Checked=True)Then";
 Debug.ShouldStop(1073741824);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"getChecked"),main.mostCurrent.__c.getField(true,"True")))) { 
+ BA.debugLineNum = 3169;BA.debugLine="Dim tim_min2 As Int=(hour_bt*60)+min_bt";
+Debug.ShouldStop(1);
+_tim_min2 = RemoteObject.solve(new RemoteObject[] {(RemoteObject.solve(new RemoteObject[] {main._hour_bt,RemoteObject.createImmutable(60)}, "*",0, 1)),main._min_bt}, "+",1, 1);Debug.locals.put("tim_min2", _tim_min2);Debug.locals.put("tim_min2", _tim_min2);
+ BA.debugLineNum = 3172;BA.debugLine="If(tim_min2>saat_kar_min) Then";
+Debug.ShouldStop(8);
+if ((RemoteObject.solveBoolean(">",_tim_min2,BA.numberCast(double.class, main._saat_kar_min)))) { 
+ BA.debugLineNum = 3174;BA.debugLine="Dim dagige_fixed As Int = tim_vorod_conv_ezaf";
+Debug.ShouldStop(32);
+_dagige_fixed = _tim_vorod_conv_ezaf(main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText"));Debug.locals.put("dagige_fixed", _dagige_fixed);Debug.locals.put("dagige_fixed", _dagige_fixed);
+ BA.debugLineNum = 3175;BA.debugLine="Dim saat_fixed As String = (myfunc.Min_to_saa";
+Debug.ShouldStop(64);
+_saat_fixed = RemoteObject.concat((main.mostCurrent._myfunc.runMethod(false,"_min_to_saatminroz2_dontday" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(_dagige_fixed)).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))),RemoteObject.createImmutable(":"),(main.mostCurrent._myfunc.runMethod(false,"_min_to_saatminroz2_dontday" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(_dagige_fixed)).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1)))));Debug.locals.put("saat_fixed", _saat_fixed);Debug.locals.put("saat_fixed", _saat_fixed);
+ BA.debugLineNum = 3177;BA.debugLine="dbCode.add_ezafekari(lbl_date_FT.Text,lbl_dat";
+Debug.ShouldStop(256);
 main.mostCurrent._dbcode.runVoidMethod ("_add_ezafekari" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(_saat_fixed),(Object)(main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText")),(Object)(main._day_bt),(Object)(BA.numberCast(int.class, (main.mostCurrent._myfunc.runMethod(false,"_min_to_saatminroz" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(RemoteObject.solve(new RemoteObject[] {_tim_min2,main._saat_kar_min}, "-",1, 1))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))))),(Object)(BA.numberCast(int.class, (main.mostCurrent._myfunc.runMethod(false,"_min_to_saatminroz" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(RemoteObject.solve(new RemoteObject[] {_tim_min2,main._saat_kar_min}, "-",1, 1))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1)))))),(Object)(BA.ObjectToString(" ثبت سریع-تردد دارد- ")),(Object)(BA.numberCast(int.class, 0)));
  };
- BA.debugLineNum = 3203;BA.debugLine="dbCode.edit_taradod(current_id_edit,lbl_date_F";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 3181;BA.debugLine="dbCode.edit_taradod(current_id_edit,lbl_date_F";
+Debug.ShouldStop(4096);
 main.mostCurrent._dbcode.runVoidMethod ("_edit_taradod" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main._current_id_edit),(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText")),(Object)(main._day_bt),(Object)(main._hour_bt),(Object)(main._min_bt),(Object)(BA.ObjectToString("ثبت سریع-اضافه کاری دارد")),(Object)(BA.numberCast(int.class, 21)));
  }else {
- BA.debugLineNum = 3206;BA.debugLine="dbCode.edit_taradod(current_id_edit,lbl_date_F";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 3184;BA.debugLine="dbCode.edit_taradod(current_id_edit,lbl_date_F";
+Debug.ShouldStop(32768);
 main.mostCurrent._dbcode.runVoidMethod ("_edit_taradod" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main._current_id_edit),(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText")),(Object)(main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText")),(Object)(main._day_bt),(Object)(main._hour_bt),(Object)(main._min_bt),(Object)(BA.ObjectToString("ثبت سریع")),(Object)(BA.numberCast(int.class, 11)));
  };
- BA.debugLineNum = 3209;BA.debugLine="Log(\"is secend\")";
-Debug.ShouldStop(256);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","335651633",RemoteObject.createImmutable("is secend"),0);
- BA.debugLineNum = 3210;BA.debugLine="ToastMessageShow(\"خروج ثبت شد\",False)";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 3187;BA.debugLine="Log(\"is secend\")";
+Debug.ShouldStop(262144);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","47012401",RemoteObject.createImmutable("is secend"),0);
+ BA.debugLineNum = 3188;BA.debugLine="ToastMessageShow(\"خروج ثبت شد\",False)";
+Debug.ShouldStop(524288);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خروج ثبت شد")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 3213;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Green";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 3191;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Green";
+Debug.ShouldStop(4194304);
 main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
  };
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e30) {
-			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e30.toString()); BA.debugLineNum = 3222;BA.debugLine="ToastMessageShow(\"خطا\",False)";
-Debug.ShouldStop(2097152);
+			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e30.toString()); BA.debugLineNum = 3200;BA.debugLine="ToastMessageShow(\"خطا\",False)";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا")),(Object)(main.mostCurrent.__c.getField(true,"False")));
  };
- BA.debugLineNum = 3226;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 3204;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1439,14 +1439,14 @@ finally {
 		}}
 public static RemoteObject  _cust_lv_taradod_itemclick(RemoteObject _index,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("cust_LV_taradod_ItemClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2970);
+		Debug.PushSubsStack("cust_LV_taradod_ItemClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2948);
 if (RapidSub.canDelegate("cust_lv_taradod_itemclick")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","cust_lv_taradod_itemclick", _index, _value);}
 Debug.locals.put("Index", _index);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 2970;BA.debugLine="Private Sub cust_LV_taradod_ItemClick (Index As In";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 2972;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2948;BA.debugLine="Private Sub cust_LV_taradod_ItemClick (Index As In";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 2950;BA.debugLine="End Sub";
+Debug.ShouldStop(32);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1510,7 +1510,7 @@ Debug.ShouldStop(262144);
 main.mostCurrent._list_gozareshat_id.runVoidMethod ("Add",(Object)((main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("id"))))));
  BA.debugLineNum = 1140;BA.debugLine="Log(dbCode.res.GetString(\"id\"))";
 Debug.ShouldStop(524288);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","31441812",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("id"))),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","41441812",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("id"))),0);
  }
 ;
  BA.debugLineNum = 1142;BA.debugLine="dbCode.res.Close";
@@ -1919,104 +1919,104 @@ finally {
 		}}
 public static RemoteObject  _get_dataedit_byid(RemoteObject _id1) throws Exception{
 try {
-		Debug.PushSubsStack("get_dataEdit_byId (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2760);
+		Debug.PushSubsStack("get_dataEdit_byId (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2738);
 if (RapidSub.canDelegate("get_dataedit_byid")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","get_dataedit_byid", _id1);}
 Debug.locals.put("id1", _id1);
- BA.debugLineNum = 2760;BA.debugLine="Sub get_dataEdit_byId(id1 As Int)";
-Debug.ShouldStop(128);
- BA.debugLineNum = 2761;BA.debugLine="dbCode.connect_db";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2738;BA.debugLine="Sub get_dataEdit_byId(id1 As Int)";
+Debug.ShouldStop(131072);
+ BA.debugLineNum = 2739;BA.debugLine="dbCode.connect_db";
+Debug.ShouldStop(262144);
 main.mostCurrent._dbcode.runVoidMethod ("_connect_db" /*RemoteObject*/ ,main.mostCurrent.activityBA);
- BA.debugLineNum = 2762;BA.debugLine="If(index_box=1)Then";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 2740;BA.debugLine="If(index_box=1)Then";
+Debug.ShouldStop(524288);
 if ((RemoteObject.solveBoolean("=",main._index_box,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2763;BA.debugLine="dbCode.res=dbCode.sql.ExecQuery(\"SELECT * FROM t";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2741;BA.debugLine="dbCode.res=dbCode.sql.ExecQuery(\"SELECT * FROM t";
+Debug.ShouldStop(1048576);
 main.mostCurrent._dbcode._res /*RemoteObject*/  = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), main.mostCurrent._dbcode._sql /*RemoteObject*/ .runMethod(false,"ExecQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("SELECT * FROM tb_ezafekari WHERE id="),_id1))));
- BA.debugLineNum = 2764;BA.debugLine="dbCode.res.Position=0";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 2742;BA.debugLine="dbCode.res.Position=0";
+Debug.ShouldStop(2097152);
 main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"setPosition",BA.numberCast(int.class, 0));
- BA.debugLineNum = 2766;BA.debugLine="If(dbCode.res.GetInt(\"state\")=0)Then";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2744;BA.debugLine="If(dbCode.res.GetInt(\"state\")=0)Then";
+Debug.ShouldStop(8388608);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2767;BA.debugLine="ckb_ezaf_taradod.Checked=False";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2745;BA.debugLine="ckb_ezaf_taradod.Checked=False";
+Debug.ShouldStop(16777216);
 main.mostCurrent._ckb_ezaf_taradod.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"False"));
  }else {
- BA.debugLineNum = 2769;BA.debugLine="ckb_ezaf_taradod.Checked=True";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2747;BA.debugLine="ckb_ezaf_taradod.Checked=True";
+Debug.ShouldStop(67108864);
 main.mostCurrent._ckb_ezaf_taradod.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"True"));
  };
  }else 
-{ BA.debugLineNum = 2774;BA.debugLine="Else If(index_box=2)Then";
-Debug.ShouldStop(2097152);
+{ BA.debugLineNum = 2752;BA.debugLine="Else If(index_box=2)Then";
+Debug.ShouldStop(-2147483648);
 if ((RemoteObject.solveBoolean("=",main._index_box,BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2775;BA.debugLine="dbCode.res=dbCode.sql.ExecQuery(\"SELECT * FROM t";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2753;BA.debugLine="dbCode.res=dbCode.sql.ExecQuery(\"SELECT * FROM t";
+Debug.ShouldStop(1);
 main.mostCurrent._dbcode._res /*RemoteObject*/  = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), main.mostCurrent._dbcode._sql /*RemoteObject*/ .runMethod(false,"ExecQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("SELECT * FROM tb_morakhasi WHERE id="),_id1))));
- BA.debugLineNum = 2776;BA.debugLine="dbCode.res.Position=0";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2754;BA.debugLine="dbCode.res.Position=0";
+Debug.ShouldStop(2);
 main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"setPosition",BA.numberCast(int.class, 0));
- BA.debugLineNum = 2779;BA.debugLine="Select dbCode.res.GetInt(\"state\")";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2757;BA.debugLine="Select dbCode.res.GetInt(\"state\")";
+Debug.ShouldStop(16);
 switch (BA.switchObjectToInt(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(int.class, 0),BA.numberCast(int.class, 1),BA.numberCast(int.class, 2),BA.numberCast(int.class, 3))) {
 case 0: {
- BA.debugLineNum = 2781;BA.debugLine="str_noe=\"استحقاقی-ساعتی/روزانه\"";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2759;BA.debugLine="str_noe=\"استحقاقی-ساعتی/روزانه\"";
+Debug.ShouldStop(64);
 main.mostCurrent._str_noe = BA.ObjectToString("استحقاقی-ساعتی/روزانه");
  break; }
 case 1: {
- BA.debugLineNum = 2783;BA.debugLine="str_noe=\"استعلاجی\"";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2761;BA.debugLine="str_noe=\"استعلاجی\"";
+Debug.ShouldStop(256);
 main.mostCurrent._str_noe = BA.ObjectToString("استعلاجی");
  break; }
 case 2: {
- BA.debugLineNum = 2785;BA.debugLine="str_noe=\"سایر (با حقوق)\"";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2763;BA.debugLine="str_noe=\"سایر (با حقوق)\"";
+Debug.ShouldStop(1024);
 main.mostCurrent._str_noe = BA.ObjectToString("سایر (با حقوق)");
  break; }
 case 3: {
- BA.debugLineNum = 2787;BA.debugLine="str_noe=\"سایر (بدون حقوق)\"";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2765;BA.debugLine="str_noe=\"سایر (بدون حقوق)\"";
+Debug.ShouldStop(4096);
 main.mostCurrent._str_noe = BA.ObjectToString("سایر (بدون حقوق)");
  break; }
 }
 ;
- BA.debugLineNum = 2791;BA.debugLine="lbl_ezaf_taradod.Text=\"نوع مرخصی : \"&str_noe";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2769;BA.debugLine="lbl_ezaf_taradod.Text=\"نوع مرخصی : \"&str_noe";
+Debug.ShouldStop(65536);
 main.mostCurrent._lbl_ezaf_taradod.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(RemoteObject.createImmutable("نوع مرخصی : "),main.mostCurrent._str_noe)));
- BA.debugLineNum = 2792;BA.debugLine="index_noe_morakhasi=dbCode.res.GetInt(\"state\")";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2770;BA.debugLine="index_noe_morakhasi=dbCode.res.GetInt(\"state\")";
+Debug.ShouldStop(131072);
 main._index_noe_morakhasi = main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state")));
  }else 
-{ BA.debugLineNum = 2796;BA.debugLine="Else If(index_box=3)Then";
-Debug.ShouldStop(2048);
+{ BA.debugLineNum = 2774;BA.debugLine="Else If(index_box=3)Then";
+Debug.ShouldStop(2097152);
 if ((RemoteObject.solveBoolean("=",main._index_box,BA.numberCast(double.class, 3)))) { 
- BA.debugLineNum = 2797;BA.debugLine="dbCode.res=dbCode.sql.ExecQuery(\"SELECT * FROM t";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2775;BA.debugLine="dbCode.res=dbCode.sql.ExecQuery(\"SELECT * FROM t";
+Debug.ShouldStop(4194304);
 main.mostCurrent._dbcode._res /*RemoteObject*/  = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), main.mostCurrent._dbcode._sql /*RemoteObject*/ .runMethod(false,"ExecQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("SELECT * FROM tb_taradod WHERE id="),_id1))));
- BA.debugLineNum = 2798;BA.debugLine="dbCode.res.Position=0";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2776;BA.debugLine="dbCode.res.Position=0";
+Debug.ShouldStop(8388608);
 main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"setPosition",BA.numberCast(int.class, 0));
  }}}
 ;
- BA.debugLineNum = 2805;BA.debugLine="lbl_tim1.Text=dbCode.res.GetString(\"time_from\")";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2783;BA.debugLine="lbl_tim1.Text=dbCode.res.GetString(\"time_from\")";
+Debug.ShouldStop(1073741824);
 main.mostCurrent._lbl_tim1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("time_from")))));
- BA.debugLineNum = 2806;BA.debugLine="lbl_tim2.Text=dbCode.res.GetString(\"time_to\")";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2784;BA.debugLine="lbl_tim2.Text=dbCode.res.GetString(\"time_to\")";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._lbl_tim2.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("time_to")))));
- BA.debugLineNum = 2808;BA.debugLine="lbl_date1.Text=myfunc.fa2en(dbCode.res.GetString(";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2786;BA.debugLine="lbl_date1.Text=myfunc.fa2en(dbCode.res.GetString(";
+Debug.ShouldStop(2);
 main.mostCurrent._lbl_date1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("date_from")))))));
- BA.debugLineNum = 2809;BA.debugLine="lbl_date2.Text=myfunc.fa2en(dbCode.res.GetString(";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2787;BA.debugLine="lbl_date2.Text=myfunc.fa2en(dbCode.res.GetString(";
+Debug.ShouldStop(4);
 main.mostCurrent._lbl_date2.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("date_to")))))));
- BA.debugLineNum = 2811;BA.debugLine="et_tozihat.Text=dbCode.res.GetString(\"tozihat\")";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2789;BA.debugLine="et_tozihat.Text=dbCode.res.GetString(\"tozihat\")";
+Debug.ShouldStop(16);
 main.mostCurrent._et_tozihat.runMethodAndSync(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("tozihat")))));
- BA.debugLineNum = 2814;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2792;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2349,7 +2349,7 @@ main.mostCurrent._lbl_tim_vorod_ft = RemoteObject.createNew ("anywheresoftware.b
 main.mostCurrent._ckb_ezaf_taradod_ft = RemoteObject.createNew ("anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper");
  //BA.debugLineNum = 254;BA.debugLine="Private pan_all_FT As Panel";
 main.mostCurrent._pan_all_ft = RemoteObject.createNew ("anywheresoftware.b4a.objects.PanelWrapper");
- //BA.debugLineNum = 256;BA.debugLine="dim code_fast_taradod as Int=1";
+ //BA.debugLineNum = 256;BA.debugLine="Dim code_fast_taradod As Int=1";
 main._code_fast_taradod = BA.numberCast(int.class, 1);
  //BA.debugLineNum = 257;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
@@ -2386,48 +2386,48 @@ finally {
 		}}
 public static RemoteObject  _img_slider(RemoteObject _index1) throws Exception{
 try {
-		Debug.PushSubsStack("img_slider (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2701);
+		Debug.PushSubsStack("img_slider (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2679);
 if (RapidSub.canDelegate("img_slider")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","img_slider", _index1);}
 Debug.locals.put("index1", _index1);
- BA.debugLineNum = 2701;BA.debugLine="Sub img_slider (index1 As Int)";
-Debug.ShouldStop(4096);
- BA.debugLineNum = 2702;BA.debugLine="Select index1";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2679;BA.debugLine="Sub img_slider (index1 As Int)";
+Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2680;BA.debugLine="Select index1";
+Debug.ShouldStop(8388608);
 switch (BA.switchObjectToInt(_index1,BA.numberCast(int.class, 0),BA.numberCast(int.class, 1),BA.numberCast(int.class, 2),BA.numberCast(int.class, 3),BA.numberCast(int.class, 4))) {
 case 0: {
- BA.debugLineNum = 2704;BA.debugLine="img_help.Bitmap=bit_img0";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 2682;BA.debugLine="img_help.Bitmap=bit_img0";
+Debug.ShouldStop(33554432);
 main.mostCurrent._img_help.runMethod(false,"setBitmap",(main.mostCurrent._bit_img0.getObject()));
  break; }
 case 1: {
- BA.debugLineNum = 2706;BA.debugLine="img_help.Bitmap=bit_img1";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2684;BA.debugLine="img_help.Bitmap=bit_img1";
+Debug.ShouldStop(134217728);
 main.mostCurrent._img_help.runMethod(false,"setBitmap",(main.mostCurrent._bit_img1.getObject()));
  break; }
 case 2: {
- BA.debugLineNum = 2709;BA.debugLine="img_help.Bitmap=bit_img2";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2687;BA.debugLine="img_help.Bitmap=bit_img2";
+Debug.ShouldStop(1073741824);
 main.mostCurrent._img_help.runMethod(false,"setBitmap",(main.mostCurrent._bit_img2.getObject()));
  break; }
 case 3: {
- BA.debugLineNum = 2712;BA.debugLine="img_help.Bitmap=bit_img3";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2690;BA.debugLine="img_help.Bitmap=bit_img3";
+Debug.ShouldStop(2);
 main.mostCurrent._img_help.runMethod(false,"setBitmap",(main.mostCurrent._bit_img3.getObject()));
  break; }
 case 4: {
- BA.debugLineNum = 2715;BA.debugLine="img_help.Bitmap=bit_img4";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2693;BA.debugLine="img_help.Bitmap=bit_img4";
+Debug.ShouldStop(16);
 main.mostCurrent._img_help.runMethod(false,"setBitmap",(main.mostCurrent._bit_img4.getObject()));
  break; }
 default: {
- BA.debugLineNum = 2718;BA.debugLine="Log(\"error\")";
-Debug.ShouldStop(536870912);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","34980753",RemoteObject.createImmutable("error"),0);
+ BA.debugLineNum = 2696;BA.debugLine="Log(\"error\")";
+Debug.ShouldStop(128);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","45046289",RemoteObject.createImmutable("error"),0);
  break; }
 }
 ;
- BA.debugLineNum = 2721;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2699;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2589,67 +2589,67 @@ finally {
 		}}
 public static RemoteObject  _lbl_close_ft_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_close_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3086);
+		Debug.PushSubsStack("lbl_close_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3064);
 if (RapidSub.canDelegate("lbl_close_ft_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_close_ft_click");}
 RemoteObject _result = RemoteObject.createImmutable(0);
- BA.debugLineNum = 3086;BA.debugLine="Private Sub lbl_close_FT_Click";
-Debug.ShouldStop(8192);
- BA.debugLineNum = 3088;BA.debugLine="If(dbCode.isexist_taradod_by_date(myfunc.fa2en(pe";
-Debug.ShouldStop(32768);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode.runMethod(true,"_isexist_taradod_by_date" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main._persiandate.runMethod(true,"getPersianShortDate"))))),main.mostCurrent.__c.getField(true,"True")))) { 
- BA.debugLineNum = 3089;BA.debugLine="Dim result As Int";
-Debug.ShouldStop(65536);
-_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
- BA.debugLineNum = 3090;BA.debugLine="result = Msgbox2(\"تردد و اضافه کاری امروز پاک شو";
-Debug.ShouldStop(131072);
-_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("تردد و اضافه کاری امروز پاک شود؟")),(Object)(BA.ObjectToCharSequence("توجه")),(Object)(BA.ObjectToString("بله")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("خیر")),(Object)((main.mostCurrent.__c.runMethod(false,"LoadBitmap",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("attention.png"))).getObject())),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
- BA.debugLineNum = 3091;BA.debugLine="If result = DialogResponse.Positive Then";
-Debug.ShouldStop(262144);
-if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
- BA.debugLineNum = 3093;BA.debugLine="dbCode.connect_db";
-Debug.ShouldStop(1048576);
-main.mostCurrent._dbcode.runVoidMethod ("_connect_db" /*RemoteObject*/ ,main.mostCurrent.activityBA);
- BA.debugLineNum = 3095;BA.debugLine="dbCode.sql.ExecNonQuery(\"DELETE FROM tb_taradod";
-Debug.ShouldStop(4194304);
-main.mostCurrent._dbcode._sql /*RemoteObject*/ .runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("DELETE FROM tb_taradod WHERE date_from LIKE '%"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),RemoteObject.createImmutable("%'; "))));
- BA.debugLineNum = 3097;BA.debugLine="dbCode.sql.ExecNonQuery(\"DELETE FROM tb_ezafeka";
-Debug.ShouldStop(16777216);
-main.mostCurrent._dbcode._sql /*RemoteObject*/ .runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("DELETE FROM tb_ezafekari WHERE date_from LIKE '%"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),RemoteObject.createImmutable("%'; "))));
- BA.debugLineNum = 3098;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
+ BA.debugLineNum = 3064;BA.debugLine="Private Sub lbl_close_FT_Click";
+Debug.ShouldStop(8388608);
+ BA.debugLineNum = 3066;BA.debugLine="If(dbCode.isexist_taradod_by_date(myfunc.fa2en(pe";
 Debug.ShouldStop(33554432);
-main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
- BA.debugLineNum = 3099;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode.runMethod(true,"_isexist_taradod_by_date" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main._persiandate.runMethod(true,"getPersianShortDate"))))),main.mostCurrent.__c.getField(true,"True")))) { 
+ BA.debugLineNum = 3067;BA.debugLine="Dim result As Int";
 Debug.ShouldStop(67108864);
-main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
- BA.debugLineNum = 3101;BA.debugLine="ckb_ezaf_taradod_FT.Checked=True";
+_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
+ BA.debugLineNum = 3068;BA.debugLine="result = Msgbox2(\"تردد و اضافه کاری امروز پاک شو";
+Debug.ShouldStop(134217728);
+_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("تردد و اضافه کاری امروز پاک شود؟")),(Object)(BA.ObjectToCharSequence("توجه")),(Object)(BA.ObjectToString("بله")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("خیر")),(Object)((main.mostCurrent.__c.runMethod(false,"LoadBitmap",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("attention.png"))).getObject())),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
+ BA.debugLineNum = 3069;BA.debugLine="If result = DialogResponse.Positive Then";
 Debug.ShouldStop(268435456);
-main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 3102;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=True";
-Debug.ShouldStop(536870912);
-main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 3103;BA.debugLine="lbl_tim_vorod_FT.Text=\"00:00\"";
+if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
+ BA.debugLineNum = 3071;BA.debugLine="dbCode.connect_db";
 Debug.ShouldStop(1073741824);
-main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"setText",BA.ObjectToCharSequence("00:00"));
- BA.debugLineNum = 3104;BA.debugLine="lbl_tim_khoroj_FT.Text=\"00:00\"";
-Debug.ShouldStop(-2147483648);
-main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"setText",BA.ObjectToCharSequence("00:00"));
- BA.debugLineNum = 3105;BA.debugLine="lbl_time_show_FT.Text=\"\"";
+main.mostCurrent._dbcode.runVoidMethod ("_connect_db" /*RemoteObject*/ ,main.mostCurrent.activityBA);
+ BA.debugLineNum = 3073;BA.debugLine="dbCode.sql.ExecNonQuery(\"DELETE FROM tb_taradod";
 Debug.ShouldStop(1);
+main.mostCurrent._dbcode._sql /*RemoteObject*/ .runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("DELETE FROM tb_taradod WHERE date_from LIKE '%"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),RemoteObject.createImmutable("%'; "))));
+ BA.debugLineNum = 3075;BA.debugLine="dbCode.sql.ExecNonQuery(\"DELETE FROM tb_ezafeka";
+Debug.ShouldStop(4);
+main.mostCurrent._dbcode._sql /*RemoteObject*/ .runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("DELETE FROM tb_ezafekari WHERE date_from LIKE '%"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),RemoteObject.createImmutable("%'; "))));
+ BA.debugLineNum = 3076;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
+Debug.ShouldStop(8);
+main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
+ BA.debugLineNum = 3077;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
+Debug.ShouldStop(16);
+main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
+ BA.debugLineNum = 3079;BA.debugLine="ckb_ezaf_taradod_FT.Checked=True";
+Debug.ShouldStop(64);
+main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 3080;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=True";
+Debug.ShouldStop(128);
+main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 3081;BA.debugLine="lbl_tim_vorod_FT.Text=\"00:00\"";
+Debug.ShouldStop(256);
+main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"setText",BA.ObjectToCharSequence("00:00"));
+ BA.debugLineNum = 3082;BA.debugLine="lbl_tim_khoroj_FT.Text=\"00:00\"";
+Debug.ShouldStop(512);
+main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"setText",BA.ObjectToCharSequence("00:00"));
+ BA.debugLineNum = 3083;BA.debugLine="lbl_time_show_FT.Text=\"\"";
+Debug.ShouldStop(1024);
 main.mostCurrent._lbl_time_show_ft.runMethod(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 3106;BA.debugLine="code_fast_taradod=1";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 3084;BA.debugLine="code_fast_taradod=1";
+Debug.ShouldStop(2048);
 main._code_fast_taradod = BA.numberCast(int.class, 1);
  };
  }else {
- BA.debugLineNum = 3110;BA.debugLine="myfunc.help_man(\"برای امروز هنوز ترددی ثبت نشده";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 3088;BA.debugLine="myfunc.help_man(\"برای امروز هنوز ترددی ثبت نشده";
+Debug.ShouldStop(32768);
 main.mostCurrent._myfunc.runVoidMethod ("_help_man" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(RemoteObject.createImmutable("برای امروز هنوز ترددی ثبت نشده است")));
- BA.debugLineNum = 3111;BA.debugLine="code_fast_taradod=1";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 3089;BA.debugLine="code_fast_taradod=1";
+Debug.ShouldStop(65536);
 main._code_fast_taradod = BA.numberCast(int.class, 1);
  };
- BA.debugLineNum = 3114;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 3092;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2660,15 +2660,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_close_help_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_close_help_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2645);
+		Debug.PushSubsStack("lbl_close_help_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2623);
 if (RapidSub.canDelegate("lbl_close_help_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_close_help_click");}
- BA.debugLineNum = 2645;BA.debugLine="Private Sub lbl_close_help_Click";
-Debug.ShouldStop(1048576);
- BA.debugLineNum = 2646;BA.debugLine="pan_help.Visible=False";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2623;BA.debugLine="Private Sub lbl_close_help_Click";
+Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2624;BA.debugLine="pan_help.Visible=False";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._pan_help.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 2647;BA.debugLine="End Sub";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2625;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2717,15 +2717,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_date1_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_date1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2395);
+		Debug.PushSubsStack("lbl_date1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2373);
 if (RapidSub.canDelegate("lbl_date1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_date1_click");}
- BA.debugLineNum = 2395;BA.debugLine="Private Sub lbl_date1_Click";
-Debug.ShouldStop(67108864);
- BA.debugLineNum = 2396;BA.debugLine="lbl_tim1_Click";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2373;BA.debugLine="Private Sub lbl_date1_Click";
+Debug.ShouldStop(16);
+ BA.debugLineNum = 2374;BA.debugLine="lbl_tim1_Click";
+Debug.ShouldStop(32);
 _lbl_tim1_click();
- BA.debugLineNum = 2397;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2375;BA.debugLine="End Sub";
+Debug.ShouldStop(64);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2736,15 +2736,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_date2_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_date2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2390);
+		Debug.PushSubsStack("lbl_date2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2368);
 if (RapidSub.canDelegate("lbl_date2_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_date2_click");}
- BA.debugLineNum = 2390;BA.debugLine="Private Sub lbl_date2_Click";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 2391;BA.debugLine="lbl_tim2_Click";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2368;BA.debugLine="Private Sub lbl_date2_Click";
+Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2369;BA.debugLine="lbl_tim2_Click";
+Debug.ShouldStop(1);
 _lbl_tim2_click();
- BA.debugLineNum = 2392;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2370;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2755,83 +2755,83 @@ finally {
 		}}
 public static RemoteObject  _lbl_edit_from_list_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_edit_from_list_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2724);
+		Debug.PushSubsStack("lbl_edit_from_list_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2702);
 if (RapidSub.canDelegate("lbl_edit_from_list_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_edit_from_list_click");}
 RemoteObject _b = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
- BA.debugLineNum = 2724;BA.debugLine="Private Sub lbl_edit_from_list_Click";
-Debug.ShouldStop(8);
- BA.debugLineNum = 2725;BA.debugLine="Dim b As Label";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 2702;BA.debugLine="Private Sub lbl_edit_from_list_Click";
+Debug.ShouldStop(8192);
+ BA.debugLineNum = 2703;BA.debugLine="Dim b As Label";
+Debug.ShouldStop(16384);
 _b = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");Debug.locals.put("b", _b);
- BA.debugLineNum = 2726;BA.debugLine="b = Sender";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2704;BA.debugLine="b = Sender";
+Debug.ShouldStop(32768);
 _b = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.LabelWrapper"), main.mostCurrent.__c.runMethod(false,"Sender",main.mostCurrent.activityBA));Debug.locals.put("b", _b);
- BA.debugLineNum = 2727;BA.debugLine="Log(b.Tag)";
-Debug.ShouldStop(64);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","35046275",BA.ObjectToString(_b.runMethod(false,"getTag")),0);
- BA.debugLineNum = 2728;BA.debugLine="current_id_edit=b.Tag";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2705;BA.debugLine="Log(b.Tag)";
+Debug.ShouldStop(65536);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","45111811",BA.ObjectToString(_b.runMethod(false,"getTag")),0);
+ BA.debugLineNum = 2706;BA.debugLine="current_id_edit=b.Tag";
+Debug.ShouldStop(131072);
 main._current_id_edit = BA.numberCast(int.class, _b.runMethod(false,"getTag"));
- BA.debugLineNum = 2731;BA.debugLine="If(TabHost1.CurrentTab=0)Then";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2709;BA.debugLine="If(TabHost1.CurrentTab=0)Then";
+Debug.ShouldStop(1048576);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2732;BA.debugLine="pan_add_ezafekari_Click";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 2710;BA.debugLine="pan_add_ezafekari_Click";
+Debug.ShouldStop(2097152);
 _pan_add_ezafekari_click();
- BA.debugLineNum = 2733;BA.debugLine="lbl_box_title.Text=\"ویرایش اضافه کاری\"";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2711;BA.debugLine="lbl_box_title.Text=\"ویرایش اضافه کاری\"";
+Debug.ShouldStop(4194304);
 main.mostCurrent._lbl_box_title.runMethod(true,"setText",BA.ObjectToCharSequence("ویرایش اضافه کاری"));
  }else 
-{ BA.debugLineNum = 2735;BA.debugLine="Else if (TabHost1.CurrentTab=1)Then";
-Debug.ShouldStop(16384);
+{ BA.debugLineNum = 2713;BA.debugLine="Else if (TabHost1.CurrentTab=1)Then";
+Debug.ShouldStop(16777216);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2736;BA.debugLine="pan_add_morakhasi_Click";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 2714;BA.debugLine="pan_add_morakhasi_Click";
+Debug.ShouldStop(33554432);
 _pan_add_morakhasi_click();
- BA.debugLineNum = 2737;BA.debugLine="lbl_box_title.Text=\"ویرایش مرخصی\"";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2715;BA.debugLine="lbl_box_title.Text=\"ویرایش مرخصی\"";
+Debug.ShouldStop(67108864);
 main.mostCurrent._lbl_box_title.runMethod(true,"setText",BA.ObjectToCharSequence("ویرایش مرخصی"));
  }else 
-{ BA.debugLineNum = 2739;BA.debugLine="Else if (TabHost1.CurrentTab=2)Then";
-Debug.ShouldStop(262144);
+{ BA.debugLineNum = 2717;BA.debugLine="Else if (TabHost1.CurrentTab=2)Then";
+Debug.ShouldStop(268435456);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2740;BA.debugLine="pan_add_taradod_Click";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2718;BA.debugLine="pan_add_taradod_Click";
+Debug.ShouldStop(536870912);
 _pan_add_taradod_click();
- BA.debugLineNum = 2741;BA.debugLine="lbl_box_title.Text=\"ویرایش تردد\"";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2719;BA.debugLine="lbl_box_title.Text=\"ویرایش تردد\"";
+Debug.ShouldStop(1073741824);
 main.mostCurrent._lbl_box_title.runMethod(true,"setText",BA.ObjectToCharSequence("ویرایش تردد"));
- BA.debugLineNum = 2742;BA.debugLine="ckb_ezaf_taradod.Visible=False";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2720;BA.debugLine="ckb_ezaf_taradod.Visible=False";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._ckb_ezaf_taradod.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 2743;BA.debugLine="lbl_ezaf_taradod.Visible=False";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2721;BA.debugLine="lbl_ezaf_taradod.Visible=False";
+Debug.ShouldStop(1);
 main.mostCurrent._lbl_ezaf_taradod.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
  }}}
 ;
- BA.debugLineNum = 2745;BA.debugLine="is_for_edit=True";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2723;BA.debugLine="is_for_edit=True";
+Debug.ShouldStop(4);
 main._is_for_edit = main.mostCurrent.__c.getField(true,"True");
- BA.debugLineNum = 2746;BA.debugLine="get_dataEdit_byId(current_id_edit)";
-Debug.ShouldStop(33554432);
-_get_dataedit_byid(main._current_id_edit);
- BA.debugLineNum = 2750;BA.debugLine="pik_year1.Text=myfunc.fa2en(persianDate.PersianYe";
-Debug.ShouldStop(536870912);
-main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.NumberToString(main._persiandate.runMethod(true,"getPersianYear"))))));
- BA.debugLineNum = 2751;BA.debugLine="pik_moon1.Tag=myfunc.fa2en(persianDate.PersianMon";
-Debug.ShouldStop(1073741824);
-main.mostCurrent._pik_moon1.runMethod(false,"setTag",(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.NumberToString(main._persiandate.runMethod(true,"getPersianMonth"))))));
- BA.debugLineNum = 2752;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
-Debug.ShouldStop(-2147483648);
-main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
- BA.debugLineNum = 2753;BA.debugLine="pik_day1.Text=myfunc.fa2en(persianDate.PersianDay";
-Debug.ShouldStop(1);
-main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.NumberToString(main._persiandate.runMethod(true,"getPersianDay"))))));
- BA.debugLineNum = 2756;BA.debugLine="time_show";
+ BA.debugLineNum = 2724;BA.debugLine="get_dataEdit_byId(current_id_edit)";
 Debug.ShouldStop(8);
+_get_dataedit_byid(main._current_id_edit);
+ BA.debugLineNum = 2728;BA.debugLine="pik_year1.Text=myfunc.fa2en(persianDate.PersianYe";
+Debug.ShouldStop(128);
+main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.NumberToString(main._persiandate.runMethod(true,"getPersianYear"))))));
+ BA.debugLineNum = 2729;BA.debugLine="pik_moon1.Tag=myfunc.fa2en(persianDate.PersianMon";
+Debug.ShouldStop(256);
+main.mostCurrent._pik_moon1.runMethod(false,"setTag",(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.NumberToString(main._persiandate.runMethod(true,"getPersianMonth"))))));
+ BA.debugLineNum = 2730;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
+Debug.ShouldStop(512);
+main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
+ BA.debugLineNum = 2731;BA.debugLine="pik_day1.Text=myfunc.fa2en(persianDate.PersianDay";
+Debug.ShouldStop(1024);
+main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.NumberToString(main._persiandate.runMethod(true,"getPersianDay"))))));
+ BA.debugLineNum = 2734;BA.debugLine="time_show";
+Debug.ShouldStop(8192);
 _time_show();
- BA.debugLineNum = 2759;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2737;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2865,36 +2865,36 @@ finally {
 		}}
 public static RemoteObject  _lbl_help_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2629);
+		Debug.PushSubsStack("lbl_help_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2607);
 if (RapidSub.canDelegate("lbl_help_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_help_click");}
- BA.debugLineNum = 2629;BA.debugLine="Private Sub lbl_help_Click";
-Debug.ShouldStop(16);
- BA.debugLineNum = 2632;BA.debugLine="bit_img0.Initialize(File.DirAssets,\"home-h0.jpg\")";
-Debug.ShouldStop(128);
-main.mostCurrent._bit_img0.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h0.jpg")));
- BA.debugLineNum = 2633;BA.debugLine="bit_img1.Initialize(File.DirAssets,\"home-h1.jpg\")";
-Debug.ShouldStop(256);
-main.mostCurrent._bit_img1.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h1.jpg")));
- BA.debugLineNum = 2634;BA.debugLine="bit_img2.Initialize(File.DirAssets,\"home-h2.jpg\")";
-Debug.ShouldStop(512);
-main.mostCurrent._bit_img2.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h2.jpg")));
- BA.debugLineNum = 2635;BA.debugLine="bit_img3.Initialize(File.DirAssets,\"home-h3.jpg\")";
-Debug.ShouldStop(1024);
-main.mostCurrent._bit_img3.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h3.jpg")));
- BA.debugLineNum = 2636;BA.debugLine="bit_img4.Initialize(File.DirAssets,\"home-h4.jpg\")";
-Debug.ShouldStop(2048);
-main.mostCurrent._bit_img4.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h4.jpg")));
- BA.debugLineNum = 2639;BA.debugLine="index_curent_img=0";
+ BA.debugLineNum = 2607;BA.debugLine="Private Sub lbl_help_Click";
 Debug.ShouldStop(16384);
-main._index_curent_img = BA.numberCast(int.class, 0);
- BA.debugLineNum = 2640;BA.debugLine="img_slider(index_curent_img)";
-Debug.ShouldStop(32768);
-_img_slider(main._index_curent_img);
- BA.debugLineNum = 2641;BA.debugLine="pan_help.Visible=True";
-Debug.ShouldStop(65536);
-main.mostCurrent._pan_help.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 2643;BA.debugLine="End Sub";
+ BA.debugLineNum = 2610;BA.debugLine="bit_img0.Initialize(File.DirAssets,\"home-h0.jpg\")";
+Debug.ShouldStop(131072);
+main.mostCurrent._bit_img0.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h0.jpg")));
+ BA.debugLineNum = 2611;BA.debugLine="bit_img1.Initialize(File.DirAssets,\"home-h1.jpg\")";
 Debug.ShouldStop(262144);
+main.mostCurrent._bit_img1.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h1.jpg")));
+ BA.debugLineNum = 2612;BA.debugLine="bit_img2.Initialize(File.DirAssets,\"home-h2.jpg\")";
+Debug.ShouldStop(524288);
+main.mostCurrent._bit_img2.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h2.jpg")));
+ BA.debugLineNum = 2613;BA.debugLine="bit_img3.Initialize(File.DirAssets,\"home-h3.jpg\")";
+Debug.ShouldStop(1048576);
+main.mostCurrent._bit_img3.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h3.jpg")));
+ BA.debugLineNum = 2614;BA.debugLine="bit_img4.Initialize(File.DirAssets,\"home-h4.jpg\")";
+Debug.ShouldStop(2097152);
+main.mostCurrent._bit_img4.runVoidMethod ("Initialize",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("home-h4.jpg")));
+ BA.debugLineNum = 2617;BA.debugLine="index_curent_img=0";
+Debug.ShouldStop(16777216);
+main._index_curent_img = BA.numberCast(int.class, 0);
+ BA.debugLineNum = 2618;BA.debugLine="img_slider(index_curent_img)";
+Debug.ShouldStop(33554432);
+_img_slider(main._index_curent_img);
+ BA.debugLineNum = 2619;BA.debugLine="pan_help.Visible=True";
+Debug.ShouldStop(67108864);
+main.mostCurrent._pan_help.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 2621;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2905,15 +2905,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_help_ft_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3244);
+		Debug.PushSubsStack("lbl_help_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3222);
 if (RapidSub.canDelegate("lbl_help_ft_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_help_ft_click");}
- BA.debugLineNum = 3244;BA.debugLine="Private Sub lbl_help_FT_Click";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 3245;BA.debugLine="myfunc.help_man(\"برای ثبت ورود یا خروج انگشت خود";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 3222;BA.debugLine="Private Sub lbl_help_FT_Click";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 3223;BA.debugLine="myfunc.help_man(\"برای ثبت ورود یا خروج انگشت خود";
+Debug.ShouldStop(4194304);
 main.mostCurrent._myfunc.runVoidMethod ("_help_man" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(RemoteObject.createImmutable("برای ثبت ورود یا خروج انگشت خود را در قسمت مشخص شده 3 ثانیه نگه دارید.")));
- BA.debugLineNum = 3246;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 3224;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2924,24 +2924,24 @@ finally {
 		}}
 public static RemoteObject  _lbl_help_piker_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help_piker_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2946);
+		Debug.PushSubsStack("lbl_help_piker_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2924);
 if (RapidSub.canDelegate("lbl_help_piker_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_help_piker_click");}
- BA.debugLineNum = 2946;BA.debugLine="Private Sub lbl_help_piker_Click";
-Debug.ShouldStop(2);
- BA.debugLineNum = 2948;BA.debugLine="index_curent_img=4";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 2924;BA.debugLine="Private Sub lbl_help_piker_Click";
+Debug.ShouldStop(2048);
+ BA.debugLineNum = 2926;BA.debugLine="index_curent_img=4";
+Debug.ShouldStop(8192);
 main._index_curent_img = BA.numberCast(int.class, 4);
- BA.debugLineNum = 2950;BA.debugLine="img_help.Bitmap=bit_img4";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2928;BA.debugLine="img_help.Bitmap=bit_img4";
+Debug.ShouldStop(32768);
 main.mostCurrent._img_help.runMethod(false,"setBitmap",(main.mostCurrent._bit_img4.getObject()));
- BA.debugLineNum = 2951;BA.debugLine="lbl_close_help.Visible=False";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2929;BA.debugLine="lbl_close_help.Visible=False";
+Debug.ShouldStop(65536);
 main.mostCurrent._lbl_close_help.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 2952;BA.debugLine="pan_help.Visible=True";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2930;BA.debugLine="pan_help.Visible=True";
+Debug.ShouldStop(131072);
 main.mostCurrent._pan_help.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 2954;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 2932;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2952,15 +2952,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_help2_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_help2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2888);
+		Debug.PushSubsStack("lbl_help2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2866);
 if (RapidSub.canDelegate("lbl_help2_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_help2_click");}
- BA.debugLineNum = 2888;BA.debugLine="Private Sub lbl_help2_Click";
-Debug.ShouldStop(128);
- BA.debugLineNum = 2889;BA.debugLine="lbl_help_Click";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2866;BA.debugLine="Private Sub lbl_help2_Click";
+Debug.ShouldStop(131072);
+ BA.debugLineNum = 2867;BA.debugLine="lbl_help_Click";
+Debug.ShouldStop(262144);
 _lbl_help_click();
- BA.debugLineNum = 2890;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 2868;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2971,15 +2971,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_khoroj_ft_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_khoroj_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3123);
+		Debug.PushSubsStack("lbl_khoroj_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3101);
 if (RapidSub.canDelegate("lbl_khoroj_ft_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_khoroj_ft_click");}
- BA.debugLineNum = 3123;BA.debugLine="Private Sub lbl_khoroj_FT_Click";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 3124;BA.debugLine="ToastMessageShow(\"انگشن خود را 3 ثانیه نگه دارید\"";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 3101;BA.debugLine="Private Sub lbl_khoroj_FT_Click";
+Debug.ShouldStop(268435456);
+ BA.debugLineNum = 3102;BA.debugLine="ToastMessageShow(\"انگشن خود را 3 ثانیه نگه دارید\"";
+Debug.ShouldStop(536870912);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("انگشن خود را 3 ثانیه نگه دارید")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 3125;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 3103;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -2990,47 +2990,47 @@ finally {
 		}}
 public static RemoteObject  _lbl_khoroj_ft_longclick() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_khoroj_FT_LongClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3144);
+		Debug.PushSubsStack("lbl_khoroj_FT_LongClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3122);
 if (RapidSub.canDelegate("lbl_khoroj_ft_longclick")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_khoroj_ft_longclick");}
- BA.debugLineNum = 3144;BA.debugLine="Private Sub lbl_khoroj_FT_LongClick";
-Debug.ShouldStop(128);
- BA.debugLineNum = 3145;BA.debugLine="If(code_fast_taradod=10 Or code_fast_taradod=20)T";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 3122;BA.debugLine="Private Sub lbl_khoroj_FT_LongClick";
+Debug.ShouldStop(131072);
+ BA.debugLineNum = 3123;BA.debugLine="If(code_fast_taradod=10 Or code_fast_taradod=20)T";
+Debug.ShouldStop(262144);
 if ((RemoteObject.solveBoolean("=",main._code_fast_taradod,BA.numberCast(double.class, 10)) || RemoteObject.solveBoolean("=",main._code_fast_taradod,BA.numberCast(double.class, 20)))) { 
- BA.debugLineNum = 3146;BA.debugLine="index_box=4";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 3124;BA.debugLine="index_box=4";
+Debug.ShouldStop(524288);
 main._index_box = BA.numberCast(int.class, 4);
- BA.debugLineNum = 3147;BA.debugLine="lbl_tim_khoroj_FT.Text=DateTime.Time(DateTime.No";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 3125;BA.debugLine="lbl_tim_khoroj_FT.Text=DateTime.Time(DateTime.No";
+Debug.ShouldStop(1048576);
 main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent.__c.getField(false,"DateTime").runMethod(true,"Time",(Object)(main.mostCurrent.__c.getField(false,"DateTime").runMethod(true,"getNow")))));
- BA.debugLineNum = 3148;BA.debugLine="add_taradod_fast";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 3126;BA.debugLine="add_taradod_fast";
+Debug.ShouldStop(2097152);
 _add_taradod_fast();
- BA.debugLineNum = 3149;BA.debugLine="code_fast_taradod=11";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 3127;BA.debugLine="code_fast_taradod=11";
+Debug.ShouldStop(4194304);
 main._code_fast_taradod = BA.numberCast(int.class, 11);
  }else 
-{ BA.debugLineNum = 3150;BA.debugLine="Else If(code_fast_taradod=0)Then";
-Debug.ShouldStop(8192);
+{ BA.debugLineNum = 3128;BA.debugLine="Else If(code_fast_taradod=0)Then";
+Debug.ShouldStop(8388608);
 if ((RemoteObject.solveBoolean("=",main._code_fast_taradod,BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 3151;BA.debugLine="ToastMessageShow(\"تردد امروز دستی ثبت شده است\",F";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 3129;BA.debugLine="ToastMessageShow(\"تردد امروز دستی ثبت شده است\",F";
+Debug.ShouldStop(16777216);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("تردد امروز دستی ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
  }else 
-{ BA.debugLineNum = 3152;BA.debugLine="Else If(code_fast_taradod=1)Then";
-Debug.ShouldStop(32768);
+{ BA.debugLineNum = 3130;BA.debugLine="Else If(code_fast_taradod=1)Then";
+Debug.ShouldStop(33554432);
 if ((RemoteObject.solveBoolean("=",main._code_fast_taradod,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 3153;BA.debugLine="ToastMessageShow(\"ابتدا قسمت ورود را بزنید\",Fals";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 3131;BA.debugLine="ToastMessageShow(\"ابتدا قسمت ورود را بزنید\",Fals";
+Debug.ShouldStop(67108864);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("ابتدا قسمت ورود را بزنید")),(Object)(main.mostCurrent.__c.getField(true,"False")));
  }else {
- BA.debugLineNum = 3155;BA.debugLine="ToastMessageShow(\"زمان خروج ثبت شده است\",False)";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 3133;BA.debugLine="ToastMessageShow(\"زمان خروج ثبت شده است\",False)";
+Debug.ShouldStop(268435456);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("زمان خروج ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
  }}}
 ;
- BA.debugLineNum = 3157;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 3135;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3041,15 +3041,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_lite_menu_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_lite_menu_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2986);
+		Debug.PushSubsStack("lbl_lite_menu_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2964);
 if (RapidSub.canDelegate("lbl_lite_menu_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_lite_menu_click");}
- BA.debugLineNum = 2986;BA.debugLine="Private Sub lbl_lite_menu_Click";
-Debug.ShouldStop(512);
- BA.debugLineNum = 2987;BA.debugLine="pan_all_liteMenu.Visible=True";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2964;BA.debugLine="Private Sub lbl_lite_menu_Click";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 2965;BA.debugLine="pan_all_liteMenu.Visible=True";
+Debug.ShouldStop(1048576);
 main.mostCurrent._pan_all_litemenu.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 2988;BA.debugLine="End Sub";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 2966;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3130,102 +3130,102 @@ finally {
 		}}
 public static RemoteObject  _lbl_remove_from_list_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_remove_from_list_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2816);
+		Debug.PushSubsStack("lbl_remove_from_list_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2794);
 if (RapidSub.canDelegate("lbl_remove_from_list_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_remove_from_list_click");}
 RemoteObject _b = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 RemoteObject _result = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2816;BA.debugLine="Private Sub lbl_remove_from_list_Click";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 2818;BA.debugLine="Dim b As Label";
-Debug.ShouldStop(2);
-_b = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");Debug.locals.put("b", _b);
- BA.debugLineNum = 2819;BA.debugLine="b = Sender";
-Debug.ShouldStop(4);
-_b = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.LabelWrapper"), main.mostCurrent.__c.runMethod(false,"Sender",main.mostCurrent.activityBA));Debug.locals.put("b", _b);
- BA.debugLineNum = 2821;BA.debugLine="If(TabHost1.CurrentTab=0)Then";
-Debug.ShouldStop(16);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2822;BA.debugLine="Dim result As Int";
-Debug.ShouldStop(32);
-_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
- BA.debugLineNum = 2823;BA.debugLine="result = Msgbox2(\"آیا این مورد حذف شود؟\", \"حذف\",";
-Debug.ShouldStop(64);
-_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("آیا این مورد حذف شود؟")),(Object)(BA.ObjectToCharSequence("حذف")),(Object)(BA.ObjectToString("بله")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("خیر")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
- BA.debugLineNum = 2824;BA.debugLine="If result = DialogResponse.Positive Then";
-Debug.ShouldStop(128);
-if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
- BA.debugLineNum = 2826;BA.debugLine="If (dbCode.delete_ezafekari(b.Tag))Then";
+ BA.debugLineNum = 2794;BA.debugLine="Private Sub lbl_remove_from_list_Click";
 Debug.ShouldStop(512);
-if ((main.mostCurrent._dbcode.runMethod(true,"_delete_ezafekari" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.numberCast(int.class, _b.runMethod(false,"getTag"))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 2827;BA.debugLine="ToastMessageShow(\"حذف شد.\",False)";
-Debug.ShouldStop(1024);
-main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("حذف شد.")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 2829;BA.debugLine="curent_tab_list=TabHost1.CurrentTab";
+ BA.debugLineNum = 2796;BA.debugLine="Dim b As Label";
+Debug.ShouldStop(2048);
+_b = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");Debug.locals.put("b", _b);
+ BA.debugLineNum = 2797;BA.debugLine="b = Sender";
 Debug.ShouldStop(4096);
-main._curent_tab_list = main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab");
- BA.debugLineNum = 2830;BA.debugLine="btn_menu_list_Click";
-Debug.ShouldStop(8192);
-_btn_menu_list_click();
- };
- };
- }else 
-{ BA.debugLineNum = 2833;BA.debugLine="Else if (TabHost1.CurrentTab=1)Then";
+_b = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.LabelWrapper"), main.mostCurrent.__c.runMethod(false,"Sender",main.mostCurrent.activityBA));Debug.locals.put("b", _b);
+ BA.debugLineNum = 2799;BA.debugLine="If(TabHost1.CurrentTab=0)Then";
+Debug.ShouldStop(16384);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 0)))) { 
+ BA.debugLineNum = 2800;BA.debugLine="Dim result As Int";
+Debug.ShouldStop(32768);
+_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
+ BA.debugLineNum = 2801;BA.debugLine="result = Msgbox2(\"آیا این مورد حذف شود؟\", \"حذف\",";
 Debug.ShouldStop(65536);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2835;BA.debugLine="Dim result As Int";
-Debug.ShouldStop(262144);
-_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
- BA.debugLineNum = 2836;BA.debugLine="result = Msgbox2(\"آیا این مورد حذف شود؟\", \"حذف\",";
-Debug.ShouldStop(524288);
 _result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("آیا این مورد حذف شود؟")),(Object)(BA.ObjectToCharSequence("حذف")),(Object)(BA.ObjectToString("بله")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("خیر")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
- BA.debugLineNum = 2837;BA.debugLine="If result = DialogResponse.Positive Then";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2802;BA.debugLine="If result = DialogResponse.Positive Then";
+Debug.ShouldStop(131072);
 if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
- BA.debugLineNum = 2839;BA.debugLine="If (dbCode.delete_morakhasi(b.Tag))Then";
-Debug.ShouldStop(4194304);
-if ((main.mostCurrent._dbcode.runMethod(true,"_delete_morakhasi" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.numberCast(int.class, _b.runMethod(false,"getTag"))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 2840;BA.debugLine="ToastMessageShow(\"حذف شد.\",False)";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2804;BA.debugLine="If (dbCode.delete_ezafekari(b.Tag))Then";
+Debug.ShouldStop(524288);
+if ((main.mostCurrent._dbcode.runMethod(true,"_delete_ezafekari" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.numberCast(int.class, _b.runMethod(false,"getTag"))))).<Boolean>get().booleanValue()) { 
+ BA.debugLineNum = 2805;BA.debugLine="ToastMessageShow(\"حذف شد.\",False)";
+Debug.ShouldStop(1048576);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("حذف شد.")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 2841;BA.debugLine="curent_tab_list=TabHost1.CurrentTab";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2807;BA.debugLine="curent_tab_list=TabHost1.CurrentTab";
+Debug.ShouldStop(4194304);
 main._curent_tab_list = main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab");
- BA.debugLineNum = 2842;BA.debugLine="btn_menu_list_Click";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2808;BA.debugLine="btn_menu_list_Click";
+Debug.ShouldStop(8388608);
 _btn_menu_list_click();
  };
  };
  }else 
-{ BA.debugLineNum = 2845;BA.debugLine="Else if (TabHost1.CurrentTab=2)Then";
+{ BA.debugLineNum = 2811;BA.debugLine="Else if (TabHost1.CurrentTab=1)Then";
+Debug.ShouldStop(67108864);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 1)))) { 
+ BA.debugLineNum = 2813;BA.debugLine="Dim result As Int";
 Debug.ShouldStop(268435456);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2846;BA.debugLine="Dim result As Int";
-Debug.ShouldStop(536870912);
 _result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
- BA.debugLineNum = 2847;BA.debugLine="result = Msgbox2(\"آیا این مورد حذف شود؟\", \"حذف\",";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2814;BA.debugLine="result = Msgbox2(\"آیا این مورد حذف شود؟\", \"حذف\",";
+Debug.ShouldStop(536870912);
 _result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("آیا این مورد حذف شود؟")),(Object)(BA.ObjectToCharSequence("حذف")),(Object)(BA.ObjectToString("بله")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("خیر")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
- BA.debugLineNum = 2848;BA.debugLine="If result = DialogResponse.Positive Then";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2815;BA.debugLine="If result = DialogResponse.Positive Then";
+Debug.ShouldStop(1073741824);
 if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
- BA.debugLineNum = 2850;BA.debugLine="If (dbCode.delete_taradod(b.Tag))Then";
+ BA.debugLineNum = 2817;BA.debugLine="If (dbCode.delete_morakhasi(b.Tag))Then";
+Debug.ShouldStop(1);
+if ((main.mostCurrent._dbcode.runMethod(true,"_delete_morakhasi" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.numberCast(int.class, _b.runMethod(false,"getTag"))))).<Boolean>get().booleanValue()) { 
+ BA.debugLineNum = 2818;BA.debugLine="ToastMessageShow(\"حذف شد.\",False)";
 Debug.ShouldStop(2);
-if ((main.mostCurrent._dbcode.runMethod(true,"_delete_taradod" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.numberCast(int.class, _b.runMethod(false,"getTag"))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 2851;BA.debugLine="ToastMessageShow(\"حذف شد.\",False)";
-Debug.ShouldStop(4);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("حذف شد.")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 2853;BA.debugLine="curent_tab_list=TabHost1.CurrentTab";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 2819;BA.debugLine="curent_tab_list=TabHost1.CurrentTab";
+Debug.ShouldStop(4);
 main._curent_tab_list = main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab");
- BA.debugLineNum = 2854;BA.debugLine="btn_menu_list_Click";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2820;BA.debugLine="btn_menu_list_Click";
+Debug.ShouldStop(8);
+_btn_menu_list_click();
+ };
+ };
+ }else 
+{ BA.debugLineNum = 2823;BA.debugLine="Else if (TabHost1.CurrentTab=2)Then";
+Debug.ShouldStop(64);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab"),BA.numberCast(double.class, 2)))) { 
+ BA.debugLineNum = 2824;BA.debugLine="Dim result As Int";
+Debug.ShouldStop(128);
+_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
+ BA.debugLineNum = 2825;BA.debugLine="result = Msgbox2(\"آیا این مورد حذف شود؟\", \"حذف\",";
+Debug.ShouldStop(256);
+_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("آیا این مورد حذف شود؟")),(Object)(BA.ObjectToCharSequence("حذف")),(Object)(BA.ObjectToString("بله")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("خیر")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
+ BA.debugLineNum = 2826;BA.debugLine="If result = DialogResponse.Positive Then";
+Debug.ShouldStop(512);
+if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
+ BA.debugLineNum = 2828;BA.debugLine="If (dbCode.delete_taradod(b.Tag))Then";
+Debug.ShouldStop(2048);
+if ((main.mostCurrent._dbcode.runMethod(true,"_delete_taradod" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.numberCast(int.class, _b.runMethod(false,"getTag"))))).<Boolean>get().booleanValue()) { 
+ BA.debugLineNum = 2829;BA.debugLine="ToastMessageShow(\"حذف شد.\",False)";
+Debug.ShouldStop(4096);
+main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("حذف شد.")),(Object)(main.mostCurrent.__c.getField(true,"False")));
+ BA.debugLineNum = 2831;BA.debugLine="curent_tab_list=TabHost1.CurrentTab";
+Debug.ShouldStop(16384);
+main._curent_tab_list = main.mostCurrent._tabhost1.runMethod(true,"getCurrentTab");
+ BA.debugLineNum = 2832;BA.debugLine="btn_menu_list_Click";
+Debug.ShouldStop(32768);
 _btn_menu_list_click();
  };
  };
  }}}
 ;
- BA.debugLineNum = 2864;BA.debugLine="End Sub";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 2842;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3236,40 +3236,40 @@ finally {
 		}}
 public static RemoteObject  _lbl_remove_from_list2_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_remove_from_list2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2867);
+		Debug.PushSubsStack("lbl_remove_from_list2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2845);
 if (RapidSub.canDelegate("lbl_remove_from_list2_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_remove_from_list2_click");}
 RemoteObject _b = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 RemoteObject _result = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2867;BA.debugLine="Private Sub lbl_remove_from_list2_Click";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 2868;BA.debugLine="Dim b As Label";
-Debug.ShouldStop(524288);
-_b = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");Debug.locals.put("b", _b);
- BA.debugLineNum = 2869;BA.debugLine="b = Sender";
-Debug.ShouldStop(1048576);
-_b = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.LabelWrapper"), main.mostCurrent.__c.runMethod(false,"Sender",main.mostCurrent.activityBA));Debug.locals.put("b", _b);
- BA.debugLineNum = 2872;BA.debugLine="Dim result As Int";
-Debug.ShouldStop(8388608);
-_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
- BA.debugLineNum = 2873;BA.debugLine="result = Msgbox2(\"آیا این گزارش حذف شود؟\", \"حذف\",";
-Debug.ShouldStop(16777216);
-_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("آیا این گزارش حذف شود؟")),(Object)(BA.ObjectToCharSequence("حذف")),(Object)(BA.ObjectToString("بله")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("خیر")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
- BA.debugLineNum = 2874;BA.debugLine="If result = DialogResponse.Positive Then";
-Debug.ShouldStop(33554432);
-if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
- BA.debugLineNum = 2876;BA.debugLine="If (dbCode.delete_gozaresh(b.tag))Then";
-Debug.ShouldStop(134217728);
-if ((main.mostCurrent._dbcode.runMethod(true,"_delete_gozaresh" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.numberCast(int.class, _b.runMethod(false,"getTag"))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 2877;BA.debugLine="ToastMessageShow(\"حذف شد.\",False)";
+ BA.debugLineNum = 2845;BA.debugLine="Private Sub lbl_remove_from_list2_Click";
 Debug.ShouldStop(268435456);
-main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("حذف شد.")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 2879;BA.debugLine="btn_menu_gozaresh_Click";
+ BA.debugLineNum = 2846;BA.debugLine="Dim b As Label";
+Debug.ShouldStop(536870912);
+_b = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");Debug.locals.put("b", _b);
+ BA.debugLineNum = 2847;BA.debugLine="b = Sender";
 Debug.ShouldStop(1073741824);
+_b = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.LabelWrapper"), main.mostCurrent.__c.runMethod(false,"Sender",main.mostCurrent.activityBA));Debug.locals.put("b", _b);
+ BA.debugLineNum = 2850;BA.debugLine="Dim result As Int";
+Debug.ShouldStop(2);
+_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
+ BA.debugLineNum = 2851;BA.debugLine="result = Msgbox2(\"آیا این گزارش حذف شود؟\", \"حذف\",";
+Debug.ShouldStop(4);
+_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("آیا این گزارش حذف شود؟")),(Object)(BA.ObjectToCharSequence("حذف")),(Object)(BA.ObjectToString("بله")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("خیر")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
+ BA.debugLineNum = 2852;BA.debugLine="If result = DialogResponse.Positive Then";
+Debug.ShouldStop(8);
+if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
+ BA.debugLineNum = 2854;BA.debugLine="If (dbCode.delete_gozaresh(b.tag))Then";
+Debug.ShouldStop(32);
+if ((main.mostCurrent._dbcode.runMethod(true,"_delete_gozaresh" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(BA.numberCast(int.class, _b.runMethod(false,"getTag"))))).<Boolean>get().booleanValue()) { 
+ BA.debugLineNum = 2855;BA.debugLine="ToastMessageShow(\"حذف شد.\",False)";
+Debug.ShouldStop(64);
+main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("حذف شد.")),(Object)(main.mostCurrent.__c.getField(true,"False")));
+ BA.debugLineNum = 2857;BA.debugLine="btn_menu_gozaresh_Click";
+Debug.ShouldStop(256);
 _btn_menu_gozaresh_click();
  };
  };
- BA.debugLineNum = 2883;BA.debugLine="End Sub";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2861;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3302,275 +3302,275 @@ finally {
 		}}
 public static RemoteObject  _lbl_save_picker_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_save_picker_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2423);
+		Debug.PushSubsStack("lbl_save_picker_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2401);
 if (RapidSub.canDelegate("lbl_save_picker_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_save_picker_click");}
 RemoteObject _value = RemoteObject.createImmutable("");
 RemoteObject _value1 = RemoteObject.createImmutable("");
 RemoteObject _value2 = RemoteObject.createImmutable("");
- BA.debugLineNum = 2423;BA.debugLine="Private Sub lbl_save_picker_Click";
-Debug.ShouldStop(4194304);
- BA.debugLineNum = 2425;BA.debugLine="Dim value As String";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2401;BA.debugLine="Private Sub lbl_save_picker_Click";
+Debug.ShouldStop(1);
+ BA.debugLineNum = 2403;BA.debugLine="Dim value As String";
+Debug.ShouldStop(4);
 _value = RemoteObject.createImmutable("");Debug.locals.put("value", _value);
- BA.debugLineNum = 2426;BA.debugLine="value=pik_hour1.Text";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2404;BA.debugLine="value=pik_hour1.Text";
+Debug.ShouldStop(8);
 _value = main.mostCurrent._pik_hour1.runMethod(true,"getText");Debug.locals.put("value", _value);
- BA.debugLineNum = 2427;BA.debugLine="Select value";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2405;BA.debugLine="Select value";
+Debug.ShouldStop(16);
 switch (BA.switchObjectToInt(_value,BA.ObjectToString("1"),BA.ObjectToString("2"),BA.ObjectToString("3"),BA.ObjectToString("4"),BA.ObjectToString("5"),BA.ObjectToString("6"),BA.ObjectToString("7"),BA.ObjectToString("8"),BA.ObjectToString("9"))) {
 case 0: {
- BA.debugLineNum = 2429;BA.debugLine="pik_hour1.Text=\"01\"";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2407;BA.debugLine="pik_hour1.Text=\"01\"";
+Debug.ShouldStop(64);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("01"));
  break; }
 case 1: {
- BA.debugLineNum = 2431;BA.debugLine="pik_hour1.Text=\"02\"";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2409;BA.debugLine="pik_hour1.Text=\"02\"";
+Debug.ShouldStop(256);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("02"));
  break; }
 case 2: {
- BA.debugLineNum = 2433;BA.debugLine="pik_hour1.Text=\"03\"";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2411;BA.debugLine="pik_hour1.Text=\"03\"";
+Debug.ShouldStop(1024);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("03"));
  break; }
 case 3: {
- BA.debugLineNum = 2435;BA.debugLine="pik_hour1.Text=\"04\"";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2413;BA.debugLine="pik_hour1.Text=\"04\"";
+Debug.ShouldStop(4096);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("04"));
  break; }
 case 4: {
- BA.debugLineNum = 2437;BA.debugLine="pik_hour1.Text=\"05\"";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 2415;BA.debugLine="pik_hour1.Text=\"05\"";
+Debug.ShouldStop(16384);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("05"));
  break; }
 case 5: {
- BA.debugLineNum = 2439;BA.debugLine="pik_hour1.Text=\"06\"";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2417;BA.debugLine="pik_hour1.Text=\"06\"";
+Debug.ShouldStop(65536);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("06"));
  break; }
 case 6: {
- BA.debugLineNum = 2441;BA.debugLine="pik_hour1.Text=\"07\"";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2419;BA.debugLine="pik_hour1.Text=\"07\"";
+Debug.ShouldStop(262144);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("07"));
  break; }
 case 7: {
- BA.debugLineNum = 2443;BA.debugLine="pik_hour1.Text=\"08\"";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2421;BA.debugLine="pik_hour1.Text=\"08\"";
+Debug.ShouldStop(1048576);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("08"));
  break; }
 case 8: {
- BA.debugLineNum = 2445;BA.debugLine="pik_hour1.Text=\"09\"";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2423;BA.debugLine="pik_hour1.Text=\"09\"";
+Debug.ShouldStop(4194304);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence("09"));
  break; }
 }
 ;
- BA.debugLineNum = 2448;BA.debugLine="Dim value1 As String";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 2426;BA.debugLine="Dim value1 As String";
+Debug.ShouldStop(33554432);
 _value1 = RemoteObject.createImmutable("");Debug.locals.put("value1", _value1);
- BA.debugLineNum = 2449;BA.debugLine="value1=pik_min1.Text";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2427;BA.debugLine="value1=pik_min1.Text";
+Debug.ShouldStop(67108864);
 _value1 = main.mostCurrent._pik_min1.runMethod(true,"getText");Debug.locals.put("value1", _value1);
- BA.debugLineNum = 2450;BA.debugLine="Select value1";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2428;BA.debugLine="Select value1";
+Debug.ShouldStop(134217728);
 switch (BA.switchObjectToInt(_value1,BA.ObjectToString("1"),BA.ObjectToString("2"),BA.ObjectToString("3"),BA.ObjectToString("4"),BA.ObjectToString("5"),BA.ObjectToString("6"),BA.ObjectToString("7"),BA.ObjectToString("8"),BA.ObjectToString("9"))) {
 case 0: {
- BA.debugLineNum = 2452;BA.debugLine="pik_min1.Text=\"01\"";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2430;BA.debugLine="pik_min1.Text=\"01\"";
+Debug.ShouldStop(536870912);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("01"));
  break; }
 case 1: {
- BA.debugLineNum = 2454;BA.debugLine="pik_min1.Text=\"02\"";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2432;BA.debugLine="pik_min1.Text=\"02\"";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("02"));
  break; }
 case 2: {
- BA.debugLineNum = 2456;BA.debugLine="pik_min1.Text=\"03\"";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2434;BA.debugLine="pik_min1.Text=\"03\"";
+Debug.ShouldStop(2);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("03"));
  break; }
 case 3: {
- BA.debugLineNum = 2458;BA.debugLine="pik_min1.Text=\"04\"";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2436;BA.debugLine="pik_min1.Text=\"04\"";
+Debug.ShouldStop(8);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("04"));
  break; }
 case 4: {
- BA.debugLineNum = 2460;BA.debugLine="pik_min1.Text=\"05\"";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2438;BA.debugLine="pik_min1.Text=\"05\"";
+Debug.ShouldStop(32);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("05"));
  break; }
 case 5: {
- BA.debugLineNum = 2462;BA.debugLine="pik_min1.Text=\"06\"";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2440;BA.debugLine="pik_min1.Text=\"06\"";
+Debug.ShouldStop(128);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("06"));
  break; }
 case 6: {
- BA.debugLineNum = 2464;BA.debugLine="pik_min1.Text=\"07\"";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2442;BA.debugLine="pik_min1.Text=\"07\"";
+Debug.ShouldStop(512);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("07"));
  break; }
 case 7: {
- BA.debugLineNum = 2466;BA.debugLine="pik_min1.Text=\"08\"";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 2444;BA.debugLine="pik_min1.Text=\"08\"";
+Debug.ShouldStop(2048);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("08"));
  break; }
 case 8: {
- BA.debugLineNum = 2468;BA.debugLine="pik_min1.Text=\"09\"";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 2446;BA.debugLine="pik_min1.Text=\"09\"";
+Debug.ShouldStop(8192);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence("09"));
  break; }
 }
 ;
- BA.debugLineNum = 2471;BA.debugLine="Dim value2 As String";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2449;BA.debugLine="Dim value2 As String";
+Debug.ShouldStop(65536);
 _value2 = RemoteObject.createImmutable("");Debug.locals.put("value2", _value2);
- BA.debugLineNum = 2472;BA.debugLine="value2=pik_day1.Text";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2450;BA.debugLine="value2=pik_day1.Text";
+Debug.ShouldStop(131072);
 _value2 = main.mostCurrent._pik_day1.runMethod(true,"getText");Debug.locals.put("value2", _value2);
- BA.debugLineNum = 2473;BA.debugLine="Select value2";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2451;BA.debugLine="Select value2";
+Debug.ShouldStop(262144);
 switch (BA.switchObjectToInt(_value2,BA.ObjectToString("1"),BA.ObjectToString("2"),BA.ObjectToString("3"),BA.ObjectToString("4"),BA.ObjectToString("5"),BA.ObjectToString("6"),BA.ObjectToString("7"),BA.ObjectToString("8"),BA.ObjectToString("9"))) {
 case 0: {
- BA.debugLineNum = 2475;BA.debugLine="pik_day1.Text=\"01\"";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2453;BA.debugLine="pik_day1.Text=\"01\"";
+Debug.ShouldStop(1048576);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("01"));
  break; }
 case 1: {
- BA.debugLineNum = 2477;BA.debugLine="pik_day1.Text=\"02\"";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2455;BA.debugLine="pik_day1.Text=\"02\"";
+Debug.ShouldStop(4194304);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("02"));
  break; }
 case 2: {
- BA.debugLineNum = 2479;BA.debugLine="pik_day1.Text=\"03\"";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2457;BA.debugLine="pik_day1.Text=\"03\"";
+Debug.ShouldStop(16777216);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("03"));
  break; }
 case 3: {
- BA.debugLineNum = 2481;BA.debugLine="pik_day1.Text=\"04\"";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2459;BA.debugLine="pik_day1.Text=\"04\"";
+Debug.ShouldStop(67108864);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("04"));
  break; }
 case 4: {
- BA.debugLineNum = 2483;BA.debugLine="pik_day1.Text=\"05\"";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 2461;BA.debugLine="pik_day1.Text=\"05\"";
+Debug.ShouldStop(268435456);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("05"));
  break; }
 case 5: {
- BA.debugLineNum = 2485;BA.debugLine="pik_day1.Text=\"06\"";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2463;BA.debugLine="pik_day1.Text=\"06\"";
+Debug.ShouldStop(1073741824);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("06"));
  break; }
 case 6: {
- BA.debugLineNum = 2487;BA.debugLine="pik_day1.Text=\"07\"";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2465;BA.debugLine="pik_day1.Text=\"07\"";
+Debug.ShouldStop(1);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("07"));
  break; }
 case 7: {
- BA.debugLineNum = 2489;BA.debugLine="pik_day1.Text=\"08\"";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2467;BA.debugLine="pik_day1.Text=\"08\"";
+Debug.ShouldStop(4);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("08"));
  break; }
 case 8: {
- BA.debugLineNum = 2491;BA.debugLine="pik_day1.Text=\"09\"";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2469;BA.debugLine="pik_day1.Text=\"09\"";
+Debug.ShouldStop(16);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence("09"));
  break; }
 }
 ;
- BA.debugLineNum = 2493;BA.debugLine="Select pik_moon1.Tag";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2471;BA.debugLine="Select pik_moon1.Tag";
+Debug.ShouldStop(64);
 switch (BA.switchObjectToInt(main.mostCurrent._pik_moon1.runMethod(false,"getTag"),RemoteObject.createImmutable((1)),RemoteObject.createImmutable((2)),RemoteObject.createImmutable((3)),RemoteObject.createImmutable((4)),RemoteObject.createImmutable((5)),RemoteObject.createImmutable((6)),RemoteObject.createImmutable((7)),RemoteObject.createImmutable((8)),RemoteObject.createImmutable((9)),RemoteObject.createImmutable((10)),RemoteObject.createImmutable((11)),RemoteObject.createImmutable((12)))) {
 case 0: {
- BA.debugLineNum = 2495;BA.debugLine="pik_moon1.Tag=\"01\"";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2473;BA.debugLine="pik_moon1.Tag=\"01\"";
+Debug.ShouldStop(256);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("01")));
  break; }
 case 1: {
- BA.debugLineNum = 2497;BA.debugLine="pik_moon1.Tag=\"02\"";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2475;BA.debugLine="pik_moon1.Tag=\"02\"";
+Debug.ShouldStop(1024);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("02")));
  break; }
 case 2: {
- BA.debugLineNum = 2499;BA.debugLine="pik_moon1.Tag=\"03\"";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2477;BA.debugLine="pik_moon1.Tag=\"03\"";
+Debug.ShouldStop(4096);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("03")));
  break; }
 case 3: {
- BA.debugLineNum = 2501;BA.debugLine="pik_moon1.Tag=\"04\"";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 2479;BA.debugLine="pik_moon1.Tag=\"04\"";
+Debug.ShouldStop(16384);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("04")));
  break; }
 case 4: {
- BA.debugLineNum = 2503;BA.debugLine="pik_moon1.Tag=\"05\"";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2481;BA.debugLine="pik_moon1.Tag=\"05\"";
+Debug.ShouldStop(65536);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("05")));
  break; }
 case 5: {
- BA.debugLineNum = 2505;BA.debugLine="pik_moon1.Tag=\"06\"";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2483;BA.debugLine="pik_moon1.Tag=\"06\"";
+Debug.ShouldStop(262144);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("06")));
  break; }
 case 6: {
- BA.debugLineNum = 2507;BA.debugLine="pik_moon1.Tag=\"07\"";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2485;BA.debugLine="pik_moon1.Tag=\"07\"";
+Debug.ShouldStop(1048576);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("07")));
  break; }
 case 7: {
- BA.debugLineNum = 2509;BA.debugLine="pik_moon1.Tag=\"08\"";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2487;BA.debugLine="pik_moon1.Tag=\"08\"";
+Debug.ShouldStop(4194304);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("08")));
  break; }
 case 8: {
- BA.debugLineNum = 2511;BA.debugLine="pik_moon1.Tag=\"09\"";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2489;BA.debugLine="pik_moon1.Tag=\"09\"";
+Debug.ShouldStop(16777216);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("09")));
  break; }
 case 9: {
- BA.debugLineNum = 2513;BA.debugLine="pik_moon1.Tag=\"10\"";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2491;BA.debugLine="pik_moon1.Tag=\"10\"";
+Debug.ShouldStop(67108864);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("10")));
  break; }
 case 10: {
- BA.debugLineNum = 2515;BA.debugLine="pik_moon1.Tag=\"11\"";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 2493;BA.debugLine="pik_moon1.Tag=\"11\"";
+Debug.ShouldStop(268435456);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("11")));
  break; }
 case 11: {
- BA.debugLineNum = 2517;BA.debugLine="pik_moon1.Tag=\"12\"";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2495;BA.debugLine="pik_moon1.Tag=\"12\"";
+Debug.ShouldStop(1073741824);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable(("12")));
  break; }
 }
 ;
- BA.debugLineNum = 2522;BA.debugLine="If(index_piker=1)Then  'date1";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2500;BA.debugLine="If(index_piker=1)Then  'date1";
+Debug.ShouldStop(8);
 if ((RemoteObject.solveBoolean("=",main._index_piker,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2524;BA.debugLine="lbl_tim1.Text=pik_hour1.Text&\":\"&pik_min1.Text";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2502;BA.debugLine="lbl_tim1.Text=pik_hour1.Text&\":\"&pik_min1.Text";
+Debug.ShouldStop(32);
 main.mostCurrent._lbl_tim1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._pik_hour1.runMethod(true,"getText"),RemoteObject.createImmutable(":"),main.mostCurrent._pik_min1.runMethod(true,"getText"))));
- BA.debugLineNum = 2525;BA.debugLine="lbl_date1.Text=pik_year1.Text&\"/\"&pik_moon1.Tag&";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2503;BA.debugLine="lbl_date1.Text=pik_year1.Text&\"/\"&pik_moon1.Tag&";
+Debug.ShouldStop(64);
 main.mostCurrent._lbl_date1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._pik_year1.runMethod(true,"getText"),RemoteObject.createImmutable("/"),main.mostCurrent._pik_moon1.runMethod(false,"getTag"),RemoteObject.createImmutable("/"),main.mostCurrent._pik_day1.runMethod(true,"getText"))));
  }else 
-{ BA.debugLineNum = 2527;BA.debugLine="Else If (index_piker=2)Then  'date2";
-Debug.ShouldStop(1073741824);
+{ BA.debugLineNum = 2505;BA.debugLine="Else If (index_piker=2)Then  'date2";
+Debug.ShouldStop(256);
 if ((RemoteObject.solveBoolean("=",main._index_piker,BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2529;BA.debugLine="lbl_tim2.Text=pik_hour1.Text&\":\"&pik_min1.Text";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2507;BA.debugLine="lbl_tim2.Text=pik_hour1.Text&\":\"&pik_min1.Text";
+Debug.ShouldStop(1024);
 main.mostCurrent._lbl_tim2.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._pik_hour1.runMethod(true,"getText"),RemoteObject.createImmutable(":"),main.mostCurrent._pik_min1.runMethod(true,"getText"))));
- BA.debugLineNum = 2530;BA.debugLine="lbl_date2.Text=pik_year1.Text&\"/\"&pik_moon1.Tag&";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 2508;BA.debugLine="lbl_date2.Text=pik_year1.Text&\"/\"&pik_moon1.Tag&";
+Debug.ShouldStop(2048);
 main.mostCurrent._lbl_date2.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._pik_year1.runMethod(true,"getText"),RemoteObject.createImmutable("/"),main.mostCurrent._pik_moon1.runMethod(false,"getTag"),RemoteObject.createImmutable("/"),main.mostCurrent._pik_day1.runMethod(true,"getText"))));
  }}
 ;
- BA.debugLineNum = 2535;BA.debugLine="pan_all2.Visible=False";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2513;BA.debugLine="pan_all2.Visible=False";
+Debug.ShouldStop(65536);
 main.mostCurrent._pan_all2.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 2536;BA.debugLine="time_show";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2514;BA.debugLine="time_show";
+Debug.ShouldStop(131072);
 _time_show();
- BA.debugLineNum = 2537;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2515;BA.debugLine="End Sub";
+Debug.ShouldStop(262144);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3581,52 +3581,52 @@ finally {
 		}}
 public static RemoteObject  _lbl_tim1_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_tim1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2399);
+		Debug.PushSubsStack("lbl_tim1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2377);
 if (RapidSub.canDelegate("lbl_tim1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_tim1_click");}
- BA.debugLineNum = 2399;BA.debugLine="Private Sub lbl_tim1_Click";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 2400;BA.debugLine="index_piker=1";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2377;BA.debugLine="Private Sub lbl_tim1_Click";
+Debug.ShouldStop(256);
+ BA.debugLineNum = 2378;BA.debugLine="index_piker=1";
+Debug.ShouldStop(512);
 main._index_piker = BA.numberCast(int.class, 1);
- BA.debugLineNum = 2402;BA.debugLine="pik_hour1.Text=strfun.Split(lbl_tim1.Text,\":\").Ge";
-Debug.ShouldStop(2);
-main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_tim1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable(":"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))));
- BA.debugLineNum = 2403;BA.debugLine="pik_min1.Text=strfun.Split(lbl_tim1.Text,\":\").Get";
-Debug.ShouldStop(4);
-main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_tim1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable(":"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1)))));
- BA.debugLineNum = 2405;BA.debugLine="pik_year1.Text=strfun.Split(lbl_date1.Text,\"/\").G";
-Debug.ShouldStop(16);
-main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))));
- BA.debugLineNum = 2406;BA.debugLine="pik_moon1.Tag=strfun.Split(lbl_date1.Text,\"/\").Ge";
-Debug.ShouldStop(32);
-main.mostCurrent._pik_moon1.runMethod(false,"setTag",main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1))));
- BA.debugLineNum = 2407;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
-Debug.ShouldStop(64);
-main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
- BA.debugLineNum = 2408;BA.debugLine="pik_day1.Text=strfun.Split(lbl_date1.Text,\"/\").Ge";
-Debug.ShouldStop(128);
-main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 2)))));
- BA.debugLineNum = 2412;BA.debugLine="pan_all2.Visible=True";
+ BA.debugLineNum = 2380;BA.debugLine="pik_hour1.Text=strfun.Split(lbl_tim1.Text,\":\").Ge";
 Debug.ShouldStop(2048);
-main.mostCurrent._pan_all2.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 2414;BA.debugLine="If (File.Exists(File.DirInternal,\"help_piktim\")=F";
-Debug.ShouldStop(8192);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent.__c.getField(false,"File").runMethod(true,"Exists",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirInternal")),(Object)(RemoteObject.createImmutable("help_piktim"))),main.mostCurrent.__c.getField(true,"False")))) { 
- BA.debugLineNum = 2415;BA.debugLine="lbl_help_Click";
+main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_tim1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable(":"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))));
+ BA.debugLineNum = 2381;BA.debugLine="pik_min1.Text=strfun.Split(lbl_tim1.Text,\":\").Get";
+Debug.ShouldStop(4096);
+main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_tim1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable(":"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1)))));
+ BA.debugLineNum = 2383;BA.debugLine="pik_year1.Text=strfun.Split(lbl_date1.Text,\"/\").G";
 Debug.ShouldStop(16384);
-_lbl_help_click();
- BA.debugLineNum = 2416;BA.debugLine="index_curent_img=4";
+main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))));
+ BA.debugLineNum = 2384;BA.debugLine="pik_moon1.Tag=strfun.Split(lbl_date1.Text,\"/\").Ge";
 Debug.ShouldStop(32768);
-main._index_curent_img = BA.numberCast(int.class, 4);
- BA.debugLineNum = 2417;BA.debugLine="img_slider(index_curent_img)";
+main.mostCurrent._pik_moon1.runMethod(false,"setTag",main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1))));
+ BA.debugLineNum = 2385;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
 Debug.ShouldStop(65536);
-_img_slider(main._index_curent_img);
- BA.debugLineNum = 2418;BA.debugLine="File.WriteString(File.DirInternal,\"help_piktim\",";
+main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
+ BA.debugLineNum = 2386;BA.debugLine="pik_day1.Text=strfun.Split(lbl_date1.Text,\"/\").Ge";
 Debug.ShouldStop(131072);
+main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date1.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 2)))));
+ BA.debugLineNum = 2390;BA.debugLine="pan_all2.Visible=True";
+Debug.ShouldStop(2097152);
+main.mostCurrent._pan_all2.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 2392;BA.debugLine="If (File.Exists(File.DirInternal,\"help_piktim\")=F";
+Debug.ShouldStop(8388608);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent.__c.getField(false,"File").runMethod(true,"Exists",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirInternal")),(Object)(RemoteObject.createImmutable("help_piktim"))),main.mostCurrent.__c.getField(true,"False")))) { 
+ BA.debugLineNum = 2393;BA.debugLine="lbl_help_Click";
+Debug.ShouldStop(16777216);
+_lbl_help_click();
+ BA.debugLineNum = 2394;BA.debugLine="index_curent_img=4";
+Debug.ShouldStop(33554432);
+main._index_curent_img = BA.numberCast(int.class, 4);
+ BA.debugLineNum = 2395;BA.debugLine="img_slider(index_curent_img)";
+Debug.ShouldStop(67108864);
+_img_slider(main._index_curent_img);
+ BA.debugLineNum = 2396;BA.debugLine="File.WriteString(File.DirInternal,\"help_piktim\",";
+Debug.ShouldStop(134217728);
 main.mostCurrent.__c.getField(false,"File").runVoidMethod ("WriteString",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirInternal")),(Object)(BA.ObjectToString("help_piktim")),(Object)(RemoteObject.createImmutable("")));
  };
- BA.debugLineNum = 2421;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2399;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3637,52 +3637,52 @@ finally {
 		}}
 public static RemoteObject  _lbl_tim2_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_tim2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2368);
+		Debug.PushSubsStack("lbl_tim2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2346);
 if (RapidSub.canDelegate("lbl_tim2_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_tim2_click");}
- BA.debugLineNum = 2368;BA.debugLine="Private Sub lbl_tim2_Click";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 2369;BA.debugLine="index_piker=2";
-Debug.ShouldStop(1);
-main._index_piker = BA.numberCast(int.class, 2);
- BA.debugLineNum = 2370;BA.debugLine="pik_hour1.Text=strfun.Split(lbl_tim2.Text,\":\").Ge";
-Debug.ShouldStop(2);
-main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_tim2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable(":"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))));
- BA.debugLineNum = 2371;BA.debugLine="pik_min1.Text=strfun.Split(lbl_tim2.Text,\":\").Get";
-Debug.ShouldStop(4);
-main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_tim2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable(":"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1)))));
- BA.debugLineNum = 2373;BA.debugLine="pik_year1.Text=strfun.Split(lbl_date2.Text,\"/\").G";
-Debug.ShouldStop(16);
-main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))));
- BA.debugLineNum = 2374;BA.debugLine="pik_moon1.Tag=strfun.Split(lbl_date2.Text,\"/\").Ge";
-Debug.ShouldStop(32);
-main.mostCurrent._pik_moon1.runMethod(false,"setTag",main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1))));
- BA.debugLineNum = 2375;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
-Debug.ShouldStop(64);
-main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
- BA.debugLineNum = 2376;BA.debugLine="pik_day1.Text=strfun.Split(lbl_date2.Text,\"/\").Ge";
-Debug.ShouldStop(128);
-main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 2)))));
- BA.debugLineNum = 2379;BA.debugLine="pan_all2.Visible=True";
+ BA.debugLineNum = 2346;BA.debugLine="Private Sub lbl_tim2_Click";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 2347;BA.debugLine="index_piker=2";
 Debug.ShouldStop(1024);
-main.mostCurrent._pan_all2.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 2382;BA.debugLine="If (File.Exists(File.DirInternal,\"help_piktim\")=F";
-Debug.ShouldStop(8192);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent.__c.getField(false,"File").runMethod(true,"Exists",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirInternal")),(Object)(RemoteObject.createImmutable("help_piktim"))),main.mostCurrent.__c.getField(true,"False")))) { 
- BA.debugLineNum = 2383;BA.debugLine="lbl_help_Click";
+main._index_piker = BA.numberCast(int.class, 2);
+ BA.debugLineNum = 2348;BA.debugLine="pik_hour1.Text=strfun.Split(lbl_tim2.Text,\":\").Ge";
+Debug.ShouldStop(2048);
+main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_tim2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable(":"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))));
+ BA.debugLineNum = 2349;BA.debugLine="pik_min1.Text=strfun.Split(lbl_tim2.Text,\":\").Get";
+Debug.ShouldStop(4096);
+main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_tim2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable(":"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1)))));
+ BA.debugLineNum = 2351;BA.debugLine="pik_year1.Text=strfun.Split(lbl_date2.Text,\"/\").G";
 Debug.ShouldStop(16384);
-_lbl_help_click();
- BA.debugLineNum = 2384;BA.debugLine="index_curent_img=4";
+main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0)))));
+ BA.debugLineNum = 2352;BA.debugLine="pik_moon1.Tag=strfun.Split(lbl_date2.Text,\"/\").Ge";
 Debug.ShouldStop(32768);
-main._index_curent_img = BA.numberCast(int.class, 4);
- BA.debugLineNum = 2385;BA.debugLine="img_slider(index_curent_img)";
+main.mostCurrent._pik_moon1.runMethod(false,"setTag",main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 1))));
+ BA.debugLineNum = 2353;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
 Debug.ShouldStop(65536);
-_img_slider(main._index_curent_img);
- BA.debugLineNum = 2386;BA.debugLine="File.WriteString(File.DirInternal,\"help_piktim\",";
+main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
+ BA.debugLineNum = 2354;BA.debugLine="pik_day1.Text=strfun.Split(lbl_date2.Text,\"/\").Ge";
 Debug.ShouldStop(131072);
+main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._strfun.runMethod(false,"_vvvvvv5",(Object)(main.mostCurrent._lbl_date2.runMethod(true,"getText")),(Object)(RemoteObject.createImmutable("/"))).runMethod(false,"Get",(Object)(BA.numberCast(int.class, 2)))));
+ BA.debugLineNum = 2357;BA.debugLine="pan_all2.Visible=True";
+Debug.ShouldStop(1048576);
+main.mostCurrent._pan_all2.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 2360;BA.debugLine="If (File.Exists(File.DirInternal,\"help_piktim\")=F";
+Debug.ShouldStop(8388608);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent.__c.getField(false,"File").runMethod(true,"Exists",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirInternal")),(Object)(RemoteObject.createImmutable("help_piktim"))),main.mostCurrent.__c.getField(true,"False")))) { 
+ BA.debugLineNum = 2361;BA.debugLine="lbl_help_Click";
+Debug.ShouldStop(16777216);
+_lbl_help_click();
+ BA.debugLineNum = 2362;BA.debugLine="index_curent_img=4";
+Debug.ShouldStop(33554432);
+main._index_curent_img = BA.numberCast(int.class, 4);
+ BA.debugLineNum = 2363;BA.debugLine="img_slider(index_curent_img)";
+Debug.ShouldStop(67108864);
+_img_slider(main._index_curent_img);
+ BA.debugLineNum = 2364;BA.debugLine="File.WriteString(File.DirInternal,\"help_piktim\",";
+Debug.ShouldStop(134217728);
 main.mostCurrent.__c.getField(false,"File").runVoidMethod ("WriteString",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirInternal")),(Object)(BA.ObjectToString("help_piktim")),(Object)(RemoteObject.createImmutable("")));
  };
- BA.debugLineNum = 2388;BA.debugLine="End Sub";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2366;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3693,29 +3693,29 @@ finally {
 		}}
 public static RemoteObject  _lbl_vip_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_vip_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2616);
+		Debug.PushSubsStack("lbl_vip_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2594);
 if (RapidSub.canDelegate("lbl_vip_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_vip_click");}
- BA.debugLineNum = 2616;BA.debugLine="Private Sub lbl_vip_Click";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 2618;BA.debugLine="pan_all_noskhe.Visible=True";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2594;BA.debugLine="Private Sub lbl_vip_Click";
+Debug.ShouldStop(2);
+ BA.debugLineNum = 2596;BA.debugLine="pan_all_noskhe.Visible=True";
+Debug.ShouldStop(8);
 main.mostCurrent._pan_all_noskhe.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 2619;BA.debugLine="scroll_v_noskhe.Panel.LoadLayout(\"noske_item\")";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2597;BA.debugLine="scroll_v_noskhe.Panel.LoadLayout(\"noske_item\")";
+Debug.ShouldStop(16);
 main.mostCurrent._scroll_v_noskhe.runMethod(false,"getPanel").runMethodAndSync(false,"LoadLayout",(Object)(RemoteObject.createImmutable("noske_item")),main.mostCurrent.activityBA);
- BA.debugLineNum = 2621;BA.debugLine="If(myfunc.check_karid)Then";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2599;BA.debugLine="If(myfunc.check_karid)Then";
+Debug.ShouldStop(64);
 if ((main.mostCurrent._myfunc.runMethod(true,"_check_karid" /*RemoteObject*/ ,main.mostCurrent.activityBA)).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 2622;BA.debugLine="lbl_show_vip.Text=\"نسخه کامل ( طلایی ) فعال می ب";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2600;BA.debugLine="lbl_show_vip.Text=\"نسخه کامل ( طلایی ) فعال می ب";
+Debug.ShouldStop(128);
 main.mostCurrent._lbl_show_vip.runMethod(true,"setText",BA.ObjectToCharSequence("نسخه کامل ( طلایی ) فعال می باشد."));
  }else {
- BA.debugLineNum = 2624;BA.debugLine="lbl_show_vip.Text=\"نسخه معمولی ( هدیه ) فعال می";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2602;BA.debugLine="lbl_show_vip.Text=\"نسخه معمولی ( هدیه ) فعال می";
+Debug.ShouldStop(512);
 main.mostCurrent._lbl_show_vip.runMethod(true,"setText",BA.ObjectToCharSequence("نسخه معمولی ( هدیه ) فعال می باشد."));
  };
- BA.debugLineNum = 2627;BA.debugLine="End Sub";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2605;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3726,15 +3726,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_vip_later_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_vip_later_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2916);
+		Debug.PushSubsStack("lbl_vip_later_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2894);
 if (RapidSub.canDelegate("lbl_vip_later_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_vip_later_click");}
- BA.debugLineNum = 2916;BA.debugLine="Private Sub lbl_vip_later_Click";
-Debug.ShouldStop(8);
- BA.debugLineNum = 2917;BA.debugLine="pan_all_noskhe_Click";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 2894;BA.debugLine="Private Sub lbl_vip_later_Click";
+Debug.ShouldStop(8192);
+ BA.debugLineNum = 2895;BA.debugLine="pan_all_noskhe_Click";
+Debug.ShouldStop(16384);
 _pan_all_noskhe_click();
- BA.debugLineNum = 2918;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2896;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3745,43 +3745,43 @@ finally {
 		}}
 public static RemoteObject  _lbl_vip_now_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_vip_now_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2920);
+		Debug.PushSubsStack("lbl_vip_now_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2898);
 if (RapidSub.canDelegate("lbl_vip_now_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_vip_now_click");}
 RemoteObject _title = RemoteObject.createImmutable("");
 RemoteObject _matn = RemoteObject.createImmutable("");
 RemoteObject _result = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2920;BA.debugLine="Private Sub lbl_vip_now_Click";
-Debug.ShouldStop(128);
- BA.debugLineNum = 2921;BA.debugLine="If(myfunc.check_karid)Then";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2898;BA.debugLine="Private Sub lbl_vip_now_Click";
+Debug.ShouldStop(131072);
+ BA.debugLineNum = 2899;BA.debugLine="If(myfunc.check_karid)Then";
+Debug.ShouldStop(262144);
 if ((main.mostCurrent._myfunc.runMethod(true,"_check_karid" /*RemoteObject*/ ,main.mostCurrent.activityBA)).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 2923;BA.debugLine="Dim title , matn As String";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2901;BA.debugLine="Dim title , matn As String";
+Debug.ShouldStop(1048576);
 _title = RemoteObject.createImmutable("");Debug.locals.put("title", _title);
 _matn = RemoteObject.createImmutable("");Debug.locals.put("matn", _matn);
- BA.debugLineNum = 2924;BA.debugLine="title=\" تبریک \"";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 2902;BA.debugLine="title=\" تبریک \"";
+Debug.ShouldStop(2097152);
 _title = BA.ObjectToString(" تبریک ");Debug.locals.put("title", _title);
- BA.debugLineNum = 2925;BA.debugLine="matn=\" شما صاحب نسخه طلایی و بدون محدودیت برنامه";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2903;BA.debugLine="matn=\" شما صاحب نسخه طلایی و بدون محدودیت برنامه";
+Debug.ShouldStop(4194304);
 _matn = BA.ObjectToString(" شما صاحب نسخه طلایی و بدون محدودیت برنامه اضافه کاری من می باشید. ");Debug.locals.put("matn", _matn);
- BA.debugLineNum = 2927;BA.debugLine="Dim result As Int";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2905;BA.debugLine="Dim result As Int";
+Debug.ShouldStop(16777216);
 _result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
- BA.debugLineNum = 2928;BA.debugLine="result = Msgbox2(matn, title, \"باشه\", \"\", \"\", Lo";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 2906;BA.debugLine="result = Msgbox2(matn, title, \"باشه\", \"\", \"\", Lo";
+Debug.ShouldStop(33554432);
 _result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence(_matn)),(Object)(BA.ObjectToCharSequence(_title)),(Object)(BA.ObjectToString("باشه")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("")),(Object)((main.mostCurrent.__c.runMethod(false,"LoadBitmap",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("buy.png"))).getObject())),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
- BA.debugLineNum = 2929;BA.debugLine="If result = DialogResponse.Positive Then";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2907;BA.debugLine="If result = DialogResponse.Positive Then";
+Debug.ShouldStop(67108864);
 if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
  };
  }else {
- BA.debugLineNum = 2934;BA.debugLine="kharid";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2912;BA.debugLine="kharid";
+Debug.ShouldStop(-2147483648);
 _kharid();
  };
- BA.debugLineNum = 2936;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2914;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3792,15 +3792,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_vip2_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_vip2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2892);
+		Debug.PushSubsStack("lbl_vip2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2870);
 if (RapidSub.canDelegate("lbl_vip2_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_vip2_click");}
- BA.debugLineNum = 2892;BA.debugLine="Private Sub lbl_vip2_Click";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 2893;BA.debugLine="lbl_vip_Click";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2870;BA.debugLine="Private Sub lbl_vip2_Click";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2871;BA.debugLine="lbl_vip_Click";
+Debug.ShouldStop(4194304);
 _lbl_vip_click();
- BA.debugLineNum = 2894;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2872;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3811,15 +3811,15 @@ finally {
 		}}
 public static RemoteObject  _lbl_vorod_ft_click() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_vorod_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3120);
+		Debug.PushSubsStack("lbl_vorod_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3098);
 if (RapidSub.canDelegate("lbl_vorod_ft_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_vorod_ft_click");}
- BA.debugLineNum = 3120;BA.debugLine="Private Sub lbl_vorod_FT_Click";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 3121;BA.debugLine="ToastMessageShow(\"انگشن خود را 3 ثانیه نگه دارید\"";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 3098;BA.debugLine="Private Sub lbl_vorod_FT_Click";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 3099;BA.debugLine="ToastMessageShow(\"انگشن خود را 3 ثانیه نگه دارید\"";
+Debug.ShouldStop(67108864);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("انگشن خود را 3 ثانیه نگه دارید")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 3122;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 3100;BA.debugLine="End Sub";
+Debug.ShouldStop(134217728);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -3830,43 +3830,43 @@ finally {
 		}}
 public static RemoteObject  _lbl_vorod_ft_longclick() throws Exception{
 try {
-		Debug.PushSubsStack("lbl_vorod_FT_LongClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3128);
+		Debug.PushSubsStack("lbl_vorod_FT_LongClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3106);
 if (RapidSub.canDelegate("lbl_vorod_ft_longclick")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","lbl_vorod_ft_longclick");}
- BA.debugLineNum = 3128;BA.debugLine="Private Sub lbl_vorod_FT_LongClick";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 3130;BA.debugLine="If(code_fast_taradod=1)Then";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 3106;BA.debugLine="Private Sub lbl_vorod_FT_LongClick";
+Debug.ShouldStop(2);
+ BA.debugLineNum = 3108;BA.debugLine="If(code_fast_taradod=1)Then";
+Debug.ShouldStop(8);
 if ((RemoteObject.solveBoolean("=",main._code_fast_taradod,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 3131;BA.debugLine="index_box=4";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 3109;BA.debugLine="index_box=4";
+Debug.ShouldStop(16);
 main._index_box = BA.numberCast(int.class, 4);
- BA.debugLineNum = 3132;BA.debugLine="lbl_tim_vorod_FT.Text=DateTime.Time(DateTime.Now";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 3110;BA.debugLine="lbl_tim_vorod_FT.Text=DateTime.Time(DateTime.Now";
+Debug.ShouldStop(32);
 main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent.__c.getField(false,"DateTime").runMethod(true,"Time",(Object)(main.mostCurrent.__c.getField(false,"DateTime").runMethod(true,"getNow")))));
- BA.debugLineNum = 3133;BA.debugLine="code_fast_taradod=10";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 3111;BA.debugLine="code_fast_taradod=10";
+Debug.ShouldStop(64);
 main._code_fast_taradod = BA.numberCast(int.class, 10);
- BA.debugLineNum = 3134;BA.debugLine="add_end";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 3112;BA.debugLine="add_end";
+Debug.ShouldStop(128);
 _add_end();
- BA.debugLineNum = 3135;BA.debugLine="pan_add_taradod_fast_Click";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 3113;BA.debugLine="pan_add_taradod_fast_Click";
+Debug.ShouldStop(256);
 _pan_add_taradod_fast_click();
  }else 
-{ BA.debugLineNum = 3136;BA.debugLine="Else If(code_fast_taradod=0)Then";
-Debug.ShouldStop(-2147483648);
+{ BA.debugLineNum = 3114;BA.debugLine="Else If(code_fast_taradod=0)Then";
+Debug.ShouldStop(512);
 if ((RemoteObject.solveBoolean("=",main._code_fast_taradod,BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 3137;BA.debugLine="ToastMessageShow(\" تردد امروز دستی ثبت شده است\",";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 3115;BA.debugLine="ToastMessageShow(\" تردد امروز دستی ثبت شده است\",";
+Debug.ShouldStop(1024);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence(" تردد امروز دستی ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
  }else {
- BA.debugLineNum = 3139;BA.debugLine="ToastMessageShow(\"زمان ورود ثبت شده است\",False)";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 3117;BA.debugLine="ToastMessageShow(\"زمان ورود ثبت شده است\",False)";
+Debug.ShouldStop(4096);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("زمان ورود ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
  }}
 ;
- BA.debugLineNum = 3142;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 3120;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4195,179 +4195,179 @@ finally {
 		}}
 public static RemoteObject  _pan_add_taradod_fast_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_add_taradod_fast_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3005);
+		Debug.PushSubsStack("pan_add_taradod_fast_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2983);
 if (RapidSub.canDelegate("pan_add_taradod_fast_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_add_taradod_fast_click");}
- BA.debugLineNum = 3005;BA.debugLine="Private Sub pan_add_taradod_fast_Click";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 3006;BA.debugLine="pan_all_FT.Visible=True";
-Debug.ShouldStop(536870912);
-main.mostCurrent._pan_all_ft.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 3007;BA.debugLine="lbl_date_FT.Text=myfunc.fa2en(persianDate.Persian";
-Debug.ShouldStop(1073741824);
-main.mostCurrent._lbl_date_ft.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main._persiandate.runMethod(true,"getPersianShortDate")))));
- BA.debugLineNum = 3008;BA.debugLine="DateTime.TimeFormat = \"HH:mm\"";
-Debug.ShouldStop(-2147483648);
-main.mostCurrent.__c.getField(false,"DateTime").runMethod(true,"setTimeFormat",BA.ObjectToString("HH:mm"));
- BA.debugLineNum = 3010;BA.debugLine="If(dbCode.isexist_taradod_by_date(lbl_date_FT.Tex";
-Debug.ShouldStop(2);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode.runMethod(true,"_isexist_taradod_by_date" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"))),main.mostCurrent.__c.getField(true,"True")))) { 
- BA.debugLineNum = 3011;BA.debugLine="dbCode.res=dbCode.sql.ExecQuery(\"SELECT * FROM t";
-Debug.ShouldStop(4);
-main.mostCurrent._dbcode._res /*RemoteObject*/  = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), main.mostCurrent._dbcode._sql /*RemoteObject*/ .runMethod(false,"ExecQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("SELECT * FROM tb_taradod WHERE date_from LIKE '"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),RemoteObject.createImmutable("';")))));
- BA.debugLineNum = 3012;BA.debugLine="dbCode.res.Position=0";
-Debug.ShouldStop(8);
-main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"setPosition",BA.numberCast(int.class, 0));
- BA.debugLineNum = 3014;BA.debugLine="lbl_tim_vorod_FT.Text=dbCode.res.GetString(\"time";
-Debug.ShouldStop(32);
-main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("time_from")))));
- BA.debugLineNum = 3015;BA.debugLine="lbl_tim_khoroj_FT.Text=dbCode.res.GetString(\"tim";
+ BA.debugLineNum = 2983;BA.debugLine="Private Sub pan_add_taradod_fast_Click";
 Debug.ShouldStop(64);
-main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("time_to")))));
- BA.debugLineNum = 3017;BA.debugLine="current_id_edit=dbCode.res.GetInt(\"id\")";
+ BA.debugLineNum = 2984;BA.debugLine="pan_all_FT.Visible=True";
+Debug.ShouldStop(128);
+main.mostCurrent._pan_all_ft.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 2985;BA.debugLine="lbl_date_FT.Text=myfunc.fa2en(persianDate.Persian";
 Debug.ShouldStop(256);
-main._current_id_edit = main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("id")));
- BA.debugLineNum = 3018;BA.debugLine="Log(dbCode.res.GetInt(\"state\"))";
+main.mostCurrent._lbl_date_ft.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._myfunc.runMethod(true,"_fa2en" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main._persiandate.runMethod(true,"getPersianShortDate")))));
+ BA.debugLineNum = 2986;BA.debugLine="DateTime.TimeFormat = \"HH:mm\"";
 Debug.ShouldStop(512);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","332047117",BA.NumberToString(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state")))),0);
- BA.debugLineNum = 3020;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
+main.mostCurrent.__c.getField(false,"DateTime").runMethod(true,"setTimeFormat",BA.ObjectToString("HH:mm"));
+ BA.debugLineNum = 2988;BA.debugLine="If(dbCode.isexist_taradod_by_date(lbl_date_FT.Tex";
 Debug.ShouldStop(2048);
-main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
- BA.debugLineNum = 3021;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode.runMethod(true,"_isexist_taradod_by_date" /*RemoteObject*/ ,main.mostCurrent.activityBA,(Object)(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"))),main.mostCurrent.__c.getField(true,"True")))) { 
+ BA.debugLineNum = 2989;BA.debugLine="dbCode.res=dbCode.sql.ExecQuery(\"SELECT * FROM t";
 Debug.ShouldStop(4096);
-main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
- BA.debugLineNum = 3024;BA.debugLine="If(dbCode.res.GetInt(\"state\")=10)Then  ''vorod n";
+main.mostCurrent._dbcode._res /*RemoteObject*/  = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), main.mostCurrent._dbcode._sql /*RemoteObject*/ .runMethod(false,"ExecQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("SELECT * FROM tb_taradod WHERE date_from LIKE '"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),RemoteObject.createImmutable("';")))));
+ BA.debugLineNum = 2990;BA.debugLine="dbCode.res.Position=0";
+Debug.ShouldStop(8192);
+main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"setPosition",BA.numberCast(int.class, 0));
+ BA.debugLineNum = 2992;BA.debugLine="lbl_tim_vorod_FT.Text=dbCode.res.GetString(\"time";
 Debug.ShouldStop(32768);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 10)))) { 
- BA.debugLineNum = 3025;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
+main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("time_from")))));
+ BA.debugLineNum = 2993;BA.debugLine="lbl_tim_khoroj_FT.Text=dbCode.res.GetString(\"tim";
 Debug.ShouldStop(65536);
-main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
- BA.debugLineNum = 3026;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
-Debug.ShouldStop(131072);
-main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
- BA.debugLineNum = 3027;BA.debugLine="ckb_ezaf_taradod_FT.Checked=False";
+main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("time_to")))));
+ BA.debugLineNum = 2995;BA.debugLine="current_id_edit=dbCode.res.GetInt(\"id\")";
 Debug.ShouldStop(262144);
-main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3028;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
+main._current_id_edit = main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("id")));
+ BA.debugLineNum = 2996;BA.debugLine="Log(dbCode.res.GetInt(\"state\"))";
 Debug.ShouldStop(524288);
-main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3030;BA.debugLine="code_fast_taradod=10";
+main.mostCurrent.__c.runVoidMethod ("LogImpl","46553613",BA.NumberToString(main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state")))),0);
+ BA.debugLineNum = 2998;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
 Debug.ShouldStop(2097152);
+main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
+ BA.debugLineNum = 2999;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
+Debug.ShouldStop(4194304);
+main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
+ BA.debugLineNum = 3002;BA.debugLine="If(dbCode.res.GetInt(\"state\")=10)Then  ''vorod n";
+Debug.ShouldStop(33554432);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 10)))) { 
+ BA.debugLineNum = 3003;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
+Debug.ShouldStop(67108864);
+main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
+ BA.debugLineNum = 3004;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
+Debug.ShouldStop(134217728);
+main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
+ BA.debugLineNum = 3005;BA.debugLine="ckb_ezaf_taradod_FT.Checked=False";
+Debug.ShouldStop(268435456);
+main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 3006;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
+Debug.ShouldStop(536870912);
+main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 3008;BA.debugLine="code_fast_taradod=10";
+Debug.ShouldStop(-2147483648);
 main._code_fast_taradod = BA.numberCast(int.class, 10);
  }else 
-{ BA.debugLineNum = 3031;BA.debugLine="Else If (dbCode.res.GetInt(\"state\")=20)Then  ''v";
-Debug.ShouldStop(4194304);
+{ BA.debugLineNum = 3009;BA.debugLine="Else If (dbCode.res.GetInt(\"state\")=20)Then  ''v";
+Debug.ShouldStop(1);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 20)))) { 
- BA.debugLineNum = 3032;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 3010;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
+Debug.ShouldStop(2);
 main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
- BA.debugLineNum = 3033;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 3011;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
+Debug.ShouldStop(4);
 main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
- BA.debugLineNum = 3034;BA.debugLine="ckb_ezaf_taradod_FT.Checked=True";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 3012;BA.debugLine="ckb_ezaf_taradod_FT.Checked=True";
+Debug.ShouldStop(8);
 main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 3035;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 3013;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
+Debug.ShouldStop(16);
 main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3037;BA.debugLine="code_fast_taradod=20";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 3015;BA.debugLine="code_fast_taradod=20";
+Debug.ShouldStop(64);
 main._code_fast_taradod = BA.numberCast(int.class, 20);
  }else 
-{ BA.debugLineNum = 3038;BA.debugLine="Else If (dbCode.res.GetInt(\"state\")=11)Then  ''k";
-Debug.ShouldStop(536870912);
+{ BA.debugLineNum = 3016;BA.debugLine="Else If (dbCode.res.GetInt(\"state\")=11)Then  ''k";
+Debug.ShouldStop(128);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 11)))) { 
- BA.debugLineNum = 3039;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 3017;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
+Debug.ShouldStop(256);
 main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
- BA.debugLineNum = 3040;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Green";
-Debug.ShouldStop(-2147483648);
-main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
- BA.debugLineNum = 3041;BA.debugLine="ckb_ezaf_taradod_FT.Checked=False";
-Debug.ShouldStop(1);
-main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3042;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
-Debug.ShouldStop(2);
-main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3045;BA.debugLine="time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lb";
-Debug.ShouldStop(16);
-_time_show2(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText"));
- BA.debugLineNum = 3046;BA.debugLine="code_fast_taradod=11";
-Debug.ShouldStop(32);
-main._code_fast_taradod = BA.numberCast(int.class, 11);
- BA.debugLineNum = 3047;BA.debugLine="ToastMessageShow(\"تردد امروز ثبت شده است\",False";
-Debug.ShouldStop(64);
-main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("تردد امروز ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- }else 
-{ BA.debugLineNum = 3050;BA.debugLine="Else If (dbCode.res.GetInt(\"state\")=21)Then  ''k";
+ BA.debugLineNum = 3018;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Green";
 Debug.ShouldStop(512);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 21)))) { 
- BA.debugLineNum = 3051;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
-Debug.ShouldStop(1024);
-main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
- BA.debugLineNum = 3052;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Green";
-Debug.ShouldStop(2048);
 main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
- BA.debugLineNum = 3053;BA.debugLine="ckb_ezaf_taradod_FT.Checked=True";
-Debug.ShouldStop(4096);
-main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 3054;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 3019;BA.debugLine="ckb_ezaf_taradod_FT.Checked=False";
+Debug.ShouldStop(1024);
+main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 3020;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
+Debug.ShouldStop(2048);
 main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3057;BA.debugLine="time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lb";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 3023;BA.debugLine="time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lb";
+Debug.ShouldStop(16384);
 _time_show2(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText"));
- BA.debugLineNum = 3059;BA.debugLine="code_fast_taradod=21";
-Debug.ShouldStop(262144);
-main._code_fast_taradod = BA.numberCast(int.class, 21);
- BA.debugLineNum = 3060;BA.debugLine="ToastMessageShow(\"تردد امروز ثبت شده است\",False";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 3024;BA.debugLine="code_fast_taradod=11";
+Debug.ShouldStop(32768);
+main._code_fast_taradod = BA.numberCast(int.class, 11);
+ BA.debugLineNum = 3025;BA.debugLine="ToastMessageShow(\"تردد امروز ثبت شده است\",False";
+Debug.ShouldStop(65536);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("تردد امروز ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
  }else 
-{ BA.debugLineNum = 3063;BA.debugLine="Else If (dbCode.res.GetInt(\"state\")=0)Then  ''da";
+{ BA.debugLineNum = 3028;BA.debugLine="Else If (dbCode.res.GetInt(\"state\")=21)Then  ''k";
+Debug.ShouldStop(524288);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 21)))) { 
+ BA.debugLineNum = 3029;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
+Debug.ShouldStop(1048576);
+main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
+ BA.debugLineNum = 3030;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Green";
+Debug.ShouldStop(2097152);
+main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Green"));
+ BA.debugLineNum = 3031;BA.debugLine="ckb_ezaf_taradod_FT.Checked=True";
 Debug.ShouldStop(4194304);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 3064;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Red";
+main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 3032;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
 Debug.ShouldStop(8388608);
-main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Red"));
- BA.debugLineNum = 3065;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Red";
-Debug.ShouldStop(16777216);
-main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Red"));
- BA.debugLineNum = 3066;BA.debugLine="ckb_ezaf_taradod_FT.Checked=False";
-Debug.ShouldStop(33554432);
-main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3067;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
-Debug.ShouldStop(67108864);
 main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3070;BA.debugLine="time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lb";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 3035;BA.debugLine="time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lb";
+Debug.ShouldStop(67108864);
 _time_show2(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText"));
- BA.debugLineNum = 3072;BA.debugLine="ToastMessageShow(\"برای امروز تردد دستی ثبت شده";
-Debug.ShouldStop(-2147483648);
-main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برای امروز تردد دستی ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 3074;BA.debugLine="code_fast_taradod=0";
+ BA.debugLineNum = 3037;BA.debugLine="code_fast_taradod=21";
+Debug.ShouldStop(268435456);
+main._code_fast_taradod = BA.numberCast(int.class, 21);
+ BA.debugLineNum = 3038;BA.debugLine="ToastMessageShow(\"تردد امروز ثبت شده است\",False";
+Debug.ShouldStop(536870912);
+main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("تردد امروز ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
+ }else 
+{ BA.debugLineNum = 3041;BA.debugLine="Else If (dbCode.res.GetInt(\"state\")=0)Then  ''da";
+Debug.ShouldStop(1);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._dbcode._res /*RemoteObject*/ .runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("state"))),BA.numberCast(double.class, 0)))) { 
+ BA.debugLineNum = 3042;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Red";
 Debug.ShouldStop(2);
+main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Red"));
+ BA.debugLineNum = 3043;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Red";
+Debug.ShouldStop(4);
+main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Red"));
+ BA.debugLineNum = 3044;BA.debugLine="ckb_ezaf_taradod_FT.Checked=False";
+Debug.ShouldStop(8);
+main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 3045;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=False";
+Debug.ShouldStop(16);
+main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 3048;BA.debugLine="time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lb";
+Debug.ShouldStop(128);
+_time_show2(main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_date_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_vorod_ft.runMethod(true,"getText"),main.mostCurrent._lbl_tim_khoroj_ft.runMethod(true,"getText"));
+ BA.debugLineNum = 3050;BA.debugLine="ToastMessageShow(\"برای امروز تردد دستی ثبت شده";
+Debug.ShouldStop(512);
+main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برای امروز تردد دستی ثبت شده است")),(Object)(main.mostCurrent.__c.getField(true,"False")));
+ BA.debugLineNum = 3052;BA.debugLine="code_fast_taradod=0";
+Debug.ShouldStop(2048);
 main._code_fast_taradod = BA.numberCast(int.class, 0);
  }}}}}
 ;
  }else {
- BA.debugLineNum = 3077;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 3055;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
+Debug.ShouldStop(16384);
 main.mostCurrent._lbl_vorod_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
- BA.debugLineNum = 3078;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 3056;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
+Debug.ShouldStop(32768);
 main.mostCurrent._lbl_khoroj_ft.runMethod(true,"setTextColor",main.mostCurrent.__c.getField(false,"Colors").getField(true,"Gray"));
- BA.debugLineNum = 3080;BA.debugLine="ckb_ezaf_taradod_FT.Checked=True";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 3058;BA.debugLine="ckb_ezaf_taradod_FT.Checked=True";
+Debug.ShouldStop(131072);
 main.mostCurrent._ckb_ezaf_taradod_ft.runMethodAndSync(true,"setChecked",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 3081;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=True";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 3059;BA.debugLine="ckb_ezaf_taradod_FT.Enabled=True";
+Debug.ShouldStop(262144);
 main.mostCurrent._ckb_ezaf_taradod_ft.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 3082;BA.debugLine="code_fast_taradod=1";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 3060;BA.debugLine="code_fast_taradod=1";
+Debug.ShouldStop(524288);
 main._code_fast_taradod = BA.numberCast(int.class, 1);
  };
- BA.debugLineNum = 3084;BA.debugLine="End Sub";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 3062;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4397,15 +4397,15 @@ finally {
 		}}
 public static RemoteObject  _pan_all_ft_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_all_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3116);
+		Debug.PushSubsStack("pan_all_FT_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3094);
 if (RapidSub.canDelegate("pan_all_ft_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_all_ft_click");}
- BA.debugLineNum = 3116;BA.debugLine="Private Sub pan_all_FT_Click";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 3117;BA.debugLine="pan_all_FT.Visible=False";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 3094;BA.debugLine="Private Sub pan_all_FT_Click";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 3095;BA.debugLine="pan_all_FT.Visible=False";
+Debug.ShouldStop(4194304);
 main.mostCurrent._pan_all_ft.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 3118;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 3096;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4416,15 +4416,15 @@ finally {
 		}}
 public static RemoteObject  _pan_all_litemenu_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_all_liteMenu_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2990);
+		Debug.PushSubsStack("pan_all_liteMenu_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2968);
 if (RapidSub.canDelegate("pan_all_litemenu_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_all_litemenu_click");}
- BA.debugLineNum = 2990;BA.debugLine="Private Sub pan_all_liteMenu_Click";
-Debug.ShouldStop(8192);
- BA.debugLineNum = 2991;BA.debugLine="pan_all_liteMenu.Visible=False";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2968;BA.debugLine="Private Sub pan_all_liteMenu_Click";
+Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2969;BA.debugLine="pan_all_liteMenu.Visible=False";
+Debug.ShouldStop(16777216);
 main.mostCurrent._pan_all_litemenu.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 2992;BA.debugLine="End Sub";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 2970;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4451,15 +4451,15 @@ finally {
 		}}
 public static RemoteObject  _pan_all_noskhe_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_all_noskhe_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2938);
+		Debug.PushSubsStack("pan_all_noskhe_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2916);
 if (RapidSub.canDelegate("pan_all_noskhe_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_all_noskhe_click");}
- BA.debugLineNum = 2938;BA.debugLine="Private Sub pan_all_noskhe_Click";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 2939;BA.debugLine="pan_all_noskhe.Visible=False";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2916;BA.debugLine="Private Sub pan_all_noskhe_Click";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 2917;BA.debugLine="pan_all_noskhe.Visible=False";
+Debug.ShouldStop(16);
 main.mostCurrent._pan_all_noskhe.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 2940;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2918;BA.debugLine="End Sub";
+Debug.ShouldStop(32);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4470,15 +4470,34 @@ finally {
 		}}
 public static RemoteObject  _pan_all2_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_all2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2539);
+		Debug.PushSubsStack("pan_all2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2517);
 if (RapidSub.canDelegate("pan_all2_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_all2_click");}
- BA.debugLineNum = 2539;BA.debugLine="Private Sub pan_all2_Click";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 2542;BA.debugLine="pan_all2.Visible=False";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2517;BA.debugLine="Private Sub pan_all2_Click";
+Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2520;BA.debugLine="pan_all2.Visible=False";
+Debug.ShouldStop(8388608);
 main.mostCurrent._pan_all2.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 2543;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2521;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _pan_bime_click() throws Exception{
+try {
+		Debug.PushSubsStack("pan_bime_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3226);
+if (RapidSub.canDelegate("pan_bime_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_bime_click");}
+ BA.debugLineNum = 3226;BA.debugLine="Private Sub pan_bime_Click";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 3227;BA.debugLine="StartActivity(bime_activity)";
+Debug.ShouldStop(67108864);
+main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._bime_activity.getObject())));
+ BA.debugLineNum = 3229;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4489,15 +4508,15 @@ finally {
 		}}
 public static RemoteObject  _pan_calc_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_calc_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2608);
+		Debug.PushSubsStack("pan_calc_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2586);
 if (RapidSub.canDelegate("pan_calc_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_calc_click");}
- BA.debugLineNum = 2608;BA.debugLine="Private Sub pan_calc_Click";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 2609;BA.debugLine="StartActivity(calc_activity)";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2586;BA.debugLine="Private Sub pan_calc_Click";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2587;BA.debugLine="StartActivity(calc_activity)";
+Debug.ShouldStop(67108864);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._calc_activity.getObject())));
- BA.debugLineNum = 2612;BA.debugLine="End Sub";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2590;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4508,87 +4527,87 @@ finally {
 		}}
 public static RemoteObject  _pan_comment_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_comment_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2550);
+		Debug.PushSubsStack("pan_comment_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2528);
 if (RapidSub.canDelegate("pan_comment_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_comment_click");}
 RemoteObject _market = RemoteObject.declareNull("anywheresoftware.b4a.objects.IntentWrapper");
 RemoteObject _url = RemoteObject.createImmutable("");
- BA.debugLineNum = 2550;BA.debugLine="Private Sub pan_comment_Click";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 2552;BA.debugLine="Try";
-Debug.ShouldStop(8388608);
-try { BA.debugLineNum = 2553;BA.debugLine="If (myfunc.check_internet=True)Then";
-Debug.ShouldStop(16777216);
-if ((RemoteObject.solveBoolean("=",main.mostCurrent._myfunc.runMethod(true,"_check_internet" /*RemoteObject*/ ,main.mostCurrent.activityBA),main.mostCurrent.__c.getField(true,"True")))) { 
- BA.debugLineNum = 2555;BA.debugLine="Try";
-Debug.ShouldStop(67108864);
-try { BA.debugLineNum = 2556;BA.debugLine="Dim market As Intent";
-Debug.ShouldStop(134217728);
-_market = RemoteObject.createNew ("anywheresoftware.b4a.objects.IntentWrapper");Debug.locals.put("market", _market);
- BA.debugLineNum = 2557;BA.debugLine="Dim url As String";
-Debug.ShouldStop(268435456);
-_url = RemoteObject.createImmutable("");Debug.locals.put("url", _url);
- BA.debugLineNum = 2559;BA.debugLine="url=\"bazaar://details?id=ir.taravatgroup.ezafek";
-Debug.ShouldStop(1073741824);
-_url = BA.ObjectToString("bazaar://details?id=ir.taravatgroup.ezafekari2");Debug.locals.put("url", _url);
- BA.debugLineNum = 2560;BA.debugLine="market.Initialize(market.ACTION_EDIT,url)";
+ BA.debugLineNum = 2528;BA.debugLine="Private Sub pan_comment_Click";
 Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2530;BA.debugLine="Try";
+Debug.ShouldStop(2);
+try { BA.debugLineNum = 2531;BA.debugLine="If (myfunc.check_internet=True)Then";
+Debug.ShouldStop(4);
+if ((RemoteObject.solveBoolean("=",main.mostCurrent._myfunc.runMethod(true,"_check_internet" /*RemoteObject*/ ,main.mostCurrent.activityBA),main.mostCurrent.__c.getField(true,"True")))) { 
+ BA.debugLineNum = 2533;BA.debugLine="Try";
+Debug.ShouldStop(16);
+try { BA.debugLineNum = 2534;BA.debugLine="Dim market As Intent";
+Debug.ShouldStop(32);
+_market = RemoteObject.createNew ("anywheresoftware.b4a.objects.IntentWrapper");Debug.locals.put("market", _market);
+ BA.debugLineNum = 2535;BA.debugLine="Dim url As String";
+Debug.ShouldStop(64);
+_url = RemoteObject.createImmutable("");Debug.locals.put("url", _url);
+ BA.debugLineNum = 2537;BA.debugLine="url=\"bazaar://details?id=ir.taravatgroup.ezafek";
+Debug.ShouldStop(256);
+_url = BA.ObjectToString("bazaar://details?id=ir.taravatgroup.ezafekari2");Debug.locals.put("url", _url);
+ BA.debugLineNum = 2538;BA.debugLine="market.Initialize(market.ACTION_EDIT,url)";
+Debug.ShouldStop(512);
 _market.runVoidMethod ("Initialize",(Object)(_market.getField(true,"ACTION_EDIT")),(Object)(_url));
- BA.debugLineNum = 2561;BA.debugLine="StartActivity(market)";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2539;BA.debugLine="StartActivity(market)";
+Debug.ShouldStop(1024);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((_market.getObject())));
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e10) {
-			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e10.toString()); BA.debugLineNum = 2564;BA.debugLine="ToastMessageShow(\"برنامه بازار را نصب کنید\",Tru";
-Debug.ShouldStop(8);
+			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e10.toString()); BA.debugLineNum = 2542;BA.debugLine="ToastMessageShow(\"برنامه بازار را نصب کنید\",Tru";
+Debug.ShouldStop(8192);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برنامه بازار را نصب کنید")),(Object)(main.mostCurrent.__c.getField(true,"True")));
  };
  }else {
- BA.debugLineNum = 2567;BA.debugLine="ToastMessageShow(\"ارتباط اینترنت را بررسی کنید\",";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2545;BA.debugLine="ToastMessageShow(\"ارتباط اینترنت را بررسی کنید\",";
+Debug.ShouldStop(65536);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("ارتباط اینترنت را بررسی کنید")),(Object)(main.mostCurrent.__c.getField(true,"True")));
  };
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e16) {
-			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e16.toString()); BA.debugLineNum = 2571;BA.debugLine="If (myfunc.check_internet=True)Then";
-Debug.ShouldStop(1024);
+			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e16.toString()); BA.debugLineNum = 2549;BA.debugLine="If (myfunc.check_internet=True)Then";
+Debug.ShouldStop(1048576);
 if ((RemoteObject.solveBoolean("=",main.mostCurrent._myfunc.runMethod(true,"_check_internet" /*RemoteObject*/ ,main.mostCurrent.activityBA),main.mostCurrent.__c.getField(true,"True")))) { 
- BA.debugLineNum = 2573;BA.debugLine="Try";
-Debug.ShouldStop(4096);
-try { BA.debugLineNum = 2574;BA.debugLine="Dim market As Intent";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2551;BA.debugLine="Try";
+Debug.ShouldStop(4194304);
+try { BA.debugLineNum = 2552;BA.debugLine="Dim market As Intent";
+Debug.ShouldStop(8388608);
 _market = RemoteObject.createNew ("anywheresoftware.b4a.objects.IntentWrapper");Debug.locals.put("market", _market);
- BA.debugLineNum = 2575;BA.debugLine="Dim url As String";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2553;BA.debugLine="Dim url As String";
+Debug.ShouldStop(16777216);
 _url = RemoteObject.createImmutable("");Debug.locals.put("url", _url);
- BA.debugLineNum = 2577;BA.debugLine="url=\"bazaar://details?id=ir.taravatgroup.ezafe";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2555;BA.debugLine="url=\"bazaar://details?id=ir.taravatgroup.ezafe";
+Debug.ShouldStop(67108864);
 _url = BA.ObjectToString("bazaar://details?id=ir.taravatgroup.ezafekari2");Debug.locals.put("url", _url);
- BA.debugLineNum = 2578;BA.debugLine="market.Initialize(market.ACTION_EDIT,url)";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2556;BA.debugLine="market.Initialize(market.ACTION_EDIT,url)";
+Debug.ShouldStop(134217728);
 _market.runVoidMethod ("Initialize",(Object)(_market.getField(true,"ACTION_EDIT")),(Object)(_url));
- BA.debugLineNum = 2579;BA.debugLine="market.SetPackage(\"ir.taravatgroup.ezafekari2\"";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 2557;BA.debugLine="market.SetPackage(\"ir.taravatgroup.ezafekari2\"";
+Debug.ShouldStop(268435456);
 _market.runVoidMethod ("SetPackage",(Object)(RemoteObject.createImmutable("ir.taravatgroup.ezafekari2")));
- BA.debugLineNum = 2580;BA.debugLine="StartActivity(market)";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2558;BA.debugLine="StartActivity(market)";
+Debug.ShouldStop(536870912);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((_market.getObject())));
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e25) {
-			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e25.toString()); BA.debugLineNum = 2583;BA.debugLine="ToastMessageShow(\"برنامه بازار را نصب کنید\",Tr";
-Debug.ShouldStop(4194304);
+			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e25.toString()); BA.debugLineNum = 2561;BA.debugLine="ToastMessageShow(\"برنامه بازار را نصب کنید\",Tr";
+Debug.ShouldStop(1);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("برنامه بازار را نصب کنید")),(Object)(main.mostCurrent.__c.getField(true,"True")));
  };
  }else {
- BA.debugLineNum = 2586;BA.debugLine="ToastMessageShow(\"ارتباط اینترنت را بررسی کنید\"";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2564;BA.debugLine="ToastMessageShow(\"ارتباط اینترنت را بررسی کنید\"";
+Debug.ShouldStop(8);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("ارتباط اینترنت را بررسی کنید")),(Object)(main.mostCurrent.__c.getField(true,"True")));
  };
  };
- BA.debugLineNum = 2593;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2571;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4599,15 +4618,15 @@ finally {
 		}}
 public static RemoteObject  _pan_darsad_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_darsad_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2545);
+		Debug.PushSubsStack("pan_darsad_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2523);
 if (RapidSub.canDelegate("pan_darsad_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_darsad_click");}
- BA.debugLineNum = 2545;BA.debugLine="Private Sub pan_darsad_Click";
-Debug.ShouldStop(65536);
- BA.debugLineNum = 2546;BA.debugLine="StartActivity(darsad_activity)";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2523;BA.debugLine="Private Sub pan_darsad_Click";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2524;BA.debugLine="StartActivity(darsad_activity)";
+Debug.ShouldStop(134217728);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._darsad_activity.getObject())));
- BA.debugLineNum = 2548;BA.debugLine="End Sub";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2526;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4618,15 +4637,15 @@ finally {
 		}}
 public static RemoteObject  _pan_eidi_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_eidi_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2353);
+		Debug.PushSubsStack("pan_eidi_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2331);
 if (RapidSub.canDelegate("pan_eidi_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_eidi_click");}
- BA.debugLineNum = 2353;BA.debugLine="Private Sub pan_eidi_Click";
-Debug.ShouldStop(65536);
- BA.debugLineNum = 2354;BA.debugLine="StartActivity(eidi_activity)";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2331;BA.debugLine="Private Sub pan_eidi_Click";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2332;BA.debugLine="StartActivity(eidi_activity)";
+Debug.ShouldStop(134217728);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._eidi_activity.getObject())));
- BA.debugLineNum = 2356;BA.debugLine="End Sub";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2334;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4637,18 +4656,18 @@ finally {
 		}}
 public static RemoteObject  _pan_ezafekari_mah_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_ezafekari_mah_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2896);
+		Debug.PushSubsStack("pan_ezafekari_mah_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2874);
 if (RapidSub.canDelegate("pan_ezafekari_mah_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_ezafekari_mah_click");}
- BA.debugLineNum = 2896;BA.debugLine="Private Sub pan_ezafekari_mah_Click";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 2901;BA.debugLine="btn_menu_list_Click";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2874;BA.debugLine="Private Sub pan_ezafekari_mah_Click";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2879;BA.debugLine="btn_menu_list_Click";
+Debug.ShouldStop(1073741824);
 _btn_menu_list_click();
- BA.debugLineNum = 2902;BA.debugLine="TabHost1.CurrentTab=0";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2880;BA.debugLine="TabHost1.CurrentTab=0";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._tabhost1.runMethodAndSync(true,"setCurrentTab",BA.numberCast(int.class, 0));
- BA.debugLineNum = 2904;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2882;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4678,15 +4697,15 @@ finally {
 		}}
 public static RemoteObject  _pan_ganon_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_ganon_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2958);
+		Debug.PushSubsStack("pan_ganon_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2936);
 if (RapidSub.canDelegate("pan_ganon_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_ganon_click");}
- BA.debugLineNum = 2958;BA.debugLine="Private Sub pan_ganon_Click";
-Debug.ShouldStop(8192);
- BA.debugLineNum = 2959;BA.debugLine="StartActivity(ganon_activity)";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2936;BA.debugLine="Private Sub pan_ganon_Click";
+Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2937;BA.debugLine="StartActivity(ganon_activity)";
+Debug.ShouldStop(16777216);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._ganon_activity.getObject())));
- BA.debugLineNum = 2961;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2939;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4697,93 +4716,93 @@ finally {
 		}}
 public static RemoteObject  _pan_help_touch(RemoteObject _action,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("pan_help_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2649);
+		Debug.PushSubsStack("pan_help_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2627);
 if (RapidSub.canDelegate("pan_help_touch")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_help_touch", _action, _x, _y);}
 Debug.locals.put("Action", _action);
 Debug.locals.put("X", _x);
 Debug.locals.put("Y", _y);
- BA.debugLineNum = 2649;BA.debugLine="Private Sub pan_help_Touch (Action As Int, X As Fl";
-Debug.ShouldStop(16777216);
- BA.debugLineNum = 2651;BA.debugLine="If (Action=0)Then";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2627;BA.debugLine="Private Sub pan_help_Touch (Action As Int, X As Fl";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 2629;BA.debugLine="If (Action=0)Then";
+Debug.ShouldStop(16);
 if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2652;BA.debugLine="index_x_start_swap=x";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2630;BA.debugLine="index_x_start_swap=x";
+Debug.ShouldStop(32);
 main._index_x_start_swap = BA.numberCast(int.class, _x);
- BA.debugLineNum = 2653;BA.debugLine="If (index_curent_img=4)Then";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2631;BA.debugLine="If (index_curent_img=4)Then";
+Debug.ShouldStop(64);
 if ((RemoteObject.solveBoolean("=",main._index_curent_img,BA.numberCast(double.class, 4)))) { 
- BA.debugLineNum = 2654;BA.debugLine="pan_help.Visible=False";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2632;BA.debugLine="pan_help.Visible=False";
+Debug.ShouldStop(128);
 main.mostCurrent._pan_help.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
  };
  };
- BA.debugLineNum = 2657;BA.debugLine="If(Action=1)Then";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2635;BA.debugLine="If(Action=1)Then";
+Debug.ShouldStop(1024);
 if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2658;BA.debugLine="If(X<(index_x_start_swap-150))Then";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 2636;BA.debugLine="If(X<(index_x_start_swap-150))Then";
+Debug.ShouldStop(2048);
 if ((RemoteObject.solveBoolean("<",_x,BA.numberCast(double.class, (RemoteObject.solve(new RemoteObject[] {main._index_x_start_swap,RemoteObject.createImmutable(150)}, "-",1, 1)))))) { 
- BA.debugLineNum = 2661;BA.debugLine="index_curent_img=index_curent_img+1";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 2639;BA.debugLine="index_curent_img=index_curent_img+1";
+Debug.ShouldStop(16384);
 main._index_curent_img = RemoteObject.solve(new RemoteObject[] {main._index_curent_img,RemoteObject.createImmutable(1)}, "+",1, 1);
- BA.debugLineNum = 2662;BA.debugLine="If(index_curent_img>4)Then";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2640;BA.debugLine="If(index_curent_img>4)Then";
+Debug.ShouldStop(32768);
 if ((RemoteObject.solveBoolean(">",main._index_curent_img,BA.numberCast(double.class, 4)))) { 
- BA.debugLineNum = 2663;BA.debugLine="index_curent_img=4";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2641;BA.debugLine="index_curent_img=4";
+Debug.ShouldStop(65536);
 main._index_curent_img = BA.numberCast(int.class, 4);
  };
  }else 
-{ BA.debugLineNum = 2667;BA.debugLine="Else If(X>(index_x_start_swap+150))Then";
-Debug.ShouldStop(1024);
+{ BA.debugLineNum = 2645;BA.debugLine="Else If(X>(index_x_start_swap+150))Then";
+Debug.ShouldStop(1048576);
 if ((RemoteObject.solveBoolean(">",_x,BA.numberCast(double.class, (RemoteObject.solve(new RemoteObject[] {main._index_x_start_swap,RemoteObject.createImmutable(150)}, "+",1, 1)))))) { 
- BA.debugLineNum = 2670;BA.debugLine="index_curent_img=index_curent_img-1";
-Debug.ShouldStop(8192);
-main._index_curent_img = RemoteObject.solve(new RemoteObject[] {main._index_curent_img,RemoteObject.createImmutable(1)}, "-",1, 1);
- BA.debugLineNum = 2671;BA.debugLine="If(index_curent_img<0)Then";
-Debug.ShouldStop(16384);
-if ((RemoteObject.solveBoolean("<",main._index_curent_img,BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2672;BA.debugLine="index_curent_img=0";
-Debug.ShouldStop(32768);
-main._index_curent_img = BA.numberCast(int.class, 0);
- };
- }else 
-{ BA.debugLineNum = 2676;BA.debugLine="Else If(index_x_start_swap<(pan_help.Width/2))Th";
-Debug.ShouldStop(524288);
-if ((RemoteObject.solveBoolean("<",main._index_x_start_swap,(RemoteObject.solve(new RemoteObject[] {main.mostCurrent._pan_help.runMethod(true,"getWidth"),RemoteObject.createImmutable(2)}, "/",0, 0))))) { 
- BA.debugLineNum = 2678;BA.debugLine="index_curent_img=index_curent_img-1";
-Debug.ShouldStop(2097152);
-main._index_curent_img = RemoteObject.solve(new RemoteObject[] {main._index_curent_img,RemoteObject.createImmutable(1)}, "-",1, 1);
- BA.debugLineNum = 2679;BA.debugLine="If(index_curent_img<0)Then";
-Debug.ShouldStop(4194304);
-if ((RemoteObject.solveBoolean("<",main._index_curent_img,BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2680;BA.debugLine="index_curent_img=0";
+ BA.debugLineNum = 2648;BA.debugLine="index_curent_img=index_curent_img-1";
 Debug.ShouldStop(8388608);
+main._index_curent_img = RemoteObject.solve(new RemoteObject[] {main._index_curent_img,RemoteObject.createImmutable(1)}, "-",1, 1);
+ BA.debugLineNum = 2649;BA.debugLine="If(index_curent_img<0)Then";
+Debug.ShouldStop(16777216);
+if ((RemoteObject.solveBoolean("<",main._index_curent_img,BA.numberCast(double.class, 0)))) { 
+ BA.debugLineNum = 2650;BA.debugLine="index_curent_img=0";
+Debug.ShouldStop(33554432);
 main._index_curent_img = BA.numberCast(int.class, 0);
  };
  }else 
-{ BA.debugLineNum = 2683;BA.debugLine="Else If(index_x_start_swap>(pan_help.Width/2))Th";
-Debug.ShouldStop(67108864);
-if ((RemoteObject.solveBoolean(">",main._index_x_start_swap,(RemoteObject.solve(new RemoteObject[] {main.mostCurrent._pan_help.runMethod(true,"getWidth"),RemoteObject.createImmutable(2)}, "/",0, 0))))) { 
- BA.debugLineNum = 2685;BA.debugLine="index_curent_img=index_curent_img+1";
-Debug.ShouldStop(268435456);
-main._index_curent_img = RemoteObject.solve(new RemoteObject[] {main._index_curent_img,RemoteObject.createImmutable(1)}, "+",1, 1);
- BA.debugLineNum = 2686;BA.debugLine="If(index_curent_img>4)Then";
+{ BA.debugLineNum = 2654;BA.debugLine="Else If(index_x_start_swap<(pan_help.Width/2))Th";
 Debug.ShouldStop(536870912);
+if ((RemoteObject.solveBoolean("<",main._index_x_start_swap,(RemoteObject.solve(new RemoteObject[] {main.mostCurrent._pan_help.runMethod(true,"getWidth"),RemoteObject.createImmutable(2)}, "/",0, 0))))) { 
+ BA.debugLineNum = 2656;BA.debugLine="index_curent_img=index_curent_img-1";
+Debug.ShouldStop(-2147483648);
+main._index_curent_img = RemoteObject.solve(new RemoteObject[] {main._index_curent_img,RemoteObject.createImmutable(1)}, "-",1, 1);
+ BA.debugLineNum = 2657;BA.debugLine="If(index_curent_img<0)Then";
+Debug.ShouldStop(1);
+if ((RemoteObject.solveBoolean("<",main._index_curent_img,BA.numberCast(double.class, 0)))) { 
+ BA.debugLineNum = 2658;BA.debugLine="index_curent_img=0";
+Debug.ShouldStop(2);
+main._index_curent_img = BA.numberCast(int.class, 0);
+ };
+ }else 
+{ BA.debugLineNum = 2661;BA.debugLine="Else If(index_x_start_swap>(pan_help.Width/2))Th";
+Debug.ShouldStop(16);
+if ((RemoteObject.solveBoolean(">",main._index_x_start_swap,(RemoteObject.solve(new RemoteObject[] {main.mostCurrent._pan_help.runMethod(true,"getWidth"),RemoteObject.createImmutable(2)}, "/",0, 0))))) { 
+ BA.debugLineNum = 2663;BA.debugLine="index_curent_img=index_curent_img+1";
+Debug.ShouldStop(64);
+main._index_curent_img = RemoteObject.solve(new RemoteObject[] {main._index_curent_img,RemoteObject.createImmutable(1)}, "+",1, 1);
+ BA.debugLineNum = 2664;BA.debugLine="If(index_curent_img>4)Then";
+Debug.ShouldStop(128);
 if ((RemoteObject.solveBoolean(">",main._index_curent_img,BA.numberCast(double.class, 4)))) { 
- BA.debugLineNum = 2687;BA.debugLine="index_curent_img=4";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2665;BA.debugLine="index_curent_img=4";
+Debug.ShouldStop(256);
 main._index_curent_img = BA.numberCast(int.class, 4);
  };
  }}}}
 ;
- BA.debugLineNum = 2692;BA.debugLine="img_slider(index_curent_img)";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 2670;BA.debugLine="img_slider(index_curent_img)";
+Debug.ShouldStop(8192);
 _img_slider(main._index_curent_img);
  };
- BA.debugLineNum = 2695;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2673;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4794,15 +4813,15 @@ finally {
 		}}
 public static RemoteObject  _pan_info_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_info_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2363);
+		Debug.PushSubsStack("pan_info_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2341);
 if (RapidSub.canDelegate("pan_info_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_info_click");}
- BA.debugLineNum = 2363;BA.debugLine="Private Sub pan_info_Click";
-Debug.ShouldStop(67108864);
- BA.debugLineNum = 2364;BA.debugLine="StartActivity(info_activity)";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2341;BA.debugLine="Private Sub pan_info_Click";
+Debug.ShouldStop(16);
+ BA.debugLineNum = 2342;BA.debugLine="StartActivity(info_activity)";
+Debug.ShouldStop(32);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._info_activity.getObject())));
- BA.debugLineNum = 2366;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2344;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4813,23 +4832,23 @@ finally {
 		}}
 public static RemoteObject  _pan_item_gozaresh_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_item_gozaresh_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2597);
+		Debug.PushSubsStack("pan_item_gozaresh_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2575);
 if (RapidSub.canDelegate("pan_item_gozaresh_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_item_gozaresh_click");}
 RemoteObject _ba = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
- BA.debugLineNum = 2597;BA.debugLine="Private Sub pan_item_gozaresh_Click";
-Debug.ShouldStop(16);
- BA.debugLineNum = 2598;BA.debugLine="Dim Ba As Panel = Sender";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2575;BA.debugLine="Private Sub pan_item_gozaresh_Click";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 2576;BA.debugLine="Dim Ba As Panel = Sender";
+Debug.ShouldStop(32768);
 _ba = RemoteObject.createNew ("anywheresoftware.b4a.objects.PanelWrapper");
 _ba = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.PanelWrapper"), main.mostCurrent.__c.runMethod(false,"Sender",main.mostCurrent.activityBA));Debug.locals.put("Ba", _ba);Debug.locals.put("Ba", _ba);
- BA.debugLineNum = 2600;BA.debugLine="current_gozaresh_id=Ba.Tag";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2578;BA.debugLine="current_gozaresh_id=Ba.Tag";
+Debug.ShouldStop(131072);
 main._current_gozaresh_id = BA.numberCast(int.class, _ba.runMethod(false,"getTag"));
- BA.debugLineNum = 2601;BA.debugLine="StartActivity(show_gozaresh_activity)";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2579;BA.debugLine="StartActivity(show_gozaresh_activity)";
+Debug.ShouldStop(262144);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._show_gozaresh_activity.getObject())));
- BA.debugLineNum = 2603;BA.debugLine="End Sub";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2581;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4840,12 +4859,12 @@ finally {
 		}}
 public static RemoteObject  _pan_lelp_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_lelp_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2697);
+		Debug.PushSubsStack("pan_lelp_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2675);
 if (RapidSub.canDelegate("pan_lelp_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_lelp_click");}
- BA.debugLineNum = 2697;BA.debugLine="Private Sub pan_lelp_Click";
-Debug.ShouldStop(256);
- BA.debugLineNum = 2699;BA.debugLine="End Sub";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2675;BA.debugLine="Private Sub pan_lelp_Click";
+Debug.ShouldStop(262144);
+ BA.debugLineNum = 2677;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4856,18 +4875,18 @@ finally {
 		}}
 public static RemoteObject  _pan_morakhasi_mah_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_morakhasi_mah_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2906);
+		Debug.PushSubsStack("pan_morakhasi_mah_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2884);
 if (RapidSub.canDelegate("pan_morakhasi_mah_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_morakhasi_mah_click");}
- BA.debugLineNum = 2906;BA.debugLine="Private Sub pan_morakhasi_mah_Click";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 2911;BA.debugLine="btn_menu_list_Click";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2884;BA.debugLine="Private Sub pan_morakhasi_mah_Click";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 2889;BA.debugLine="btn_menu_list_Click";
+Debug.ShouldStop(256);
 _btn_menu_list_click();
- BA.debugLineNum = 2912;BA.debugLine="TabHost1.CurrentTab=1";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2890;BA.debugLine="TabHost1.CurrentTab=1";
+Debug.ShouldStop(512);
 main.mostCurrent._tabhost1.runMethodAndSync(true,"setCurrentTab",BA.numberCast(int.class, 1));
- BA.debugLineNum = 2914;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 2892;BA.debugLine="End Sub";
+Debug.ShouldStop(2048);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4894,15 +4913,15 @@ finally {
 		}}
 public static RemoteObject  _pan_payankar_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_payankar_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2358);
+		Debug.PushSubsStack("pan_payankar_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2336);
 if (RapidSub.canDelegate("pan_payankar_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_payankar_click");}
- BA.debugLineNum = 2358;BA.debugLine="Private Sub pan_payankar_Click";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 2359;BA.debugLine="StartActivity(payankar_activity)";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2336;BA.debugLine="Private Sub pan_payankar_Click";
+Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2337;BA.debugLine="StartActivity(payankar_activity)";
+Debug.ShouldStop(1);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._payankar_activity.getObject())));
- BA.debugLineNum = 2361;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2339;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -4962,18 +4981,18 @@ finally {
 		}}
 public static RemoteObject  _pan_setting_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_setting_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2963);
+		Debug.PushSubsStack("pan_setting_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2941);
 if (RapidSub.canDelegate("pan_setting_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_setting_click");}
- BA.debugLineNum = 2963;BA.debugLine="Private Sub pan_setting_Click";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 2964;BA.debugLine="StartActivity(setting_activity)";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2941;BA.debugLine="Private Sub pan_setting_Click";
+Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2942;BA.debugLine="StartActivity(setting_activity)";
+Debug.ShouldStop(536870912);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._setting_activity.getObject())));
- BA.debugLineNum = 2965;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2943;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(1073741824);
 main.mostCurrent._activity.runVoidMethod ("Finish");
- BA.debugLineNum = 2966;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2944;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5006,15 +5025,15 @@ finally {
 		}}
 public static RemoteObject  _pan_shift_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_shift_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2976);
+		Debug.PushSubsStack("pan_shift_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2954);
 if (RapidSub.canDelegate("pan_shift_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_shift_click");}
- BA.debugLineNum = 2976;BA.debugLine="Private Sub pan_shift_Click";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 2977;BA.debugLine="StartActivity(shift_activity)";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2954;BA.debugLine="Private Sub pan_shift_Click";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 2955;BA.debugLine="StartActivity(shift_activity)";
+Debug.ShouldStop(1024);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._shift_activity.getObject())));
- BA.debugLineNum = 2979;BA.debugLine="End Sub";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2957;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5025,15 +5044,15 @@ finally {
 		}}
 public static RemoteObject  _pan_taghvim_click() throws Exception{
 try {
-		Debug.PushSubsStack("pan_taghvim_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2981);
+		Debug.PushSubsStack("pan_taghvim_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2959);
 if (RapidSub.canDelegate("pan_taghvim_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pan_taghvim_click");}
- BA.debugLineNum = 2981;BA.debugLine="Private Sub pan_taghvim_Click";
-Debug.ShouldStop(16);
- BA.debugLineNum = 2982;BA.debugLine="pan_shift_Click";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2959;BA.debugLine="Private Sub pan_taghvim_Click";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 2960;BA.debugLine="pan_shift_Click";
+Debug.ShouldStop(32768);
 _pan_shift_click();
- BA.debugLineNum = 2983;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2961;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5044,12 +5063,12 @@ finally {
 		}}
 public static RemoteObject  _panel1_click() throws Exception{
 try {
-		Debug.PushSubsStack("Panel1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2994);
+		Debug.PushSubsStack("Panel1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2972);
 if (RapidSub.canDelegate("panel1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","panel1_click");}
- BA.debugLineNum = 2994;BA.debugLine="Private Sub Panel1_Click";
-Debug.ShouldStop(131072);
- BA.debugLineNum = 2996;BA.debugLine="End Sub";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2972;BA.debugLine="Private Sub Panel1_Click";
+Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2974;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5076,12 +5095,12 @@ finally {
 		}}
 public static RemoteObject  _panel5_click() throws Exception{
 try {
-		Debug.PushSubsStack("Panel5_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2942);
+		Debug.PushSubsStack("Panel5_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2920);
 if (RapidSub.canDelegate("panel5_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","panel5_click");}
- BA.debugLineNum = 2942;BA.debugLine="Private Sub Panel5_Click";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 2944;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2920;BA.debugLine="Private Sub Panel5_Click";
+Debug.ShouldStop(128);
+ BA.debugLineNum = 2922;BA.debugLine="End Sub";
+Debug.ShouldStop(512);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5092,12 +5111,12 @@ finally {
 		}}
 public static RemoteObject  _panel6_click() throws Exception{
 try {
-		Debug.PushSubsStack("Panel6_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3228);
+		Debug.PushSubsStack("Panel6_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3206);
 if (RapidSub.canDelegate("panel6_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","panel6_click");}
- BA.debugLineNum = 3228;BA.debugLine="Private Sub Panel6_Click";
-Debug.ShouldStop(134217728);
- BA.debugLineNum = 3230;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 3206;BA.debugLine="Private Sub Panel6_Click";
+Debug.ShouldStop(32);
+ BA.debugLineNum = 3208;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5108,52 +5127,52 @@ finally {
 		}}
 public static RemoteObject  _pik_day_bala1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_day_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2233);
+		Debug.PushSubsStack("pik_day_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2211);
 if (RapidSub.canDelegate("pik_day_bala1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_day_bala1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2233;BA.debugLine="Private Sub pik_day_bala1_Click";
-Debug.ShouldStop(16777216);
- BA.debugLineNum = 2234;BA.debugLine="Dim int1 As Int=pik_day1.Text";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2211;BA.debugLine="Private Sub pik_day_bala1_Click";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 2212;BA.debugLine="Dim int1 As Int=pik_day1.Text";
+Debug.ShouldStop(8);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_day1.runMethod(true,"getText"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2235;BA.debugLine="pik_day1.Text=int1+1";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2213;BA.debugLine="pik_day1.Text=int1+1";
+Debug.ShouldStop(16);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "+",1, 1)));
- BA.debugLineNum = 2238;BA.debugLine="If(pik_moon1.Tag<7)Then";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2216;BA.debugLine="If(pik_moon1.Tag<7)Then";
+Debug.ShouldStop(128);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 7)))) { 
- BA.debugLineNum = 2239;BA.debugLine="If(pik_day1.Text>31)Then";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2217;BA.debugLine="If(pik_day1.Text>31)Then";
+Debug.ShouldStop(256);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 31)))) { 
- BA.debugLineNum = 2240;BA.debugLine="pik_day1.Text=1";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2218;BA.debugLine="pik_day1.Text=1";
+Debug.ShouldStop(512);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(1));
  };
- BA.debugLineNum = 2242;BA.debugLine="If(pik_day1.Text<1)Then";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 2220;BA.debugLine="If(pik_day1.Text<1)Then";
+Debug.ShouldStop(2048);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2243;BA.debugLine="pik_day1.Text=31";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2221;BA.debugLine="pik_day1.Text=31";
+Debug.ShouldStop(4096);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(31));
  };
  }else {
- BA.debugLineNum = 2246;BA.debugLine="If(pik_day1.Text>30)Then";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2224;BA.debugLine="If(pik_day1.Text>30)Then";
+Debug.ShouldStop(32768);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 30)))) { 
- BA.debugLineNum = 2247;BA.debugLine="pik_day1.Text=1";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2225;BA.debugLine="pik_day1.Text=1";
+Debug.ShouldStop(65536);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(1));
  };
- BA.debugLineNum = 2249;BA.debugLine="If(pik_day1.Text<1)Then";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2227;BA.debugLine="If(pik_day1.Text<1)Then";
+Debug.ShouldStop(262144);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2250;BA.debugLine="pik_day1.Text=30";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 2228;BA.debugLine="pik_day1.Text=30";
+Debug.ShouldStop(524288);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(30));
  };
  };
- BA.debugLineNum = 2254;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2232;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5164,52 +5183,52 @@ finally {
 		}}
 public static RemoteObject  _pik_day_paeen1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_day_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2256);
+		Debug.PushSubsStack("pik_day_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2234);
 if (RapidSub.canDelegate("pik_day_paeen1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_day_paeen1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2256;BA.debugLine="Private Sub pik_day_paeen1_Click";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 2257;BA.debugLine="Dim int1 As Int=pik_day1.Text";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2234;BA.debugLine="Private Sub pik_day_paeen1_Click";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2235;BA.debugLine="Dim int1 As Int=pik_day1.Text";
+Debug.ShouldStop(67108864);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_day1.runMethod(true,"getText"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2258;BA.debugLine="pik_day1.Text=int1-1";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2236;BA.debugLine="pik_day1.Text=int1-1";
+Debug.ShouldStop(134217728);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "-",1, 1)));
- BA.debugLineNum = 2259;BA.debugLine="If(pik_moon1.Tag<7)Then";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 2237;BA.debugLine="If(pik_moon1.Tag<7)Then";
+Debug.ShouldStop(268435456);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 7)))) { 
- BA.debugLineNum = 2260;BA.debugLine="If(pik_day1.Text>31)Then";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2238;BA.debugLine="If(pik_day1.Text>31)Then";
+Debug.ShouldStop(536870912);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 31)))) { 
- BA.debugLineNum = 2261;BA.debugLine="pik_day1.Text=1";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2239;BA.debugLine="pik_day1.Text=1";
+Debug.ShouldStop(1073741824);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(1));
  };
- BA.debugLineNum = 2263;BA.debugLine="If(pik_day1.Text<1)Then";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2241;BA.debugLine="If(pik_day1.Text<1)Then";
+Debug.ShouldStop(1);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2264;BA.debugLine="pik_day1.Text=31";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2242;BA.debugLine="pik_day1.Text=31";
+Debug.ShouldStop(2);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(31));
  };
  }else {
- BA.debugLineNum = 2267;BA.debugLine="If(pik_day1.Text>30)Then";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2245;BA.debugLine="If(pik_day1.Text>30)Then";
+Debug.ShouldStop(16);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 30)))) { 
- BA.debugLineNum = 2268;BA.debugLine="pik_day1.Text=1";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2246;BA.debugLine="pik_day1.Text=1";
+Debug.ShouldStop(32);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(1));
  };
- BA.debugLineNum = 2270;BA.debugLine="If(pik_day1.Text<1)Then";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2248;BA.debugLine="If(pik_day1.Text<1)Then";
+Debug.ShouldStop(128);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2271;BA.debugLine="pik_day1.Text=30";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 2249;BA.debugLine="pik_day1.Text=30";
+Debug.ShouldStop(256);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(30));
  };
  };
- BA.debugLineNum = 2275;BA.debugLine="End Sub";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2253;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5220,33 +5239,33 @@ finally {
 		}}
 public static RemoteObject  _pik_hour_bala1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_hour_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1953);
+		Debug.PushSubsStack("pik_hour_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1931);
 if (RapidSub.canDelegate("pik_hour_bala1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_hour_bala1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 1953;BA.debugLine="Private Sub pik_hour_bala1_Click";
-Debug.ShouldStop(1);
- BA.debugLineNum = 1954;BA.debugLine="Dim int1 As Int=pik_hour1.Text";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 1931;BA.debugLine="Private Sub pik_hour_bala1_Click";
+Debug.ShouldStop(1024);
+ BA.debugLineNum = 1932;BA.debugLine="Dim int1 As Int=pik_hour1.Text";
+Debug.ShouldStop(2048);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_hour1.runMethod(true,"getText"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 1955;BA.debugLine="pik_hour1.Text=int1+1";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 1933;BA.debugLine="pik_hour1.Text=int1+1";
+Debug.ShouldStop(4096);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "+",1, 1)));
- BA.debugLineNum = 1957;BA.debugLine="If(pik_hour1.Text>23)Then";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 1935;BA.debugLine="If(pik_hour1.Text>23)Then";
+Debug.ShouldStop(16384);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),BA.numberCast(double.class, 23)))) { 
- BA.debugLineNum = 1958;BA.debugLine="pik_hour1.Text=00";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 1936;BA.debugLine="pik_hour1.Text=00";
+Debug.ShouldStop(32768);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(00));
  };
- BA.debugLineNum = 1960;BA.debugLine="If(pik_hour1.Text<0)Then";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 1938;BA.debugLine="If(pik_hour1.Text<0)Then";
+Debug.ShouldStop(131072);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 1961;BA.debugLine="pik_hour1.Text=23";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 1939;BA.debugLine="pik_hour1.Text=23";
+Debug.ShouldStop(262144);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(23));
  };
- BA.debugLineNum = 1964;BA.debugLine="End Sub";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 1942;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5257,33 +5276,33 @@ finally {
 		}}
 public static RemoteObject  _pik_hour_paeen1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_hour_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1966);
+		Debug.PushSubsStack("pik_hour_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1944);
 if (RapidSub.canDelegate("pik_hour_paeen1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_hour_paeen1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 1966;BA.debugLine="Private Sub pik_hour_paeen1_Click";
-Debug.ShouldStop(8192);
- BA.debugLineNum = 1967;BA.debugLine="Dim int1 As Int=pik_hour1.Text";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 1944;BA.debugLine="Private Sub pik_hour_paeen1_Click";
+Debug.ShouldStop(8388608);
+ BA.debugLineNum = 1945;BA.debugLine="Dim int1 As Int=pik_hour1.Text";
+Debug.ShouldStop(16777216);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_hour1.runMethod(true,"getText"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 1968;BA.debugLine="pik_hour1.Text=int1-1";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 1946;BA.debugLine="pik_hour1.Text=int1-1";
+Debug.ShouldStop(33554432);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "-",1, 1)));
- BA.debugLineNum = 1970;BA.debugLine="If(pik_hour1.Text>23)Then";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 1948;BA.debugLine="If(pik_hour1.Text>23)Then";
+Debug.ShouldStop(134217728);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),BA.numberCast(double.class, 23)))) { 
- BA.debugLineNum = 1971;BA.debugLine="pik_hour1.Text=00";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 1949;BA.debugLine="pik_hour1.Text=00";
+Debug.ShouldStop(268435456);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(00));
  };
- BA.debugLineNum = 1973;BA.debugLine="If(pik_hour1.Text<0)Then";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 1951;BA.debugLine="If(pik_hour1.Text<0)Then";
+Debug.ShouldStop(1073741824);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 1974;BA.debugLine="pik_hour1.Text=23";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 1952;BA.debugLine="pik_hour1.Text=23";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(23));
  };
- BA.debugLineNum = 1977;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 1955;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5294,33 +5313,33 @@ finally {
 		}}
 public static RemoteObject  _pik_min_bala1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_min_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1979);
+		Debug.PushSubsStack("pik_min_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1957);
 if (RapidSub.canDelegate("pik_min_bala1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_min_bala1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 1979;BA.debugLine="Private Sub pik_min_bala1_Click";
-Debug.ShouldStop(67108864);
- BA.debugLineNum = 1980;BA.debugLine="Dim int1 As Int=pik_min1.Text";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 1957;BA.debugLine="Private Sub pik_min_bala1_Click";
+Debug.ShouldStop(16);
+ BA.debugLineNum = 1958;BA.debugLine="Dim int1 As Int=pik_min1.Text";
+Debug.ShouldStop(32);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_min1.runMethod(true,"getText"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 1981;BA.debugLine="pik_min1.Text=int1+1";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 1959;BA.debugLine="pik_min1.Text=int1+1";
+Debug.ShouldStop(64);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "+",1, 1)));
- BA.debugLineNum = 1983;BA.debugLine="If(pik_min1.Text>59)Then";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 1961;BA.debugLine="If(pik_min1.Text>59)Then";
+Debug.ShouldStop(256);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),BA.numberCast(double.class, 59)))) { 
- BA.debugLineNum = 1984;BA.debugLine="pik_min1.Text=00";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 1962;BA.debugLine="pik_min1.Text=00";
+Debug.ShouldStop(512);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(00));
  };
- BA.debugLineNum = 1986;BA.debugLine="If(pik_min1.Text<0)Then";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 1964;BA.debugLine="If(pik_min1.Text<0)Then";
+Debug.ShouldStop(2048);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 1987;BA.debugLine="pik_min1.Text=59";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 1965;BA.debugLine="pik_min1.Text=59";
+Debug.ShouldStop(4096);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(59));
  };
- BA.debugLineNum = 1990;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 1968;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5331,33 +5350,33 @@ finally {
 		}}
 public static RemoteObject  _pik_min_paeen1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_min_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1992);
+		Debug.PushSubsStack("pik_min_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1970);
 if (RapidSub.canDelegate("pik_min_paeen1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_min_paeen1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 1992;BA.debugLine="Private Sub pik_min_paeen1_Click";
-Debug.ShouldStop(128);
- BA.debugLineNum = 1993;BA.debugLine="Dim int1 As Int=pik_min1.Text";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 1970;BA.debugLine="Private Sub pik_min_paeen1_Click";
+Debug.ShouldStop(131072);
+ BA.debugLineNum = 1971;BA.debugLine="Dim int1 As Int=pik_min1.Text";
+Debug.ShouldStop(262144);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_min1.runMethod(true,"getText"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 1994;BA.debugLine="pik_min1.Text=int1-1";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 1972;BA.debugLine="pik_min1.Text=int1-1";
+Debug.ShouldStop(524288);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "-",1, 1)));
- BA.debugLineNum = 1996;BA.debugLine="If(pik_min1.Text>59)Then";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 1974;BA.debugLine="If(pik_min1.Text>59)Then";
+Debug.ShouldStop(2097152);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),BA.numberCast(double.class, 59)))) { 
- BA.debugLineNum = 1997;BA.debugLine="pik_min1.Text=00";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 1975;BA.debugLine="pik_min1.Text=00";
+Debug.ShouldStop(4194304);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(00));
  };
- BA.debugLineNum = 1999;BA.debugLine="If(pik_min1.Text<0)Then";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 1977;BA.debugLine="If(pik_min1.Text<0)Then";
+Debug.ShouldStop(16777216);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2000;BA.debugLine="pik_min1.Text=59";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 1978;BA.debugLine="pik_min1.Text=59";
+Debug.ShouldStop(33554432);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(59));
  };
- BA.debugLineNum = 2003;BA.debugLine="End Sub";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 1981;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5368,36 +5387,36 @@ finally {
 		}}
 public static RemoteObject  _pik_moon_bala1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_moon_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2179);
+		Debug.PushSubsStack("pik_moon_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2157);
 if (RapidSub.canDelegate("pik_moon_bala1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_moon_bala1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2179;BA.debugLine="Private Sub pik_moon_bala1_Click";
-Debug.ShouldStop(4);
- BA.debugLineNum = 2180;BA.debugLine="Dim int1 As Int=pik_moon1.Tag";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 2157;BA.debugLine="Private Sub pik_moon_bala1_Click";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 2158;BA.debugLine="Dim int1 As Int=pik_moon1.Tag";
+Debug.ShouldStop(8192);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2181;BA.debugLine="pik_moon1.Tag=int1+1";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 2159;BA.debugLine="pik_moon1.Tag=int1+1";
+Debug.ShouldStop(16384);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "+",1, 1)));
- BA.debugLineNum = 2183;BA.debugLine="If(pik_moon1.Tag>12)Then";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2161;BA.debugLine="If(pik_moon1.Tag>12)Then";
+Debug.ShouldStop(65536);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 12)))) { 
- BA.debugLineNum = 2184;BA.debugLine="pik_moon1.Tag=1";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2162;BA.debugLine="pik_moon1.Tag=1";
+Debug.ShouldStop(131072);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable((1)));
  };
- BA.debugLineNum = 2186;BA.debugLine="If(pik_moon1.Tag<1)Then";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 2164;BA.debugLine="If(pik_moon1.Tag<1)Then";
+Debug.ShouldStop(524288);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2187;BA.debugLine="pik_moon1.Tag=12";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2165;BA.debugLine="pik_moon1.Tag=12";
+Debug.ShouldStop(1048576);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable((12)));
  };
- BA.debugLineNum = 2189;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2167;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
+Debug.ShouldStop(4194304);
 main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
- BA.debugLineNum = 2191;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2169;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5408,36 +5427,36 @@ finally {
 		}}
 public static RemoteObject  _pik_moon_paeen1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_moon_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2193);
+		Debug.PushSubsStack("pik_moon_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2171);
 if (RapidSub.canDelegate("pik_moon_paeen1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_moon_paeen1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2193;BA.debugLine="Private Sub pik_moon_paeen1_Click";
-Debug.ShouldStop(65536);
- BA.debugLineNum = 2194;BA.debugLine="Dim int1 As Int=pik_moon1.Tag";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2171;BA.debugLine="Private Sub pik_moon_paeen1_Click";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2172;BA.debugLine="Dim int1 As Int=pik_moon1.Tag";
+Debug.ShouldStop(134217728);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2195;BA.debugLine="pik_moon1.Tag=int1-1";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 2173;BA.debugLine="pik_moon1.Tag=int1-1";
+Debug.ShouldStop(268435456);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "-",1, 1)));
- BA.debugLineNum = 2197;BA.debugLine="If(pik_moon1.Tag>12)Then";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2175;BA.debugLine="If(pik_moon1.Tag>12)Then";
+Debug.ShouldStop(1073741824);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 12)))) { 
- BA.debugLineNum = 2198;BA.debugLine="pik_moon1.Tag=1";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2176;BA.debugLine="pik_moon1.Tag=1";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable((1)));
  };
- BA.debugLineNum = 2200;BA.debugLine="If(pik_moon1.Tag<1)Then";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2178;BA.debugLine="If(pik_moon1.Tag<1)Then";
+Debug.ShouldStop(2);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2201;BA.debugLine="pik_moon1.Tag=12";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2179;BA.debugLine="pik_moon1.Tag=12";
+Debug.ShouldStop(4);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable((12)));
  };
- BA.debugLineNum = 2203;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2181;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
+Debug.ShouldStop(16);
 main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
- BA.debugLineNum = 2205;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 2183;BA.debugLine="End Sub";
+Debug.ShouldStop(64);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5448,89 +5467,89 @@ finally {
 		}}
 public static RemoteObject  _pik_pan_day1_touch(RemoteObject _action,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("pik_pan_day1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2139);
+		Debug.PushSubsStack("pik_pan_day1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2117);
 if (RapidSub.canDelegate("pik_pan_day1_touch")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_pan_day1_touch", _action, _x, _y);}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
 Debug.locals.put("Action", _action);
 Debug.locals.put("X", _x);
 Debug.locals.put("Y", _y);
- BA.debugLineNum = 2139;BA.debugLine="Private Sub pik_pan_day1_Touch (Action As Int, X A";
-Debug.ShouldStop(67108864);
- BA.debugLineNum = 2140;BA.debugLine="If(Action=1)Then";
-Debug.ShouldStop(134217728);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2141;BA.debugLine="Dim int1 As Int";
-Debug.ShouldStop(268435456);
-_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2142;BA.debugLine="num=y";
-Debug.ShouldStop(536870912);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2145;BA.debugLine="If(Action=2)Then";
-Debug.ShouldStop(1);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2147;BA.debugLine="If(Y>num+20)Then";
-Debug.ShouldStop(4);
-if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
- BA.debugLineNum = 2148;BA.debugLine="int1=pik_day1.Text-1";
-Debug.ShouldStop(8);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2149;BA.debugLine="pik_day1.Text=int1";
+ BA.debugLineNum = 2117;BA.debugLine="Private Sub pik_pan_day1_Touch (Action As Int, X A";
 Debug.ShouldStop(16);
-main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
- BA.debugLineNum = 2150;BA.debugLine="num=y";
+ BA.debugLineNum = 2118;BA.debugLine="If(Action=1)Then";
 Debug.ShouldStop(32);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2152;BA.debugLine="If(Y<num-20)Then";
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
+ BA.debugLineNum = 2119;BA.debugLine="Dim int1 As Int";
+Debug.ShouldStop(64);
+_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2120;BA.debugLine="num=y";
 Debug.ShouldStop(128);
-if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
- BA.debugLineNum = 2153;BA.debugLine="int1=pik_day1.Text+1";
-Debug.ShouldStop(256);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2154;BA.debugLine="pik_day1.Text=int1";
-Debug.ShouldStop(512);
-main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
- BA.debugLineNum = 2155;BA.debugLine="num=y";
-Debug.ShouldStop(1024);
 main._num = BA.numberCast(int.class, _y);
  };
- BA.debugLineNum = 2158;BA.debugLine="If(pik_moon1.Tag<7)Then";
+ BA.debugLineNum = 2123;BA.debugLine="If(Action=2)Then";
+Debug.ShouldStop(1024);
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
+ BA.debugLineNum = 2125;BA.debugLine="If(Y>num+20)Then";
+Debug.ShouldStop(4096);
+if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
+ BA.debugLineNum = 2126;BA.debugLine="int1=pik_day1.Text-1";
 Debug.ShouldStop(8192);
-if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 7)))) { 
- BA.debugLineNum = 2159;BA.debugLine="If(pik_day1.Text>31)Then";
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2127;BA.debugLine="pik_day1.Text=int1";
 Debug.ShouldStop(16384);
-if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 31)))) { 
- BA.debugLineNum = 2160;BA.debugLine="pik_day1.Text=1";
+main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
+ BA.debugLineNum = 2128;BA.debugLine="num=y";
 Debug.ShouldStop(32768);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 2130;BA.debugLine="If(Y<num-20)Then";
+Debug.ShouldStop(131072);
+if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
+ BA.debugLineNum = 2131;BA.debugLine="int1=pik_day1.Text+1";
+Debug.ShouldStop(262144);
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2132;BA.debugLine="pik_day1.Text=int1";
+Debug.ShouldStop(524288);
+main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
+ BA.debugLineNum = 2133;BA.debugLine="num=y";
+Debug.ShouldStop(1048576);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 2136;BA.debugLine="If(pik_moon1.Tag<7)Then";
+Debug.ShouldStop(8388608);
+if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 7)))) { 
+ BA.debugLineNum = 2137;BA.debugLine="If(pik_day1.Text>31)Then";
+Debug.ShouldStop(16777216);
+if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 31)))) { 
+ BA.debugLineNum = 2138;BA.debugLine="pik_day1.Text=1";
+Debug.ShouldStop(33554432);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(1));
  };
- BA.debugLineNum = 2162;BA.debugLine="If(pik_day1.Text<1)Then";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2140;BA.debugLine="If(pik_day1.Text<1)Then";
+Debug.ShouldStop(134217728);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2163;BA.debugLine="pik_day1.Text=31";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 2141;BA.debugLine="pik_day1.Text=31";
+Debug.ShouldStop(268435456);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(31));
  };
  }else {
- BA.debugLineNum = 2166;BA.debugLine="If(pik_day1.Text>30)Then";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2144;BA.debugLine="If(pik_day1.Text>30)Then";
+Debug.ShouldStop(-2147483648);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 30)))) { 
- BA.debugLineNum = 2167;BA.debugLine="pik_day1.Text=1";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2145;BA.debugLine="pik_day1.Text=1";
+Debug.ShouldStop(1);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(1));
  };
- BA.debugLineNum = 2169;BA.debugLine="If(pik_day1.Text<1)Then";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2147;BA.debugLine="If(pik_day1.Text<1)Then";
+Debug.ShouldStop(4);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_day1.runMethod(true,"getText")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2170;BA.debugLine="pik_day1.Text=30";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2148;BA.debugLine="pik_day1.Text=30";
+Debug.ShouldStop(8);
 main.mostCurrent._pik_day1.runMethod(true,"setText",BA.ObjectToCharSequence(30));
  };
  };
  };
- BA.debugLineNum = 2177;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2155;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5541,70 +5560,70 @@ finally {
 		}}
 public static RemoteObject  _pik_pan_hour1_touch(RemoteObject _action,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("pik_pan_hour1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2005);
+		Debug.PushSubsStack("pik_pan_hour1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,1983);
 if (RapidSub.canDelegate("pik_pan_hour1_touch")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_pan_hour1_touch", _action, _x, _y);}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
 Debug.locals.put("Action", _action);
 Debug.locals.put("X", _x);
 Debug.locals.put("Y", _y);
- BA.debugLineNum = 2005;BA.debugLine="Private Sub pik_pan_hour1_Touch (Action As Int, X";
-Debug.ShouldStop(1048576);
- BA.debugLineNum = 2006;BA.debugLine="If(Action=1)Then";
-Debug.ShouldStop(2097152);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2007;BA.debugLine="Dim int1 As Int";
-Debug.ShouldStop(4194304);
-_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2008;BA.debugLine="num=y";
-Debug.ShouldStop(8388608);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2011;BA.debugLine="If(Action=2)Then";
-Debug.ShouldStop(67108864);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2013;BA.debugLine="If(Y>num+20)Then";
-Debug.ShouldStop(268435456);
-if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
- BA.debugLineNum = 2014;BA.debugLine="int1=pik_hour1.Text-1";
-Debug.ShouldStop(536870912);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2015;BA.debugLine="pik_hour1.Text=int1";
+ BA.debugLineNum = 1983;BA.debugLine="Private Sub pik_pan_hour1_Touch (Action As Int, X";
 Debug.ShouldStop(1073741824);
-main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
- BA.debugLineNum = 2016;BA.debugLine="num=y";
+ BA.debugLineNum = 1984;BA.debugLine="If(Action=1)Then";
 Debug.ShouldStop(-2147483648);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2018;BA.debugLine="If(Y<num-20)Then";
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
+ BA.debugLineNum = 1985;BA.debugLine="Dim int1 As Int";
+Debug.ShouldStop(1);
+_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 1986;BA.debugLine="num=y";
 Debug.ShouldStop(2);
-if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
- BA.debugLineNum = 2019;BA.debugLine="int1=pik_hour1.Text+1";
-Debug.ShouldStop(4);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2020;BA.debugLine="pik_hour1.Text=int1";
-Debug.ShouldStop(8);
-main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
- BA.debugLineNum = 2021;BA.debugLine="num=y";
-Debug.ShouldStop(16);
 main._num = BA.numberCast(int.class, _y);
  };
- BA.debugLineNum = 2024;BA.debugLine="If(pik_hour1.Text>23)Then";
+ BA.debugLineNum = 1989;BA.debugLine="If(Action=2)Then";
+Debug.ShouldStop(16);
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
+ BA.debugLineNum = 1991;BA.debugLine="If(Y>num+20)Then";
+Debug.ShouldStop(64);
+if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
+ BA.debugLineNum = 1992;BA.debugLine="int1=pik_hour1.Text-1";
 Debug.ShouldStop(128);
-if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),BA.numberCast(double.class, 23)))) { 
- BA.debugLineNum = 2025;BA.debugLine="pik_hour1.Text=00";
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 1993;BA.debugLine="pik_hour1.Text=int1";
 Debug.ShouldStop(256);
+main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
+ BA.debugLineNum = 1994;BA.debugLine="num=y";
+Debug.ShouldStop(512);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 1996;BA.debugLine="If(Y<num-20)Then";
+Debug.ShouldStop(2048);
+if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
+ BA.debugLineNum = 1997;BA.debugLine="int1=pik_hour1.Text+1";
+Debug.ShouldStop(4096);
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 1998;BA.debugLine="pik_hour1.Text=int1";
+Debug.ShouldStop(8192);
+main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
+ BA.debugLineNum = 1999;BA.debugLine="num=y";
+Debug.ShouldStop(16384);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 2002;BA.debugLine="If(pik_hour1.Text>23)Then";
+Debug.ShouldStop(131072);
+if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),BA.numberCast(double.class, 23)))) { 
+ BA.debugLineNum = 2003;BA.debugLine="pik_hour1.Text=00";
+Debug.ShouldStop(262144);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(00));
  };
- BA.debugLineNum = 2027;BA.debugLine="If(pik_hour1.Text<0)Then";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 2005;BA.debugLine="If(pik_hour1.Text<0)Then";
+Debug.ShouldStop(1048576);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_hour1.runMethod(true,"getText")),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2028;BA.debugLine="pik_hour1.Text=23";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 2006;BA.debugLine="pik_hour1.Text=23";
+Debug.ShouldStop(2097152);
 main.mostCurrent._pik_hour1.runMethod(true,"setText",BA.ObjectToCharSequence(23));
  };
  };
- BA.debugLineNum = 2033;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2011;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5615,70 +5634,70 @@ finally {
 		}}
 public static RemoteObject  _pik_pan_min1_touch(RemoteObject _action,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("pik_pan_min1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2035);
+		Debug.PushSubsStack("pik_pan_min1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2013);
 if (RapidSub.canDelegate("pik_pan_min1_touch")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_pan_min1_touch", _action, _x, _y);}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
 Debug.locals.put("Action", _action);
 Debug.locals.put("X", _x);
 Debug.locals.put("Y", _y);
- BA.debugLineNum = 2035;BA.debugLine="Private Sub pik_pan_min1_Touch (Action As Int, X A";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 2036;BA.debugLine="If(Action=1)Then";
-Debug.ShouldStop(524288);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2037;BA.debugLine="Dim int1 As Int";
-Debug.ShouldStop(1048576);
-_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2038;BA.debugLine="num=y";
-Debug.ShouldStop(2097152);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2041;BA.debugLine="If(Action=2)Then";
-Debug.ShouldStop(16777216);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2043;BA.debugLine="If(Y>num+20)Then";
-Debug.ShouldStop(67108864);
-if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
- BA.debugLineNum = 2045;BA.debugLine="int1=pik_min1.Text-1";
+ BA.debugLineNum = 2013;BA.debugLine="Private Sub pik_pan_min1_Touch (Action As Int, X A";
 Debug.ShouldStop(268435456);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2046;BA.debugLine="pik_min1.Text=int1";
+ BA.debugLineNum = 2014;BA.debugLine="If(Action=1)Then";
 Debug.ShouldStop(536870912);
-main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
- BA.debugLineNum = 2049;BA.debugLine="num=y";
-Debug.ShouldStop(1);
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
+ BA.debugLineNum = 2015;BA.debugLine="Dim int1 As Int";
+Debug.ShouldStop(1073741824);
+_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2016;BA.debugLine="num=y";
+Debug.ShouldStop(-2147483648);
 main._num = BA.numberCast(int.class, _y);
  };
- BA.debugLineNum = 2051;BA.debugLine="If(Y<num-20)Then";
+ BA.debugLineNum = 2019;BA.debugLine="If(Action=2)Then";
 Debug.ShouldStop(4);
-if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
- BA.debugLineNum = 2053;BA.debugLine="int1=pik_min1.Text+1";
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
+ BA.debugLineNum = 2021;BA.debugLine="If(Y>num+20)Then";
 Debug.ShouldStop(16);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2054;BA.debugLine="pik_min1.Text=int1";
-Debug.ShouldStop(32);
+if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
+ BA.debugLineNum = 2023;BA.debugLine="int1=pik_min1.Text-1";
+Debug.ShouldStop(64);
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2024;BA.debugLine="pik_min1.Text=int1";
+Debug.ShouldStop(128);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
- BA.debugLineNum = 2057;BA.debugLine="num=y";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 2027;BA.debugLine="num=y";
+Debug.ShouldStop(1024);
 main._num = BA.numberCast(int.class, _y);
  };
- BA.debugLineNum = 2061;BA.debugLine="If(pik_min1.Text>59)Then";
+ BA.debugLineNum = 2029;BA.debugLine="If(Y<num-20)Then";
 Debug.ShouldStop(4096);
+if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
+ BA.debugLineNum = 2031;BA.debugLine="int1=pik_min1.Text+1";
+Debug.ShouldStop(16384);
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2032;BA.debugLine="pik_min1.Text=int1";
+Debug.ShouldStop(32768);
+main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
+ BA.debugLineNum = 2035;BA.debugLine="num=y";
+Debug.ShouldStop(262144);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 2039;BA.debugLine="If(pik_min1.Text>59)Then";
+Debug.ShouldStop(4194304);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),BA.numberCast(double.class, 59)))) { 
- BA.debugLineNum = 2062;BA.debugLine="pik_min1.Text=00";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2040;BA.debugLine="pik_min1.Text=00";
+Debug.ShouldStop(8388608);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(00));
  };
- BA.debugLineNum = 2065;BA.debugLine="If(pik_min1.Text<0)Then";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2043;BA.debugLine="If(pik_min1.Text<0)Then";
+Debug.ShouldStop(67108864);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_min1.runMethod(true,"getText")),BA.numberCast(double.class, 0)))) { 
- BA.debugLineNum = 2066;BA.debugLine="pik_min1.Text=59";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2044;BA.debugLine="pik_min1.Text=59";
+Debug.ShouldStop(134217728);
 main.mostCurrent._pik_min1.runMethod(true,"setText",BA.ObjectToCharSequence(59));
  };
  };
- BA.debugLineNum = 2073;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2051;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5689,73 +5708,73 @@ finally {
 		}}
 public static RemoteObject  _pik_pan_moon1_touch(RemoteObject _action,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("pik_pan_moon1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2079);
+		Debug.PushSubsStack("pik_pan_moon1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2057);
 if (RapidSub.canDelegate("pik_pan_moon1_touch")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_pan_moon1_touch", _action, _x, _y);}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
 Debug.locals.put("Action", _action);
 Debug.locals.put("X", _x);
 Debug.locals.put("Y", _y);
- BA.debugLineNum = 2079;BA.debugLine="Private Sub pik_pan_moon1_Touch (Action As Int, X";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 2080;BA.debugLine="If(Action=1)Then";
-Debug.ShouldStop(-2147483648);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2081;BA.debugLine="Dim int1 As Int";
-Debug.ShouldStop(1);
-_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2082;BA.debugLine="num=y";
-Debug.ShouldStop(2);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2085;BA.debugLine="If(Action=2)Then";
-Debug.ShouldStop(16);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2087;BA.debugLine="If(Y>num+20)Then";
-Debug.ShouldStop(64);
-if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
- BA.debugLineNum = 2088;BA.debugLine="int1=pik_moon1.Tag-1";
-Debug.ShouldStop(128);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2089;BA.debugLine="pik_moon1.Tag=int1";
+ BA.debugLineNum = 2057;BA.debugLine="Private Sub pik_pan_moon1_Touch (Action As Int, X";
 Debug.ShouldStop(256);
-main.mostCurrent._pik_moon1.runMethod(false,"setTag",(_int1));
- BA.debugLineNum = 2090;BA.debugLine="num=y";
+ BA.debugLineNum = 2058;BA.debugLine="If(Action=1)Then";
 Debug.ShouldStop(512);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2092;BA.debugLine="If(Y<num-20)Then";
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
+ BA.debugLineNum = 2059;BA.debugLine="Dim int1 As Int";
+Debug.ShouldStop(1024);
+_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2060;BA.debugLine="num=y";
 Debug.ShouldStop(2048);
-if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
- BA.debugLineNum = 2093;BA.debugLine="int1=pik_moon1.Tag+1";
-Debug.ShouldStop(4096);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2094;BA.debugLine="pik_moon1.Tag=int1";
-Debug.ShouldStop(8192);
-main.mostCurrent._pik_moon1.runMethod(false,"setTag",(_int1));
- BA.debugLineNum = 2095;BA.debugLine="num=y";
-Debug.ShouldStop(16384);
 main._num = BA.numberCast(int.class, _y);
  };
- BA.debugLineNum = 2098;BA.debugLine="If(pik_moon1.Tag>12)Then";
+ BA.debugLineNum = 2063;BA.debugLine="If(Action=2)Then";
+Debug.ShouldStop(16384);
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
+ BA.debugLineNum = 2065;BA.debugLine="If(Y>num+20)Then";
+Debug.ShouldStop(65536);
+if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
+ BA.debugLineNum = 2066;BA.debugLine="int1=pik_moon1.Tag-1";
 Debug.ShouldStop(131072);
-if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 12)))) { 
- BA.debugLineNum = 2099;BA.debugLine="pik_moon1.Tag=1";
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2067;BA.debugLine="pik_moon1.Tag=int1";
 Debug.ShouldStop(262144);
+main.mostCurrent._pik_moon1.runMethod(false,"setTag",(_int1));
+ BA.debugLineNum = 2068;BA.debugLine="num=y";
+Debug.ShouldStop(524288);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 2070;BA.debugLine="If(Y<num-20)Then";
+Debug.ShouldStop(2097152);
+if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
+ BA.debugLineNum = 2071;BA.debugLine="int1=pik_moon1.Tag+1";
+Debug.ShouldStop(4194304);
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2072;BA.debugLine="pik_moon1.Tag=int1";
+Debug.ShouldStop(8388608);
+main.mostCurrent._pik_moon1.runMethod(false,"setTag",(_int1));
+ BA.debugLineNum = 2073;BA.debugLine="num=y";
+Debug.ShouldStop(16777216);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 2076;BA.debugLine="If(pik_moon1.Tag>12)Then";
+Debug.ShouldStop(134217728);
+if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 12)))) { 
+ BA.debugLineNum = 2077;BA.debugLine="pik_moon1.Tag=1";
+Debug.ShouldStop(268435456);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable((1)));
  };
- BA.debugLineNum = 2101;BA.debugLine="If(pik_moon1.Tag<1)Then";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 2079;BA.debugLine="If(pik_moon1.Tag<1)Then";
+Debug.ShouldStop(1073741824);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2102;BA.debugLine="pik_moon1.Tag=12";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2080;BA.debugLine="pik_moon1.Tag=12";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._pik_moon1.runMethod(false,"setTag",RemoteObject.createImmutable((12)));
  };
- BA.debugLineNum = 2104;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2082;BA.debugLine="pik_moon1.Text=moon.Get(pik_moon1.Tag-1)";
+Debug.ShouldStop(2);
 main.mostCurrent._pik_moon1.runMethod(true,"setText",BA.ObjectToCharSequence(main.mostCurrent._moon.runMethod(false,"Get",(Object)(BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_moon1.runMethod(false,"getTag")),RemoteObject.createImmutable(1)}, "-",1, 0))))));
  };
- BA.debugLineNum = 2107;BA.debugLine="End Sub";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 2085;BA.debugLine="End Sub";
+Debug.ShouldStop(16);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5766,70 +5785,70 @@ finally {
 		}}
 public static RemoteObject  _pik_pan_year1_touch(RemoteObject _action,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("pik_pan_year1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2109);
+		Debug.PushSubsStack("pik_pan_year1_Touch (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2087);
 if (RapidSub.canDelegate("pik_pan_year1_touch")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_pan_year1_touch", _action, _x, _y);}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
 Debug.locals.put("Action", _action);
 Debug.locals.put("X", _x);
 Debug.locals.put("Y", _y);
- BA.debugLineNum = 2109;BA.debugLine="Private Sub pik_pan_year1_Touch (Action As Int, X";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 2110;BA.debugLine="If(Action=1)Then";
-Debug.ShouldStop(536870912);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
- BA.debugLineNum = 2111;BA.debugLine="Dim int1 As Int";
-Debug.ShouldStop(1073741824);
-_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2112;BA.debugLine="num=y";
-Debug.ShouldStop(-2147483648);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2115;BA.debugLine="If(Action=2)Then";
-Debug.ShouldStop(4);
-if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
- BA.debugLineNum = 2117;BA.debugLine="If(Y>num+20)Then";
-Debug.ShouldStop(16);
-if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
- BA.debugLineNum = 2118;BA.debugLine="int1=pik_year1.Text-1";
-Debug.ShouldStop(32);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2119;BA.debugLine="pik_year1.Text=int1";
+ BA.debugLineNum = 2087;BA.debugLine="Private Sub pik_pan_year1_Touch (Action As Int, X";
 Debug.ShouldStop(64);
-main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
- BA.debugLineNum = 2120;BA.debugLine="num=y";
+ BA.debugLineNum = 2088;BA.debugLine="If(Action=1)Then";
 Debug.ShouldStop(128);
-main._num = BA.numberCast(int.class, _y);
- };
- BA.debugLineNum = 2122;BA.debugLine="If(Y<num-20)Then";
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 1)))) { 
+ BA.debugLineNum = 2089;BA.debugLine="Dim int1 As Int";
+Debug.ShouldStop(256);
+_int1 = RemoteObject.createImmutable(0);Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2090;BA.debugLine="num=y";
 Debug.ShouldStop(512);
-if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
- BA.debugLineNum = 2123;BA.debugLine="int1=pik_year1.Text+1";
-Debug.ShouldStop(1024);
-_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2124;BA.debugLine="pik_year1.Text=int1";
-Debug.ShouldStop(2048);
-main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
- BA.debugLineNum = 2125;BA.debugLine="num=y";
-Debug.ShouldStop(4096);
 main._num = BA.numberCast(int.class, _y);
  };
- BA.debugLineNum = 2128;BA.debugLine="If(pik_year1.Text>1410)Then";
+ BA.debugLineNum = 2093;BA.debugLine="If(Action=2)Then";
+Debug.ShouldStop(4096);
+if ((RemoteObject.solveBoolean("=",_action,BA.numberCast(double.class, 2)))) { 
+ BA.debugLineNum = 2095;BA.debugLine="If(Y>num+20)Then";
+Debug.ShouldStop(16384);
+if ((RemoteObject.solveBoolean(">",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "+",1, 1))))) { 
+ BA.debugLineNum = 2096;BA.debugLine="int1=pik_year1.Text-1";
 Debug.ShouldStop(32768);
-if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),BA.numberCast(double.class, 1410)))) { 
- BA.debugLineNum = 2129;BA.debugLine="pik_year1.Text=1390";
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "-",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2097;BA.debugLine="pik_year1.Text=int1";
 Debug.ShouldStop(65536);
+main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
+ BA.debugLineNum = 2098;BA.debugLine="num=y";
+Debug.ShouldStop(131072);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 2100;BA.debugLine="If(Y<num-20)Then";
+Debug.ShouldStop(524288);
+if ((RemoteObject.solveBoolean("<",_y,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {main._num,RemoteObject.createImmutable(20)}, "-",1, 1))))) { 
+ BA.debugLineNum = 2101;BA.debugLine="int1=pik_year1.Text+1";
+Debug.ShouldStop(1048576);
+_int1 = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),RemoteObject.createImmutable(1)}, "+",1, 0));Debug.locals.put("int1", _int1);
+ BA.debugLineNum = 2102;BA.debugLine="pik_year1.Text=int1";
+Debug.ShouldStop(2097152);
+main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(_int1));
+ BA.debugLineNum = 2103;BA.debugLine="num=y";
+Debug.ShouldStop(4194304);
+main._num = BA.numberCast(int.class, _y);
+ };
+ BA.debugLineNum = 2106;BA.debugLine="If(pik_year1.Text>1410)Then";
+Debug.ShouldStop(33554432);
+if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),BA.numberCast(double.class, 1410)))) { 
+ BA.debugLineNum = 2107;BA.debugLine="pik_year1.Text=1390";
+Debug.ShouldStop(67108864);
 main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(1390));
  };
- BA.debugLineNum = 2131;BA.debugLine="If(pik_year1.Text<1390)Then";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 2109;BA.debugLine="If(pik_year1.Text<1390)Then";
+Debug.ShouldStop(268435456);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),BA.numberCast(double.class, 1390)))) { 
- BA.debugLineNum = 2132;BA.debugLine="pik_year1.Text=1410";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2110;BA.debugLine="pik_year1.Text=1410";
+Debug.ShouldStop(536870912);
 main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(1410));
  };
  };
- BA.debugLineNum = 2137;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 2115;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5840,33 +5859,33 @@ finally {
 		}}
 public static RemoteObject  _pik_year_bala1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_year_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2207);
+		Debug.PushSubsStack("pik_year_bala1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2185);
 if (RapidSub.canDelegate("pik_year_bala1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_year_bala1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2207;BA.debugLine="Private Sub pik_year_bala1_Click";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 2208;BA.debugLine="Dim int1 As Int=pik_year1.Text";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2185;BA.debugLine="Private Sub pik_year_bala1_Click";
+Debug.ShouldStop(256);
+ BA.debugLineNum = 2186;BA.debugLine="Dim int1 As Int=pik_year1.Text";
+Debug.ShouldStop(512);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_year1.runMethod(true,"getText"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2209;BA.debugLine="pik_year1.Text=int1+1";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 2187;BA.debugLine="pik_year1.Text=int1+1";
+Debug.ShouldStop(1024);
 main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "+",1, 1)));
- BA.debugLineNum = 2211;BA.debugLine="If(pik_year1.Text>1410)Then";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 2189;BA.debugLine="If(pik_year1.Text>1410)Then";
+Debug.ShouldStop(4096);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),BA.numberCast(double.class, 1410)))) { 
- BA.debugLineNum = 2212;BA.debugLine="pik_year1.Text=1390";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 2190;BA.debugLine="pik_year1.Text=1390";
+Debug.ShouldStop(8192);
 main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(1390));
  };
- BA.debugLineNum = 2214;BA.debugLine="If(pik_year1.Text<1390)Then";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2192;BA.debugLine="If(pik_year1.Text<1390)Then";
+Debug.ShouldStop(32768);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),BA.numberCast(double.class, 1390)))) { 
- BA.debugLineNum = 2215;BA.debugLine="pik_year1.Text=1410";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 2193;BA.debugLine="pik_year1.Text=1410";
+Debug.ShouldStop(65536);
 main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(1410));
  };
- BA.debugLineNum = 2218;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 2196;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5877,33 +5896,33 @@ finally {
 		}}
 public static RemoteObject  _pik_year_paeen1_click() throws Exception{
 try {
-		Debug.PushSubsStack("pik_year_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2220);
+		Debug.PushSubsStack("pik_year_paeen1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2198);
 if (RapidSub.canDelegate("pik_year_paeen1_click")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","pik_year_paeen1_click");}
 RemoteObject _int1 = RemoteObject.createImmutable(0);
- BA.debugLineNum = 2220;BA.debugLine="Private Sub pik_year_paeen1_Click";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 2221;BA.debugLine="Dim int1 As Int=pik_year1.Text";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2198;BA.debugLine="Private Sub pik_year_paeen1_Click";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2199;BA.debugLine="Dim int1 As Int=pik_year1.Text";
+Debug.ShouldStop(4194304);
 _int1 = BA.numberCast(int.class, main.mostCurrent._pik_year1.runMethod(true,"getText"));Debug.locals.put("int1", _int1);Debug.locals.put("int1", _int1);
- BA.debugLineNum = 2222;BA.debugLine="pik_year1.Text=int1-1";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2200;BA.debugLine="pik_year1.Text=int1-1";
+Debug.ShouldStop(8388608);
 main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.solve(new RemoteObject[] {_int1,RemoteObject.createImmutable(1)}, "-",1, 1)));
- BA.debugLineNum = 2224;BA.debugLine="If(pik_year1.Text>1410)Then";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 2202;BA.debugLine="If(pik_year1.Text>1410)Then";
+Debug.ShouldStop(33554432);
 if ((RemoteObject.solveBoolean(">",BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),BA.numberCast(double.class, 1410)))) { 
- BA.debugLineNum = 2225;BA.debugLine="pik_year1.Text=1390";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2203;BA.debugLine="pik_year1.Text=1390";
+Debug.ShouldStop(67108864);
 main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(1390));
  };
- BA.debugLineNum = 2227;BA.debugLine="If(pik_year1.Text<1390)Then";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 2205;BA.debugLine="If(pik_year1.Text<1390)Then";
+Debug.ShouldStop(268435456);
 if ((RemoteObject.solveBoolean("<",BA.numberCast(double.class, main.mostCurrent._pik_year1.runMethod(true,"getText")),BA.numberCast(double.class, 1390)))) { 
- BA.debugLineNum = 2228;BA.debugLine="pik_year1.Text=1410";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2206;BA.debugLine="pik_year1.Text=1410";
+Debug.ShouldStop(536870912);
 main.mostCurrent._pik_year1.runMethod(true,"setText",BA.ObjectToCharSequence(1410));
  };
- BA.debugLineNum = 2231;BA.debugLine="End Sub";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2209;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -5936,6 +5955,7 @@ setting_hogog_activity_subs_0._process_globals();
 shift_activity_subs_0._process_globals();
 show_gozaresh_activity_subs_0._process_globals();
 starter_subs_0._process_globals();
+bime_activity_subs_0._process_globals();
 httputils2service_subs_0._process_globals();
 main.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.main");
 myfunc.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.myfunc");
@@ -5956,6 +5976,7 @@ setting_hogog_activity.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.
 shift_activity.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.shift_activity");
 show_gozaresh_activity.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.show_gozaresh_activity");
 starter.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.starter");
+bime_activity.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.bime_activity");
 fileprovider.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.fileprovider");
 httputils2service.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.httputils2service");
 httpjob.myClass = BA.getDeviceClass ("ir.taravatgroup.ezafekari2.httpjob");
@@ -6053,7 +6074,7 @@ Debug.ShouldStop(64);
 main._index_noe_morakhasi = _itemid;
  BA.debugLineNum = 1256;BA.debugLine="Return False";
 Debug.ShouldStop(128);
-Debug.CheckDeviceExceptions();if (true) return main.mostCurrent.__c.getField(true,"False");
+if (true) return main.mostCurrent.__c.getField(true,"False");
  BA.debugLineNum = 1257;BA.debugLine="End Sub";
 Debug.ShouldStop(256);
 return RemoteObject.createImmutable(false);
@@ -6066,88 +6087,88 @@ finally {
 		}}
 public static RemoteObject  _sp_moon_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("sp_moon_ItemClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2320);
+		Debug.PushSubsStack("sp_moon_ItemClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2298);
 if (RapidSub.canDelegate("sp_moon_itemclick")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","sp_moon_itemclick", _position, _value);}
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 2320;BA.debugLine="Private Sub sp_moon_ItemClick (Position As Int, Va";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 2321;BA.debugLine="Dim moon_num As String";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 2298;BA.debugLine="Private Sub sp_moon_ItemClick (Position As Int, Va";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2299;BA.debugLine="Dim moon_num As String";
+Debug.ShouldStop(67108864);
 main._moon_num = RemoteObject.createImmutable("");
- BA.debugLineNum = 2322;BA.debugLine="Select sp_moon.SelectedIndex";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2300;BA.debugLine="Select sp_moon.SelectedIndex";
+Debug.ShouldStop(134217728);
 switch (BA.switchObjectToInt(main.mostCurrent._sp_moon.runMethod(true,"getSelectedIndex"),BA.numberCast(int.class, 0),BA.numberCast(int.class, 1),BA.numberCast(int.class, 2),BA.numberCast(int.class, 3),BA.numberCast(int.class, 4),BA.numberCast(int.class, 5),BA.numberCast(int.class, 6),BA.numberCast(int.class, 7),BA.numberCast(int.class, 8),BA.numberCast(int.class, 9),BA.numberCast(int.class, 10),BA.numberCast(int.class, 11))) {
 case 0: {
- BA.debugLineNum = 2324;BA.debugLine="moon_num=\"01\"";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2302;BA.debugLine="moon_num=\"01\"";
+Debug.ShouldStop(536870912);
 main._moon_num = BA.ObjectToString("01");
  break; }
 case 1: {
- BA.debugLineNum = 2326;BA.debugLine="moon_num=\"02\"";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2304;BA.debugLine="moon_num=\"02\"";
+Debug.ShouldStop(-2147483648);
 main._moon_num = BA.ObjectToString("02");
  break; }
 case 2: {
- BA.debugLineNum = 2328;BA.debugLine="moon_num=\"03\"";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2306;BA.debugLine="moon_num=\"03\"";
+Debug.ShouldStop(2);
 main._moon_num = BA.ObjectToString("03");
  break; }
 case 3: {
- BA.debugLineNum = 2330;BA.debugLine="moon_num=\"04\"";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2308;BA.debugLine="moon_num=\"04\"";
+Debug.ShouldStop(8);
 main._moon_num = BA.ObjectToString("04");
  break; }
 case 4: {
- BA.debugLineNum = 2332;BA.debugLine="moon_num=\"05\"";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2310;BA.debugLine="moon_num=\"05\"";
+Debug.ShouldStop(32);
 main._moon_num = BA.ObjectToString("05");
  break; }
 case 5: {
- BA.debugLineNum = 2334;BA.debugLine="moon_num=\"06\"";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2312;BA.debugLine="moon_num=\"06\"";
+Debug.ShouldStop(128);
 main._moon_num = BA.ObjectToString("06");
  break; }
 case 6: {
- BA.debugLineNum = 2336;BA.debugLine="moon_num=\"07\"";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2314;BA.debugLine="moon_num=\"07\"";
+Debug.ShouldStop(512);
 main._moon_num = BA.ObjectToString("07");
  break; }
 case 7: {
- BA.debugLineNum = 2338;BA.debugLine="moon_num=\"08\"";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 2316;BA.debugLine="moon_num=\"08\"";
+Debug.ShouldStop(2048);
 main._moon_num = BA.ObjectToString("08");
  break; }
 case 8: {
- BA.debugLineNum = 2340;BA.debugLine="moon_num=\"09\"";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 2318;BA.debugLine="moon_num=\"09\"";
+Debug.ShouldStop(8192);
 main._moon_num = BA.ObjectToString("09");
  break; }
 case 9: {
- BA.debugLineNum = 2342;BA.debugLine="moon_num=\"10\"";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2320;BA.debugLine="moon_num=\"10\"";
+Debug.ShouldStop(32768);
 main._moon_num = BA.ObjectToString("10");
  break; }
 case 10: {
- BA.debugLineNum = 2344;BA.debugLine="moon_num=\"11\"";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2322;BA.debugLine="moon_num=\"11\"";
+Debug.ShouldStop(131072);
 main._moon_num = BA.ObjectToString("11");
  break; }
 case 11: {
- BA.debugLineNum = 2346;BA.debugLine="moon_num=\"12\"";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 2324;BA.debugLine="moon_num=\"12\"";
+Debug.ShouldStop(524288);
 main._moon_num = BA.ObjectToString("12");
  break; }
 }
 ;
- BA.debugLineNum = 2349;BA.debugLine="fill_lists(sp_year.SelectedItem,moon_num)";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 2327;BA.debugLine="fill_lists(sp_year.SelectedItem,moon_num)";
+Debug.ShouldStop(4194304);
 _fill_lists(main.mostCurrent._sp_year.runMethod(true,"getSelectedItem"),main._moon_num);
- BA.debugLineNum = 2350;BA.debugLine="TabHost1_TabChanged";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2328;BA.debugLine="TabHost1_TabChanged";
+Debug.ShouldStop(8388608);
 _tabhost1_tabchanged();
- BA.debugLineNum = 2351;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2329;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -6158,17 +6179,17 @@ finally {
 		}}
 public static RemoteObject  _sp_year_gozaresh_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("sp_year_gozaresh_ItemClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2998);
+		Debug.PushSubsStack("sp_year_gozaresh_ItemClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2976);
 if (RapidSub.canDelegate("sp_year_gozaresh_itemclick")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","sp_year_gozaresh_itemclick", _position, _value);}
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 2998;BA.debugLine="Private Sub sp_year_gozaresh_ItemClick (Position A";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 2999;BA.debugLine="fill_list_gozareshat(sp_year_gozaresh.SelectedIte";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 2976;BA.debugLine="Private Sub sp_year_gozaresh_ItemClick (Position A";
+Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2977;BA.debugLine="fill_list_gozareshat(sp_year_gozaresh.SelectedIte";
+Debug.ShouldStop(1);
 _fill_list_gozareshat(main.mostCurrent._sp_year_gozaresh.runMethod(true,"getSelectedItem"));
- BA.debugLineNum = 3000;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2978;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -6179,88 +6200,88 @@ finally {
 		}}
 public static RemoteObject  _sp_year_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("sp_year_ItemClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2282);
+		Debug.PushSubsStack("sp_year_ItemClick (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,2260);
 if (RapidSub.canDelegate("sp_year_itemclick")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","sp_year_itemclick", _position, _value);}
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 2282;BA.debugLine="Private Sub sp_year_ItemClick (Position As Int, Va";
-Debug.ShouldStop(512);
- BA.debugLineNum = 2287;BA.debugLine="Dim moon_num As String";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 2260;BA.debugLine="Private Sub sp_year_ItemClick (Position As Int, Va";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 2265;BA.debugLine="Dim moon_num As String";
+Debug.ShouldStop(16777216);
 main._moon_num = RemoteObject.createImmutable("");
- BA.debugLineNum = 2288;BA.debugLine="Select sp_moon.SelectedIndex";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 2266;BA.debugLine="Select sp_moon.SelectedIndex";
+Debug.ShouldStop(33554432);
 switch (BA.switchObjectToInt(main.mostCurrent._sp_moon.runMethod(true,"getSelectedIndex"),BA.numberCast(int.class, 0),BA.numberCast(int.class, 1),BA.numberCast(int.class, 2),BA.numberCast(int.class, 3),BA.numberCast(int.class, 4),BA.numberCast(int.class, 5),BA.numberCast(int.class, 6),BA.numberCast(int.class, 7),BA.numberCast(int.class, 8),BA.numberCast(int.class, 9),BA.numberCast(int.class, 10),BA.numberCast(int.class, 11))) {
 case 0: {
- BA.debugLineNum = 2290;BA.debugLine="moon_num=\"01\"";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 2268;BA.debugLine="moon_num=\"01\"";
+Debug.ShouldStop(134217728);
 main._moon_num = BA.ObjectToString("01");
  break; }
 case 1: {
- BA.debugLineNum = 2292;BA.debugLine="moon_num=\"02\"";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 2270;BA.debugLine="moon_num=\"02\"";
+Debug.ShouldStop(536870912);
 main._moon_num = BA.ObjectToString("02");
  break; }
 case 2: {
- BA.debugLineNum = 2294;BA.debugLine="moon_num=\"03\"";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 2272;BA.debugLine="moon_num=\"03\"";
+Debug.ShouldStop(-2147483648);
 main._moon_num = BA.ObjectToString("03");
  break; }
 case 3: {
- BA.debugLineNum = 2296;BA.debugLine="moon_num=\"04\"";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 2274;BA.debugLine="moon_num=\"04\"";
+Debug.ShouldStop(2);
 main._moon_num = BA.ObjectToString("04");
  break; }
 case 4: {
- BA.debugLineNum = 2298;BA.debugLine="moon_num=\"05\"";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 2276;BA.debugLine="moon_num=\"05\"";
+Debug.ShouldStop(8);
 main._moon_num = BA.ObjectToString("05");
  break; }
 case 5: {
- BA.debugLineNum = 2300;BA.debugLine="moon_num=\"06\"";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 2278;BA.debugLine="moon_num=\"06\"";
+Debug.ShouldStop(32);
 main._moon_num = BA.ObjectToString("06");
  break; }
 case 6: {
- BA.debugLineNum = 2302;BA.debugLine="moon_num=\"07\"";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 2280;BA.debugLine="moon_num=\"07\"";
+Debug.ShouldStop(128);
 main._moon_num = BA.ObjectToString("07");
  break; }
 case 7: {
- BA.debugLineNum = 2304;BA.debugLine="moon_num=\"08\"";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 2282;BA.debugLine="moon_num=\"08\"";
+Debug.ShouldStop(512);
 main._moon_num = BA.ObjectToString("08");
  break; }
 case 8: {
- BA.debugLineNum = 2306;BA.debugLine="moon_num=\"09\"";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 2284;BA.debugLine="moon_num=\"09\"";
+Debug.ShouldStop(2048);
 main._moon_num = BA.ObjectToString("09");
  break; }
 case 9: {
- BA.debugLineNum = 2308;BA.debugLine="moon_num=\"10\"";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 2286;BA.debugLine="moon_num=\"10\"";
+Debug.ShouldStop(8192);
 main._moon_num = BA.ObjectToString("10");
  break; }
 case 10: {
- BA.debugLineNum = 2310;BA.debugLine="moon_num=\"11\"";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 2288;BA.debugLine="moon_num=\"11\"";
+Debug.ShouldStop(32768);
 main._moon_num = BA.ObjectToString("11");
  break; }
 case 11: {
- BA.debugLineNum = 2312;BA.debugLine="moon_num=\"12\"";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 2290;BA.debugLine="moon_num=\"12\"";
+Debug.ShouldStop(131072);
 main._moon_num = BA.ObjectToString("12");
  break; }
 }
 ;
- BA.debugLineNum = 2314;BA.debugLine="fill_lists(sp_year.SelectedItem,moon_num)";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 2292;BA.debugLine="fill_lists(sp_year.SelectedItem,moon_num)";
+Debug.ShouldStop(524288);
 _fill_lists(main.mostCurrent._sp_year.runMethod(true,"getSelectedItem"),main._moon_num);
- BA.debugLineNum = 2316;BA.debugLine="TabHost1_TabChanged";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 2294;BA.debugLine="TabHost1_TabChanged";
+Debug.ShouldStop(2097152);
 _tabhost1_tabchanged();
- BA.debugLineNum = 2318;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 2296;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -6403,23 +6424,23 @@ finally {
 		}}
 public static RemoteObject  _tim_vorod_conv_ezaf(RemoteObject _tim1) throws Exception{
 try {
-		Debug.PushSubsStack("tim_vorod_conv_ezaf (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3232);
+		Debug.PushSubsStack("tim_vorod_conv_ezaf (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,3210);
 if (RapidSub.canDelegate("tim_vorod_conv_ezaf")) { return ir.taravatgroup.ezafekari2.main.remoteMe.runUserSub(false, "main","tim_vorod_conv_ezaf", _tim1);}
 RemoteObject _ste_tim = null;
 Debug.locals.put("tim1", _tim1);
- BA.debugLineNum = 3232;BA.debugLine="Sub tim_vorod_conv_ezaf (tim1 As String) As Int";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 3234;BA.debugLine="Dim ste_tim() As String";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 3210;BA.debugLine="Sub tim_vorod_conv_ezaf (tim1 As String) As Int";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 3212;BA.debugLine="Dim ste_tim() As String";
+Debug.ShouldStop(2048);
 _ste_tim = RemoteObject.createNewArray ("String", new int[] {0}, new Object[]{});Debug.locals.put("ste_tim", _ste_tim);
- BA.debugLineNum = 3235;BA.debugLine="ste_tim=Regex.Split(\":\",tim1)";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 3213;BA.debugLine="ste_tim=Regex.Split(\":\",tim1)";
+Debug.ShouldStop(4096);
 _ste_tim = main.mostCurrent.__c.getField(false,"Regex").runMethod(false,"Split",(Object)(BA.ObjectToString(":")),(Object)(_tim1));Debug.locals.put("ste_tim", _ste_tim);
- BA.debugLineNum = 3238;BA.debugLine="Return (ste_tim(0)*60)+ste_tim(1) +saat_kar_min";
-Debug.ShouldStop(32);
-Debug.CheckDeviceExceptions();if (true) return BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {(RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, _ste_tim.getArrayElement(true,BA.numberCast(int.class, 0))),RemoteObject.createImmutable(60)}, "*",0, 0)),BA.numberCast(double.class, _ste_tim.getArrayElement(true,BA.numberCast(int.class, 1))),main._saat_kar_min}, "++",2, 0));
- BA.debugLineNum = 3241;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 3216;BA.debugLine="Return (ste_tim(0)*60)+ste_tim(1) +saat_kar_min";
+Debug.ShouldStop(32768);
+if (true) return BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {(RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, _ste_tim.getArrayElement(true,BA.numberCast(int.class, 0))),RemoteObject.createImmutable(60)}, "*",0, 0)),BA.numberCast(double.class, _ste_tim.getArrayElement(true,BA.numberCast(int.class, 1))),main._saat_kar_min}, "++",2, 0));
+ BA.debugLineNum = 3219;BA.debugLine="End Sub";
+Debug.ShouldStop(262144);
 return RemoteObject.createImmutable(0);
 }
 catch (Exception e) {
@@ -6928,12 +6949,12 @@ main.mostCurrent._lbl_time_show_ft.runMethod(true,"setText",BA.ObjectToCharSeque
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e76) {
-			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e76.toString()); BA.debugLineNum = 1943;BA.debugLine="ToastMessageShow(\"خطا\",False)";
-Debug.ShouldStop(4194304);
+			BA.rdebugUtils.runVoidMethod("setLastException",main.processBA, e76.toString()); BA.debugLineNum = 1921;BA.debugLine="ToastMessageShow(\"خطا\",False)";
+Debug.ShouldStop(1);
 main.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا")),(Object)(main.mostCurrent.__c.getField(true,"False")));
  };
- BA.debugLineNum = 1945;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 1923;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

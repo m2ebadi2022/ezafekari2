@@ -50,11 +50,11 @@ Debug.ShouldStop(16777216);
 _lbl_back_click();
  BA.debugLineNum = 58;BA.debugLine="Return True";
 Debug.ShouldStop(33554432);
-Debug.CheckDeviceExceptions();if (true) return darsad_activity.mostCurrent.__c.getField(true,"True");
+if (true) return darsad_activity.mostCurrent.__c.getField(true,"True");
  }else {
  BA.debugLineNum = 60;BA.debugLine="Return False";
 Debug.ShouldStop(134217728);
-Debug.CheckDeviceExceptions();if (true) return darsad_activity.mostCurrent.__c.getField(true,"False");
+if (true) return darsad_activity.mostCurrent.__c.getField(true,"False");
  };
  BA.debugLineNum = 62;BA.debugLine="End Sub";
 Debug.ShouldStop(536870912);

@@ -39,6 +39,7 @@ public static ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_a
 public static ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public static ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public static ir.taravatgroup.ezafekari2.starter _starter = null;
+public static ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public static ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"clr",_ref.getField(false, "_clr"),"cvs",_ref.getField(false, "_cvs"),"DateUtils",_ref.getField(false, "_dateutils"),"DrawingSubName",_ref.getField(false, "_drawingsubname"),"duration",_ref.getField(false, "_duration"),"index",_ref.getField(false, "_index"),"mBase",_ref.getField(false, "_mbase"),"mCallBack",_ref.getField(false, "_mcallback"),"mEventName",_ref.getField(false, "_meventname"),"xui",_ref.getField(false, "_xui")};

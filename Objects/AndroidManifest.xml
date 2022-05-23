@@ -170,6 +170,14 @@
 			android:name=".starter$starter_BR"
 			android:exported="true">
 		</receiver>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".bime_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
 		<service
 			android:name=".httputils2service"
 			android:exported="true">

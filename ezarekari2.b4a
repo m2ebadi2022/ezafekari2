@@ -1,86 +1,89 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
 File1=Abstract-blue-iphone-wallpaper-ilikewallpaper_com.jpg
-File10=box.png
-File11=BRoya.ttf
-File12=b-traffic.ttf
-File13=buy.png
-File14=calc_layout.bal
-File15=calculator.png
-File16=comment.png
-File17=comment_layout.bal
-File18=darsad_layout.bal
-File19=db.db
+File10=BNazanin.ttf
+File11=book.png
+File12=box.png
+File13=BRoya.ttf
+File14=b-traffic.ttf
+File15=buy.png
+File16=calc_layout.bal
+File17=calculator.png
+File18=comment.png
+File19=comment_layout.bal
 File2=adastnevis.ttf
-File20=eidi_layout.bal
-File21=email.png
-File22=endwork.png
-File23=equal.png
-File24=eydi.png
-File25=fast_run_layout.bal
-File26=ganon.html
-File27=ganon_layout.bal
-File28=gift.jpg
-File29=gozaresh_layout.bal
+File20=darsad_layout.bal
+File21=db.db
+File22=eidi_layout.bal
+File23=email.png
+File24=endwork.png
+File25=equal.png
+File26=eydi.png
+File27=fast_run_layout.bal
+File28=fingerprint.png
+File29=ganon.html
 File3=add_ezafe.png
-File30=help.png
-File31=help_font.png
-File32=hogog_layout.bal
-File33=home_item.bal
-File34=home_layout.bal
-File35=home-h0.jpg
-File36=home-h1.jpg
-File37=home-h2.jpg
-File38=home-h3.jpg
-File39=home-h4.jpg
+File30=ganon_layout.bal
+File31=gift.jpg
+File32=gozaresh_layout.bal
+File33=help.png
+File34=help_font.png
+File35=hogog_layout.bal
+File36=home_item.bal
+File37=home_layout.bal
+File38=home-h0.jpg
+File39=home-h1.jpg
 File4=add_morakhasi.png
-File40=icon.png
-File41=info.png
-File42=info_layout.bal
-File43=item_darsad.bal
-File44=item_fast_run.bal
-File45=item_hogog.bal
-File46=item_list.bal
-File47=item_list_2.bal
-File48=list_layout.bal
-File49=m1.png
+File40=home-h2.jpg
+File41=home-h3.jpg
+File42=home-h4.jpg
+File43=icon.png
+File44=info.png
+File45=info_layout.bal
+File46=item_darsad.bal
+File47=item_fast_run.bal
+File48=item_hogog.bal
+File49=item_list.bal
 File5=attention.png
-File50=m2.png
-File51=m3.png
-File52=main_layout.bal
-File53=mandeh.png
-File54=mohasebe_hogog.png
-File55=morakhasi_item.bal
-File56=morakhasi_layout.bal
-File57=my_calander.xls
-File58=newyear.jpg
-File59=noske_item.bal
+File50=item_list_2.bal
+File51=list_layout.bal
+File52=m1.png
+File53=m2.png
+File54=m3.png
+File55=main_layout.bal
+File56=mandeh.png
+File57=mohasebe_hogog.png
+File58=morakhasi_item.bal
+File59=morakhasi_layout.bal
 File6=bg3.jpg
-File60=payankar_layout.bal
-File61=percentage.png
-File62=set_hogog.png
-File63=set_moh.png
-File64=sett_hogog_item.bal
-File65=setting.png
-File66=setting_hogog_layout.bal
-File67=setting_layout.bal
-File68=shift_layout.bal
-File69=shift_page_items.bal
-File7=bkoodkbd.ttf
-File70=shift_work.png
-File71=show_gozaresh_layout.bal
-File72=speed_run.png
-File73=splash_layout.bal
-File74=sudan bd_mrt.ttf
-File75=SYEKAN.TTF
-File76=tab_layout_ezafekari.bal
-File77=tab_layout_morakhasi.bal
-File78=tab_layout_taradod.bal
-File79=textBox.png
-File8=BNazanin.ttf
-File80=textbox2.png
-File81=transfer_time.png
-File82=Vazir.ttf
-File9=book.png
+File60=my_calander.xls
+File61=newyear.jpg
+File62=noske_item.bal
+File63=payankar_layout.bal
+File64=percentage.png
+File65=set_hogog.png
+File66=set_moh.png
+File67=sett_hogog_item.bal
+File68=setting.png
+File69=setting_hogog_layout.bal
+File7=bime_icon.jpg
+File70=setting_layout.bal
+File71=shift_layout.bal
+File72=shift_page_items.bal
+File73=shift_work.png
+File74=show_gozaresh_layout.bal
+File75=speed_run.png
+File76=splash_layout.bal
+File77=sudan bd_mrt.ttf
+File78=SYEKAN.TTF
+File79=tab_layout_ezafekari.bal
+File8=bime_layout.bal
+File80=tab_layout_morakhasi.bal
+File81=tab_layout_taradod.bal
+File82=textBox.png
+File83=textbox2.png
+File84=transfer_time.png
+File85=Vazir.ttf
+File9=bkoodkbd.ttf
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
@@ -162,6 +165,9 @@ FileGroup8=Default Group
 FileGroup80=Default Group
 FileGroup81=Default Group
 FileGroup82=Default Group
+FileGroup83=Default Group
+FileGroup84=Default Group
+FileGroup85=Default Group
 FileGroup9=Default Group
 Group=Default Group
 Library1=contentresolver
@@ -185,26 +191,27 @@ Library8=nicespinner
 Library9=okhttputils2
 ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="32"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~
 Module1=B4XLoadingIndicator
-Module10=info_activity
-Module11=morakhasi_activity
-Module12=myfunc
-Module13=payankar_activity
-Module14=setting_activity
-Module15=setting_hogog_activity
-Module16=shift_activity
-Module17=show_gozaresh_activity
-Module18=Starter
-Module2=calc_activity
-Module3=comment_activity
-Module4=darsad_activity
-Module5=dbCode
-Module6=eidi_activity
-Module7=fast_run_activity
-Module8=ganon_activity
-Module9=hogog_activity
-NumberOfFiles=82
+Module10=hogog_activity
+Module11=info_activity
+Module12=morakhasi_activity
+Module13=myfunc
+Module14=payankar_activity
+Module15=setting_activity
+Module16=setting_hogog_activity
+Module17=shift_activity
+Module18=show_gozaresh_activity
+Module19=Starter
+Module2=bime_activity
+Module3=calc_activity
+Module4=comment_activity
+Module5=darsad_activity
+Module6=dbCode
+Module7=eidi_activity
+Module8=fast_run_activity
+Module9=ganon_activity
+NumberOfFiles=85
 NumberOfLibraries=19
-NumberOfModules=18
+NumberOfModules=19
 Version=11.5
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -462,7 +469,7 @@ Sub Globals
 	Private ckb_ezaf_taradod_FT As CheckBox
 	Private pan_all_FT As Panel
 	
-	dim code_fast_taradod as Int=1
+	Dim code_fast_taradod As Int=1
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -2125,28 +2132,6 @@ Sub time_show2 (dat1 As String,dat2 As String, tim1 As String,tim2 As String)
 		
 		
 		lbl_time_show_FT.Text=str_show
-'		If(index_box=3)Then
-'			
-'			tim_min=(hour_bt*60)+min_bt
-'			
-'			
-'			'If(hour_bt>saat_kar Or (hour_bt=saat_kar And min_bt>0 )) Then
-'			If(tim_min>saat_kar_min) Then
-'				ckb_ezaf_taradod.Enabled=True
-'			
-'				
-'				'lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(hour_bt-saat_kar)&" ساعت و "& min_bt&" دقیقه "
-'				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))&" ساعت و "& myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)&" دقیقه "
-'				
-'			
-'			Else
-'				lbl_ezaf_taradod.Text=""
-'				ckb_ezaf_taradod.Enabled=False
-'			
-'			End If
-'
-'		End If
-'		
 		
 	Catch
 		ToastMessageShow("خطا",False)
@@ -3452,4 +3437,9 @@ End Sub
 
 Private Sub lbl_help_FT_Click
 	myfunc.help_man("برای ثبت ورود یا خروج انگشت خود را در قسمت مشخص شده 3 ثانیه نگه دارید.")
+End Sub
+
+Private Sub pan_bime_Click
+	StartActivity(bime_activity)
+	'Activity.Finish
 End Sub
