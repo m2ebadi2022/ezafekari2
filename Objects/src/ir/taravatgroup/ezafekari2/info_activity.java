@@ -478,7 +478,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in2.getOb
        catch (Exception e9) {
 			processBA.setLastException(e9);RDebugUtils.currentLine=19005454;
  //BA.debugLineNum = 19005454;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("119005454",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("319005454",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
 RDebugUtils.currentLine=19005455;
  //BA.debugLineNum = 19005455;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه جمیل را نصب/فعال کنید"),anywheresoftware.b4a.keywords.Common.False);
@@ -517,7 +517,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in1.getOb
        catch (Exception e8) {
 			processBA.setLastException(e8);RDebugUtils.currentLine=18939915;
  //BA.debugLineNum = 18939915;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("118939915",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("318939915",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
 RDebugUtils.currentLine=18939916;
  //BA.debugLineNum = 18939916;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه اینستاگرام را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
@@ -556,7 +556,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_intent1.g
        catch (Exception e8) {
 			processBA.setLastException(e8);RDebugUtils.currentLine=18874378;
  //BA.debugLineNum = 18874378;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("118874378",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("318874378",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
 RDebugUtils.currentLine=18874379;
  //BA.debugLineNum = 18874379;BA.debugLine="ToastMessageShow(\"برنامه واتساپ را نصب کنید\",Fal";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه واتساپ را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);

@@ -74,7 +74,7 @@ try {RDebugUtils.currentLine=7536644;
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_taradod")));
 RDebugUtils.currentLine=7536645;
  //BA.debugLineNum = 7536645;BA.debugLine="Log( \"tbl taradod exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("17536645","tbl taradod exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("37536645","tbl taradod exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6);RDebugUtils.currentLine=7536648;
@@ -82,7 +82,7 @@ anywheresoftware.b4a.keywords.Common.LogImpl("17536645","tbl taradod exist",0);
 _sql.ExecNonQuery("CREATE TABLE 'tb_taradod' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date_from'	TEXT, 'date_to'	TEXT, 'time_from'	TEXT, 'time_to'	TEXT, 'end_tim_d'	INTEGER DEFAULT 0, 'end_tim_h'	INTEGER DEFAULT 0, 'end_tim_m'	INTEGER DEFAULT 0, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
 RDebugUtils.currentLine=7536650;
  //BA.debugLineNum = 7536650;BA.debugLine="Log ( \"tbl taradod created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("17536650","tbl taradod created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("37536650","tbl taradod created",0);
  };
 RDebugUtils.currentLine=7536653;
  //BA.debugLineNum = 7536653;BA.debugLine="End Sub";
@@ -104,7 +104,7 @@ try {RDebugUtils.currentLine=7602179;
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT id FROM 'my_calander' WHERE id=1")));
 RDebugUtils.currentLine=7602180;
  //BA.debugLineNum = 7602180;BA.debugLine="Log( \"tbl my_calander exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("17602180","tbl my_calander exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("37602180","tbl my_calander exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6);RDebugUtils.currentLine=7602182;
@@ -115,7 +115,7 @@ RDebugUtils.currentLine=7602184;
 _insert_calander_exl(_ba);
 RDebugUtils.currentLine=7602185;
  //BA.debugLineNum = 7602185;BA.debugLine="Log ( \"tbl myCalander created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("17602185","tbl myCalander created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("37602185","tbl myCalander created",0);
  };
 RDebugUtils.currentLine=7602188;
  //BA.debugLineNum = 7602188;BA.debugLine="End Sub";
@@ -184,7 +184,7 @@ _res.Close();
        catch (Exception e22) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e22);RDebugUtils.currentLine=7733283;
  //BA.debugLineNum = 7733283;BA.debugLine="Log(\"error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("17733283","error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("37733283","error",0);
  };
 RDebugUtils.currentLine=7733287;
  //BA.debugLineNum = 7733287;BA.debugLine="End Sub";
@@ -206,7 +206,7 @@ try {RDebugUtils.currentLine=7667715;
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT id FROM 'tbl_onvanha' WHERE id=1")));
 RDebugUtils.currentLine=7667716;
  //BA.debugLineNum = 7667716;BA.debugLine="Log( \"tbl tbl_onvanha exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("17667716","tbl tbl_onvanha exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("37667716","tbl tbl_onvanha exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6);RDebugUtils.currentLine=7667718;
@@ -253,7 +253,7 @@ RDebugUtils.currentLine=7667733;
 _sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('13', 'saatKar',  'ساعت کاری در روز','ساعت کاری در روز');");
 RDebugUtils.currentLine=7667737;
  //BA.debugLineNum = 7667737;BA.debugLine="Log ( \"tbl tbl_onvanha created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("17667737","tbl tbl_onvanha created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("37667737","tbl tbl_onvanha created",0);
  };
 RDebugUtils.currentLine=7667739;
  //BA.debugLineNum = 7667739;BA.debugLine="sql.Close";
@@ -266,38 +266,45 @@ public static boolean  _isexist_ezafekari_by_date(anywheresoftware.b4a.BA _ba,St
 RDebugUtils.currentModule="dbcode";
 if (Debug.shouldDelegate(null, "isexist_ezafekari_by_date", false))
 	 {return ((Boolean) Debug.delegate(null, "isexist_ezafekari_by_date", new Object[] {_ba,_date}));}
+boolean _chk1 = false;
 RDebugUtils.currentLine=9043968;
  //BA.debugLineNum = 9043968;BA.debugLine="Sub isexist_ezafekari_by_date(date As String) As B";
 RDebugUtils.currentLine=9043969;
  //BA.debugLineNum = 9043969;BA.debugLine="Try";
 try {RDebugUtils.currentLine=9043970;
- //BA.debugLineNum = 9043970;BA.debugLine="connect_db";
-_connect_db(_ba);
+ //BA.debugLineNum = 9043970;BA.debugLine="Dim chk1 As Boolean=False";
+_chk1 = anywheresoftware.b4a.keywords.Common.False;
 RDebugUtils.currentLine=9043971;
- //BA.debugLineNum = 9043971;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_ezafekari W";
-_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '"+_date+"';")));
+ //BA.debugLineNum = 9043971;BA.debugLine="connect_db";
+_connect_db(_ba);
 RDebugUtils.currentLine=9043972;
- //BA.debugLineNum = 9043972;BA.debugLine="If (res.RowCount>0)Then";
-if ((_res.getRowCount()>0)) { 
+ //BA.debugLineNum = 9043972;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_ezafekari W";
+_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '"+_date+"';")));
 RDebugUtils.currentLine=9043973;
- //BA.debugLineNum = 9043973;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 9043973;BA.debugLine="If (res.RowCount>0)Then";
+if ((_res.getRowCount()>0)) { 
+RDebugUtils.currentLine=9043974;
+ //BA.debugLineNum = 9043974;BA.debugLine="chk1= True";
+_chk1 = anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=9043975;
- //BA.debugLineNum = 9043975;BA.debugLine="Return False";
-if (true) return anywheresoftware.b4a.keywords.Common.False;
+RDebugUtils.currentLine=9043976;
+ //BA.debugLineNum = 9043976;BA.debugLine="chk1= False";
+_chk1 = anywheresoftware.b4a.keywords.Common.False;
  };
+RDebugUtils.currentLine=9043978;
+ //BA.debugLineNum = 9043978;BA.debugLine="res.Close";
+_res.Close();
  } 
-       catch (Exception e10) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e10);RDebugUtils.currentLine=9043979;
- //BA.debugLineNum = 9043979;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("19043979",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+       catch (Exception e12) {
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12);RDebugUtils.currentLine=9043980;
+ //BA.debugLineNum = 9043980;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("39043980",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
-RDebugUtils.currentLine=9043981;
- //BA.debugLineNum = 9043981;BA.debugLine="Return False";
-if (true) return anywheresoftware.b4a.keywords.Common.False;
-RDebugUtils.currentLine=9043984;
- //BA.debugLineNum = 9043984;BA.debugLine="End Sub";
+RDebugUtils.currentLine=9043983;
+ //BA.debugLineNum = 9043983;BA.debugLine="Return chk1";
+if (true) return _chk1;
+RDebugUtils.currentLine=9043986;
+ //BA.debugLineNum = 9043986;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _add_ezafekari(anywheresoftware.b4a.BA _ba,String _date1,String _date2,String _time1,String _time2,int _d,int _h,int _m,String _tozih,int _state0) throws Exception{
@@ -313,10 +320,13 @@ RDebugUtils.currentLine=7929858;
  //BA.debugLineNum = 7929858;BA.debugLine="sql.ExecNonQuery2(\"INSERT INTO tb_ezafekari (date";
 _sql.ExecNonQuery2("INSERT INTO tb_ezafekari (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?)",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_date1),(Object)(_date2),(Object)(_time1),(Object)(_time2),(Object)(_d),(Object)(_h),(Object)(_m),(Object)(_tozih),(Object)(_state0)}));
 RDebugUtils.currentLine=7929859;
- //BA.debugLineNum = 7929859;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 7929859;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=7929860;
- //BA.debugLineNum = 7929860;BA.debugLine="End Sub";
+ //BA.debugLineNum = 7929860;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=7929861;
+ //BA.debugLineNum = 7929861;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _edit_ezafekari(anywheresoftware.b4a.BA _ba,int _id1,String _date1,String _date2,String _time1,String _time2,int _d,int _h,int _m,String _tozih,int _state0) throws Exception{
@@ -332,48 +342,58 @@ RDebugUtils.currentLine=8126466;
  //BA.debugLineNum = 8126466;BA.debugLine="sql.ExecNonQuery2(\"UPDATE tb_ezafekari SET date_f";
 _sql.ExecNonQuery2("UPDATE tb_ezafekari SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_date1),(Object)(_date2),(Object)(_time1),(Object)(_time2),(Object)(_d),(Object)(_h),(Object)(_m),(Object)(_tozih),(Object)(_state0),(Object)(_id1)}));
 RDebugUtils.currentLine=8126467;
- //BA.debugLineNum = 8126467;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 8126467;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8126468;
- //BA.debugLineNum = 8126468;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8126468;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=8126469;
+ //BA.debugLineNum = 8126469;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _isexist_morakhasi_by_date(anywheresoftware.b4a.BA _ba,String _date) throws Exception{
 RDebugUtils.currentModule="dbcode";
 if (Debug.shouldDelegate(null, "isexist_morakhasi_by_date", false))
 	 {return ((Boolean) Debug.delegate(null, "isexist_morakhasi_by_date", new Object[] {_ba,_date}));}
+boolean _chk1 = false;
 RDebugUtils.currentLine=9109504;
  //BA.debugLineNum = 9109504;BA.debugLine="Sub isexist_morakhasi_by_date(date As String) As B";
 RDebugUtils.currentLine=9109505;
  //BA.debugLineNum = 9109505;BA.debugLine="Try";
 try {RDebugUtils.currentLine=9109506;
- //BA.debugLineNum = 9109506;BA.debugLine="connect_db";
-_connect_db(_ba);
+ //BA.debugLineNum = 9109506;BA.debugLine="Dim chk1 As Boolean=False";
+_chk1 = anywheresoftware.b4a.keywords.Common.False;
 RDebugUtils.currentLine=9109507;
- //BA.debugLineNum = 9109507;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_morakhasi W";
-_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '"+_date+"';")));
+ //BA.debugLineNum = 9109507;BA.debugLine="connect_db";
+_connect_db(_ba);
 RDebugUtils.currentLine=9109508;
- //BA.debugLineNum = 9109508;BA.debugLine="If (res.RowCount>0)Then";
-if ((_res.getRowCount()>0)) { 
+ //BA.debugLineNum = 9109508;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_morakhasi W";
+_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '"+_date+"';")));
 RDebugUtils.currentLine=9109509;
- //BA.debugLineNum = 9109509;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 9109509;BA.debugLine="If (res.RowCount>0)Then";
+if ((_res.getRowCount()>0)) { 
+RDebugUtils.currentLine=9109510;
+ //BA.debugLineNum = 9109510;BA.debugLine="chk1= True";
+_chk1 = anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=9109511;
- //BA.debugLineNum = 9109511;BA.debugLine="Return False";
-if (true) return anywheresoftware.b4a.keywords.Common.False;
+RDebugUtils.currentLine=9109512;
+ //BA.debugLineNum = 9109512;BA.debugLine="chk1= False";
+_chk1 = anywheresoftware.b4a.keywords.Common.False;
  };
+RDebugUtils.currentLine=9109514;
+ //BA.debugLineNum = 9109514;BA.debugLine="res.Close";
+_res.Close();
  } 
-       catch (Exception e10) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e10);RDebugUtils.currentLine=9109515;
- //BA.debugLineNum = 9109515;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("19109515",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+       catch (Exception e12) {
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12);RDebugUtils.currentLine=9109516;
+ //BA.debugLineNum = 9109516;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("39109516",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
-RDebugUtils.currentLine=9109518;
- //BA.debugLineNum = 9109518;BA.debugLine="Return False";
-if (true) return anywheresoftware.b4a.keywords.Common.False;
 RDebugUtils.currentLine=9109519;
- //BA.debugLineNum = 9109519;BA.debugLine="End Sub";
+ //BA.debugLineNum = 9109519;BA.debugLine="Return chk1";
+if (true) return _chk1;
+RDebugUtils.currentLine=9109520;
+ //BA.debugLineNum = 9109520;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _add_morakhasi(anywheresoftware.b4a.BA _ba,String _date1,String _date2,String _time1,String _time2,int _d,int _h,int _m,String _tozih,int _state) throws Exception{
@@ -388,6 +408,9 @@ _connect_db(_ba);
 RDebugUtils.currentLine=7995394;
  //BA.debugLineNum = 7995394;BA.debugLine="sql.ExecNonQuery2(\"INSERT INTO tb_morakhasi (date";
 _sql.ExecNonQuery2("INSERT INTO tb_morakhasi (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?)",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_date1),(Object)(_date2),(Object)(_time1),(Object)(_time2),(Object)(_d),(Object)(_h),(Object)(_m),(Object)(_tozih),(Object)(_state)}));
+RDebugUtils.currentLine=7995395;
+ //BA.debugLineNum = 7995395;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=7995396;
  //BA.debugLineNum = 7995396;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
@@ -407,6 +430,9 @@ _connect_db(_ba);
 RDebugUtils.currentLine=8192002;
  //BA.debugLineNum = 8192002;BA.debugLine="sql.ExecNonQuery2(\"UPDATE tb_morakhasi SET date_f";
 _sql.ExecNonQuery2("UPDATE tb_morakhasi SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_date1),(Object)(_date2),(Object)(_time1),(Object)(_time2),(Object)(_d),(Object)(_h),(Object)(_m),(Object)(_tozih),(Object)(_state),(Object)(_id1)}));
+RDebugUtils.currentLine=8192003;
+ //BA.debugLineNum = 8192003;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8192004;
  //BA.debugLineNum = 8192004;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
@@ -418,38 +444,45 @@ public static boolean  _isexist_taradod_by_date(anywheresoftware.b4a.BA _ba,Stri
 RDebugUtils.currentModule="dbcode";
 if (Debug.shouldDelegate(null, "isexist_taradod_by_date", false))
 	 {return ((Boolean) Debug.delegate(null, "isexist_taradod_by_date", new Object[] {_ba,_date}));}
+boolean _chk1 = false;
 RDebugUtils.currentLine=9175040;
  //BA.debugLineNum = 9175040;BA.debugLine="Sub isexist_taradod_by_date(date As String) As Boo";
 RDebugUtils.currentLine=9175041;
  //BA.debugLineNum = 9175041;BA.debugLine="Try";
 try {RDebugUtils.currentLine=9175042;
- //BA.debugLineNum = 9175042;BA.debugLine="connect_db";
-_connect_db(_ba);
+ //BA.debugLineNum = 9175042;BA.debugLine="Dim chk1 As Boolean=False";
+_chk1 = anywheresoftware.b4a.keywords.Common.False;
 RDebugUtils.currentLine=9175043;
- //BA.debugLineNum = 9175043;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_taradod WHE";
-_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_taradod WHERE date_from LIKE '"+_date+"';")));
+ //BA.debugLineNum = 9175043;BA.debugLine="connect_db";
+_connect_db(_ba);
 RDebugUtils.currentLine=9175044;
- //BA.debugLineNum = 9175044;BA.debugLine="If (res.RowCount>0)Then";
-if ((_res.getRowCount()>0)) { 
+ //BA.debugLineNum = 9175044;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_taradod WHE";
+_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_taradod WHERE date_from LIKE '"+_date+"';")));
 RDebugUtils.currentLine=9175045;
- //BA.debugLineNum = 9175045;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 9175045;BA.debugLine="If (res.RowCount>0)Then";
+if ((_res.getRowCount()>0)) { 
+RDebugUtils.currentLine=9175046;
+ //BA.debugLineNum = 9175046;BA.debugLine="chk1= True";
+_chk1 = anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=9175047;
- //BA.debugLineNum = 9175047;BA.debugLine="Return False";
-if (true) return anywheresoftware.b4a.keywords.Common.False;
+RDebugUtils.currentLine=9175048;
+ //BA.debugLineNum = 9175048;BA.debugLine="chk1= False";
+_chk1 = anywheresoftware.b4a.keywords.Common.False;
  };
+RDebugUtils.currentLine=9175050;
+ //BA.debugLineNum = 9175050;BA.debugLine="res.Close";
+_res.Close();
  } 
-       catch (Exception e10) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e10);RDebugUtils.currentLine=9175050;
- //BA.debugLineNum = 9175050;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("19175050",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+       catch (Exception e12) {
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12);RDebugUtils.currentLine=9175052;
+ //BA.debugLineNum = 9175052;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("39175052",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
-RDebugUtils.currentLine=9175052;
- //BA.debugLineNum = 9175052;BA.debugLine="Return False";
-if (true) return anywheresoftware.b4a.keywords.Common.False;
-RDebugUtils.currentLine=9175055;
- //BA.debugLineNum = 9175055;BA.debugLine="End Sub";
+RDebugUtils.currentLine=9175054;
+ //BA.debugLineNum = 9175054;BA.debugLine="Return chk1";
+if (true) return _chk1;
+RDebugUtils.currentLine=9175057;
+ //BA.debugLineNum = 9175057;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _add_taradod(anywheresoftware.b4a.BA _ba,String _date1,String _date2,String _time1,String _time2,int _d,int _h,int _m,String _tozih,int _state) throws Exception{
@@ -465,10 +498,13 @@ RDebugUtils.currentLine=8060930;
  //BA.debugLineNum = 8060930;BA.debugLine="sql.ExecNonQuery2(\"INSERT INTO tb_taradod (date_f";
 _sql.ExecNonQuery2("INSERT INTO tb_taradod (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat, state) VALUES (?,?,?,?,?,?,?,?,?)",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_date1),(Object)(_date2),(Object)(_time1),(Object)(_time2),(Object)(_d),(Object)(_h),(Object)(_m),(Object)(_tozih),(Object)(_state)}));
 RDebugUtils.currentLine=8060931;
- //BA.debugLineNum = 8060931;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 8060931;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8060932;
- //BA.debugLineNum = 8060932;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8060932;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=8060933;
+ //BA.debugLineNum = 8060933;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _edit_taradod(anywheresoftware.b4a.BA _ba,int _id1,String _date1,String _date2,String _time1,String _time2,int _d,int _h,int _m,String _tozih,int _state) throws Exception{
@@ -484,10 +520,13 @@ RDebugUtils.currentLine=8257538;
  //BA.debugLineNum = 8257538;BA.debugLine="sql.ExecNonQuery2(\"UPDATE tb_taradod SET date_fro";
 _sql.ExecNonQuery2("UPDATE tb_taradod SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =? ,state=?  WHERE id=?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_date1),(Object)(_date2),(Object)(_time1),(Object)(_time2),(Object)(_d),(Object)(_h),(Object)(_m),(Object)(_tozih),(Object)(_state),(Object)(_id1)}));
 RDebugUtils.currentLine=8257539;
- //BA.debugLineNum = 8257539;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 8257539;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8257540;
- //BA.debugLineNum = 8257540;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8257540;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=8257541;
+ //BA.debugLineNum = 8257541;BA.debugLine="End Sub";
 return false;
 }
 public static String  _get_setting_byname(anywheresoftware.b4a.BA _ba,String _name1) throws Exception{
@@ -721,33 +760,33 @@ RDebugUtils.currentLine=9306112;
  //BA.debugLineNum = 9306112;BA.debugLine="Sub get_day_id (year As Int, moon As Int , day As";
 RDebugUtils.currentLine=9306113;
  //BA.debugLineNum = 9306113;BA.debugLine="Try";
-try {RDebugUtils.currentLine=9306114;
- //BA.debugLineNum = 9306114;BA.debugLine="connect_db";
+try {RDebugUtils.currentLine=9306115;
+ //BA.debugLineNum = 9306115;BA.debugLine="connect_db";
 _connect_db(_ba);
-RDebugUtils.currentLine=9306115;
- //BA.debugLineNum = 9306115;BA.debugLine="res =  sql.ExecQuery(\"SELECT * FROM 'my_calander";
+RDebugUtils.currentLine=9306116;
+ //BA.debugLineNum = 9306116;BA.debugLine="res =  sql.ExecQuery(\"SELECT * FROM 'my_calander";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM 'my_calander' WHERE year="+BA.NumberToString(_year)+" AND moon="+BA.NumberToString(_moon)+" AND day_c="+BA.NumberToString(_day))));
-RDebugUtils.currentLine=9306118;
- //BA.debugLineNum = 9306118;BA.debugLine="If(res.RowCount>0)Then";
-if ((_res.getRowCount()>0)) { 
 RDebugUtils.currentLine=9306119;
- //BA.debugLineNum = 9306119;BA.debugLine="res.Position = 0";
-_res.setPosition((int) (0));
+ //BA.debugLineNum = 9306119;BA.debugLine="If(res.RowCount>0)Then";
+if ((_res.getRowCount()>0)) { 
 RDebugUtils.currentLine=9306120;
- //BA.debugLineNum = 9306120;BA.debugLine="Return res.GetInt(\"id\")";
+ //BA.debugLineNum = 9306120;BA.debugLine="res.Position = 0";
+_res.setPosition((int) (0));
+RDebugUtils.currentLine=9306121;
+ //BA.debugLineNum = 9306121;BA.debugLine="Return res.GetInt(\"id\")";
 if (true) return _res.GetInt("id");
  };
  } 
        catch (Exception e9) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e9);RDebugUtils.currentLine=9306126;
- //BA.debugLineNum = 9306126;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("19306126",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e9);RDebugUtils.currentLine=9306127;
+ //BA.debugLineNum = 9306127;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("39306127",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
-RDebugUtils.currentLine=9306129;
- //BA.debugLineNum = 9306129;BA.debugLine="Return -1";
+RDebugUtils.currentLine=9306130;
+ //BA.debugLineNum = 9306130;BA.debugLine="Return -1";
 if (true) return (int) (-1);
-RDebugUtils.currentLine=9306131;
- //BA.debugLineNum = 9306131;BA.debugLine="End Sub";
+RDebugUtils.currentLine=9306132;
+ //BA.debugLineNum = 9306132;BA.debugLine="End Sub";
 return 0;
 }
 public static boolean  _delete_ezafekari(anywheresoftware.b4a.BA _ba,int _id) throws Exception{
@@ -763,10 +802,13 @@ RDebugUtils.currentLine=8388610;
  //BA.debugLineNum = 8388610;BA.debugLine="sql.ExecNonQuery2(\"DELETE FROM tb_ezafekari WHERE";
 _sql.ExecNonQuery2("DELETE FROM tb_ezafekari WHERE id= ?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_id)}));
 RDebugUtils.currentLine=8388611;
- //BA.debugLineNum = 8388611;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 8388611;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8388612;
- //BA.debugLineNum = 8388612;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8388612;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=8388613;
+ //BA.debugLineNum = 8388613;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _delete_morakhasi(anywheresoftware.b4a.BA _ba,int _id) throws Exception{
@@ -782,10 +824,13 @@ RDebugUtils.currentLine=8454146;
  //BA.debugLineNum = 8454146;BA.debugLine="sql.ExecNonQuery2(\"DELETE FROM tb_morakhasi WHERE";
 _sql.ExecNonQuery2("DELETE FROM tb_morakhasi WHERE id= ?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_id)}));
 RDebugUtils.currentLine=8454147;
- //BA.debugLineNum = 8454147;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 8454147;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8454148;
- //BA.debugLineNum = 8454148;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8454148;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=8454149;
+ //BA.debugLineNum = 8454149;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _delete_taradod(anywheresoftware.b4a.BA _ba,int _id) throws Exception{
@@ -801,10 +846,13 @@ RDebugUtils.currentLine=8519682;
  //BA.debugLineNum = 8519682;BA.debugLine="sql.ExecNonQuery2(\"DELETE FROM tb_taradod WHERE i";
 _sql.ExecNonQuery2("DELETE FROM tb_taradod WHERE id= ?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_id)}));
 RDebugUtils.currentLine=8519683;
- //BA.debugLineNum = 8519683;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 8519683;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8519684;
- //BA.debugLineNum = 8519684;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8519684;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=8519685;
+ //BA.debugLineNum = 8519685;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _delete_gozaresh(anywheresoftware.b4a.BA _ba,int _id) throws Exception{
@@ -820,10 +868,13 @@ RDebugUtils.currentLine=8585218;
  //BA.debugLineNum = 8585218;BA.debugLine="sql.ExecNonQuery2(\"DELETE FROM tb_gozareshat WHER";
 _sql.ExecNonQuery2("DELETE FROM tb_gozareshat WHERE id= ?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_id)}));
 RDebugUtils.currentLine=8585219;
- //BA.debugLineNum = 8585219;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 8585219;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8585220;
- //BA.debugLineNum = 8585220;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8585220;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=8585221;
+ //BA.debugLineNum = 8585221;BA.debugLine="End Sub";
 return false;
 }
 public static anywheresoftware.b4a.objects.collections.List  _all_taradod_mah(anywheresoftware.b4a.BA _ba,String _year,String _moon) throws Exception{
@@ -920,10 +971,13 @@ RDebugUtils.currentLine=8323074;
  //BA.debugLineNum = 8323074;BA.debugLine="sql.ExecNonQuery2(\"INSERT INTO tb_gozareshat (dat";
 _sql.ExecNonQuery2("INSERT INTO tb_gozareshat (date, title, tozih, gozaresh, nakhales_daryafti, khales_daryafti) VALUES (?,?,?,?,?,?)",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_date),(Object)(_title),(Object)(_tozih),(Object)(_gozaresh),(Object)(_nakhales_daryafti),(Object)(_khales_daryafti)}));
 RDebugUtils.currentLine=8323075;
- //BA.debugLineNum = 8323075;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 8323075;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8323076;
- //BA.debugLineNum = 8323076;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8323076;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+RDebugUtils.currentLine=8323077;
+ //BA.debugLineNum = 8323077;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _add_setting_hogog(anywheresoftware.b4a.BA _ba,anywheresoftware.b4a.objects.collections.List _data) throws Exception{
@@ -983,6 +1037,9 @@ _sql.ExecNonQuery2("UPDATE tb_setting SET value = ? WHERE name= ? ",anywheresoft
 RDebugUtils.currentLine=8650775;
  //BA.debugLineNum = 8650775;BA.debugLine="sql.ExecNonQuery2(\"UPDATE tb_setting SET value =";
 _sql.ExecNonQuery2("UPDATE tb_setting SET value = ? WHERE name= ? ",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{_data.Get((int) (13)),(Object)("num_olad")}));
+RDebugUtils.currentLine=8650776;
+ //BA.debugLineNum = 8650776;BA.debugLine="sql.Close";
+_sql.Close();
 RDebugUtils.currentLine=8650777;
  //BA.debugLineNum = 8650777;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
@@ -1062,41 +1119,48 @@ public static boolean  _istatil_by_date(anywheresoftware.b4a.BA _ba,int _id) thr
 RDebugUtils.currentModule="dbcode";
 if (Debug.shouldDelegate(null, "istatil_by_date", false))
 	 {return ((Boolean) Debug.delegate(null, "istatil_by_date", new Object[] {_ba,_id}));}
+boolean _chk1 = false;
 RDebugUtils.currentLine=9240576;
  //BA.debugLineNum = 9240576;BA.debugLine="Sub istatil_by_date(id As Int) As Boolean";
 RDebugUtils.currentLine=9240578;
  //BA.debugLineNum = 9240578;BA.debugLine="Try";
 try {RDebugUtils.currentLine=9240579;
- //BA.debugLineNum = 9240579;BA.debugLine="connect_db";
-_connect_db(_ba);
+ //BA.debugLineNum = 9240579;BA.debugLine="Dim chk1 As Boolean=False";
+_chk1 = anywheresoftware.b4a.keywords.Common.False;
 RDebugUtils.currentLine=9240580;
- //BA.debugLineNum = 9240580;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM 'my_calander'";
-_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id="+BA.NumberToString(_id))));
+ //BA.debugLineNum = 9240580;BA.debugLine="connect_db";
+_connect_db(_ba);
 RDebugUtils.currentLine=9240581;
- //BA.debugLineNum = 9240581;BA.debugLine="If(res.RowCount>0)Then";
-if ((_res.getRowCount()>0)) { 
+ //BA.debugLineNum = 9240581;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM 'my_calander'";
+_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id="+BA.NumberToString(_id))));
 RDebugUtils.currentLine=9240582;
- //BA.debugLineNum = 9240582;BA.debugLine="res.Position=0";
-_res.setPosition((int) (0));
+ //BA.debugLineNum = 9240582;BA.debugLine="If(res.RowCount>0)Then";
+if ((_res.getRowCount()>0)) { 
 RDebugUtils.currentLine=9240583;
- //BA.debugLineNum = 9240583;BA.debugLine="If (res.GetString(\"state\")=\"tatil\")Then";
-if (((_res.GetString("state")).equals("tatil"))) { 
+ //BA.debugLineNum = 9240583;BA.debugLine="res.Position=0";
+_res.setPosition((int) (0));
 RDebugUtils.currentLine=9240584;
- //BA.debugLineNum = 9240584;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 9240584;BA.debugLine="If (res.GetString(\"state\")=\"tatil\")Then";
+if (((_res.GetString("state")).equals("tatil"))) { 
+RDebugUtils.currentLine=9240585;
+ //BA.debugLineNum = 9240585;BA.debugLine="chk1= True";
+_chk1 = anywheresoftware.b4a.keywords.Common.True;
  };
  };
+RDebugUtils.currentLine=9240589;
+ //BA.debugLineNum = 9240589;BA.debugLine="res.Close";
+_res.Close();
  } 
-       catch (Exception e11) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e11);RDebugUtils.currentLine=9240590;
- //BA.debugLineNum = 9240590;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("19240590",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+       catch (Exception e13) {
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e13);RDebugUtils.currentLine=9240591;
+ //BA.debugLineNum = 9240591;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("39240591",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
-RDebugUtils.currentLine=9240593;
- //BA.debugLineNum = 9240593;BA.debugLine="Return False";
-if (true) return anywheresoftware.b4a.keywords.Common.False;
-RDebugUtils.currentLine=9240595;
- //BA.debugLineNum = 9240595;BA.debugLine="End Sub";
+RDebugUtils.currentLine=9240594;
+ //BA.debugLineNum = 9240594;BA.debugLine="Return chk1";
+if (true) return _chk1;
+RDebugUtils.currentLine=9240596;
+ //BA.debugLineNum = 9240596;BA.debugLine="End Sub";
 return false;
 }
 public static anywheresoftware.b4a.objects.collections.List  _read_onvan_db(anywheresoftware.b4a.BA _ba) throws Exception{
@@ -1135,13 +1199,16 @@ _onvanha.Add((Object)(_res.GetString("custom_name")));
  }
 };
 RDebugUtils.currentLine=9371659;
- //BA.debugLineNum = 9371659;BA.debugLine="sql.Close";
+ //BA.debugLineNum = 9371659;BA.debugLine="res.Close";
+_res.Close();
+RDebugUtils.currentLine=9371660;
+ //BA.debugLineNum = 9371660;BA.debugLine="sql.Close";
 _sql.Close();
-RDebugUtils.currentLine=9371661;
- //BA.debugLineNum = 9371661;BA.debugLine="Return onvanHa";
-if (true) return _onvanha;
 RDebugUtils.currentLine=9371662;
- //BA.debugLineNum = 9371662;BA.debugLine="End Sub";
+ //BA.debugLineNum = 9371662;BA.debugLine="Return onvanHa";
+if (true) return _onvanha;
+RDebugUtils.currentLine=9371663;
+ //BA.debugLineNum = 9371663;BA.debugLine="End Sub";
 return null;
 }
 }

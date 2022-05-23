@@ -162,6 +162,7 @@ End Sub
 Sub add_ezafekari(date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("INSERT INTO tb_ezafekari (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state0))
+	sql.Close
 	Return True
 End Sub
 
@@ -169,13 +170,14 @@ End Sub
 Sub add_morakhasi(date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("INSERT INTO tb_morakhasi (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state))
-
+	sql.Close
 	Return True
 End Sub
 
 Sub add_taradod (date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("INSERT INTO tb_taradod (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat, state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state))
+	sql.Close
 	Return True
 End Sub
 
@@ -186,6 +188,7 @@ End Sub
 Sub edit_ezafekari(id1 As Int, date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("UPDATE tb_ezafekari SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state0,id1))
+	sql.Close
 	Return True
 End Sub
 
@@ -193,13 +196,14 @@ End Sub
 Sub edit_morakhasi(id1 As Int,date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("UPDATE tb_morakhasi SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state,id1))
-
+	sql.Close
 	Return True
 End Sub
 
 Sub edit_taradod (id1 As Int,date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("UPDATE tb_taradod SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =? ,state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state,id1))
+	sql.Close
 	Return True
 End Sub
 
@@ -211,27 +215,32 @@ End Sub
 Sub add_gozaresh(date As String,title As String,tozih As String,gozaresh As String,nakhales_daryafti As String,khales_daryafti As String) As Boolean
 	connect_db
 	sql.ExecNonQuery2("INSERT INTO tb_gozareshat (date, title, tozih, gozaresh, nakhales_daryafti, khales_daryafti) VALUES (?,?,?,?,?,?)", Array As Object(date,title, tozih, gozaresh,nakhales_daryafti,khales_daryafti))
+	sql.Close
 	Return True
 End Sub
 
 Sub delete_ezafekari(id As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("DELETE FROM tb_ezafekari WHERE id= ?", Array As Object(id))
+	sql.Close
 	Return True
 End Sub
 Sub delete_morakhasi(id As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("DELETE FROM tb_morakhasi WHERE id= ?", Array As Object(id))
+	sql.Close
 	Return True
 End Sub
 Sub delete_taradod(id As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("DELETE FROM tb_taradod WHERE id= ?", Array As Object(id))
+	sql.Close
 	Return True
 End Sub
 Sub delete_gozaresh(id As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("DELETE FROM tb_gozareshat WHERE id= ?", Array As Object(id))
+	sql.Close
 	Return True
 End Sub
 
@@ -260,7 +269,7 @@ Sub add_setting_hogog (data As List) As Boolean
 	
 	'sql.ExecNonQuery2("UPDATE tb_setting SET value = ? WHERE name= ? ", Array As Object(data.Get(13), "num_sanavat"))
 	sql.ExecNonQuery2("UPDATE tb_setting SET value = ? WHERE name= ? ", Array As Object(data.Get(13), "num_olad"))
-	
+	sql.Close
 	Return True
 End Sub
 
@@ -443,52 +452,57 @@ End Sub
 
 Sub isexist_ezafekari_by_date(date As String) As Boolean
 	Try
+		Dim chk1 As Boolean=False
 		connect_db
 		res= sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '"&date&"';")
 		If (res.RowCount>0)Then
-			Return True
+			chk1= True
 		Else
-			Return False
+			chk1= False
 		End If
-		
+		res.Close
 	Catch
 		Log(LastException)
 	End Try
-	Return False
+	
+	Return chk1
 	
 	
 End Sub
 
 Sub isexist_morakhasi_by_date(date As String) As Boolean
 	Try
+		Dim chk1 As Boolean=False
 		connect_db
 		res= sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '"&date&"';")
 		If (res.RowCount>0)Then
-			Return True
+			chk1= True
 		Else
-			Return False
+			chk1= False
 		End If
-		
+		res.Close
 	Catch
 		Log(LastException)
 	End Try
 	
-	Return False
+	Return chk1
 End Sub
 
 Sub isexist_taradod_by_date(date As String) As Boolean
 	Try
+		Dim chk1 As Boolean=False
 		connect_db
 		res= sql.ExecQuery("SELECT * FROM tb_taradod WHERE date_from LIKE '"&date&"';")
 		If (res.RowCount>0)Then
-			Return True
+			chk1= True
 		Else
-			Return False
+			chk1= False
 		End If
+		res.Close
 	Catch
 		Log(LastException)
 	End Try
-	Return False
+	Return chk1
 	
 	
 End Sub
@@ -499,21 +513,22 @@ End Sub
 Sub istatil_by_date(id As Int) As Boolean
 	
 	Try
+		Dim chk1 As Boolean=False
 		connect_db
 		res= sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id="&id)
 		If(res.RowCount>0)Then
 			res.Position=0
 			If (res.GetString("state")="tatil")Then
-				Return True
+				chk1= True
 			End If
 		End If
 		
-		
+		res.Close
 	Catch
 		Log(LastException)
 	End Try
 	
-	Return False
+	Return chk1
 	
 End Sub
 
@@ -523,6 +538,7 @@ End Sub
 
 Sub get_day_id (year As Int, moon As Int , day As Int) As Int
 	Try
+		
 		connect_db
 		res =  sql.ExecQuery("SELECT * FROM 'my_calander' WHERE year="&year&" AND moon="&moon&" AND day_c="&day)
 		
@@ -555,6 +571,7 @@ Sub read_onvan_db As List
 		res.Position=i
 		onvanHa.Add(res.GetString("custom_name"))	
 	Next
+	res.Close
 	sql.Close
 	
 	Return onvanHa

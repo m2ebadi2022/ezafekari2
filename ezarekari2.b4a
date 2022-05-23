@@ -1647,6 +1647,23 @@ Sub add_end
 		Else
 			add_taradod_sub
 		End If
+		
+		
+	Else If (index_box=4) Then
+		
+		If(chek=False)Then
+			If(alist.Get(3)<5)Then
+				add_taradod_fast
+			Else
+				lbl_vip_Click
+				lbl_tim_vorod_FT.Text="00:00"
+				code_fast_taradod=1
+				pan_all_FT_Click
+			End If
+		Else
+			add_taradod_fast
+		End If
+		
 	End If
 End Sub
 
@@ -3218,35 +3235,33 @@ Private Sub pan_add_taradod_fast_Click
 			lbl_khoroj_FT.TextColor=Colors.Gray
 			ckb_ezaf_taradod_FT.Checked=False
 			ckb_ezaf_taradod_FT.Enabled=False
-			'lbl_vorod_FT.Enabled=False
+			
 			code_fast_taradod=10
 		Else If (dbCode.res.GetInt("state")=20)Then  ''vorod yes ezafekari
 			lbl_vorod_FT.TextColor=Colors.Green
 			lbl_khoroj_FT.TextColor=Colors.Gray
 			ckb_ezaf_taradod_FT.Checked=True
 			ckb_ezaf_taradod_FT.Enabled=False
-			'lbl_vorod_FT.Enabled=False
+			
 			code_fast_taradod=20
 		Else If (dbCode.res.GetInt("state")=11)Then  ''khoroj not ezafekari
 			lbl_vorod_FT.TextColor=Colors.Green
 			lbl_khoroj_FT.TextColor=Colors.Green
 			ckb_ezaf_taradod_FT.Checked=False
 			ckb_ezaf_taradod_FT.Enabled=False
-			'lbl_vorod_FT.Enabled=False
-			'lbl_khoroj_FT.Enabled=False
+		
 			
 			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
 			code_fast_taradod=11
 			ToastMessageShow("تردد امروز ثبت شده است",False)
-			'myfunc.help_man("تردد امروز ثبت شده است")
+			
 			
 		Else If (dbCode.res.GetInt("state")=21)Then  ''khoroj yes ezafekari
 			lbl_vorod_FT.TextColor=Colors.Green
 			lbl_khoroj_FT.TextColor=Colors.Green
 			ckb_ezaf_taradod_FT.Checked=True
 			ckb_ezaf_taradod_FT.Enabled=False
-			'lbl_vorod_FT.Enabled=False
-			'lbl_khoroj_FT.Enabled=False
+			
 			
 			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
 			
@@ -3259,20 +3274,18 @@ Private Sub pan_add_taradod_fast_Click
 			lbl_khoroj_FT.TextColor=Colors.Red
 			ckb_ezaf_taradod_FT.Checked=False
 			ckb_ezaf_taradod_FT.Enabled=False
-			'lbl_vorod_FT.Enabled=False
-			'lbl_khoroj_FT.Enabled=False
+			
 			
 			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
 			
-			'ToastMessageShow("برای امروز تردد دستی ثبت شده است",False)
-			myfunc.help_man("برای امروز تردد دستی ثبت شده است")
+			ToastMessageShow("برای امروز تردد دستی ثبت شده است",False)
+			
 			code_fast_taradod=0
 		End If	
 	Else
 		lbl_vorod_FT.TextColor=Colors.Gray
 		lbl_khoroj_FT.TextColor=Colors.Gray
-		'lbl_vorod_FT.Enabled=True
-		'lbl_khoroj_FT.Enabled=False
+		
 		ckb_ezaf_taradod_FT.Checked=True
 		ckb_ezaf_taradod_FT.Enabled=True
 		code_fast_taradod=1
@@ -3293,8 +3306,7 @@ Private Sub lbl_close_FT_Click
 			dbCode.sql.ExecNonQuery("DELETE FROM tb_ezafekari WHERE date_from LIKE '%"&lbl_date_FT.Text&"%'; ")
 			lbl_vorod_FT.TextColor=Colors.Gray
 			lbl_khoroj_FT.TextColor=Colors.Gray
-			'lbl_vorod_FT.Enabled=True
-			'lbl_khoroj_FT.Enabled=False
+		
 			ckb_ezaf_taradod_FT.Checked=True
 			ckb_ezaf_taradod_FT.Enabled=True
 			lbl_tim_vorod_FT.Text="00:00"
@@ -3303,7 +3315,7 @@ Private Sub lbl_close_FT_Click
 			code_fast_taradod=1
 		End If
 	Else
-		'ToastMessageShow("برای امروز هنوز ترددی ثبت نشده است",False)	
+		
 		myfunc.help_man("برای امروز هنوز ترددی ثبت نشده است")
 		code_fast_taradod=1
 	End If
@@ -3315,11 +3327,21 @@ Private Sub pan_all_FT_Click
 End Sub
 
 Private Sub lbl_vorod_FT_Click
+	ToastMessageShow("انگشن خود را 3 ثانیه نگه دارید",False)
+End Sub
+Private Sub lbl_khoroj_FT_Click
+	ToastMessageShow("انگشن خود را 3 ثانیه نگه دارید",False)
+End Sub
+
+
+Private Sub lbl_vorod_FT_LongClick
 
 	If(code_fast_taradod=1)Then
+		index_box=4
 		lbl_tim_vorod_FT.Text=DateTime.Time(DateTime.Now)
-		ttsss
 		code_fast_taradod=10
+		add_end
+		pan_add_taradod_fast_Click
 	Else If(code_fast_taradod=0)Then
 		ToastMessageShow(" تردد امروز دستی ثبت شده است",False)
 	Else
@@ -3328,10 +3350,11 @@ Private Sub lbl_vorod_FT_Click
 	
 End Sub
 
-Private Sub lbl_khoroj_FT_Click
+Private Sub lbl_khoroj_FT_LongClick
 	If(code_fast_taradod=10 Or code_fast_taradod=20)Then
+		index_box=4
 		lbl_tim_khoroj_FT.Text=DateTime.Time(DateTime.Now)
-		ttsss
+		add_taradod_fast
 		code_fast_taradod=11
 	Else If(code_fast_taradod=0)Then
 		ToastMessageShow("تردد امروز دستی ثبت شده است",False)
@@ -3343,7 +3366,7 @@ Private Sub lbl_khoroj_FT_Click
 End Sub
 
 
-Sub ttsss 
+Sub add_taradod_fast 
 	
 Try
 		
@@ -3359,14 +3382,13 @@ Try
 				dbCode.add_taradod(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,0,0,0,"ثبت سریع",10)
 			
 			End If			
-				
+				Log("is frest")
 			ToastMessageShow("ورود ثبت شد",False)	
 			
 			
 			lbl_vorod_FT.TextColor=Colors.Green
 			ckb_ezaf_taradod_FT.Enabled=False
-			'lbl_vorod_FT.Enabled=False
-			'lbl_khoroj_FT.Enabled=True
+			
 				
 		Else
 			'' edit it
@@ -3375,15 +3397,15 @@ Try
 			
 			If (ckb_ezaf_taradod_FT.Checked=True)Then
 				
-				tim_min=(hour_bt*60)+min_bt
+				Dim tim_min2 As Int=(hour_bt*60)+min_bt
 			
 			
-				If(tim_min>saat_kar_min) Then
+				If(tim_min2>saat_kar_min) Then
 					
 					Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim_vorod_FT.Text)
 					Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
 					
-					dbCode.add_ezafekari(lbl_date_FT.Text,lbl_date_FT.Text,saat_fixed,lbl_tim_khoroj_FT.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1))," ثبت سریع-تردد دارد- ",0)
+					dbCode.add_ezafekari(lbl_date_FT.Text,lbl_date_FT.Text,saat_fixed,lbl_tim_khoroj_FT.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min2-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min2-saat_kar_min).Get(1))," ثبت سریع-تردد دارد- ",0)
 					
 				End If
 				
@@ -3393,12 +3415,12 @@ Try
 				dbCode.edit_taradod(current_id_edit,lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,day_bt,hour_bt,min_bt,"ثبت سریع",11)
 			
 			End If
-			
+			Log("is secend")
 			ToastMessageShow("خروج ثبت شد",False)
 			
 			
 			lbl_khoroj_FT.TextColor=Colors.Green
-			'lbl_khoroj_FT.Enabled=False
+			
 			
 			
 		End If	
@@ -3427,3 +3449,7 @@ Sub tim_vorod_conv_ezaf (tim1 As String) As Int
 	
 End Sub
 		
+
+Private Sub lbl_help_FT_Click
+	myfunc.help_man("برای ثبت ورود یا خروج انگشت خود را در قسمت مشخص شده 3 ثانیه نگه دارید.")
+End Sub

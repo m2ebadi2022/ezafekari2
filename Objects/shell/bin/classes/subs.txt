@@ -15,7 +15,7 @@ main,btn_menu_home_click,1,0,577,745
 ,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,persiandate,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,dbcode,res,dbcode,sql,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help
 ,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,dbcode,res,,index_curent_img
 myfunc,fa2en,dbcode,get_setting_byname,myfunc,help_man,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,myfunc,check_karid,,lbl_help_click,,get_today_shift,myfunc,set_font,dbcode,connect_db,myfunc,min_to_saatminroz,,img_slider,dbcode,get_day_id,myfunc,font_filename
-main,lbl_vip_click,1,0,2599,2610
+main,lbl_vip_click,1,0,2616,2627
 ,pan_all_noskhe,,scroll_v_noskhe,,lbl_show_vip
 
 myfunc,check_karid
@@ -23,11 +23,11 @@ main,http_initial_1,0,0,396,403
 ,ht,,phon,,last_notif,,is_now_instal
 
 httpjob,initialize,httpjob,poststring,httpjob,postbytes,httpjob,addscheme
-main,activity_keypress,1,0,1618,1658
+main,activity_keypress,1,0,1635,1675
 ,pan_all_msgnewyear,,pan_help,,pan_all,,pan_all2,,pan_notifi_all,,index_page,,pan_all_noskhe,,pan_all_litemenu,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,persiandate,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,dbcode,res,dbcode,sql,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,img_help
 ,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,dbcode,res,,index_curent_img
 ,lbl_close_help_click,,lbl_close_notif_click,,btn_menu_home_click,,pan_all_noskhe_click,myfunc,fa2en,dbcode,get_setting_byname,myfunc,help_man,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,myfunc,check_karid,,lbl_help_click,,get_today_shift,myfunc,set_font,dbcode,connect_db,myfunc,min_to_saatminroz,,img_slider,dbcode,get_day_id,myfunc,font_filename
-main,lbl_close_help_click,0,0,2628,2630
+main,lbl_close_help_click,0,0,2645,2647
 ,pan_help
 
 
@@ -35,7 +35,7 @@ main,lbl_close_notif_click,0,0,507,509
 ,pan_notifi_all
 
 
-main,pan_all_noskhe_click,0,0,2921,2923
+main,pan_all_noskhe_click,0,0,2938,2940
 ,pan_all_noskhe
 
 
@@ -47,22 +47,30 @@ main,activity_resume,0,0,568,570
 
 
 
-main,add_end,1,0,1369,1442
-,moon_num,,persiandate,,index_box,dbcode,res,dbcode,sql,,ckb_ezaf_taradod,,hour_bt,,min_bt,,moon_bt,,year_bt,,day_bt,,is_for_edit,,date1,,date2,,lbl_tim1,,lbl_tim2,,et_tozihat,,current_id_edit,,tabhost1,,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help,,img2,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,pan_all,,pan_all_noskhe,,scroll_v_noskhe,,lbl_show_vip,,str_noe,,index_noe_morakhasi,,tim_min
-,moon_num,dbcode,res,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,index_curent_img,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,tabhost1,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
-myfunc,check_karid,myfunc,fa2en,myfunc,num_list,,add_ezafe_sub,,lbl_vip_click,,add_morakhasi_sub,,add_taradod_sub,dbcode,connect_db,dbcode,isexist_ezafekari_by_date,myfunc,help_man,dbcode,add_ezafekari,,btn_menu_home_click,dbcode,edit_ezafekari,,btn_menu_list_click,,pan_all_click,dbcode,get_setting_byname,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,,lbl_help_click,,get_today_shift,myfunc,set_font,myfunc,min_to_saatminroz,,img_slider,dbcode,get_day_id,myfunc,font_filename,,fill_lists,dbcode,isexist_morakhasi_by_date,dbcode,add_morakhasi,dbcode,edit_morakhasi,dbcode,isexist_taradod_by_date,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_taradod,dbcode,edit_taradod
-main,add_ezafe_sub,1,0,1444,1504
+main,add_end,1,1,1369,1459
+,moon_num,,persiandate,,index_box,,lbl_tim_vorod_ft,,code_fast_taradod,dbcode,res,dbcode,sql,,ckb_ezaf_taradod,,hour_bt,,min_bt,,moon_bt,,year_bt,,day_bt,,is_for_edit,,date1,,date2,,lbl_tim1,,lbl_tim2,,et_tozihat,,current_id_edit,,tabhost1,,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help,,img2,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,pan_all,,pan_all_noskhe,,scroll_v_noskhe,,lbl_show_vip,,str_noe,,index_noe_morakhasi,,tim_min,,lbl_date_ft,,ckb_ezaf_taradod_ft,,lbl_tim_khoroj_ft,,lbl_vorod_ft,,lbl_khoroj_ft,,pik_moon1,,strfun,,lbl_time_show_ft,,pan_all_ft
+,moon_num,,code_fast_taradod,dbcode,res,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,index_curent_img,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,tabhost1,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
+myfunc,check_karid,myfunc,fa2en,myfunc,num_list,,add_ezafe_sub,,lbl_vip_click,,add_morakhasi_sub,,add_taradod_sub,,add_taradod_fast,,pan_all_ft_click,dbcode,connect_db,dbcode,isexist_ezafekari_by_date,myfunc,help_man,dbcode,add_ezafekari,,btn_menu_home_click,dbcode,edit_ezafekari,,btn_menu_list_click,,pan_all_click,dbcode,get_setting_byname,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,,lbl_help_click,,get_today_shift,myfunc,set_font,myfunc,min_to_saatminroz,,img_slider,dbcode,get_day_id,myfunc,font_filename,,fill_lists,dbcode,isexist_morakhasi_by_date,dbcode,add_morakhasi,dbcode,edit_morakhasi,dbcode,isexist_taradod_by_date,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_taradod,dbcode,edit_taradod,,time_show2
+main,add_ezafe_sub,1,0,1461,1521
 ,ckb_ezaf_taradod,,hour_bt,,min_bt,,moon_bt,,year_bt,,day_bt,,is_for_edit,,date1,,date2,,lbl_tim1,,lbl_tim2,,et_tozihat,,current_id_edit,,tabhost1,dbcode,res,dbcode,sql,,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,persiandate,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help,,img2,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,pan_all
 dbcode,res,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,index_curent_img,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,tabhost1,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 dbcode,isexist_ezafekari_by_date,myfunc,help_man,dbcode,add_ezafekari,,btn_menu_home_click,dbcode,edit_ezafekari,,btn_menu_list_click,,pan_all_click,dbcode,connect_db,myfunc,fa2en,dbcode,get_setting_byname,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,myfunc,check_karid,,lbl_help_click,,get_today_shift,myfunc,set_font,myfunc,min_to_saatminroz,,img_slider,dbcode,get_day_id,myfunc,font_filename,,fill_lists
-main,add_morakhasi_sub,1,0,1506,1550
+main,add_morakhasi_sub,1,0,1523,1567
 ,str_noe,,day_bt,,hour_bt,,min_bt,,moon_bt,,year_bt,,is_for_edit,,date1,,date2,,lbl_tim1,,lbl_tim2,,et_tozihat,,index_noe_morakhasi,,current_id_edit,,tabhost1,dbcode,res,dbcode,sql,,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,persiandate,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help,,img2,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,pan_all
 dbcode,res,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,index_curent_img,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,tabhost1,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 dbcode,isexist_morakhasi_by_date,myfunc,help_man,dbcode,add_morakhasi,,btn_menu_home_click,dbcode,edit_morakhasi,,btn_menu_list_click,,pan_all_click,dbcode,connect_db,myfunc,fa2en,dbcode,get_setting_byname,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,myfunc,check_karid,,lbl_help_click,,get_today_shift,myfunc,set_font,myfunc,min_to_saatminroz,,img_slider,dbcode,get_day_id,myfunc,font_filename,,fill_lists
-main,add_taradod_sub,1,0,1553,1613
+main,add_taradod_sub,1,0,1570,1630
 ,hour_bt,,min_bt,,moon_bt,,year_bt,,day_bt,,is_for_edit,,date1,,ckb_ezaf_taradod,,lbl_tim1,,date2,,lbl_tim2,,tim_min,,saat_kar_min,,et_tozihat,,current_id_edit,,tabhost1,dbcode,res,dbcode,sql,,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,persiandate,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help,,img2,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,pan_all
 dbcode,res,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,moon_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,index_curent_img,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,tabhost1,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 dbcode,isexist_taradod_by_date,myfunc,help_man,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_ezafekari,myfunc,min_to_saatminroz,dbcode,add_taradod,,btn_menu_home_click,dbcode,edit_taradod,,btn_menu_list_click,,pan_all_click,dbcode,connect_db,myfunc,fa2en,dbcode,get_setting_byname,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,myfunc,check_karid,,lbl_help_click,,get_today_shift,myfunc,set_font,,img_slider,dbcode,get_day_id,myfunc,font_filename,,fill_lists
+main,add_taradod_fast,0,1,3160,3226
+,lbl_date_ft,,ckb_ezaf_taradod_ft,,lbl_tim_vorod_ft,,lbl_tim_khoroj_ft,,lbl_vorod_ft,,hour_bt,,min_bt,,saat_kar_min,,day_bt,,current_id_edit,,lbl_khoroj_ft,dbcode,res,dbcode,sql,,pik_moon1,,date1,,date2,,strfun,,persiandate,,year_bt,,moon_bt,,lbl_time_show_ft
+dbcode,res,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
+dbcode,isexist_taradod_by_date,dbcode,add_taradod,,time_show2,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_ezafekari,myfunc,min_to_saatminroz,dbcode,edit_taradod,dbcode,connect_db,myfunc,fa2en
+main,pan_all_ft_click,0,0,3116,3118
+,pan_all_ft
+
+
 main,btn_menu_list_click,1,0,782,858
 ,index_page,,pan_imag,,img2,,pan_main,,lbl_majmoe_saat,,pan_hed_list,,panel1,,sp_moon,,sp_year,,tabhost1,,persiandate,,moon_num,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,color4,dbcode,res,dbcode,sql,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 ,index_page,,lbl_majmoe_saat,,pan_hed_list,,panel1,,sp_moon,,sp_year,,tabhost1,,moon_num,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,dbcode,res,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
@@ -71,7 +79,11 @@ main,pan_all_click,0,0,1352,1354
 ,pan_all
 
 
-main,tim_vorod_conv_ezaf,0,0,3210,3219
+main,time_show2,0,0,1814,1945
+,pik_moon1,,date1,,date2,,strfun,,persiandate,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,lbl_time_show_ft
+,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
+myfunc,fa2en
+main,tim_vorod_conv_ezaf,0,0,3232,3241
 ,saat_kar_min
 
 
@@ -83,7 +95,7 @@ main,fill_list_gozareshat,1,0,1120,1145
 ,clv_gozaresh,,list_gozareshat_id,dbcode,res,dbcode,sql,,p,,xui,,lbl_dategozaresh_clv,,lbl_namegozaresh_clv,,lbl_remove_from_list2,,lbl_tozihgozaresh_clv,,pan_item_gozaresh
 dbcode,res,,p,,lbl_dategozaresh_clv,,lbl_namegozaresh_clv,,lbl_remove_from_list2,,lbl_tozihgozaresh_clv,,pan_item_gozaresh
 dbcode,connect_db
-main,lbl_help_click,0,0,2612,2626
+main,lbl_help_click,0,0,2629,2643
 ,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help
 ,index_curent_img
 ,img_slider
@@ -95,11 +107,11 @@ main,fill_lists,1,0,901,1084
 ,cust_lv_ezafekari,,list_ezafekari_id,dbcode,res,dbcode,sql,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,panel1,,tabhost1,,cust_lv_morakhasi,,list_morakhasi_id,,cust_lv_taradod,,list_taradod_id
 dbcode,res,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,panel1
 dbcode,connect_db
-main,cust_lv_taradod_itemclick,0,0,2953,2955
+main,cust_lv_taradod_itemclick,0,0,2970,2972
 
 
 
-main,get_dataedit_byid,1,0,2743,2797
+main,get_dataedit_byid,1,0,2760,2814
 ,index_box,dbcode,res,dbcode,sql,,ckb_ezaf_taradod,,str_noe,,lbl_ezaf_taradod,,index_noe_morakhasi,,lbl_tim1,,lbl_tim2,,lbl_date1,,lbl_date2,,et_tozihat
 dbcode,res,,str_noe,,index_noe_morakhasi
 dbcode,connect_db,myfunc,fa2en
@@ -107,7 +119,7 @@ main,globals,0,1,56,257
 ,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,num,,curent_tab_list,,key,,index_x_start_swap,,index_curent_img,,msg,,last_notif,,is_now_instal,,index_noe_morakhasi,,str_noe,,current_id_edit,,is_for_edit,,code_fast_taradod
 ,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,num,,curent_tab_list,,key,,index_x_start_swap,,index_curent_img,,msg,,last_notif,,is_now_instal,,index_noe_morakhasi,,str_noe,,current_id_edit,,is_for_edit,,code_fast_taradod
 
-main,img_slider,0,0,2684,2704
+main,img_slider,0,0,2701,2721
 ,img_help,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4
 
 
@@ -123,7 +135,7 @@ main,kharid,0,0,519,534
 ,inapp,,phon
 
 myfunc,check_internet
-main,lbl_close_ft_click,1,1,3073,3102
+main,lbl_close_ft_click,1,1,3086,3114
 ,persiandate,dbcode,sql,,lbl_date_ft,,lbl_vorod_ft,,lbl_khoroj_ft,,ckb_ezaf_taradod_ft,,lbl_tim_vorod_ft,,lbl_tim_khoroj_ft,,lbl_time_show_ft,,code_fast_taradod,dbcode,res
 ,code_fast_taradod,dbcode,res
 dbcode,isexist_taradod_by_date,myfunc,fa2en,dbcode,connect_db,myfunc,help_man
@@ -131,23 +143,23 @@ main,lbl_close_msgnewy_click,0,0,385,388
 ,pan_all_msgnewyear
 
 
-main,lbl_date1_click,0,0,2378,2380
+main,lbl_date1_click,0,0,2395,2397
 ,index_piker,,pik_hour1,,strfun,,lbl_tim1,,pik_min1,,pik_year1,,lbl_date1,,pik_moon1,,moon,,pik_day1,,pan_all2,,index_curent_img,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,pan_help,,img_help
 ,index_piker,,index_curent_img
 ,lbl_tim1_click,,lbl_help_click,,img_slider
-main,lbl_tim1_click,0,0,2382,2404
+main,lbl_tim1_click,0,0,2399,2421
 ,index_piker,,pik_hour1,,strfun,,lbl_tim1,,pik_min1,,pik_year1,,lbl_date1,,pik_moon1,,moon,,pik_day1,,pan_all2,,index_curent_img,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,pan_help,,img_help
 ,index_piker,,index_curent_img
 ,lbl_help_click,,img_slider
-main,lbl_date2_click,0,0,2373,2375
+main,lbl_date2_click,0,0,2390,2392
 ,index_piker,,pik_hour1,,strfun,,lbl_tim2,,pik_min1,,pik_year1,,lbl_date2,,pik_moon1,,moon,,pik_day1,,pan_all2,,index_curent_img,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,pan_help,,img_help
 ,index_piker,,index_curent_img
 ,lbl_tim2_click,,lbl_help_click,,img_slider
-main,lbl_tim2_click,0,0,2351,2371
+main,lbl_tim2_click,0,0,2368,2388
 ,index_piker,,pik_hour1,,strfun,,lbl_tim2,,pik_min1,,pik_year1,,lbl_date2,,pik_moon1,,moon,,pik_day1,,pan_all2,,index_curent_img,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,pan_help,,img_help
 ,index_piker,,index_curent_img
 ,lbl_help_click,,img_slider
-main,lbl_edit_from_list_click,1,0,2707,2742
+main,lbl_edit_from_list_click,1,0,2724,2759
 ,current_id_edit,,tabhost1,,lbl_box_title,,ckb_ezaf_taradod,,lbl_ezaf_taradod,,is_for_edit,,pik_year1,,persiandate,,pik_moon1,,moon,,pik_day1,,pan_ezaf_taradod,,pan_all,,lbl_time_as,,lbl_time_ta,,index_box,,lbl_time_show,,et_tozihat,,lbl_date1,,lbl_date2,,lbl_tim1,,lbl_tim2,,date1,,date2,,strfun,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,tim_min,,saat_kar_min,,str_noe,,rspop_noe,dbcode,res,dbcode,sql,,index_noe_morakhasi
 ,current_id_edit,,is_for_edit,,index_box,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,tim_min,,str_noe,dbcode,res,,index_noe_morakhasi
 ,pan_add_ezafekari_click,,pan_add_morakhasi_click,,pan_add_taradod_click,,get_dataedit_byid,myfunc,fa2en,,time_show,myfunc,min_to_saatminroz,dbcode,connect_db
@@ -163,7 +175,7 @@ main,pan_add_taradod_click,1,0,1308,1350
 ,is_for_edit,,pan_ezaf_taradod,,pan_all,,lbl_box_title,,lbl_time_as,,lbl_time_ta,,index_box,,lbl_time_show,,et_tozihat,,lbl_ezaf_taradod,,ckb_ezaf_taradod,,pik_year1,,persiandate,,pik_moon1,,moon,,pik_day1,,lbl_date1,,lbl_date2,,lbl_tim1,,lbl_tim2,,date1,,date2,,strfun,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,tim_min,,saat_kar_min
 ,is_for_edit,,index_box,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,tim_min
 myfunc,fa2en,,time_show,myfunc,min_to_saatminroz
-main,time_show,0,0,1662,1793
+main,time_show,0,0,1679,1810
 ,pik_moon1,,date1,,lbl_date1,,date2,,lbl_date2,,strfun,,persiandate,,lbl_tim2,,lbl_tim1,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,lbl_time_show,,index_box,,tim_min,,saat_kar_min,,ckb_ezaf_taradod,,lbl_ezaf_taradod
 ,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,tim_min
 myfunc,fa2en,myfunc,min_to_saatminroz
@@ -171,23 +183,27 @@ main,lbl_ezaf_taradod_click,0,0,1233,1237
 ,index_box,,rspop_noe
 
 
-main,lbl_help_piker_click,0,0,2929,2937
+main,lbl_help_ft_click,1,1,3244,3246
+
+
+myfunc,help_man
+main,lbl_help_piker_click,0,0,2946,2954
 ,index_curent_img,,img_help,,bit_img4,,lbl_close_help,,pan_help
 ,index_curent_img
 
-main,lbl_help2_click,0,0,2871,2873
+main,lbl_help2_click,0,0,2888,2890
 ,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help
 ,index_curent_img
 ,lbl_help_click,,img_slider
-main,lbl_khoroj_ft_click,0,1,3122,3134
-,code_fast_taradod,,lbl_tim_khoroj_ft,,lbl_date_ft,,ckb_ezaf_taradod_ft,,lbl_tim_vorod_ft,,lbl_vorod_ft,,tim_min,,hour_bt,,min_bt,,saat_kar_min,,day_bt,,current_id_edit,,lbl_khoroj_ft,dbcode,res,dbcode,sql,,pik_moon1,,date1,,date2,,strfun,,persiandate,,year_bt,,moon_bt,,lbl_time_show_ft
-,code_fast_taradod,,tim_min,dbcode,res,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
-,ttsss,dbcode,isexist_taradod_by_date,dbcode,add_taradod,,time_show2,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_ezafekari,myfunc,min_to_saatminroz,dbcode,edit_taradod,dbcode,connect_db,myfunc,fa2en
-main,ttsss,0,1,3137,3204
-,lbl_date_ft,,ckb_ezaf_taradod_ft,,lbl_tim_vorod_ft,,lbl_tim_khoroj_ft,,lbl_vorod_ft,,tim_min,,hour_bt,,min_bt,,saat_kar_min,,day_bt,,current_id_edit,,lbl_khoroj_ft,dbcode,res,dbcode,sql,,pik_moon1,,date1,,date2,,strfun,,persiandate,,year_bt,,moon_bt,,lbl_time_show_ft
-,tim_min,dbcode,res,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
-dbcode,isexist_taradod_by_date,dbcode,add_taradod,,time_show2,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_ezafekari,myfunc,min_to_saatminroz,dbcode,edit_taradod,dbcode,connect_db,myfunc,fa2en
-main,lbl_lite_menu_click,0,0,2969,2971
+main,lbl_khoroj_ft_click,0,1,3123,3125
+
+
+
+main,lbl_khoroj_ft_longclick,0,1,3144,3157
+,code_fast_taradod,,index_box,,lbl_tim_khoroj_ft,,lbl_date_ft,,ckb_ezaf_taradod_ft,,lbl_tim_vorod_ft,,lbl_vorod_ft,,hour_bt,,min_bt,,saat_kar_min,,day_bt,,current_id_edit,,lbl_khoroj_ft,dbcode,res,dbcode,sql,,pik_moon1,,date1,,date2,,strfun,,persiandate,,year_bt,,moon_bt,,lbl_time_show_ft
+,index_box,,code_fast_taradod,dbcode,res,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
+,add_taradod_fast,dbcode,isexist_taradod_by_date,dbcode,add_taradod,,time_show2,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_ezafekari,myfunc,min_to_saatminroz,dbcode,edit_taradod,dbcode,connect_db,myfunc,fa2en
+main,lbl_lite_menu_click,0,0,2986,2988
 ,pan_all_litemenu
 
 
@@ -195,51 +211,47 @@ main,lbl_notefi_click,0,0,478,505
 ,lbl_title_msgpan,,pan_notifi_all,,pan_notif,,web_msg_show,,ls1,,ls3,,ls2
 
 
-main,lbl_remove_from_list_click,1,0,2799,2847
+main,lbl_remove_from_list_click,1,0,2816,2864
 ,tabhost1,,curent_tab_list,dbcode,sql,,index_page,,pan_imag,,img2,,pan_main,,lbl_majmoe_saat,,pan_hed_list,,panel1,,sp_moon,,sp_year,,persiandate,,moon_num,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,color4,dbcode,res,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 ,curent_tab_list,,index_page,,lbl_majmoe_saat,,pan_hed_list,,panel1,,sp_moon,,sp_year,,tabhost1,,moon_num,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,dbcode,res,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 dbcode,delete_ezafekari,,btn_menu_list_click,dbcode,delete_morakhasi,dbcode,delete_taradod,dbcode,connect_db,myfunc,fa2en,,fill_lists
-main,lbl_remove_from_list2_click,1,0,2850,2866
+main,lbl_remove_from_list2_click,1,0,2867,2883
 dbcode,sql,,index_page,,pan_imag,,img3,,pan_main,,clv_gozaresh,,pan_hed_gozaresh,,sp_year_gozaresh,,color4,,list_gozareshat_id,dbcode,res,,p,,xui,,lbl_dategozaresh_clv,,lbl_namegozaresh_clv,,lbl_remove_from_list2,,lbl_tozihgozaresh_clv,,pan_item_gozaresh
 ,index_page,,clv_gozaresh,,pan_hed_gozaresh,,sp_year_gozaresh,dbcode,res,,p,,lbl_dategozaresh_clv,,lbl_namegozaresh_clv,,lbl_remove_from_list2,,lbl_tozihgozaresh_clv,,pan_item_gozaresh
 dbcode,delete_gozaresh,,btn_menu_gozaresh_click,dbcode,connect_db,,fill_list_gozareshat
 main,lbl_save_box_click,1,0,1360,1367
-,pik_moon1,,date1,,lbl_date1,,date2,,lbl_date2,,strfun,,persiandate,,lbl_tim2,,lbl_tim1,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,lbl_time_show,,index_box,,tim_min,,saat_kar_min,,ckb_ezaf_taradod,,lbl_ezaf_taradod,,moon_num,dbcode,res,dbcode,sql,,is_for_edit,,et_tozihat,,current_id_edit,,tabhost1,,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help,,img2,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,pan_all,,pan_all_noskhe,,scroll_v_noskhe,,lbl_show_vip,,str_noe,,index_noe_morakhasi
-,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,tim_min,,moon_num,dbcode,res,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,index_curent_img,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,tabhost1,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
-,time_show,,add_end,myfunc,fa2en,myfunc,min_to_saatminroz,myfunc,check_karid,myfunc,num_list,,add_ezafe_sub,,lbl_vip_click,,add_morakhasi_sub,,add_taradod_sub,dbcode,connect_db,dbcode,isexist_ezafekari_by_date,myfunc,help_man,dbcode,add_ezafekari,,btn_menu_home_click,dbcode,edit_ezafekari,,btn_menu_list_click,,pan_all_click,dbcode,get_setting_byname,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,,lbl_help_click,,get_today_shift,myfunc,set_font,,img_slider,dbcode,get_day_id,myfunc,font_filename,,fill_lists,dbcode,isexist_morakhasi_by_date,dbcode,add_morakhasi,dbcode,edit_morakhasi,dbcode,isexist_taradod_by_date,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_taradod,dbcode,edit_taradod
-main,lbl_save_picker_click,0,0,2406,2520
+,pik_moon1,,date1,,lbl_date1,,date2,,lbl_date2,,strfun,,persiandate,,lbl_tim2,,lbl_tim1,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,lbl_time_show,,index_box,,tim_min,,saat_kar_min,,ckb_ezaf_taradod,,lbl_ezaf_taradod,,moon_num,,lbl_tim_vorod_ft,,code_fast_taradod,dbcode,res,dbcode,sql,,is_for_edit,,et_tozihat,,current_id_edit,,tabhost1,,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help,,img2,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,pan_all,,pan_all_noskhe,,scroll_v_noskhe,,lbl_show_vip,,str_noe,,index_noe_morakhasi,,lbl_date_ft,,ckb_ezaf_taradod_ft,,lbl_tim_khoroj_ft,,lbl_vorod_ft,,lbl_khoroj_ft,,lbl_time_show_ft,,pan_all_ft
+,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,tim_min,,moon_num,,code_fast_taradod,dbcode,res,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,index_curent_img,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,tabhost1,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
+,time_show,,add_end,myfunc,fa2en,myfunc,min_to_saatminroz,myfunc,check_karid,myfunc,num_list,,add_ezafe_sub,,lbl_vip_click,,add_morakhasi_sub,,add_taradod_sub,,add_taradod_fast,,pan_all_ft_click,dbcode,connect_db,dbcode,isexist_ezafekari_by_date,myfunc,help_man,dbcode,add_ezafekari,,btn_menu_home_click,dbcode,edit_ezafekari,,btn_menu_list_click,,pan_all_click,dbcode,get_setting_byname,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,,lbl_help_click,,get_today_shift,myfunc,set_font,,img_slider,dbcode,get_day_id,myfunc,font_filename,,fill_lists,dbcode,isexist_morakhasi_by_date,dbcode,add_morakhasi,dbcode,edit_morakhasi,dbcode,isexist_taradod_by_date,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_taradod,dbcode,edit_taradod,,time_show2
+main,lbl_save_picker_click,0,0,2423,2537
 ,pik_hour1,,pik_min1,,pik_day1,,pik_moon1,,index_piker,,lbl_tim1,,lbl_date1,,pik_year1,,lbl_tim2,,lbl_date2,,pan_all2,,date1,,date2,,strfun,,persiandate,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,lbl_time_show,,index_box,,tim_min,,saat_kar_min,,ckb_ezaf_taradod,,lbl_ezaf_taradod
 ,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,tim_min
 ,time_show,myfunc,fa2en,myfunc,min_to_saatminroz
-main,lbl_vip_later_click,0,0,2899,2901
+main,lbl_vip_later_click,0,0,2916,2918
 ,pan_all_noskhe
 
 ,pan_all_noskhe_click
-main,lbl_vip_now_click,1,0,2903,2919
+main,lbl_vip_now_click,1,0,2920,2936
 ,inapp,,phon
 
 myfunc,check_karid,,kharid,myfunc,check_internet
-main,lbl_vip2_click,1,0,2875,2877
+main,lbl_vip2_click,1,0,2892,2894
 ,pan_all_noskhe,,scroll_v_noskhe,,lbl_show_vip
 
 ,lbl_vip_click,myfunc,check_karid
-main,lbl_vorod_ft_click,0,1,3108,3120
-,code_fast_taradod,,lbl_tim_vorod_ft,,lbl_date_ft,,ckb_ezaf_taradod_ft,,lbl_tim_khoroj_ft,,lbl_vorod_ft,,tim_min,,hour_bt,,min_bt,,saat_kar_min,,day_bt,,current_id_edit,,lbl_khoroj_ft,dbcode,res,dbcode,sql,,pik_moon1,,date1,,date2,,strfun,,persiandate,,year_bt,,moon_bt,,lbl_time_show_ft
-,code_fast_taradod,,tim_min,dbcode,res,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
-,ttsss,dbcode,isexist_taradod_by_date,dbcode,add_taradod,,time_show2,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_ezafekari,myfunc,min_to_saatminroz,dbcode,edit_taradod,dbcode,connect_db,myfunc,fa2en
-main,pan_add_taradod_fast_click,1,1,2988,3071
+main,lbl_vorod_ft_click,0,1,3120,3122
+
+
+
+main,lbl_vorod_ft_longclick,1,1,3128,3142
+,code_fast_taradod,,index_box,,lbl_tim_vorod_ft,,moon_num,,persiandate,dbcode,res,dbcode,sql,,ckb_ezaf_taradod,,hour_bt,,min_bt,,moon_bt,,year_bt,,day_bt,,is_for_edit,,date1,,date2,,lbl_tim1,,lbl_tim2,,et_tozihat,,current_id_edit,,tabhost1,,index_page,,pan_imag,,img1,,pan_main,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,lbl_box_title,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4,,index_curent_img,,pan_help,,img_help,,img2,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,pan_all,,pan_all_noskhe,,scroll_v_noskhe,,lbl_show_vip,,str_noe,,index_noe_morakhasi,,tim_min,,lbl_date_ft,,ckb_ezaf_taradod_ft,,lbl_tim_khoroj_ft,,lbl_vorod_ft,,lbl_khoroj_ft,,pik_moon1,,strfun,,lbl_time_show_ft,,pan_all_ft
+,index_box,,code_fast_taradod,,moon_num,dbcode,res,,index_page,,lbl_date_home,,lbl_ezafekari_mah_h,,lbl_ezafekari_mah_m,,lbl_morakhasi_mah_d,,lbl_morakhasi_mah_h,,lbl_morakhasi_mah_m,,lbl_shift_home,,lbl_vip,,lbl_vip2,,panel1,,scv_home_item,,saat_kar_min,,year_num,,color1,,color2,,color_index,,color3,,color4,,color5,,main_font,,size_f1,,size_f2,,size_f3,,index_curent_img,,lbl_majmoe_saat,,pan_hed_list,,sp_moon,,sp_year,,tabhost1,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,current_id_edit
+,add_end,,pan_add_taradod_fast_click,myfunc,check_karid,myfunc,fa2en,myfunc,num_list,,add_ezafe_sub,,lbl_vip_click,,add_morakhasi_sub,,add_taradod_sub,,add_taradod_fast,,pan_all_ft_click,dbcode,connect_db,dbcode,isexist_ezafekari_by_date,myfunc,help_man,dbcode,add_ezafekari,,btn_menu_home_click,dbcode,edit_ezafekari,,btn_menu_list_click,,pan_all_click,dbcode,get_setting_byname,dbcode,all_ezafekari_mah,dbcode,all_morakhasi_mah,,lbl_help_click,,get_today_shift,myfunc,set_font,myfunc,min_to_saatminroz,,img_slider,dbcode,get_day_id,myfunc,font_filename,,fill_lists,dbcode,isexist_morakhasi_by_date,dbcode,add_morakhasi,dbcode,edit_morakhasi,dbcode,isexist_taradod_by_date,,tim_vorod_conv_ezaf,myfunc,min_to_saatminroz2_dontday,dbcode,add_taradod,dbcode,edit_taradod,,time_show2
+main,pan_add_taradod_fast_click,1,1,3005,3084
 ,pan_all_ft,,lbl_date_ft,,persiandate,dbcode,res,dbcode,sql,,lbl_tim_vorod_ft,,lbl_tim_khoroj_ft,,current_id_edit,,lbl_vorod_ft,,lbl_khoroj_ft,,ckb_ezaf_taradod_ft,,code_fast_taradod,,pik_moon1,,date1,,date2,,strfun,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,lbl_time_show_ft
 dbcode,res,,current_id_edit,,code_fast_taradod,,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
-myfunc,fa2en,dbcode,isexist_taradod_by_date,,time_show2,myfunc,help_man,dbcode,connect_db
-main,time_show2,0,0,1797,1928
-,pik_moon1,,date1,,date2,,strfun,,persiandate,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt,,lbl_time_show_ft
-,date1,,date2,,year_bt,,moon_bt,,day_bt,,hour_bt,,min_bt
-myfunc,fa2en
-main,pan_all_ft_click,0,0,3104,3106
-,pan_all_ft
-
-
-main,pan_all_litemenu_click,0,0,2973,2975
+myfunc,fa2en,dbcode,isexist_taradod_by_date,,time_show2,dbcode,connect_db
+main,pan_all_litemenu_click,0,0,2990,2992
 ,pan_all_litemenu
 
 
@@ -247,27 +259,27 @@ main,pan_all_msgnewyear_click,0,0,390,392
 
 
 
-main,pan_all2_click,0,0,2522,2526
+main,pan_all2_click,0,0,2539,2543
 ,pan_all2
 
 
-main,pan_calc_click,0,0,2591,2595
+main,pan_calc_click,0,0,2608,2612
 
 
 
-main,pan_comment_click,0,0,2533,2576
+main,pan_comment_click,0,0,2550,2593
 ,phon
 
 myfunc,check_internet
-main,pan_darsad_click,0,0,2528,2531
+main,pan_darsad_click,0,0,2545,2548
 
 
 
-main,pan_eidi_click,0,0,2336,2339
+main,pan_eidi_click,0,0,2353,2356
 
 
 
-main,pan_ezafekari_mah_click,1,0,2879,2887
+main,pan_ezafekari_mah_click,1,0,2896,2904
 ,tabhost1,,index_page,,pan_imag,,img2,,pan_main,,lbl_majmoe_saat,,pan_hed_list,,panel1,,sp_moon,,sp_year,,persiandate,,moon_num,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,color4,dbcode,res,dbcode,sql,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 ,index_page,,lbl_majmoe_saat,,pan_hed_list,,panel1,,sp_moon,,sp_year,,tabhost1,,moon_num,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,dbcode,res,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 ,btn_menu_list_click,myfunc,fa2en,,fill_lists,dbcode,connect_db
@@ -275,27 +287,27 @@ main,pan_fast_run_click,0,0,1148,1157
 
 
 
-main,pan_ganon_click,0,0,2941,2944
+main,pan_ganon_click,0,0,2958,2961
 
 
 
-main,pan_help_touch,0,0,2632,2678
+main,pan_help_touch,0,0,2649,2695
 ,index_x_start_swap,,index_curent_img,,pan_help,,img_help,,bit_img0,,bit_img1,,bit_img2,,bit_img3,,bit_img4
 ,index_x_start_swap,,index_curent_img
 ,img_slider
-main,pan_info_click,0,0,2346,2349
+main,pan_info_click,0,0,2363,2366
 
 
 
-main,pan_item_gozaresh_click,0,0,2580,2586
+main,pan_item_gozaresh_click,0,0,2597,2603
 ,current_gozaresh_id
 ,current_gozaresh_id
 
-main,pan_lelp_click,0,0,2680,2682
+main,pan_lelp_click,0,0,2697,2699
 
 
 
-main,pan_morakhasi_mah_click,1,0,2889,2897
+main,pan_morakhasi_mah_click,1,0,2906,2914
 ,tabhost1,,index_page,,pan_imag,,img2,,pan_main,,lbl_majmoe_saat,,pan_hed_list,,panel1,,sp_moon,,sp_year,,persiandate,,moon_num,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,,curent_tab_list,,list_ezafekari_id,,list_morakhasi_id,,list_taradod_id,,color4,dbcode,res,dbcode,sql,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 ,index_page,,lbl_majmoe_saat,,pan_hed_list,,panel1,,sp_moon,,sp_year,,tabhost1,,moon_num,,cust_lv_ezafekari,,cust_lv_morakhasi,,cust_lv_taradod,dbcode,res,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv
 ,btn_menu_list_click,myfunc,fa2en,,fill_lists,dbcode,connect_db
@@ -303,7 +315,7 @@ main,pan_notifi_all_click,0,0,512,514
 
 
 
-main,pan_payankar_click,0,0,2341,2344
+main,pan_payankar_click,0,0,2358,2361
 
 
 
@@ -315,7 +327,7 @@ main,pan_run_morakhasi_click,0,0,1165,1174
 
 
 
-main,pan_setting_click,0,0,2946,2949
+main,pan_setting_click,0,0,2963,2966
 
 
 
@@ -323,15 +335,15 @@ main,pan_setting_hogog_click,0,0,1159,1163
 
 
 
-main,pan_shift_click,0,0,2959,2962
+main,pan_shift_click,0,0,2976,2979
 
 
 
-main,pan_taghvim_click,0,0,2964,2966
+main,pan_taghvim_click,0,0,2981,2983
 
 
 ,pan_shift_click
-main,panel1_click,0,0,2977,2979
+main,panel1_click,0,0,2994,2996
 
 
 
@@ -339,71 +351,71 @@ main,panel4_click,0,0,1356,1358
 
 
 
-main,panel5_click,0,0,2925,2927
+main,panel5_click,0,0,2942,2944
 
 
 
-main,panel6_click,0,0,3206,3208
+main,panel6_click,0,0,3228,3230
 
 
 
-main,pik_day_bala1_click,0,0,2216,2237
+main,pik_day_bala1_click,0,0,2233,2254
 ,pik_day1,,pik_moon1
 
 
-main,pik_day_paeen1_click,0,0,2239,2258
+main,pik_day_paeen1_click,0,0,2256,2275
 ,pik_day1,,pik_moon1
 
 
-main,pik_hour_bala1_click,0,0,1936,1947
+main,pik_hour_bala1_click,0,0,1953,1964
 ,pik_hour1
 
 
-main,pik_hour_paeen1_click,0,0,1949,1960
+main,pik_hour_paeen1_click,0,0,1966,1977
 ,pik_hour1
 
 
-main,pik_min_bala1_click,0,0,1962,1973
+main,pik_min_bala1_click,0,0,1979,1990
 ,pik_min1
 
 
-main,pik_min_paeen1_click,0,0,1975,1986
+main,pik_min_paeen1_click,0,0,1992,2003
 ,pik_min1
 
 
-main,pik_moon_bala1_click,0,0,2162,2174
+main,pik_moon_bala1_click,0,0,2179,2191
 ,pik_moon1,,moon
 
 
-main,pik_moon_paeen1_click,0,0,2176,2188
+main,pik_moon_paeen1_click,0,0,2193,2205
 ,pik_moon1,,moon
 
 
-main,pik_pan_day1_touch,0,0,2122,2160
+main,pik_pan_day1_touch,0,0,2139,2177
 ,num,,pik_day1,,pik_moon1
 ,num
 
-main,pik_pan_hour1_touch,0,0,1988,2016
+main,pik_pan_hour1_touch,0,0,2005,2033
 ,num,,pik_hour1
 ,num
 
-main,pik_pan_min1_touch,0,0,2018,2056
+main,pik_pan_min1_touch,0,0,2035,2073
 ,num,,pik_min1
 ,num
 
-main,pik_pan_moon1_touch,0,0,2062,2090
+main,pik_pan_moon1_touch,0,0,2079,2107
 ,num,,pik_moon1,,moon
 ,num
 
-main,pik_pan_year1_touch,0,0,2092,2120
+main,pik_pan_year1_touch,0,0,2109,2137
 ,num,,pik_year1
 ,num
 
-main,pik_year_bala1_click,0,0,2190,2201
+main,pik_year_bala1_click,0,0,2207,2218
 ,pik_year1
 
 
-main,pik_year_paeen1_click,0,0,2203,2214
+main,pik_year_paeen1_click,0,0,2220,2231
 ,pik_year1
 
 
@@ -415,7 +427,7 @@ main,rspop_noe_menuitemclick,0,0,1240,1257
 ,str_noe,,lbl_ezaf_taradod,,index_noe_morakhasi
 ,str_noe,,index_noe_morakhasi
 
-main,sp_moon_itemclick,1,0,2303,2334
+main,sp_moon_itemclick,1,0,2320,2351
 ,moon_num,,sp_moon,,sp_year,,cust_lv_ezafekari,,list_ezafekari_id,dbcode,res,dbcode,sql,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,panel1,,tabhost1,,cust_lv_morakhasi,,list_morakhasi_id,,cust_lv_taradod,,list_taradod_id,,lbl_majmoe_saat,,saat_kar_min
 ,moon_num,dbcode,res,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,panel1
 ,fill_lists,,tabhost1_tabchanged,dbcode,connect_db,dbcode,all_ezafekari_mah,myfunc,fa2en,myfunc,convert_adad,dbcode,all_morakhasi_mah,dbcode,all_taradod_mah,dbcode,get_setting_byname,myfunc,min_to_saatminroz
@@ -423,11 +435,11 @@ main,tabhost1_tabchanged,0,0,860,895
 ,sp_year,,tabhost1,,sp_moon,,lbl_majmoe_saat,dbcode,res,dbcode,sql,,saat_kar_min
 dbcode,res
 dbcode,all_ezafekari_mah,myfunc,fa2en,myfunc,convert_adad,dbcode,all_morakhasi_mah,dbcode,all_taradod_mah,dbcode,connect_db,dbcode,get_setting_byname,myfunc,min_to_saatminroz
-main,sp_year_gozaresh_itemclick,1,0,2981,2983
+main,sp_year_gozaresh_itemclick,1,0,2998,3000
 ,sp_year_gozaresh,,clv_gozaresh,,list_gozareshat_id,dbcode,res,dbcode,sql,,p,,xui,,lbl_dategozaresh_clv,,lbl_namegozaresh_clv,,lbl_remove_from_list2,,lbl_tozihgozaresh_clv,,pan_item_gozaresh
 dbcode,res,,p,,lbl_dategozaresh_clv,,lbl_namegozaresh_clv,,lbl_remove_from_list2,,lbl_tozihgozaresh_clv,,pan_item_gozaresh
 ,fill_list_gozareshat,dbcode,connect_db
-main,sp_year_itemclick,1,0,2265,2301
+main,sp_year_itemclick,1,0,2282,2318
 ,moon_num,,sp_moon,,sp_year,,cust_lv_ezafekari,,list_ezafekari_id,dbcode,res,dbcode,sql,,p,,xui,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,panel1,,tabhost1,,cust_lv_morakhasi,,list_morakhasi_id,,cust_lv_taradod,,list_taradod_id,,lbl_majmoe_saat,,saat_kar_min
 ,moon_num,dbcode,res,,p,,lbl_date_clv,,lbl_edit_from_list,,lbl_hour_clv,,lbl_remove_from_list,,lbl_time_clv,,lbl_tozih_clv,,panel1
 ,fill_lists,,tabhost1_tabchanged,dbcode,connect_db,dbcode,all_ezafekari_mah,myfunc,fa2en,myfunc,convert_adad,dbcode,all_morakhasi_mah,dbcode,all_taradod_mah,dbcode,get_setting_byname,myfunc,min_to_saatminroz
@@ -451,7 +463,7 @@ dbcode,install_db_tbl_mycalander,0,0,36,48
 ,res,,sql,,workbook1,,sheet1
 ,res,,sheet1
 ,connect_db,,insert_calander_exl,myfunc,fa2en
-dbcode,cheng_tagvim,0,1,83,122
+dbcode,cheng_tagvim,0,0,83,122
 ,res,,sql
 ,res
 ,connect_db
@@ -459,51 +471,51 @@ dbcode,install_db_tbl_onvanha,0,0,50,78
 ,res,,sql
 ,res
 ,connect_db
-dbcode,isexist_ezafekari_by_date,0,0,438,454
+dbcode,isexist_ezafekari_by_date,0,1,447,465
 ,res,,sql
 ,res
 ,connect_db
-dbcode,add_ezafekari,0,0,156,160
+dbcode,add_ezafekari,0,1,156,161
 ,sql
 
 ,connect_db
-dbcode,edit_ezafekari,0,0,180,184
+dbcode,edit_ezafekari,0,1,182,187
 ,sql
 
 ,connect_db
-dbcode,isexist_morakhasi_by_date,0,0,456,471
+dbcode,isexist_morakhasi_by_date,0,1,467,483
 ,res,,sql
 ,res
 ,connect_db
-dbcode,add_morakhasi,0,0,163,168
+dbcode,add_morakhasi,0,1,164,169
 ,sql
 
 ,connect_db
-dbcode,edit_morakhasi,0,0,187,192
+dbcode,edit_morakhasi,0,1,190,195
 ,sql
 
 ,connect_db
-dbcode,isexist_taradod_by_date,0,0,473,488
+dbcode,isexist_taradod_by_date,0,1,485,502
 ,res,,sql
 ,res
 ,connect_db
-dbcode,add_taradod,0,0,170,174
+dbcode,add_taradod,0,1,171,176
 ,sql
 
 ,connect_db
-dbcode,edit_taradod,0,0,194,198
+dbcode,edit_taradod,0,1,197,202
 ,sql
 
 ,connect_db
-dbcode,get_setting_byname,0,0,261,269
+dbcode,get_setting_byname,0,0,270,278
 ,res,,sql
 ,res
 ,connect_db
-dbcode,all_ezafekari_mah,0,0,280,335
+dbcode,all_ezafekari_mah,0,0,289,344
 ,res,,sql
 ,res
 ,connect_db
-dbcode,all_morakhasi_mah,0,0,341,392
+dbcode,all_morakhasi_mah,0,0,350,401
 ,res,,sql,main,saat_kar_min
 ,res
 ,get_setting_byname,,connect_db,myfunc,min_to_saatminroz
@@ -511,39 +523,39 @@ dbcode,connect_db,0,0,14,20
 ,sql
 
 
-dbcode,get_day_id,0,0,518,537
+dbcode,get_day_id,0,1,533,553
 ,res,,sql
 ,res
 ,connect_db
-dbcode,delete_ezafekari,0,0,211,215
+dbcode,delete_ezafekari,0,1,216,221
 ,sql
 
 ,connect_db
-dbcode,delete_morakhasi,0,0,216,220
+dbcode,delete_morakhasi,0,1,222,227
 ,sql
 
 ,connect_db
-dbcode,delete_taradod,0,0,221,225
+dbcode,delete_taradod,0,1,228,233
 ,sql
 
 ,connect_db
-dbcode,delete_gozaresh,0,0,226,230
+dbcode,delete_gozaresh,0,1,234,239
 ,sql
 
 ,connect_db
-dbcode,all_taradod_mah,0,0,395,431
+dbcode,all_taradod_mah,0,0,404,440
 ,res,,sql
 ,res
 ,connect_db
-dbcode,add_gozaresh,0,0,205,209
+dbcode,add_gozaresh,0,1,209,214
 ,sql
 
 ,connect_db
-dbcode,add_setting_hogog,0,0,233,259
+dbcode,add_setting_hogog,0,1,242,268
 ,sql
 
 ,connect_db
-dbcode,add_setting_run,0,0,271,278
+dbcode,add_setting_run,0,0,280,287
 ,sql
 
 ,connect_db
@@ -551,7 +563,7 @@ dbcode,insert_calander_exl,0,0,124,143
 ,workbook1,,sheet1,,sql
 ,sheet1
 myfunc,fa2en
-dbcode,istatil_by_date,0,0,493,512
+dbcode,istatil_by_date,0,1,507,527
 ,res,,sql
 ,res
 ,connect_db
@@ -559,7 +571,7 @@ dbcode,process_globals,0,1,3,12
 
 
 
-dbcode,read_onvan_db,0,0,541,555
+dbcode,read_onvan_db,0,1,557,572
 ,res,,sql
 ,res
 ,connect_db

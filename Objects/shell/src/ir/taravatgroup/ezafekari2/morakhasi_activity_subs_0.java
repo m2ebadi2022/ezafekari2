@@ -490,7 +490,7 @@ Debug.ShouldStop(2097152);
 _mande_ta_emroz = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {(RemoteObject.solve(new RemoteObject[] {(RemoteObject.solve(new RemoteObject[] {morakhasi_activity._mande_d,morakhasi_activity.mostCurrent._main._saat_kar_min /*RemoteObject*/ }, "*",0, 1)),(RemoteObject.solve(new RemoteObject[] {morakhasi_activity._mande_h,RemoteObject.createImmutable(60)}, "*",0, 1)),morakhasi_activity._mande_m}, "++",2, 1)),(RemoteObject.solve(new RemoteObject[] {_mor_dar_roz,morakhasi_activity.mostCurrent._main._persiandate /*RemoteObject*/ .runMethod(true,"getPersianDay")}, "*",0, 0)),morakhasi_activity._morakhasi_estefade_esteh}, "+-",2, 0));Debug.locals.put("mande_ta_emroz", _mande_ta_emroz);
  BA.debugLineNum = 185;BA.debugLine="Log(morakhasi_estefade_esteh)";
 Debug.ShouldStop(16777216);
-morakhasi_activity.mostCurrent.__c.runVoidMethod ("LogImpl","119660821",BA.NumberToString(morakhasi_activity._morakhasi_estefade_esteh),0);
+morakhasi_activity.mostCurrent.__c.runVoidMethod ("LogImpl","319660821",BA.NumberToString(morakhasi_activity._morakhasi_estefade_esteh),0);
  BA.debugLineNum = 190;BA.debugLine="lbl_mande_ta_inEndMah.Text=min_to_str(mande_ta_en";
 Debug.ShouldStop(536870912);
 morakhasi_activity.mostCurrent._lbl_mande_ta_inendmah.runMethod(true,"setText",BA.ObjectToCharSequence(_min_to_str(_mande_ta_endmah)));
