@@ -34,7 +34,7 @@ public class setting_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.setting_activity");
+			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.setting_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class setting_activity extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static anywheresoftware.b4a.phone.Phone.ContentChooser _cc = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pan_colors = null;
@@ -376,6 +367,7 @@ public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
+public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
@@ -389,530 +381,265 @@ public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
-public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=22020096;
- //BA.debugLineNum = 22020096;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=22020098;
- //BA.debugLineNum = 22020098;BA.debugLine="Activity.LoadLayout(\"setting_layout\")";
+ //BA.debugLineNum = 48;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 50;BA.debugLine="Activity.LoadLayout(\"setting_layout\")";
 mostCurrent._activity.LoadLayout("setting_layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=22020103;
- //BA.debugLineNum = 22020103;BA.debugLine="pan_hed_setting.Color=Main.color4";
+ //BA.debugLineNum = 55;BA.debugLine="pan_hed_setting.Color=Main.color4";
 mostCurrent._pan_hed_setting.setColor(mostCurrent._main._color4 /*int*/ );
-RDebugUtils.currentLine=22020104;
- //BA.debugLineNum = 22020104;BA.debugLine="myfunc.set_font(Activity)";
+ //BA.debugLineNum = 56;BA.debugLine="myfunc.set_font(Activity)";
 mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,mostCurrent._activity);
-RDebugUtils.currentLine=22020107;
- //BA.debugLineNum = 22020107;BA.debugLine="sp_font.Add(\"یکان\")";
+ //BA.debugLineNum = 59;BA.debugLine="sp_font.Add(\"یکان\")";
 mostCurrent._sp_font.Add("یکان");
-RDebugUtils.currentLine=22020108;
- //BA.debugLineNum = 22020108;BA.debugLine="sp_font.Add(\"نازنین\")";
+ //BA.debugLineNum = 60;BA.debugLine="sp_font.Add(\"نازنین\")";
 mostCurrent._sp_font.Add("نازنین");
-RDebugUtils.currentLine=22020109;
- //BA.debugLineNum = 22020109;BA.debugLine="sp_font.Add(\"وزیر\")";
+ //BA.debugLineNum = 61;BA.debugLine="sp_font.Add(\"وزیر\")";
 mostCurrent._sp_font.Add("وزیر");
-RDebugUtils.currentLine=22020110;
- //BA.debugLineNum = 22020110;BA.debugLine="sp_font.Add(\"دست نویس\")";
+ //BA.debugLineNum = 62;BA.debugLine="sp_font.Add(\"دست نویس\")";
 mostCurrent._sp_font.Add("دست نویس");
-RDebugUtils.currentLine=22020111;
- //BA.debugLineNum = 22020111;BA.debugLine="sp_font.Add(\"کودک\")";
+ //BA.debugLineNum = 63;BA.debugLine="sp_font.Add(\"کودک\")";
 mostCurrent._sp_font.Add("کودک");
-RDebugUtils.currentLine=22020114;
- //BA.debugLineNum = 22020114;BA.debugLine="skb_f1.Value=Main.size_f1";
+ //BA.debugLineNum = 66;BA.debugLine="skb_f1.Value=Main.size_f1";
 mostCurrent._skb_f1.setValue(mostCurrent._main._size_f1 /*int*/ );
-RDebugUtils.currentLine=22020115;
- //BA.debugLineNum = 22020115;BA.debugLine="skb_f2.Value=Main.size_f2";
+ //BA.debugLineNum = 67;BA.debugLine="skb_f2.Value=Main.size_f2";
 mostCurrent._skb_f2.setValue(mostCurrent._main._size_f2 /*int*/ );
-RDebugUtils.currentLine=22020116;
- //BA.debugLineNum = 22020116;BA.debugLine="skb_f3.Value=Main.size_f3";
+ //BA.debugLineNum = 68;BA.debugLine="skb_f3.Value=Main.size_f3";
 mostCurrent._skb_f3.setValue(mostCurrent._main._size_f3 /*int*/ );
-RDebugUtils.currentLine=22020118;
- //BA.debugLineNum = 22020118;BA.debugLine="lbl_skb_f1.Text=Main.size_f1";
+ //BA.debugLineNum = 70;BA.debugLine="lbl_skb_f1.Text=Main.size_f1";
 mostCurrent._lbl_skb_f1.setText(BA.ObjectToCharSequence(mostCurrent._main._size_f1 /*int*/ ));
-RDebugUtils.currentLine=22020119;
- //BA.debugLineNum = 22020119;BA.debugLine="lbl_skb_f2.Text=Main.size_f2";
+ //BA.debugLineNum = 71;BA.debugLine="lbl_skb_f2.Text=Main.size_f2";
 mostCurrent._lbl_skb_f2.setText(BA.ObjectToCharSequence(mostCurrent._main._size_f2 /*int*/ ));
-RDebugUtils.currentLine=22020120;
- //BA.debugLineNum = 22020120;BA.debugLine="lbl_skb_f3.Text=Main.size_f3";
+ //BA.debugLineNum = 72;BA.debugLine="lbl_skb_f3.Text=Main.size_f3";
 mostCurrent._lbl_skb_f3.setText(BA.ObjectToCharSequence(mostCurrent._main._size_f3 /*int*/ ));
-RDebugUtils.currentLine=22020124;
- //BA.debugLineNum = 22020124;BA.debugLine="sp_font.SelectedIndex=sp_font.IndexOf(Main.main_f";
+ //BA.debugLineNum = 76;BA.debugLine="sp_font.SelectedIndex=sp_font.IndexOf(Main.main_f";
 mostCurrent._sp_font.setSelectedIndex(mostCurrent._sp_font.IndexOf(mostCurrent._main._main_font /*String*/ ));
-RDebugUtils.currentLine=22020126;
- //BA.debugLineNum = 22020126;BA.debugLine="End Sub";
+ //BA.debugLineNum = 78;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
-	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=22216704;
- //BA.debugLineNum = 22216704;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=22216705;
- //BA.debugLineNum = 22216705;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 88;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 89;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=22216706;
- //BA.debugLineNum = 22216706;BA.debugLine="If(pan_all.Visible=True)Then";
+ //BA.debugLineNum = 90;BA.debugLine="If(pan_all.Visible=True)Then";
 if ((mostCurrent._pan_all.getVisible()==anywheresoftware.b4a.keywords.Common.True)) { 
-RDebugUtils.currentLine=22216707;
- //BA.debugLineNum = 22216707;BA.debugLine="pan_all.Visible=False";
+ //BA.debugLineNum = 91;BA.debugLine="pan_all.Visible=False";
 mostCurrent._pan_all.setVisible(anywheresoftware.b4a.keywords.Common.False);
- }else 
-{RDebugUtils.currentLine=22216709;
- //BA.debugLineNum = 22216709;BA.debugLine="Else If (pan_all_help.Visible=True) Then";
-if ((mostCurrent._pan_all_help.getVisible()==anywheresoftware.b4a.keywords.Common.True)) { 
-RDebugUtils.currentLine=22216710;
- //BA.debugLineNum = 22216710;BA.debugLine="pan_all_help.Visible=False";
+ }else if((mostCurrent._pan_all_help.getVisible()==anywheresoftware.b4a.keywords.Common.True)) { 
+ //BA.debugLineNum = 94;BA.debugLine="pan_all_help.Visible=False";
 mostCurrent._pan_all_help.setVisible(anywheresoftware.b4a.keywords.Common.False);
- }else 
-{RDebugUtils.currentLine=22216711;
- //BA.debugLineNum = 22216711;BA.debugLine="Else If (pan_all2.Visible=True)Then";
-if ((mostCurrent._pan_all2.getVisible()==anywheresoftware.b4a.keywords.Common.True)) { 
-RDebugUtils.currentLine=22216712;
- //BA.debugLineNum = 22216712;BA.debugLine="pan_all2.Visible=False";
+ }else if((mostCurrent._pan_all2.getVisible()==anywheresoftware.b4a.keywords.Common.True)) { 
+ //BA.debugLineNum = 96;BA.debugLine="pan_all2.Visible=False";
 mostCurrent._pan_all2.setVisible(anywheresoftware.b4a.keywords.Common.False);
  }else {
-RDebugUtils.currentLine=22216715;
- //BA.debugLineNum = 22216715;BA.debugLine="lbl_back_Click";
+ //BA.debugLineNum = 99;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
- }}}
-;
-RDebugUtils.currentLine=22216718;
- //BA.debugLineNum = 22216718;BA.debugLine="Return True";
+ };
+ //BA.debugLineNum = 102;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=22216720;
- //BA.debugLineNum = 22216720;BA.debugLine="Return False";
+ //BA.debugLineNum = 104;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=22216722;
- //BA.debugLineNum = 22216722;BA.debugLine="End Sub";
+ //BA.debugLineNum = 106;BA.debugLine="End Sub";
 return false;
 }
-public static String  _lbl_back_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
-RDebugUtils.currentLine=22282240;
- //BA.debugLineNum = 22282240;BA.debugLine="Private Sub lbl_back_Click";
-RDebugUtils.currentLine=22282241;
- //BA.debugLineNum = 22282241;BA.debugLine="StartActivity(Main)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
-RDebugUtils.currentLine=22282242;
- //BA.debugLineNum = 22282242;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
-RDebugUtils.currentLine=22282243;
- //BA.debugLineNum = 22282243;BA.debugLine="End Sub";
-return "";
-}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="setting_activity";
-RDebugUtils.currentLine=22151168;
- //BA.debugLineNum = 22151168;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=22151170;
- //BA.debugLineNum = 22151170;BA.debugLine="End Sub";
+ //BA.debugLineNum = 84;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 86;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=22085632;
- //BA.debugLineNum = 22085632;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=22085634;
- //BA.debugLineNum = 22085634;BA.debugLine="End Sub";
+ //BA.debugLineNum = 80;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 82;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 16;BA.debugLine="Private pan_colors As Panel";
+mostCurrent._pan_colors = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private pan_all As Panel";
+mostCurrent._pan_all = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Private lbl_save_color As Label";
+mostCurrent._lbl_save_color = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 19;BA.debugLine="Private tik1 As Label";
+mostCurrent._tik1 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 20;BA.debugLine="Private tik2 As Label";
+mostCurrent._tik2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 21;BA.debugLine="Private tik3 As Label";
+mostCurrent._tik3 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 22;BA.debugLine="Private tik4 As Label";
+mostCurrent._tik4 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 23;BA.debugLine="Private tik5 As Label";
+mostCurrent._tik5 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 24;BA.debugLine="Private tik6 As Label";
+mostCurrent._tik6 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 27;BA.debugLine="Dim color1 As Int";
+_color1 = 0;
+ //BA.debugLineNum = 28;BA.debugLine="Dim color2 As Int";
+_color2 = 0;
+ //BA.debugLineNum = 29;BA.debugLine="Dim color3 As Int";
+_color3 = 0;
+ //BA.debugLineNum = 30;BA.debugLine="Dim color4 As Int";
+_color4 = 0;
+ //BA.debugLineNum = 31;BA.debugLine="Dim color5 As Int";
+_color5 = 0;
+ //BA.debugLineNum = 35;BA.debugLine="Dim color_index As Int";
+_color_index = 0;
+ //BA.debugLineNum = 36;BA.debugLine="Private pan_hed_setting As Panel";
+mostCurrent._pan_hed_setting = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 37;BA.debugLine="Private sp_font As Spinner";
+mostCurrent._sp_font = new anywheresoftware.b4a.objects.SpinnerWrapper();
+ //BA.debugLineNum = 38;BA.debugLine="Private lbl_skb_f1 As Label";
+mostCurrent._lbl_skb_f1 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 39;BA.debugLine="Private lbl_skb_f2 As Label";
+mostCurrent._lbl_skb_f2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 40;BA.debugLine="Private lbl_skb_f3 As Label";
+mostCurrent._lbl_skb_f3 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 41;BA.debugLine="Private skb_f1 As SeekBar";
+mostCurrent._skb_f1 = new anywheresoftware.b4a.objects.SeekBarWrapper();
+ //BA.debugLineNum = 42;BA.debugLine="Private skb_f2 As SeekBar";
+mostCurrent._skb_f2 = new anywheresoftware.b4a.objects.SeekBarWrapper();
+ //BA.debugLineNum = 43;BA.debugLine="Private skb_f3 As SeekBar";
+mostCurrent._skb_f3 = new anywheresoftware.b4a.objects.SeekBarWrapper();
+ //BA.debugLineNum = 44;BA.debugLine="Private pan_all2 As Panel";
+mostCurrent._pan_all2 = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 45;BA.debugLine="Private pan_all_help As Panel";
+mostCurrent._pan_all_help = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 46;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_back_click() throws Exception{
+ //BA.debugLineNum = 108;BA.debugLine="Private Sub lbl_back_Click";
+ //BA.debugLineNum = 109;BA.debugLine="StartActivity(Main)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
+ //BA.debugLineNum = 110;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ //BA.debugLineNum = 111;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_backup_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_backup_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_backup_click", null));}
 String _filename = "";
 anywheresoftware.b4a.phone.Phone.Email _email = null;
 anywheresoftware.b4a.objects.IntentWrapper _in = null;
-RDebugUtils.currentLine=22347776;
- //BA.debugLineNum = 22347776;BA.debugLine="Private Sub lbl_backup_Click";
-RDebugUtils.currentLine=22347778;
- //BA.debugLineNum = 22347778;BA.debugLine="Dim FileName As String = \"db.db\"";
+ //BA.debugLineNum = 115;BA.debugLine="Private Sub lbl_backup_Click";
+ //BA.debugLineNum = 117;BA.debugLine="Dim FileName As String = \"db.db\"";
 _filename = "db.db";
-RDebugUtils.currentLine=22347781;
- //BA.debugLineNum = 22347781;BA.debugLine="File.Copy(File.DirInternal, FileName, Starter.Pro";
+ //BA.debugLineNum = 120;BA.debugLine="File.Copy(File.DirInternal, FileName, Starter.Pro";
 anywheresoftware.b4a.keywords.Common.File.Copy(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename,mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,_filename);
-RDebugUtils.currentLine=22347783;
- //BA.debugLineNum = 22347783;BA.debugLine="Dim email As Email";
+ //BA.debugLineNum = 122;BA.debugLine="Dim email As Email";
 _email = new anywheresoftware.b4a.phone.Phone.Email();
-RDebugUtils.currentLine=22347784;
- //BA.debugLineNum = 22347784;BA.debugLine="email.To.Add(\"aaa@bbb.com\")";
+ //BA.debugLineNum = 123;BA.debugLine="email.To.Add(\"aaa@bbb.com\")";
 _email.To.Add((Object)("aaa@bbb.com"));
-RDebugUtils.currentLine=22347785;
- //BA.debugLineNum = 22347785;BA.debugLine="email.Subject = \"subject\"";
+ //BA.debugLineNum = 124;BA.debugLine="email.Subject = \"subject\"";
 _email.Subject = "subject";
-RDebugUtils.currentLine=22347786;
- //BA.debugLineNum = 22347786;BA.debugLine="email.Body = \"backup-\"&DateTime.Date(DateTime.Now";
+ //BA.debugLineNum = 125;BA.debugLine="email.Body = \"backup-\"&DateTime.Date(DateTime.Now";
 _email.Body = "backup-"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow());
-RDebugUtils.currentLine=22347787;
- //BA.debugLineNum = 22347787;BA.debugLine="email.Attachments.Add(Starter.Provider.GetFileUri";
-_email.Attachments.Add(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._getfileuri /*Object*/ (null,_filename));
-RDebugUtils.currentLine=22347789;
- //BA.debugLineNum = 22347789;BA.debugLine="Dim in As Intent = email.GetIntent";
+ //BA.debugLineNum = 126;BA.debugLine="email.Attachments.Add(Starter.Provider.GetFileUri";
+_email.Attachments.Add(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._getfileuri /*Object*/ (_filename));
+ //BA.debugLineNum = 128;BA.debugLine="Dim in As Intent = email.GetIntent";
 _in = new anywheresoftware.b4a.objects.IntentWrapper();
 _in = (anywheresoftware.b4a.objects.IntentWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.IntentWrapper(), (android.content.Intent)(_email.GetIntent()));
-RDebugUtils.currentLine=22347792;
- //BA.debugLineNum = 22347792;BA.debugLine="in.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION";
+ //BA.debugLineNum = 131;BA.debugLine="in.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION";
 _in.setFlags((int) (1));
-RDebugUtils.currentLine=22347793;
- //BA.debugLineNum = 22347793;BA.debugLine="StartActivity(in)";
+ //BA.debugLineNum = 132;BA.debugLine="StartActivity(in)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in.getObject()));
-RDebugUtils.currentLine=22347795;
- //BA.debugLineNum = 22347795;BA.debugLine="End Sub";
+ //BA.debugLineNum = 134;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_close_help_font_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_close_help_font_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_close_help_font_click", null));}
-RDebugUtils.currentLine=23855104;
- //BA.debugLineNum = 23855104;BA.debugLine="Private Sub lbl_close_help_font_Click";
-RDebugUtils.currentLine=23855105;
- //BA.debugLineNum = 23855105;BA.debugLine="pan_all_help.Visible=False";
+ //BA.debugLineNum = 383;BA.debugLine="Private Sub lbl_close_help_font_Click";
+ //BA.debugLineNum = 384;BA.debugLine="pan_all_help.Visible=False";
 mostCurrent._pan_all_help.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23855106;
- //BA.debugLineNum = 23855106;BA.debugLine="End Sub";
+ //BA.debugLineNum = 385;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_color_home_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_color_home_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_color_home_click", null));}
-RDebugUtils.currentLine=23134208;
- //BA.debugLineNum = 23134208;BA.debugLine="Private Sub lbl_color_home_Click";
-RDebugUtils.currentLine=23134209;
- //BA.debugLineNum = 23134209;BA.debugLine="lbl_color1_Click";
+ //BA.debugLineNum = 306;BA.debugLine="Private Sub lbl_color_home_Click";
+ //BA.debugLineNum = 307;BA.debugLine="lbl_color1_Click";
 _lbl_color1_click();
-RDebugUtils.currentLine=23134210;
- //BA.debugLineNum = 23134210;BA.debugLine="End Sub";
+ //BA.debugLineNum = 308;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_color1_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_color1_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_color1_click", null));}
-RDebugUtils.currentLine=22478848;
- //BA.debugLineNum = 22478848;BA.debugLine="Private Sub lbl_color1_Click";
-RDebugUtils.currentLine=22478849;
- //BA.debugLineNum = 22478849;BA.debugLine="pan_all.Visible=True";
+ //BA.debugLineNum = 161;BA.debugLine="Private Sub lbl_color1_Click";
+ //BA.debugLineNum = 162;BA.debugLine="pan_all.Visible=True";
 mostCurrent._pan_all.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=22478851;
- //BA.debugLineNum = 22478851;BA.debugLine="color_index=Main.color_index";
+ //BA.debugLineNum = 164;BA.debugLine="color_index=Main.color_index";
 _color_index = mostCurrent._main._color_index /*int*/ ;
-RDebugUtils.currentLine=22478853;
- //BA.debugLineNum = 22478853;BA.debugLine="Select color_index";
+ //BA.debugLineNum = 166;BA.debugLine="Select color_index";
 switch (_color_index) {
 case 1: {
-RDebugUtils.currentLine=22478855;
- //BA.debugLineNum = 22478855;BA.debugLine="pan_color1_Click";
+ //BA.debugLineNum = 168;BA.debugLine="pan_color1_Click";
 _pan_color1_click();
  break; }
 case 2: {
-RDebugUtils.currentLine=22478857;
- //BA.debugLineNum = 22478857;BA.debugLine="pan_color2_Click";
+ //BA.debugLineNum = 170;BA.debugLine="pan_color2_Click";
 _pan_color2_click();
  break; }
 case 3: {
-RDebugUtils.currentLine=22478859;
- //BA.debugLineNum = 22478859;BA.debugLine="pan_color3_Click";
+ //BA.debugLineNum = 172;BA.debugLine="pan_color3_Click";
 _pan_color3_click();
  break; }
 case 4: {
-RDebugUtils.currentLine=22478861;
- //BA.debugLineNum = 22478861;BA.debugLine="pan_color4_Click";
+ //BA.debugLineNum = 174;BA.debugLine="pan_color4_Click";
 _pan_color4_click();
  break; }
 case 5: {
-RDebugUtils.currentLine=22478863;
- //BA.debugLineNum = 22478863;BA.debugLine="pan_color5_Click";
+ //BA.debugLineNum = 176;BA.debugLine="pan_color5_Click";
 _pan_color5_click();
  break; }
 case 6: {
-RDebugUtils.currentLine=22478865;
- //BA.debugLineNum = 22478865;BA.debugLine="pan_color6_Click";
+ //BA.debugLineNum = 178;BA.debugLine="pan_color6_Click";
 _pan_color6_click();
  break; }
 }
 ;
-RDebugUtils.currentLine=22478872;
- //BA.debugLineNum = 22478872;BA.debugLine="End Sub";
-return "";
-}
-public static String  _pan_color1_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_color1_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_color1_click", null));}
-RDebugUtils.currentLine=22937600;
- //BA.debugLineNum = 22937600;BA.debugLine="Private Sub pan_color1_Click";
-RDebugUtils.currentLine=22937601;
- //BA.debugLineNum = 22937601;BA.debugLine="tik_all_dis";
-_tik_all_dis();
-RDebugUtils.currentLine=22937602;
- //BA.debugLineNum = 22937602;BA.debugLine="color1=0XFF69AC00";
-_color1 = ((int)0xff69ac00);
-RDebugUtils.currentLine=22937603;
- //BA.debugLineNum = 22937603;BA.debugLine="color2=0xFF00C7C7";
-_color2 = ((int)0xff00c7c7);
-RDebugUtils.currentLine=22937604;
- //BA.debugLineNum = 22937604;BA.debugLine="color3=0XFFFFFFFF";
-_color3 = ((int)0xffffffff);
-RDebugUtils.currentLine=22937605;
- //BA.debugLineNum = 22937605;BA.debugLine="color4=0XFF69AC00";
-_color4 = ((int)0xff69ac00);
-RDebugUtils.currentLine=22937606;
- //BA.debugLineNum = 22937606;BA.debugLine="color5=0xFF00C7C7";
-_color5 = ((int)0xff00c7c7);
-RDebugUtils.currentLine=22937609;
- //BA.debugLineNum = 22937609;BA.debugLine="color_index=1";
-_color_index = (int) (1);
-RDebugUtils.currentLine=22937610;
- //BA.debugLineNum = 22937610;BA.debugLine="tik1.Visible=True";
-mostCurrent._tik1.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=22937612;
- //BA.debugLineNum = 22937612;BA.debugLine="End Sub";
-return "";
-}
-public static String  _pan_color2_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_color2_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_color2_click", null));}
-RDebugUtils.currentLine=22872064;
- //BA.debugLineNum = 22872064;BA.debugLine="Private Sub pan_color2_Click";
-RDebugUtils.currentLine=22872065;
- //BA.debugLineNum = 22872065;BA.debugLine="tik_all_dis";
-_tik_all_dis();
-RDebugUtils.currentLine=22872066;
- //BA.debugLineNum = 22872066;BA.debugLine="color1 = 0xFF7F19EE";
-_color1 = ((int)0xff7f19ee);
-RDebugUtils.currentLine=22872067;
- //BA.debugLineNum = 22872067;BA.debugLine="color2 = 0xFF567BFF";
-_color2 = ((int)0xff567bff);
-RDebugUtils.currentLine=22872068;
- //BA.debugLineNum = 22872068;BA.debugLine="color3=0XFFFFFFFF";
-_color3 = ((int)0xffffffff);
-RDebugUtils.currentLine=22872069;
- //BA.debugLineNum = 22872069;BA.debugLine="color4=0xFF567BFF";
-_color4 = ((int)0xff567bff);
-RDebugUtils.currentLine=22872070;
- //BA.debugLineNum = 22872070;BA.debugLine="color5=0xFF567BFF";
-_color5 = ((int)0xff567bff);
-RDebugUtils.currentLine=22872074;
- //BA.debugLineNum = 22872074;BA.debugLine="color_index=2";
-_color_index = (int) (2);
-RDebugUtils.currentLine=22872075;
- //BA.debugLineNum = 22872075;BA.debugLine="tik2.Visible=True";
-mostCurrent._tik2.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=22872077;
- //BA.debugLineNum = 22872077;BA.debugLine="End Sub";
-return "";
-}
-public static String  _pan_color3_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_color3_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_color3_click", null));}
-RDebugUtils.currentLine=22806528;
- //BA.debugLineNum = 22806528;BA.debugLine="Private Sub pan_color3_Click";
-RDebugUtils.currentLine=22806529;
- //BA.debugLineNum = 22806529;BA.debugLine="tik_all_dis";
-_tik_all_dis();
-RDebugUtils.currentLine=22806530;
- //BA.debugLineNum = 22806530;BA.debugLine="color1 = 0xFF2BC1F6";
-_color1 = ((int)0xff2bc1f6);
-RDebugUtils.currentLine=22806531;
- //BA.debugLineNum = 22806531;BA.debugLine="color2 = 0xFF1E45D1";
-_color2 = ((int)0xff1e45d1);
-RDebugUtils.currentLine=22806532;
- //BA.debugLineNum = 22806532;BA.debugLine="color3=0XFFFFFFFF";
-_color3 = ((int)0xffffffff);
-RDebugUtils.currentLine=22806533;
- //BA.debugLineNum = 22806533;BA.debugLine="color4=0xFF2BC1F6";
-_color4 = ((int)0xff2bc1f6);
-RDebugUtils.currentLine=22806534;
- //BA.debugLineNum = 22806534;BA.debugLine="color5=0xFF1E45D1";
-_color5 = ((int)0xff1e45d1);
-RDebugUtils.currentLine=22806539;
- //BA.debugLineNum = 22806539;BA.debugLine="color_index=3";
-_color_index = (int) (3);
-RDebugUtils.currentLine=22806540;
- //BA.debugLineNum = 22806540;BA.debugLine="tik3.Visible=True";
-mostCurrent._tik3.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=22806541;
- //BA.debugLineNum = 22806541;BA.debugLine="End Sub";
-return "";
-}
-public static String  _pan_color4_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_color4_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_color4_click", null));}
-RDebugUtils.currentLine=22740992;
- //BA.debugLineNum = 22740992;BA.debugLine="Private Sub pan_color4_Click";
-RDebugUtils.currentLine=22740993;
- //BA.debugLineNum = 22740993;BA.debugLine="tik_all_dis";
-_tik_all_dis();
-RDebugUtils.currentLine=22740994;
- //BA.debugLineNum = 22740994;BA.debugLine="color1 = 0xFFDD00FF";
-_color1 = ((int)0xffdd00ff);
-RDebugUtils.currentLine=22740995;
- //BA.debugLineNum = 22740995;BA.debugLine="color2 = 0xFF0090FF";
-_color2 = ((int)0xff0090ff);
-RDebugUtils.currentLine=22740996;
- //BA.debugLineNum = 22740996;BA.debugLine="color3=0XFFFFFFFF";
-_color3 = ((int)0xffffffff);
-RDebugUtils.currentLine=22740997;
- //BA.debugLineNum = 22740997;BA.debugLine="color4=0xFFDD00FF";
-_color4 = ((int)0xffdd00ff);
-RDebugUtils.currentLine=22740998;
- //BA.debugLineNum = 22740998;BA.debugLine="color5=0xFF24EB9D";
-_color5 = ((int)0xff24eb9d);
-RDebugUtils.currentLine=22741003;
- //BA.debugLineNum = 22741003;BA.debugLine="color_index=4";
-_color_index = (int) (4);
-RDebugUtils.currentLine=22741004;
- //BA.debugLineNum = 22741004;BA.debugLine="tik4.Visible=True";
-mostCurrent._tik4.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=22741005;
- //BA.debugLineNum = 22741005;BA.debugLine="End Sub";
-return "";
-}
-public static String  _pan_color5_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_color5_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_color5_click", null));}
-RDebugUtils.currentLine=22675456;
- //BA.debugLineNum = 22675456;BA.debugLine="Private Sub pan_color5_Click";
-RDebugUtils.currentLine=22675457;
- //BA.debugLineNum = 22675457;BA.debugLine="tik_all_dis";
-_tik_all_dis();
-RDebugUtils.currentLine=22675458;
- //BA.debugLineNum = 22675458;BA.debugLine="color1 = 0xFFCF5263";
-_color1 = ((int)0xffcf5263);
-RDebugUtils.currentLine=22675459;
- //BA.debugLineNum = 22675459;BA.debugLine="color2 = 0xFFABC01A";
-_color2 = ((int)0xffabc01a);
-RDebugUtils.currentLine=22675460;
- //BA.debugLineNum = 22675460;BA.debugLine="color3=0XFFFFFFFF";
-_color3 = ((int)0xffffffff);
-RDebugUtils.currentLine=22675461;
- //BA.debugLineNum = 22675461;BA.debugLine="color4=0xFFCF5263";
-_color4 = ((int)0xffcf5263);
-RDebugUtils.currentLine=22675462;
- //BA.debugLineNum = 22675462;BA.debugLine="color5=0xFFABC01A";
-_color5 = ((int)0xffabc01a);
-RDebugUtils.currentLine=22675466;
- //BA.debugLineNum = 22675466;BA.debugLine="color_index=5";
-_color_index = (int) (5);
-RDebugUtils.currentLine=22675467;
- //BA.debugLineNum = 22675467;BA.debugLine="tik5.Visible=True";
-mostCurrent._tik5.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=22675468;
- //BA.debugLineNum = 22675468;BA.debugLine="End Sub";
-return "";
-}
-public static String  _pan_color6_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_color6_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_color6_click", null));}
-RDebugUtils.currentLine=22609920;
- //BA.debugLineNum = 22609920;BA.debugLine="Private Sub pan_color6_Click";
-RDebugUtils.currentLine=22609921;
- //BA.debugLineNum = 22609921;BA.debugLine="tik_all_dis";
-_tik_all_dis();
-RDebugUtils.currentLine=22609922;
- //BA.debugLineNum = 22609922;BA.debugLine="color1= 0xFF5289CF";
-_color1 = ((int)0xff5289cf);
-RDebugUtils.currentLine=22609923;
- //BA.debugLineNum = 22609923;BA.debugLine="color2= 0xFFABC01A";
-_color2 = ((int)0xffabc01a);
-RDebugUtils.currentLine=22609924;
- //BA.debugLineNum = 22609924;BA.debugLine="color3=0XFFFFFFFF";
-_color3 = ((int)0xffffffff);
-RDebugUtils.currentLine=22609925;
- //BA.debugLineNum = 22609925;BA.debugLine="color4=0xFF5289CF";
-_color4 = ((int)0xff5289cf);
-RDebugUtils.currentLine=22609926;
- //BA.debugLineNum = 22609926;BA.debugLine="color5=0xFFABC01A";
-_color5 = ((int)0xffabc01a);
-RDebugUtils.currentLine=22609931;
- //BA.debugLineNum = 22609931;BA.debugLine="color_index=6";
-_color_index = (int) (6);
-RDebugUtils.currentLine=22609932;
- //BA.debugLineNum = 22609932;BA.debugLine="tik6.Visible=True";
-mostCurrent._tik6.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=22609933;
- //BA.debugLineNum = 22609933;BA.debugLine="End Sub";
+ //BA.debugLineNum = 185;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_font_pan_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_font_pan_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_font_pan_click", null));}
-RDebugUtils.currentLine=23265280;
- //BA.debugLineNum = 23265280;BA.debugLine="Private Sub lbl_font_pan_Click";
-RDebugUtils.currentLine=23265281;
- //BA.debugLineNum = 23265281;BA.debugLine="pan_all2.Visible=True";
+ //BA.debugLineNum = 314;BA.debugLine="Private Sub lbl_font_pan_Click";
+ //BA.debugLineNum = 315;BA.debugLine="pan_all2.Visible=True";
 mostCurrent._pan_all2.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=23265287;
- //BA.debugLineNum = 23265287;BA.debugLine="End Sub";
+ //BA.debugLineNum = 321;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_help_font_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_help_font_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_help_font_click", null));}
-RDebugUtils.currentLine=23396352;
- //BA.debugLineNum = 23396352;BA.debugLine="Private Sub lbl_help_font_Click";
-RDebugUtils.currentLine=23396357;
- //BA.debugLineNum = 23396357;BA.debugLine="pan_all_help.Visible=True";
+ //BA.debugLineNum = 339;BA.debugLine="Private Sub lbl_help_font_Click";
+ //BA.debugLineNum = 344;BA.debugLine="pan_all_help.Visible=True";
 mostCurrent._pan_all_help.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=23396358;
- //BA.debugLineNum = 23396358;BA.debugLine="End Sub";
+ //BA.debugLineNum = 345;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_rest_font_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_rest_font_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_rest_font_click", null));}
-RDebugUtils.currentLine=23330816;
- //BA.debugLineNum = 23330816;BA.debugLine="Private Sub lbl_rest_font_Click";
-RDebugUtils.currentLine=23330817;
- //BA.debugLineNum = 23330817;BA.debugLine="sp_font.SelectedIndex=0";
+ //BA.debugLineNum = 323;BA.debugLine="Private Sub lbl_rest_font_Click";
+ //BA.debugLineNum = 324;BA.debugLine="sp_font.SelectedIndex=0";
 mostCurrent._sp_font.setSelectedIndex((int) (0));
-RDebugUtils.currentLine=23330819;
- //BA.debugLineNum = 23330819;BA.debugLine="skb_f1.Value=17";
+ //BA.debugLineNum = 326;BA.debugLine="skb_f1.Value=17";
 mostCurrent._skb_f1.setValue((int) (17));
-RDebugUtils.currentLine=23330820;
- //BA.debugLineNum = 23330820;BA.debugLine="skb_f2.Value=15";
+ //BA.debugLineNum = 327;BA.debugLine="skb_f2.Value=15";
 mostCurrent._skb_f2.setValue((int) (15));
-RDebugUtils.currentLine=23330821;
- //BA.debugLineNum = 23330821;BA.debugLine="skb_f3.Value=13";
+ //BA.debugLineNum = 328;BA.debugLine="skb_f3.Value=13";
 mostCurrent._skb_f3.setValue((int) (13));
-RDebugUtils.currentLine=23330823;
- //BA.debugLineNum = 23330823;BA.debugLine="lbl_skb_f1.Text=17";
+ //BA.debugLineNum = 330;BA.debugLine="lbl_skb_f1.Text=17";
 mostCurrent._lbl_skb_f1.setText(BA.ObjectToCharSequence(17));
-RDebugUtils.currentLine=23330824;
- //BA.debugLineNum = 23330824;BA.debugLine="lbl_skb_f2.Text=15";
+ //BA.debugLineNum = 331;BA.debugLine="lbl_skb_f2.Text=15";
 mostCurrent._lbl_skb_f2.setText(BA.ObjectToCharSequence(15));
-RDebugUtils.currentLine=23330825;
- //BA.debugLineNum = 23330825;BA.debugLine="lbl_skb_f3.Text=13";
+ //BA.debugLineNum = 332;BA.debugLine="lbl_skb_f3.Text=13";
 mostCurrent._lbl_skb_f3.setText(BA.ObjectToCharSequence(13));
-RDebugUtils.currentLine=23330830;
- //BA.debugLineNum = 23330830;BA.debugLine="End Sub";
+ //BA.debugLineNum = 337;BA.debugLine="End Sub";
 return "";
 }
 public static void  _lbl_restore_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_restore_click", false))
-	 {Debug.delegate(mostCurrent.activityBA, "lbl_restore_click", null); return;}
 ResumableSub_lbl_restore_Click rsub = new ResumableSub_lbl_restore_Click(null);
 rsub.resume(processBA, null);
 }
@@ -928,7 +655,6 @@ int _result = 0;
 
 @Override
 public void resume(BA ba, Object[] result) throws Exception{
-RDebugUtils.currentModule="setting_activity";
 
     while (true) {
         switch (state) {
@@ -938,15 +664,12 @@ return;
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=22413313;
- //BA.debugLineNum = 22413313;BA.debugLine="cc.Initialize(\"CC\")";
+ //BA.debugLineNum = 137;BA.debugLine="cc.Initialize(\"CC\")";
 parent._cc.Initialize("CC");
-RDebugUtils.currentLine=22413314;
- //BA.debugLineNum = 22413314;BA.debugLine="cc.Show(\"*/*\", \"انتخاب فایل دیتابیس\")";
+ //BA.debugLineNum = 138;BA.debugLine="cc.Show(\"*/*\", \"انتخاب فایل دیتابیس\")";
 parent._cc.Show(processBA,"*/*","انتخاب فایل دیتابیس");
-RDebugUtils.currentLine=22413315;
- //BA.debugLineNum = 22413315;BA.debugLine="Wait For CC_Result (Success As Boolean, Dir As St";
-anywheresoftware.b4a.keywords.Common.WaitFor("cc_result", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "setting_activity", "lbl_restore_click"), null);
+ //BA.debugLineNum = 139;BA.debugLine="Wait For CC_Result (Success As Boolean, Dir As St";
+anywheresoftware.b4a.keywords.Common.WaitFor("cc_result", processBA, this, null);
 this.state = 9;
 return;
 case 9:
@@ -956,8 +679,7 @@ _success = (Boolean) result[0];
 _dir = (String) result[1];
 _filename = (String) result[2];
 ;
-RDebugUtils.currentLine=22413316;
- //BA.debugLineNum = 22413316;BA.debugLine="If Success Then";
+ //BA.debugLineNum = 140;BA.debugLine="If Success Then";
 if (true) break;
 
 case 1:
@@ -970,26 +692,19 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=22413317;
- //BA.debugLineNum = 22413317;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.SharedFo";
+ //BA.debugLineNum = 141;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.SharedFo";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db");
-RDebugUtils.currentLine=22413319;
- //BA.debugLineNum = 22413319;BA.debugLine="Log( Dir)";
-anywheresoftware.b4a.keywords.Common.LogImpl("422413319",_dir,0);
-RDebugUtils.currentLine=22413320;
- //BA.debugLineNum = 22413320;BA.debugLine="Log(FileName)";
-anywheresoftware.b4a.keywords.Common.LogImpl("422413320",_filename,0);
-RDebugUtils.currentLine=22413321;
- //BA.debugLineNum = 22413321;BA.debugLine="Log(File.Exists(Starter.Provider.SharedFolder,\"d";
-anywheresoftware.b4a.keywords.Common.LogImpl("422413321",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db")),0);
-RDebugUtils.currentLine=22413323;
- //BA.debugLineNum = 22413323;BA.debugLine="Dim result As Int";
+ //BA.debugLineNum = 143;BA.debugLine="Log( Dir)";
+anywheresoftware.b4a.keywords.Common.LogImpl("415990791",_dir,0);
+ //BA.debugLineNum = 144;BA.debugLine="Log(FileName)";
+anywheresoftware.b4a.keywords.Common.LogImpl("415990792",_filename,0);
+ //BA.debugLineNum = 145;BA.debugLine="Log(File.Exists(Starter.Provider.SharedFolder,\"d";
+anywheresoftware.b4a.keywords.Common.LogImpl("415990793",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db")),0);
+ //BA.debugLineNum = 147;BA.debugLine="Dim result As Int";
 _result = 0;
-RDebugUtils.currentLine=22413325;
- //BA.debugLineNum = 22413325;BA.debugLine="result = Msgbox2(\"دیتای قبلی حذف و دیتای جدید جا";
+ //BA.debugLineNum = 149;BA.debugLine="result = Msgbox2(\"دیتای قبلی حذف و دیتای جدید جا";
 _result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence("دیتای قبلی حذف و دیتای جدید جایگزین می شود."),BA.ObjectToCharSequence("توجه"),"باشه","","نه",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"attention.png").getObject()),mostCurrent.activityBA);
-RDebugUtils.currentLine=22413326;
- //BA.debugLineNum = 22413326;BA.debugLine="If result = DialogResponse.Positive Then";
+ //BA.debugLineNum = 150;BA.debugLine="If result = DialogResponse.Positive Then";
 if (true) break;
 
 case 4:
@@ -1002,14 +717,11 @@ this.state = 6;
 case 6:
 //C
 this.state = 7;
-RDebugUtils.currentLine=22413327;
- //BA.debugLineNum = 22413327;BA.debugLine="File.Copy(Starter.Provider.SharedFolder,\"db2.db";
+ //BA.debugLineNum = 151;BA.debugLine="File.Copy(Starter.Provider.SharedFolder,\"db2.db";
 anywheresoftware.b4a.keywords.Common.File.Copy(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db",anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"db.db");
-RDebugUtils.currentLine=22413328;
- //BA.debugLineNum = 22413328;BA.debugLine="StartActivity(Main)";
+ //BA.debugLineNum = 152;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(parent.mostCurrent._main.getObject()));
-RDebugUtils.currentLine=22413329;
- //BA.debugLineNum = 22413329;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 153;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
  if (true) break;
 
@@ -1023,181 +735,242 @@ case 8:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=22413335;
- //BA.debugLineNum = 22413335;BA.debugLine="End Sub";
+ //BA.debugLineNum = 159;BA.debugLine="End Sub";
 if (true) break;
 
             }
         }
     }
 }
+public static void  _cc_result(boolean _success,String _dir,String _filename) throws Exception{
+}
 public static String  _lbl_save_color_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_save_color_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_save_color_click", null));}
-RDebugUtils.currentLine=23003136;
- //BA.debugLineNum = 23003136;BA.debugLine="Private Sub lbl_save_color_Click";
-RDebugUtils.currentLine=23003137;
- //BA.debugLineNum = 23003137;BA.debugLine="Main.color1=color1";
+ //BA.debugLineNum = 280;BA.debugLine="Private Sub lbl_save_color_Click";
+ //BA.debugLineNum = 281;BA.debugLine="Main.color1=color1";
 mostCurrent._main._color1 /*int*/  = _color1;
-RDebugUtils.currentLine=23003138;
- //BA.debugLineNum = 23003138;BA.debugLine="Main.color2=color2";
+ //BA.debugLineNum = 282;BA.debugLine="Main.color2=color2";
 mostCurrent._main._color2 /*int*/  = _color2;
-RDebugUtils.currentLine=23003139;
- //BA.debugLineNum = 23003139;BA.debugLine="Main.color3=color3";
+ //BA.debugLineNum = 283;BA.debugLine="Main.color3=color3";
 mostCurrent._main._color3 /*int*/  = _color3;
-RDebugUtils.currentLine=23003140;
- //BA.debugLineNum = 23003140;BA.debugLine="Main.color4=color4";
+ //BA.debugLineNum = 284;BA.debugLine="Main.color4=color4";
 mostCurrent._main._color4 /*int*/  = _color4;
-RDebugUtils.currentLine=23003141;
- //BA.debugLineNum = 23003141;BA.debugLine="Main.color5=color5";
+ //BA.debugLineNum = 285;BA.debugLine="Main.color5=color5";
 mostCurrent._main._color5 /*int*/  = _color5;
-RDebugUtils.currentLine=23003142;
- //BA.debugLineNum = 23003142;BA.debugLine="Main.color_index=color_index";
+ //BA.debugLineNum = 286;BA.debugLine="Main.color_index=color_index";
 mostCurrent._main._color_index /*int*/  = _color_index;
-RDebugUtils.currentLine=23003144;
- //BA.debugLineNum = 23003144;BA.debugLine="File.WriteString(File.DirInternal,\"setcolor.txt\",";
+ //BA.debugLineNum = 288;BA.debugLine="File.WriteString(File.DirInternal,\"setcolor.txt\",";
 anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"setcolor.txt",BA.NumberToString(mostCurrent._main._color1 /*int*/ )+","+BA.NumberToString(mostCurrent._main._color2 /*int*/ )+","+BA.NumberToString(mostCurrent._main._color_index /*int*/ )+","+BA.NumberToString(mostCurrent._main._color3 /*int*/ )+","+BA.NumberToString(mostCurrent._main._color4 /*int*/ )+","+BA.NumberToString(mostCurrent._main._color5 /*int*/ )+anywheresoftware.b4a.keywords.Common.CRLF+mostCurrent._main._main_font /*String*/ +","+BA.NumberToString(mostCurrent._main._size_f1 /*int*/ )+","+BA.NumberToString(mostCurrent._main._size_f2 /*int*/ )+","+BA.NumberToString(mostCurrent._main._size_f3 /*int*/ ));
-RDebugUtils.currentLine=23003146;
- //BA.debugLineNum = 23003146;BA.debugLine="pan_all.Visible=False";
+ //BA.debugLineNum = 290;BA.debugLine="pan_all.Visible=False";
 mostCurrent._pan_all.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23003147;
- //BA.debugLineNum = 23003147;BA.debugLine="ToastMessageShow(\"تغییرات ذخیره شد\",False)";
+ //BA.debugLineNum = 291;BA.debugLine="ToastMessageShow(\"تغییرات ذخیره شد\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تغییرات ذخیره شد"),anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23003151;
- //BA.debugLineNum = 23003151;BA.debugLine="End Sub";
+ //BA.debugLineNum = 295;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_save_font_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_save_font_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_save_font_click", null));}
-RDebugUtils.currentLine=23461888;
- //BA.debugLineNum = 23461888;BA.debugLine="Private Sub lbl_save_font_Click";
-RDebugUtils.currentLine=23461892;
- //BA.debugLineNum = 23461892;BA.debugLine="File.WriteString(File.DirInternal,\"setcolor.txt\",";
+ //BA.debugLineNum = 347;BA.debugLine="Private Sub lbl_save_font_Click";
+ //BA.debugLineNum = 351;BA.debugLine="File.WriteString(File.DirInternal,\"setcolor.txt\",";
 anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"setcolor.txt",BA.NumberToString(mostCurrent._main._color1 /*int*/ )+","+BA.NumberToString(mostCurrent._main._color2 /*int*/ )+","+BA.NumberToString(_color_index)+","+BA.NumberToString(mostCurrent._main._color3 /*int*/ )+","+BA.NumberToString(mostCurrent._main._color4 /*int*/ )+","+BA.NumberToString(mostCurrent._main._color5 /*int*/ )+anywheresoftware.b4a.keywords.Common.CRLF+mostCurrent._sp_font.getSelectedItem()+","+BA.NumberToString(mostCurrent._skb_f1.getValue())+","+BA.NumberToString(mostCurrent._skb_f2.getValue())+","+BA.NumberToString(mostCurrent._skb_f3.getValue()));
-RDebugUtils.currentLine=23461896;
- //BA.debugLineNum = 23461896;BA.debugLine="pan_all2_Click";
+ //BA.debugLineNum = 355;BA.debugLine="pan_all2_Click";
 _pan_all2_click();
-RDebugUtils.currentLine=23461897;
- //BA.debugLineNum = 23461897;BA.debugLine="ToastMessageShow(\"تغییرات ذخیره شد\",False)";
+ //BA.debugLineNum = 356;BA.debugLine="ToastMessageShow(\"تغییرات ذخیره شد\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تغییرات ذخیره شد"),anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23461901;
- //BA.debugLineNum = 23461901;BA.debugLine="End Sub";
-return "";
-}
-public static String  _pan_all2_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_all2_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_all2_click", null));}
-RDebugUtils.currentLine=23724032;
- //BA.debugLineNum = 23724032;BA.debugLine="Private Sub pan_all2_Click";
-RDebugUtils.currentLine=23724033;
- //BA.debugLineNum = 23724033;BA.debugLine="pan_all2.Visible=False";
-mostCurrent._pan_all2.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23724034;
- //BA.debugLineNum = 23724034;BA.debugLine="End Sub";
+ //BA.debugLineNum = 360;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_all_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_all_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_all_click", null));}
-RDebugUtils.currentLine=22544384;
- //BA.debugLineNum = 22544384;BA.debugLine="Private Sub pan_all_Click";
-RDebugUtils.currentLine=22544385;
- //BA.debugLineNum = 22544385;BA.debugLine="pan_all.Visible=False";
+ //BA.debugLineNum = 187;BA.debugLine="Private Sub pan_all_Click";
+ //BA.debugLineNum = 188;BA.debugLine="pan_all.Visible=False";
 mostCurrent._pan_all.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=22544387;
- //BA.debugLineNum = 22544387;BA.debugLine="End Sub";
+ //BA.debugLineNum = 190;BA.debugLine="End Sub";
 return "";
 }
-public static String  _tik_all_dis() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "tik_all_dis", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "tik_all_dis", null));}
-RDebugUtils.currentLine=23068672;
- //BA.debugLineNum = 23068672;BA.debugLine="Sub tik_all_dis";
-RDebugUtils.currentLine=23068673;
- //BA.debugLineNum = 23068673;BA.debugLine="tik1.Visible=False";
-mostCurrent._tik1.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23068674;
- //BA.debugLineNum = 23068674;BA.debugLine="tik2.Visible=False";
-mostCurrent._tik2.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23068675;
- //BA.debugLineNum = 23068675;BA.debugLine="tik3.Visible=False";
-mostCurrent._tik3.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23068676;
- //BA.debugLineNum = 23068676;BA.debugLine="tik4.Visible=False";
-mostCurrent._tik4.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23068677;
- //BA.debugLineNum = 23068677;BA.debugLine="tik5.Visible=False";
-mostCurrent._tik5.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23068678;
- //BA.debugLineNum = 23068678;BA.debugLine="tik6.Visible=False";
-mostCurrent._tik6.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=23068679;
- //BA.debugLineNum = 23068679;BA.debugLine="End Sub";
+public static String  _pan_all2_click() throws Exception{
+ //BA.debugLineNum = 374;BA.debugLine="Private Sub pan_all2_Click";
+ //BA.debugLineNum = 375;BA.debugLine="pan_all2.Visible=False";
+mostCurrent._pan_all2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 376;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pan_color1_click() throws Exception{
+ //BA.debugLineNum = 266;BA.debugLine="Private Sub pan_color1_Click";
+ //BA.debugLineNum = 267;BA.debugLine="tik_all_dis";
+_tik_all_dis();
+ //BA.debugLineNum = 268;BA.debugLine="color1=0XFF69AC00";
+_color1 = ((int)0xff69ac00);
+ //BA.debugLineNum = 269;BA.debugLine="color2=0xFF00C7C7";
+_color2 = ((int)0xff00c7c7);
+ //BA.debugLineNum = 270;BA.debugLine="color3=0XFFFFFFFF";
+_color3 = ((int)0xffffffff);
+ //BA.debugLineNum = 271;BA.debugLine="color4=0XFF69AC00";
+_color4 = ((int)0xff69ac00);
+ //BA.debugLineNum = 272;BA.debugLine="color5=0xFF00C7C7";
+_color5 = ((int)0xff00c7c7);
+ //BA.debugLineNum = 275;BA.debugLine="color_index=1";
+_color_index = (int) (1);
+ //BA.debugLineNum = 276;BA.debugLine="tik1.Visible=True";
+mostCurrent._tik1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 278;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pan_color2_click() throws Exception{
+ //BA.debugLineNum = 251;BA.debugLine="Private Sub pan_color2_Click";
+ //BA.debugLineNum = 252;BA.debugLine="tik_all_dis";
+_tik_all_dis();
+ //BA.debugLineNum = 253;BA.debugLine="color1 = 0xFF7F19EE";
+_color1 = ((int)0xff7f19ee);
+ //BA.debugLineNum = 254;BA.debugLine="color2 = 0xFF567BFF";
+_color2 = ((int)0xff567bff);
+ //BA.debugLineNum = 255;BA.debugLine="color3=0XFFFFFFFF";
+_color3 = ((int)0xffffffff);
+ //BA.debugLineNum = 256;BA.debugLine="color4=0xFF567BFF";
+_color4 = ((int)0xff567bff);
+ //BA.debugLineNum = 257;BA.debugLine="color5=0xFF567BFF";
+_color5 = ((int)0xff567bff);
+ //BA.debugLineNum = 261;BA.debugLine="color_index=2";
+_color_index = (int) (2);
+ //BA.debugLineNum = 262;BA.debugLine="tik2.Visible=True";
+mostCurrent._tik2.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 264;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pan_color3_click() throws Exception{
+ //BA.debugLineNum = 236;BA.debugLine="Private Sub pan_color3_Click";
+ //BA.debugLineNum = 237;BA.debugLine="tik_all_dis";
+_tik_all_dis();
+ //BA.debugLineNum = 238;BA.debugLine="color1 = 0xFF2BC1F6";
+_color1 = ((int)0xff2bc1f6);
+ //BA.debugLineNum = 239;BA.debugLine="color2 = 0xFF1E45D1";
+_color2 = ((int)0xff1e45d1);
+ //BA.debugLineNum = 240;BA.debugLine="color3=0XFFFFFFFF";
+_color3 = ((int)0xffffffff);
+ //BA.debugLineNum = 241;BA.debugLine="color4=0xFF2BC1F6";
+_color4 = ((int)0xff2bc1f6);
+ //BA.debugLineNum = 242;BA.debugLine="color5=0xFF1E45D1";
+_color5 = ((int)0xff1e45d1);
+ //BA.debugLineNum = 247;BA.debugLine="color_index=3";
+_color_index = (int) (3);
+ //BA.debugLineNum = 248;BA.debugLine="tik3.Visible=True";
+mostCurrent._tik3.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 249;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pan_color4_click() throws Exception{
+ //BA.debugLineNum = 221;BA.debugLine="Private Sub pan_color4_Click";
+ //BA.debugLineNum = 222;BA.debugLine="tik_all_dis";
+_tik_all_dis();
+ //BA.debugLineNum = 223;BA.debugLine="color1 = 0xFFDD00FF";
+_color1 = ((int)0xffdd00ff);
+ //BA.debugLineNum = 224;BA.debugLine="color2 = 0xFF0090FF";
+_color2 = ((int)0xff0090ff);
+ //BA.debugLineNum = 225;BA.debugLine="color3=0XFFFFFFFF";
+_color3 = ((int)0xffffffff);
+ //BA.debugLineNum = 226;BA.debugLine="color4=0xFFDD00FF";
+_color4 = ((int)0xffdd00ff);
+ //BA.debugLineNum = 227;BA.debugLine="color5=0xFF24EB9D";
+_color5 = ((int)0xff24eb9d);
+ //BA.debugLineNum = 232;BA.debugLine="color_index=4";
+_color_index = (int) (4);
+ //BA.debugLineNum = 233;BA.debugLine="tik4.Visible=True";
+mostCurrent._tik4.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 234;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pan_color5_click() throws Exception{
+ //BA.debugLineNum = 207;BA.debugLine="Private Sub pan_color5_Click";
+ //BA.debugLineNum = 208;BA.debugLine="tik_all_dis";
+_tik_all_dis();
+ //BA.debugLineNum = 209;BA.debugLine="color1 = 0xFFCF5263";
+_color1 = ((int)0xffcf5263);
+ //BA.debugLineNum = 210;BA.debugLine="color2 = 0xFFABC01A";
+_color2 = ((int)0xffabc01a);
+ //BA.debugLineNum = 211;BA.debugLine="color3=0XFFFFFFFF";
+_color3 = ((int)0xffffffff);
+ //BA.debugLineNum = 212;BA.debugLine="color4=0xFFCF5263";
+_color4 = ((int)0xffcf5263);
+ //BA.debugLineNum = 213;BA.debugLine="color5=0xFFABC01A";
+_color5 = ((int)0xffabc01a);
+ //BA.debugLineNum = 217;BA.debugLine="color_index=5";
+_color_index = (int) (5);
+ //BA.debugLineNum = 218;BA.debugLine="tik5.Visible=True";
+mostCurrent._tik5.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 219;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pan_color6_click() throws Exception{
+ //BA.debugLineNum = 192;BA.debugLine="Private Sub pan_color6_Click";
+ //BA.debugLineNum = 193;BA.debugLine="tik_all_dis";
+_tik_all_dis();
+ //BA.debugLineNum = 194;BA.debugLine="color1= 0xFF5289CF";
+_color1 = ((int)0xff5289cf);
+ //BA.debugLineNum = 195;BA.debugLine="color2= 0xFFABC01A";
+_color2 = ((int)0xffabc01a);
+ //BA.debugLineNum = 196;BA.debugLine="color3=0XFFFFFFFF";
+_color3 = ((int)0xffffffff);
+ //BA.debugLineNum = 197;BA.debugLine="color4=0xFF5289CF";
+_color4 = ((int)0xff5289cf);
+ //BA.debugLineNum = 198;BA.debugLine="color5=0xFFABC01A";
+_color5 = ((int)0xffabc01a);
+ //BA.debugLineNum = 203;BA.debugLine="color_index=6";
+_color_index = (int) (6);
+ //BA.debugLineNum = 204;BA.debugLine="tik6.Visible=True";
+mostCurrent._tik6.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 205;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_colors_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_colors_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_colors_click", null));}
-RDebugUtils.currentLine=23199744;
- //BA.debugLineNum = 23199744;BA.debugLine="Private Sub pan_colors_Click";
-RDebugUtils.currentLine=23199746;
- //BA.debugLineNum = 23199746;BA.debugLine="End Sub";
+ //BA.debugLineNum = 310;BA.debugLine="Private Sub pan_colors_Click";
+ //BA.debugLineNum = 312;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_font_click() throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_font_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_font_click", null));}
-RDebugUtils.currentLine=23789568;
- //BA.debugLineNum = 23789568;BA.debugLine="Private Sub pan_font_Click";
-RDebugUtils.currentLine=23789570;
- //BA.debugLineNum = 23789570;BA.debugLine="End Sub";
+ //BA.debugLineNum = 378;BA.debugLine="Private Sub pan_font_Click";
+ //BA.debugLineNum = 380;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 9;BA.debugLine="Private cc As ContentChooser";
+_cc = new anywheresoftware.b4a.phone.Phone.ContentChooser();
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 public static String  _skb_f1_valuechanged(int _value,boolean _userchanged) throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "skb_f1_valuechanged", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "skb_f1_valuechanged", new Object[] {_value,_userchanged}));}
-RDebugUtils.currentLine=23658496;
- //BA.debugLineNum = 23658496;BA.debugLine="Private Sub skb_f1_ValueChanged (Value As Int, Use";
-RDebugUtils.currentLine=23658497;
- //BA.debugLineNum = 23658497;BA.debugLine="lbl_skb_f1.Text=Value";
+ //BA.debugLineNum = 370;BA.debugLine="Private Sub skb_f1_ValueChanged (Value As Int, Use";
+ //BA.debugLineNum = 371;BA.debugLine="lbl_skb_f1.Text=Value";
 mostCurrent._lbl_skb_f1.setText(BA.ObjectToCharSequence(_value));
-RDebugUtils.currentLine=23658498;
- //BA.debugLineNum = 23658498;BA.debugLine="End Sub";
+ //BA.debugLineNum = 372;BA.debugLine="End Sub";
 return "";
 }
 public static String  _skb_f2_valuechanged(int _value,boolean _userchanged) throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "skb_f2_valuechanged", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "skb_f2_valuechanged", new Object[] {_value,_userchanged}));}
-RDebugUtils.currentLine=23592960;
- //BA.debugLineNum = 23592960;BA.debugLine="Private Sub skb_f2_ValueChanged (Value As Int, Use";
-RDebugUtils.currentLine=23592961;
- //BA.debugLineNum = 23592961;BA.debugLine="lbl_skb_f2.Text=Value";
+ //BA.debugLineNum = 366;BA.debugLine="Private Sub skb_f2_ValueChanged (Value As Int, Use";
+ //BA.debugLineNum = 367;BA.debugLine="lbl_skb_f2.Text=Value";
 mostCurrent._lbl_skb_f2.setText(BA.ObjectToCharSequence(_value));
-RDebugUtils.currentLine=23592962;
- //BA.debugLineNum = 23592962;BA.debugLine="End Sub";
+ //BA.debugLineNum = 368;BA.debugLine="End Sub";
 return "";
 }
 public static String  _skb_f3_valuechanged(int _value,boolean _userchanged) throws Exception{
-RDebugUtils.currentModule="setting_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "skb_f3_valuechanged", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "skb_f3_valuechanged", new Object[] {_value,_userchanged}));}
-RDebugUtils.currentLine=23527424;
- //BA.debugLineNum = 23527424;BA.debugLine="Private Sub skb_f3_ValueChanged (Value As Int, Use";
-RDebugUtils.currentLine=23527425;
- //BA.debugLineNum = 23527425;BA.debugLine="lbl_skb_f3.Text=Value";
+ //BA.debugLineNum = 362;BA.debugLine="Private Sub skb_f3_ValueChanged (Value As Int, Use";
+ //BA.debugLineNum = 363;BA.debugLine="lbl_skb_f3.Text=Value";
 mostCurrent._lbl_skb_f3.setText(BA.ObjectToCharSequence(_value));
-RDebugUtils.currentLine=23527426;
- //BA.debugLineNum = 23527426;BA.debugLine="End Sub";
+ //BA.debugLineNum = 364;BA.debugLine="End Sub";
+return "";
+}
+public static String  _tik_all_dis() throws Exception{
+ //BA.debugLineNum = 297;BA.debugLine="Sub tik_all_dis";
+ //BA.debugLineNum = 298;BA.debugLine="tik1.Visible=False";
+mostCurrent._tik1.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 299;BA.debugLine="tik2.Visible=False";
+mostCurrent._tik2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 300;BA.debugLine="tik3.Visible=False";
+mostCurrent._tik3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 301;BA.debugLine="tik4.Visible=False";
+mostCurrent._tik4.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 302;BA.debugLine="tik5.Visible=False";
+mostCurrent._tik5.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 303;BA.debugLine="tik6.Visible=False";
+mostCurrent._tik6.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 304;BA.debugLine="End Sub";
 return "";
 }
 }
