@@ -606,7 +606,7 @@ _str_show.Append("<div style=' border: 2px solid red;  padding: 10px; border-rad
  //BA.debugLineNum = 192;BA.debugLine="str_show.Append(\" بیمه تامین اجتماعی : \"&myfunc.";
 _str_show.Append(" بیمه تامین اجتماعی : "+mostCurrent._myfunc._en2fa /*String*/ (mostCurrent.activityBA,_show_num_pool(_bime_tamin_end))).Append("<br>");
  //BA.debugLineNum = 193;BA.debugLine="str_show.Append(\" مالیات : \"&myfunc.en2fa(show_n";
-_str_show.Append(" مالیات : "+mostCurrent._myfunc._en2fa /*String*/ (mostCurrent.activityBA,_show_num_pool(_mazaya_end))).Append("<br>");
+_str_show.Append(" مالیات : "+mostCurrent._myfunc._en2fa /*String*/ (mostCurrent.activityBA,_show_num_pool(_maliat_end))).Append("<br>");
  //BA.debugLineNum = 194;BA.debugLine="str_show.Append(\" جمع کسورات : \"&myfunc.en2fa(sh";
 _str_show.Append(" جمع کسورات : "+mostCurrent._myfunc._en2fa /*String*/ (mostCurrent.activityBA,_show_num_pool(_jame_kosorat))).Append("<br>");
  //BA.debugLineNum = 195;BA.debugLine="str_show.Append(\"</div>\").Append(\"<br>\")";

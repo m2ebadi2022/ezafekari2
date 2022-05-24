@@ -196,7 +196,7 @@ Private Sub btn_run_Click
 		
 		str_show.Append("<div style=' border: 2px solid red;  padding: 10px; border-radius: 20px;'>")
 		str_show.Append(" بیمه تامین اجتماعی : "&myfunc.en2fa(show_num_pool(bime_tamin_end))).Append("<br>")
-		str_show.Append(" مالیات : "&myfunc.en2fa(show_num_pool(mazaya_end))).Append("<br>")
+		str_show.Append(" مالیات : "&myfunc.en2fa(show_num_pool(maliat_end))).Append("<br>")
 		str_show.Append(" جمع کسورات : "&myfunc.en2fa(show_num_pool(jame_kosorat))).Append("<br>")
 		str_show.Append("</div>").Append("<br>")
 		

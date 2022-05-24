@@ -58,6 +58,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=Visual Designer,bime_layout.bal,-100,2,Visual Designer,darsad_layout.bal,-100,2,Visual Designer,morakhasi_layout.bal,-100,1,Visual Designer,fast_run_layout.bal,-100,1,Visual Designer,eidi_layout.bal,-100,1,bime_activity,Activity_Create,25,6,bime_activity,lbl_back_Click,47,0,Main,pan_bime_Click,3226,0,Main,lbl_vorod_FT_Click,3098,0,Main,lbl_khoroj_FT_Click,3101,0,Main,Process_Globals,40,0
+NavigationStack=Visual Designer,fast_run_layout.bal,-100,1,Visual Designer,eidi_layout.bal,-100,1,bime_activity,Activity_Create,25,6,bime_activity,lbl_back_Click,47,0,Main,pan_bime_Click,3226,0,Main,lbl_vorod_FT_Click,3098,0,Main,lbl_khoroj_FT_Click,3101,0,fast_run_activity,mohasebe,385,0,fast_run_activity,btn_run_Click,192,0,Main,Process_Globals,40,0
 SelectedBuild=0
 VisibleModules=13,6,8,2
