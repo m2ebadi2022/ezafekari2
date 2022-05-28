@@ -12,6 +12,8 @@ views.get("pan_colors").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_c
 views.get("pan_colors").vw.setTop((int)((40d / 100 * height) - (views.get("pan_colors").vw.getHeight() / 2)));
 views.get("pan_font").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_font").vw.getWidth() / 2)));
 views.get("pan_font").vw.setTop((int)((40d / 100 * height) - (views.get("pan_font").vw.getHeight() / 2)));
+views.get("pan_lock").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_lock").vw.getWidth() / 2)));
+views.get("pan_lock").vw.setTop((int)((40d / 100 * height) - (views.get("pan_lock").vw.getHeight() / 2)));
 
 }
 }

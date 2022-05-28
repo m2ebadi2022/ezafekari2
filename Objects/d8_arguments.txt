@@ -179,6 +179,8 @@ E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$WaitForLayout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fileprovider.dex
+E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fingerprintmanager$FingerprintAuthentication.dex
+E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fingerprintmanager.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$1.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$B4AMenuItemsClickListener.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$HandleKeyDelayed.dex
@@ -275,12 +277,15 @@ E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\desi
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_item_fast_run.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_item_hogog.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_list_layout.dex
+E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_lyscreen.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_main_layout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_item.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_hogog_layout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_layout.dex
+E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_layout_items.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_sett_hogog_item.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_shift_layout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_shift_page_items.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_show_gozaresh_layout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_splash_layout.dex
+E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_taradod_fast_layout.dex

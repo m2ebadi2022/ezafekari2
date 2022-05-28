@@ -2,8 +2,8 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="ir.taravatgroup.ezafekari2"
-	android:versionCode="16"
-	android:versionName="4.5"
+	android:versionCode="17"
+	android:versionName="4.6"
 	android:installLocation="preferExternal">
 	
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="32"/>
@@ -22,6 +22,7 @@
 	<uses-permission android:name="android.permission.PERMISSION_READ_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR"/>
+	<uses-permission android:name="android.permission.USE_FINGERPRINT"/>
 	<application
 		android:icon="@drawable/icon"
 		android:label="اضافه کاری من"

@@ -1,92 +1,91 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
-File1=902075.jpg
-File10=bkoodkbd.ttf
-File11=BNazanin.ttf
-File12=book.png
-File13=box.png
-File14=BRoya.ttf
-File15=b-traffic.ttf
-File16=buy.png
-File17=calc_layout.bal
-File18=calculator.png
-File19=comment.png
-File2=Abstract-blue-iphone-wallpaper-ilikewallpaper_com.jpg
-File20=comment_layout.bal
-File21=darsad_layout.bal
-File22=db.db
-File23=eidi_layout.bal
-File24=email.png
-File25=endwork.png
-File26=equal.png
-File27=eydi.png
-File28=fast_run_layout.bal
-File29=fingerprint.png
-File3=adastnevis.ttf
-File30=ganon.html
-File31=ganon_layout.bal
-File32=gift.jpg
-File33=gozaresh_layout.bal
-File34=header1.png
-File35=help.png
-File36=help_font.png
-File37=hogog_layout.bal
-File38=home_item.bal
-File39=home_layout.bal
-File4=add_ezafe.png
-File40=home-h0.jpg
-File41=home-h1.jpg
-File42=home-h2.jpg
-File43=home-h3.jpg
-File44=home-h4.jpg
-File45=icon.png
-File46=info.png
-File47=info_layout.bal
-File48=item_darsad.bal
-File49=item_fast_run.bal
-File5=add_morakhasi.png
-File50=item_hogog.bal
-File51=item_list.bal
-File52=item_list_2.bal
-File53=list_layout.bal
-File54=m1.JPG
-File55=m1.png
-File56=m2.png
-File57=m3.png
-File58=main_layout.bal
-File59=mandeh.png
-File6=attention.png
-File60=mohasebe_hogog.png
-File61=morakhasi_item.bal
-File62=morakhasi_layout.bal
-File63=my_calander.xls
-File64=newyear.jpg
-File65=noske_item.bal
-File66=payankar_layout.bal
-File67=percentage.png
-File68=set_hogog.png
-File69=set_moh.png
-File7=bg3.jpg
-File70=sett_hogog_item.bal
-File71=setting.png
-File72=setting_hogog_layout.bal
-File73=setting_layout.bal
-File74=shift_layout.bal
-File75=shift_page_items.bal
-File76=shift_work.png
-File77=show_gozaresh_layout.bal
-File78=speed_run.png
-File79=splash_layout.bal
-File8=bime_icon.jpg
-File80=sudan bd_mrt.ttf
-File81=SYEKAN.TTF
-File82=tab_layout_ezafekari.bal
-File83=tab_layout_morakhasi.bal
-File84=tab_layout_taradod.bal
-File85=textBox.png
-File86=textbox2.png
-File87=transfer_time.png
-File88=Vazir.ttf
-File9=bime_layout.bal
+File1=adastnevis.ttf
+File10=book.png
+File11=box.png
+File12=BRoya.ttf
+File13=b-traffic.ttf
+File14=buy.png
+File15=calc_layout.bal
+File16=calculator.png
+File17=comment.png
+File18=comment_layout.bal
+File19=darsad_layout.bal
+File2=add_ezafe.png
+File20=db.db
+File21=eidi_layout.bal
+File22=endwork.png
+File23=equal.png
+File24=eydi.png
+File25=fast_run_layout.bal
+File26=figerprint.gif
+File27=fingerprint.png
+File28=ganon.html
+File29=ganon_layout.bal
+File3=add_morakhasi.png
+File30=gift.jpg
+File31=gozaresh_layout.bal
+File32=help.png
+File33=help_font.png
+File34=hogog_layout.bal
+File35=home_item.bal
+File36=home_layout.bal
+File37=home-h0.jpg
+File38=home-h1.jpg
+File39=home-h2.jpg
+File4=attention.png
+File40=home-h3.jpg
+File41=home-h4.jpg
+File42=icon.png
+File43=info.png
+File44=info_layout.bal
+File45=item_darsad.bal
+File46=item_fast_run.bal
+File47=item_hogog.bal
+File48=item_list.bal
+File49=item_list_2.bal
+File5=bg3.jpg
+File50=list_layout.bal
+File51=lyscreen.bal
+File52=m1.png
+File53=m2.png
+File54=m3.png
+File55=main_layout.bal
+File56=mandeh.png
+File57=mohasebe_hogog.png
+File58=morakhasi_item.bal
+File59=morakhasi_layout.bal
+File6=bime_icon.jpg
+File60=my_calander.xls
+File61=newyear.jpg
+File62=noske_item.bal
+File63=payankar_layout.bal
+File64=percentage.png
+File65=set_hogog.png
+File66=set_moh.png
+File67=sett_hogog_item.bal
+File68=setting.png
+File69=setting_hogog_layout.bal
+File7=bime_layout.bal
+File70=setting_layout.bal
+File71=setting_layout_items.bal
+File72=shift_layout.bal
+File73=shift_page_items.bal
+File74=shift_work.png
+File75=show_gozaresh_layout.bal
+File76=speed_run.png
+File77=splash_layout.bal
+File78=sudan bd_mrt.ttf
+File79=SYEKAN.TTF
+File8=bkoodkbd.ttf
+File80=tab_layout_ezafekari.bal
+File81=tab_layout_morakhasi.bal
+File82=tab_layout_taradod.bal
+File83=taradod_fast_layout.bal
+File84=textBox.png
+File85=textbox2.png
+File86=transfer_time.png
+File87=Vazir.ttf
+File9=BNazanin.ttf
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
@@ -173,7 +172,6 @@ FileGroup84=Default Group
 FileGroup85=Default Group
 FileGroup86=Default Group
 FileGroup87=Default Group
-FileGroup88=Default Group
 FileGroup9=Default Group
 Group=Default Group
 Library1=contentresolver
@@ -195,35 +193,36 @@ Library6=inappbazzar
 Library7=manampersiandate
 Library8=nicespinner
 Library9=okhttputils2
-ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="32"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~
+ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="32"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
 Module1=B4XLoadingIndicator
-Module10=hogog_activity
-Module11=info_activity
-Module12=morakhasi_activity
-Module13=myfunc
-Module14=payankar_activity
-Module15=setting_activity
-Module16=setting_hogog_activity
-Module17=shift_activity
-Module18=show_gozaresh_activity
-Module19=Starter
+Module10=ganon_activity
+Module11=hogog_activity
+Module12=info_activity
+Module13=morakhasi_activity
+Module14=myfunc
+Module15=payankar_activity
+Module16=setting_activity
+Module17=setting_hogog_activity
+Module18=shift_activity
+Module19=show_gozaresh_activity
 Module2=bime_activity
+Module20=Starter
 Module3=calc_activity
 Module4=comment_activity
 Module5=darsad_activity
 Module6=dbCode
 Module7=eidi_activity
 Module8=fast_run_activity
-Module9=ganon_activity
-NumberOfFiles=88
+Module9=FingerprintManager
+NumberOfFiles=87
 NumberOfLibraries=19
-NumberOfModules=19
+NumberOfModules=20
 Version=11.5
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 16
-	#VersionName: 4.5
+	#VersionCode: 17
+	#VersionName: 4.6
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true
@@ -243,6 +242,8 @@ Sub Process_Globals
 	Private xui As XUI
 	Dim timer1 As Timer
 	Dim tim_msg As Timer
+	
+	Dim tim_lock_lbl As Timer
 	'Dim tim_msg_newYear As Timer
 	
 	Dim current_gozaresh_id As Int
@@ -477,6 +478,33 @@ Sub Globals
 	
 	Dim code_fast_taradod As Int=1
 	Private et_tozihat_FT As EditText
+	
+	''================ for lock
+	Private btnEight As Button
+	Private btnFive As Button
+	Private btnFour As Button
+	Private btnNine As Button
+	Private btnOne As Button
+	Private btnSeven As Button
+	Private btnSix As Button
+	Private btnThree As Button
+	Private btnTwo As Button
+	Private btnZero As Button
+	Private key1 As Panel
+	Private key2 As Panel
+	Private key3 As Panel
+	Private key4 As Panel
+	
+	
+	Dim Click_Count As Int = 0
+	Dim Master_Password As String 
+	Dim entered_Password As String
+	Dim fingerprint As FingerprintManager
+	Private lbl_finger As Label
+	
+	Dim stat_finger As Int=0
+	
+	Private pan_lock As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -781,19 +809,196 @@ End Sub
 
 
 Sub timer1_Tick
+	
 	Activity.LoadLayout("main_layout")
 	timer1.Enabled=False
 	cv_loader.Hide
-	
 	btn_menu_home_Click
 	
+	
+	
+	'''===============lock app
+	
+	If(File.Exists(File.DirInternal,"ls_lock")=True)Then
+		Dim ls_lock0 As List
+		ls_lock0.Initialize
+		ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+		
+		If(ls_lock0.Get(0)="true")Then
+			Master_Password=ls_lock0.Get(2)
+			pan_lock.Visible=True
+		
+		End If
+		If(ls_lock0.Get(1)="true")Then
+			
+			tim_lock_lbl.Initialize("tim_lock_lbl",500)
+			fingerprint.Initialize (Me, "auth")
+			lbl_finger.TextColor=0xFF0B6200
+			
+			If fingerprint.HardwareDetected = False Then
+				'ToastMessageShow("سنسور اثر انگشت موجود نیست", True)
+				lbl_finger.Visible=False
+			Else if fingerprint.HasEnrolledFingerprints = False Then
+				ToastMessageShow("اثر انگشت تعریف نشده است", False)
+			Else
+				lbl_finger.Visible=True
+				finger_scaning
+				tim_lock_lbl.Enabled=True
+			End If
+			
+		End If
+		
+		
+	Else
+		pan_lock.Visible=False
+	End If
+	
+	
+	
+	
+	
 End Sub
+
+Sub tim_lock_lbl_Tick
+	If(stat_finger=0)Then
+		lbl_finger.TextColor=0xFF0B6200
+		stat_finger=1
+	Else
+		lbl_finger.TextColor=0xFF606060
+		stat_finger=0
+	End If
+End Sub
+
+Sub finger_scaning
+	fingerprint.Authenticate
+	ToastMessageShow("Scanning...", False)
+End Sub
+
+Sub Auth_Complete (Success As Boolean, ErrorMessage As String)
+	If Success Then
+		pan_lock.Visible=False
+		tim_lock_lbl.Enabled=False
+	Else
+		ToastMessageShow($"Error: ${ErrorMessage}"$, True)
+		Log(ErrorMessage)
+	End If
+End Sub
+
+
+Sub btnZero_Click
+	click_count_Increment_and_fill(btnZero.Text)
+End Sub
+
+Sub btnOne_Click
+	click_count_Increment_and_fill(btnOne.Text) 'filling the keys with red
+End Sub
+
+Sub btnTwo_Click
+	click_count_Increment_and_fill(btnTwo.Text) 'filling the keys with red
+End Sub
+
+Sub btnThree_Click
+	click_count_Increment_and_fill(btnThree.Text) 'filling the keys with red
+End Sub
+
+Sub btnFour_Click
+	click_count_Increment_and_fill(btnFour.Text) 'filling the keys with red
+End Sub
+
+Sub btnFive_Click
+	click_count_Increment_and_fill(btnFive.Text) 'filling the keys with red
+End Sub
+
+Sub btnSix_Click
+	click_count_Increment_and_fill(btnSix.Text) 'filling the keys with red
+End Sub
+
+Sub btnSeven_Click
+	click_count_Increment_and_fill(btnSeven.Text) 'filling the keys with red
+End Sub
+
+Sub btnEight_Click
+	click_count_Increment_and_fill(btnEight.Text) 'filling the keys with red
+End Sub
+
+Sub btnNine_Click
+	click_count_Increment_and_fill(btnNine.Text) 'filling the keys with red
+End Sub
+
+Sub click_count_Increment_and_fill (input_Text As String)
+	
+	Click_Count = Click_Count + 1
+	
+	Select Click_Count
+		Case 1
+			key1.Color = Colors.Red
+			
+			'getting the text value value from the button  and passing it ot entered password
+			entered_Password = entered_Password & input_Text
+		
+		Case 2
+			key2.Color = Colors.Red
+			
+			'getting the text value value from the button  and passing it ot entered password
+			entered_Password = entered_Password & input_Text
+			
+		Case 3
+			key3.Color = Colors.Red
+			
+			'getting the text value value from the button  and passing it ot entered password
+			entered_Password = entered_Password & input_Text
+			
+		Case 4
+			key4.Color = Colors.Red
+			
+			'getting the text value value from the button  and passing it ot entered password
+			entered_Password = entered_Password & input_Text
+			
+			
+			'===============================================================
+			'============CHECKING IF THE PASSWORD IS CORRECT===============
+			
+			If entered_Password = Master_Password Then
+				
+				'reset
+				resetting_all
+				
+				pan_lock.Visible=False
+			Else
+				ToastMessageShow("رمز عبور اشتباه است",False)
+				
+				
+				'reset
+				resetting_all
+				
+			End If
+	End Select
+	
+End Sub
+
+Sub resetting_all
+	'clearing the keys panel for new entry
+	key1.color = Colors.White
+	key2.Color = Colors.White
+	key3.Color = Colors.White
+	key4.Color = Colors.white
+				
+	'Resetting entered password to empty
+	entered_Password = ""
+				
+	'reset click count to ZERO...This will enable the SELECT CASE STATEMENT
+	'TO restart counting from 1 to fill the panels keys
+	Click_Count = 0
+End Sub
+
+
+
 Sub Activity_Resume
 
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
-
+	
 End Sub
 
 
@@ -3452,4 +3657,8 @@ End Sub
 Private Sub pan_bime_Click
 	StartActivity(bime_activity)
 	'Activity.Finish
+End Sub
+
+Private Sub pan_lock_Click
+	
 End Sub

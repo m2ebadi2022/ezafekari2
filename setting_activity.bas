@@ -49,12 +49,19 @@ Sub Globals
 	Private skb_f3 As SeekBar
 	Private pan_all2 As Panel
 	Private pan_all_help As Panel
+	Private ToggleBtn_OffOn_lock As ToggleButton
+	Private ToggleBtn_finger As ToggleButton
+	Private et_pass_lock As EditText
+	Private pan_all_lock As Panel
+	
+	Dim fingerprint1 As FingerprintManager
+	Private sc_view_items As ScrollView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("setting_layout")
-
+	sc_view_items.Panel.LoadLayout("setting_layout_items")
 
 
 ''set color
@@ -100,7 +107,8 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 			pan_all_help.Visible=False
 		Else If (pan_all2.Visible=True)Then
 			pan_all2.Visible=False
-			
+		Else If(pan_all_lock.Visible=True)Then
+			pan_all_lock.Visible=False
 		Else
 			lbl_back_Click
 		End If
@@ -388,4 +396,113 @@ End Sub
 
 Private Sub lbl_close_help_font_Click
 	pan_all_help.Visible=False
+End Sub
+
+Private Sub lbl_lock_app_Click
+	
+	If(File.Exists(File.DirInternal,"ls_lock")=True)Then
+		Dim ls_lock0 As List
+		ls_lock0.Initialize
+		
+		ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+		
+		If(ls_lock0.Get(0)="true")Then
+			ToggleBtn_OffOn_lock.Checked=True
+			et_pass_lock.Enabled=True
+			et_pass_lock.Text=ls_lock0.Get(2)
+		Else
+			ToggleBtn_OffOn_lock.Checked=False
+			et_pass_lock.Enabled=False
+			et_pass_lock.Text=""
+		End If
+		If(ls_lock0.Get(1)="true")Then
+			ToggleBtn_finger.Checked=True
+		Else
+			ToggleBtn_finger.Checked=False
+		End If
+		
+		
+	Else
+		ToggleBtn_OffOn_lock.Checked=False
+		et_pass_lock.Enabled=False
+	End If
+	
+	
+	
+	
+	
+	pan_all_lock.Visible=True
+End Sub
+
+Private Sub lbl_save_lock_Click
+	Dim ls_lock As List
+	ls_lock.Initialize
+	
+	
+	
+	If (ToggleBtn_OffOn_lock.Checked=True)Then
+		If(et_pass_lock.Text.Length <> 4)Then
+			ToastMessageShow("تعیین رمز",False)
+		Else
+			
+			
+			ls_lock.Add("true")
+			ls_lock.Add(ToggleBtn_finger.Checked)
+			ls_lock.Add(et_pass_lock.Text)
+			
+			
+			
+			File.WriteList(File.DirInternal,"ls_lock",ls_lock)
+			
+			pan_all_lock_Click
+		End If	
+	
+	Else 
+		ls_lock.Add("false")
+		ls_lock.Add(ToggleBtn_finger.Checked)
+		ls_lock.Add("")
+		File.WriteList(File.DirInternal,"ls_lock",ls_lock)
+		pan_all_lock_Click
+	End If
+	
+	
+End Sub
+
+Private Sub et_pass_lock_TextChanged (Old As String, New As String)
+	If(New.Length>4)Then
+		ToastMessageShow("رمز فقط 4 رقم باشد",False)
+	et_pass_lock.Text=Old	
+	End If
+End Sub
+
+Private Sub ToggleBtn_OffOn_lock_CheckedChange(Checked As Boolean)
+	If(ToggleBtn_OffOn_lock.Checked=False)Then
+		et_pass_lock.Enabled=False
+		ToggleBtn_finger.Enabled=False
+	Else 
+		et_pass_lock.Enabled=True
+		ToggleBtn_finger.Enabled=True
+	End If
+	
+	
+	
+End Sub
+
+Private Sub pan_all_lock_Click
+	pan_all_lock.Visible=False
+End Sub
+
+Private Sub pan_lock_Click
+	
+End Sub
+
+Private Sub ToggleBtn_finger_CheckedChange(Checked As Boolean)
+	fingerprint1.Initialize (Me, "auth")
+	If fingerprint1.HardwareDetected = False Then
+		ToastMessageShow("سنسور اثر انگشت موجود نیست", True)
+		ToggleBtn_finger.Checked=False
+	Else if fingerprint1.HasEnrolledFingerprints = False Then
+		ToastMessageShow("اثر انگشت تعریف نشده است", False)
+		ToggleBtn_finger.Checked=False	
+	End If
 End Sub
