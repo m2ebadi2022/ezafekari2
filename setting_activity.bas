@@ -56,6 +56,7 @@ Sub Globals
 	
 	Dim fingerprint1 As FingerprintManager
 	Private sc_view_items As ScrollView
+	Private et_hint_lock As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -410,17 +411,20 @@ Private Sub lbl_lock_app_Click
 			ToggleBtn_OffOn_lock.Checked=True
 			et_pass_lock.Enabled=True
 			et_pass_lock.Text=ls_lock0.Get(2)
+			et_hint_lock.Text=ls_lock0.Get(3)
 		Else
 			ToggleBtn_OffOn_lock.Checked=False
 			et_pass_lock.Enabled=False
+			et_hint_lock.Enabled=False
 			et_pass_lock.Text=""
+			
 		End If
 		If(ls_lock0.Get(1)="true")Then
 			ToggleBtn_finger.Checked=True
 		Else
 			ToggleBtn_finger.Checked=False
 		End If
-		
+		et_hint_lock.Text=ls_lock0.Get(3)
 		
 	Else
 		ToggleBtn_OffOn_lock.Checked=False
@@ -449,7 +453,7 @@ Private Sub lbl_save_lock_Click
 			ls_lock.Add("true")
 			ls_lock.Add(ToggleBtn_finger.Checked)
 			ls_lock.Add(et_pass_lock.Text)
-			
+			ls_lock.Add(et_hint_lock.Text)
 			
 			
 			File.WriteList(File.DirInternal,"ls_lock",ls_lock)
@@ -460,6 +464,7 @@ Private Sub lbl_save_lock_Click
 	Else 
 		ls_lock.Add("false")
 		ls_lock.Add(ToggleBtn_finger.Checked)
+		ls_lock.Add("")
 		ls_lock.Add("")
 		File.WriteList(File.DirInternal,"ls_lock",ls_lock)
 		pan_all_lock_Click
@@ -476,13 +481,21 @@ Private Sub et_pass_lock_TextChanged (Old As String, New As String)
 End Sub
 
 Private Sub ToggleBtn_OffOn_lock_CheckedChange(Checked As Boolean)
-	If(ToggleBtn_OffOn_lock.Checked=False)Then
-		et_pass_lock.Enabled=False
-		ToggleBtn_finger.Enabled=False
-	Else 
-		et_pass_lock.Enabled=True
-		ToggleBtn_finger.Enabled=True
-	End If
+	Try
+		If(ToggleBtn_OffOn_lock.Checked=False)Then
+			et_pass_lock.Enabled=False
+			ToggleBtn_finger.Enabled=False
+			et_hint_lock.Enabled=False
+		Else
+			et_pass_lock.Enabled=True
+			ToggleBtn_finger.Enabled=True
+			et_hint_lock.Enabled=True
+		End If
+		
+	Catch
+		Log(LastException)
+	End Try
+	
 	
 	
 	
@@ -497,12 +510,20 @@ Private Sub pan_lock_Click
 End Sub
 
 Private Sub ToggleBtn_finger_CheckedChange(Checked As Boolean)
-	fingerprint1.Initialize (Me, "auth")
-	If fingerprint1.HardwareDetected = False Then
+	Try
+		fingerprint1.Initialize (Me, "auth")
+		If fingerprint1.HardwareDetected = False Then
+			ToastMessageShow("سنسور اثر انگشت موجود نیست", True)
+			ToggleBtn_finger.Checked=False
+		Else if fingerprint1.HasEnrolledFingerprints = False Then
+			ToastMessageShow("اثر انگشت تعریف نشده است", False)
+			ToggleBtn_finger.Checked=False
+		End If
+		
+	Catch
 		ToastMessageShow("سنسور اثر انگشت موجود نیست", True)
 		ToggleBtn_finger.Checked=False
-	Else if fingerprint1.HasEnrolledFingerprints = False Then
-		ToastMessageShow("اثر انگشت تعریف نشده است", False)
-		ToggleBtn_finger.Checked=False	
-	End If
+		Log(LastException)
+	End Try
+	
 End Sub

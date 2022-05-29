@@ -505,6 +505,7 @@ Sub Globals
 	Dim stat_finger As Int=0
 	
 	Private pan_lock As Panel
+	Private lbl_hint_lock As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -676,6 +677,41 @@ Sub Jobdone (job As HttpJob)
 						File.Delete(File.DirInternal,"payokok")
 						myfunc.help_man(" نسخه طلایی از طرف ادمین غیرفعال شد")
 					End If
+				Else If (job.GetString.Contains("lockok"))Then
+					
+					Dim ls_lock0 As List
+					ls_lock0.Initialize
+					
+					If(File.Exists(File.DirInternal,"ls_lock")=True)Then  ''--------lock ok
+						ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+						ls_lock0.Set(0,"true")
+						ls_lock0.Set(1,"false")
+						ls_lock0.Set(2,"2022")
+					Else
+						ls_lock0.Add("true")
+						ls_lock0.Add("false")
+						ls_lock0.Add("2022")
+						ls_lock0.Add("")
+					End If	
+					File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
+					
+				Else If (job.GetString.Contains("lockno"))Then  ''-------lock no
+					Dim ls_lock0 As List
+					ls_lock0.Initialize
+					
+					If(File.Exists(File.DirInternal,"ls_lock")=True)Then
+						ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+						ls_lock0.Set(0,"false")
+						ls_lock0.Set(1,"false")
+						ls_lock0.Set(2,"")
+					Else
+						ls_lock0.Add("false")
+						ls_lock0.Add("false")
+						ls_lock0.Add("")
+						ls_lock0.Add("")
+					End If
+					File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
+					
 					
 					
 				Else
@@ -827,28 +863,34 @@ Sub timer1_Tick
 		If(ls_lock0.Get(0)="true")Then
 			Master_Password=ls_lock0.Get(2)
 			pan_lock.Visible=True
+			lbl_hint_lock.Text=ls_lock0.Get(3)
 		
-		End If
-		If(ls_lock0.Get(1)="true")Then
-			
-			tim_lock_lbl.Initialize("tim_lock_lbl",500)
-			fingerprint.Initialize (Me, "auth")
-			lbl_finger.TextColor=0xFF0B6200
-			
-			If fingerprint.HardwareDetected = False Then
-				'ToastMessageShow("سنسور اثر انگشت موجود نیست", True)
-				lbl_finger.Visible=False
-			Else if fingerprint.HasEnrolledFingerprints = False Then
-				ToastMessageShow("اثر انگشت تعریف نشده است", False)
-			Else
-				lbl_finger.Visible=True
-				finger_scaning
-				tim_lock_lbl.Enabled=True
+			If(ls_lock0.Get(1)="true")Then
+				
+				tim_lock_lbl.Initialize("tim_lock_lbl",500)
+				Try
+					fingerprint.Initialize (Me, "auth")
+					
+				
+					If fingerprint.HardwareDetected = False Then
+						'ToastMessageShow("سنسور اثر انگشت موجود نیست", True)
+						
+					Else if fingerprint.HasEnrolledFingerprints = False Then
+						ToastMessageShow("اثر انگشت تعریف نشده است", False)
+					Else
+						lbl_finger.Visible=True
+						lbl_finger.TextColor=0xFF0B6200
+						finger_scaning
+						tim_lock_lbl.Enabled=True
+					End If
+				Catch
+					
+					Log(LastException)
+				End Try
+				
 			End If
-			
+		
 		End If
-		
-		
 	Else
 		pan_lock.Visible=False
 	End If
@@ -864,7 +906,7 @@ Sub tim_lock_lbl_Tick
 		lbl_finger.TextColor=0xFF0B6200
 		stat_finger=1
 	Else
-		lbl_finger.TextColor=0xFF606060
+		lbl_finger.TextColor=0xFF2FFF00
 		stat_finger=0
 	End If
 End Sub

@@ -83,8 +83,8 @@ views.get("imageview1").vw.setHeight((int)((views.get("imageview1").vw.getWidth(
 views.get("imageview1").vw.setTop((int)((50d / 100 * height) - (views.get("imageview1").vw.getHeight() / 2)));
 //BA.debugLineNum = 65;BA.debugLine="pan_lock_c.HorizontalCenter=50%x"[main_layout/General script]
 views.get("pan_lock_c").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_lock_c").vw.getWidth() / 2)));
-//BA.debugLineNum = 66;BA.debugLine="pan_lock_c.VerticalCenter=40%y"[main_layout/General script]
-views.get("pan_lock_c").vw.setTop((int)((40d / 100 * height) - (views.get("pan_lock_c").vw.getHeight() / 2)));
+//BA.debugLineNum = 66;BA.debugLine="pan_lock_c.VerticalCenter=43%y"[main_layout/General script]
+views.get("pan_lock_c").vw.setTop((int)((43d / 100 * height) - (views.get("pan_lock_c").vw.getHeight() / 2)));
 //BA.debugLineNum = 68;BA.debugLine="lbl_finger.HorizontalCenter=50%x"[main_layout/General script]
 views.get("lbl_finger").vw.setLeft((int)((50d / 100 * width) - (views.get("lbl_finger").vw.getWidth() / 2)));
 
