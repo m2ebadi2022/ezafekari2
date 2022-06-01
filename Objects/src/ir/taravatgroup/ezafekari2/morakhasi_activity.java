@@ -674,7 +674,7 @@ _mande_ta_endmah = (int) (((_mande_d*mostCurrent._main._saat_kar_min /*int*/ )+(
  //BA.debugLineNum = 182;BA.debugLine="mande_ta_emroz=((mande_d*Main.saat_kar_min)+(mand";
 _mande_ta_emroz = (int) (((_mande_d*mostCurrent._main._saat_kar_min /*int*/ )+(_mande_h*60)+_mande_m)+(_mor_dar_roz*mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianDay())-_morakhasi_estefade_esteh);
  //BA.debugLineNum = 185;BA.debugLine="Log(morakhasi_estefade_esteh)";
-anywheresoftware.b4a.keywords.Common.LogImpl("227721749",BA.NumberToString(_morakhasi_estefade_esteh),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("625296917",BA.NumberToString(_morakhasi_estefade_esteh),0);
  //BA.debugLineNum = 190;BA.debugLine="lbl_mande_ta_inEndMah.Text=min_to_str(mande_ta_en";
 mostCurrent._lbl_mande_ta_inendmah.setText(BA.ObjectToCharSequence(_min_to_str(_mande_ta_endmah)));
  //BA.debugLineNum = 192;BA.debugLine="lbl_mande_ta_emroz.Text=min_to_str(mande_ta_emroz";
