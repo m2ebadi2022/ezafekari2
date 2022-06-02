@@ -415,6 +415,6 @@ End Sub
 
 Private Sub lbl_help_mandeh_Click
 	If(index_box_edit=2)Then
-		myfunc.help_man("در قانون کار مرخصی استحقاقی در ماه 2 روز و 4 ساعت برای مشاغل عادی و 3 روز برای مشاغل سخت میباشد")
+		myfunc.help_man("راهنما","در قانون کار مرخصی استحقاقی در ماه 2 روز و 4 ساعت برای مشاغل عادی و 3 روز برای مشاغل سخت میباشد")
 	End If
 End Sub

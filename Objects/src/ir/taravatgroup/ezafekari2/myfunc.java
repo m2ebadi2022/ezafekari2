@@ -15,6 +15,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -22,7 +23,6 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
@@ -227,17 +227,17 @@ if (true) return _font_name;
  //BA.debugLineNum = 163;BA.debugLine="End Sub";
 return "";
 }
-public static String  _help_man(anywheresoftware.b4a.BA _ba,String _matn) throws Exception{
+public static String  _help_man(anywheresoftware.b4a.BA _ba,String _title,String _matn) throws Exception{
 int _result = 0;
- //BA.debugLineNum = 203;BA.debugLine="Sub help_man(matn As String)";
- //BA.debugLineNum = 205;BA.debugLine="Dim result As Int";
+ //BA.debugLineNum = 203;BA.debugLine="Sub help_man(title As String , matn As String)";
+ //BA.debugLineNum = 204;BA.debugLine="Dim result As Int";
 _result = 0;
- //BA.debugLineNum = 206;BA.debugLine="result = Msgbox2(matn, \"راهنما\", \"باشه\", \"\", \"\",";
-_result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence(_matn),BA.ObjectToCharSequence("راهنما"),"باشه","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"help.png").getObject()),_ba);
- //BA.debugLineNum = 207;BA.debugLine="If result = DialogResponse.Positive Then";
+ //BA.debugLineNum = 205;BA.debugLine="result = Msgbox2(matn, title, \"باشه\", \"\", \"\", Loa";
+_result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence(_matn),BA.ObjectToCharSequence(_title),"باشه","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"help.png").getObject()),_ba);
+ //BA.debugLineNum = 206;BA.debugLine="If result = DialogResponse.Positive Then";
 if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
  };
- //BA.debugLineNum = 212;BA.debugLine="End Sub";
+ //BA.debugLineNum = 208;BA.debugLine="End Sub";
 return "";
 }
 public static anywheresoftware.b4a.objects.collections.List  _min_to_saatminroz(anywheresoftware.b4a.BA _ba,int _min1) throws Exception{
@@ -245,69 +245,69 @@ anywheresoftware.b4a.objects.collections.List _ls_saatmin = null;
 int _roz = 0;
 int _sat = 0;
 int _dag = 0;
- //BA.debugLineNum = 216;BA.debugLine="Sub Min_to_saatMinRoz(min1 As Int)As List";
- //BA.debugLineNum = 217;BA.debugLine="Dim ls_saatMin As List";
+ //BA.debugLineNum = 212;BA.debugLine="Sub Min_to_saatMinRoz(min1 As Int)As List";
+ //BA.debugLineNum = 213;BA.debugLine="Dim ls_saatMin As List";
 _ls_saatmin = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 218;BA.debugLine="ls_saatMin.Initialize";
+ //BA.debugLineNum = 214;BA.debugLine="ls_saatMin.Initialize";
 _ls_saatmin.Initialize();
- //BA.debugLineNum = 220;BA.debugLine="Dim roz As Int=0";
+ //BA.debugLineNum = 216;BA.debugLine="Dim roz As Int=0";
 _roz = (int) (0);
- //BA.debugLineNum = 221;BA.debugLine="Dim sat As Int=0";
+ //BA.debugLineNum = 217;BA.debugLine="Dim sat As Int=0";
 _sat = (int) (0);
- //BA.debugLineNum = 222;BA.debugLine="Dim dag As Int=0";
+ //BA.debugLineNum = 218;BA.debugLine="Dim dag As Int=0";
 _dag = (int) (0);
- //BA.debugLineNum = 226;BA.debugLine="If(min1>=Main.saat_kar_min)Then";
+ //BA.debugLineNum = 222;BA.debugLine="If(min1>=Main.saat_kar_min)Then";
 if ((_min1>=mostCurrent._main._saat_kar_min /*int*/ )) { 
- //BA.debugLineNum = 227;BA.debugLine="roz= min1/Main.saat_kar_min";
+ //BA.debugLineNum = 223;BA.debugLine="roz= min1/Main.saat_kar_min";
 _roz = (int) (_min1/(double)mostCurrent._main._saat_kar_min /*int*/ );
- //BA.debugLineNum = 228;BA.debugLine="sat= (min1 Mod Main.saat_kar_min)/60";
+ //BA.debugLineNum = 224;BA.debugLine="sat= (min1 Mod Main.saat_kar_min)/60";
 _sat = (int) ((_min1%mostCurrent._main._saat_kar_min /*int*/ )/(double)60);
- //BA.debugLineNum = 229;BA.debugLine="dag= (min1 Mod Main.saat_kar_min) Mod 60";
+ //BA.debugLineNum = 225;BA.debugLine="dag= (min1 Mod Main.saat_kar_min) Mod 60";
 _dag = (int) ((_min1%mostCurrent._main._saat_kar_min /*int*/ )%60);
  }else if((_min1<mostCurrent._main._saat_kar_min /*int*/  && _min1>59)) { 
- //BA.debugLineNum = 231;BA.debugLine="sat= min1/60";
+ //BA.debugLineNum = 227;BA.debugLine="sat= min1/60";
 _sat = (int) (_min1/(double)60);
- //BA.debugLineNum = 232;BA.debugLine="dag= min1 Mod 60";
+ //BA.debugLineNum = 228;BA.debugLine="dag= min1 Mod 60";
 _dag = (int) (_min1%60);
  }else {
- //BA.debugLineNum = 234;BA.debugLine="dag=min1";
+ //BA.debugLineNum = 230;BA.debugLine="dag=min1";
 _dag = _min1;
  };
- //BA.debugLineNum = 237;BA.debugLine="ls_saatMin.Add(sat)";
+ //BA.debugLineNum = 233;BA.debugLine="ls_saatMin.Add(sat)";
 _ls_saatmin.Add((Object)(_sat));
- //BA.debugLineNum = 238;BA.debugLine="ls_saatMin.Add(dag)";
+ //BA.debugLineNum = 234;BA.debugLine="ls_saatMin.Add(dag)";
 _ls_saatmin.Add((Object)(_dag));
- //BA.debugLineNum = 239;BA.debugLine="ls_saatMin.Add(roz)";
+ //BA.debugLineNum = 235;BA.debugLine="ls_saatMin.Add(roz)";
 _ls_saatmin.Add((Object)(_roz));
- //BA.debugLineNum = 244;BA.debugLine="Return ls_saatMin";
+ //BA.debugLineNum = 240;BA.debugLine="Return ls_saatMin";
 if (true) return _ls_saatmin;
- //BA.debugLineNum = 245;BA.debugLine="End Sub";
+ //BA.debugLineNum = 241;BA.debugLine="End Sub";
 return null;
 }
 public static anywheresoftware.b4a.objects.collections.List  _min_to_saatminroz2_dontday(anywheresoftware.b4a.BA _ba,int _min1) throws Exception{
 anywheresoftware.b4a.objects.collections.List _ls_saatmin = null;
 int _sat = 0;
 int _dag = 0;
- //BA.debugLineNum = 248;BA.debugLine="Sub Min_to_saatMinRoz2_dontDay(min1 As Int)As List";
- //BA.debugLineNum = 249;BA.debugLine="Dim ls_saatMin As List";
+ //BA.debugLineNum = 244;BA.debugLine="Sub Min_to_saatMinRoz2_dontDay(min1 As Int)As List";
+ //BA.debugLineNum = 245;BA.debugLine="Dim ls_saatMin As List";
 _ls_saatmin = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 250;BA.debugLine="ls_saatMin.Initialize";
+ //BA.debugLineNum = 246;BA.debugLine="ls_saatMin.Initialize";
 _ls_saatmin.Initialize();
- //BA.debugLineNum = 252;BA.debugLine="Dim sat As Int=0";
+ //BA.debugLineNum = 248;BA.debugLine="Dim sat As Int=0";
 _sat = (int) (0);
- //BA.debugLineNum = 253;BA.debugLine="Dim dag As Int=0";
+ //BA.debugLineNum = 249;BA.debugLine="Dim dag As Int=0";
 _dag = (int) (0);
- //BA.debugLineNum = 256;BA.debugLine="sat= min1/60";
+ //BA.debugLineNum = 252;BA.debugLine="sat= min1/60";
 _sat = (int) (_min1/(double)60);
- //BA.debugLineNum = 257;BA.debugLine="dag= min1 Mod 60";
+ //BA.debugLineNum = 253;BA.debugLine="dag= min1 Mod 60";
 _dag = (int) (_min1%60);
- //BA.debugLineNum = 260;BA.debugLine="ls_saatMin.Add(sat)";
+ //BA.debugLineNum = 256;BA.debugLine="ls_saatMin.Add(sat)";
 _ls_saatmin.Add((Object)(_sat));
- //BA.debugLineNum = 261;BA.debugLine="ls_saatMin.Add(dag)";
+ //BA.debugLineNum = 257;BA.debugLine="ls_saatMin.Add(dag)";
 _ls_saatmin.Add((Object)(_dag));
- //BA.debugLineNum = 264;BA.debugLine="Return ls_saatMin";
+ //BA.debugLineNum = 260;BA.debugLine="Return ls_saatMin";
 if (true) return _ls_saatmin;
- //BA.debugLineNum = 265;BA.debugLine="End Sub";
+ //BA.debugLineNum = 261;BA.debugLine="End Sub";
 return null;
 }
 public static anywheresoftware.b4a.objects.collections.List  _num_list(anywheresoftware.b4a.BA _ba,String _year1,String _moon1) throws Exception{
@@ -422,20 +422,20 @@ return "";
 }
 public static String  _webviewassetfile(anywheresoftware.b4a.BA _ba,String _filename) throws Exception{
 anywheresoftware.b4j.object.JavaObject _jo = null;
- //BA.debugLineNum = 269;BA.debugLine="Sub WebViewAssetFile (FileName As String) As Strin";
- //BA.debugLineNum = 272;BA.debugLine="Dim jo As JavaObject";
+ //BA.debugLineNum = 265;BA.debugLine="Sub WebViewAssetFile (FileName As String) As Strin";
+ //BA.debugLineNum = 268;BA.debugLine="Dim jo As JavaObject";
 _jo = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 273;BA.debugLine="jo.InitializeStatic(\"anywheresoftware.b4a.objects";
+ //BA.debugLineNum = 269;BA.debugLine="jo.InitializeStatic(\"anywheresoftware.b4a.objects";
 _jo.InitializeStatic("anywheresoftware.b4a.objects.streams.File");
- //BA.debugLineNum = 274;BA.debugLine="If jo.GetField(\"virtualAssetsFolder\") = Null Then";
+ //BA.debugLineNum = 270;BA.debugLine="If jo.GetField(\"virtualAssetsFolder\") = Null Then";
 if (_jo.GetField("virtualAssetsFolder")== null) { 
- //BA.debugLineNum = 275;BA.debugLine="Return \"file:///android_asset/\" & FileName.ToLow";
+ //BA.debugLineNum = 271;BA.debugLine="Return \"file:///android_asset/\" & FileName.ToLow";
 if (true) return "file:///android_asset/"+_filename.toLowerCase();
  }else {
- //BA.debugLineNum = 277;BA.debugLine="Return \"file://\" & File.Combine(jo.GetField(\"vir";
+ //BA.debugLineNum = 273;BA.debugLine="Return \"file://\" & File.Combine(jo.GetField(\"vir";
 if (true) return "file://"+anywheresoftware.b4a.keywords.Common.File.Combine(BA.ObjectToString(_jo.GetField("virtualAssetsFolder")),BA.ObjectToString(_jo.RunMethod("getUnpackedVirtualAssetFile",new Object[]{(Object)(_filename)})));
  };
- //BA.debugLineNum = 280;BA.debugLine="End Sub";
+ //BA.debugLineNum = 276;BA.debugLine="End Sub";
 return "";
 }
 }

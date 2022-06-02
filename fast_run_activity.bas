@@ -567,15 +567,15 @@ Private Sub et_vahed_ezafekari_TextChanged (Old As String, New As String)
 End Sub
 
 Private Sub lbl_help_3_Click
-	myfunc.help_man("همه کسورات به غیر از بیمه تامین اجتماعی و مالیات")
+	myfunc.help_man("راهنما","همه کسورات به غیر از بیمه تامین اجتماعی و مالیات")
 	
 End Sub
 
 Private Sub lbl_help_2_Click
-	myfunc.help_man("همه مزایا شامل: حق مسکن، بن کارگری، حق مسئولیت، حق فنی و ...")
+	myfunc.help_man("راهنما","همه مزایا شامل: حق مسکن، بن کارگری، حق مسئولیت، حق فنی و ...")
 	
 End Sub
 
 Private Sub lbl_help_1_Click
-	myfunc.help_man("اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1401 می باشد. ")
+	myfunc.help_man("راهنما","اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1401 می باشد. ")
 End Sub

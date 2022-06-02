@@ -516,6 +516,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -523,7 +524,6 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
@@ -537,6 +537,7 @@ public static boolean isAnyActivityVisible() {
     boolean vis = false;
 vis = vis | (main.mostCurrent != null);
 vis = vis | (setting_activity.mostCurrent != null);
+vis = vis | (hogog_activity.mostCurrent != null);
 vis = vis | (bime_activity.mostCurrent != null);
 vis = vis | (calc_activity.mostCurrent != null);
 vis = vis | (comment_activity.mostCurrent != null);
@@ -544,7 +545,6 @@ vis = vis | (darsad_activity.mostCurrent != null);
 vis = vis | (eidi_activity.mostCurrent != null);
 vis = vis | (fast_run_activity.mostCurrent != null);
 vis = vis | (ganon_activity.mostCurrent != null);
-vis = vis | (hogog_activity.mostCurrent != null);
 vis = vis | (info_activity.mostCurrent != null);
 vis = vis | (morakhasi_activity.mostCurrent != null);
 vis = vis | (payankar_activity.mostCurrent != null);
@@ -560,7 +560,7 @@ mostCurrent._inapp.Initialize(processBA,"inapp",mostCurrent._key);
  } 
        catch (Exception e4) {
 			processBA.setLastException(e4); //BA.debugLineNum = 300;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("6131079",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("1131079",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 305;BA.debugLine="dbCode.init_notfound(\"ksorat\",0)";
 mostCurrent._dbcode._init_notfound /*String*/ (mostCurrent.activityBA,"ksorat",BA.NumberToString(0));
@@ -901,8 +901,8 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("�
 if ((_is_for_edit==anywheresoftware.b4a.keywords.Common.False)) { 
  //BA.debugLineNum = 1793;BA.debugLine="If(dbCode.isexist_ezafekari_by_date(date1)=Tru";
 if ((mostCurrent._dbcode._isexist_ezafekari_by_date /*boolean*/ (mostCurrent.activityBA,mostCurrent._date1)==anywheresoftware.b4a.keywords.Common.True)) { 
- //BA.debugLineNum = 1794;BA.debugLine="myfunc.help_man(\"برای این تاریخ اضافه کاری وج";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"برای این تاریخ اضافه کاری وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید");
+ //BA.debugLineNum = 1794;BA.debugLine="myfunc.help_man(\"توجه\",\"برای این تاریخ اضافه";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","برای این تاریخ اضافه کاری وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید");
  }else {
  //BA.debugLineNum = 1796;BA.debugLine="dbCode.add_ezafekari(date1,date2,lbl_tim1.Tex";
 mostCurrent._dbcode._add_ezafekari /*boolean*/ (mostCurrent.activityBA,mostCurrent._date1,mostCurrent._date2,mostCurrent._lbl_tim1.getText(),mostCurrent._lbl_tim2.getText(),_day_bt,_hour_bt,_min_bt,_str_mod+mostCurrent._et_tozihat.getText(),_state_mod);
@@ -965,8 +965,8 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("�
 if ((_is_for_edit==anywheresoftware.b4a.keywords.Common.False)) { 
  //BA.debugLineNum = 1847;BA.debugLine="If(dbCode.isexist_morakhasi_by_date(date1)=Tru";
 if ((mostCurrent._dbcode._isexist_morakhasi_by_date /*boolean*/ (mostCurrent.activityBA,mostCurrent._date1)==anywheresoftware.b4a.keywords.Common.True)) { 
- //BA.debugLineNum = 1848;BA.debugLine="myfunc.help_man(\"برای این تاریخ مرخصی وجود دا";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"برای این تاریخ مرخصی وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید");
+ //BA.debugLineNum = 1848;BA.debugLine="myfunc.help_man(\"توجه\",\"برای این تاریخ مرخصی";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","برای این تاریخ مرخصی وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید");
  }else {
  //BA.debugLineNum = 1850;BA.debugLine="dbCode.add_morakhasi(date1,date2,lbl_tim1.Tex";
 mostCurrent._dbcode._add_morakhasi /*boolean*/ (mostCurrent.activityBA,mostCurrent._date1,mostCurrent._date2,mostCurrent._lbl_tim1.getText(),mostCurrent._lbl_tim2.getText(),_day_bt,_hour_bt,_min_bt,_str_noe2+mostCurrent._et_tozihat.getText(),_index_noe_morakhasi);
@@ -1018,7 +1018,7 @@ mostCurrent._dbcode._add_taradod /*boolean*/ (mostCurrent.activityBA,mostCurrent
 mostCurrent._dbcode._add_taradod /*boolean*/ (mostCurrent.activityBA,mostCurrent._lbl_date_ft.getText(),mostCurrent._lbl_date_ft.getText(),mostCurrent._lbl_tim_vorod_ft.getText(),mostCurrent._lbl_tim_khoroj_ft.getText(),(int) (0),(int) (0),(int) (0),_str_ft1,(int) (10));
  };
  //BA.debugLineNum = 3467;BA.debugLine="Log(\"is frest\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("67995409","is frest",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("17995409","is frest",0);
  //BA.debugLineNum = 3468;BA.debugLine="ToastMessageShow(\"ورود ثبت شد\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("ورود ثبت شد"),anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 3471;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Green";
@@ -1052,7 +1052,7 @@ _str_ft3 = "(ثبت سریع)-"+mostCurrent._et_tozihat_ft.getText();
 mostCurrent._dbcode._edit_taradod /*boolean*/ (mostCurrent.activityBA,_current_id_edit,mostCurrent._lbl_date_ft.getText(),mostCurrent._lbl_date_ft.getText(),mostCurrent._lbl_tim_vorod_ft.getText(),mostCurrent._lbl_tim_khoroj_ft.getText(),_day_bt,_hour_bt,_min_bt,_str_ft3,(int) (11));
  };
  //BA.debugLineNum = 3500;BA.debugLine="Log(\"is secend\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("67995442","is secend",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("17995442","is secend",0);
  //BA.debugLineNum = 3501;BA.debugLine="ToastMessageShow(\"خروج ثبت شد\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خروج ثبت شد"),anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 3504;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Green";
@@ -1089,8 +1089,8 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("�
 if ((_is_for_edit==anywheresoftware.b4a.keywords.Common.False)) { 
  //BA.debugLineNum = 1893;BA.debugLine="If(dbCode.isexist_taradod_by_date(date1)=True)";
 if ((mostCurrent._dbcode._isexist_taradod_by_date /*boolean*/ (mostCurrent.activityBA,mostCurrent._date1)==anywheresoftware.b4a.keywords.Common.True)) { 
- //BA.debugLineNum = 1894;BA.debugLine="myfunc.help_man(\"برای این تاریخ تردد وجود دار";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید");
+ //BA.debugLineNum = 1894;BA.debugLine="myfunc.help_man(\"توجه\",\"برای این تاریخ تردد و";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید");
  }else {
  //BA.debugLineNum = 1897;BA.debugLine="If (ckb_ezaf_taradod.Checked==True And ckb_ez";
 if ((mostCurrent._ckb_ezaf_taradod.getChecked()==anywheresoftware.b4a.keywords.Common.True && mostCurrent._ckb_ezaf_taradod.getEnabled()==anywheresoftware.b4a.keywords.Common.True)) { 
@@ -1158,7 +1158,7 @@ _tim_lock_lbl.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 762;BA.debugLine="ToastMessageShow($\"Error: ${ErrorMessage}\"$, Tru";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(("Error: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_errormessage))+"")),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 763;BA.debugLine="Log(ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("61048582",_errormessage,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("11048582",_errormessage,0);
  };
  //BA.debugLineNum = 765;BA.debugLine="End Sub";
 return "";
@@ -1217,8 +1217,8 @@ mostCurrent._lbl_date_home.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._
 _saat_kar_min = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (mostCurrent.activityBA,"saat_kar_darRoz")));
  //BA.debugLineNum = 896;BA.debugLine="If(saat_kar_min<18)Then";
 if ((_saat_kar_min<18)) { 
- //BA.debugLineNum = 897;BA.debugLine="myfunc.help_man(\"لطفا ساعت کاری خود را تنظیم کنی";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"لطفا ساعت کاری خود را تنظیم کنید");
+ //BA.debugLineNum = 897;BA.debugLine="myfunc.help_man(\"توجه\",\"لطفا ساعت کاری خود را تن";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","لطفا ساعت کاری خود را تنظیم کنید");
  };
  //BA.debugLineNum = 900;BA.debugLine="Dim list_ezafekari As List";
 _list_ezafekari = new anywheresoftware.b4a.objects.collections.List();
@@ -1653,7 +1653,7 @@ mostCurrent._pan_item_gozaresh.setTag((Object)(mostCurrent._dbcode._res /*anywhe
  //BA.debugLineNum = 1447;BA.debugLine="list_gozareshat_id.Add(dbCode.res.GetString(\"id\"";
 mostCurrent._list_gozareshat_id.Add((Object)(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id")));
  //BA.debugLineNum = 1448;BA.debugLine="Log(dbCode.res.GetString(\"id\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62424852",mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("12424852",mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id"),0);
  }
 ;
  //BA.debugLineNum = 1450;BA.debugLine="dbCode.res.Close";
@@ -2406,7 +2406,7 @@ mostCurrent._img_help.setBitmap((android.graphics.Bitmap)(mostCurrent._bit_img4.
  break; }
 default: {
  //BA.debugLineNum = 3009;BA.debugLine="Log(\"error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("66029329","error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("16029329","error",0);
  break; }
 }
 ;
@@ -2462,16 +2462,16 @@ if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywor
  }else {
  //BA.debugLineNum = 452;BA.debugLine="File.WriteString(File.DirInternal,\"payokok\",";
 anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"payokok","");
- //BA.debugLineNum = 453;BA.debugLine="myfunc.help_man(\"نسخه طلایی از طرف ادمین فعا";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"نسخه طلایی از طرف ادمین فعال شد");
+ //BA.debugLineNum = 453;BA.debugLine="myfunc.help_man(\"توجه\",\"نسخه طلایی از طرف اد";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","نسخه طلایی از طرف ادمین فعال شد");
  };
  }else if((_job._getstring /*String*/ ().contains("accessno"))) { 
  //BA.debugLineNum = 458;BA.debugLine="If File.Exists(File.DirInternal,\"payokok\") Th";
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"payokok")) { 
  //BA.debugLineNum = 459;BA.debugLine="File.Delete(File.DirInternal,\"payokok\")";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"payokok");
- //BA.debugLineNum = 460;BA.debugLine="myfunc.help_man(\" نسخه طلایی از طرف ادمین غی";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA," نسخه طلایی از طرف ادمین غیرفعال شد");
+ //BA.debugLineNum = 460;BA.debugLine="myfunc.help_man(\"توجه\",\" نسخه طلایی از طرف ا";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه"," نسخه طلایی از طرف ادمین غیرفعال شد");
  };
  }else if((_job._getstring /*String*/ ().contains("lockok"))) { 
  //BA.debugLineNum = 464;BA.debugLine="Dim ls_lock0 As List";
@@ -2567,6 +2567,8 @@ _str_changelog_fa = _str_changelog_fa.replace("changelog_fa:","");
 _str_message = BA.ObjectToString(_root1.Get((int) (4)));
  //BA.debugLineNum = 534;BA.debugLine="str_message=str_message.Replace(\"message:\",\"\")";
 _str_message = _str_message.replace("message:","");
+ //BA.debugLineNum = 541;BA.debugLine="ProgressDialogHide";
+anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  //BA.debugLineNum = 542;BA.debugLine="pan_all_chekUpdate.Visible=True";
 mostCurrent._pan_all_chekupdate.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 543;BA.debugLine="If(str_type==\"success\")Then";
@@ -2621,53 +2623,61 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("�
 return "";
 }
 public static String  _lbl_account_click() throws Exception{
- //BA.debugLineNum = 3570;BA.debugLine="Private Sub lbl_account_Click";
- //BA.debugLineNum = 3572;BA.debugLine="pan_all_liteMenu_Click";
+ //BA.debugLineNum = 3576;BA.debugLine="Private Sub lbl_account_Click";
+ //BA.debugLineNum = 3578;BA.debugLine="pan_all_liteMenu_Click";
 _pan_all_litemenu_click();
- //BA.debugLineNum = 3573;BA.debugLine="End Sub";
+ //BA.debugLineNum = 3579;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_chk_update_click() throws Exception{
 String _send2 = "";
  //BA.debugLineNum = 3560;BA.debugLine="Private Sub lbl_chk_update_Click";
- //BA.debugLineNum = 3562;BA.debugLine="ht.Initialize(\"chkupdate\",Me)";
+ //BA.debugLineNum = 3562;BA.debugLine="If (myfunc.check_internet)Then";
+if ((mostCurrent._myfunc._check_internet /*boolean*/ (mostCurrent.activityBA))) { 
+ //BA.debugLineNum = 3563;BA.debugLine="ProgressDialogShow(\"بررسی بروزرسانی ...\")";
+anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("بررسی بروزرسانی ..."));
+ //BA.debugLineNum = 3564;BA.debugLine="ht.Initialize(\"chkupdate\",Me)";
 mostCurrent._ht._initialize /*String*/ (processBA,"chkupdate",main.getObject());
- //BA.debugLineNum = 3563;BA.debugLine="Dim send2 As String";
+ //BA.debugLineNum = 3565;BA.debugLine="Dim send2 As String";
 _send2 = "";
- //BA.debugLineNum = 3564;BA.debugLine="send2 = \"var=checkupdate\"";
+ //BA.debugLineNum = 3566;BA.debugLine="send2 = \"var=checkupdate\"";
 _send2 = "var=checkupdate";
- //BA.debugLineNum = 3565;BA.debugLine="ht.PostString(\"https://taravatgroup.ir/chek_updat";
+ //BA.debugLineNum = 3567;BA.debugLine="ht.PostString(\"https://taravatgroup.ir/chek_upda";
 mostCurrent._ht._poststring /*String*/ ("https://taravatgroup.ir/chek_update.php",_send2);
- //BA.debugLineNum = 3567;BA.debugLine="pan_all_liteMenu_Click";
+ }else {
+ //BA.debugLineNum = 3569;BA.debugLine="myfunc.help_man(\"توجه\",\"اتصال اینترنت را بررسی ک";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","اتصال اینترنت را بررسی کنید !");
+ };
+ //BA.debugLineNum = 3573;BA.debugLine="pan_all_liteMenu_Click";
 _pan_all_litemenu_click();
- //BA.debugLineNum = 3568;BA.debugLine="End Sub";
+ //BA.debugLineNum = 3574;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_chk_update_ok_click() throws Exception{
 anywheresoftware.b4a.objects.IntentWrapper _op = null;
- //BA.debugLineNum = 3583;BA.debugLine="Private Sub lbl_chk_update_ok_Click";
- //BA.debugLineNum = 3584;BA.debugLine="If (lbl_chk_update_ok.Tag==1)Then";
+ //BA.debugLineNum = 3589;BA.debugLine="Private Sub lbl_chk_update_ok_Click";
+ //BA.debugLineNum = 3590;BA.debugLine="If (lbl_chk_update_ok.Tag==1)Then";
 if (((mostCurrent._lbl_chk_update_ok.getTag()).equals((Object)(1)))) { 
- //BA.debugLineNum = 3585;BA.debugLine="Try";
-try { //BA.debugLineNum = 3586;BA.debugLine="Dim op As Intent";
+ //BA.debugLineNum = 3591;BA.debugLine="Try";
+try { //BA.debugLineNum = 3592;BA.debugLine="Dim op As Intent";
 _op = new anywheresoftware.b4a.objects.IntentWrapper();
- //BA.debugLineNum = 3587;BA.debugLine="op.Initialize(op.ACTION_VIEW,\"bazaar://details?";
+ //BA.debugLineNum = 3593;BA.debugLine="op.Initialize(op.ACTION_VIEW,\"bazaar://details?";
 _op.Initialize(_op.ACTION_VIEW,"bazaar://details?id=ir.taravatgroup.ezafekari2");
- //BA.debugLineNum = 3588;BA.debugLine="op.SetPackage(\"com.farsitel.bazaar\")";
+ //BA.debugLineNum = 3594;BA.debugLine="op.SetPackage(\"com.farsitel.bazaar\")";
 _op.SetPackage("com.farsitel.bazaar");
- //BA.debugLineNum = 3589;BA.debugLine="StartActivity(op)";
+ //BA.debugLineNum = 3595;BA.debugLine="StartActivity(op)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_op.getObject()));
  } 
        catch (Exception e8) {
-			processBA.setLastException(e8); //BA.debugLineNum = 3592;BA.debugLine="ToastMessageShow(\"برنامه بازار را نصب کنید\",Tru";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه بازار را نصب کنید"),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 3593;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("635782666",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+			processBA.setLastException(e8); //BA.debugLineNum = 3597;BA.debugLine="myfunc.help_man(\"توجه\",\"برنامه بازار را نصب کنی";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","برنامه بازار را نصب کنید !");
+ //BA.debugLineNum = 3599;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("18716298",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  };
- //BA.debugLineNum = 3600;BA.debugLine="pan_all_chekUpdate_Click";
+ //BA.debugLineNum = 3606;BA.debugLine="pan_all_chekUpdate_Click";
 _pan_all_chekupdate_click();
- //BA.debugLineNum = 3601;BA.debugLine="End Sub";
+ //BA.debugLineNum = 3607;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_close_ft_click() throws Exception{
@@ -2709,8 +2719,8 @@ mostCurrent._et_tozihat_ft.setText(BA.ObjectToCharSequence(""));
 _code_fast_taradod = (int) (1);
  };
  }else {
- //BA.debugLineNum = 3400;BA.debugLine="myfunc.help_man(\"برای امروز هنوز ترددی ثبت نشده";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"برای امروز هنوز ترددی ثبت نشده است");
+ //BA.debugLineNum = 3400;BA.debugLine="myfunc.help_man(\"توجه\",\"برای امروز هنوز ترددی ثب";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","برای امروز هنوز ترددی ثبت نشده است");
  //BA.debugLineNum = 3401;BA.debugLine="code_fast_taradod=1";
 _code_fast_taradod = (int) (1);
  };
@@ -2760,7 +2770,7 @@ _b = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 3017;BA.debugLine="b = Sender";
 _b = (anywheresoftware.b4a.objects.LabelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.LabelWrapper(), (android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Sender(mostCurrent.activityBA)));
  //BA.debugLineNum = 3018;BA.debugLine="Log(b.Tag)";
-anywheresoftware.b4a.keywords.Common.LogImpl("66094851",BA.ObjectToString(_b.getTag()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("16094851",BA.ObjectToString(_b.getTag()),0);
  //BA.debugLineNum = 3019;BA.debugLine="current_id_edit=b.Tag";
 _current_id_edit = (int)(BA.ObjectToNumber(_b.getTag()));
  //BA.debugLineNum = 3022;BA.debugLine="If(TabHost1.CurrentTab=0)Then";
@@ -2826,8 +2836,8 @@ return "";
 }
 public static String  _lbl_help_ft_click() throws Exception{
  //BA.debugLineNum = 3535;BA.debugLine="Private Sub lbl_help_FT_Click";
- //BA.debugLineNum = 3536;BA.debugLine="myfunc.help_man(\"برای ثبت ورود یا خروج انگشت خود";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"برای ثبت ورود یا خروج انگشت خود را در قسمت مشخص شده 3 ثانیه نگه دارید.");
+ //BA.debugLineNum = 3536;BA.debugLine="myfunc.help_man(\"راهنما\",\"برای ثبت ورود یا خروج ا";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"راهنما","برای ثبت ورود یا خروج انگشت خود را در قسمت مشخص شده 3 ثانیه نگه دارید.");
  //BA.debugLineNum = 3537;BA.debugLine="End Sub";
 return "";
 }
@@ -3633,7 +3643,7 @@ mostCurrent._et_tozihat_ft.setText(BA.ObjectToCharSequence(mostCurrent._dbcode._
  //BA.debugLineNum = 3302;BA.debugLine="current_id_edit=dbCode.res.GetInt(\"id\")";
 _current_id_edit = mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("id");
  //BA.debugLineNum = 3303;BA.debugLine="Log(dbCode.res.GetInt(\"state\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("67536655",BA.NumberToString(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("state")),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("17536655",BA.NumberToString(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("state")),0);
  //BA.debugLineNum = 3305;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
 mostCurrent._lbl_vorod_ft.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Gray);
  //BA.debugLineNum = 3306;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
@@ -3731,10 +3741,10 @@ mostCurrent._et_tozihat_ft.setEnabled(anywheresoftware.b4a.keywords.Common.True)
 return "";
 }
 public static String  _pan_all_chekupdate_click() throws Exception{
- //BA.debugLineNum = 3575;BA.debugLine="Private Sub pan_all_chekUpdate_Click";
- //BA.debugLineNum = 3576;BA.debugLine="pan_all_chekUpdate.Visible=False";
+ //BA.debugLineNum = 3581;BA.debugLine="Private Sub pan_all_chekUpdate_Click";
+ //BA.debugLineNum = 3582;BA.debugLine="pan_all_chekUpdate.Visible=False";
 mostCurrent._pan_all_chekupdate.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 3577;BA.debugLine="End Sub";
+ //BA.debugLineNum = 3583;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_all_click() throws Exception{
@@ -4050,8 +4060,8 @@ public static String  _panel1_click() throws Exception{
 return "";
 }
 public static String  _panel10_click() throws Exception{
- //BA.debugLineNum = 3579;BA.debugLine="Private Sub Panel10_Click";
- //BA.debugLineNum = 3581;BA.debugLine="End Sub";
+ //BA.debugLineNum = 3585;BA.debugLine="Private Sub Panel10_Click";
+ //BA.debugLineNum = 3587;BA.debugLine="End Sub";
 return "";
 }
 public static String  _panel4_click() throws Exception{
@@ -4548,6 +4558,7 @@ main._process_globals();
 myfunc._process_globals();
 dbcode._process_globals();
 setting_activity._process_globals();
+hogog_activity._process_globals();
 bime_activity._process_globals();
 calc_activity._process_globals();
 comment_activity._process_globals();
@@ -4555,7 +4566,6 @@ darsad_activity._process_globals();
 eidi_activity._process_globals();
 fast_run_activity._process_globals();
 ganon_activity._process_globals();
-hogog_activity._process_globals();
 info_activity._process_globals();
 morakhasi_activity._process_globals();
 payankar_activity._process_globals();
@@ -5325,7 +5335,7 @@ _tim_lock_lbl.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  } 
        catch (Exception e27) {
 			processBA.setLastException(e27); //BA.debugLineNum = 726;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("6852009",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("1852009",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  };
  };

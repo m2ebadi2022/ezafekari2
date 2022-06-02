@@ -903,8 +903,8 @@ return "";
 }
 public static String  _lbl_help_tatil_click() throws Exception{
  //BA.debugLineNum = 878;BA.debugLine="Private Sub lbl_help_tatil_Click";
- //BA.debugLineNum = 880;BA.debugLine="myfunc.help_man(\"روزهای جمعه که برای آن روز دیگری";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"روزهای جمعه که برای آن روز دیگری را تعطیل نکنند، اضافه کاری فوق العاده محسوب و با ضریب 1.8 محاسبه می شود.");
+ //BA.debugLineNum = 880;BA.debugLine="myfunc.help_man(\"راهنما\",\"روزهای جمعه که برای آن";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"راهنما","روزهای جمعه که برای آن روز دیگری را تعطیل نکنند، اضافه کاری فوق العاده محسوب و با ضریب 1.8 محاسبه می شود.");
  //BA.debugLineNum = 881;BA.debugLine="End Sub";
 return "";
 }

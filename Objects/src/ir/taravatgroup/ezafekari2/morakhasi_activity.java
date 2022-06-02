@@ -367,6 +367,7 @@ public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -374,7 +375,6 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
@@ -642,8 +642,8 @@ public static String  _lbl_help_mandeh_click() throws Exception{
  //BA.debugLineNum = 410;BA.debugLine="Private Sub lbl_help_mandeh_Click";
  //BA.debugLineNum = 411;BA.debugLine="If(index_box_edit=2)Then";
 if ((_index_box_edit==2)) { 
- //BA.debugLineNum = 412;BA.debugLine="myfunc.help_man(\"در قانون کار مرخصی استحقاقی در";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"در قانون کار مرخصی استحقاقی در ماه 2 روز و 4 ساعت برای مشاغل عادی و 3 روز برای مشاغل سخت میباشد");
+ //BA.debugLineNum = 412;BA.debugLine="myfunc.help_man(\"راهنما\",\"در قانون کار مرخصی است";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"راهنما","در قانون کار مرخصی استحقاقی در ماه 2 روز و 4 ساعت برای مشاغل عادی و 3 روز برای مشاغل سخت میباشد");
  };
  //BA.debugLineNum = 414;BA.debugLine="End Sub";
 return "";
@@ -674,7 +674,7 @@ _mande_ta_endmah = (int) (((_mande_d*mostCurrent._main._saat_kar_min /*int*/ )+(
  //BA.debugLineNum = 182;BA.debugLine="mande_ta_emroz=((mande_d*Main.saat_kar_min)+(mand";
 _mande_ta_emroz = (int) (((_mande_d*mostCurrent._main._saat_kar_min /*int*/ )+(_mande_h*60)+_mande_m)+(_mor_dar_roz*mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianDay())-_morakhasi_estefade_esteh);
  //BA.debugLineNum = 185;BA.debugLine="Log(morakhasi_estefade_esteh)";
-anywheresoftware.b4a.keywords.Common.LogImpl("625296917",BA.NumberToString(_morakhasi_estefade_esteh),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("125493525",BA.NumberToString(_morakhasi_estefade_esteh),0);
  //BA.debugLineNum = 190;BA.debugLine="lbl_mande_ta_inEndMah.Text=min_to_str(mande_ta_en";
 mostCurrent._lbl_mande_ta_inendmah.setText(BA.ObjectToCharSequence(_min_to_str(_mande_ta_endmah)));
  //BA.debugLineNum = 192;BA.debugLine="lbl_mande_ta_emroz.Text=min_to_str(mande_ta_emroz";

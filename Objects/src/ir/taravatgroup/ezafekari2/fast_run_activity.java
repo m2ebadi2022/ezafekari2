@@ -385,13 +385,13 @@ public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
@@ -994,22 +994,22 @@ return "";
 }
 public static String  _lbl_help_1_click() throws Exception{
  //BA.debugLineNum = 573;BA.debugLine="Private Sub lbl_help_1_Click";
- //BA.debugLineNum = 574;BA.debugLine="myfunc.help_man(\"اطلاعات حقوق خود را برای 30 روز";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1401 می باشد. ");
+ //BA.debugLineNum = 574;BA.debugLine="myfunc.help_man(\"راهنما\",\"اطلاعات حقوق خود را برا";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"راهنما","اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1401 می باشد. ");
  //BA.debugLineNum = 575;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_help_2_click() throws Exception{
  //BA.debugLineNum = 568;BA.debugLine="Private Sub lbl_help_2_Click";
- //BA.debugLineNum = 569;BA.debugLine="myfunc.help_man(\"همه مزایا شامل: حق مسکن، بن کارگ";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"همه مزایا شامل: حق مسکن، بن کارگری، حق مسئولیت، حق فنی و ...");
+ //BA.debugLineNum = 569;BA.debugLine="myfunc.help_man(\"راهنما\",\"همه مزایا شامل: حق مسکن";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"راهنما","همه مزایا شامل: حق مسکن، بن کارگری، حق مسئولیت، حق فنی و ...");
  //BA.debugLineNum = 571;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_help_3_click() throws Exception{
  //BA.debugLineNum = 563;BA.debugLine="Private Sub lbl_help_3_Click";
- //BA.debugLineNum = 564;BA.debugLine="myfunc.help_man(\"همه کسورات به غیر از بیمه تامین";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"همه کسورات به غیر از بیمه تامین اجتماعی و مالیات");
+ //BA.debugLineNum = 564;BA.debugLine="myfunc.help_man(\"راهنما\",\"همه کسورات به غیر از بی";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"راهنما","همه کسورات به غیر از بیمه تامین اجتماعی و مالیات");
  //BA.debugLineNum = 566;BA.debugLine="End Sub";
 return "";
 }

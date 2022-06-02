@@ -206,15 +206,11 @@ End Sub
 
 
 
-Sub help_man(matn As String)
-	
+Sub help_man(title As String , matn As String)
 	Dim result As Int
-	result = Msgbox2(matn, "راهنما", "باشه", "", "", LoadBitmap(File.DirAssets, "help.png"))
-	If result = DialogResponse.Positive Then
-		
+	result = Msgbox2(matn, title, "باشه", "", "", LoadBitmap(File.DirAssets, "help.png"))
+	If result = DialogResponse.Positive Then	
 	End If
-	
-	
 End Sub
 
 

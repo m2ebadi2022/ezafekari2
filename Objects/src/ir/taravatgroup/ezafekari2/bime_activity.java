@@ -344,13 +344,13 @@ public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
@@ -378,8 +378,8 @@ anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,B
  //BA.debugLineNum = 26;BA.debugLine="web_view1.LoadUrl(\"https://eservices.tamin.ir/vi";
 mostCurrent._web_view1.LoadUrl("https://eservices.tamin.ir/view/#/history");
  }else {
- //BA.debugLineNum = 28;BA.debugLine="myfunc.help_man(\"اتصال اینترنت را بررسی کنید !\")";
-mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"اتصال اینترنت را بررسی کنید !");
+ //BA.debugLineNum = 28;BA.debugLine="myfunc.help_man(\"توجه\",\"اتصال اینترنت را بررسی ک";
+mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","اتصال اینترنت را بررسی کنید !");
  };
  //BA.debugLineNum = 31;BA.debugLine="pan_hed_bime.Color=Main.color4";
 mostCurrent._pan_hed_bime.setColor(mostCurrent._main._color4 /*int*/ );

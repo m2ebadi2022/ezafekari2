@@ -31,7 +31,7 @@ Sub Activity_Create(FirstTime As Boolean)
 		ProgressDialogShow("در حال لود ...")
 		web_view1.LoadUrl("https://eservices.tamin.ir/view/#/history")
 	Else
-		myfunc.help_man("اتصال اینترنت را بررسی کنید !")	
+		myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")	
 	End If
 	
 	pan_hed_bime.Color=Main.color4

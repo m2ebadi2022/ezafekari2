@@ -254,6 +254,30 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 		End If
 	End If
 	
+	If (year=1401)Then
+		If(hogog>5600001 And hogog<12500001)Then	  ''-----stat1
+			state1=(hogog-5600000)*0.1
+		End If
+		If(hogog>12500001 And hogog<20830001)Then	  ''-----stat2
+			state1=(6900000)*0.1
+			state2=(hogog-12500000)*0.15
+		End If
+		If(hogog>20830001 And hogog<29160001)Then	  ''-----stat3
+			state1=(6900000)*0.1
+			state2=(8330000)*0.15
+			state3=(hogog-20830000)*0.2
+		End If
+	
+		If(hogog>29160001)Then	  ''-----stat4
+			state1=(6900000)*0.1
+			state2=(8330000)*0.15
+			state3=(8330000)*0.2
+			
+			state4=(hogog-29160000)*0.3
+		End If
+	End If
+	
+	
 	all_maliat=state1+state2+state3+state4+state5+state6
 	Return all_maliat
 	

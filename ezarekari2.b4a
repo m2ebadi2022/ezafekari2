@@ -680,14 +680,14 @@ Sub Jobdone (job As HttpJob)
 						
 					Else
 						File.WriteString(File.DirInternal,"payokok","")
-						myfunc.help_man("نسخه طلایی از طرف ادمین فعال شد")
+						myfunc.help_man("توجه","نسخه طلایی از طرف ادمین فعال شد")
 					End If
 					
 				Else If (job.GetString.Contains("accessno"))Then
 					
 					If File.Exists(File.DirInternal,"payokok") Then
 						File.Delete(File.DirInternal,"payokok")
-						myfunc.help_man(" نسخه طلایی از طرف ادمین غیرفعال شد")
+						myfunc.help_man("توجه"," نسخه طلایی از طرف ادمین غیرفعال شد")
 					End If
 				Else If (job.GetString.Contains("lockok"))Then
 					
@@ -768,7 +768,7 @@ Sub Jobdone (job As HttpJob)
 '			Log(str_version_name)
 '			Log(str_changelog_fa)
 '			Log(str_message)
-			
+			ProgressDialogHide
 			pan_all_chekUpdate.Visible=True
 			If(str_type=="success")Then
 			If(str_version_code>Application.VersionCode)Then
@@ -1124,7 +1124,7 @@ Private Sub btn_menu_home_Click
 	saat_kar_min =dbCode.get_setting_byName("saat_kar_darRoz")
 	
 	If(saat_kar_min<18)Then
-		myfunc.help_man("لطفا ساعت کاری خود را تنظیم کنید")
+		myfunc.help_man("توجه","لطفا ساعت کاری خود را تنظیم کنید")
 	End If
 	
 	Dim list_ezafekari As List
@@ -2021,7 +2021,7 @@ Sub add_ezafe_sub
 			
 			If(is_for_edit=False)Then
 				If(dbCode.isexist_ezafekari_by_date(date1)=True)Then
-					myfunc.help_man("برای این تاریخ اضافه کاری وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+					myfunc.help_man("توجه","برای این تاریخ اضافه کاری وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
 				Else
 					dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_mod&et_tozihat.Text,state_mod)
 					
@@ -2075,7 +2075,7 @@ Sub add_morakhasi_sub
 			
 			If(is_for_edit=False)Then
 				If(dbCode.isexist_morakhasi_by_date(date1)=True)Then
-					myfunc.help_man("برای این تاریخ مرخصی وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+					myfunc.help_man("توجه","برای این تاریخ مرخصی وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
 				Else
 					dbCode.add_morakhasi(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_noe2&et_tozihat.Text,index_noe_morakhasi)
 					ToastMessageShow ("اضافه شد",False)
@@ -2121,7 +2121,7 @@ Sub add_taradod_sub
 			
 			If(is_for_edit=False)Then
 				If(dbCode.isexist_taradod_by_date(date1)=True)Then
-					myfunc.help_man("برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+					myfunc.help_man("توجه","برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
 				Else
 				
 					If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then	
@@ -3627,7 +3627,7 @@ Private Sub lbl_close_FT_Click
 		End If
 	Else
 		
-		myfunc.help_man("برای امروز هنوز ترددی ثبت نشده است")
+		myfunc.help_man("توجه","برای امروز هنوز ترددی ثبت نشده است")
 		code_fast_taradod=1
 	End If
 	
@@ -3763,7 +3763,7 @@ End Sub
 		
 
 Private Sub lbl_help_FT_Click
-	myfunc.help_man("برای ثبت ورود یا خروج انگشت خود را در قسمت مشخص شده 3 ثانیه نگه دارید.")
+	myfunc.help_man("راهنما","برای ثبت ورود یا خروج انگشت خود را در قسمت مشخص شده 3 ثانیه نگه دارید.")
 End Sub
 
 Private Sub pan_bime_Click
@@ -3789,10 +3789,16 @@ End Sub
 
 Private Sub lbl_chk_update_Click
 	''------- check from my server
-	ht.Initialize("chkupdate",Me)
-	Dim send2 As String
-	send2 = "var=checkupdate"
-	ht.PostString("https://taravatgroup.ir/chek_update.php",send2)
+	If (myfunc.check_internet)Then
+		ProgressDialogShow("بررسی بروزرسانی ...")
+		ht.Initialize("chkupdate",Me)
+		Dim send2 As String
+		send2 = "var=checkupdate"
+		ht.PostString("https://taravatgroup.ir/chek_update.php",send2)
+	Else
+		myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
+	End If
+	
 	
 	pan_all_liteMenu_Click
 End Sub
@@ -3818,8 +3824,8 @@ Private Sub lbl_chk_update_ok_Click
 			op.SetPackage("com.farsitel.bazaar")
 			StartActivity(op)
 		Catch
+			myfunc.help_man("توجه","برنامه بازار را نصب کنید !")
 			
-			ToastMessageShow("برنامه بازار را نصب کنید",True)
 			Log(LastException)
 		End Try
 		

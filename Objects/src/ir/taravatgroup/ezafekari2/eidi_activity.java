@@ -346,13 +346,13 @@ public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
@@ -660,11 +660,46 @@ _state5 = (int) ((6000000)*0.3);
 _state6 = (int) ((_hogog-32000000)*0.35);
  };
  };
- //BA.debugLineNum = 251;BA.debugLine="all_maliat=state1+state2+state3+state4+state5+sta";
+ //BA.debugLineNum = 251;BA.debugLine="If (year=1401)Then";
+if ((_year==1401)) { 
+ //BA.debugLineNum = 252;BA.debugLine="If(hogog>5600001 And hogog<12500001)Then	  ''---";
+if ((_hogog>5600001 && _hogog<12500001)) { 
+ //BA.debugLineNum = 253;BA.debugLine="state1=(hogog-5600000)*0.1";
+_state1 = (int) ((_hogog-5600000)*0.1);
+ };
+ //BA.debugLineNum = 255;BA.debugLine="If(hogog>12500001 And hogog<20830001)Then	  ''--";
+if ((_hogog>12500001 && _hogog<20830001)) { 
+ //BA.debugLineNum = 256;BA.debugLine="state1=(6900000)*0.1";
+_state1 = (int) ((6900000)*0.1);
+ //BA.debugLineNum = 257;BA.debugLine="state2=(hogog-12500000)*0.15";
+_state2 = (int) ((_hogog-12500000)*0.15);
+ };
+ //BA.debugLineNum = 259;BA.debugLine="If(hogog>20830001 And hogog<29160001)Then	  ''--";
+if ((_hogog>20830001 && _hogog<29160001)) { 
+ //BA.debugLineNum = 260;BA.debugLine="state1=(6900000)*0.1";
+_state1 = (int) ((6900000)*0.1);
+ //BA.debugLineNum = 261;BA.debugLine="state2=(8330000)*0.15";
+_state2 = (int) ((8330000)*0.15);
+ //BA.debugLineNum = 262;BA.debugLine="state3=(hogog-20830000)*0.2";
+_state3 = (int) ((_hogog-20830000)*0.2);
+ };
+ //BA.debugLineNum = 265;BA.debugLine="If(hogog>29160001)Then	  ''-----stat4";
+if ((_hogog>29160001)) { 
+ //BA.debugLineNum = 266;BA.debugLine="state1=(6900000)*0.1";
+_state1 = (int) ((6900000)*0.1);
+ //BA.debugLineNum = 267;BA.debugLine="state2=(8330000)*0.15";
+_state2 = (int) ((8330000)*0.15);
+ //BA.debugLineNum = 268;BA.debugLine="state3=(8330000)*0.2";
+_state3 = (int) ((8330000)*0.2);
+ //BA.debugLineNum = 270;BA.debugLine="state4=(hogog-29160000)*0.3";
+_state4 = (int) ((_hogog-29160000)*0.3);
+ };
+ };
+ //BA.debugLineNum = 275;BA.debugLine="all_maliat=state1+state2+state3+state4+state5+sta";
 _all_maliat = (int) (_state1+_state2+_state3+_state4+_state5+_state6);
- //BA.debugLineNum = 252;BA.debugLine="Return all_maliat";
+ //BA.debugLineNum = 276;BA.debugLine="Return all_maliat";
 if (true) return _all_maliat;
- //BA.debugLineNum = 254;BA.debugLine="End Sub";
+ //BA.debugLineNum = 278;BA.debugLine="End Sub";
 return 0;
 }
 public static String  _process_globals() throws Exception{
