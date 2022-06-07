@@ -24,6 +24,7 @@ Sub Globals
 	Private lbl_run_step1 As Label
 	Dim http2 As HttpJob
 	Dim pp As Phone
+	Dim type_app As Int=1
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -32,6 +33,11 @@ Sub Activity_Create(FirstTime As Boolean)
 
 	et_nameFamili.Color=Colors.ARGB(0,0,0,0)
 	et_email.Color=Colors.ARGB(0,0,0,0)
+	If(myfunc.check_karid)Then
+		type_app=2
+	Else
+		type_app=1
+	End If
 End Sub
 
 Sub Activity_Resume
@@ -59,7 +65,7 @@ Sub http_initial_1(type1 As Int)
 	If(type1=3)Then
 		http2.Initialize("http2",Me)
 		Dim send As String
-		send = "var=1&phone="&Main.phon_num&"&name="&et_nameFamili.Text&"&email="&et_email.Text&"&type_app=1&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
+		send = "var=1&phone="&Main.phon_num&"&name="&et_nameFamili.Text&"&email="&et_email.Text&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
 		http2.PostString("https://taravatgroup.ir/save_acc.php",send)
 		
 	End If

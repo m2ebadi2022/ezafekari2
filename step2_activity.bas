@@ -68,10 +68,18 @@ Private Sub lbl_back_Click
 End Sub
 
 Private Sub lbl_logOff_Click
-	File.Delete(File.DirInternal,"userAcc")
+	Dim result As Int
+	result = Msgbox2("آیا از حساب خود خارج می شوید؟", "توجه", "بله", "", "خیر", LoadBitmap(File.DirAssets, "attention.png"))
+	If result = DialogResponse.Positive Then
+		File.Delete(File.DirInternal,"userAcc")
 	
-	StartActivity(Main)
-	Activity.Finish
+		StartActivity(Main)
+		Activity.Finish
+		
+	End If
+	
+	
+	
 End Sub
 
 

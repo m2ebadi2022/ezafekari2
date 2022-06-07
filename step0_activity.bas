@@ -126,8 +126,19 @@ Private Sub lbl_run1_step0_Click
 		ToastMessageShow("شماره مبایل معتبر وارد کنید",False)
 		
 	Else
-		Main.phon_num=et_phonNum.Text
-		http_initial_1(1)
+		If(et_phonNum.Text.Length=11)Then
+			
+			If(et_phonNum.Text.StartsWith("09"))Then
+				Main.phon_num=et_phonNum.Text
+				http_initial_1(1)
+			Else
+				ToastMessageShow("شماره مبایل معتبر وارد کنید",False)
+			End If
+			
+		Else
+			ToastMessageShow("شماره مبایل معتبر وارد کنید",False)
+		End If
+		
 		
 	End If
 	

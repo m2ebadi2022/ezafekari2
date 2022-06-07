@@ -373,7 +373,9 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
+public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -381,6 +383,7 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
@@ -388,9 +391,6 @@ public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
-public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
-public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -478,15 +478,15 @@ public static String  _activity_resume() throws Exception{
 return "";
 }
 public static String  _et_pass_lock_textchanged(String _old,String _new) throws Exception{
- //BA.debugLineNum = 470;BA.debugLine="Private Sub et_pass_lock_TextChanged (Old As Strin";
- //BA.debugLineNum = 471;BA.debugLine="If(New.Length>4)Then";
+ //BA.debugLineNum = 486;BA.debugLine="Private Sub et_pass_lock_TextChanged (Old As Strin";
+ //BA.debugLineNum = 487;BA.debugLine="If(New.Length>4)Then";
 if ((_new.length()>4)) { 
- //BA.debugLineNum = 472;BA.debugLine="ToastMessageShow(\"رمز فقط 4 رقم باشد\",False)";
+ //BA.debugLineNum = 488;BA.debugLine="ToastMessageShow(\"رمز فقط 4 رقم باشد\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("رمز فقط 4 رقم باشد"),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 473;BA.debugLine="et_pass_lock.Text=Old";
+ //BA.debugLineNum = 489;BA.debugLine="et_pass_lock.Text=Old";
 mostCurrent._et_pass_lock.setText(BA.ObjectToCharSequence(_old));
  };
- //BA.debugLineNum = 475;BA.debugLine="End Sub";
+ //BA.debugLineNum = 491;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -663,6 +663,7 @@ return "";
 }
 public static String  _lbl_lock_app_click() throws Exception{
 anywheresoftware.b4a.objects.collections.List _ls_lock0 = null;
+anywheresoftware.b4a.objects.collections.List _ls_lock3 = null;
  //BA.debugLineNum = 396;BA.debugLine="Private Sub lbl_lock_app_Click";
  //BA.debugLineNum = 398;BA.debugLine="If(File.Exists(File.DirInternal,\"ls_lock\")=True)T";
 if ((anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"ls_lock")==anywheresoftware.b4a.keywords.Common.True)) { 
@@ -685,32 +686,54 @@ mostCurrent._et_hint_lock.setText(BA.ObjectToCharSequence(_ls_lock0.Get((int) (3
  }else {
  //BA.debugLineNum = 410;BA.debugLine="ToggleBtn_OffOn_lock.Checked=False";
 mostCurrent._togglebtn_offon_lock.setChecked(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 411;BA.debugLine="et_pass_lock.Enabled=False";
+ //BA.debugLineNum = 411;BA.debugLine="ToggleBtn_finger.Enabled=False";
+mostCurrent._togglebtn_finger.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 412;BA.debugLine="et_pass_lock.Enabled=False";
 mostCurrent._et_pass_lock.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 412;BA.debugLine="et_hint_lock.Enabled=False";
+ //BA.debugLineNum = 413;BA.debugLine="et_hint_lock.Enabled=False";
 mostCurrent._et_hint_lock.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 413;BA.debugLine="et_pass_lock.Text=\"\"";
+ //BA.debugLineNum = 414;BA.debugLine="et_pass_lock.Text=\"\"";
 mostCurrent._et_pass_lock.setText(BA.ObjectToCharSequence(""));
  };
- //BA.debugLineNum = 416;BA.debugLine="If(ls_lock0.Get(1)=\"true\")Then";
+ //BA.debugLineNum = 417;BA.debugLine="If(ls_lock0.Get(1)=\"true\")Then";
 if (((_ls_lock0.Get((int) (1))).equals((Object)("true")))) { 
- //BA.debugLineNum = 417;BA.debugLine="ToggleBtn_finger.Checked=True";
+ //BA.debugLineNum = 418;BA.debugLine="ToggleBtn_finger.Checked=True";
 mostCurrent._togglebtn_finger.setChecked(anywheresoftware.b4a.keywords.Common.True);
  }else {
- //BA.debugLineNum = 419;BA.debugLine="ToggleBtn_finger.Checked=False";
+ //BA.debugLineNum = 420;BA.debugLine="ToggleBtn_finger.Checked=False";
 mostCurrent._togglebtn_finger.setChecked(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 421;BA.debugLine="et_hint_lock.Text=ls_lock0.Get(3)";
+ //BA.debugLineNum = 422;BA.debugLine="et_hint_lock.Text=ls_lock0.Get(3)";
 mostCurrent._et_hint_lock.setText(BA.ObjectToCharSequence(_ls_lock0.Get((int) (3))));
  }else {
- //BA.debugLineNum = 424;BA.debugLine="ToggleBtn_OffOn_lock.Checked=False";
+ //BA.debugLineNum = 425;BA.debugLine="Dim ls_lock3 As List";
+_ls_lock3 = new anywheresoftware.b4a.objects.collections.List();
+ //BA.debugLineNum = 426;BA.debugLine="ls_lock3.Initialize";
+_ls_lock3.Initialize();
+ //BA.debugLineNum = 428;BA.debugLine="ls_lock3.Add(\"false\")";
+_ls_lock3.Add((Object)("false"));
+ //BA.debugLineNum = 429;BA.debugLine="ls_lock3.Add(\"false\")";
+_ls_lock3.Add((Object)("false"));
+ //BA.debugLineNum = 430;BA.debugLine="ls_lock3.Add(\"\")";
+_ls_lock3.Add((Object)(""));
+ //BA.debugLineNum = 431;BA.debugLine="ls_lock3.Add(\"\")";
+_ls_lock3.Add((Object)(""));
+ //BA.debugLineNum = 434;BA.debugLine="File.WriteList(File.DirInternal,\"ls_lock\",ls_loc";
+anywheresoftware.b4a.keywords.Common.File.WriteList(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"ls_lock",_ls_lock3);
+ //BA.debugLineNum = 437;BA.debugLine="ToggleBtn_OffOn_lock.Checked=False";
 mostCurrent._togglebtn_offon_lock.setChecked(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 425;BA.debugLine="et_pass_lock.Enabled=False";
+ //BA.debugLineNum = 438;BA.debugLine="ToggleBtn_finger.Enabled=False";
+mostCurrent._togglebtn_finger.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 439;BA.debugLine="ToggleBtn_finger.Checked=False";
+mostCurrent._togglebtn_finger.setChecked(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 440;BA.debugLine="et_pass_lock.Enabled=False";
 mostCurrent._et_pass_lock.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 441;BA.debugLine="et_hint_lock.Enabled=False";
+mostCurrent._et_hint_lock.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 432;BA.debugLine="pan_all_lock.Visible=True";
+ //BA.debugLineNum = 448;BA.debugLine="pan_all_lock.Visible=True";
 mostCurrent._pan_all_lock.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 433;BA.debugLine="End Sub";
+ //BA.debugLineNum = 449;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_rest_font_click() throws Exception{
@@ -788,11 +811,11 @@ this.state = 4;
  //BA.debugLineNum = 150;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.SharedFo";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db");
  //BA.debugLineNum = 152;BA.debugLine="Log( Dir)";
-anywheresoftware.b4a.keywords.Common.LogImpl("612320775",_dir,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("227459591",_dir,0);
  //BA.debugLineNum = 153;BA.debugLine="Log(FileName)";
-anywheresoftware.b4a.keywords.Common.LogImpl("612320776",_filename,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("227459592",_filename,0);
  //BA.debugLineNum = 154;BA.debugLine="Log(File.Exists(Starter.Provider.SharedFolder,\"d";
-anywheresoftware.b4a.keywords.Common.LogImpl("612320777",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db")),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("227459593",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db")),0);
  //BA.debugLineNum = 156;BA.debugLine="Dim result As Int";
 _result = 0;
  //BA.debugLineNum = 158;BA.debugLine="result = Msgbox2(\"دیتای قبلی حذف و دیتای جدید جا";
@@ -873,46 +896,46 @@ return "";
 }
 public static String  _lbl_save_lock_click() throws Exception{
 anywheresoftware.b4a.objects.collections.List _ls_lock = null;
- //BA.debugLineNum = 435;BA.debugLine="Private Sub lbl_save_lock_Click";
- //BA.debugLineNum = 436;BA.debugLine="Dim ls_lock As List";
+ //BA.debugLineNum = 451;BA.debugLine="Private Sub lbl_save_lock_Click";
+ //BA.debugLineNum = 452;BA.debugLine="Dim ls_lock As List";
 _ls_lock = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 437;BA.debugLine="ls_lock.Initialize";
+ //BA.debugLineNum = 453;BA.debugLine="ls_lock.Initialize";
 _ls_lock.Initialize();
- //BA.debugLineNum = 441;BA.debugLine="If (ToggleBtn_OffOn_lock.Checked=True)Then";
+ //BA.debugLineNum = 457;BA.debugLine="If (ToggleBtn_OffOn_lock.Checked=True)Then";
 if ((mostCurrent._togglebtn_offon_lock.getChecked()==anywheresoftware.b4a.keywords.Common.True)) { 
- //BA.debugLineNum = 442;BA.debugLine="If(et_pass_lock.Text.Length <> 4)Then";
+ //BA.debugLineNum = 458;BA.debugLine="If(et_pass_lock.Text.Length <> 4)Then";
 if ((mostCurrent._et_pass_lock.getText().length()!=4)) { 
- //BA.debugLineNum = 443;BA.debugLine="ToastMessageShow(\"تعیین رمز\",False)";
+ //BA.debugLineNum = 459;BA.debugLine="ToastMessageShow(\"تعیین رمز\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تعیین رمز"),anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 447;BA.debugLine="ls_lock.Add(\"true\")";
+ //BA.debugLineNum = 463;BA.debugLine="ls_lock.Add(\"true\")";
 _ls_lock.Add((Object)("true"));
- //BA.debugLineNum = 448;BA.debugLine="ls_lock.Add(ToggleBtn_finger.Checked)";
+ //BA.debugLineNum = 464;BA.debugLine="ls_lock.Add(ToggleBtn_finger.Checked)";
 _ls_lock.Add((Object)(mostCurrent._togglebtn_finger.getChecked()));
- //BA.debugLineNum = 449;BA.debugLine="ls_lock.Add(et_pass_lock.Text)";
+ //BA.debugLineNum = 465;BA.debugLine="ls_lock.Add(et_pass_lock.Text)";
 _ls_lock.Add((Object)(mostCurrent._et_pass_lock.getText()));
- //BA.debugLineNum = 450;BA.debugLine="ls_lock.Add(et_hint_lock.Text)";
+ //BA.debugLineNum = 466;BA.debugLine="ls_lock.Add(et_hint_lock.Text)";
 _ls_lock.Add((Object)(mostCurrent._et_hint_lock.getText()));
- //BA.debugLineNum = 453;BA.debugLine="File.WriteList(File.DirInternal,\"ls_lock\",ls_lo";
+ //BA.debugLineNum = 469;BA.debugLine="File.WriteList(File.DirInternal,\"ls_lock\",ls_lo";
 anywheresoftware.b4a.keywords.Common.File.WriteList(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"ls_lock",_ls_lock);
- //BA.debugLineNum = 455;BA.debugLine="pan_all_lock_Click";
+ //BA.debugLineNum = 471;BA.debugLine="pan_all_lock_Click";
 _pan_all_lock_click();
  };
  }else {
- //BA.debugLineNum = 459;BA.debugLine="ls_lock.Add(\"false\")";
+ //BA.debugLineNum = 475;BA.debugLine="ls_lock.Add(\"false\")";
 _ls_lock.Add((Object)("false"));
- //BA.debugLineNum = 460;BA.debugLine="ls_lock.Add(ToggleBtn_finger.Checked)";
+ //BA.debugLineNum = 476;BA.debugLine="ls_lock.Add(ToggleBtn_finger.Checked)";
 _ls_lock.Add((Object)(mostCurrent._togglebtn_finger.getChecked()));
- //BA.debugLineNum = 461;BA.debugLine="ls_lock.Add(\"\")";
+ //BA.debugLineNum = 477;BA.debugLine="ls_lock.Add(\"\")";
 _ls_lock.Add((Object)(""));
- //BA.debugLineNum = 462;BA.debugLine="ls_lock.Add(\"\")";
+ //BA.debugLineNum = 478;BA.debugLine="ls_lock.Add(\"\")";
 _ls_lock.Add((Object)(""));
- //BA.debugLineNum = 463;BA.debugLine="File.WriteList(File.DirInternal,\"ls_lock\",ls_loc";
+ //BA.debugLineNum = 479;BA.debugLine="File.WriteList(File.DirInternal,\"ls_lock\",ls_loc";
 anywheresoftware.b4a.keywords.Common.File.WriteList(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"ls_lock",_ls_lock);
- //BA.debugLineNum = 464;BA.debugLine="pan_all_lock_Click";
+ //BA.debugLineNum = 480;BA.debugLine="pan_all_lock_Click";
 _pan_all_lock_click();
  };
- //BA.debugLineNum = 468;BA.debugLine="End Sub";
+ //BA.debugLineNum = 484;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_all_click() throws Exception{
@@ -923,10 +946,10 @@ mostCurrent._pan_all.setVisible(anywheresoftware.b4a.keywords.Common.False);
 return "";
 }
 public static String  _pan_all_lock_click() throws Exception{
- //BA.debugLineNum = 498;BA.debugLine="Private Sub pan_all_lock_Click";
- //BA.debugLineNum = 499;BA.debugLine="pan_all_lock.Visible=False";
+ //BA.debugLineNum = 514;BA.debugLine="Private Sub pan_all_lock_Click";
+ //BA.debugLineNum = 515;BA.debugLine="pan_all_lock.Visible=False";
 mostCurrent._pan_all_lock.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 500;BA.debugLine="End Sub";
+ //BA.debugLineNum = 516;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_all2_click() throws Exception{
@@ -1073,8 +1096,8 @@ public static String  _pan_font_click() throws Exception{
 return "";
 }
 public static String  _pan_lock_click() throws Exception{
- //BA.debugLineNum = 502;BA.debugLine="Private Sub pan_lock_Click";
- //BA.debugLineNum = 504;BA.debugLine="End Sub";
+ //BA.debugLineNum = 518;BA.debugLine="Private Sub pan_lock_Click";
+ //BA.debugLineNum = 520;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -1123,59 +1146,59 @@ mostCurrent._tik6.setVisible(anywheresoftware.b4a.keywords.Common.False);
 return "";
 }
 public static String  _togglebtn_finger_checkedchange(boolean _checked) throws Exception{
- //BA.debugLineNum = 506;BA.debugLine="Private Sub ToggleBtn_finger_CheckedChange(Checked";
- //BA.debugLineNum = 507;BA.debugLine="Try";
-try { //BA.debugLineNum = 508;BA.debugLine="fingerprint1.Initialize (Me, \"auth\")";
+ //BA.debugLineNum = 522;BA.debugLine="Private Sub ToggleBtn_finger_CheckedChange(Checked";
+ //BA.debugLineNum = 523;BA.debugLine="Try";
+try { //BA.debugLineNum = 524;BA.debugLine="fingerprint1.Initialize (Me, \"auth\")";
 mostCurrent._fingerprint1._initialize /*String*/ (processBA,setting_activity.getObject(),"auth");
- //BA.debugLineNum = 509;BA.debugLine="If fingerprint1.HardwareDetected = False Then";
+ //BA.debugLineNum = 525;BA.debugLine="If fingerprint1.HardwareDetected = False Then";
 if (mostCurrent._fingerprint1._gethardwaredetected /*boolean*/ ()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 510;BA.debugLine="ToastMessageShow(\"سنسور اثر انگشت موجود نیست\",";
+ //BA.debugLineNum = 526;BA.debugLine="ToastMessageShow(\"سنسور اثر انگشت موجود نیست\",";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("سنسور اثر انگشت موجود نیست"),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 511;BA.debugLine="ToggleBtn_finger.Checked=False";
+ //BA.debugLineNum = 527;BA.debugLine="ToggleBtn_finger.Checked=False";
 mostCurrent._togglebtn_finger.setChecked(anywheresoftware.b4a.keywords.Common.False);
  }else if(mostCurrent._fingerprint1._gethasenrolledfingerprints /*boolean*/ ()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 513;BA.debugLine="ToastMessageShow(\"اثر انگشت تعریف نشده است\", Fa";
+ //BA.debugLineNum = 529;BA.debugLine="ToastMessageShow(\"اثر انگشت تعریف نشده است\", Fa";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("اثر انگشت تعریف نشده است"),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 514;BA.debugLine="ToggleBtn_finger.Checked=False";
+ //BA.debugLineNum = 530;BA.debugLine="ToggleBtn_finger.Checked=False";
 mostCurrent._togglebtn_finger.setChecked(anywheresoftware.b4a.keywords.Common.False);
  };
  } 
        catch (Exception e11) {
-			processBA.setLastException(e11); //BA.debugLineNum = 518;BA.debugLine="ToastMessageShow(\"سنسور اثر انگشت موجود نیست\", T";
+			processBA.setLastException(e11); //BA.debugLineNum = 534;BA.debugLine="ToastMessageShow(\"سنسور اثر انگشت موجود نیست\", T";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("سنسور اثر انگشت موجود نیست"),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 519;BA.debugLine="ToggleBtn_finger.Checked=False";
+ //BA.debugLineNum = 535;BA.debugLine="ToggleBtn_finger.Checked=False";
 mostCurrent._togglebtn_finger.setChecked(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 520;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("614221326",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 536;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("229360142",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
- //BA.debugLineNum = 523;BA.debugLine="End Sub";
+ //BA.debugLineNum = 539;BA.debugLine="End Sub";
 return "";
 }
 public static String  _togglebtn_offon_lock_checkedchange(boolean _checked) throws Exception{
- //BA.debugLineNum = 477;BA.debugLine="Private Sub ToggleBtn_OffOn_lock_CheckedChange(Che";
- //BA.debugLineNum = 478;BA.debugLine="Try";
-try { //BA.debugLineNum = 479;BA.debugLine="If(ToggleBtn_OffOn_lock.Checked=False)Then";
+ //BA.debugLineNum = 493;BA.debugLine="Private Sub ToggleBtn_OffOn_lock_CheckedChange(Che";
+ //BA.debugLineNum = 494;BA.debugLine="Try";
+try { //BA.debugLineNum = 495;BA.debugLine="If(ToggleBtn_OffOn_lock.Checked=False)Then";
 if ((mostCurrent._togglebtn_offon_lock.getChecked()==anywheresoftware.b4a.keywords.Common.False)) { 
- //BA.debugLineNum = 480;BA.debugLine="et_pass_lock.Enabled=False";
+ //BA.debugLineNum = 496;BA.debugLine="et_pass_lock.Enabled=False";
 mostCurrent._et_pass_lock.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 481;BA.debugLine="ToggleBtn_finger.Enabled=False";
+ //BA.debugLineNum = 497;BA.debugLine="ToggleBtn_finger.Enabled=False";
 mostCurrent._togglebtn_finger.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 482;BA.debugLine="et_hint_lock.Enabled=False";
+ //BA.debugLineNum = 498;BA.debugLine="et_hint_lock.Enabled=False";
 mostCurrent._et_hint_lock.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 484;BA.debugLine="et_pass_lock.Enabled=True";
+ //BA.debugLineNum = 500;BA.debugLine="et_pass_lock.Enabled=True";
 mostCurrent._et_pass_lock.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 485;BA.debugLine="ToggleBtn_finger.Enabled=True";
+ //BA.debugLineNum = 501;BA.debugLine="ToggleBtn_finger.Enabled=True";
 mostCurrent._togglebtn_finger.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 486;BA.debugLine="et_hint_lock.Enabled=True";
+ //BA.debugLineNum = 502;BA.debugLine="et_hint_lock.Enabled=True";
 mostCurrent._et_hint_lock.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  };
  } 
        catch (Exception e12) {
-			processBA.setLastException(e12); //BA.debugLineNum = 490;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("614024717",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+			processBA.setLastException(e12); //BA.debugLineNum = 506;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("229163533",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
- //BA.debugLineNum = 496;BA.debugLine="End Sub";
+ //BA.debugLineNum = 512;BA.debugLine="End Sub";
 return "";
 }
 }

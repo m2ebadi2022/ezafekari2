@@ -414,6 +414,7 @@ Private Sub lbl_lock_app_Click
 			et_hint_lock.Text=ls_lock0.Get(3)
 		Else
 			ToggleBtn_OffOn_lock.Checked=False
+			ToggleBtn_finger.Enabled=False
 			et_pass_lock.Enabled=False
 			et_hint_lock.Enabled=False
 			et_pass_lock.Text=""
@@ -427,8 +428,23 @@ Private Sub lbl_lock_app_Click
 		et_hint_lock.Text=ls_lock0.Get(3)
 		
 	Else
+		Dim ls_lock3 As List
+		ls_lock3.Initialize
+	
+		ls_lock3.Add("false")
+		ls_lock3.Add("false")
+		ls_lock3.Add("")
+		ls_lock3.Add("")
+			
+			
+		File.WriteList(File.DirInternal,"ls_lock",ls_lock3)
+		
+		
 		ToggleBtn_OffOn_lock.Checked=False
+		ToggleBtn_finger.Enabled=False
+		ToggleBtn_finger.Checked=False
 		et_pass_lock.Enabled=False
+		et_hint_lock.Enabled=False
 	End If
 	
 	

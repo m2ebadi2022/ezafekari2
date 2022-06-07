@@ -18,8 +18,9 @@ public static anywheresoftware.b4a.objects.WorkbookWrapper.SheetWrapper _sheet1 
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
-public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
+public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -27,16 +28,15 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
+public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
-public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
-public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 public static boolean  _add_ezafekari(anywheresoftware.b4a.BA _ba,String _date1,String _date2,String _time1,String _time2,int _d,int _h,int _m,String _tozih,int _state0) throws Exception{
  //BA.debugLineNum = 156;BA.debugLine="Sub add_ezafekari(date1 As String,date2 As String,";
@@ -370,7 +370,7 @@ _res.Close();
  } 
        catch (Exception e22) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e22); //BA.debugLineNum = 118;BA.debugLine="Log(\"error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("610092579","error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("210092579","error",0);
  };
  //BA.debugLineNum = 122;BA.debugLine="End Sub";
 return "";
@@ -495,7 +495,7 @@ if (true) return _res.GetInt("id");
  } 
        catch (Exception e9) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e9); //BA.debugLineNum = 548;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("611665423",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("211665423",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
  //BA.debugLineNum = 551;BA.debugLine="Return -1";
 if (true) return (int) (-1);
@@ -567,7 +567,7 @@ _connect_db(_ba);
 try { //BA.debugLineNum = 39;BA.debugLine="res = sql.ExecQuery(\"SELECT id FROM 'my_calander";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT id FROM 'my_calander' WHERE id=1")));
  //BA.debugLineNum = 40;BA.debugLine="Log( \"tbl my_calander exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("69961476","tbl my_calander exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("29961476","tbl my_calander exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6); //BA.debugLineNum = 42;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'my_calander' ('i";
@@ -575,7 +575,7 @@ _sql.ExecNonQuery("CREATE TABLE 'my_calander' ('id' INTEGER,'year'	INTEGER,'key'
  //BA.debugLineNum = 44;BA.debugLine="insert_calander_exl";
 _insert_calander_exl(_ba);
  //BA.debugLineNum = 45;BA.debugLine="Log ( \"tbl myCalander created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("69961481","tbl myCalander created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("29961481","tbl myCalander created",0);
  };
  //BA.debugLineNum = 48;BA.debugLine="End Sub";
 return "";
@@ -588,7 +588,7 @@ _connect_db(_ba);
 try { //BA.debugLineNum = 53;BA.debugLine="res = sql.ExecQuery(\"SELECT id FROM 'tbl_onvanha";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT id FROM 'tbl_onvanha' WHERE id=1")));
  //BA.debugLineNum = 54;BA.debugLine="Log( \"tbl tbl_onvanha exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("610027012","tbl tbl_onvanha exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("210027012","tbl tbl_onvanha exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6); //BA.debugLineNum = 56;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tbl_onvanha' ('i";
@@ -620,7 +620,7 @@ _sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_
  //BA.debugLineNum = 71;BA.debugLine="sql.ExecNonQuery(\"INSERT INTO 'tbl_onvanha' ('id";
 _sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('13', 'saatKar',  'ساعت کاری در روز','ساعت کاری در روز');");
  //BA.debugLineNum = 75;BA.debugLine="Log ( \"tbl tbl_onvanha created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("610027033","tbl tbl_onvanha created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("210027033","tbl tbl_onvanha created",0);
  };
  //BA.debugLineNum = 77;BA.debugLine="sql.Close";
 _sql.Close();
@@ -635,13 +635,13 @@ _connect_db(_ba);
 try { //BA.debugLineNum = 25;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_taradod\")";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_taradod")));
  //BA.debugLineNum = 26;BA.debugLine="Log( \"tbl taradod exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("69895941","tbl taradod exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("29895941","tbl taradod exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6); //BA.debugLineNum = 29;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tb_taradod' ( 'i";
 _sql.ExecNonQuery("CREATE TABLE 'tb_taradod' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date_from'	TEXT, 'date_to'	TEXT, 'time_from'	TEXT, 'time_to'	TEXT, 'end_tim_d'	INTEGER DEFAULT 0, 'end_tim_h'	INTEGER DEFAULT 0, 'end_tim_m'	INTEGER DEFAULT 0, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
  //BA.debugLineNum = 31;BA.debugLine="Log ( \"tbl taradod created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("69895946","tbl taradod created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("29895946","tbl taradod created",0);
  };
  //BA.debugLineNum = 34;BA.debugLine="End Sub";
 return "";
@@ -669,7 +669,7 @@ _res.Close();
  } 
        catch (Exception e12) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 459;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("611403276",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("211403276",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
  //BA.debugLineNum = 462;BA.debugLine="Return chk1";
 if (true) return _chk1;
@@ -699,7 +699,7 @@ _res.Close();
  } 
        catch (Exception e12) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 479;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("611468812",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("211468812",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
  //BA.debugLineNum = 482;BA.debugLine="Return chk1";
 if (true) return _chk1;
@@ -729,7 +729,7 @@ _res.Close();
  } 
        catch (Exception e12) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 497;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("611534348",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("211534348",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
  //BA.debugLineNum = 499;BA.debugLine="Return chk1";
 if (true) return _chk1;
@@ -761,7 +761,7 @@ _res.Close();
  } 
        catch (Exception e13) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e13); //BA.debugLineNum = 522;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("611599887",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("211599887",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
  //BA.debugLineNum = 525;BA.debugLine="Return chk1";
 if (true) return _chk1;

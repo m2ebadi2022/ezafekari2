@@ -341,12 +341,13 @@ public anywheresoftware.b4a.objects.EditTextWrapper _et_namefamili = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lbl_run_step1 = null;
 public ir.taravatgroup.ezafekari2.httpjob _http2 = null;
 public anywheresoftware.b4a.phone.Phone _pp = null;
+public static int _type_app = 0;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -354,15 +355,15 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
+public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
-public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -373,41 +374,49 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 23;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 25;BA.debugLine="Activity.LoadLayout(\"step1\")";
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"step1\")";
 mostCurrent._activity.LoadLayout("step1",mostCurrent.activityBA);
- //BA.debugLineNum = 27;BA.debugLine="et_nameFamili.Color=Colors.ARGB(0,0,0,0)";
+ //BA.debugLineNum = 28;BA.debugLine="et_nameFamili.Color=Colors.ARGB(0,0,0,0)";
 mostCurrent._et_namefamili.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 28;BA.debugLine="et_email.Color=Colors.ARGB(0,0,0,0)";
+ //BA.debugLineNum = 29;BA.debugLine="et_email.Color=Colors.ARGB(0,0,0,0)";
 mostCurrent._et_email.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 29;BA.debugLine="End Sub";
+ //BA.debugLineNum = 30;BA.debugLine="If(myfunc.check_karid)Then";
+if ((mostCurrent._myfunc._check_karid /*boolean*/ (mostCurrent.activityBA))) { 
+ //BA.debugLineNum = 31;BA.debugLine="type_app=2";
+_type_app = (int) (2);
+ }else {
+ //BA.debugLineNum = 33;BA.debugLine="type_app=1";
+_type_app = (int) (1);
+ };
+ //BA.debugLineNum = 35;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 90;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 91;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 96;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 97;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 92;BA.debugLine="StartActivity(Main)";
+ //BA.debugLineNum = 98;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
- //BA.debugLineNum = 93;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 99;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 95;BA.debugLine="Return True";
+ //BA.debugLineNum = 101;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 97;BA.debugLine="Return False";
+ //BA.debugLineNum = 103;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 99;BA.debugLine="End Sub";
+ //BA.debugLineNum = 105;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 35;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 37;BA.debugLine="End Sub";
+ //BA.debugLineNum = 41;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 43;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 31;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 33;BA.debugLine="End Sub";
+ //BA.debugLineNum = 37;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 39;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -422,57 +431,59 @@ mostCurrent._lbl_run_step1 = new anywheresoftware.b4a.objects.LabelWrapper();
 mostCurrent._http2 = new ir.taravatgroup.ezafekari2.httpjob();
  //BA.debugLineNum = 20;BA.debugLine="Dim pp As Phone";
 mostCurrent._pp = new anywheresoftware.b4a.phone.Phone();
- //BA.debugLineNum = 21;BA.debugLine="End Sub";
+ //BA.debugLineNum = 21;BA.debugLine="Dim type_app As Int=1";
+_type_app = (int) (1);
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
 public static String  _http_initial_1(int _type1) throws Exception{
 String _send = "";
- //BA.debugLineNum = 51;BA.debugLine="Sub http_initial_1(type1 As Int)";
- //BA.debugLineNum = 53;BA.debugLine="If(type1=3)Then";
+ //BA.debugLineNum = 57;BA.debugLine="Sub http_initial_1(type1 As Int)";
+ //BA.debugLineNum = 59;BA.debugLine="If(type1=3)Then";
 if ((_type1==3)) { 
- //BA.debugLineNum = 54;BA.debugLine="http2.Initialize(\"http2\",Me)";
+ //BA.debugLineNum = 60;BA.debugLine="http2.Initialize(\"http2\",Me)";
 mostCurrent._http2._initialize /*String*/ (processBA,"http2",step1_activity.getObject());
- //BA.debugLineNum = 55;BA.debugLine="Dim send As String";
+ //BA.debugLineNum = 61;BA.debugLine="Dim send As String";
 _send = "";
- //BA.debugLineNum = 56;BA.debugLine="send = \"var=1&phone=\"&Main.phon_num&\"&name=\"&et_";
-_send = "var=1&phone="+mostCurrent._main._phon_num /*String*/ +"&name="+mostCurrent._et_namefamili.getText()+"&email="+mostCurrent._et_email.getText()+"&type_app=1&div_id="+mostCurrent._pp.GetSettings("android_id")+"&div_model="+mostCurrent._pp.getModel();
- //BA.debugLineNum = 57;BA.debugLine="http2.PostString(\"https://taravatgroup.ir/save_a";
+ //BA.debugLineNum = 62;BA.debugLine="send = \"var=1&phone=\"&Main.phon_num&\"&name=\"&et_";
+_send = "var=1&phone="+mostCurrent._main._phon_num /*String*/ +"&name="+mostCurrent._et_namefamili.getText()+"&email="+mostCurrent._et_email.getText()+"&type_app="+BA.NumberToString(_type_app)+"&div_id="+mostCurrent._pp.GetSettings("android_id")+"&div_model="+mostCurrent._pp.getModel();
+ //BA.debugLineNum = 63;BA.debugLine="http2.PostString(\"https://taravatgroup.ir/save_a";
 mostCurrent._http2._poststring /*String*/ ("https://taravatgroup.ir/save_acc.php",_send);
  };
- //BA.debugLineNum = 63;BA.debugLine="End Sub";
+ //BA.debugLineNum = 69;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(ir.taravatgroup.ezafekari2.httpjob _job) throws Exception{
- //BA.debugLineNum = 67;BA.debugLine="Sub Jobdone (job As HttpJob)";
- //BA.debugLineNum = 68;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("638207489",_job._getstring /*String*/ (),0);
- //BA.debugLineNum = 69;BA.debugLine="If job.Success = True Then";
+ //BA.debugLineNum = 73;BA.debugLine="Sub Jobdone (job As HttpJob)";
+ //BA.debugLineNum = 74;BA.debugLine="Log(job.GetString)";
+anywheresoftware.b4a.keywords.Common.LogImpl("213303809",_job._getstring /*String*/ (),0);
+ //BA.debugLineNum = 75;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 71;BA.debugLine="If job.JobName=\"http2\" Then";
+ //BA.debugLineNum = 77;BA.debugLine="If job.JobName=\"http2\" Then";
 if ((_job._jobname /*String*/ ).equals("http2")) { 
- //BA.debugLineNum = 72;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
+ //BA.debugLineNum = 78;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
 if ((_job._getstring /*String*/ ().contains("true"))) { 
- //BA.debugLineNum = 73;BA.debugLine="StartActivity(step2_activity)";
+ //BA.debugLineNum = 79;BA.debugLine="StartActivity(step2_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step2_activity.getObject()));
- //BA.debugLineNum = 74;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 80;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 75;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
+ //BA.debugLineNum = 81;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تبریک"),anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 77;BA.debugLine="ToastMessageShow(job.GetString,False)";
+ //BA.debugLineNum = 83;BA.debugLine="ToastMessageShow(job.GetString,False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_job._getstring /*String*/ ()),anywheresoftware.b4a.keywords.Common.False);
  };
  };
  }else {
  };
- //BA.debugLineNum = 87;BA.debugLine="End Sub";
+ //BA.debugLineNum = 93;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_run_step1_click() throws Exception{
- //BA.debugLineNum = 39;BA.debugLine="Private Sub lbl_run_step1_Click";
- //BA.debugLineNum = 43;BA.debugLine="http_initial_1(3)";
+ //BA.debugLineNum = 45;BA.debugLine="Private Sub lbl_run_step1_Click";
+ //BA.debugLineNum = 49;BA.debugLine="http_initial_1(3)";
 _http_initial_1((int) (3));
- //BA.debugLineNum = 47;BA.debugLine="End Sub";
+ //BA.debugLineNum = 53;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
