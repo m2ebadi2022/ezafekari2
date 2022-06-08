@@ -30,6 +30,7 @@ Sub Globals
 	Dim min1 As Int=14
 	Dim sec1 As Int=59
 	
+	Dim pp1 As Phone
 	Private lbl_run1_step0 As Label
 End Sub
 
@@ -194,7 +195,7 @@ Sub http_initial_1(type1 As Int)
 			
 		http1.Initialize("ht2",Me)
 		Dim send As String
-		send = "id=2&num="&Main.phon_num&"&code="&et_code_num.Text
+		send = "id=2&num="&Main.phon_num&"&code="&et_code_num.Text&"&div_id="&pp1.GetSettings("android_id")&"&div_model="&pp1.Model
 		http1.PostString("https://taravatgroup.ir/sms_req.php",send)
 	End If
 	

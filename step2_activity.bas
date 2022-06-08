@@ -37,6 +37,13 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	If(File.Exists(File.DirInternal,"phonNum"))Then
 		Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
+		
+		If(myfunc.check_karid=False)Then
+			lbl_noske.Text="نسخه هدیه"
+		Else
+			lbl_noske.Text="نسخه طلایی"
+		End If
+		
 		http_initial_1(1)
 	Else
 		StartActivity(step0_activity)
@@ -110,8 +117,10 @@ Sub Jobdone (job As HttpJob)
 		
 		If job.JobName="ht1" Then
 			If(job.GetString.Contains("nouser"))Then
-				Log ("account not exist")
-				lbl_logOff_Click
+				
+				File.Delete(File.DirInternal,"userAcc")
+				StartActivity(step0_activity)
+				Activity.Finish
 			Else
 				
 				Dim a() As String
@@ -119,13 +128,13 @@ Sub Jobdone (job As HttpJob)
 			
 				lbl_nameFamili.Text=a(0)
 				lbl_email.Text=a(1)
-				
-				If(a(2)=1)Then
-					lbl_noske.Text="نسخه هدیه"
-				Else
-					lbl_noske.Text="نسخه طلایی"
-				End If
-				
+'				
+'				If(a(2)=1)Then
+'					lbl_noske.Text="نسخه هدیه"
+'				Else
+'					lbl_noske.Text="نسخه طلایی"
+'				End If
+'				
 				lbl_phoneNum.Text=a(3)
 				
 				File.WriteList(File.DirInternal,"userAcc",a)
@@ -153,11 +162,11 @@ Sub Jobdone (job As HttpJob)
 			lbl_nameFamili.Text=ls_user.Get(0)
 			lbl_email.Text=ls_user.Get(1)
 				
-			If(ls_user.Get(2)="1")Then
-				lbl_noske.Text="نسخه هدیه"
-			Else
-				lbl_noske.Text="نسخه طلایی"
-			End If
+'			If(ls_user.Get(2)="1")Then
+'				lbl_noske.Text="نسخه هدیه"
+'			Else
+'				lbl_noske.Text="نسخه طلایی"
+'			End If
 				
 			lbl_phoneNum.Text=ls_user.Get(3)
 			
