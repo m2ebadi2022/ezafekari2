@@ -28,6 +28,10 @@ Sub Globals
 	
 	Dim http3 As HttpJob
 	Private lbl_phoneNum As Label
+	
+	Dim CC As ContentChooser 'Phone Library
+	Dim Up As UploadFilePhp
+	Dim Url_Php_Page As String
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -50,7 +54,16 @@ Sub Activity_Create(FirstTime As Boolean)
 		Activity.Finish
 	End If
 	
-
+	
+	
+	CC.Initialize("CC")
+	Url_Php_Page="https://taravatgroup.ir/avatar_up1.php"
+	
+	If FirstTime Then
+		Up.B4A_log=True
+		Up.Initialize("Up")
+	End If
+	
 End Sub
 
 Sub Activity_Resume
@@ -59,6 +72,16 @@ End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
 
+End Sub
+
+Sub upload_img
+	
+	Dim Path_Phone_Image As String
+	Path_Phone_Image = File.DirAssets & "/"  'OR  "/sdcard/
+	Dim name_image As String
+	name_image="1.jpg"
+	'Up.doFileUpload( ProgressBar1,Label1,Path_Phone_Image & name_image,Url_Php_Page)
+	
 End Sub
 
 Private Sub pan_all_edit_Click
@@ -218,4 +241,20 @@ End Sub
 Private Sub lbl_back_home_Click
 	'StartActivity(Main)
 	Activity.Finish
+End Sub
+
+Private Sub lbl_image_up_Click
+	CC.Show("image/*", "Choose image")
+End Sub
+
+
+Sub CC_Result (Success As Boolean, Dir As String, FileName As String)
+	
+	If Success = True Then
+		ToastMessageShow(Dir&"/"&FileName, True)
+		'ImageView1.Bitmap = LoadBitmap(Dir,FileName)
+	Else
+		ToastMessageShow("No Success :(",True)
+	End If
+		
 End Sub
