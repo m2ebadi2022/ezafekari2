@@ -51,8 +51,18 @@ End Sub
 Private Sub lbl_run_step1_Click
 	'' chek code in sms
 	
-	
-	http_initial_1(3)
+	If(et_nameFamili.Text="")Then
+		ToastMessageShow("قسمت نام خالی است ",False)
+	Else If(et_email.Text="")Then
+		
+		ToastMessageShow("قسمت ایمیل خالی است ",False)
+	Else If(myfunc.Validate_Email(et_email.Text)=False)Then
+		
+		ToastMessageShow(" ایمیل نامعتبر است ",False)
+	Else
+		
+		http_initial_1(3)
+	End If
 	
 	
 	

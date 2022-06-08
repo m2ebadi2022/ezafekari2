@@ -423,6 +423,23 @@ if (true) return anywheresoftware.b4a.keywords.Common.NumberFormat(_num,(int) (0
  //BA.debugLineNum = 126;BA.debugLine="End Sub";
 return "";
 }
+public static boolean  _validate_email(anywheresoftware.b4a.BA _ba,String _emailaddress) throws Exception{
+anywheresoftware.b4a.keywords.Regex.MatcherWrapper _matchemail = null;
+ //BA.debugLineNum = 279;BA.debugLine="Sub Validate_Email(EmailAddress As String) As Bool";
+ //BA.debugLineNum = 280;BA.debugLine="Dim MatchEmail As Matcher = Regex.Matcher(\"^(?i)[";
+_matchemail = new anywheresoftware.b4a.keywords.Regex.MatcherWrapper();
+_matchemail = anywheresoftware.b4a.keywords.Common.Regex.Matcher("^(?i)[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$",_emailaddress);
+ //BA.debugLineNum = 282;BA.debugLine="If MatchEmail.Find = True Then";
+if (_matchemail.Find()==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 284;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+ }else {
+ //BA.debugLineNum = 286;BA.debugLine="Return False";
+if (true) return anywheresoftware.b4a.keywords.Common.False;
+ };
+ //BA.debugLineNum = 288;BA.debugLine="End Sub";
+return false;
+}
 public static String  _webviewassetfile(anywheresoftware.b4a.BA _ba,String _filename) throws Exception{
 anywheresoftware.b4j.object.JavaObject _jo = null;
  //BA.debugLineNum = 265;BA.debugLine="Sub WebViewAssetFile (FileName As String) As Strin";

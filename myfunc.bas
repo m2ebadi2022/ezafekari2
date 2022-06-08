@@ -282,6 +282,17 @@ Sub WebViewAssetFile (FileName As String) As String
 End Sub
 
 
+Sub Validate_Email(EmailAddress As String) As Boolean
+	Dim MatchEmail As Matcher = Regex.Matcher("^(?i)[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$", EmailAddress)
+ 
+	If MatchEmail.Find = True Then
+	
+		Return True
+	Else
+		Return False
+	End If
+End Sub
+
 '' backup ----------------->>>
 
 

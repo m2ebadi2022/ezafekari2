@@ -393,20 +393,20 @@ _type_app = (int) (1);
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 96;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 97;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 106;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 107;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 98;BA.debugLine="StartActivity(Main)";
+ //BA.debugLineNum = 108;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
- //BA.debugLineNum = 99;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 109;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 101;BA.debugLine="Return True";
+ //BA.debugLineNum = 111;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 103;BA.debugLine="Return False";
+ //BA.debugLineNum = 113;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 105;BA.debugLine="End Sub";
+ //BA.debugLineNum = 115;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -438,52 +438,64 @@ return "";
 }
 public static String  _http_initial_1(int _type1) throws Exception{
 String _send = "";
- //BA.debugLineNum = 57;BA.debugLine="Sub http_initial_1(type1 As Int)";
- //BA.debugLineNum = 59;BA.debugLine="If(type1=3)Then";
+ //BA.debugLineNum = 67;BA.debugLine="Sub http_initial_1(type1 As Int)";
+ //BA.debugLineNum = 69;BA.debugLine="If(type1=3)Then";
 if ((_type1==3)) { 
- //BA.debugLineNum = 60;BA.debugLine="http2.Initialize(\"http2\",Me)";
+ //BA.debugLineNum = 70;BA.debugLine="http2.Initialize(\"http2\",Me)";
 mostCurrent._http2._initialize /*String*/ (processBA,"http2",step1_activity.getObject());
- //BA.debugLineNum = 61;BA.debugLine="Dim send As String";
+ //BA.debugLineNum = 71;BA.debugLine="Dim send As String";
 _send = "";
- //BA.debugLineNum = 62;BA.debugLine="send = \"var=1&phone=\"&Main.phon_num&\"&name=\"&et_";
+ //BA.debugLineNum = 72;BA.debugLine="send = \"var=1&phone=\"&Main.phon_num&\"&name=\"&et_";
 _send = "var=1&phone="+mostCurrent._main._phon_num /*String*/ +"&name="+mostCurrent._et_namefamili.getText()+"&email="+mostCurrent._et_email.getText()+"&type_app="+BA.NumberToString(_type_app)+"&div_id="+mostCurrent._pp.GetSettings("android_id")+"&div_model="+mostCurrent._pp.getModel();
- //BA.debugLineNum = 63;BA.debugLine="http2.PostString(\"https://taravatgroup.ir/save_a";
+ //BA.debugLineNum = 73;BA.debugLine="http2.PostString(\"https://taravatgroup.ir/save_a";
 mostCurrent._http2._poststring /*String*/ ("https://taravatgroup.ir/save_acc.php",_send);
  };
- //BA.debugLineNum = 69;BA.debugLine="End Sub";
+ //BA.debugLineNum = 79;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(ir.taravatgroup.ezafekari2.httpjob _job) throws Exception{
- //BA.debugLineNum = 73;BA.debugLine="Sub Jobdone (job As HttpJob)";
- //BA.debugLineNum = 74;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("613303809",_job._getstring /*String*/ (),0);
- //BA.debugLineNum = 75;BA.debugLine="If job.Success = True Then";
+ //BA.debugLineNum = 83;BA.debugLine="Sub Jobdone (job As HttpJob)";
+ //BA.debugLineNum = 84;BA.debugLine="Log(job.GetString)";
+anywheresoftware.b4a.keywords.Common.LogImpl("813303809",_job._getstring /*String*/ (),0);
+ //BA.debugLineNum = 85;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 77;BA.debugLine="If job.JobName=\"http2\" Then";
+ //BA.debugLineNum = 87;BA.debugLine="If job.JobName=\"http2\" Then";
 if ((_job._jobname /*String*/ ).equals("http2")) { 
- //BA.debugLineNum = 78;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
+ //BA.debugLineNum = 88;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
 if ((_job._getstring /*String*/ ().contains("true"))) { 
- //BA.debugLineNum = 79;BA.debugLine="StartActivity(step2_activity)";
+ //BA.debugLineNum = 89;BA.debugLine="StartActivity(step2_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step2_activity.getObject()));
- //BA.debugLineNum = 80;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 90;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 81;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
+ //BA.debugLineNum = 91;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تبریک"),anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 83;BA.debugLine="ToastMessageShow(job.GetString,False)";
+ //BA.debugLineNum = 93;BA.debugLine="ToastMessageShow(job.GetString,False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_job._getstring /*String*/ ()),anywheresoftware.b4a.keywords.Common.False);
  };
  };
  }else {
  };
- //BA.debugLineNum = 93;BA.debugLine="End Sub";
+ //BA.debugLineNum = 103;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_run_step1_click() throws Exception{
  //BA.debugLineNum = 45;BA.debugLine="Private Sub lbl_run_step1_Click";
- //BA.debugLineNum = 49;BA.debugLine="http_initial_1(3)";
+ //BA.debugLineNum = 48;BA.debugLine="If(et_nameFamili.Text=\"\")Then";
+if (((mostCurrent._et_namefamili.getText()).equals(""))) { 
+ //BA.debugLineNum = 49;BA.debugLine="ToastMessageShow(\"قسمت نام خالی است \",False)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("قسمت نام خالی است "),anywheresoftware.b4a.keywords.Common.False);
+ }else if(((mostCurrent._et_email.getText()).equals(""))) { 
+ //BA.debugLineNum = 52;BA.debugLine="ToastMessageShow(\"قسمت ایمیل خالی است \",False)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("قسمت ایمیل خالی است "),anywheresoftware.b4a.keywords.Common.False);
+ }else if((mostCurrent._myfunc._validate_email /*boolean*/ (mostCurrent.activityBA,mostCurrent._et_email.getText())==anywheresoftware.b4a.keywords.Common.False)) { 
+ //BA.debugLineNum = 55;BA.debugLine="ToastMessageShow(\" ایمیل نامعتبر است \",False)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(" ایمیل نامعتبر است "),anywheresoftware.b4a.keywords.Common.False);
+ }else {
+ //BA.debugLineNum = 58;BA.debugLine="http_initial_1(3)";
 _http_initial_1((int) (3));
- //BA.debugLineNum = 53;BA.debugLine="End Sub";
+ };
+ //BA.debugLineNum = 63;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{

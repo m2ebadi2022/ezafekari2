@@ -67,7 +67,19 @@ End Sub
 
 Private Sub lbl_save_edit_Click
 	
-	http_initial_1(2)
+	If(et_nameFamili.Text="")Then
+		ToastMessageShow("قسمت نام خالی است ",False)
+	Else If(et_email.Text="")Then
+		
+		ToastMessageShow("قسمت ایمیل خالی است ",False)
+	Else If(myfunc.Validate_Email(et_email.Text)=False)Then
+		
+		ToastMessageShow(" ایمیل نامعتبر است ",False)
+	Else
+		http_initial_1(2)
+	End If
+	
+	
 End Sub
 
 Private Sub lbl_back_Click
