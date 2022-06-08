@@ -41,6 +41,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	et_phonNum.Color=Colors.ARGB(0,0,0,0)
 	et_code_num.Color=Colors.ARGB(0,0,0,0)
+	
+	
+	Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
+	
 
 End Sub
 
@@ -187,6 +191,8 @@ Sub http_initial_1(type1 As Int)
 		send = "id=1&num="&Main.phon_num&"&code=0"
 		http1.PostString("https://taravatgroup.ir/sms_req.php",send)
 		
+		File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
+		
 		lbl_run2_step0.Enabled=False
 		pan_all_send.Visible=True
 		time_remind.Enabled=True
@@ -266,4 +272,9 @@ End Sub
 Private Sub lbl_back_Click
 	'StartActivity(Main)
 	Activity.Finish
+End Sub
+
+Private Sub lbl_code_recived_Click
+	lbl_time_remind.Text="00:00"
+	pan_all_send.Visible=True
 End Sub
