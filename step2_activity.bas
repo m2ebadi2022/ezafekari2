@@ -41,6 +41,8 @@ Sub Globals
 	Private ProgressBar_up As ProgressBar
 	Dim pp As Phone
 	Dim picName As String=""
+	Dim bmp As Bitmap
+	Private lbl_image_up As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -194,8 +196,8 @@ Sub Jobdone (job As HttpJob)
 		If job.JobName="ht2" Then
 			If(job.GetString.Contains("true"))Then
 				http_initial_1(1)
-				lbl_back_Click
-				ToastMessageShow("تغییرات ذخیره شد",False)
+				
+				
 			End If
 		End If
 			
@@ -233,9 +235,12 @@ Private Sub lbl_edit_Click
 	et_nameFamili.Text=	lbl_nameFamili.Text
 	et_email.Text=lbl_email.Text
 	comp.Initialize("Compressor")
+	comp.Quality=30
+	lbl_image_up.Text=Chr(0xF0EE)
 	
 	pan_all_edit.Visible=True
 End Sub
+
 
 
 Sub Activity_KeyPress (KeyCode As Int) As Boolean
@@ -266,16 +271,22 @@ End Sub
 Sub CC_Result (Success As Boolean, Dir As String, FileName As String)
 	
 	If Success = True Then
-'		
-'		Dim bmp As Bitmap = comp.compressToBitmap(File.DirRootExternal,"donmanfredorg.png")
-'		comp.DestinationDirectoryPath = File.Combine(File.DirRootExternal,"Compressor")
-'		comp.compressToFile(File.DirRootExternal,"donmanfredorg.png")
-'		
+		
+		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"temp_pic.jpg")
+		
+		
+		bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
+	
+	
+		
+		Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
+		bmp.WriteToStream(out, 20, "PNG")
+		out.Close
 		
 		
 		
-		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,picName)
-		img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Dir,FileName))
+		'img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Dir,FileName))
+		img_p_edit.Bitmap=myfunc.CircleImage( bmp)
 		
 	Else
 		ToastMessageShow("No Success :(",True)
@@ -299,3 +310,11 @@ Sub Up_sendFile (value As String)
 	Log( value)
 End Sub
 
+Sub Up_statusUpload (value As String)
+	lbl_image_up.Text=value&" %"
+	If(value>=100)Then
+		lbl_back_Click
+		ToastMessageShow("تغییرات ذخیره شد",False)
+	End If
+	
+End Sub
