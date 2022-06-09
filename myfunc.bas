@@ -293,6 +293,26 @@ Sub Validate_Email(EmailAddress As String) As Boolean
 	End If
 End Sub
 
+Sub CircleImage(Image As Bitmap) As Bitmap
+	Dim bmp As Bitmap
+	bmp.InitializeMutable(200dip, 200dip)
+	Dim cvs As Canvas
+	cvs.Initialize2(bmp)
+	Dim r As Rect
+	r.Initialize(0, 0, bmp.Width, bmp.Height)
+	cvs.DrawRect(r, Colors.Transparent, True, 0)
+	Dim p As Path
+	p.Initialize(0, 0)
+	Dim jo As JavaObject = p
+	Dim x = 100dip, y = 100dip, radius = 100dip As Float
+	jo.RunMethod("addCircle", Array As Object(x, y, radius, "CW"))
+	cvs.ClipPath(p)
+	Dim r2 As Rect
+	r2.Initialize(0, 0, cvs.Bitmap.Width, cvs.Bitmap.Height)
+	cvs.DrawBitmap(Image, Null, r2)
+	Return cvs.Bitmap
+End Sub
+
 '' backup ----------------->>>
 
 

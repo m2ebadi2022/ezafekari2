@@ -42,8 +42,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	et_phonNum.Color=Colors.ARGB(0,0,0,0)
 	et_code_num.Color=Colors.ARGB(0,0,0,0)
 	
+	If (File.Exists(File.DirInternal,"phonNum"))Then
+		Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
+	End If
 	
-	Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
 	
 
 End Sub

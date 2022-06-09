@@ -70,6 +70,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=step2_activity,lbl_save_edit_Click,65,2,step2_activity,http_initial_1,109,0,step2_activity,Activity_Resume,54,0,step2_activity,Activity_Pause,67,0,Visual Designer,step2.bal,-100,2,step2_activity,Globals,25,0,step2_activity,Activity_Create,52,0,step2_activity,lbl_image_up_Click,241,0,step2_activity,CC_Result,247,6,step2_activity,upload_img,76,0
+NavigationStack=step2_activity,Globals,32,6,step2_activity,Activity_Create,77,6,step2_activity,Jobdone,183,0,step2_activity,http_initial_1,140,4,step2_activity,upload_img,281,6,Visual Designer,step2.bal,-100,6,step2_activity,Up_sendFile,283,6,step2_activity,Process_Globals,9,0,step2_activity,lbl_edit_Click,229,0,step2_activity,CC_Result,262,6
 SelectedBuild=0
 VisibleModules=14,6,21,22,23

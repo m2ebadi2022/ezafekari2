@@ -12,6 +12,7 @@ Version=11.5
 Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
+	Dim comp As Compressor
 
 End Sub
 
@@ -32,13 +33,21 @@ Sub Globals
 	Dim CC As ContentChooser 'Phone Library
 	Dim Up As UploadFilePhp
 	Dim Url_Php_Page As String
+	Private img_p_edit As ImageView
+	Private img_pofil As ImageView
+	
+	Dim Path_Phone_Image As String
+	
+	Private ProgressBar_up As ProgressBar
+	Dim pp As Phone
+	Dim picName As String=""
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("step2")
-
-	
+	picName="user-"&pp.GetSettings("android_id")&".jpg"
+	Log(picName)
 	If(File.Exists(File.DirInternal,"phonNum"))Then
 		Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
 		
@@ -46,6 +55,16 @@ Sub Activity_Create(FirstTime As Boolean)
 			lbl_noske.Text="نسخه هدیه"
 		Else
 			lbl_noske.Text="نسخه طلایی"
+		End If
+		
+		If(File.Exists(File.DirInternal,picName))Then
+			
+			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+			
+		Else
+			img_pofil.Bitmap=LoadBitmap(File.DirAssets,"user.png")
+			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
 		End If
 		
 		http_initial_1(1)
@@ -72,16 +91,6 @@ End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
 
-End Sub
-
-Sub upload_img
-	
-	Dim Path_Phone_Image As String
-	Path_Phone_Image = File.DirAssets & "/"  'OR  "/sdcard/
-	Dim name_image As String
-	name_image="1.jpg"
-	'Up.doFileUpload( ProgressBar1,Label1,Path_Phone_Image & name_image,Url_Php_Page)
-	
 End Sub
 
 Private Sub pan_all_edit_Click
@@ -129,11 +138,16 @@ End Sub
 Sub http_initial_1(type1 As Int)
 
 	If(type1=1)Then
+		
 		http3.Initialize("ht1",Me)
 		Dim send As String
 		send = "var=3&phone="&Main.phon_num&"
 		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 	Else If(type1=2)Then ' to edit
+		If(File.Exists(Starter.Provider.SharedFolder,picName))Then
+			upload_img(Starter.Provider.SharedFolder&"/"&picName)
+		End If
+		
 		http3.Initialize("ht2",Me)
 		Dim send As String
 		send = "var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"
@@ -218,6 +232,7 @@ End Sub
 Private Sub lbl_edit_Click
 	et_nameFamili.Text=	lbl_nameFamili.Text
 	et_email.Text=lbl_email.Text
+	comp.Initialize("Compressor")
 	
 	pan_all_edit.Visible=True
 End Sub
@@ -251,10 +266,36 @@ End Sub
 Sub CC_Result (Success As Boolean, Dir As String, FileName As String)
 	
 	If Success = True Then
-		ToastMessageShow(Dir&"/"&FileName, True)
-		'ImageView1.Bitmap = LoadBitmap(Dir,FileName)
+'		
+'		Dim bmp As Bitmap = comp.compressToBitmap(File.DirRootExternal,"donmanfredorg.png")
+'		comp.DestinationDirectoryPath = File.Combine(File.DirRootExternal,"Compressor")
+'		comp.compressToFile(File.DirRootExternal,"donmanfredorg.png")
+'		
+		
+		
+		
+		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,picName)
+		img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Dir,FileName))
+		
 	Else
 		ToastMessageShow("No Success :(",True)
 	End If
 		
 End Sub
+
+Sub upload_img(path As String)
+	
+	File.Copy(Starter.Provider.SharedFolder,picName,File.DirInternal,picName)
+	Path_Phone_Image = path
+	Up.doFileUpload( Null,Null,Path_Phone_Image,Url_Php_Page)
+	
+	img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+	img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+	
+End Sub
+
+
+Sub Up_sendFile (value As String)
+	Log( value)
+End Sub
+
