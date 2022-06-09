@@ -356,6 +356,7 @@ public anywheresoftware.b4a.phone.Phone _pp = null;
 public static String _picname = "";
 public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _bmp = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lbl_image_up = null;
+public uk.co.martinpearman.b4a.squareup.picasso.Picasso _p = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
@@ -388,113 +389,107 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 42;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 44;BA.debugLine="Activity.LoadLayout(\"step2\")";
+ //BA.debugLineNum = 44;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 46;BA.debugLine="Activity.LoadLayout(\"step2\")";
 mostCurrent._activity.LoadLayout("step2",mostCurrent.activityBA);
- //BA.debugLineNum = 45;BA.debugLine="picName=\"user-\"&pp.GetSettings(\"android_id\")&\".jp";
+ //BA.debugLineNum = 47;BA.debugLine="picName=\"user-\"&pp.GetSettings(\"android_id\")&\".jp";
 mostCurrent._picname = "user-"+mostCurrent._pp.GetSettings("android_id")+".jpg";
- //BA.debugLineNum = 46;BA.debugLine="Log(picName)";
-anywheresoftware.b4a.keywords.Common.LogImpl("813697028",mostCurrent._picname,0);
- //BA.debugLineNum = 47;BA.debugLine="If(File.Exists(File.DirInternal,\"phonNum\"))Then";
+ //BA.debugLineNum = 50;BA.debugLine="p.Initialize";
+mostCurrent._p.Initialize(processBA);
+ //BA.debugLineNum = 52;BA.debugLine="p.LoadUrl(\"https://taravatgroup.ir/uploads_ezaf/\"";
+mostCurrent._p.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"+mostCurrent._picname).IntoImageView((android.widget.ImageView)(mostCurrent._img_pofil.getObject()));
+ //BA.debugLineNum = 53;BA.debugLine="p.LoadUrl(\"https://taravatgroup.ir/uploads_ezaf/\"";
+mostCurrent._p.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"+mostCurrent._picname).IntoImageView((android.widget.ImageView)(mostCurrent._img_p_edit.getObject()));
+ //BA.debugLineNum = 55;BA.debugLine="Log(picName)";
+anywheresoftware.b4a.keywords.Common.LogImpl("213697035",mostCurrent._picname,0);
+ //BA.debugLineNum = 56;BA.debugLine="If(File.Exists(File.DirInternal,\"phonNum\"))Then";
 if ((anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum"))) { 
- //BA.debugLineNum = 48;BA.debugLine="Main.phon_num=File.ReadString(File.DirInternal,\"";
+ //BA.debugLineNum = 57;BA.debugLine="Main.phon_num=File.ReadString(File.DirInternal,\"";
 mostCurrent._main._phon_num /*String*/  = anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum");
- //BA.debugLineNum = 50;BA.debugLine="If(myfunc.check_karid=False)Then";
+ //BA.debugLineNum = 59;BA.debugLine="If(myfunc.check_karid=False)Then";
 if ((mostCurrent._myfunc._check_karid /*boolean*/ (mostCurrent.activityBA)==anywheresoftware.b4a.keywords.Common.False)) { 
- //BA.debugLineNum = 51;BA.debugLine="lbl_noske.Text=\"نسخه هدیه\"";
+ //BA.debugLineNum = 60;BA.debugLine="lbl_noske.Text=\"نسخه هدیه\"";
 mostCurrent._lbl_noske.setText(BA.ObjectToCharSequence("نسخه هدیه"));
  }else {
- //BA.debugLineNum = 53;BA.debugLine="lbl_noske.Text=\"نسخه طلایی\"";
+ //BA.debugLineNum = 62;BA.debugLine="lbl_noske.Text=\"نسخه طلایی\"";
 mostCurrent._lbl_noske.setText(BA.ObjectToCharSequence("نسخه طلایی"));
  };
- //BA.debugLineNum = 56;BA.debugLine="If(File.Exists(File.DirInternal,picName))Then";
-if ((anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),mostCurrent._picname))) { 
- //BA.debugLineNum = 58;BA.debugLine="img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap";
-mostCurrent._img_pofil.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc._circleimage /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (mostCurrent.activityBA,anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),mostCurrent._picname)).getObject()));
- //BA.debugLineNum = 59;BA.debugLine="img_p_edit.Bitmap=myfunc.CircleImage( LoadBitma";
-mostCurrent._img_p_edit.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc._circleimage /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (mostCurrent.activityBA,anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),mostCurrent._picname)).getObject()));
- }else {
- //BA.debugLineNum = 62;BA.debugLine="img_pofil.Bitmap=LoadBitmap(File.DirAssets,\"use";
-mostCurrent._img_pofil.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"user.png").getObject()));
- //BA.debugLineNum = 63;BA.debugLine="img_p_edit.Bitmap=LoadBitmap(File.DirAssets,\"us";
-mostCurrent._img_p_edit.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"user.png").getObject()));
- };
- //BA.debugLineNum = 66;BA.debugLine="http_initial_1(1)";
+ //BA.debugLineNum = 75;BA.debugLine="http_initial_1(1)";
 _http_initial_1((int) (1));
  }else {
- //BA.debugLineNum = 68;BA.debugLine="StartActivity(step0_activity)";
+ //BA.debugLineNum = 77;BA.debugLine="StartActivity(step0_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step0_activity.getObject()));
- //BA.debugLineNum = 69;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 78;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  };
- //BA.debugLineNum = 74;BA.debugLine="CC.Initialize(\"CC\")";
+ //BA.debugLineNum = 83;BA.debugLine="CC.Initialize(\"CC\")";
 mostCurrent._cc.Initialize("CC");
- //BA.debugLineNum = 75;BA.debugLine="Url_Php_Page=\"https://taravatgroup.ir/avatar_up1.";
+ //BA.debugLineNum = 84;BA.debugLine="Url_Php_Page=\"https://taravatgroup.ir/avatar_up1.";
 mostCurrent._url_php_page = "https://taravatgroup.ir/avatar_up1.php";
- //BA.debugLineNum = 77;BA.debugLine="If FirstTime Then";
+ //BA.debugLineNum = 86;BA.debugLine="If FirstTime Then";
 if (_firsttime) { 
- //BA.debugLineNum = 78;BA.debugLine="Up.B4A_log=True";
+ //BA.debugLineNum = 87;BA.debugLine="Up.B4A_log=True";
 mostCurrent._up.B4A_log = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 79;BA.debugLine="Up.Initialize(\"Up\")";
+ //BA.debugLineNum = 88;BA.debugLine="Up.Initialize(\"Up\")";
 mostCurrent._up.Initialize(processBA,"Up");
  };
- //BA.debugLineNum = 82;BA.debugLine="End Sub";
+ //BA.debugLineNum = 91;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 240;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 241;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 249;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 250;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 242;BA.debugLine="If(pan_all_edit.Visible=True)Then";
+ //BA.debugLineNum = 251;BA.debugLine="If(pan_all_edit.Visible=True)Then";
 if ((mostCurrent._pan_all_edit.getVisible()==anywheresoftware.b4a.keywords.Common.True)) { 
- //BA.debugLineNum = 243;BA.debugLine="lbl_back_Click";
+ //BA.debugLineNum = 252;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
  }else {
- //BA.debugLineNum = 245;BA.debugLine="lbl_back_home_Click";
+ //BA.debugLineNum = 254;BA.debugLine="lbl_back_home_Click";
 _lbl_back_home_click();
  };
- //BA.debugLineNum = 248;BA.debugLine="Return True";
+ //BA.debugLineNum = 257;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 250;BA.debugLine="Return False";
+ //BA.debugLineNum = 259;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 252;BA.debugLine="End Sub";
+ //BA.debugLineNum = 261;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 88;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 90;BA.debugLine="End Sub";
+ //BA.debugLineNum = 97;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 99;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 84;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 86;BA.debugLine="End Sub";
+ //BA.debugLineNum = 93;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 95;BA.debugLine="End Sub";
 return "";
 }
 public static String  _cc_result(boolean _success,String _dir,String _filename) throws Exception{
 anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper _out = null;
- //BA.debugLineNum = 265;BA.debugLine="Sub CC_Result (Success As Boolean, Dir As String,";
- //BA.debugLineNum = 267;BA.debugLine="If Success = True Then";
+ //BA.debugLineNum = 274;BA.debugLine="Sub CC_Result (Success As Boolean, Dir As String,";
+ //BA.debugLineNum = 276;BA.debugLine="If Success = True Then";
 if (_success==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 269;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.SharedFo";
+ //BA.debugLineNum = 278;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.SharedFo";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"temp_pic.jpg");
- //BA.debugLineNum = 272;BA.debugLine="bmp = comp.compressToBitmap(Starter.Provider.Sha";
+ //BA.debugLineNum = 281;BA.debugLine="bmp = comp.compressToBitmap(Starter.Provider.Sha";
 mostCurrent._bmp = (anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(_comp.compressToBitmap(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"temp_pic.jpg")));
- //BA.debugLineNum = 276;BA.debugLine="Dim out As OutputStream = File.OpenOutput(Starte";
+ //BA.debugLineNum = 285;BA.debugLine="Dim out As OutputStream = File.OpenOutput(Starte";
 _out = new anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper();
 _out = anywheresoftware.b4a.keywords.Common.File.OpenOutput(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,mostCurrent._picname,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 277;BA.debugLine="bmp.WriteToStream(out, 20, \"PNG\")";
+ //BA.debugLineNum = 286;BA.debugLine="bmp.WriteToStream(out, 20, \"PNG\")";
 mostCurrent._bmp.WriteToStream((java.io.OutputStream)(_out.getObject()),(int) (20),BA.getEnumFromString(android.graphics.Bitmap.CompressFormat.class,"PNG"));
- //BA.debugLineNum = 278;BA.debugLine="out.Close";
+ //BA.debugLineNum = 287;BA.debugLine="out.Close";
 _out.Close();
- //BA.debugLineNum = 283;BA.debugLine="img_p_edit.Bitmap=myfunc.CircleImage( bmp)";
+ //BA.debugLineNum = 292;BA.debugLine="img_p_edit.Bitmap=myfunc.CircleImage( bmp)";
 mostCurrent._img_p_edit.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc._circleimage /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (mostCurrent.activityBA,mostCurrent._bmp).getObject()));
  }else {
- //BA.debugLineNum = 286;BA.debugLine="ToastMessageShow(\"No Success :(\",True)";
+ //BA.debugLineNum = 295;BA.debugLine="ToastMessageShow(\"No Success :(\",True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No Success :("),anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 289;BA.debugLine="End Sub";
+ //BA.debugLineNum = 298;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -537,181 +532,183 @@ mostCurrent._picname = "";
 mostCurrent._bmp = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
  //BA.debugLineNum = 39;BA.debugLine="Private lbl_image_up As Label";
 mostCurrent._lbl_image_up = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 40;BA.debugLine="End Sub";
+ //BA.debugLineNum = 40;BA.debugLine="Dim p As Picasso";
+mostCurrent._p = new uk.co.martinpearman.b4a.squareup.picasso.Picasso();
+ //BA.debugLineNum = 42;BA.debugLine="End Sub";
 return "";
 }
 public static String  _http_initial_1(int _type1) throws Exception{
 String _send = "";
- //BA.debugLineNum = 134;BA.debugLine="Sub http_initial_1(type1 As Int)";
- //BA.debugLineNum = 136;BA.debugLine="If(type1=1)Then";
+ //BA.debugLineNum = 143;BA.debugLine="Sub http_initial_1(type1 As Int)";
+ //BA.debugLineNum = 145;BA.debugLine="If(type1=1)Then";
 if ((_type1==1)) { 
- //BA.debugLineNum = 138;BA.debugLine="http3.Initialize(\"ht1\",Me)";
+ //BA.debugLineNum = 147;BA.debugLine="http3.Initialize(\"ht1\",Me)";
 mostCurrent._http3._initialize /*String*/ (processBA,"ht1",step2_activity.getObject());
- //BA.debugLineNum = 139;BA.debugLine="Dim send As String";
-_send = "";
- //BA.debugLineNum = 140;BA.debugLine="send = \"var=3&phone=\"&Main.phon_num&\"";
-_send = "var=3&phone="+mostCurrent._main._phon_num /*String*/ +"";
- //BA.debugLineNum = 141;BA.debugLine="http3.PostString(\"https://taravatgroup.ir/save_a";
-mostCurrent._http3._poststring /*String*/ ("https://taravatgroup.ir/save_acc.php",_send);
- }else if((_type1==2)) { 
- //BA.debugLineNum = 143;BA.debugLine="If(File.Exists(Starter.Provider.SharedFolder,pic";
-if ((anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,mostCurrent._picname))) { 
- //BA.debugLineNum = 144;BA.debugLine="upload_img(Starter.Provider.SharedFolder&\"/\"&pi";
-_upload_img(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ +"/"+mostCurrent._picname);
- };
- //BA.debugLineNum = 147;BA.debugLine="http3.Initialize(\"ht2\",Me)";
-mostCurrent._http3._initialize /*String*/ (processBA,"ht2",step2_activity.getObject());
  //BA.debugLineNum = 148;BA.debugLine="Dim send As String";
 _send = "";
- //BA.debugLineNum = 149;BA.debugLine="send = \"var=2&name=\"&et_nameFamili.Text&\"&email=";
-_send = "var=2&name="+mostCurrent._et_namefamili.getText()+"&email="+mostCurrent._et_email.getText()+"&phone="+mostCurrent._main._phon_num /*String*/ +"";
+ //BA.debugLineNum = 149;BA.debugLine="send = \"var=3&phone=\"&Main.phon_num&\"";
+_send = "var=3&phone="+mostCurrent._main._phon_num /*String*/ +"";
  //BA.debugLineNum = 150;BA.debugLine="http3.PostString(\"https://taravatgroup.ir/save_a";
 mostCurrent._http3._poststring /*String*/ ("https://taravatgroup.ir/save_acc.php",_send);
+ }else if((_type1==2)) { 
+ //BA.debugLineNum = 152;BA.debugLine="If(File.Exists(Starter.Provider.SharedFolder,pic";
+if ((anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,mostCurrent._picname))) { 
+ //BA.debugLineNum = 153;BA.debugLine="upload_img(Starter.Provider.SharedFolder&\"/\"&pi";
+_upload_img(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ +"/"+mostCurrent._picname);
  };
- //BA.debugLineNum = 155;BA.debugLine="End Sub";
+ //BA.debugLineNum = 156;BA.debugLine="http3.Initialize(\"ht2\",Me)";
+mostCurrent._http3._initialize /*String*/ (processBA,"ht2",step2_activity.getObject());
+ //BA.debugLineNum = 157;BA.debugLine="Dim send As String";
+_send = "";
+ //BA.debugLineNum = 158;BA.debugLine="send = \"var=2&name=\"&et_nameFamili.Text&\"&email=";
+_send = "var=2&name="+mostCurrent._et_namefamili.getText()+"&email="+mostCurrent._et_email.getText()+"&phone="+mostCurrent._main._phon_num /*String*/ +"";
+ //BA.debugLineNum = 159;BA.debugLine="http3.PostString(\"https://taravatgroup.ir/save_a";
+mostCurrent._http3._poststring /*String*/ ("https://taravatgroup.ir/save_acc.php",_send);
+ };
+ //BA.debugLineNum = 164;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(ir.taravatgroup.ezafekari2.httpjob _job) throws Exception{
 String[] _a = null;
 anywheresoftware.b4a.objects.collections.List _ls_user = null;
- //BA.debugLineNum = 159;BA.debugLine="Sub Jobdone (job As HttpJob)";
- //BA.debugLineNum = 160;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("814286849",_job._getstring /*String*/ (),0);
- //BA.debugLineNum = 161;BA.debugLine="If job.Success = True Then";
+ //BA.debugLineNum = 168;BA.debugLine="Sub Jobdone (job As HttpJob)";
+ //BA.debugLineNum = 169;BA.debugLine="Log(job.GetString)";
+anywheresoftware.b4a.keywords.Common.LogImpl("214286849",_job._getstring /*String*/ (),0);
+ //BA.debugLineNum = 170;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 163;BA.debugLine="If job.JobName=\"ht1\" Then";
+ //BA.debugLineNum = 172;BA.debugLine="If job.JobName=\"ht1\" Then";
 if ((_job._jobname /*String*/ ).equals("ht1")) { 
- //BA.debugLineNum = 164;BA.debugLine="If(job.GetString.Contains(\"nouser\"))Then";
+ //BA.debugLineNum = 173;BA.debugLine="If(job.GetString.Contains(\"nouser\"))Then";
 if ((_job._getstring /*String*/ ().contains("nouser"))) { 
- //BA.debugLineNum = 166;BA.debugLine="File.Delete(File.DirInternal,\"userAcc\")";
+ //BA.debugLineNum = 175;BA.debugLine="File.Delete(File.DirInternal,\"userAcc\")";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"userAcc");
- //BA.debugLineNum = 167;BA.debugLine="StartActivity(step0_activity)";
+ //BA.debugLineNum = 176;BA.debugLine="StartActivity(step0_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step0_activity.getObject()));
- //BA.debugLineNum = 168;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 177;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  }else {
- //BA.debugLineNum = 171;BA.debugLine="Dim a() As String";
+ //BA.debugLineNum = 180;BA.debugLine="Dim a() As String";
 _a = new String[(int) (0)];
 java.util.Arrays.fill(_a,"");
- //BA.debugLineNum = 172;BA.debugLine="a=Regex.Split(\"&\",job.GetString)";
+ //BA.debugLineNum = 181;BA.debugLine="a=Regex.Split(\"&\",job.GetString)";
 _a = anywheresoftware.b4a.keywords.Common.Regex.Split("&",_job._getstring /*String*/ ());
- //BA.debugLineNum = 174;BA.debugLine="lbl_nameFamili.Text=a(0)";
+ //BA.debugLineNum = 183;BA.debugLine="lbl_nameFamili.Text=a(0)";
 mostCurrent._lbl_namefamili.setText(BA.ObjectToCharSequence(_a[(int) (0)]));
- //BA.debugLineNum = 175;BA.debugLine="lbl_email.Text=a(1)";
+ //BA.debugLineNum = 184;BA.debugLine="lbl_email.Text=a(1)";
 mostCurrent._lbl_email.setText(BA.ObjectToCharSequence(_a[(int) (1)]));
- //BA.debugLineNum = 183;BA.debugLine="lbl_phoneNum.Text=a(3)";
+ //BA.debugLineNum = 192;BA.debugLine="lbl_phoneNum.Text=a(3)";
 mostCurrent._lbl_phonenum.setText(BA.ObjectToCharSequence(_a[(int) (3)]));
- //BA.debugLineNum = 185;BA.debugLine="File.WriteList(File.DirInternal,\"userAcc\",a)";
+ //BA.debugLineNum = 194;BA.debugLine="File.WriteList(File.DirInternal,\"userAcc\",a)";
 anywheresoftware.b4a.keywords.Common.File.WriteList(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"userAcc",anywheresoftware.b4a.keywords.Common.ArrayToList(_a));
  };
  };
- //BA.debugLineNum = 190;BA.debugLine="If job.JobName=\"ht2\" Then";
+ //BA.debugLineNum = 199;BA.debugLine="If job.JobName=\"ht2\" Then";
 if ((_job._jobname /*String*/ ).equals("ht2")) { 
- //BA.debugLineNum = 191;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
+ //BA.debugLineNum = 200;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
 if ((_job._getstring /*String*/ ().contains("true"))) { 
- //BA.debugLineNum = 192;BA.debugLine="http_initial_1(1)";
+ //BA.debugLineNum = 201;BA.debugLine="http_initial_1(1)";
 _http_initial_1((int) (1));
  };
  };
  }else {
- //BA.debugLineNum = 201;BA.debugLine="If(File.Exists(File.DirInternal,\"userAcc\")=True)";
+ //BA.debugLineNum = 210;BA.debugLine="If(File.Exists(File.DirInternal,\"userAcc\")=True)";
 if ((anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"userAcc")==anywheresoftware.b4a.keywords.Common.True)) { 
- //BA.debugLineNum = 203;BA.debugLine="Dim ls_user As List";
+ //BA.debugLineNum = 212;BA.debugLine="Dim ls_user As List";
 _ls_user = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 204;BA.debugLine="ls_user.Initialize";
+ //BA.debugLineNum = 213;BA.debugLine="ls_user.Initialize";
 _ls_user.Initialize();
- //BA.debugLineNum = 205;BA.debugLine="ls_user=File.ReadList(File.DirInternal,\"userAcc";
+ //BA.debugLineNum = 214;BA.debugLine="ls_user=File.ReadList(File.DirInternal,\"userAcc";
 _ls_user = anywheresoftware.b4a.keywords.Common.File.ReadList(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"userAcc");
- //BA.debugLineNum = 207;BA.debugLine="lbl_nameFamili.Text=ls_user.Get(0)";
+ //BA.debugLineNum = 216;BA.debugLine="lbl_nameFamili.Text=ls_user.Get(0)";
 mostCurrent._lbl_namefamili.setText(BA.ObjectToCharSequence(_ls_user.Get((int) (0))));
- //BA.debugLineNum = 208;BA.debugLine="lbl_email.Text=ls_user.Get(1)";
+ //BA.debugLineNum = 217;BA.debugLine="lbl_email.Text=ls_user.Get(1)";
 mostCurrent._lbl_email.setText(BA.ObjectToCharSequence(_ls_user.Get((int) (1))));
- //BA.debugLineNum = 216;BA.debugLine="lbl_phoneNum.Text=ls_user.Get(3)";
+ //BA.debugLineNum = 225;BA.debugLine="lbl_phoneNum.Text=ls_user.Get(3)";
 mostCurrent._lbl_phonenum.setText(BA.ObjectToCharSequence(_ls_user.Get((int) (3))));
  };
  };
- //BA.debugLineNum = 224;BA.debugLine="End Sub";
+ //BA.debugLineNum = 233;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_back_click() throws Exception{
- //BA.debugLineNum = 113;BA.debugLine="Private Sub lbl_back_Click";
- //BA.debugLineNum = 114;BA.debugLine="pan_all_edit.Visible=False";
+ //BA.debugLineNum = 122;BA.debugLine="Private Sub lbl_back_Click";
+ //BA.debugLineNum = 123;BA.debugLine="pan_all_edit.Visible=False";
 mostCurrent._pan_all_edit.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 115;BA.debugLine="End Sub";
+ //BA.debugLineNum = 124;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_back_home_click() throws Exception{
- //BA.debugLineNum = 255;BA.debugLine="Private Sub lbl_back_home_Click";
- //BA.debugLineNum = 257;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 264;BA.debugLine="Private Sub lbl_back_home_Click";
+ //BA.debugLineNum = 266;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 258;BA.debugLine="End Sub";
+ //BA.debugLineNum = 267;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_edit_click() throws Exception{
- //BA.debugLineNum = 228;BA.debugLine="Private Sub lbl_edit_Click";
- //BA.debugLineNum = 229;BA.debugLine="et_nameFamili.Text=	lbl_nameFamili.Text";
+ //BA.debugLineNum = 237;BA.debugLine="Private Sub lbl_edit_Click";
+ //BA.debugLineNum = 238;BA.debugLine="et_nameFamili.Text=	lbl_nameFamili.Text";
 mostCurrent._et_namefamili.setText(BA.ObjectToCharSequence(mostCurrent._lbl_namefamili.getText()));
- //BA.debugLineNum = 230;BA.debugLine="et_email.Text=lbl_email.Text";
+ //BA.debugLineNum = 239;BA.debugLine="et_email.Text=lbl_email.Text";
 mostCurrent._et_email.setText(BA.ObjectToCharSequence(mostCurrent._lbl_email.getText()));
- //BA.debugLineNum = 231;BA.debugLine="comp.Initialize(\"Compressor\")";
+ //BA.debugLineNum = 240;BA.debugLine="comp.Initialize(\"Compressor\")";
 _comp.Initialize(processBA,"Compressor");
- //BA.debugLineNum = 232;BA.debugLine="comp.Quality=30";
+ //BA.debugLineNum = 241;BA.debugLine="comp.Quality=30";
 _comp.setQuality((int) (30));
- //BA.debugLineNum = 233;BA.debugLine="lbl_image_up.Text=Chr(0xF0EE)";
+ //BA.debugLineNum = 242;BA.debugLine="lbl_image_up.Text=Chr(0xF0EE)";
 mostCurrent._lbl_image_up.setText(BA.ObjectToCharSequence(anywheresoftware.b4a.keywords.Common.Chr(((int)0xf0ee))));
- //BA.debugLineNum = 235;BA.debugLine="pan_all_edit.Visible=True";
+ //BA.debugLineNum = 244;BA.debugLine="pan_all_edit.Visible=True";
 mostCurrent._pan_all_edit.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 236;BA.debugLine="End Sub";
+ //BA.debugLineNum = 245;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_image_up_click() throws Exception{
- //BA.debugLineNum = 260;BA.debugLine="Private Sub lbl_image_up_Click";
- //BA.debugLineNum = 261;BA.debugLine="CC.Show(\"image/*\", \"Choose image\")";
+ //BA.debugLineNum = 269;BA.debugLine="Private Sub lbl_image_up_Click";
+ //BA.debugLineNum = 270;BA.debugLine="CC.Show(\"image/*\", \"Choose image\")";
 mostCurrent._cc.Show(processBA,"image/*","Choose image");
- //BA.debugLineNum = 262;BA.debugLine="End Sub";
+ //BA.debugLineNum = 271;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_logoff_click() throws Exception{
 int _result = 0;
- //BA.debugLineNum = 117;BA.debugLine="Private Sub lbl_logOff_Click";
- //BA.debugLineNum = 118;BA.debugLine="Dim result As Int";
+ //BA.debugLineNum = 126;BA.debugLine="Private Sub lbl_logOff_Click";
+ //BA.debugLineNum = 127;BA.debugLine="Dim result As Int";
 _result = 0;
- //BA.debugLineNum = 119;BA.debugLine="result = Msgbox2(\"آیا از حساب خود خارج می شوید؟\",";
+ //BA.debugLineNum = 128;BA.debugLine="result = Msgbox2(\"آیا از حساب خود خارج می شوید؟\",";
 _result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence("آیا از حساب خود خارج می شوید؟"),BA.ObjectToCharSequence("توجه"),"بله","","خیر",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"attention.png").getObject()),mostCurrent.activityBA);
- //BA.debugLineNum = 120;BA.debugLine="If result = DialogResponse.Positive Then";
+ //BA.debugLineNum = 129;BA.debugLine="If result = DialogResponse.Positive Then";
 if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
- //BA.debugLineNum = 121;BA.debugLine="File.Delete(File.DirInternal,\"userAcc\")";
+ //BA.debugLineNum = 130;BA.debugLine="File.Delete(File.DirInternal,\"userAcc\")";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"userAcc");
- //BA.debugLineNum = 123;BA.debugLine="StartActivity(Main)";
+ //BA.debugLineNum = 132;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
- //BA.debugLineNum = 124;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 133;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  };
- //BA.debugLineNum = 130;BA.debugLine="End Sub";
+ //BA.debugLineNum = 139;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_save_edit_click() throws Exception{
- //BA.debugLineNum = 96;BA.debugLine="Private Sub lbl_save_edit_Click";
- //BA.debugLineNum = 98;BA.debugLine="If(et_nameFamili.Text=\"\")Then";
+ //BA.debugLineNum = 105;BA.debugLine="Private Sub lbl_save_edit_Click";
+ //BA.debugLineNum = 107;BA.debugLine="If(et_nameFamili.Text=\"\")Then";
 if (((mostCurrent._et_namefamili.getText()).equals(""))) { 
- //BA.debugLineNum = 99;BA.debugLine="ToastMessageShow(\"قسمت نام خالی است \",False)";
+ //BA.debugLineNum = 108;BA.debugLine="ToastMessageShow(\"قسمت نام خالی است \",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("قسمت نام خالی است "),anywheresoftware.b4a.keywords.Common.False);
  }else if(((mostCurrent._et_email.getText()).equals(""))) { 
- //BA.debugLineNum = 102;BA.debugLine="ToastMessageShow(\"قسمت ایمیل خالی است \",False)";
+ //BA.debugLineNum = 111;BA.debugLine="ToastMessageShow(\"قسمت ایمیل خالی است \",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("قسمت ایمیل خالی است "),anywheresoftware.b4a.keywords.Common.False);
  }else if((mostCurrent._myfunc._validate_email /*boolean*/ (mostCurrent.activityBA,mostCurrent._et_email.getText())==anywheresoftware.b4a.keywords.Common.False)) { 
- //BA.debugLineNum = 105;BA.debugLine="ToastMessageShow(\" ایمیل نامعتبر است \",False)";
+ //BA.debugLineNum = 114;BA.debugLine="ToastMessageShow(\" ایمیل نامعتبر است \",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(" ایمیل نامعتبر است "),anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 107;BA.debugLine="http_initial_1(2)";
+ //BA.debugLineNum = 116;BA.debugLine="http_initial_1(2)";
 _http_initial_1((int) (2));
  };
- //BA.debugLineNum = 111;BA.debugLine="End Sub";
+ //BA.debugLineNum = 120;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_all_edit_click() throws Exception{
- //BA.debugLineNum = 92;BA.debugLine="Private Sub pan_all_edit_Click";
- //BA.debugLineNum = 94;BA.debugLine="End Sub";
+ //BA.debugLineNum = 101;BA.debugLine="Private Sub pan_all_edit_Click";
+ //BA.debugLineNum = 103;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -722,39 +719,39 @@ _comp = new de.donmanfred.Compressorwrapper();
 return "";
 }
 public static String  _up_sendfile(String _value) throws Exception{
- //BA.debugLineNum = 303;BA.debugLine="Sub Up_sendFile (value As String)";
- //BA.debugLineNum = 304;BA.debugLine="Log( value)";
-anywheresoftware.b4a.keywords.Common.LogImpl("839059457",_value,0);
- //BA.debugLineNum = 305;BA.debugLine="End Sub";
-return "";
-}
-public static String  _up_statusupload(String _value) throws Exception{
- //BA.debugLineNum = 307;BA.debugLine="Sub Up_statusUpload (value As String)";
- //BA.debugLineNum = 308;BA.debugLine="lbl_image_up.Text=value&\" %\"";
-mostCurrent._lbl_image_up.setText(BA.ObjectToCharSequence(_value+" %"));
- //BA.debugLineNum = 309;BA.debugLine="If(value>=100)Then";
-if (((double)(Double.parseDouble(_value))>=100)) { 
- //BA.debugLineNum = 310;BA.debugLine="lbl_back_Click";
-_lbl_back_click();
- //BA.debugLineNum = 311;BA.debugLine="ToastMessageShow(\"تغییرات ذخیره شد\",False)";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تغییرات ذخیره شد"),anywheresoftware.b4a.keywords.Common.False);
- };
+ //BA.debugLineNum = 312;BA.debugLine="Sub Up_sendFile (value As String)";
+ //BA.debugLineNum = 313;BA.debugLine="Log( value)";
+anywheresoftware.b4a.keywords.Common.LogImpl("239059457",_value,0);
  //BA.debugLineNum = 314;BA.debugLine="End Sub";
 return "";
 }
+public static String  _up_statusupload(String _value) throws Exception{
+ //BA.debugLineNum = 316;BA.debugLine="Sub Up_statusUpload (value As String)";
+ //BA.debugLineNum = 317;BA.debugLine="lbl_image_up.Text=value&\" %\"";
+mostCurrent._lbl_image_up.setText(BA.ObjectToCharSequence(_value+" %"));
+ //BA.debugLineNum = 318;BA.debugLine="If(value>=100)Then";
+if (((double)(Double.parseDouble(_value))>=100)) { 
+ //BA.debugLineNum = 319;BA.debugLine="lbl_back_Click";
+_lbl_back_click();
+ //BA.debugLineNum = 320;BA.debugLine="ToastMessageShow(\"تغییرات ذخیره شد\",False)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تغییرات ذخیره شد"),anywheresoftware.b4a.keywords.Common.False);
+ };
+ //BA.debugLineNum = 323;BA.debugLine="End Sub";
+return "";
+}
 public static String  _upload_img(String _path) throws Exception{
- //BA.debugLineNum = 291;BA.debugLine="Sub upload_img(path As String)";
- //BA.debugLineNum = 293;BA.debugLine="File.Copy(Starter.Provider.SharedFolder,picName,F";
+ //BA.debugLineNum = 300;BA.debugLine="Sub upload_img(path As String)";
+ //BA.debugLineNum = 302;BA.debugLine="File.Copy(Starter.Provider.SharedFolder,picName,F";
 anywheresoftware.b4a.keywords.Common.File.Copy(mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,mostCurrent._picname,anywheresoftware.b4a.keywords.Common.File.getDirInternal(),mostCurrent._picname);
- //BA.debugLineNum = 294;BA.debugLine="Path_Phone_Image = path";
+ //BA.debugLineNum = 303;BA.debugLine="Path_Phone_Image = path";
 mostCurrent._path_phone_image = _path;
- //BA.debugLineNum = 295;BA.debugLine="Up.doFileUpload( Null,Null,Path_Phone_Image,Url_P";
+ //BA.debugLineNum = 304;BA.debugLine="Up.doFileUpload( Null,Null,Path_Phone_Image,Url_P";
 mostCurrent._up.doFileUpload(processBA,(android.widget.ProgressBar)(anywheresoftware.b4a.keywords.Common.Null),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent._path_phone_image,mostCurrent._url_php_page);
- //BA.debugLineNum = 297;BA.debugLine="img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(F";
+ //BA.debugLineNum = 306;BA.debugLine="img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(F";
 mostCurrent._img_pofil.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc._circleimage /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (mostCurrent.activityBA,anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),mostCurrent._picname)).getObject()));
- //BA.debugLineNum = 298;BA.debugLine="img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(";
+ //BA.debugLineNum = 307;BA.debugLine="img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(";
 mostCurrent._img_p_edit.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc._circleimage /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (mostCurrent.activityBA,anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),mostCurrent._picname)).getObject()));
- //BA.debugLineNum = 300;BA.debugLine="End Sub";
+ //BA.debugLineNum = 309;BA.debugLine="End Sub";
 return "";
 }
 }

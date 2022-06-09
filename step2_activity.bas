@@ -43,12 +43,21 @@ Sub Globals
 	Dim picName As String=""
 	Dim bmp As Bitmap
 	Private lbl_image_up As Label
+	Dim p As Picasso
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("step2")
 	picName="user-"&pp.GetSettings("android_id")&".jpg"
+	
+		
+	p.Initialize
+	
+	p.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"&picName).IntoImageView(img_pofil)
+	p.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"&picName).IntoImageView(img_p_edit)
+	
 	Log(picName)
 	If(File.Exists(File.DirInternal,"phonNum"))Then
 		Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
@@ -59,15 +68,15 @@ Sub Activity_Create(FirstTime As Boolean)
 			lbl_noske.Text="نسخه طلایی"
 		End If
 		
-		If(File.Exists(File.DirInternal,picName))Then
-			
-			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-			
-		Else
-			img_pofil.Bitmap=LoadBitmap(File.DirAssets,"user.png")
-			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
-		End If
+'		If(File.Exists(File.DirInternal,picName))Then
+'			
+'			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+'			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+'			
+'		Else
+'			img_pofil.Bitmap=LoadBitmap(File.DirAssets,"user.png")
+'			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
+'		End If
 		
 		http_initial_1(1)
 	Else

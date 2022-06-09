@@ -33,6 +33,7 @@ d:\androidsdk\tools\..\extras\b4a_remote\androidx\fragment\fragment\1.2.5\unpack
 d:\androidsdk\tools\..\extras\b4a_remote\androidx\activity\activity\1.1.0\unpacked-activity-1.1.0\jars\classes.zip
 d:\androidsdk\tools\..\extras\b4a_remote\androidx\savedstate\savedstate\1.0.0\unpacked-savedstate-1.0.0\jars\classes.zip
 d:\androidsdk\tools\..\extras\b4a_remote\androidx\lifecycle\lifecycle-viewmodel-savedstate\2.2.0\unpacked-lifecycle-viewmodel-savedstate-2.2.0\jars\classes.zip
+D:\androidsdk\tools\..\extras\b4a_local\unpacked-compressor-63643040609360\dex_v1\compressor.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-contentresolver-63783445550000\dex_v1\contentresolver.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-core-63783445550000\dex_v1\core.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-dateutils-63783445550000\dex_v1\dateutils.zip
@@ -52,10 +53,11 @@ D:\androidsdk\tools\..\extras\b4a_local\unpacked-stringfunctions-63530416118000\
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-uploadfilephp-63533088602000\dex_v1\uploadfilephp.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-xcustomlistview-63783445550000\dex_v1\xcustomlistview.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-xui-63783445550000\dex_v1\xui.zip
-D:\androidsdk\tools\..\extras\b4a_local\unpacked-compressor-63643040609360\dex_v1\compressor.zip
+D:\androidsdk\tools\..\extras\b4a_local\unpacked-picasso-63511374902000\dex_v1\picasso.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-jxl-63454601748000\dex_v1\jxl.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-stringutils-63783445550000\dex_v1\stringutils.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-javaobject-63783445550000\dex_v1\javaobject.zip
+D:\androidsdk\tools\..\extras\b4a_local\unpacked-picassonative-63510654876000\dex_v1\picassonative.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-okhttp-63783445550000\dex_v1\okhttp.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-okhttp-4.9.0-63783445550000\dex_v1\okhttp-4.9.0.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-okio-2.8.0-63783445550000\dex_v1\okio-2.8.0.zip
