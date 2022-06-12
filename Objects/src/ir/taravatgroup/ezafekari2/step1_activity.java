@@ -456,7 +456,7 @@ return "";
 public static String  _jobdone(ir.taravatgroup.ezafekari2.httpjob _job) throws Exception{
  //BA.debugLineNum = 83;BA.debugLine="Sub Jobdone (job As HttpJob)";
  //BA.debugLineNum = 84;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("213434881",_job._getstring /*String*/ (),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("813500417",_job._getstring /*String*/ (),0);
  //BA.debugLineNum = 85;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 87;BA.debugLine="If job.JobName=\"http2\" Then";
@@ -474,6 +474,8 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Ø
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_job._getstring /*String*/ ()),anywheresoftware.b4a.keywords.Common.False);
  };
  };
+ //BA.debugLineNum = 98;BA.debugLine="job.Release";
+_job._release /*String*/ ();
  }else {
  };
  //BA.debugLineNum = 103;BA.debugLine="End Sub";

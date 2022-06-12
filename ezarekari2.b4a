@@ -183,9 +183,9 @@ FileGroup90=Default Group
 FileGroup91=Default Group
 Group=Default Group
 Library1=compressor
-Library10=nicespinner
-Library11=okhttputils2
-Library12=phone
+Library10=okhttputils2
+Library11=phone
+Library12=picasso
 Library13=pnmultiplesharing
 Library14=printing
 Library15=reflection
@@ -197,7 +197,7 @@ Library2=contentresolver
 Library20=uploadfilephp
 Library21=xcustomlistview
 Library22=xui
-Library23=picasso
+Library23=nicespinner
 Library3=core
 Library4=dateutils
 Library5=excel
@@ -289,7 +289,7 @@ Sub Process_Globals
 	Dim saat_kar_min As Int 
 	
 	Dim phon_num As String
-	
+	dim user_nameFamili as String="کاربر"
 End Sub
 
 Sub Globals
@@ -640,7 +640,16 @@ Sub Activity_Create(FirstTime As Boolean)
 '	End If
 '	
 	
+	If(File.Exists(File.DirInternal,"phonNum"))Then
+		phon_num=File.ReadString(File.DirInternal,"phonNum")
+	End If
 	
+	If(File.Exists(File.DirInternal,"userAcc"))Then
+		Dim ls_user As List
+		ls_user.Initialize
+		ls_user=File.ReadList(File.DirInternal,"userAcc")
+		user_nameFamili=ls_user.Get(0)
+	End If
 	
 	
 	

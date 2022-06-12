@@ -13,7 +13,7 @@ Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
 	Dim comp As Compressor
-
+	Dim CC As ContentChooser 'Phone Library
 End Sub
 
 Sub Globals
@@ -30,7 +30,7 @@ Sub Globals
 	Dim http3 As HttpJob
 	Private lbl_phoneNum As Label
 	
-	Dim CC As ContentChooser 'Phone Library
+	
 	Dim Up As UploadFilePhp
 	Dim Url_Php_Page As String
 	Private img_p_edit As ImageView
@@ -38,29 +38,28 @@ Sub Globals
 	
 	Dim Path_Phone_Image As String
 	
-	Private ProgressBar_up As ProgressBar
-	Dim pp As Phone
+	
+	
 	Dim picName As String=""
 	Dim bmp As Bitmap
 	Private lbl_image_up As Label
-	Dim p As Picasso
 	
+	'Dim pic As Picasso
+	
+
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("step2")
-	picName="user-"&pp.GetSettings("android_id")&".jpg"
+	
 	
 		
-	p.Initialize
 	
-	p.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"&picName).IntoImageView(img_pofil)
-	p.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"&picName).IntoImageView(img_p_edit)
 	
-	Log(picName)
 	If(File.Exists(File.DirInternal,"phonNum"))Then
 		Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
+		picName="user-"&Main.phon_num&".jpg"
 		
 		If(myfunc.check_karid=False)Then
 			lbl_noske.Text="نسخه هدیه"
@@ -68,17 +67,45 @@ Sub Activity_Create(FirstTime As Boolean)
 			lbl_noske.Text="نسخه طلایی"
 		End If
 		
-'		If(File.Exists(File.DirInternal,picName))Then
-'			
-'			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-'			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-'			
-'		Else
-'			img_pofil.Bitmap=LoadBitmap(File.DirAssets,"user.png")
-'			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
-'		End If
+	
+		
+		
+		
+		CC.Initialize("CC")
+		Url_Php_Page="https://taravatgroup.ir/avatar_up1.php"
+	
+		If FirstTime Then
+			Up.B4A_log=True
+			Up.Initialize("Up")
+		End If
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		If(File.Exists(File.DirInternal,picName))Then
+			
+			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+			
+		Else	
+			img_pofil.Bitmap=LoadBitmap(File.DirAssets,"user.png")
+			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
+		End If
 		
 		http_initial_1(1)
+		
 	Else
 		StartActivity(step0_activity)
 		Activity.Finish
@@ -86,13 +113,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	
 	
-	CC.Initialize("CC")
-	Url_Php_Page="https://taravatgroup.ir/avatar_up1.php"
-	
-	If FirstTime Then
-		Up.B4A_log=True
-		Up.Initialize("Up")
-	End If
 	
 End Sub
 
@@ -163,6 +183,8 @@ Sub http_initial_1(type1 As Int)
 		Dim send As String
 		send = "var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"
 		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+
+	
 	End If
 	
 	
@@ -195,21 +217,45 @@ Sub Jobdone (job As HttpJob)
 '					lbl_noske.Text="نسخه طلایی"
 '				End If
 '				
-				lbl_phoneNum.Text=a(3)
+				lbl_phoneNum.Text=a(2)
 				
 				File.WriteList(File.DirInternal,"userAcc",a)
 				
+'				If(a(3)="1")Then
+'						
+'					pic.Initialize
+'					'pic.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"&picName).IntoImageView(img_pofil)
+'					
+'					
+'				'	
+'		pic.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"&picName).IntoImageView(img_p_edit)
+'		
+''					Dim out As OutputStream
+''	
+''					out = File.OpenOutput(File.DirInternal, picName, False)
+''		
+''					bmp.WriteToStream(out, 100, "JPEG")
+''					'bmp1.WriteToStream(out, 100, "PNG")
+''					out.Close
+'			
+'					File.WriteBytes(File.DirInternal, picName,img_p_edit.Bitmap)
+'					img_pofil.Bitmap=myfunc.CircleImage(LoadBitmap(File.DirInternal,picName))
+'					img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+'				End If
+'				
+'				
 			End If
-		End If
 			
-		If job.JobName="ht2" Then
+		else If job.JobName="ht2" Then
 			If(job.GetString.Contains("true"))Then
 				http_initial_1(1)
 				
 				
 			End If
+		
 		End If
-			
+		
+		job.Release
 		
 	Else
 		'ToastMessageShow("خطا در برقراری اتصال" , False)
@@ -228,7 +274,7 @@ Sub Jobdone (job As HttpJob)
 '				lbl_noske.Text="نسخه طلایی"
 '			End If
 				
-			lbl_phoneNum.Text=ls_user.Get(3)
+			lbl_phoneNum.Text=ls_user.Get(2)
 			
 			
 			
@@ -289,7 +335,7 @@ Sub CC_Result (Success As Boolean, Dir As String, FileName As String)
 	
 		
 		Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
-		bmp.WriteToStream(out, 20, "PNG")
+		bmp.WriteToStream(out, 20, "JPEG")
 		out.Close
 		
 		

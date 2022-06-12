@@ -441,8 +441,12 @@ Private Sub lbl_run_mohasebe_Click
 	dbCode.connect_db
 	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
 	
-	str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
 	
+	'str1.Append("<img src='file:///storage/emulated/0/Android/data/ir.taravatgroup.ezafekari2/files/user-"&Main.phon_num&".jpg' alt='Avatar' style='width:200px;border-radius: 50%;'>")
+	
+	
+	str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
+	str1.Append("نام کاربر :").Append("<span> "&Main.user_nameFamili&"</span>").Append("<br>")
 	
 	str1.Append("<div style=' background-color: #f5f5f5;'><details>")
 	

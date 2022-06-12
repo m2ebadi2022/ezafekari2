@@ -219,9 +219,7 @@ Sub Jobdone (job As HttpJob)
 		If job.JobName="ht1" Then
 		
 				
-		End If
-			
-		If job.JobName="ht2" Then
+		else if job.JobName="ht2" Then
 			If(job.GetString.Contains("okuser")=True) Then
 				File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
 				StartActivity(step2_activity)
@@ -240,7 +238,7 @@ Sub Jobdone (job As HttpJob)
 			
 		End If
 			
-		
+		job.Release
 	Else
 		'ToastMessageShow("خطا در برقراری اتصال" , False)
 	End If

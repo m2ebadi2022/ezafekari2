@@ -41,8 +41,8 @@ D:\androidsdk\tools\..\extras\b4a_local\unpacked-excel-63494768280000\dex_v1\exc
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-inappbazzar-63528836584000\dex_v1\inappbazzar.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-json-63783445550000\dex_v1\json.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-manampersiandate-63538368788692\dex_v1\manampersiandate.zip
-D:\androidsdk\tools\..\extras\b4a_local\unpacked-nicespinner-63578932122000\dex_v1\nicespinner.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-phone-63783445550000\dex_v1\phone.zip
+D:\androidsdk\tools\..\extras\b4a_local\unpacked-picasso-63511374902000\dex_v1\picasso.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-pnmultiplesharing-63714373406560\dex_v1\pnmultiplesharing.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-printing-63725370834000\dex_v1\printing.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-reflection-63783445550000\dex_v1\reflection.zip
@@ -53,11 +53,11 @@ D:\androidsdk\tools\..\extras\b4a_local\unpacked-stringfunctions-63530416118000\
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-uploadfilephp-63533088602000\dex_v1\uploadfilephp.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-xcustomlistview-63783445550000\dex_v1\xcustomlistview.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-xui-63783445550000\dex_v1\xui.zip
-D:\androidsdk\tools\..\extras\b4a_local\unpacked-picasso-63511374902000\dex_v1\picasso.zip
+D:\androidsdk\tools\..\extras\b4a_local\unpacked-nicespinner-63578932122000\dex_v1\nicespinner.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-jxl-63454601748000\dex_v1\jxl.zip
+D:\androidsdk\tools\..\extras\b4a_local\unpacked-picassonative-63510654876000\dex_v1\picassonative.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-stringutils-63783445550000\dex_v1\stringutils.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-javaobject-63783445550000\dex_v1\javaobject.zip
-D:\androidsdk\tools\..\extras\b4a_local\unpacked-picassonative-63510654876000\dex_v1\picassonative.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-okhttp-63783445550000\dex_v1\okhttp.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-okhttp-4.9.0-63783445550000\dex_v1\okhttp-4.9.0.zip
 D:\androidsdk\tools\..\extras\b4a_local\unpacked-okio-2.8.0-63783445550000\dex_v1\okio-2.8.0.zip

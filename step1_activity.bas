@@ -101,7 +101,7 @@ Sub Jobdone (job As HttpJob)
 		End If
 			
 		
-			
+		job.Release
 		
 	Else
 		'ToastMessageShow("خطا در برقراری اتصال" , False)
