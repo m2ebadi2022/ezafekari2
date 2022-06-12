@@ -360,6 +360,7 @@ public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -367,7 +368,6 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
@@ -566,7 +566,7 @@ String[] _a = null;
 anywheresoftware.b4a.objects.collections.List _ls_user = null;
  //BA.debugLineNum = 190;BA.debugLine="Sub Jobdone (job As HttpJob)";
  //BA.debugLineNum = 191;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("814286849",_job._getstring /*String*/ (),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("314286849",_job._getstring /*String*/ (),0);
  //BA.debugLineNum = 192;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 194;BA.debugLine="If job.JobName=\"ht1\" Then";
@@ -716,7 +716,7 @@ return "";
 public static String  _up_sendfile(String _value) throws Exception{
  //BA.debugLineNum = 358;BA.debugLine="Sub Up_sendFile (value As String)";
  //BA.debugLineNum = 359;BA.debugLine="Log( value)";
-anywheresoftware.b4a.keywords.Common.LogImpl("814745601",_value,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("314745601",_value,0);
  //BA.debugLineNum = 360;BA.debugLine="End Sub";
 return "";
 }

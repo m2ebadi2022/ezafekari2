@@ -183,21 +183,21 @@ FileGroup90=Default Group
 FileGroup91=Default Group
 Group=Default Group
 Library1=compressor
-Library10=okhttputils2
-Library11=phone
-Library12=picasso
-Library13=pnmultiplesharing
-Library14=printing
-Library15=reflection
-Library16=rspopupmenu
-Library17=runtimepermissions
-Library18=sql
-Library19=stringfunctions
+Library10=nicespinner
+Library11=okhttputils2
+Library12=phone
+Library13=picasso
+Library14=pnmultiplesharing
+Library15=printing
+Library16=reflection
+Library17=rspopupmenu
+Library18=runtimepermissions
+Library19=sql
 Library2=contentresolver
-Library20=uploadfilephp
-Library21=xcustomlistview
-Library22=xui
-Library23=nicespinner
+Library20=stringfunctions
+Library21=uploadfilephp
+Library22=xcustomlistview
+Library23=xui
 Library3=core
 Library4=dateutils
 Library5=excel
@@ -289,7 +289,7 @@ Sub Process_Globals
 	Dim saat_kar_min As Int 
 	
 	Dim phon_num As String
-	dim user_nameFamili as String="کاربر"
+	Dim user_nameFamili As String="کاربر"
 End Sub
 
 Sub Globals
@@ -525,6 +525,7 @@ Sub Globals
 	Private pan_all_chekUpdate As Panel
 	Private webVeiw_chk_update As WebView
 	Private lbl_chk_update_ok As Label
+	Private lbl_day_CLV As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -1473,10 +1474,13 @@ Sub fill_lists (year1 As String, moon1 As String)
 		
 		
 		p = xui.CreatePanel("p")
-		p.SetLayoutAnimated(0, 0, 0, 95%x, 134dip)
+		p.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
 		p.LoadLayout("item_list")
 	
 		cust_LV_ezafekari.Add(p,dbCode.res.GetString("id"))
+		
+		lbl_day_CLV.Text=myfunc.get_day_name(dbCode.res.GetString("date_from"))
+		
 		lbl_date_CLV.Text=dbCode.res.GetString("date_from")&" - "&dbCode.res.GetString("date_to")
 		lbl_hour_CLV.Text=dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("time_to")
 		lbl_time_CLV.Text=str1.ToString
@@ -1529,10 +1533,13 @@ Sub fill_lists (year1 As String, moon1 As String)
 		
 		
 		Dim p2 As B4XView = xui.CreatePanel("")
-		p2.SetLayoutAnimated(0, 0, 0, 95%x, 134dip)
+		p2.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
 		p2.LoadLayout("item_list")
 	
 		cust_LV_morakhasi.Add(p2,dbCode.res.GetString("id"))
+		
+		lbl_day_CLV.Text=myfunc.get_day_name(dbCode.res.GetString("date_from"))
+		
 		lbl_date_CLV.Text=dbCode.res.GetString("date_from")&" - "&dbCode.res.GetString("date_to")
 		lbl_hour_CLV.Text=dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("time_to")
 		lbl_time_CLV.Text=str2.ToString
@@ -1590,10 +1597,13 @@ Sub fill_lists (year1 As String, moon1 As String)
 		
 		
 		p = xui.CreatePanel("p")
-		p.SetLayoutAnimated(0, 0, 0, 95%x, 134dip)
+		p.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
 		p.LoadLayout("item_list")
 	
 		cust_LV_taradod.Add(p,dbCode.res.GetString("id"))
+		
+		lbl_day_CLV.Text=myfunc.get_day_name(dbCode.res.GetString("date_from"))
+		
 		lbl_date_CLV.Text=dbCode.res.GetString("date_from")&" - "&dbCode.res.GetString("date_to")
 		lbl_hour_CLV.Text=" ورود : "&dbCode.res.GetString("time_from")&" -- "&" خروج : "&dbCode.res.GetString("time_to")
 		'lbl_time_CLV.Text=str1.ToString
@@ -1885,6 +1895,7 @@ Private Sub pan_add_taradod_Click
 	
 	lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
 	lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+	
 	
 	
 	If(File.Exists(File.DirInternal,"temp_time2.txt"))Then

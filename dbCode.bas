@@ -575,4 +575,29 @@ Sub read_onvan_db As List
 	sql.Close
 	
 	Return onvanHa
-End Sub	
+End Sub
+
+'
+'Sub get_day_name (year As Int, moon As Int , day As Int) As Int
+'		Try
+'			Dim result_day As Int=0
+'		
+'			connect_db
+'			res =  sql.ExecQuery("SELECT * FROM 'my_calander' WHERE year="&year&" AND moon="&moon&" AND day_c="&day)
+'		
+'		If(res.RowCount>0)Then
+'			res.Position = 0
+'			result_day= res.GetInt("day_h")
+'		
+'		End If
+'		
+''		res.Close
+''		sql.Close
+'		
+'		Catch
+'			Log(LastException)
+'		End Try
+'	
+'	
+'	Return result_day
+'End Sub
