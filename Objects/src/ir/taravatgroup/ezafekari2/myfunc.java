@@ -17,7 +17,7 @@ public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -25,10 +25,10 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
-public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
@@ -479,6 +479,30 @@ return null;
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
  //BA.debugLineNum = 9;BA.debugLine="End Sub";
+return "";
+}
+public static String  _random_id(anywheresoftware.b4a.BA _ba,int _cont) throws Exception{
+String[] _li1 = null;
+String _str_res = "";
+int _i = 0;
+ //BA.debugLineNum = 357;BA.debugLine="Sub random_id(cont As Int) As String";
+ //BA.debugLineNum = 358;BA.debugLine="Dim li1() As String=Regex.Split(\",\",\"0,1,2,3,4,5,";
+_li1 = anywheresoftware.b4a.keywords.Common.Regex.Split(",","0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z");
+ //BA.debugLineNum = 360;BA.debugLine="Dim str_res As String=\"\"";
+_str_res = "";
+ //BA.debugLineNum = 361;BA.debugLine="For i=1 To cont";
+{
+final int step3 = 1;
+final int limit3 = _cont;
+_i = (int) (1) ;
+for (;_i <= limit3 ;_i = _i + step3 ) {
+ //BA.debugLineNum = 362;BA.debugLine="str_res=str_res&li1(Rnd(0,35))";
+_str_res = _str_res+_li1[anywheresoftware.b4a.keywords.Common.Rnd((int) (0),(int) (35))];
+ }
+};
+ //BA.debugLineNum = 366;BA.debugLine="Return str_res";
+if (true) return _str_res;
+ //BA.debugLineNum = 367;BA.debugLine="End Sub";
 return "";
 }
 public static String  _set_font(anywheresoftware.b4a.BA _ba,anywheresoftware.b4a.objects.ActivityWrapper _activity1) throws Exception{

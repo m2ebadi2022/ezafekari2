@@ -360,6 +360,17 @@ End Sub
 
 
 
+Sub random_id(cont As Int) As String
+	Dim li1() As String=Regex.Split(",","0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z")
+	
+	Dim str_res As String=""
+	For i=1 To cont
+		str_res=str_res&li1(Rnd(0,35))
+		
+	Next
+	
+	Return str_res
+End Sub
 
 
 

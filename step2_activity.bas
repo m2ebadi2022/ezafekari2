@@ -45,8 +45,14 @@ Sub Globals
 	Private lbl_image_up As Label
 	
 	'Dim pic As Picasso
-	
+	Dim pp As Phone
+	Dim type_app As Int=1
 
+	Private pan_all_msg As Panel
+	Private et_msg As EditText
+	Private lbl_icon_up As Label
+	Dim tempFile As String=""
+	Private img_up As ImageView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -63,8 +69,10 @@ Sub Activity_Create(FirstTime As Boolean)
 		
 		If(myfunc.check_karid=False)Then
 			lbl_noske.Text="نسخه هدیه"
+			type_app=0
 		Else
 			lbl_noske.Text="نسخه طلایی"
+			type_app=1
 		End If
 		
 	
@@ -79,16 +87,6 @@ Sub Activity_Create(FirstTime As Boolean)
 			Up.Initialize("Up")
 		End If
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -129,8 +127,9 @@ Private Sub pan_all_edit_Click
 End Sub
 
 Private Sub lbl_save_edit_Click
-	
-	If(et_nameFamili.Text="")Then
+	If (myfunc.check_internet=False)Then
+		myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
+	else If(et_nameFamili.Text="")Then
 		ToastMessageShow("قسمت نام خالی است ",False)
 	Else If(et_email.Text="")Then
 		
@@ -171,8 +170,7 @@ Sub http_initial_1(type1 As Int)
 	If(type1=1)Then
 		
 		http3.Initialize("ht1",Me)
-		Dim send As String
-		send = "var=3&phone="&Main.phon_num&"
+		Dim send As String= "var=3&phone="&Main.phon_num&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
 		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 	Else If(type1=2)Then ' to edit
 		If(File.Exists(Starter.Provider.SharedFolder,picName))Then
@@ -180,11 +178,29 @@ Sub http_initial_1(type1 As Int)
 		End If
 		
 		http3.Initialize("ht2",Me)
-		Dim send As String
-		send = "var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"
+		Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num
 		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-
-	
+		
+		
+		
+	Else If(type1=3)Then '  req transfer noskhe
+		http3.Initialize("ht3",Me)
+		Dim send As String= "var=4&phone="&Main.phon_num
+		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+		
+	Else If(type1=4)Then '  req chek noskhe
+		http3.Initialize("ht4",Me)
+		Dim send As String= "var=5&phone="&Main.phon_num
+		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+		
+	Else If(type1=5)Then '  send msg
+		If(File.Exists(Starter.Provider.SharedFolder,tempFile))Then
+			upload_file(Starter.Provider.SharedFolder&"/"&tempFile)
+		End If
+		
+		http3.Initialize("ht5",Me)
+		Dim send As String= "var=6&phone="&Main.phon_num&"&msg="&et_msg.Text&"&file_name="&tempFile
+		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 	End If
 	
 	
@@ -249,10 +265,32 @@ Sub Jobdone (job As HttpJob)
 		else If job.JobName="ht2" Then
 			If(job.GetString.Contains("true"))Then
 				http_initial_1(1)
-				
-				
+			End If
+			
+		else If job.JobName="ht3" Then  '  req transfer noskhe
+			
+			If(job.GetString.Contains("ok_add"))Then
+				MsgboxAsync("درخواست شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
+			Else
+				MsgboxAsync("خطا در ارسال درخواست، دوباره امتحان کنید.","خطا")
+			End If
+			
+		else If job.JobName="ht4" Then '  req chek noskhe
+			
+			If(job.GetString.Contains("ok_add"))Then
+				MsgboxAsync("درخواست شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
+			Else
+				MsgboxAsync("خطا در ارسال درخواست، دوباره امتحان کنید.","خطا")
 			End If
 		
+		else If job.JobName="ht5" Then  '  send msg
+			
+			If(job.GetString.Contains("ok_add"))Then
+				MsgboxAsync("پیغام شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
+			Else
+				MsgboxAsync("خطا در ارسال پیغام، دوباره امتحان کنید.","خطا")
+			End If
+			
 		End If
 		
 		job.Release
@@ -287,13 +325,18 @@ End Sub
 
 
 Private Sub lbl_edit_Click
-	et_nameFamili.Text=	lbl_nameFamili.Text
-	et_email.Text=lbl_email.Text
-	comp.Initialize("Compressor")
-	comp.Quality=30
-	lbl_image_up.Text=Chr(0xF0EE)
 	
-	pan_all_edit.Visible=True
+	
+		et_nameFamili.Text=	lbl_nameFamili.Text
+		et_email.Text=lbl_email.Text
+		comp.Initialize("Compressor")
+		comp.Quality=30
+		lbl_image_up.Text=Chr(0xF0EE)
+		pan_all_edit.Visible=True
+	
+		
+	
+	
 End Sub
 
 
@@ -320,34 +363,39 @@ End Sub
 
 Private Sub lbl_image_up_Click
 	CC.Show("image/*", "Choose image")
-End Sub
-
-
-Sub CC_Result (Success As Boolean, Dir As String, FileName As String)
 	
+	Wait For CC_Result (Success As Boolean, Dir As String, FileName As String)
 	If Success = True Then
-		
 		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"temp_pic.jpg")
-		
-		
 		bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
-	
-	
-		
 		Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
 		bmp.WriteToStream(out, 20, "JPEG")
 		out.Close
-		
-		
-		
 		'img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Dir,FileName))
 		img_p_edit.Bitmap=myfunc.CircleImage( bmp)
-		
 	Else
 		ToastMessageShow("No Success :(",True)
 	End If
-		
 End Sub
+
+
+'Sub CC_Result (Success As Boolean, Dir As String, FileName As String)
+'	
+'	If Success = True Then
+'		
+'		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"temp_pic.jpg")
+'		bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
+'		Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
+'		bmp.WriteToStream(out, 20, "JPEG")
+'		out.Close
+'		'img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Dir,FileName))
+'		img_p_edit.Bitmap=myfunc.CircleImage( bmp)
+'		
+'	Else
+'		ToastMessageShow("No Success :(",True)
+'	End If
+'		
+'End Sub
 
 Sub upload_img(path As String)
 	
@@ -360,6 +408,9 @@ Sub upload_img(path As String)
 	
 End Sub
 
+Sub upload_file(path As String)
+	Up.doFileUpload( Null,Null,path,"https://taravatgroup.ir/file_up.php")
+End Sub
 
 Sub Up_sendFile (value As String)
 	Log( value)
@@ -369,7 +420,94 @@ Sub Up_statusUpload (value As String)
 	lbl_image_up.Text=value&" %"
 	If(value>=100)Then
 		lbl_back_Click
-		ToastMessageShow("تغییرات ذخیره شد",False)
+		'ToastMessageShow("تغییرات ذخیره شد",False)
 	End If
+	
+End Sub
+
+Private Sub lbl_transfer_Click
+	Dim result As Int
+	result = Msgbox2("درخواست انتقال نسخه طلایی به گوشی جدید", "درخواست انتقال", "ثبت درخواست ", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
+	If result = DialogResponse.Positive Then
+		http_initial_1(3)
+	End If
+End Sub
+
+Private Sub lbl_send_msg_Click
+	pan_all_msg.Visible=True
+	
+	
+End Sub
+
+Private Sub lbl_chek_noskhe_Click
+	Dim result As Int
+	result = Msgbox2("قبلا خرید کرده ام بررسی کنید", "درخواست بررسی", "ثبت درخواست ", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
+	If result = DialogResponse.Positive Then
+		http_initial_1(4)
+	End If
+End Sub
+
+Private Sub lbl_reseve_db_Click
+	Dim result As Int
+	result = Msgbox2("اطلاعات من از سرور بازیابی شوند.توجه داشته باشید اطلاعات قبلی حذف می شوند", "بازگرداندن اطلاعات ", "مطمئن هستم", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
+	If result = DialogResponse.Positive Then
+		
+	End If
+End Sub
+
+Private Sub lbl_send_db_Click
+	
+	File.Copy(File.DirInternal,"db.db",Starter.Provider.SharedFolder,Main.phon_num&"-db.db")
+	
+	Dim result As Int
+	result = Msgbox2("اطلاعات در سرور آنلاین ذخیره شود؟", "بک آپ گیری ", "باشه", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
+	If result = DialogResponse.Positive Then
+		
+		upload_file(Starter.Provider.SharedFolder&"/"&Main.phon_num&"-db.db")
+	End If
+End Sub
+
+Private Sub pan_all_msg_Click
+	pan_all_msg.Visible=False
+End Sub
+
+Private Sub lbl_send_up_Click
+	
+	CC.Show("image/*", "Choose image")
+	
+	Wait For CC_Result (Success As Boolean, Dir As String, FileName As String)
+	If Success = True Then
+		
+		
+		
+		tempFile=Main.phon_num&"-"&myfunc.random_id(10)&".jpg"
+		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"tempimg.jpg")
+		
+		
+		
+		'bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
+		bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"tempimg.jpg")
+		Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,tempFile, False)
+		bmp.WriteToStream(out, 50, "JPEG")
+		out.Close
+		
+		
+		
+		
+		
+		lbl_icon_up.Text=Chr(0xF00C)
+	Else
+		ToastMessageShow("No Success :(",True)
+	End If
+	
+End Sub
+
+
+Private Sub lbl_send_msg_end_Click
+	http_initial_1(5)
+	pan_all_msg.Visible=False
+	
+	
+	
 	
 End Sub

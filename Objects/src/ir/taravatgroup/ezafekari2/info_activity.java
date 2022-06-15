@@ -346,7 +346,7 @@ public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -354,9 +354,9 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
-public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
@@ -448,7 +448,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in2.getOb
  } 
        catch (Exception e9) {
 			processBA.setLastException(e9); //BA.debugLineNum = 102;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("325427982",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("531195150",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 103;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه جمیل را نصب/فعال کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -474,7 +474,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in1.getOb
  } 
        catch (Exception e8) {
 			processBA.setLastException(e8); //BA.debugLineNum = 82;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("325362443",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("531129611",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 83;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه اینستاگرام را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -500,7 +500,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_intent1.g
  } 
        catch (Exception e8) {
 			processBA.setLastException(e8); //BA.debugLineNum = 63;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("325296906",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("531064074",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 64;BA.debugLine="ToastMessageShow(\"برنامه واتساپ را نصب کنید\",Fal";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه واتساپ را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
  };

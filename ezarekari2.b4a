@@ -3831,20 +3831,23 @@ Private Sub lbl_chk_update_Click
 End Sub
 
 Private Sub lbl_account_Click
-	If (myfunc.check_internet)Then
+	
+	
+	
 		If (File.Exists(File.DirInternal,"userAcc")=True)Then
 			StartActivity(step2_activity)
 			'Activity.Finish
 		Else
-			StartActivity(step0_activity)
+			
+			If (myfunc.check_internet)Then	
+				StartActivity(step0_activity)
+			Else
+				myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
+			End If
 			
 		End If
 	
-		
-		
-	Else
-		myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
-	End If
+	
 	pan_all_liteMenu_Click
 End Sub
 
