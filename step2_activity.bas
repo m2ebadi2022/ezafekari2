@@ -52,7 +52,7 @@ Sub Globals
 	Private et_msg As EditText
 	Private lbl_icon_up As Label
 	Dim tempFile As String=""
-	Private img_up As ImageView
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -87,22 +87,23 @@ Sub Activity_Create(FirstTime As Boolean)
 			Up.Initialize("Up")
 		End If
 	
-		
-		
-		
-		
+	
+	
+	
+		'File.Delete(File.DirInternal,picName)
+	
 		
 		If(File.Exists(File.DirInternal,picName))Then
-			
 			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
 			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+		Else
 			
-		Else	
 			img_pofil.Bitmap=LoadBitmap(File.DirAssets,"user.png")
 			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
 		End If
 		
 		http_initial_1(1)
+		
 		
 	Else
 		StartActivity(step0_activity)
@@ -173,12 +174,14 @@ Sub http_initial_1(type1 As Int)
 		Dim send As String= "var=3&phone="&Main.phon_num&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
 		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 	Else If(type1=2)Then ' to edit
+		Dim exist_pic As Int=0
 		If(File.Exists(Starter.Provider.SharedFolder,picName))Then
 			upload_img(Starter.Provider.SharedFolder&"/"&picName)
+			exist_pic=1
 		End If
 		
 		http3.Initialize("ht2",Me)
-		Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num
+		Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic
 		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 		
 		
@@ -201,6 +204,10 @@ Sub http_initial_1(type1 As Int)
 		http3.Initialize("ht5",Me)
 		Dim send As String= "var=6&phone="&Main.phon_num&"&msg="&et_msg.Text&"&file_name="&tempFile
 		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+		
+	Else If (type1=6) Then  ' recive pic
+		http3.Initialize("ht7", Me)
+		http3.Download("https://taravatgroup.ir/avatar_ezaf_users/"&picName)
 	End If
 	
 	
@@ -234,6 +241,13 @@ Sub Jobdone (job As HttpJob)
 '				End If
 '				
 				lbl_phoneNum.Text=a(2)
+				If(File.Exists(File.DirInternal,picName)=False)Then
+					If(a(3)="1")Then
+						http_initial_1(6)
+					End If
+					
+				End If
+				
 				
 				File.WriteList(File.DirInternal,"userAcc",a)
 				
@@ -290,6 +304,32 @@ Sub Jobdone (job As HttpJob)
 			Else
 				MsgboxAsync("خطا در ارسال پیغام، دوباره امتحان کنید.","خطا")
 			End If
+		
+		else If job.JobName="ht6" Then  '  recive db
+			
+			Dim out As OutputStream = File.OpenOutput(File.DirInternal,"db.db", False)
+			File.Copy2(http3.GetInputStream, out)
+			out.Close
+			ToastMessageShow("اطلاعات بازگردانده شد",False)
+			
+			lbl_back_home_Click
+			
+			
+		else If job.JobName="ht7" Then  '  recive pic
+			
+			
+			
+			Dim bmp As Bitmap = job.GetBitmap
+			Dim out As OutputStream
+			out = File.OpenOutput(File.DirInternal,picName , False)
+			bmp.WriteToStream(out, 100, "JPEG")
+			out.Close
+			
+			
+			
+			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+			
 			
 		End If
 		
@@ -345,6 +385,8 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 	If KeyCode = KeyCodes.KEYCODE_BACK Then
 		If(pan_all_edit.Visible=True)Then
 			lbl_back_Click
+		Else If(pan_all_msg.Visible=True)Then
+			pan_all_msg.Visible=False
 		Else
 			lbl_back_home_Click
 		End If
@@ -357,7 +399,7 @@ End Sub
 
 
 Private Sub lbl_back_home_Click
-	'StartActivity(Main)
+	StartActivity(Main)
 	Activity.Finish
 End Sub
 
@@ -420,7 +462,7 @@ Sub Up_statusUpload (value As String)
 	lbl_image_up.Text=value&" %"
 	If(value>=100)Then
 		lbl_back_Click
-		'ToastMessageShow("تغییرات ذخیره شد",False)
+		ToastMessageShow(" ذخیره شد",False)
 	End If
 	
 End Sub
@@ -451,6 +493,11 @@ Private Sub lbl_reseve_db_Click
 	Dim result As Int
 	result = Msgbox2("اطلاعات من از سرور بازیابی شوند.توجه داشته باشید اطلاعات قبلی حذف می شوند", "بازگرداندن اطلاعات ", "مطمئن هستم", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
 	If result = DialogResponse.Positive Then
+		
+		
+		http3.Initialize("ht6", Me)
+		http3.Download("https://taravatgroup.ir/uploads_ezaf/"&Main.phon_num&"-db.db")
+		
 		
 	End If
 End Sub

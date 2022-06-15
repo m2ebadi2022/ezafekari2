@@ -3836,7 +3836,7 @@ Private Sub lbl_account_Click
 	
 		If (File.Exists(File.DirInternal,"userAcc")=True)Then
 			StartActivity(step2_activity)
-			'Activity.Finish
+			Activity.Finish
 		Else
 			
 			If (myfunc.check_internet)Then	

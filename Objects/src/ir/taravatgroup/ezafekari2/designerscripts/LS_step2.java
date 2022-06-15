@@ -13,7 +13,6 @@ views.get("pan_cont2").vw.setTop((int)((42d / 100 * height) - (views.get("pan_co
 views.get("img_p_edit").vw.setLeft((int)((50d / 100 * width) - (views.get("img_p_edit").vw.getWidth() / 2)));
 views.get("lbl_image_up").vw.setLeft((int)((50d / 100 * width) - (views.get("lbl_image_up").vw.getWidth() / 2)));
 views.get("img_pofil").vw.setLeft((int)((50d / 100 * width) - (views.get("img_pofil").vw.getWidth() / 2)));
-views.get("panel8").vw.setLeft((int)((50d / 100 * width)-40d - (views.get("panel8").vw.getWidth() / 2)));
 
 }
 }
