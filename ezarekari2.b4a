@@ -686,132 +686,140 @@ End Sub
 
 
 Sub Jobdone (job As HttpJob)
-	If job.Success = True Then
-		If job.JobName="ht" Then
-			If(job.GetString <> "")Then
-				
-				If(job.GetString.Contains("accessok"))Then
-					
-					
-					If File.Exists(File.DirInternal,"payokok") Then
-						
-					Else
-						File.WriteString(File.DirInternal,"payokok","")
-						myfunc.help_man("توجه","نسخه طلایی از طرف ادمین فعال شد")
-					End If
-					
-				Else If (job.GetString.Contains("accessno"))Then
-					
-					If File.Exists(File.DirInternal,"payokok") Then
-						File.Delete(File.DirInternal,"payokok")
-						myfunc.help_man("توجه"," نسخه طلایی از طرف ادمین غیرفعال شد")
-					End If
-				Else If (job.GetString.Contains("lockok"))Then
-					
-					Dim ls_lock0 As List
-					ls_lock0.Initialize
-					
-					If(File.Exists(File.DirInternal,"ls_lock")=True)Then  ''--------lock ok
-						ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
-						ls_lock0.Set(0,"true")
-						ls_lock0.Set(1,"false")
-						ls_lock0.Set(2,"2022")
-					Else
-						ls_lock0.Add("true")
-						ls_lock0.Add("false")
-						ls_lock0.Add("2022")
-						ls_lock0.Add("")
-					End If	
-					File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
-					
-				Else If (job.GetString.Contains("lockno"))Then  ''-------lock no
-					Dim ls_lock0 As List
-					ls_lock0.Initialize
-					
-					If(File.Exists(File.DirInternal,"ls_lock")=True)Then
-						ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
-						ls_lock0.Set(0,"false")
-						ls_lock0.Set(1,"false")
-						ls_lock0.Set(2,"")
-					Else
-						ls_lock0.Add("false")
-						ls_lock0.Add("false")
-						ls_lock0.Add("")
-						ls_lock0.Add("")
-					End If
-					File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
-					
-					
-					
-				Else
-					msg=job.GetString
-					
-					tim_msg.Enabled=True
-				End If
-				
-				
-			End If
-			
-			
-		End If
+	Try
 		
-	If job.JobName="chkupdate" Then 
+		If job.Success = True Then
+			If job.JobName="ht" Then
+				If(job.GetString <> "")Then
+				
+					If(job.GetString.Contains("accessok"))Then
+					
+					
+						If File.Exists(File.DirInternal,"payokok") Then
+						
+						Else
+							File.WriteString(File.DirInternal,"payokok","")
+							myfunc.help_man("توجه","نسخه طلایی از طرف ادمین فعال شد")
+						End If
+					
+					Else If (job.GetString.Contains("accessno"))Then
+					
+						If File.Exists(File.DirInternal,"payokok") Then
+							File.Delete(File.DirInternal,"payokok")
+							myfunc.help_man("توجه"," نسخه طلایی از طرف ادمین غیرفعال شد")
+						End If
+					Else If (job.GetString.Contains("lockok"))Then
+					
+						Dim ls_lock0 As List
+						ls_lock0.Initialize
+					
+						If(File.Exists(File.DirInternal,"ls_lock")=True)Then  ''--------lock ok
+							ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+							ls_lock0.Set(0,"true")
+							ls_lock0.Set(1,"false")
+							ls_lock0.Set(2,"2022")
+						Else
+							ls_lock0.Add("true")
+							ls_lock0.Add("false")
+							ls_lock0.Add("2022")
+							ls_lock0.Add("")
+						End If
+						File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
+					
+					Else If (job.GetString.Contains("lockno"))Then  ''-------lock no
+						Dim ls_lock0 As List
+						ls_lock0.Initialize
+					
+						If(File.Exists(File.DirInternal,"ls_lock")=True)Then
+							ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+							ls_lock0.Set(0,"false")
+							ls_lock0.Set(1,"false")
+							ls_lock0.Set(2,"")
+						Else
+							ls_lock0.Add("false")
+							ls_lock0.Add("false")
+							ls_lock0.Add("")
+							ls_lock0.Add("")
+						End If
+						File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
+					
+					
+					
+					Else
+						msg=job.GetString
+					
+						tim_msg.Enabled=True
+					End If
+				
+				
+				End If
 			
-			Dim parser As JSONParser
-			'Dim newURL As String = job.GetString.SubString2(17,job.GetString.Length-1)
-			parser.Initialize(job.GetString)
+			
+			End If
+		
+			If job.JobName="chkupdate" Then
+			
+				Dim parser As JSONParser
+				'Dim newURL As String = job.GetString.SubString2(17,job.GetString.Length-1)
+				parser.Initialize(job.GetString)
 	
-			Dim root1 As List 
-			root1.Initialize
-			root1=parser.NextArray
+				Dim root1 As List
+				root1.Initialize
+				root1=parser.NextArray
 			
-			 Dim str_type As String = root1.Get(0)
-			str_type= str_type.Replace("type:","")
+				Dim str_type As String = root1.Get(0)
+				str_type= str_type.Replace("type:","")
 			 
-			Dim str_version_code As String = root1.Get(1)
-			str_version_code=str_version_code.Replace("version_code:","")
+				Dim str_version_code As String = root1.Get(1)
+				str_version_code=str_version_code.Replace("version_code:","")
 			
-			Dim str_version_name As String = root1.Get(2)
-			str_version_name=str_version_name.Replace("version_name:","")
+				Dim str_version_name As String = root1.Get(2)
+				str_version_name=str_version_name.Replace("version_name:","")
 			
-			Dim str_changelog_fa As String = root1.Get(3)
-			str_changelog_fa=str_changelog_fa.Replace("changelog_fa:","")
+				Dim str_changelog_fa As String = root1.Get(3)
+				str_changelog_fa=str_changelog_fa.Replace("changelog_fa:","")
 			 
-			Dim str_message As String = root1.Get(4)
-			str_message=str_message.Replace("message:","")
+				Dim str_message As String = root1.Get(4)
+				str_message=str_message.Replace("message:","")
 			
 '			Log(str_type)
 '			Log(str_version_code)
 '			Log(str_version_name)
 '			Log(str_changelog_fa)
 '			Log(str_message)
-			ProgressDialogHide
-			pan_all_chekUpdate.Visible=True
-			If(str_type=="success")Then
-			If(str_version_code>Application.VersionCode)Then
-					webVeiw_chk_update.LoadHtml("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body><span style='color:#3AAD00; font-weight: bold;'> بروزرسانی جدید موجود است. </span><br> "&str_changelog_fa&"</body></html>")
-					lbl_chk_update_ok.Tag=1
-					lbl_chk_update_ok.Text="بروزرسانی برنامه"
-			Else		
-					webVeiw_chk_update.LoadHtml("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body> برنامه شما بروز می باشد. با تشکر </body></html>")
+				ProgressDialogHide
+				pan_all_chekUpdate.Visible=True
+				If(str_type=="success")Then
+					If(str_version_code>Application.VersionCode)Then
+						webVeiw_chk_update.LoadHtml("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body><span style='color:#3AAD00; font-weight: bold;'> بروزرسانی جدید موجود است. </span><br> "&str_changelog_fa&"</body></html>")
+						lbl_chk_update_ok.Tag=1
+						lbl_chk_update_ok.Text="بروزرسانی برنامه"
+					Else
+						webVeiw_chk_update.LoadHtml("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body> برنامه شما بروز می باشد. با تشکر </body></html>")
+						lbl_chk_update_ok.Tag=0
+						lbl_chk_update_ok.Text="باشه"
+					End If
+				
+				Else if (str_type=="unsuccess")Then
+					webVeiw_chk_update.LoadHtml("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body>خطا در اتصال</body></html>")
 					lbl_chk_update_ok.Tag=0
 					lbl_chk_update_ok.Text="باشه"
-			End If	
-				
-			Else if (str_type=="unsuccess")Then
-				webVeiw_chk_update.LoadHtml("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body>خطا در اتصال</body></html>")
-				lbl_chk_update_ok.Tag=0
-				lbl_chk_update_ok.Text="باشه"
-			End If		
+				End If
 		
 			
 			
-	End If
+			End If
 		
 		
-	Else
-		'ToastMessageShow("خطا در برقراری اتصال" , False)
-	End If
+		Else
+			'ToastMessageShow("خطا در برقراری اتصال" , False)
+		End If
+		
+	Catch
+		Log(LastException)
+		ToastMessageShow("خطا در اتصال",False)
+	End Try
+	
 End Sub
 
 
@@ -1353,33 +1361,35 @@ Private Sub btn_menu_list_Click
 	sp_year.SelectedIndex=0
 	sp_moon.SelectedIndex=myfunc.fa2en(persianDate.PersianMonth)-1
 	
-	Dim moon_num As String
-	Select sp_moon.SelectedIndex
-		Case 0
-			moon_num="01"
-		Case 1
-			moon_num="02"
-		Case 2
-			moon_num="03"
-		Case 3
-			moon_num="04"
-		Case 4
-			moon_num="05"
-		Case 5
-			moon_num="06"
-		Case 6
-			moon_num="07"
-		Case 7
-			moon_num="08"
-		Case 8
-			moon_num="09"
-		Case 9
-			moon_num="10"
-		Case 10
-			moon_num="11"
-		Case 11
-			moon_num="12"
-	End Select
+	Dim moon_num As String=myfunc.convert_adad(sp_moon.SelectedIndex+1)
+	
+'	
+'	Select sp_moon.SelectedIndex
+'		Case 0
+'			moon_num="01"
+'		Case 1
+'			moon_num="02"
+'		Case 2
+'			moon_num="03"
+'		Case 3
+'			moon_num="04"
+'		Case 4
+'			moon_num="05"
+'		Case 5
+'			moon_num="06"
+'		Case 6
+'			moon_num="07"
+'		Case 7
+'			moon_num="08"
+'		Case 8
+'			moon_num="09"
+'		Case 9
+'			moon_num="10"
+'		Case 10
+'			moon_num="11"
+'		Case 11
+'			moon_num="12"
+'	End Select
 	
 	
 	TabHost1.AddTab("اضافه کاری ها" , "tab_layout_ezafekari.bal")
@@ -1643,7 +1653,7 @@ Sub fill_lists (year1 As String, moon1 As String)
 		'gest.SetOnTouchListener(p,"GesturesTouch")
 	End If
 	
-	
+	TabHost1_TabChanged
 	
 End Sub
 
@@ -1937,33 +1947,8 @@ Sub add_end
 	Dim alist As List
 	alist.Initialize
 	
-	Dim moon_num As String
-	Select myfunc.fa2en(persianDate.PersianMonth)
-		Case 0
-			moon_num="01"
-		Case 2
-			moon_num="02"
-		Case 3
-			moon_num="03"
-		Case 4
-			moon_num="04"
-		Case 5
-			moon_num="05"
-		Case 6
-			moon_num="06"
-		Case 7
-			moon_num="07"
-		Case 8
-			moon_num="08"
-		Case 9
-			moon_num="09"
-		Case 10
-			moon_num="10"
-		Case 11
-			moon_num="11"
-		Case 12
-			moon_num="12"
-	End Select
+	Dim moon_num As String=myfunc.convert_adad(myfunc.fa2en(persianDate.PersianMonth))
+	
 	
 	alist=myfunc.num_list(myfunc.fa2en(persianDate.PersianYear),moon_num)
 	
@@ -2068,8 +2053,10 @@ Sub add_ezafe_sub
 				dbCode.edit_ezafekari(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,state_mod)
 				ToastMessageShow ("ویرایش شد",False)
 				
-				btn_menu_list_Click
-				TabHost1.CurrentTab=0
+				
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+'				btn_menu_list_Click
+'				TabHost1.CurrentTab=0
 			End If
 			
 			pan_all_Click
@@ -2112,8 +2099,9 @@ Sub add_morakhasi_sub
 				dbCode.edit_morakhasi(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,index_noe_morakhasi)
 				
 				ToastMessageShow ("ویرایش شد",False)
-				btn_menu_list_Click
-				TabHost1.CurrentTab=1
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+				'btn_menu_list_Click
+				'TabHost1.CurrentTab=1
 					
 			End If
 			
@@ -2181,8 +2169,9 @@ Sub add_taradod_sub
 				dbCode.edit_taradod(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,0)
 					
 				ToastMessageShow ("ویرایش شد",False)
-				btn_menu_list_Click
-				TabHost1.CurrentTab=2
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+				'btn_menu_list_Click
+				'TabHost1.CurrentTab=2
 			End If
 			
 			
@@ -3375,7 +3364,9 @@ Private Sub lbl_remove_from_list_Click
 				ToastMessageShow("حذف شد.",False)
 			
 				curent_tab_list=TabHost1.CurrentTab
-				btn_menu_list_Click
+				'btn_menu_list_Click
+				
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
 			End If
 		End If
 	Else if (TabHost1.CurrentTab=1)Then
@@ -3387,7 +3378,8 @@ Private Sub lbl_remove_from_list_Click
 			If (dbCode.delete_morakhasi(b.Tag))Then
 				ToastMessageShow("حذف شد.",False)
 				curent_tab_list=TabHost1.CurrentTab
-				btn_menu_list_Click
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+				'btn_menu_list_Click
 			End If
 		End If
 	Else if (TabHost1.CurrentTab=2)Then
@@ -3399,7 +3391,8 @@ Private Sub lbl_remove_from_list_Click
 				ToastMessageShow("حذف شد.",False)
 			
 				curent_tab_list=TabHost1.CurrentTab
-				btn_menu_list_Click
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+				'btn_menu_list_Click
 			End If
 		End If
 		
@@ -3423,8 +3416,8 @@ Private Sub lbl_remove_from_list2_Click
 		
 		If (dbCode.delete_gozaresh(b.tag))Then
 			ToastMessageShow("حذف شد.",False)
-			
-			btn_menu_gozaresh_Click
+			fill_list_gozareshat(sp_year_gozaresh.SelectedItem)
+			'btn_menu_gozaresh_Click
 		End If
 	End If
 	

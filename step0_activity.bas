@@ -214,34 +214,40 @@ End Sub
 
 
 Sub Jobdone (job As HttpJob)
-	If job.Success = True Then
-		Log(job.GetString)
-		If job.JobName="ht1" Then
+	Try
+		If job.Success = True Then
+			Log(job.GetString)
+			If job.JobName="ht1" Then
 		
 				
-		else if job.JobName="ht2" Then
-			If(job.GetString.Contains("okuser")=True) Then
-				File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
-				StartActivity(step2_activity)
-				Activity.Finish
+			else if job.JobName="ht2" Then
+				If(job.GetString.Contains("okuser")=True) Then
+					File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
+					StartActivity(step2_activity)
+					Activity.Finish
 				
 				
-			Else if (job.GetString.Contains("nouser")=True)Then
+				Else if (job.GetString.Contains("nouser")=True)Then
 				
-				File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
+					File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
 				
-				StartActivity(step1_activity)
-				Activity.Finish
-			Else
-				ToastMessageShow("کد تائید اشتباه است",False)
+					StartActivity(step1_activity)
+					Activity.Finish
+				Else
+					ToastMessageShow("کد تائید اشتباه است",False)
+				End If
+			
 			End If
 			
+			job.Release
+		Else
+			'ToastMessageShow("خطا در برقراری اتصال" , False)
 		End If
-			
-		job.Release
-	Else
-		'ToastMessageShow("خطا در برقراری اتصال" , False)
-	End If
+	Catch
+		Log(LastException)
+		ToastMessageShow("خطا در اتصال",False)
+	End Try
+	
 End Sub
 
 

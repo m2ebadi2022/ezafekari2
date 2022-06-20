@@ -393,20 +393,20 @@ _type_app = (int) (1);
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 106;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 107;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 112;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 113;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 108;BA.debugLine="StartActivity(Main)";
+ //BA.debugLineNum = 114;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
- //BA.debugLineNum = 109;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 115;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 111;BA.debugLine="Return True";
+ //BA.debugLineNum = 117;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 113;BA.debugLine="Return False";
+ //BA.debugLineNum = 119;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 115;BA.debugLine="End Sub";
+ //BA.debugLineNum = 121;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -437,48 +437,57 @@ _type_app = (int) (1);
 return "";
 }
 public static String  _http_initial_1(int _type1) throws Exception{
+String _str_key = "";
 String _send = "";
  //BA.debugLineNum = 67;BA.debugLine="Sub http_initial_1(type1 As Int)";
  //BA.debugLineNum = 69;BA.debugLine="If(type1=3)Then";
 if ((_type1==3)) { 
- //BA.debugLineNum = 70;BA.debugLine="http2.Initialize(\"http2\",Me)";
+ //BA.debugLineNum = 70;BA.debugLine="Dim str_key As String=myfunc.random_id(15)";
+_str_key = mostCurrent._myfunc._random_id /*String*/ (mostCurrent.activityBA,(int) (15));
+ //BA.debugLineNum = 71;BA.debugLine="http2.Initialize(\"http2\",Me)";
 mostCurrent._http2._initialize /*String*/ (processBA,"http2",step1_activity.getObject());
- //BA.debugLineNum = 71;BA.debugLine="Dim send As String";
+ //BA.debugLineNum = 72;BA.debugLine="Dim send As String";
 _send = "";
- //BA.debugLineNum = 72;BA.debugLine="send = \"var=1&phone=\"&Main.phon_num&\"&name=\"&et_";
-_send = "var=1&phone="+mostCurrent._main._phon_num /*String*/ +"&name="+mostCurrent._et_namefamili.getText()+"&email="+mostCurrent._et_email.getText()+"&type_app="+BA.NumberToString(_type_app)+"&div_id="+mostCurrent._pp.GetSettings("android_id")+"&div_model="+mostCurrent._pp.getModel();
- //BA.debugLineNum = 73;BA.debugLine="http2.PostString(\"https://taravatgroup.ir/save_a";
+ //BA.debugLineNum = 73;BA.debugLine="send = \"var=1&phone=\"&Main.phon_num&\"&name=\"&et_";
+_send = "var=1&phone="+mostCurrent._main._phon_num /*String*/ +"&name="+mostCurrent._et_namefamili.getText()+"&email="+mostCurrent._et_email.getText()+"&type_app="+BA.NumberToString(_type_app)+"&div_id="+mostCurrent._pp.GetSettings("android_id")+"&div_model="+mostCurrent._pp.getModel()+"&user_key="+_str_key;
+ //BA.debugLineNum = 74;BA.debugLine="http2.PostString(\"https://taravatgroup.ir/save_a";
 mostCurrent._http2._poststring /*String*/ ("https://taravatgroup.ir/save_acc.php",_send);
  };
- //BA.debugLineNum = 79;BA.debugLine="End Sub";
+ //BA.debugLineNum = 80;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(ir.taravatgroup.ezafekari2.httpjob _job) throws Exception{
- //BA.debugLineNum = 83;BA.debugLine="Sub Jobdone (job As HttpJob)";
- //BA.debugLineNum = 84;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("213631489",_job._getstring /*String*/ (),0);
- //BA.debugLineNum = 85;BA.debugLine="If job.Success = True Then";
+ //BA.debugLineNum = 84;BA.debugLine="Sub Jobdone (job As HttpJob)";
+ //BA.debugLineNum = 85;BA.debugLine="Try";
+try { //BA.debugLineNum = 86;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 87;BA.debugLine="If job.JobName=\"http2\" Then";
+ //BA.debugLineNum = 88;BA.debugLine="If job.JobName=\"http2\" Then";
 if ((_job._jobname /*String*/ ).equals("http2")) { 
- //BA.debugLineNum = 88;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
+ //BA.debugLineNum = 89;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
 if ((_job._getstring /*String*/ ().contains("true"))) { 
- //BA.debugLineNum = 89;BA.debugLine="StartActivity(step2_activity)";
+ //BA.debugLineNum = 90;BA.debugLine="StartActivity(step2_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step2_activity.getObject()));
- //BA.debugLineNum = 90;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 91;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 91;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
+ //BA.debugLineNum = 92;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تبریک"),anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 93;BA.debugLine="ToastMessageShow(job.GetString,False)";
+ //BA.debugLineNum = 94;BA.debugLine="ToastMessageShow(job.GetString,False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_job._getstring /*String*/ ()),anywheresoftware.b4a.keywords.Common.False);
  };
  };
- //BA.debugLineNum = 98;BA.debugLine="job.Release";
+ //BA.debugLineNum = 99;BA.debugLine="job.Release";
 _job._release /*String*/ ();
  }else {
  };
- //BA.debugLineNum = 103;BA.debugLine="End Sub";
+ } 
+       catch (Exception e16) {
+			processBA.setLastException(e16); //BA.debugLineNum = 105;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("213631509",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 106;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
+ };
+ //BA.debugLineNum = 109;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_run_step1_click() throws Exception{

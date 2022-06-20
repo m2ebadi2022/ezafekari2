@@ -52,6 +52,7 @@ Sub Globals
 	Private et_msg As EditText
 	Private lbl_icon_up As Label
 	Dim tempFile As String=""
+	Dim user_key As String=""
 	
 End Sub
 
@@ -65,7 +66,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	If(File.Exists(File.DirInternal,"phonNum"))Then
 		Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
-		picName="user-"&Main.phon_num&".jpg"
+		'picName="user-"&Main.phon_num&".jpg"
 		
 		If(myfunc.check_karid=False)Then
 			lbl_noske.Text="نسخه هدیه"
@@ -88,21 +89,18 @@ Sub Activity_Create(FirstTime As Boolean)
 		End If
 	
 	
-	
-	
-		'File.Delete(File.DirInternal,picName)
-	
-		
-		If(File.Exists(File.DirInternal,picName))Then
-			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-		Else
-			
-			img_pofil.Bitmap=LoadBitmap(File.DirAssets,"user.png")
-			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
-		End If
-		
 		http_initial_1(1)
+		
+'		If(File.Exists(File.DirInternal,picName))Then
+'			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+'			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+'		Else
+'			
+'			img_pofil.Bitmap=LoadBitmap(File.DirAssets,"user.png")
+'			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
+'		End If
+'		
+	
 		
 		
 	Else
@@ -217,22 +215,23 @@ End Sub
 
 
 Sub Jobdone (job As HttpJob)
-	Log(job.GetString)
-	If job.Success = True Then
+	Try
 		
-		If job.JobName="ht1" Then
-			If(job.GetString.Contains("nouser"))Then
+		If job.Success = True Then
+		
+			If job.JobName="ht1" Then
+				If(job.GetString.Contains("nouser"))Then
 				
-				File.Delete(File.DirInternal,"userAcc")
-				StartActivity(step0_activity)
-				Activity.Finish
-			Else
+					File.Delete(File.DirInternal,"userAcc")
+					StartActivity(step0_activity)
+					Activity.Finish
+				Else
 				
-				Dim a() As String
-				a=Regex.Split("&",job.GetString)
+					Dim a() As String
+					a=Regex.Split("&",job.GetString)
 			
-				lbl_nameFamili.Text=a(0)
-				lbl_email.Text=a(1)
+					lbl_nameFamili.Text=a(0)
+					lbl_email.Text=a(1)
 '				
 '				If(a(2)=1)Then
 '					lbl_noske.Text="نسخه هدیه"
@@ -240,111 +239,96 @@ Sub Jobdone (job As HttpJob)
 '					lbl_noske.Text="نسخه طلایی"
 '				End If
 '				
-				lbl_phoneNum.Text=a(2)
-				If(File.Exists(File.DirInternal,picName)=False)Then
-					If(a(3)="1")Then
-						http_initial_1(6)
-					End If
+					lbl_phoneNum.Text=a(2)
 					
+					user_key=a(4)
+					
+					picName="user-"&Main.phon_num&"-"&a(4)&".jpg"
+					If(File.Exists(File.DirInternal,picName)=False)Then
+						If(a(3)="1")Then
+							http_initial_1(6)
+						End If
+					Else
+						img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+						img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+					End If
+				
+				
+					File.WriteList(File.DirInternal,"userAcc",a)
+				
+
 				End If
-				
-				
-				File.WriteList(File.DirInternal,"userAcc",a)
-				
-'				If(a(3)="1")Then
-'						
-'					pic.Initialize
-'					'pic.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"&picName).IntoImageView(img_pofil)
-'					
-'					
-'				'	
-'		pic.LoadUrl("https://taravatgroup.ir/uploads_ezaf/"&picName).IntoImageView(img_p_edit)
-'		
-''					Dim out As OutputStream
-''	
-''					out = File.OpenOutput(File.DirInternal, picName, False)
-''		
-''					bmp.WriteToStream(out, 100, "JPEG")
-''					'bmp1.WriteToStream(out, 100, "PNG")
-''					out.Close
-'			
-'					File.WriteBytes(File.DirInternal, picName,img_p_edit.Bitmap)
-'					img_pofil.Bitmap=myfunc.CircleImage(LoadBitmap(File.DirInternal,picName))
-'					img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-'				End If
-'				
-'				
-			End If
 			
-		else If job.JobName="ht2" Then
-			If(job.GetString.Contains("true"))Then
-				http_initial_1(1)
-			End If
+			else If job.JobName="ht2" Then
+				If(job.GetString.Contains("true"))Then
+					http_initial_1(1)
+				End If
 			
-		else If job.JobName="ht3" Then  '  req transfer noskhe
+			else If job.JobName="ht3" Then  '  req transfer noskhe
 			
-			If(job.GetString.Contains("ok_add"))Then
-				MsgboxAsync("درخواست شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
-			Else
-				MsgboxAsync("خطا در ارسال درخواست، دوباره امتحان کنید.","خطا")
-			End If
+				If(job.GetString.Contains("ok_add"))Then
+					MsgboxAsync("درخواست شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
+				Else
+					MsgboxAsync("خطا در ارسال درخواست، دوباره امتحان کنید.","خطا")
+				End If
 			
-		else If job.JobName="ht4" Then '  req chek noskhe
+			else If job.JobName="ht4" Then '  req chek noskhe
 			
-			If(job.GetString.Contains("ok_add"))Then
-				MsgboxAsync("درخواست شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
-			Else
-				MsgboxAsync("خطا در ارسال درخواست، دوباره امتحان کنید.","خطا")
+				If(job.GetString.Contains("ok_add"))Then
+					MsgboxAsync("درخواست شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
+				Else
+					MsgboxAsync("خطا در ارسال درخواست، دوباره امتحان کنید.","خطا")
+				End If
+		
+			else If job.JobName="ht5" Then  '  send msg
+			
+				If(job.GetString.Contains("ok_add"))Then
+					MsgboxAsync("پیغام شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
+				Else
+					MsgboxAsync("خطا در ارسال پیغام، دوباره امتحان کنید.","خطا")
+				End If
+		
+			else If job.JobName="ht6" Then  '  recive db
+			
+			
+				Dim out As OutputStream = File.OpenOutput(File.DirInternal,"db.db", False)
+				File.Copy2(http3.GetInputStream, out)
+				out.Close
+				ToastMessageShow("اطلاعات بازگردانده شد",False)
+			
+				lbl_back_home_Click
+			
+			
+			else If job.JobName="ht7" Then  '  recive pic
+			
+			
+			
+				Dim bmp As Bitmap = job.GetBitmap
+				Dim out As OutputStream
+				out = File.OpenOutput(File.DirInternal,picName , False)
+				bmp.WriteToStream(out, 100, "JPEG")
+				out.Close
+			
+			
+			
+				img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+				img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+			
+			
 			End If
 		
-		else If job.JobName="ht5" Then  '  send msg
-			
-			If(job.GetString.Contains("ok_add"))Then
-				MsgboxAsync("پیغام شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
-			Else
-				MsgboxAsync("خطا در ارسال پیغام، دوباره امتحان کنید.","خطا")
-			End If
+			job.Release
 		
-		else If job.JobName="ht6" Then  '  recive db
+		Else
+			'ToastMessageShow("خطا در برقراری اتصال" , False)
+			If(File.Exists(File.DirInternal,"userAcc")=True)Then
 			
-			Dim out As OutputStream = File.OpenOutput(File.DirInternal,"db.db", False)
-			File.Copy2(http3.GetInputStream, out)
-			out.Close
-			ToastMessageShow("اطلاعات بازگردانده شد",False)
+				Dim ls_user As List
+				ls_user.Initialize
+				ls_user=File.ReadList(File.DirInternal,"userAcc")
 			
-			lbl_back_home_Click
-			
-			
-		else If job.JobName="ht7" Then  '  recive pic
-			
-			
-			
-			Dim bmp As Bitmap = job.GetBitmap
-			Dim out As OutputStream
-			out = File.OpenOutput(File.DirInternal,picName , False)
-			bmp.WriteToStream(out, 100, "JPEG")
-			out.Close
-			
-			
-			
-			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-			
-			
-		End If
-		
-		job.Release
-		
-	Else
-		'ToastMessageShow("خطا در برقراری اتصال" , False)
-		If(File.Exists(File.DirInternal,"userAcc")=True)Then
-			
-			Dim ls_user As List
-			ls_user.Initialize
-			ls_user=File.ReadList(File.DirInternal,"userAcc")
-			
-			lbl_nameFamili.Text=ls_user.Get(0)
-			lbl_email.Text=ls_user.Get(1)
+				lbl_nameFamili.Text=ls_user.Get(0)
+				lbl_email.Text=ls_user.Get(1)
 				
 '			If(ls_user.Get(2)="1")Then
 '				lbl_noske.Text="نسخه هدیه"
@@ -352,14 +336,20 @@ Sub Jobdone (job As HttpJob)
 '				lbl_noske.Text="نسخه طلایی"
 '			End If
 				
-			lbl_phoneNum.Text=ls_user.Get(2)
+				lbl_phoneNum.Text=ls_user.Get(2)
 			
 			
 			
+			End If
+		
+		
 		End If
 		
-		
-	End If
+	Catch
+		Log(LastException)
+		ToastMessageShow("خطا در اتصال",False)
+	End Try
+
 End Sub
 
 
@@ -408,36 +398,27 @@ Private Sub lbl_image_up_Click
 	
 	Wait For CC_Result (Success As Boolean, Dir As String, FileName As String)
 	If Success = True Then
-		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"temp_pic.jpg")
-		bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
-		Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
-		bmp.WriteToStream(out, 20, "JPEG")
-		out.Close
-		'img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Dir,FileName))
-		img_p_edit.Bitmap=myfunc.CircleImage( bmp)
+		
+		Try
+			File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"temp_pic.jpg")
+			bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
+			Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
+			bmp.WriteToStream(out, 20, "JPEG")
+			out.Close
+		Catch
+			
+			File.Copy(Dir,FileName,Starter.Provider.SharedFolder,picName)
+			Log(LastException)
+		End Try
+	
+		img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Starter.Provider.SharedFolder,picName))
+		
 	Else
 		ToastMessageShow("No Success :(",True)
 	End If
 End Sub
 
 
-'Sub CC_Result (Success As Boolean, Dir As String, FileName As String)
-'	
-'	If Success = True Then
-'		
-'		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"temp_pic.jpg")
-'		bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
-'		Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
-'		bmp.WriteToStream(out, 20, "JPEG")
-'		out.Close
-'		'img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Dir,FileName))
-'		img_p_edit.Bitmap=myfunc.CircleImage( bmp)
-'		
-'	Else
-'		ToastMessageShow("No Success :(",True)
-'	End If
-'		
-'End Sub
 
 Sub upload_img(path As String)
 	
@@ -460,6 +441,8 @@ End Sub
 
 Sub Up_statusUpload (value As String)
 	lbl_image_up.Text=value&" %"
+	
+	
 	If(value>=100)Then
 		lbl_back_Click
 		ToastMessageShow(" ذخیره شد",False)
@@ -494,23 +477,22 @@ Private Sub lbl_reseve_db_Click
 	result = Msgbox2("اطلاعات من از سرور بازیابی شوند.توجه داشته باشید اطلاعات قبلی حذف می شوند", "بازگرداندن اطلاعات ", "مطمئن هستم", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
 	If result = DialogResponse.Positive Then
 		
-		
 		http3.Initialize("ht6", Me)
-		http3.Download("https://taravatgroup.ir/uploads_ezaf/"&Main.phon_num&"-db.db")
-		
-		
+		http3.Download("https://taravatgroup.ir/uploads_ezaf/"&Main.phon_num&"-db-"&user_key&".db")
+	
 	End If
 End Sub
 
 Private Sub lbl_send_db_Click
 	
-	File.Copy(File.DirInternal,"db.db",Starter.Provider.SharedFolder,Main.phon_num&"-db.db")
+	File.Copy(File.DirInternal,"db.db",Starter.Provider.SharedFolder,Main.phon_num&"-db-"&user_key&".db")
 	
 	Dim result As Int
 	result = Msgbox2("اطلاعات در سرور آنلاین ذخیره شود؟", "بک آپ گیری ", "باشه", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
 	If result = DialogResponse.Positive Then
 		
-		upload_file(Starter.Provider.SharedFolder&"/"&Main.phon_num&"-db.db")
+		upload_file(Starter.Provider.SharedFolder&"/"&Main.phon_num&"-db-"&user_key&".db")
+		
 	End If
 End Sub
 
@@ -528,17 +510,24 @@ Private Sub lbl_send_up_Click
 		
 		
 		tempFile=Main.phon_num&"-"&myfunc.random_id(10)&".jpg"
-		File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"tempimg.jpg")
+		
+		Try
+			
+			
+			File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"tempimg.jpg")
+			bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"tempimg.jpg")
+			Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,tempFile, False)
+			bmp.WriteToStream(out, 50, "JPEG")
+			out.Close
 		
 		
-		
-		'bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
-		bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"tempimg.jpg")
-		Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,tempFile, False)
-		bmp.WriteToStream(out, 50, "JPEG")
-		out.Close
-		
-		
+		Catch
+			
+			File.Copy(Dir,FileName,Starter.Provider.SharedFolder, tempFile)
+			
+			
+			Log(LastException)
+		End Try
 		
 		
 		
@@ -557,4 +546,13 @@ Private Sub lbl_send_msg_end_Click
 	
 	
 	
+End Sub
+
+
+Private Sub Panel9_Click
+	
+End Sub
+
+Private Sub lbl_send_up_icon_Click
+	lbl_send_up_Click
 End Sub

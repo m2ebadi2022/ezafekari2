@@ -70,6 +70,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=step2_activity,Globals,30,0,step2_activity,http_initial_1,181,6,step2_activity,Activity_Create,98,6,setting_activity,lbl_restore_Click,160,0,Main,Jobdone,466,0,Main,lbl_account_Click,3602,0,step2_activity,Activity_KeyPress,385,6,step2_activity,lbl_back_home_Click,395,0,Visual Designer,step2.bal,-100,6,step2_activity,Jobdone,308,6
+NavigationStack=Visual Designer,item_list_2.bal,-100,1,Main,add_taradod_fast,3528,0,Main,lbl_edit_from_list_Click,3053,0,Main,pan_add_ezafekari_Click,1596,0,Main,lbl_save_box_Click,1701,0,Main,add_end,1714,2,Main,lbl_remove_from_list_Click,3130,3,Main,fill_lists,1229,0,Main,add_ezafe_sub,1820,1,Main,add_morakhasi_sub,1865,0,Main,add_taradod_sub,1935,0
 SelectedBuild=0
 VisibleModules=14,6,21,22,23,16

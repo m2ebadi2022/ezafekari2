@@ -73,9 +73,10 @@ End Sub
 Sub http_initial_1(type1 As Int)
 
 	If(type1=3)Then
+		Dim str_key As String=myfunc.random_id(15)
 		http2.Initialize("http2",Me)
 		Dim send As String
-		send = "var=1&phone="&Main.phon_num&"&name="&et_nameFamili.Text&"&email="&et_email.Text&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
+		send = "var=1&phone="&Main.phon_num&"&name="&et_nameFamili.Text&"&email="&et_email.Text&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model&"&user_key="&str_key
 		http2.PostString("https://taravatgroup.ir/save_acc.php",send)
 		
 	End If
@@ -87,25 +88,30 @@ End Sub
 
 
 Sub Jobdone (job As HttpJob)
-	Log(job.GetString)
-	If job.Success = True Then
+	Try
+		If job.Success = True Then
 		
-		If job.JobName="http2" Then
-			If(job.GetString.Contains("true"))Then
-				StartActivity(step2_activity)
-				Activity.Finish
-				ToastMessageShow("تبریک",False)
-			Else
-				ToastMessageShow(job.GetString,False)
+			If job.JobName="http2" Then
+				If(job.GetString.Contains("true"))Then
+					StartActivity(step2_activity)
+					Activity.Finish
+					ToastMessageShow("تبریک",False)
+				Else
+					ToastMessageShow(job.GetString,False)
+				End If
 			End If
-		End If
 			
 		
-		job.Release
+			job.Release
 		
-	Else
-		'ToastMessageShow("خطا در برقراری اتصال" , False)
-	End If
+		Else
+			'ToastMessageShow("خطا در برقراری اتصال" , False)
+		End If
+	Catch
+		Log(LastException)
+		ToastMessageShow("خطا در اتصال",False)
+	End Try
+	
 End Sub
 
 
