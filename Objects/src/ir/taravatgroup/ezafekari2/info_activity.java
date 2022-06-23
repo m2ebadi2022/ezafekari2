@@ -448,7 +448,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in2.getOb
  } 
        catch (Exception e9) {
 			processBA.setLastException(e9); //BA.debugLineNum = 102;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("228704782",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("528704782",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 103;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه جمیل را نصب/فعال کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -474,7 +474,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in1.getOb
  } 
        catch (Exception e8) {
 			processBA.setLastException(e8); //BA.debugLineNum = 82;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("228639243",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("528639243",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 83;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه اینستاگرام را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -500,7 +500,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_intent1.g
  } 
        catch (Exception e8) {
 			processBA.setLastException(e8); //BA.debugLineNum = 63;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("228573706",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("528573706",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 64;BA.debugLine="ToastMessageShow(\"برنامه واتساپ را نصب کنید\",Fal";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه واتساپ را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
  };

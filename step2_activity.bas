@@ -54,6 +54,9 @@ Sub Globals
 	Dim tempFile As String=""
 	Dim user_key As String=""
 	
+	Private wb_show_myMsg As WebView
+	Private pan_all_show_myMsg As Panel
+	Private lbl_icon_noUp As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -165,50 +168,72 @@ End Sub
 
 
 Sub http_initial_1(type1 As Int)
-
-	If(type1=1)Then
+	If (myfunc.check_internet=False)Then
+		myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
 		
-		http3.Initialize("ht1",Me)
-		Dim send As String= "var=3&phone="&Main.phon_num&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
-		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-	Else If(type1=2)Then ' to edit
-		Dim exist_pic As Int=0
-		If(File.Exists(Starter.Provider.SharedFolder,picName))Then
-			upload_img(Starter.Provider.SharedFolder&"/"&picName)
-			exist_pic=1
+	Else
+			
+		
+		If(type1=1)Then
+			
+			http3.Initialize("ht1",Me)
+			Dim send As String= "var=3&phone="&Main.phon_num&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
+			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+		Else If(type1=2)Then ' to edit
+			Dim exist_pic As Int=0
+			If(File.Exists(Starter.Provider.SharedFolder,picName))Then
+				upload_img(Starter.Provider.SharedFolder&"/"&picName)
+				exist_pic=1
+			End If
+			
+			http3.Initialize("ht2",Me)
+			Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic
+			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+			
+			
+			
+		Else If(type1=3)Then '  req transfer noskhe
+			http3.Initialize("ht3",Me)
+			Dim send As String= "var=4&phone="&Main.phon_num
+			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+			
+		Else If(type1=4)Then '  req chek noskhe
+			http3.Initialize("ht4",Me)
+			Dim send As String= "var=5&phone="&Main.phon_num
+			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+			
+		Else If(type1=5)Then '  send msg
+			If(File.Exists(Starter.Provider.SharedFolder,tempFile))Then
+				upload_file(Starter.Provider.SharedFolder&"/"&tempFile)
+			Else
+				tempFile=""	
+			End If
+			
+			If(et_msg.Text.Trim="")Then
+				ToastMessageShow("کادر پیام خالی است",False)
+			Else
+					
+				http3.Initialize("ht5",Me)
+				Dim send As String= "var=6&phone="&Main.phon_num&"&msg="&et_msg.Text&"&file_name="&tempFile
+				http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+				pan_all_msg.Visible=False
+		
+				
+			End If
+			
+			
+		Else If (type1=6) Then  ' recive pic
+			http3.Initialize("ht7", Me)
+			http3.Download("https://taravatgroup.ir/avatar_ezaf_users/"&picName)
+		Else If(type1=7)Then	
+			
+			http3.Initialize("ht8", Me)
+		
+			Dim send As String= "var=1&phone="&Main.phon_num&"&key=mME22eBbA20aDd1401"
+			http3.PostString("https://taravatgroup.ir/user_msg.php",send)
 		End If
 		
-		http3.Initialize("ht2",Me)
-		Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic
-		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-		
-		
-		
-	Else If(type1=3)Then '  req transfer noskhe
-		http3.Initialize("ht3",Me)
-		Dim send As String= "var=4&phone="&Main.phon_num
-		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-		
-	Else If(type1=4)Then '  req chek noskhe
-		http3.Initialize("ht4",Me)
-		Dim send As String= "var=5&phone="&Main.phon_num
-		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-		
-	Else If(type1=5)Then '  send msg
-		If(File.Exists(Starter.Provider.SharedFolder,tempFile))Then
-			upload_file(Starter.Provider.SharedFolder&"/"&tempFile)
-		End If
-		
-		http3.Initialize("ht5",Me)
-		Dim send As String= "var=6&phone="&Main.phon_num&"&msg="&et_msg.Text&"&file_name="&tempFile
-		http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-		
-	Else If (type1=6) Then  ' recive pic
-		http3.Initialize("ht7", Me)
-		http3.Download("https://taravatgroup.ir/avatar_ezaf_users/"&picName)
 	End If
-	
-	
 	
 End Sub
  
@@ -314,7 +339,11 @@ Sub Jobdone (job As HttpJob)
 				img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
 				img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
 			
-			
+			else If job.JobName="ht8" Then  '  recive my msg
+				
+				wb_show_myMsg.LoadHtml(job.GetString)
+				
+				
 			End If
 		
 			job.Release
@@ -377,6 +406,8 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 			lbl_back_Click
 		Else If(pan_all_msg.Visible=True)Then
 			pan_all_msg.Visible=False
+		Else If(pan_all_show_myMsg.Visible=True)Then
+			pan_all_show_myMsg.Visible=False
 		Else
 			lbl_back_home_Click
 		End If
@@ -532,6 +563,7 @@ Private Sub lbl_send_up_Click
 		
 		
 		lbl_icon_up.Text=Chr(0xF00C)
+		lbl_icon_noUp.Visible=True
 	Else
 		ToastMessageShow("No Success :(",True)
 	End If
@@ -540,11 +572,8 @@ End Sub
 
 
 Private Sub lbl_send_msg_end_Click
+	
 	http_initial_1(5)
-	pan_all_msg.Visible=False
-	
-	
-	
 	
 End Sub
 
@@ -555,4 +584,28 @@ End Sub
 
 Private Sub lbl_send_up_icon_Click
 	lbl_send_up_Click
+End Sub
+
+Private Sub lbl_all_msg_Click
+	http_initial_1(7)
+	pan_all_show_myMsg.Visible=True
+	
+	
+End Sub
+
+Private Sub lbl_back_Shmsg_Click
+	pan_all_show_myMsg.Visible=False
+End Sub
+
+Private Sub lbl_send_msg2_Click
+	lbl_send_msg_Click
+	pan_all_show_myMsg.Visible=False
+End Sub
+
+Private Sub lbl_icon_noUp_Click
+	
+File.Delete(Starter.Provider.SharedFolder, tempFile)
+	
+lbl_icon_up.Text=""
+lbl_icon_noUp.Visible=False
 End Sub
