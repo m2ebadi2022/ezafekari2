@@ -2214,6 +2214,8 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 			pan_all_liteMenu.Visible=False
 		Else If (pan_all_chekUpdate.Visible==True)Then
 			pan_all_chekUpdate.Visible=False
+		Else If(pan_all_FT.Visible=True)Then
+			pan_all_FT.Visible=False
 		Else 
 		
 			

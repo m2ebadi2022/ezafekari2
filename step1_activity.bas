@@ -53,10 +53,10 @@ Private Sub lbl_run_step1_Click
 	
 	If(et_nameFamili.Text="")Then
 		ToastMessageShow("قسمت نام خالی است ",False)
-	Else If(et_email.Text="")Then
+	Else If(et_email.Text.Trim="")Then
 		
 		ToastMessageShow("قسمت ایمیل خالی است ",False)
-	Else If(myfunc.Validate_Email(et_email.Text)=False)Then
+	Else If(myfunc.Validate_Email(et_email.Text.Trim)=False)Then
 		
 		ToastMessageShow(" ایمیل نامعتبر است ",False)
 	Else
@@ -76,7 +76,7 @@ Sub http_initial_1(type1 As Int)
 		Dim str_key As String=myfunc.random_id(15)
 		http2.Initialize("http2",Me)
 		Dim send As String
-		send = "var=1&phone="&Main.phon_num&"&name="&et_nameFamili.Text&"&email="&et_email.Text&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model&"&user_key="&str_key
+		send = "var=1&phone="&Main.phon_num&"&name="&et_nameFamili.Text.trim&"&email="&et_email.Text.trim&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model&"&user_key="&str_key
 		http2.PostString("https://taravatgroup.ir/save_acc.php",send)
 		
 	End If

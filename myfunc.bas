@@ -83,10 +83,25 @@ Sub check_internet As Boolean
 	Else If Main.phon.GetSettings("wifi_on")=1 Then
 		connected=True
 	End If
+	
+	
 	Return connected
 End Sub
 
-
+'
+'Sub Jobdone (job As HttpJob)
+'	Try
+'		
+'		If job.Success = True Then
+'		
+'			If job.JobName="ht7" Then
+'				
+'			
+'			End If
+'		End If
+'	Catch
+'	End Try
+'End Sub				
 
 Sub num_list(year1 As String, moon1 As String) As List
 	Dim result As List

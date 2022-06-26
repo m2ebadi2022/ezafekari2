@@ -81,14 +81,6 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".setting_activity"
-			android:label="اضافه کاری من"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
 			android:name=".bime_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
@@ -170,6 +162,14 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".payankar_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".setting_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">

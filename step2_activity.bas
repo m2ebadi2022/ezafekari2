@@ -187,19 +187,19 @@ Sub http_initial_1(type1 As Int)
 			End If
 			
 			http3.Initialize("ht2",Me)
-			Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic
+			Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic&"&pic_name="&picName
 			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 			
 			
 			
 		Else If(type1=3)Then '  req transfer noskhe
 			http3.Initialize("ht3",Me)
-			Dim send As String= "var=4&phone="&Main.phon_num
+			Dim send As String= "var=4&phone="&Main.phon_num&"&name="&lbl_nameFamili.Text
 			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 			
 		Else If(type1=4)Then '  req chek noskhe
 			http3.Initialize("ht4",Me)
-			Dim send As String= "var=5&phone="&Main.phon_num
+			Dim send As String= "var=5&phone="&Main.phon_num&"&name="&lbl_nameFamili.Text
 			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 			
 		Else If(type1=5)Then '  send msg
@@ -214,7 +214,7 @@ Sub http_initial_1(type1 As Int)
 			Else
 					
 				http3.Initialize("ht5",Me)
-				Dim send As String= "var=6&phone="&Main.phon_num&"&msg="&et_msg.Text&"&file_name="&tempFile
+				Dim send As String= "var=6&phone="&Main.phon_num&"&msg="&et_msg.Text&"&file_name="&tempFile&"&name="&lbl_nameFamili.Text
 				http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 				pan_all_msg.Visible=False
 		
@@ -310,6 +310,7 @@ Sub Jobdone (job As HttpJob)
 				If(job.GetString.Contains("ok_add"))Then
 					MsgboxAsync("پیغام شما با موفقیت ثبت گردید ونتیجه آن در اصرع وقت به اطلاع شما خواهد رسید. با تشکر ","پیام")
 				Else
+					
 					MsgboxAsync("خطا در ارسال پیغام، دوباره امتحان کنید.","خطا")
 				End If
 		
@@ -364,10 +365,13 @@ Sub Jobdone (job As HttpJob)
 '			Else
 '				lbl_noske.Text="نسخه طلایی"
 '			End If
+				Main.phon_num=ls_user.Get(2)
+				lbl_phoneNum.Text=Main.phon_num
 				
-				lbl_phoneNum.Text=ls_user.Get(2)
+				picName="user-"&Main.phon_num&"-"&ls_user.Get(4)&".jpg"
 			
-			
+				img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+				img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
 			
 			End If
 		
@@ -425,28 +429,35 @@ Private Sub lbl_back_home_Click
 End Sub
 
 Private Sub lbl_image_up_Click
-	CC.Show("image/*", "Choose image")
+	Try
+		CC.Show("image/*", "Choose image")
 	
-	Wait For CC_Result (Success As Boolean, Dir As String, FileName As String)
-	If Success = True Then
-		
-		Try
-			File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"temp_pic.jpg")
-			bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
-			Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
-			bmp.WriteToStream(out, 20, "JPEG")
-			out.Close
-		Catch
+		Wait For CC_Result (Success As Boolean, Dir As String, FileName As String)
+		If Success = True Then
 			
-			File.Copy(Dir,FileName,Starter.Provider.SharedFolder,picName)
-			Log(LastException)
-		End Try
-	
-		img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Starter.Provider.SharedFolder,picName))
+			Try
+				File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"temp_pic.jpg")
+				bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"temp_pic.jpg")
+				Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,picName, False)
+				bmp.WriteToStream(out, 20, "JPEG")
+				out.Close
+			Catch
+				
+				File.Copy(Dir,FileName,Starter.Provider.SharedFolder,picName)
+				Log(LastException)
+			End Try
 		
-	Else
-		ToastMessageShow("No Success :(",True)
-	End If
+			img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(Starter.Provider.SharedFolder,picName))
+			
+		Else
+			ToastMessageShow("انجام نشد :(",True)
+		End If
+		
+	Catch
+		ToastMessageShow("خطا در بارگزاری",True)
+		Log(LastException)
+	End Try
+	
 End Sub
 
 
@@ -532,41 +543,46 @@ Private Sub pan_all_msg_Click
 End Sub
 
 Private Sub lbl_send_up_Click
+	Try
+		CC.Show("image/*", "Choose image")
 	
-	CC.Show("image/*", "Choose image")
+		Wait For CC_Result (Success As Boolean, Dir As String, FileName As String)
+		If Success = True Then
+			
+			
+			
+			tempFile=Main.phon_num&"-"&myfunc.random_id(10)&".jpg"
+			
+			Try
+				
+				
+				File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"tempimg.jpg")
+				bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"tempimg.jpg")
+				Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,tempFile, False)
+				bmp.WriteToStream(out, 50, "JPEG")
+				out.Close
+			
+			
+			Catch
+				
+				File.Copy(Dir,FileName,Starter.Provider.SharedFolder, tempFile)
+				
+				
+				Log(LastException)
+			End Try
+			
+			
+			
+			lbl_icon_up.Text=Chr(0xF00C)
+			lbl_icon_noUp.Visible=True
+		Else
+			ToastMessageShow("انجام نشد :(",True)
+		End If
+	Catch
+		ToastMessageShow("خطا در بارگزاری",True)
+		Log(LastException)
+	End Try
 	
-	Wait For CC_Result (Success As Boolean, Dir As String, FileName As String)
-	If Success = True Then
-		
-		
-		
-		tempFile=Main.phon_num&"-"&myfunc.random_id(10)&".jpg"
-		
-		Try
-			
-			
-			File.Copy(Dir,FileName,Starter.Provider.SharedFolder,"tempimg.jpg")
-			bmp = comp.compressToBitmap(Starter.Provider.SharedFolder,"tempimg.jpg")
-			Dim out As OutputStream = File.OpenOutput(Starter.Provider.SharedFolder,tempFile, False)
-			bmp.WriteToStream(out, 50, "JPEG")
-			out.Close
-		
-		
-		Catch
-			
-			File.Copy(Dir,FileName,Starter.Provider.SharedFolder, tempFile)
-			
-			
-			Log(LastException)
-		End Try
-		
-		
-		
-		lbl_icon_up.Text=Chr(0xF00C)
-		lbl_icon_noUp.Visible=True
-	Else
-		ToastMessageShow("No Success :(",True)
-	End If
 	
 End Sub
 
