@@ -57,6 +57,8 @@ Sub Globals
 	Private wb_show_myMsg As WebView
 	Private pan_all_show_myMsg As Panel
 	Private lbl_icon_noUp As Label
+	Private Label12 As Label
+	Private Panel12 As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -111,7 +113,11 @@ Sub Activity_Create(FirstTime As Boolean)
 		Activity.Finish
 	End If
 	
+	''set color
 	
+	Label12.Color=Main.color4
+	Panel12.Color=Main.color4
+	myfunc.set_font(Activity)
 	
 	
 End Sub

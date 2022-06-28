@@ -70,6 +70,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=Main,Activity_KeyPress,1981,3,step1_activity,Globals,18,0,step1_activity,Jobdone,87,0,step1_activity,http_initial_1,66,2,step1_activity,lbl_run_step1_Click,57,2,hogog_activity,Activity_Create,144,0,step2_activity,Jobdone,306,6,step2_activity,lbl_edit_Click,386,0,step2_activity,http_initial_1,210,6,step2_activity,lbl_send_up_Click,568,6,step2_activity,lbl_image_up_Click,442,4
+NavigationStack=step2_activity,lbl_edit_Click,386,0,step2_activity,http_initial_1,210,6,step2_activity,lbl_send_up_Click,568,6,Visual Designer,home_layout.bal,-100,1,eidi_activity,Activity_Create,47,0,step2_activity,lbl_image_up_Click,442,4,step2_activity,Globals,54,0,Visual Designer,step2.bal,-100,3,Visual Designer,bime_layout.bal,-100,2,step2_activity,Activity_Create,113,0
 SelectedBuild=0
 VisibleModules=14,6,21,22,23
