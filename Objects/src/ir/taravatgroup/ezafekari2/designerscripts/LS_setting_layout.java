@@ -6,7 +6,8 @@ import anywheresoftware.b4a.BA;
 
 public class LS_setting_layout{
 
-public static void LS_general(java.util.LinkedHashMap<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) {
+public static void LS_general(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
+java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 views.get("pan_colors").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_colors").vw.getWidth() / 2)));
 views.get("pan_colors").vw.setTop((int)((40d / 100 * height) - (views.get("pan_colors").vw.getHeight() / 2)));

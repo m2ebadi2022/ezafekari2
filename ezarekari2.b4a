@@ -238,12 +238,12 @@ Module9=FingerprintManager
 NumberOfFiles=94
 NumberOfLibraries=23
 NumberOfModules=23
-Version=11.5
+Version=11.8
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 17
-	#VersionName: 4.6
+	#VersionCode: 18
+	#VersionName: 4.7
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true

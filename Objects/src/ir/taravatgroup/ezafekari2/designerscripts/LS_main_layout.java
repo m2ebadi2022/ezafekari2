@@ -6,7 +6,8 @@ import anywheresoftware.b4a.BA;
 
 public class LS_main_layout{
 
-public static void LS_general(java.util.LinkedHashMap<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) {
+public static void LS_general(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
+java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 views.get("btn_menu_gozaresh").vw.setLeft((int)(0d));
 views.get("btn_menu_gozaresh").vw.setWidth((int)((34d / 100 * width) - (0d)));
