@@ -28,6 +28,8 @@ views.get("pan_setting_hogog").vw.setLeft((int)((views.get("pan_add_morakhasi").
 views.get("pan_add_taradod_fast").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_add_taradod_fast").vw.getWidth() / 2)));
 //BA.debugLineNum = 18;BA.debugLine="pan_add_taradod.Left=pan_add_ezafekari.Left"[home_item/General script]
 views.get("pan_add_taradod").vw.setLeft((int)((views.get("pan_add_ezafekari").vw.getLeft())));
+//BA.debugLineNum = 19;BA.debugLine="pan_add_mamoriat.Right=pan_add_taradod_fast.Left"[home_item/General script]
+views.get("pan_add_mamoriat").vw.setLeft((int)((views.get("pan_add_taradod_fast").vw.getLeft()) - (views.get("pan_add_mamoriat").vw.getWidth())));
 //BA.debugLineNum = 23;BA.debugLine="pan_run_morakhasi.HorizontalCenter=50%x"[home_item/General script]
 views.get("pan_run_morakhasi").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_run_morakhasi").vw.getWidth() / 2)));
 //BA.debugLineNum = 24;BA.debugLine="pan_run_hogog.Left=pan_run_morakhasi.Right"[home_item/General script]

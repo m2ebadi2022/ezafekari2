@@ -70,6 +70,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=shift_activity,Activity_Create,496,0,shift_activity,lbl_go_today_Click,516,0,shift_activity,rsPOP_year_tagvim_MenuItemClick,536,0,shift_activity,rsPOP_moon_tagvim_MenuItemClick,582,1,shift_activity,PA_Click,1159,6,Main,Process_Globals,18,0,shift_activity,lbl_next_Click,1161,0,Main,btn_menu_gozaresh_Click,1428,0,Main,fill_list_gozareshat,1462,0,Main,fill_lists,1360,0
+NavigationStack=Main,btn_menu_gozaresh_Click,1428,0,Main,fill_list_gozareshat,1462,0,Main,fill_lists,1360,0,Main,Process_Globals,25,0,Main,pan_add_morakhasi_Click,1526,0,Visual Designer,home_item.bal,-100,6,Main,lbl_chk_update_ok_Click,3644,0,Main,pan_add_taradod_Click,1691,0,Main,pan_add_ezafekari_Click,1597,0,Main,pan_add_mamoriat_Click,1721,3
 SelectedBuild=0
 VisibleModules=14,6,21,22,23,18

@@ -1,95 +1,97 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
 File1=adastnevis.ttf
-File10=book.png
-File11=box.png
-File12=BRoya.ttf
-File13=b-traffic.ttf
-File14=buy.png
-File15=calc_layout.bal
-File16=calculator.png
-File17=ccr.png
-File18=comment.png
-File19=comment_layout.bal
+File10=BNazanin.ttf
+File11=book.png
+File12=box.png
+File13=BRoya.ttf
+File14=b-traffic.ttf
+File15=buy.png
+File16=calc_layout.bal
+File17=calculator.png
+File18=ccr.png
+File19=comment.png
 File2=add_ezafe.png
-File20=darsad_layout.bal
-File21=db.db
-File22=eidi_layout.bal
-File23=endwork.png
-File24=equal.png
-File25=eydi.png
-File26=fast_run_layout.bal
-File27=fingerprint.png
-File28=ganon.html
-File29=ganon_layout.bal
+File20=comment_layout.bal
+File21=darsad_layout.bal
+File22=db.db
+File23=eidi_layout.bal
+File24=email.png
+File25=endwork.png
+File26=equal.png
+File27=eydi.png
+File28=fast_run_layout.bal
+File29=fingerprint.png
 File3=add_morakhasi.png
-File30=gift.jpg
-File31=gozaresh_layout.bal
-File32=help.png
-File33=help_font.png
-File34=hogog_layout.bal
-File35=home_item.bal
-File36=home_layout.bal
-File37=home-h0.jpg
-File38=home-h1.jpg
-File39=home-h2.jpg
-File4=attention.png
-File40=home-h3.jpg
-File41=home-h4.jpg
-File42=icon.png
-File43=info.png
-File44=info_layout.bal
-File45=item_darsad.bal
-File46=item_fast_run.bal
-File47=item_hogog.bal
-File48=item_list.bal
-File49=item_list_2.bal
-File5=bg3.jpg
-File50=list_layout.bal
-File51=lyscreen.bal
-File52=m1.png
-File53=m2.png
-File54=m3.png
-File55=main_layout.bal
-File56=mandeh.png
-File57=mohasebe_hogog.png
-File58=morakhasi_item.bal
-File59=morakhasi_layout.bal
-File6=bime_icon.jpg
-File60=my_calander.xls
-File61=newyear.jpg
-File62=noske_item.bal
-File63=payankar_layout.bal
-File64=percentage.png
-File65=set_hogog.png
-File66=set_moh.png
-File67=sett_hogog_item.bal
-File68=setting.png
-File69=setting_hogog_layout.bal
-File7=bime_layout.bal
-File70=setting_layout.bal
-File71=setting_layout_items.bal
-File72=shift_layout.bal
-File73=shift_page_items.bal
-File74=shift_work.png
-File75=show_gozaresh_layout.bal
-File76=speed_run.png
-File77=splash_layout.bal
-File78=step0.bal
-File79=step1.bal
-File8=bkoodkbd.ttf
-File80=step2.bal
-File81=sudan bd_mrt.ttf
-File82=SYEKAN.TTF
-File83=tab_layout_ezafekari.bal
-File84=tab_layout_morakhasi.bal
-File85=tab_layout_taradod.bal
-File86=taradod_fast_layout.bal
-File87=textBox.png
-File88=textbox2.png
-File89=transfer_time.png
-File9=BNazanin.ttf
-File90=user.png
-File91=Vazir.ttf
+File30=ganon.html
+File31=ganon_layout.bal
+File32=gift.jpg
+File33=gozaresh_layout.bal
+File34=help.png
+File35=help_font.png
+File36=hogog_layout.bal
+File37=home_item.bal
+File38=home_layout.bal
+File39=home-h0.jpg
+File4=add_other.png
+File40=home-h1.jpg
+File41=home-h2.jpg
+File42=home-h3.jpg
+File43=home-h4.jpg
+File44=icon.png
+File45=info.png
+File46=info_layout.bal
+File47=item_darsad.bal
+File48=item_fast_run.bal
+File49=item_hogog.bal
+File5=attention.png
+File50=item_list.bal
+File51=item_list_2.bal
+File52=list_layout.bal
+File53=lyscreen.bal
+File54=m1.png
+File55=m2.png
+File56=m3.png
+File57=main_layout.bal
+File58=mandeh.png
+File59=mohasebe_hogog.png
+File6=bg3.jpg
+File60=morakhasi_item.bal
+File61=morakhasi_layout.bal
+File62=my_calander.xls
+File63=newyear.jpg
+File64=noske_item.bal
+File65=payankar_layout.bal
+File66=percentage.png
+File67=set_hogog.png
+File68=set_moh.png
+File69=sett_hogog_item.bal
+File7=bime_icon.jpg
+File70=setting.png
+File71=setting_hogog_layout.bal
+File72=setting_layout.bal
+File73=setting_layout_items.bal
+File74=shift_layout.bal
+File75=shift_page_items.bal
+File76=shift_work.png
+File77=show_gozaresh_layout.bal
+File78=speed_run.png
+File79=splash_layout.bal
+File8=bime_layout.bal
+File80=step0.bal
+File81=step1.bal
+File82=step2.bal
+File83=sudan bd_mrt.ttf
+File84=SYEKAN.TTF
+File85=tab_layout_ezafekari.bal
+File86=tab_layout_morakhasi.bal
+File87=tab_layout_taradod.bal
+File88=taradod_fast_layout.bal
+File89=textBox.png
+File9=bkoodkbd.ttf
+File90=textbox2.png
+File91=transfer_time.png
+File92=user.png
+File93=Vazir.ttf
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
@@ -181,6 +183,8 @@ FileGroup89=Default Group
 FileGroup9=Default Group
 FileGroup90=Default Group
 FileGroup91=Default Group
+FileGroup92=Default Group
+FileGroup93=Default Group
 Group=Default Group
 Library1=compressor
 Library10=nicespinner
@@ -229,7 +233,7 @@ Module6=dbCode
 Module7=eidi_activity
 Module8=fast_run_activity
 Module9=FingerprintManager
-NumberOfFiles=91
+NumberOfFiles=93
 NumberOfLibraries=23
 NumberOfModules=23
 Version=11.8
@@ -1921,6 +1925,44 @@ Private Sub pan_add_taradod_Click
 		lbl_tim2.Text="00:00"
 			
 	End If
+	
+End Sub
+
+
+Private Sub pan_add_mamoriat_Click
+	is_for_edit=False
+	pan_ezaf_taradod.Visible=True
+	pan_all.Visible=True
+	lbl_box_title.Text="ثبت ماموریت"
+	lbl_time_as.Text="از :"
+	lbl_time_ta.Text="تا :"
+	index_box=5
+	lbl_time_show.Text=""
+	et_tozihat.Text=""
+	lbl_ezaf_taradod.Visible=False
+	'lbl_ezaf_taradod.Text="فوق العاده (جمعه کاری)"
+	'lbl_ezaf_taradod.TextColor=Colors.Black
+	ckb_ezaf_taradod.Enabled=False
+	ckb_ezaf_taradod.Visible=False
+	ckb_ezaf_taradod.Checked=False
+	
+	
+	
+	
+	
+	pik_year1.Text=myfunc.fa2en(persianDate.PersianYear)
+	pik_moon1.Tag=myfunc.fa2en(persianDate.PersianMonth)
+	pik_moon1.Text=moon.Get(pik_moon1.Tag-1)
+	pik_day1.Text=myfunc.fa2en(persianDate.PersianDay)
+	''=====================
+	
+	lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+	lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+	
+	
+	
+		lbl_tim1.Text="00:00"
+		lbl_tim2.Text="00:00"
 	
 End Sub
 
@@ -3873,3 +3915,5 @@ Private Sub lbl_chk_update_ok_Click
 	
 	pan_all_chekUpdate_Click
 End Sub
+
+
