@@ -83,15 +83,16 @@ File82=step2.bal
 File83=sudan bd_mrt.ttf
 File84=SYEKAN.TTF
 File85=tab_layout_ezafekari.bal
-File86=tab_layout_morakhasi.bal
-File87=tab_layout_taradod.bal
-File88=taradod_fast_layout.bal
-File89=textBox.png
+File86=tab_layout_mamoriat.bal
+File87=tab_layout_morakhasi.bal
+File88=tab_layout_taradod.bal
+File89=taradod_fast_layout.bal
 File9=bkoodkbd.ttf
-File90=textbox2.png
-File91=transfer_time.png
-File92=user.png
-File93=Vazir.ttf
+File90=textBox.png
+File91=textbox2.png
+File92=transfer_time.png
+File93=user.png
+File94=Vazir.ttf
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
@@ -185,6 +186,7 @@ FileGroup90=Default Group
 FileGroup91=Default Group
 FileGroup92=Default Group
 FileGroup93=Default Group
+FileGroup94=Default Group
 Group=Default Group
 Library1=compressor
 Library10=nicespinner
@@ -233,7 +235,7 @@ Module6=dbCode
 Module7=eidi_activity
 Module8=fast_run_activity
 Module9=FingerprintManager
-NumberOfFiles=93
+NumberOfFiles=94
 NumberOfLibraries=23
 NumberOfModules=23
 Version=11.8
@@ -326,6 +328,7 @@ Sub Globals
 	Dim list_ezafekari_id As List
 	Dim list_morakhasi_id As List
 	Dim list_taradod_id As List
+	Dim list_mamoriat_id As List
 	Dim list_gozareshat_id As List
 	
 	
@@ -530,6 +533,7 @@ Sub Globals
 	Private webVeiw_chk_update As WebView
 	Private lbl_chk_update_ok As Label
 	Private lbl_day_CLV As Label
+	Private cust_LV_mamoriat As CustomListView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -1396,10 +1400,10 @@ Private Sub btn_menu_list_Click
 '	End Select
 	
 	
-	TabHost1.AddTab("اضافه کاری ها" , "tab_layout_ezafekari.bal")
-	TabHost1.AddTab(" مرخصی ها" , "tab_layout_morakhasi.bal")
-	TabHost1.AddTab(" تردد ها" , "tab_layout_taradod.bal")
-	
+	TabHost1.AddTab("اضافه کاری" , "tab_layout_ezafekari.bal")
+	TabHost1.AddTab("مرخصی" , "tab_layout_morakhasi.bal")
+	TabHost1.AddTab("تردد" , "tab_layout_taradod.bal")
+	TabHost1.AddTab("ماموریت" , "tab_layout_mamoriat.bal")
 	
 	TabHost1.CurrentTab=curent_tab_list
 	''ezafek
@@ -1410,6 +1414,9 @@ Private Sub btn_menu_list_Click
 	
 	'' taradod
 	list_taradod_id.Initialize
+	
+	'' mamorit
+	list_mamoriat_id.Initialize
 	''================
 	
 	
@@ -1449,6 +1456,9 @@ Private Sub TabHost1_TabChanged
 			Case 2
 				ls_all_saat=dbCode.all_taradod_mah(myfunc.fa2en(sp_year.SelectedItem),myfunc.convert_adad(sp_moon.SelectedIndex+1))
 				str_saat=ls_all_saat.Get(0)&" ساعت و"&ls_all_saat.Get(1)&" دقیقه "
+			Case 3
+				ls_all_saat=dbCode.all_mamoriat_mah(myfunc.fa2en(sp_year.SelectedItem),myfunc.convert_adad(sp_moon.SelectedIndex+1))
+				str_saat=ls_all_saat.Get(0)&" روز و"&ls_all_saat.Get(1)&" ساعت و "&ls_all_saat.Get(2)&" دقیقه "
 		End Select
 		
 		
@@ -1654,6 +1664,67 @@ Sub fill_lists (year1 As String, moon1 As String)
 				p.SetLayoutAnimated(0, 0, 0, 95%x, 10dip)
 		End Select
 		cust_LV_taradod.Add(p,"")
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	End If
+	
+	
+	''--------- لیست ماموریت ها -------------
+	cust_LV_mamoriat.Clear
+	list_mamoriat_id.Clear
+	
+	dbCode.connect_db
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_mamoriat WHERE date_from LIKE '%"&year1&"/"&moon1&"%' ORDER BY  date_from DESC;")
+	Do While dbCode.res.NextRow
+		Dim str1 As StringBuilder
+		str1.Initialize
+		If(dbCode.res.GetString("end_tim_d")<>0)Then
+			str1.Append(dbCode.res.GetString("end_tim_d")&" روز ").Append(CRLF)
+		End If
+		str1.Append(dbCode.res.GetString("end_tim_h")&" ساعت ").Append(CRLF)
+		str1.Append(dbCode.res.GetString("end_tim_m")&" دقیقه ")
+		
+		
+		
+		p = xui.CreatePanel("p")
+		p.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
+		p.LoadLayout("item_list")
+	
+		cust_LV_mamoriat.Add(p,dbCode.res.GetString("id"))
+		
+		lbl_day_CLV.Text=myfunc.get_day_name(dbCode.res.GetString("date_from"))
+		
+		lbl_date_CLV.Text=dbCode.res.GetString("date_from")&" - "&dbCode.res.GetString("date_to")
+		lbl_hour_CLV.Text=dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("time_to")
+		lbl_time_CLV.Text=str1.ToString
+		lbl_tozih_CLV.Text=dbCode.res.GetString("tozihat")
+		lbl_remove_from_list.tag=dbCode.res.GetString("id")
+		lbl_edit_from_list.tag=dbCode.res.GetString("id")
+		
+		list_mamoriat_id.Add(dbCode.res.GetString("id"))
+		
+		
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	Loop
+	dbCode.res.Close
+	dbCode.sql.Close
+	
+	If(cust_LV_mamoriat.LastVisibleIndex<5)Then
+		p = xui.CreatePanel("p")
+		Select cust_LV_mamoriat.LastVisibleIndex
+			Case -1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, (TabHost1.Height-100))
+			Case 0
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 400dip)
+			Case 1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 300dip)
+			Case 2
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 150dip)
+			Case 3
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 100dip)
+			Case 4
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 10dip)
+		End Select
+		cust_LV_mamoriat.Add(p,"")
 		'gest.SetOnTouchListener(p,"GesturesTouch")
 	End If
 	
@@ -2046,6 +2117,18 @@ Sub add_end
 		Else
 			add_taradod_fast
 		End If
+	Else If (index_box=5) Then
+		
+		If(chek=False)Then
+			If(alist.Get(4)<5)Then
+				add_mamoriat_sub
+			Else
+				lbl_vip_Click
+				
+			End If
+		Else
+			add_mamoriat_sub
+		End If
 		
 	End If
 End Sub
@@ -2227,6 +2310,68 @@ Sub add_taradod_sub
 	
 End Sub
 
+
+
+Sub add_mamoriat_sub
+	Dim state_mod As Int=0
+	Dim str_mod As String=""
+'	If(ckb_ezaf_taradod.Checked=True)Then
+'		state_mod=2
+'		str_mod=" (فوق العاده)- "
+'	Else
+'		state_mod=0
+'	End If
+	
+	
+	Try
+		If(day_bt<0 Or hour_bt<0 Or min_bt<0)Then
+			ToastMessageShow("خطا! زمان منفی نمی شود",True)
+		Else If (moon_bt<>0 Or year_bt<>0)Then
+			ToastMessageShow("خطا! زمان نادرست است",True)
+		Else If (hour_bt=0 And min_bt=0 And day_bt=0 )Then
+			ToastMessageShow("خطا! انتخاب زمان  ",True)
+		Else
+			
+			If(is_for_edit=False)Then
+				If(dbCode.isexist_mamoriat_by_date(date1)=True)Then
+					myfunc.help_man("توجه","برای این تاریخ ماموریت وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+				Else
+					dbCode.add_mamoriat(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_mod&et_tozihat.Text,state_mod)
+					
+'					Dim ls_temp_time1 As List
+'					ls_temp_time1.Initialize
+'					
+'					ls_temp_time1.Add(lbl_tim1.Text)
+'					ls_temp_time1.Add(lbl_tim2.Text)
+'					
+'					File.WriteList(File.DirInternal,"temp_time1.txt",ls_temp_time1)
+					
+					ToastMessageShow ("اضافه شد",False)
+					btn_menu_home_Click
+				End If
+			Else
+				
+				dbCode.edit_mamoriat(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,state_mod)
+				ToastMessageShow ("ویرایش شد",False)
+				
+				
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+'				btn_menu_list_Click
+'				TabHost1.CurrentTab=0
+			End If
+			
+			pan_all_Click
+			
+			
+		End If
+		
+	Catch
+		ToastMessageShow("خطا",False)
+	End Try
+	
+	
+	
+End Sub
 
 
 
@@ -3322,6 +3467,11 @@ Private Sub lbl_edit_from_list_Click
 		lbl_box_title.Text="ویرایش تردد"
 		ckb_ezaf_taradod.Visible=False
 		lbl_ezaf_taradod.Visible=False
+	Else if (TabHost1.CurrentTab=3)Then
+		pan_add_mamoriat_Click
+		lbl_box_title.Text="ویرایش ماموریت"
+		ckb_ezaf_taradod.Visible=False
+		lbl_ezaf_taradod.Visible=False
 	End If
 	is_for_edit=True
 	get_dataEdit_byId(current_id_edit)
@@ -3378,6 +3528,11 @@ Sub get_dataEdit_byId(id1 As Int)
 		dbCode.res=dbCode.sql.ExecQuery("SELECT * FROM tb_taradod WHERE id="&id1)
 		dbCode.res.Position=0
 		
+		
+	Else If(index_box=5)Then
+		dbCode.res=dbCode.sql.ExecQuery("SELECT * FROM tb_mamoriat WHERE id="&id1)
+		dbCode.res.Position=0
+			
 		
 	End If
 	
@@ -3439,7 +3594,19 @@ Private Sub lbl_remove_from_list_Click
 				'btn_menu_list_Click
 			End If
 		End If
+	Else if (TabHost1.CurrentTab=3)Then
+		Dim result As Int
+		result = Msgbox2("آیا این مورد حذف شود؟", "حذف", "بله", "", "خیر", Null)
+		If result = DialogResponse.Positive Then
 		
+			If (dbCode.delete_mamoriat(b.Tag))Then
+				ToastMessageShow("حذف شد.",False)
+			
+				curent_tab_list=TabHost1.CurrentTab
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+				'btn_menu_list_Click
+			End If
+		End If
 	End If
 
 	

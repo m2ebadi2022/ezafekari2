@@ -375,77 +375,77 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="info_activity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=29229056;
- //BA.debugLineNum = 29229056;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=29229058;
- //BA.debugLineNum = 29229058;BA.debugLine="Activity.LoadLayout(\"info_layout\")";
+RDebugUtils.currentLine=29294592;
+ //BA.debugLineNum = 29294592;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=29294594;
+ //BA.debugLineNum = 29294594;BA.debugLine="Activity.LoadLayout(\"info_layout\")";
 mostCurrent._activity.LoadLayout("info_layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=29229060;
- //BA.debugLineNum = 29229060;BA.debugLine="pan_hed_info.Color=Main.color4";
+RDebugUtils.currentLine=29294596;
+ //BA.debugLineNum = 29294596;BA.debugLine="pan_hed_info.Color=Main.color4";
 mostCurrent._pan_hed_info.setColor(mostCurrent._main._color4 /*int*/ );
-RDebugUtils.currentLine=29229061;
- //BA.debugLineNum = 29229061;BA.debugLine="myfunc.set_font(Activity)";
+RDebugUtils.currentLine=29294597;
+ //BA.debugLineNum = 29294597;BA.debugLine="myfunc.set_font(Activity)";
 mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,mostCurrent._activity);
-RDebugUtils.currentLine=29229062;
- //BA.debugLineNum = 29229062;BA.debugLine="lbl_version_app.Text=Main.app_vesion";
+RDebugUtils.currentLine=29294598;
+ //BA.debugLineNum = 29294598;BA.debugLine="lbl_version_app.Text=Main.app_vesion";
 mostCurrent._lbl_version_app.setText(BA.ObjectToCharSequence(mostCurrent._main._app_vesion /*String*/ ));
-RDebugUtils.currentLine=29229063;
- //BA.debugLineNum = 29229063;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29294599;
+ //BA.debugLineNum = 29294599;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
 RDebugUtils.currentModule="info_activity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
 	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=29491200;
- //BA.debugLineNum = 29491200;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=29491201;
- //BA.debugLineNum = 29491201;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+RDebugUtils.currentLine=29556736;
+ //BA.debugLineNum = 29556736;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+RDebugUtils.currentLine=29556737;
+ //BA.debugLineNum = 29556737;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=29491202;
- //BA.debugLineNum = 29491202;BA.debugLine="lbl_back_Click";
+RDebugUtils.currentLine=29556738;
+ //BA.debugLineNum = 29556738;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
-RDebugUtils.currentLine=29491203;
- //BA.debugLineNum = 29491203;BA.debugLine="Return True";
+RDebugUtils.currentLine=29556739;
+ //BA.debugLineNum = 29556739;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=29491205;
- //BA.debugLineNum = 29491205;BA.debugLine="Return False";
+RDebugUtils.currentLine=29556741;
+ //BA.debugLineNum = 29556741;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=29491207;
- //BA.debugLineNum = 29491207;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29556743;
+ //BA.debugLineNum = 29556743;BA.debugLine="End Sub";
 return false;
 }
 public static String  _lbl_back_click() throws Exception{
 RDebugUtils.currentModule="info_activity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
-RDebugUtils.currentLine=29425664;
- //BA.debugLineNum = 29425664;BA.debugLine="Private Sub lbl_back_Click";
-RDebugUtils.currentLine=29425666;
- //BA.debugLineNum = 29425666;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=29491200;
+ //BA.debugLineNum = 29491200;BA.debugLine="Private Sub lbl_back_Click";
+RDebugUtils.currentLine=29491202;
+ //BA.debugLineNum = 29491202;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=29425667;
- //BA.debugLineNum = 29425667;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29491203;
+ //BA.debugLineNum = 29491203;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="info_activity";
-RDebugUtils.currentLine=29360128;
- //BA.debugLineNum = 29360128;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=29360130;
- //BA.debugLineNum = 29360130;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29425664;
+ //BA.debugLineNum = 29425664;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=29425666;
+ //BA.debugLineNum = 29425666;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="info_activity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=29294592;
- //BA.debugLineNum = 29294592;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=29294594;
- //BA.debugLineNum = 29294594;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29360128;
+ //BA.debugLineNum = 29360128;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=29360130;
+ //BA.debugLineNum = 29360130;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_email_click() throws Exception{
@@ -454,41 +454,41 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_email_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_email_click", null));}
 anywheresoftware.b4a.objects.IntentWrapper _in2 = null;
 anywheresoftware.b4j.object.JavaObject _jo2 = null;
-RDebugUtils.currentLine=29687808;
- //BA.debugLineNum = 29687808;BA.debugLine="Private Sub lbl_email_Click";
-RDebugUtils.currentLine=29687809;
- //BA.debugLineNum = 29687809;BA.debugLine="Try";
-try {RDebugUtils.currentLine=29687811;
- //BA.debugLineNum = 29687811;BA.debugLine="mail.To.Add(\"m2ebadi1369@outlook.com\")";
+RDebugUtils.currentLine=29753344;
+ //BA.debugLineNum = 29753344;BA.debugLine="Private Sub lbl_email_Click";
+RDebugUtils.currentLine=29753345;
+ //BA.debugLineNum = 29753345;BA.debugLine="Try";
+try {RDebugUtils.currentLine=29753347;
+ //BA.debugLineNum = 29753347;BA.debugLine="mail.To.Add(\"m2ebadi1369@outlook.com\")";
 mostCurrent._mail.To.Add((Object)("m2ebadi1369@outlook.com"));
-RDebugUtils.currentLine=29687813;
- //BA.debugLineNum = 29687813;BA.debugLine="Dim in2 As Intent = mail.GetIntent";
+RDebugUtils.currentLine=29753349;
+ //BA.debugLineNum = 29753349;BA.debugLine="Dim in2 As Intent = mail.GetIntent";
 _in2 = new anywheresoftware.b4a.objects.IntentWrapper();
 _in2 = (anywheresoftware.b4a.objects.IntentWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.IntentWrapper(), (android.content.Intent)(mostCurrent._mail.GetIntent()));
-RDebugUtils.currentLine=29687814;
- //BA.debugLineNum = 29687814;BA.debugLine="in2.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION";
+RDebugUtils.currentLine=29753350;
+ //BA.debugLineNum = 29753350;BA.debugLine="in2.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION";
 _in2.setFlags((int) (1));
-RDebugUtils.currentLine=29687816;
- //BA.debugLineNum = 29687816;BA.debugLine="Dim jo2 As JavaObject = in2";
+RDebugUtils.currentLine=29753352;
+ //BA.debugLineNum = 29753352;BA.debugLine="Dim jo2 As JavaObject = in2";
 _jo2 = new anywheresoftware.b4j.object.JavaObject();
 _jo2 = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_in2.getObject()));
-RDebugUtils.currentLine=29687817;
- //BA.debugLineNum = 29687817;BA.debugLine="jo2.RunMethod(\"setPackage\", Array(\"com.google.an";
+RDebugUtils.currentLine=29753353;
+ //BA.debugLineNum = 29753353;BA.debugLine="jo2.RunMethod(\"setPackage\", Array(\"com.google.an";
 _jo2.RunMethod("setPackage",new Object[]{(Object)("com.google.android.gm")});
-RDebugUtils.currentLine=29687818;
- //BA.debugLineNum = 29687818;BA.debugLine="StartActivity(in2)";
+RDebugUtils.currentLine=29753354;
+ //BA.debugLineNum = 29753354;BA.debugLine="StartActivity(in2)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in2.getObject()));
  } 
        catch (Exception e9) {
-			processBA.setLastException(e9);RDebugUtils.currentLine=29687822;
- //BA.debugLineNum = 29687822;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("129687822",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
-RDebugUtils.currentLine=29687823;
- //BA.debugLineNum = 29687823;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
+			processBA.setLastException(e9);RDebugUtils.currentLine=29753358;
+ //BA.debugLineNum = 29753358;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("629753358",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+RDebugUtils.currentLine=29753359;
+ //BA.debugLineNum = 29753359;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه جمیل را نصب/فعال کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=29687827;
- //BA.debugLineNum = 29687827;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29753363;
+ //BA.debugLineNum = 29753363;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_insta_click() throws Exception{
@@ -497,37 +497,37 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_insta_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_insta_click", null));}
 anywheresoftware.b4a.objects.IntentWrapper _in1 = null;
 anywheresoftware.b4j.object.JavaObject _jo = null;
-RDebugUtils.currentLine=29622272;
- //BA.debugLineNum = 29622272;BA.debugLine="Private Sub lbl_insta_Click";
-RDebugUtils.currentLine=29622273;
- //BA.debugLineNum = 29622273;BA.debugLine="Try";
-try {RDebugUtils.currentLine=29622275;
- //BA.debugLineNum = 29622275;BA.debugLine="Dim in1 As Intent";
+RDebugUtils.currentLine=29687808;
+ //BA.debugLineNum = 29687808;BA.debugLine="Private Sub lbl_insta_Click";
+RDebugUtils.currentLine=29687809;
+ //BA.debugLineNum = 29687809;BA.debugLine="Try";
+try {RDebugUtils.currentLine=29687811;
+ //BA.debugLineNum = 29687811;BA.debugLine="Dim in1 As Intent";
 _in1 = new anywheresoftware.b4a.objects.IntentWrapper();
-RDebugUtils.currentLine=29622276;
- //BA.debugLineNum = 29622276;BA.debugLine="in1.Initialize(in1.ACTION_VIEW, \"http://instagra";
+RDebugUtils.currentLine=29687812;
+ //BA.debugLineNum = 29687812;BA.debugLine="in1.Initialize(in1.ACTION_VIEW, \"http://instagra";
 _in1.Initialize(_in1.ACTION_VIEW,"http://instagram.com/_u/taravat_group_official");
-RDebugUtils.currentLine=29622277;
- //BA.debugLineNum = 29622277;BA.debugLine="Dim jo As JavaObject = in1";
+RDebugUtils.currentLine=29687813;
+ //BA.debugLineNum = 29687813;BA.debugLine="Dim jo As JavaObject = in1";
 _jo = new anywheresoftware.b4j.object.JavaObject();
 _jo = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_in1.getObject()));
-RDebugUtils.currentLine=29622278;
- //BA.debugLineNum = 29622278;BA.debugLine="jo.RunMethod(\"setPackage\", Array(\"com.instagram.";
+RDebugUtils.currentLine=29687814;
+ //BA.debugLineNum = 29687814;BA.debugLine="jo.RunMethod(\"setPackage\", Array(\"com.instagram.";
 _jo.RunMethod("setPackage",new Object[]{(Object)("com.instagram.android")});
-RDebugUtils.currentLine=29622280;
- //BA.debugLineNum = 29622280;BA.debugLine="StartActivity(in1)";
+RDebugUtils.currentLine=29687816;
+ //BA.debugLineNum = 29687816;BA.debugLine="StartActivity(in1)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in1.getObject()));
  } 
        catch (Exception e8) {
-			processBA.setLastException(e8);RDebugUtils.currentLine=29622283;
- //BA.debugLineNum = 29622283;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("129622283",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
-RDebugUtils.currentLine=29622284;
- //BA.debugLineNum = 29622284;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
+			processBA.setLastException(e8);RDebugUtils.currentLine=29687819;
+ //BA.debugLineNum = 29687819;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("629687819",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+RDebugUtils.currentLine=29687820;
+ //BA.debugLineNum = 29687820;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه اینستاگرام را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=29622287;
- //BA.debugLineNum = 29622287;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29687823;
+ //BA.debugLineNum = 29687823;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_whatsapp_click() throws Exception{
@@ -536,37 +536,37 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_whatsapp_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_whatsapp_click", null));}
 anywheresoftware.b4a.objects.IntentWrapper _intent1 = null;
 anywheresoftware.b4j.object.JavaObject _jo1 = null;
-RDebugUtils.currentLine=29556736;
- //BA.debugLineNum = 29556736;BA.debugLine="Private Sub lbl_whatsapp_Click";
-RDebugUtils.currentLine=29556737;
- //BA.debugLineNum = 29556737;BA.debugLine="Try";
-try {RDebugUtils.currentLine=29556739;
- //BA.debugLineNum = 29556739;BA.debugLine="Dim Intent1 As Intent";
+RDebugUtils.currentLine=29622272;
+ //BA.debugLineNum = 29622272;BA.debugLine="Private Sub lbl_whatsapp_Click";
+RDebugUtils.currentLine=29622273;
+ //BA.debugLineNum = 29622273;BA.debugLine="Try";
+try {RDebugUtils.currentLine=29622275;
+ //BA.debugLineNum = 29622275;BA.debugLine="Dim Intent1 As Intent";
 _intent1 = new anywheresoftware.b4a.objects.IntentWrapper();
-RDebugUtils.currentLine=29556740;
- //BA.debugLineNum = 29556740;BA.debugLine="Intent1.Initialize(Intent1.ACTION_VIEW, \"https:/";
+RDebugUtils.currentLine=29622276;
+ //BA.debugLineNum = 29622276;BA.debugLine="Intent1.Initialize(Intent1.ACTION_VIEW, \"https:/";
 _intent1.Initialize(_intent1.ACTION_VIEW,"https://api.whatsapp.com/send?phone=989229796485text=");
-RDebugUtils.currentLine=29556741;
- //BA.debugLineNum = 29556741;BA.debugLine="Dim jo1 As JavaObject = Intent1";
+RDebugUtils.currentLine=29622277;
+ //BA.debugLineNum = 29622277;BA.debugLine="Dim jo1 As JavaObject = Intent1";
 _jo1 = new anywheresoftware.b4j.object.JavaObject();
 _jo1 = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_intent1.getObject()));
-RDebugUtils.currentLine=29556742;
- //BA.debugLineNum = 29556742;BA.debugLine="jo1.RunMethod(\"setPackage\", Array(\"com.whatsapp\"";
+RDebugUtils.currentLine=29622278;
+ //BA.debugLineNum = 29622278;BA.debugLine="jo1.RunMethod(\"setPackage\", Array(\"com.whatsapp\"";
 _jo1.RunMethod("setPackage",new Object[]{(Object)("com.whatsapp")});
-RDebugUtils.currentLine=29556743;
- //BA.debugLineNum = 29556743;BA.debugLine="StartActivity(Intent1)";
+RDebugUtils.currentLine=29622279;
+ //BA.debugLineNum = 29622279;BA.debugLine="StartActivity(Intent1)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_intent1.getObject()));
  } 
        catch (Exception e8) {
-			processBA.setLastException(e8);RDebugUtils.currentLine=29556746;
- //BA.debugLineNum = 29556746;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("129556746",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
-RDebugUtils.currentLine=29556747;
- //BA.debugLineNum = 29556747;BA.debugLine="ToastMessageShow(\"برنامه واتساپ را نصب کنید\",Fal";
+			processBA.setLastException(e8);RDebugUtils.currentLine=29622282;
+ //BA.debugLineNum = 29622282;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("629622282",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+RDebugUtils.currentLine=29622283;
+ //BA.debugLineNum = 29622283;BA.debugLine="ToastMessageShow(\"برنامه واتساپ را نصب کنید\",Fal";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه واتساپ را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=29556752;
- //BA.debugLineNum = 29556752;BA.debugLine="End Sub";
+RDebugUtils.currentLine=29622288;
+ //BA.debugLineNum = 29622288;BA.debugLine="End Sub";
 return "";
 }
 }

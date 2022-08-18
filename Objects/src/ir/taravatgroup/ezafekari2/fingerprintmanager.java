@@ -66,25 +66,25 @@ RDebugUtils.currentModule="fingerprintmanager";
 if (Debug.shouldDelegate(ba, "authenticate", false))
 	 {return ((String) Debug.delegate(ba, "authenticate", null));}
 anywheresoftware.b4j.object.JavaObject _ev = null;
-RDebugUtils.currentLine=26345472;
- //BA.debugLineNum = 26345472;BA.debugLine="Public Sub Authenticate";
-RDebugUtils.currentLine=26345473;
- //BA.debugLineNum = 26345473;BA.debugLine="Cancel";
+RDebugUtils.currentLine=26411008;
+ //BA.debugLineNum = 26411008;BA.debugLine="Public Sub Authenticate";
+RDebugUtils.currentLine=26411009;
+ //BA.debugLineNum = 26411009;BA.debugLine="Cancel";
 __ref._cancel /*String*/ (null);
-RDebugUtils.currentLine=26345474;
- //BA.debugLineNum = 26345474;BA.debugLine="cancelObject.InitializeNewInstance(\"android.os.Ca";
+RDebugUtils.currentLine=26411010;
+ //BA.debugLineNum = 26411010;BA.debugLine="cancelObject.InitializeNewInstance(\"android.os.Ca";
 __ref._cancelobject /*anywheresoftware.b4j.object.JavaObject*/ .InitializeNewInstance("android.os.CancellationSignal",(Object[])(__c.Null));
-RDebugUtils.currentLine=26345475;
- //BA.debugLineNum = 26345475;BA.debugLine="Dim Ev As JavaObject";
+RDebugUtils.currentLine=26411011;
+ //BA.debugLineNum = 26411011;BA.debugLine="Dim Ev As JavaObject";
 _ev = new anywheresoftware.b4j.object.JavaObject();
-RDebugUtils.currentLine=26345476;
- //BA.debugLineNum = 26345476;BA.debugLine="Ev.InitializeNewInstance(Application.PackageName";
+RDebugUtils.currentLine=26411012;
+ //BA.debugLineNum = 26411012;BA.debugLine="Ev.InitializeNewInstance(Application.PackageName";
 _ev.InitializeNewInstance(__c.Application.getPackageName()+".fingerprintmanager.FingerprintAuthentication",new Object[]{this});
-RDebugUtils.currentLine=26345477;
- //BA.debugLineNum = 26345477;BA.debugLine="sensor.RunMethod(\"authenticate\", Array(Null, canc";
+RDebugUtils.currentLine=26411013;
+ //BA.debugLineNum = 26411013;BA.debugLine="sensor.RunMethod(\"authenticate\", Array(Null, canc";
 __ref._sensor /*anywheresoftware.b4j.object.JavaObject*/ .RunMethod("authenticate",new Object[]{__c.Null,(Object)(__ref._cancelobject /*anywheresoftware.b4j.object.JavaObject*/ .getObject()),(Object)(0),(Object)(_ev.getObject()),__c.Null});
-RDebugUtils.currentLine=26345478;
- //BA.debugLineNum = 26345478;BA.debugLine="End Sub";
+RDebugUtils.currentLine=26411014;
+ //BA.debugLineNum = 26411014;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(ir.taravatgroup.ezafekari2.fingerprintmanager __ref,anywheresoftware.b4a.BA _ba,Object _target,String _eventname) throws Exception{
@@ -94,22 +94,22 @@ RDebugUtils.currentModule="fingerprintmanager";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba,_target,_eventname}));}
 anywheresoftware.b4j.object.JavaObject _ctxt = null;
-RDebugUtils.currentLine=26148864;
- //BA.debugLineNum = 26148864;BA.debugLine="Public Sub Initialize (Target As Object, EventName";
-RDebugUtils.currentLine=26148865;
- //BA.debugLineNum = 26148865;BA.debugLine="mTarget = Target";
+RDebugUtils.currentLine=26214400;
+ //BA.debugLineNum = 26214400;BA.debugLine="Public Sub Initialize (Target As Object, EventName";
+RDebugUtils.currentLine=26214401;
+ //BA.debugLineNum = 26214401;BA.debugLine="mTarget = Target";
 __ref._mtarget /*Object*/  = _target;
-RDebugUtils.currentLine=26148866;
- //BA.debugLineNum = 26148866;BA.debugLine="mEventName = EventName";
+RDebugUtils.currentLine=26214402;
+ //BA.debugLineNum = 26214402;BA.debugLine="mEventName = EventName";
 __ref._meventname /*String*/  = _eventname;
-RDebugUtils.currentLine=26148867;
- //BA.debugLineNum = 26148867;BA.debugLine="Dim ctxt As JavaObject";
+RDebugUtils.currentLine=26214403;
+ //BA.debugLineNum = 26214403;BA.debugLine="Dim ctxt As JavaObject";
 _ctxt = new anywheresoftware.b4j.object.JavaObject();
-RDebugUtils.currentLine=26148868;
- //BA.debugLineNum = 26148868;BA.debugLine="sensor = ctxt.InitializeContext.RunMethod(\"getSys";
+RDebugUtils.currentLine=26214404;
+ //BA.debugLineNum = 26214404;BA.debugLine="sensor = ctxt.InitializeContext.RunMethod(\"getSys";
 __ref._sensor /*anywheresoftware.b4j.object.JavaObject*/  = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_ctxt.InitializeContext(ba).RunMethod("getSystemService",new Object[]{(Object)("fingerprint")})));
-RDebugUtils.currentLine=26148869;
- //BA.debugLineNum = 26148869;BA.debugLine="End Sub";
+RDebugUtils.currentLine=26214405;
+ //BA.debugLineNum = 26214405;BA.debugLine="End Sub";
 return "";
 }
 public boolean  _gethardwaredetected(ir.taravatgroup.ezafekari2.fingerprintmanager __ref) throws Exception{
@@ -117,13 +117,13 @@ __ref = this;
 RDebugUtils.currentModule="fingerprintmanager";
 if (Debug.shouldDelegate(ba, "gethardwaredetected", false))
 	 {return ((Boolean) Debug.delegate(ba, "gethardwaredetected", null));}
-RDebugUtils.currentLine=26214400;
- //BA.debugLineNum = 26214400;BA.debugLine="Public Sub getHardwareDetected As Boolean";
-RDebugUtils.currentLine=26214401;
- //BA.debugLineNum = 26214401;BA.debugLine="Return sensor.IsInitialized And sensor.RunMethod(";
+RDebugUtils.currentLine=26279936;
+ //BA.debugLineNum = 26279936;BA.debugLine="Public Sub getHardwareDetected As Boolean";
+RDebugUtils.currentLine=26279937;
+ //BA.debugLineNum = 26279937;BA.debugLine="Return sensor.IsInitialized And sensor.RunMethod(";
 if (true) return __ref._sensor /*anywheresoftware.b4j.object.JavaObject*/ .IsInitialized() && BA.ObjectToBoolean(__ref._sensor /*anywheresoftware.b4j.object.JavaObject*/ .RunMethod("isHardwareDetected",(Object[])(__c.Null)));
-RDebugUtils.currentLine=26214402;
- //BA.debugLineNum = 26214402;BA.debugLine="End Sub";
+RDebugUtils.currentLine=26279938;
+ //BA.debugLineNum = 26279938;BA.debugLine="End Sub";
 return false;
 }
 public boolean  _gethasenrolledfingerprints(ir.taravatgroup.ezafekari2.fingerprintmanager __ref) throws Exception{
@@ -131,13 +131,13 @@ __ref = this;
 RDebugUtils.currentModule="fingerprintmanager";
 if (Debug.shouldDelegate(ba, "gethasenrolledfingerprints", false))
 	 {return ((Boolean) Debug.delegate(ba, "gethasenrolledfingerprints", null));}
-RDebugUtils.currentLine=26279936;
- //BA.debugLineNum = 26279936;BA.debugLine="Public Sub getHasEnrolledFingerprints As Boolean";
-RDebugUtils.currentLine=26279937;
- //BA.debugLineNum = 26279937;BA.debugLine="Return sensor.RunMethod(\"hasEnrolledFingerprints\"";
+RDebugUtils.currentLine=26345472;
+ //BA.debugLineNum = 26345472;BA.debugLine="Public Sub getHasEnrolledFingerprints As Boolean";
+RDebugUtils.currentLine=26345473;
+ //BA.debugLineNum = 26345473;BA.debugLine="Return sensor.RunMethod(\"hasEnrolledFingerprints\"";
 if (true) return BA.ObjectToBoolean(__ref._sensor /*anywheresoftware.b4j.object.JavaObject*/ .RunMethod("hasEnrolledFingerprints",(Object[])(__c.Null)));
-RDebugUtils.currentLine=26279938;
- //BA.debugLineNum = 26279938;BA.debugLine="End Sub";
+RDebugUtils.currentLine=26345474;
+ //BA.debugLineNum = 26345474;BA.debugLine="End Sub";
 return false;
 }
 public String  _auth_complete(ir.taravatgroup.ezafekari2.fingerprintmanager __ref,boolean _success,int _errorcode,String _errormessage) throws Exception{
@@ -145,17 +145,17 @@ __ref = this;
 RDebugUtils.currentModule="fingerprintmanager";
 if (Debug.shouldDelegate(ba, "auth_complete", false))
 	 {return ((String) Debug.delegate(ba, "auth_complete", new Object[] {_success,_errorcode,_errormessage}));}
-RDebugUtils.currentLine=26476544;
- //BA.debugLineNum = 26476544;BA.debugLine="Private Sub Auth_Complete (Success As Boolean, Err";
-RDebugUtils.currentLine=26476545;
- //BA.debugLineNum = 26476545;BA.debugLine="If ErrorCode = 5 Then Return 'cancel";
+RDebugUtils.currentLine=26542080;
+ //BA.debugLineNum = 26542080;BA.debugLine="Private Sub Auth_Complete (Success As Boolean, Err";
+RDebugUtils.currentLine=26542081;
+ //BA.debugLineNum = 26542081;BA.debugLine="If ErrorCode = 5 Then Return 'cancel";
 if (_errorcode==5) { 
 if (true) return "";};
-RDebugUtils.currentLine=26476546;
- //BA.debugLineNum = 26476546;BA.debugLine="CallSub3(mTarget, mEventName & \"_complete\", Succe";
+RDebugUtils.currentLine=26542082;
+ //BA.debugLineNum = 26542082;BA.debugLine="CallSub3(mTarget, mEventName & \"_complete\", Succe";
 __c.CallSubNew3(ba,__ref._mtarget /*Object*/ ,__ref._meventname /*String*/ +"_complete",(Object)(_success),(Object)(_errormessage));
-RDebugUtils.currentLine=26476547;
- //BA.debugLineNum = 26476547;BA.debugLine="End Sub";
+RDebugUtils.currentLine=26542083;
+ //BA.debugLineNum = 26542083;BA.debugLine="End Sub";
 return "";
 }
 public String  _cancel(ir.taravatgroup.ezafekari2.fingerprintmanager __ref) throws Exception{
@@ -163,38 +163,38 @@ __ref = this;
 RDebugUtils.currentModule="fingerprintmanager";
 if (Debug.shouldDelegate(ba, "cancel", false))
 	 {return ((String) Debug.delegate(ba, "cancel", null));}
-RDebugUtils.currentLine=26411008;
- //BA.debugLineNum = 26411008;BA.debugLine="Public Sub Cancel";
-RDebugUtils.currentLine=26411009;
- //BA.debugLineNum = 26411009;BA.debugLine="If cancelObject.IsInitialized And cancelObject.Ru";
+RDebugUtils.currentLine=26476544;
+ //BA.debugLineNum = 26476544;BA.debugLine="Public Sub Cancel";
+RDebugUtils.currentLine=26476545;
+ //BA.debugLineNum = 26476545;BA.debugLine="If cancelObject.IsInitialized And cancelObject.Ru";
 if (__ref._cancelobject /*anywheresoftware.b4j.object.JavaObject*/ .IsInitialized() && (__ref._cancelobject /*anywheresoftware.b4j.object.JavaObject*/ .RunMethod("isCanceled",(Object[])(__c.Null))).equals((Object)(__c.False))) { 
-RDebugUtils.currentLine=26411010;
- //BA.debugLineNum = 26411010;BA.debugLine="cancelObject.RunMethod(\"cancel\", Null)";
+RDebugUtils.currentLine=26476546;
+ //BA.debugLineNum = 26476546;BA.debugLine="cancelObject.RunMethod(\"cancel\", Null)";
 __ref._cancelobject /*anywheresoftware.b4j.object.JavaObject*/ .RunMethod("cancel",(Object[])(__c.Null));
  };
-RDebugUtils.currentLine=26411012;
- //BA.debugLineNum = 26411012;BA.debugLine="End Sub";
+RDebugUtils.currentLine=26476548;
+ //BA.debugLineNum = 26476548;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(ir.taravatgroup.ezafekari2.fingerprintmanager __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="fingerprintmanager";
-RDebugUtils.currentLine=26083328;
- //BA.debugLineNum = 26083328;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=26083329;
- //BA.debugLineNum = 26083329;BA.debugLine="Private sensor As JavaObject";
+RDebugUtils.currentLine=26148864;
+ //BA.debugLineNum = 26148864;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=26148865;
+ //BA.debugLineNum = 26148865;BA.debugLine="Private sensor As JavaObject";
 _sensor = new anywheresoftware.b4j.object.JavaObject();
-RDebugUtils.currentLine=26083330;
- //BA.debugLineNum = 26083330;BA.debugLine="Private cancelObject As JavaObject";
+RDebugUtils.currentLine=26148866;
+ //BA.debugLineNum = 26148866;BA.debugLine="Private cancelObject As JavaObject";
 _cancelobject = new anywheresoftware.b4j.object.JavaObject();
-RDebugUtils.currentLine=26083331;
- //BA.debugLineNum = 26083331;BA.debugLine="Private mTarget As Object";
+RDebugUtils.currentLine=26148867;
+ //BA.debugLineNum = 26148867;BA.debugLine="Private mTarget As Object";
 _mtarget = new Object();
-RDebugUtils.currentLine=26083332;
- //BA.debugLineNum = 26083332;BA.debugLine="Private mEventName As String";
+RDebugUtils.currentLine=26148868;
+ //BA.debugLineNum = 26148868;BA.debugLine="Private mEventName As String";
 _meventname = "";
-RDebugUtils.currentLine=26083333;
- //BA.debugLineNum = 26083333;BA.debugLine="End Sub";
+RDebugUtils.currentLine=26148869;
+ //BA.debugLineNum = 26148869;BA.debugLine="End Sub";
 return "";
 }
 

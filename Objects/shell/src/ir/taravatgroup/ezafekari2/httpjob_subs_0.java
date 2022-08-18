@@ -103,7 +103,7 @@ __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeDelete"
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 257;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","939190533",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
+httpjob.__c.runVoidMethod ("LogImpl","939256069",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 258;BA.debugLine="req.InitializeDelete(InvalidURL)";
 Debug.JustUpdateDeviceLine();
 __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeDelete",(Object)(__ref.getField(true,"_invalidurl" /*RemoteObject*/ )));
@@ -142,7 +142,7 @@ __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeDelete"
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 268;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","939256069",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
+httpjob.__c.runVoidMethod ("LogImpl","939321605",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 269;BA.debugLine="req.InitializeDelete(escapeLink(InvalidURL, Para";
 Debug.JustUpdateDeviceLine();
 __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeDelete",(Object)(__ref.runClassMethod (ir.taravatgroup.ezafekari2.httpjob.class, "_escapelink" /*RemoteObject*/ ,(Object)(__ref.getField(true,"_invalidurl" /*RemoteObject*/ )),(Object)(_parameters))));
@@ -180,7 +180,7 @@ __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeGet",(O
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 215;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","938993925",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
+httpjob.__c.runVoidMethod ("LogImpl","939059461",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 216;BA.debugLine="req.InitializeGet(InvalidURL)";
 Debug.JustUpdateDeviceLine();
 __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeGet",(Object)(__ref.getField(true,"_invalidurl" /*RemoteObject*/ )));
@@ -219,7 +219,7 @@ __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeGet",(O
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 231;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","939059461",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
+httpjob.__c.runVoidMethod ("LogImpl","939124997",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 232;BA.debugLine="req.InitializeGet(escapeLink(InvalidURL, Paramet";
 Debug.JustUpdateDeviceLine();
 __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeGet",(Object)(__ref.runClassMethod (ir.taravatgroup.ezafekari2.httpjob.class, "_escapelink" /*RemoteObject*/ ,(Object)(__ref.getField(true,"_invalidurl" /*RemoteObject*/ )),(Object)(_parameters))));
@@ -485,7 +485,7 @@ __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeHead",(
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 115;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","938731781",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
+httpjob.__c.runVoidMethod ("LogImpl","938797317",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 116;BA.debugLine="req.InitializeHead(InvalidURL)";
 Debug.JustUpdateDeviceLine();
 __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializeHead",(Object)(__ref.getField(true,"_invalidurl" /*RemoteObject*/ )));
@@ -582,7 +582,7 @@ __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializePatch2"
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 100;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","938666252",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
+httpjob.__c.runVoidMethod ("LogImpl","938731788",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 101;BA.debugLine="req.InitializePatch2(InvalidURL, Data)";
 Debug.JustUpdateDeviceLine();
 __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializePatch2",(Object)(__ref.getField(true,"_invalidurl" /*RemoteObject*/ )),(Object)(_data));
@@ -642,7 +642,7 @@ __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializePost2",
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 59;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","938404101",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
+httpjob.__c.runVoidMethod ("LogImpl","938469637",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 60;BA.debugLine="req.InitializePost2(InvalidURL, Data)";
 Debug.JustUpdateDeviceLine();
 __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializePost2",(Object)(__ref.getField(true,"_invalidurl" /*RemoteObject*/ )),(Object)(_data));
@@ -683,7 +683,7 @@ Debug.JustUpdateDeviceLine();
 if (RemoteObject.solveBoolean("=",_dir,httpjob.__c.getField(false,"File").runMethod(true,"getDirAssets"))) { 
  BA.debugLineNum = 189;BA.debugLine="Log(\"Cannot send files from the assets folder.\")";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","938928392",RemoteObject.createImmutable("Cannot send files from the assets folder."),0);
+httpjob.__c.runVoidMethod ("LogImpl","938993928",RemoteObject.createImmutable("Cannot send files from the assets folder."),0);
  BA.debugLineNum = 190;BA.debugLine="Return";
 Debug.JustUpdateDeviceLine();
 if (true) return RemoteObject.createImmutable("");
@@ -908,7 +908,7 @@ __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializePut2",(
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 76;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
 Debug.JustUpdateDeviceLine();
-httpjob.__c.runVoidMethod ("LogImpl","938535173",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
+httpjob.__c.runVoidMethod ("LogImpl","938600709",(RemoteObject.concat(RemoteObject.createImmutable("Invalid link: "),httpjob.__c.runMethod(true,"SmartStringFormatter",(Object)(BA.ObjectToString("")),(Object)((_link))),RemoteObject.createImmutable(""))),0);
  BA.debugLineNum = 77;BA.debugLine="req.InitializePut2(InvalidURL, Data)";
 Debug.JustUpdateDeviceLine();
 __ref.getField(false,"_req" /*RemoteObject*/ ).runVoidMethod ("InitializePut2",(Object)(__ref.getField(true,"_invalidurl" /*RemoteObject*/ )),(Object)(_data));

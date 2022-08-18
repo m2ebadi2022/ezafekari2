@@ -37,6 +37,21 @@ Sub install_db_tbl_taradod
 		Log ( "tbl taradod created")
 	End Try
 	
+	
+	''---------- creat mamoriat tbl
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_mamoriat")
+		Log( "tbl mamoriat exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_mamoriat' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date_from'	TEXT, 'date_to'	TEXT, 'time_from'	TEXT, 'time_to'	TEXT, 'end_tim_d'	INTEGER DEFAULT 0, 'end_tim_h'	INTEGER DEFAULT 0, 'end_tim_m'	INTEGER DEFAULT 0, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		
+		Log ( "tbl mamoriat created")
+	End Try
+	
+	
+	
+	
 End Sub
 
 Sub install_db_tbl_myCalander
@@ -182,6 +197,13 @@ Sub add_taradod (date1 As String,date2 As String,time1 As String,time2 As String
 End Sub
 
 
+Sub add_mamoriat(date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_mamoriat (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state0))
+	sql.Close
+	Return True
+End Sub
+
 
 ''=======  edit ==================================
 
@@ -207,6 +229,13 @@ Sub edit_taradod (id1 As Int,date1 As String,date2 As String,time1 As String,tim
 	Return True
 End Sub
 
+
+Sub edit_mamoriat(id1 As Int, date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("UPDATE tb_mamoriat SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state0,id1))
+	sql.Close
+	Return True
+End Sub
 
 
 ''============
@@ -244,6 +273,13 @@ Sub delete_gozaresh(id As Int) As Boolean
 	Return True
 End Sub
 
+
+Sub delete_mamoriat(id As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("DELETE FROM tb_mamoriat WHERE id= ?", Array As Object(id))
+	sql.Close
+	Return True
+End Sub
 
 Sub add_setting_hogog (data As List) As Boolean
 	connect_db
@@ -447,6 +483,43 @@ End Sub
 
 
 
+Sub all_mamoriat_mah(year As String, moon As String) As List
+	Dim saat_kar As Int = get_setting_byName("saat_kar_darRoz")
+	
+	Dim list_ez As List
+	list_ez.Initialize
+	
+	Dim v_day As Int=0
+	Dim v_hour As Int=0
+	Dim v_min As Int=0
+	Dim div1 As Int=0
+	Dim div2 As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_mamoriat WHERE date_from LIKE '%"&year&"/"&moon&"%';")
+	Do While res.NextRow
+		
+		v_day=v_day+res.GetString("end_tim_d")
+		v_hour=v_hour+res.GetString("end_tim_h")
+		v_min=v_min+res.GetString("end_tim_m")
+		
+		
+	Loop
+	res.Close
+	sql.Close
+	
+	
+	Dim dghige2 As Int=(v_day*Main.saat_kar_min)+(v_hour*60)+v_min
+	
+	
+	
+	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(2))      '' index 0  day
+	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(0))      '' index 1  hour
+	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(1))		'' index 2	min
+	
+	Return list_ez
+End Sub
+
+
 
 
 
@@ -508,6 +581,26 @@ Sub isexist_taradod_by_date(date As String) As Boolean
 End Sub
 
 
+
+Sub isexist_mamoriat_by_date(date As String) As Boolean
+	Try
+		Dim chk1 As Boolean=False
+		connect_db
+		res= sql.ExecQuery("SELECT * FROM tb_mamoriat WHERE date_from LIKE '"&date&"';")
+		If (res.RowCount>0)Then
+			chk1= True
+		Else
+			chk1= False
+		End If
+		res.Close
+	Catch
+		Log(LastException)
+	End Try
+	
+	Return chk1
+	
+	
+End Sub
 
 
 Sub istatil_by_date(id As Int) As Boolean

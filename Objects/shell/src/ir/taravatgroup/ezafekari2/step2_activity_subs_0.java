@@ -613,7 +613,7 @@ step2_activity.mostCurrent._img_p_edit.runMethod(false,"setBitmap",(step2_activi
        catch (Exception e81) {
 			BA.rdebugUtils.runVoidMethod("setLastException",step2_activity.processBA, e81.toString()); BA.debugLineNum = 382;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(536870912);
-step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","114418060",BA.ObjectToString(step2_activity.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","614483596",BA.ObjectToString(step2_activity.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 383;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 Debug.ShouldStop(1073741824);
 step2_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در اتصال")),(Object)(step2_activity.mostCurrent.__c.getField(true,"False")));
@@ -928,7 +928,7 @@ Debug.ShouldStop(536870912);
 parent.mostCurrent.__c.getField(false,"File").runVoidMethod ("Copy",(Object)(_dir),(Object)(_filename),(Object)(parent.mostCurrent._starter._provider /*RemoteObject*/ .getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(parent.mostCurrent._picname));
  BA.debugLineNum = 447;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1073741824);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","114680080",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","614745616",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -966,7 +966,7 @@ Debug.ShouldStop(256);
 parent.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در بارگزاری")),(Object)(parent.mostCurrent.__c.getField(true,"True")));
  BA.debugLineNum = 458;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(512);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","114680091",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","614745627",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1341,7 +1341,7 @@ Debug.ShouldStop(8388608);
 parent.mostCurrent.__c.getField(false,"File").runVoidMethod ("Copy",(Object)(_dir),(Object)(_filename),(Object)(parent.mostCurrent._starter._provider /*RemoteObject*/ .getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(parent.mostCurrent._tempfile));
  BA.debugLineNum = 571;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(67108864);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","115400986",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","615466522",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1382,7 +1382,7 @@ Debug.ShouldStop(32);
 parent.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در بارگزاری")),(Object)(parent.mostCurrent.__c.getField(true,"True")));
  BA.debugLineNum = 583;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(64);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","115400998",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","615466534",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1530,7 +1530,7 @@ Debug.locals.put("value", _value);
 Debug.ShouldStop(-2147483648);
  BA.debugLineNum = 481;BA.debugLine="Log( value)";
 Debug.ShouldStop(1);
-step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","114876673",_value,0);
+step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","614942209",_value,0);
  BA.debugLineNum = 482;BA.debugLine="End Sub";
 Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");

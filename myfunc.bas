@@ -134,6 +134,13 @@ Sub num_list(year1 As String, moon1 As String) As List
 	dbCode.res.Close
 	dbCode.sql.Close
 	
+	dbCode.connect_db '' mamoriat
+	dbCode.res= dbCode.sql.ExecQuery("SELECT id FROM tb_mamoriat WHERE date_from LIKE '%"&year1&"/"&moon1&"%' ;")
+	
+	result.Add(dbCode.res.RowCount)
+	dbCode.res.Close
+	dbCode.sql.Close
+	
 	Return result
 End Sub
 

@@ -70,6 +70,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=Main,btn_menu_gozaresh_Click,1428,0,Main,fill_list_gozareshat,1462,0,Main,fill_lists,1360,0,Main,Process_Globals,25,0,Main,pan_add_morakhasi_Click,1526,0,Visual Designer,home_item.bal,-100,6,Main,lbl_chk_update_ok_Click,3644,0,Main,pan_add_taradod_Click,1691,0,Main,pan_add_ezafekari_Click,1597,0,Main,pan_add_mamoriat_Click,1721,3
+NavigationStack=myfunc,num_list,133,1,dbCode,all_mamoriat_mah,508,0,Visual Designer,tab_layout_ezafekari.bal,-100,2,Visual Designer,tab_layout_mamoriat.bal,-100,3,Main,Globals,294,0,Main,lbl_edit_from_list_Click,3234,1,Main,get_dataEdit_byId,3290,0,Main,lbl_remove_from_list_Click,3362,0,Main,pik_day_bala1_Click,2738,0,Main,btn_menu_list_Click,1163,2
 SelectedBuild=0
 VisibleModules=14,6,21,22,23,18
