@@ -34,7 +34,7 @@ public class step1_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.step1_activity");
+			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.step1_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class step1_activity extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _et_email = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _et_namefamili = null;
@@ -355,9 +346,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
-public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -371,199 +360,158 @@ public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
+public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
+public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="step1_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=13369344;
- //BA.debugLineNum = 13369344;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=13369346;
- //BA.debugLineNum = 13369346;BA.debugLine="Activity.LoadLayout(\"step1\")";
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"step1\")";
 mostCurrent._activity.LoadLayout("step1",mostCurrent.activityBA);
-RDebugUtils.currentLine=13369348;
- //BA.debugLineNum = 13369348;BA.debugLine="et_nameFamili.Color=Colors.ARGB(0,0,0,0)";
+ //BA.debugLineNum = 28;BA.debugLine="et_nameFamili.Color=Colors.ARGB(0,0,0,0)";
 mostCurrent._et_namefamili.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (0),(int) (0),(int) (0)));
-RDebugUtils.currentLine=13369349;
- //BA.debugLineNum = 13369349;BA.debugLine="et_email.Color=Colors.ARGB(0,0,0,0)";
+ //BA.debugLineNum = 29;BA.debugLine="et_email.Color=Colors.ARGB(0,0,0,0)";
 mostCurrent._et_email.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (0),(int) (0),(int) (0)));
-RDebugUtils.currentLine=13369350;
- //BA.debugLineNum = 13369350;BA.debugLine="If(myfunc.check_karid)Then";
+ //BA.debugLineNum = 30;BA.debugLine="If(myfunc.check_karid)Then";
 if ((mostCurrent._myfunc._check_karid /*boolean*/ (mostCurrent.activityBA))) { 
-RDebugUtils.currentLine=13369351;
- //BA.debugLineNum = 13369351;BA.debugLine="type_app=2";
+ //BA.debugLineNum = 31;BA.debugLine="type_app=2";
 _type_app = (int) (2);
  }else {
-RDebugUtils.currentLine=13369353;
- //BA.debugLineNum = 13369353;BA.debugLine="type_app=1";
+ //BA.debugLineNum = 33;BA.debugLine="type_app=1";
 _type_app = (int) (1);
  };
-RDebugUtils.currentLine=13369355;
- //BA.debugLineNum = 13369355;BA.debugLine="End Sub";
+ //BA.debugLineNum = 35;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
-RDebugUtils.currentModule="step1_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
-	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=13762560;
- //BA.debugLineNum = 13762560;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=13762561;
- //BA.debugLineNum = 13762561;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 112;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 113;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=13762562;
- //BA.debugLineNum = 13762562;BA.debugLine="StartActivity(Main)";
+ //BA.debugLineNum = 114;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
-RDebugUtils.currentLine=13762563;
- //BA.debugLineNum = 13762563;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 115;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=13762565;
- //BA.debugLineNum = 13762565;BA.debugLine="Return True";
+ //BA.debugLineNum = 117;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=13762567;
- //BA.debugLineNum = 13762567;BA.debugLine="Return False";
+ //BA.debugLineNum = 119;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=13762569;
- //BA.debugLineNum = 13762569;BA.debugLine="End Sub";
+ //BA.debugLineNum = 121;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="step1_activity";
-RDebugUtils.currentLine=13500416;
- //BA.debugLineNum = 13500416;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=13500418;
- //BA.debugLineNum = 13500418;BA.debugLine="End Sub";
+ //BA.debugLineNum = 41;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 43;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="step1_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=13434880;
- //BA.debugLineNum = 13434880;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=13434882;
- //BA.debugLineNum = 13434882;BA.debugLine="End Sub";
+ //BA.debugLineNum = 37;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 39;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 16;BA.debugLine="Private et_email As EditText";
+mostCurrent._et_email = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private et_nameFamili As EditText";
+mostCurrent._et_namefamili = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Private lbl_run_step1 As Label";
+mostCurrent._lbl_run_step1 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 19;BA.debugLine="Dim http2 As HttpJob";
+mostCurrent._http2 = new ir.taravatgroup.ezafekari2.httpjob();
+ //BA.debugLineNum = 20;BA.debugLine="Dim pp As Phone";
+mostCurrent._pp = new anywheresoftware.b4a.phone.Phone();
+ //BA.debugLineNum = 21;BA.debugLine="Dim type_app As Int=1";
+_type_app = (int) (1);
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
 public static String  _http_initial_1(int _type1) throws Exception{
-RDebugUtils.currentModule="step1_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "http_initial_1", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "http_initial_1", new Object[] {_type1}));}
 String _str_key = "";
 String _send = "";
-RDebugUtils.currentLine=13631488;
- //BA.debugLineNum = 13631488;BA.debugLine="Sub http_initial_1(type1 As Int)";
-RDebugUtils.currentLine=13631490;
- //BA.debugLineNum = 13631490;BA.debugLine="If(type1=3)Then";
+ //BA.debugLineNum = 67;BA.debugLine="Sub http_initial_1(type1 As Int)";
+ //BA.debugLineNum = 69;BA.debugLine="If(type1=3)Then";
 if ((_type1==3)) { 
-RDebugUtils.currentLine=13631491;
- //BA.debugLineNum = 13631491;BA.debugLine="Dim str_key As String=myfunc.random_id(15)";
+ //BA.debugLineNum = 70;BA.debugLine="Dim str_key As String=myfunc.random_id(15)";
 _str_key = mostCurrent._myfunc._random_id /*String*/ (mostCurrent.activityBA,(int) (15));
-RDebugUtils.currentLine=13631492;
- //BA.debugLineNum = 13631492;BA.debugLine="http2.Initialize(\"http2\",Me)";
-mostCurrent._http2._initialize /*String*/ (null,processBA,"http2",step1_activity.getObject());
-RDebugUtils.currentLine=13631493;
- //BA.debugLineNum = 13631493;BA.debugLine="Dim send As String";
+ //BA.debugLineNum = 71;BA.debugLine="http2.Initialize(\"http2\",Me)";
+mostCurrent._http2._initialize /*String*/ (processBA,"http2",step1_activity.getObject());
+ //BA.debugLineNum = 72;BA.debugLine="Dim send As String";
 _send = "";
-RDebugUtils.currentLine=13631494;
- //BA.debugLineNum = 13631494;BA.debugLine="send = \"var=1&phone=\"&Main.phon_num&\"&name=\"&et_";
+ //BA.debugLineNum = 73;BA.debugLine="send = \"var=1&phone=\"&Main.phon_num&\"&name=\"&et_";
 _send = "var=1&phone="+mostCurrent._main._phon_num /*String*/ +"&name="+mostCurrent._et_namefamili.getText().trim()+"&email="+mostCurrent._et_email.getText().trim()+"&type_app="+BA.NumberToString(_type_app)+"&div_id="+mostCurrent._pp.GetSettings("android_id")+"&div_model="+mostCurrent._pp.getModel()+"&user_key="+_str_key;
-RDebugUtils.currentLine=13631495;
- //BA.debugLineNum = 13631495;BA.debugLine="http2.PostString(\"https://taravatgroup.ir/save_a";
-mostCurrent._http2._poststring /*String*/ (null,"https://taravatgroup.ir/save_acc.php",_send);
+ //BA.debugLineNum = 74;BA.debugLine="http2.PostString(\"https://taravatgroup.ir/save_a";
+mostCurrent._http2._poststring /*String*/ ("https://taravatgroup.ir/save_acc.php",_send);
  };
-RDebugUtils.currentLine=13631501;
- //BA.debugLineNum = 13631501;BA.debugLine="End Sub";
+ //BA.debugLineNum = 80;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(ir.taravatgroup.ezafekari2.httpjob _job) throws Exception{
-RDebugUtils.currentModule="step1_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "jobdone", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "jobdone", new Object[] {_job}));}
-RDebugUtils.currentLine=13697024;
- //BA.debugLineNum = 13697024;BA.debugLine="Sub Jobdone (job As HttpJob)";
-RDebugUtils.currentLine=13697025;
- //BA.debugLineNum = 13697025;BA.debugLine="Try";
-try {RDebugUtils.currentLine=13697026;
- //BA.debugLineNum = 13697026;BA.debugLine="If job.Success = True Then";
+ //BA.debugLineNum = 84;BA.debugLine="Sub Jobdone (job As HttpJob)";
+ //BA.debugLineNum = 85;BA.debugLine="Try";
+try { //BA.debugLineNum = 86;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
-RDebugUtils.currentLine=13697028;
- //BA.debugLineNum = 13697028;BA.debugLine="If job.JobName=\"http2\" Then";
+ //BA.debugLineNum = 88;BA.debugLine="If job.JobName=\"http2\" Then";
 if ((_job._jobname /*String*/ ).equals("http2")) { 
-RDebugUtils.currentLine=13697029;
- //BA.debugLineNum = 13697029;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
-if ((_job._getstring /*String*/ (null).contains("true"))) { 
-RDebugUtils.currentLine=13697030;
- //BA.debugLineNum = 13697030;BA.debugLine="StartActivity(step2_activity)";
+ //BA.debugLineNum = 89;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
+if ((_job._getstring /*String*/ ().contains("true"))) { 
+ //BA.debugLineNum = 90;BA.debugLine="StartActivity(step2_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step2_activity.getObject()));
-RDebugUtils.currentLine=13697031;
- //BA.debugLineNum = 13697031;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 91;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=13697032;
- //BA.debugLineNum = 13697032;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
+ //BA.debugLineNum = 92;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تبریک"),anywheresoftware.b4a.keywords.Common.False);
  }else {
-RDebugUtils.currentLine=13697034;
- //BA.debugLineNum = 13697034;BA.debugLine="ToastMessageShow(job.GetString,False)";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_job._getstring /*String*/ (null)),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 94;BA.debugLine="ToastMessageShow(job.GetString,False)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_job._getstring /*String*/ ()),anywheresoftware.b4a.keywords.Common.False);
  };
  };
-RDebugUtils.currentLine=13697039;
- //BA.debugLineNum = 13697039;BA.debugLine="job.Release";
-_job._release /*String*/ (null);
+ //BA.debugLineNum = 99;BA.debugLine="job.Release";
+_job._release /*String*/ ();
  }else {
  };
  } 
        catch (Exception e16) {
-			processBA.setLastException(e16);RDebugUtils.currentLine=13697045;
- //BA.debugLineNum = 13697045;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("613697045",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
-RDebugUtils.currentLine=13697046;
- //BA.debugLineNum = 13697046;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
+			processBA.setLastException(e16); //BA.debugLineNum = 105;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("240304661",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 106;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=13697049;
- //BA.debugLineNum = 13697049;BA.debugLine="End Sub";
+ //BA.debugLineNum = 109;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_run_step1_click() throws Exception{
-RDebugUtils.currentModule="step1_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_run_step1_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_run_step1_click", null));}
-RDebugUtils.currentLine=13565952;
- //BA.debugLineNum = 13565952;BA.debugLine="Private Sub lbl_run_step1_Click";
-RDebugUtils.currentLine=13565955;
- //BA.debugLineNum = 13565955;BA.debugLine="If(et_nameFamili.Text=\"\")Then";
+ //BA.debugLineNum = 45;BA.debugLine="Private Sub lbl_run_step1_Click";
+ //BA.debugLineNum = 48;BA.debugLine="If(et_nameFamili.Text=\"\")Then";
 if (((mostCurrent._et_namefamili.getText()).equals(""))) { 
-RDebugUtils.currentLine=13565956;
- //BA.debugLineNum = 13565956;BA.debugLine="ToastMessageShow(\"قسمت نام خالی است \",False)";
+ //BA.debugLineNum = 49;BA.debugLine="ToastMessageShow(\"قسمت نام خالی است \",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("قسمت نام خالی است "),anywheresoftware.b4a.keywords.Common.False);
- }else 
-{RDebugUtils.currentLine=13565957;
- //BA.debugLineNum = 13565957;BA.debugLine="Else If(et_email.Text.Trim=\"\")Then";
-if (((mostCurrent._et_email.getText().trim()).equals(""))) { 
-RDebugUtils.currentLine=13565959;
- //BA.debugLineNum = 13565959;BA.debugLine="ToastMessageShow(\"قسمت ایمیل خالی است \",False)";
+ }else if(((mostCurrent._et_email.getText().trim()).equals(""))) { 
+ //BA.debugLineNum = 52;BA.debugLine="ToastMessageShow(\"قسمت ایمیل خالی است \",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("قسمت ایمیل خالی است "),anywheresoftware.b4a.keywords.Common.False);
- }else 
-{RDebugUtils.currentLine=13565960;
- //BA.debugLineNum = 13565960;BA.debugLine="Else If(myfunc.Validate_Email(et_email.Text.Trim)";
-if ((mostCurrent._myfunc._validate_email /*boolean*/ (mostCurrent.activityBA,mostCurrent._et_email.getText().trim())==anywheresoftware.b4a.keywords.Common.False)) { 
-RDebugUtils.currentLine=13565962;
- //BA.debugLineNum = 13565962;BA.debugLine="ToastMessageShow(\" ایمیل نامعتبر است \",False)";
+ }else if((mostCurrent._myfunc._validate_email /*boolean*/ (mostCurrent.activityBA,mostCurrent._et_email.getText().trim())==anywheresoftware.b4a.keywords.Common.False)) { 
+ //BA.debugLineNum = 55;BA.debugLine="ToastMessageShow(\" ایمیل نامعتبر است \",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(" ایمیل نامعتبر است "),anywheresoftware.b4a.keywords.Common.False);
  }else {
-RDebugUtils.currentLine=13565965;
- //BA.debugLineNum = 13565965;BA.debugLine="http_initial_1(3)";
+ //BA.debugLineNum = 58;BA.debugLine="http_initial_1(3)";
 _http_initial_1((int) (3));
- }}}
-;
-RDebugUtils.currentLine=13565970;
- //BA.debugLineNum = 13565970;BA.debugLine="End Sub";
+ };
+ //BA.debugLineNum = 63;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 }

@@ -120,6 +120,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	myfunc.set_font(Activity)
 	
 	
+	
 End Sub
 
 Sub Activity_Resume
@@ -237,6 +238,15 @@ Sub http_initial_1(type1 As Int)
 		
 			Dim send As String= "var=1&phone="&Main.phon_num&"&key=mME22eBbA20aDd1401"
 			http3.PostString("https://taravatgroup.ir/user_msg.php",send)
+			
+			
+		Else If(type1=8)Then
+		
+			http3.Initialize("ht9",Me)
+			Dim send As String= "var=7&phone="&Main.phon_num&"&div_id="&pp.GetSettings("android_id")
+			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+				Log("bbbbbbbbbbbbb")
+			
 		End If
 		
 	End If
@@ -277,6 +287,7 @@ Sub Jobdone (job As HttpJob)
 					picName="user-"&Main.phon_num&"-"&a(4)&".jpg"
 					If(File.Exists(File.DirInternal,picName)=False)Then
 						If(a(3)="1")Then
+							job.Release
 							http_initial_1(6)
 						End If
 					Else
@@ -287,12 +298,20 @@ Sub Jobdone (job As HttpJob)
 				
 					File.WriteList(File.DirInternal,"userAcc",a)
 				
+				job.Release
+				
+					If(Main.msg_page_show=1)Then
+						lbl_all_msg_Click
+					End If
+					
 
 				End If
 			
 			else If job.JobName="ht2" Then
 				If(job.GetString.Contains("true"))Then
+					job.Release
 					http_initial_1(1)
+					lbl_back_Click
 				End If
 			
 			else If job.JobName="ht3" Then  '  req transfer noskhe
@@ -351,6 +370,9 @@ Sub Jobdone (job As HttpJob)
 				wb_show_myMsg.LoadHtml(job.GetString)
 				
 				
+				
+			else If job.JobName="ht9" Then  '  i see
+				Log(job.GetString)
 			End If
 		
 			job.Release
@@ -417,7 +439,7 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 		Else If(pan_all_msg.Visible=True)Then
 			pan_all_msg.Visible=False
 		Else If(pan_all_show_myMsg.Visible=True)Then
-			pan_all_show_myMsg.Visible=False
+			lbl_back_Shmsg_Click
 		Else
 			lbl_back_home_Click
 		End If
@@ -617,11 +639,13 @@ End Sub
 
 Private Sub lbl_back_Shmsg_Click
 	pan_all_show_myMsg.Visible=False
+	Main.msg_page_show=0
+	http_initial_1(8)
 End Sub
 
 Private Sub lbl_send_msg2_Click
 	lbl_send_msg_Click
-	pan_all_show_myMsg.Visible=False
+	lbl_back_Shmsg_Click
 End Sub
 
 Private Sub lbl_icon_noUp_Click

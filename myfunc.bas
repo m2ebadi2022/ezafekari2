@@ -236,6 +236,15 @@ Sub help_man(title As String , matn As String)
 End Sub
 
 
+Sub msg_add_edit(title As String , matn As String) As Boolean
+	Dim result As Int
+	result = Msgbox2(matn,title,"میدانم و اضافه کن","","لغو", LoadBitmap(File.DirAssets, "help.png"))
+	If result = DialogResponse.Positive Then	
+		Return True
+	Else
+		Return False
+	End If
+End Sub
 
 Sub Min_to_saatMinRoz(min1 As Int)As List
 	Dim ls_saatMin As List

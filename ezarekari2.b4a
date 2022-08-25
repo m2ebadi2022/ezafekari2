@@ -1,98 +1,103 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
-File1=adastnevis.ttf
-File10=BNazanin.ttf
-File11=book.png
-File12=box.png
-File13=BRoya.ttf
-File14=b-traffic.ttf
-File15=buy.png
-File16=calc_layout.bal
-File17=calculator.png
-File18=ccr.png
-File19=comment.png
-File2=add_ezafe.png
-File20=comment_layout.bal
-File21=darsad_layout.bal
-File22=db.db
-File23=eidi_layout.bal
-File24=email.png
-File25=endwork.png
-File26=equal.png
-File27=eydi.png
-File28=fast_run_layout.bal
-File29=fingerprint.png
-File3=add_morakhasi.png
-File30=ganon.html
-File31=ganon_layout.bal
-File32=gift.jpg
-File33=gozaresh_layout.bal
-File34=help.png
-File35=help_font.png
-File36=hogog_layout.bal
-File37=home_item.bal
-File38=home_layout.bal
-File39=home-h0.jpg
-File4=add_other.png
-File40=home-h1.jpg
-File41=home-h2.jpg
-File42=home-h3.jpg
-File43=home-h4.jpg
-File44=icon.png
-File45=info.png
-File46=info_layout.bal
-File47=item_darsad.bal
-File48=item_fast_run.bal
-File49=item_hogog.bal
-File5=attention.png
-File50=item_list.bal
-File51=item_list_2.bal
-File52=list_layout.bal
-File53=lyscreen.bal
-File54=m1.png
-File55=m2.png
-File56=m3.png
-File57=main_layout.bal
-File58=mandeh.png
-File59=mohasebe_hogog.png
-File6=bg3.jpg
-File60=morakhasi_item.bal
-File61=morakhasi_layout.bal
-File62=my_calander.xls
-File63=newyear.jpg
-File64=noske_item.bal
-File65=payankar_layout.bal
-File66=percentage.png
-File67=set_hogog.png
-File68=set_moh.png
-File69=sett_hogog_item.bal
-File7=bime_icon.jpg
-File70=setting.png
-File71=setting_hogog_layout.bal
-File72=setting_layout.bal
-File73=setting_layout_items.bal
-File74=shift_layout.bal
-File75=shift_page_items.bal
-File76=shift_work.png
-File77=show_gozaresh_layout.bal
-File78=speed_run.png
-File79=splash_layout.bal
-File8=bime_layout.bal
-File80=step0.bal
-File81=step1.bal
-File82=step2.bal
-File83=sudan bd_mrt.ttf
-File84=SYEKAN.TTF
-File85=tab_layout_ezafekari.bal
-File86=tab_layout_mamoriat.bal
-File87=tab_layout_morakhasi.bal
-File88=tab_layout_taradod.bal
-File89=taradod_fast_layout.bal
-File9=bkoodkbd.ttf
-File90=textBox.png
-File91=textbox2.png
-File92=transfer_time.png
-File93=user.png
-File94=Vazir.ttf
+File1=1171 hes.pdf
+File10=attention.png
+File11=bg3.jpg
+File12=bime_icon.jpg
+File13=bime_layout.bal
+File14=bkoodkbd.ttf
+File15=BNazanin.ttf
+File16=book.png
+File17=box.png
+File18=BRoya.ttf
+File19=b-traffic.ttf
+File2=147 anb.pdf
+File20=buy.png
+File21=calc_layout.bal
+File22=calculator.png
+File23=ccr.png
+File24=comment.png
+File25=comment_layout.bal
+File26=darsad_layout.bal
+File27=db.db
+File28=eidi_layout.bal
+File29=endwork.png
+File3=336 fak.pdf
+File30=equal.png
+File31=eydi.png
+File32=fast_run_layout.bal
+File33=fingerprint.png
+File34=ganon.html
+File35=ganon_layout.bal
+File36=gift.jpg
+File37=gozaresh_layout.bal
+File38=help.png
+File39=help_font.png
+File4=336 hav.pdf
+File40=hogog_layout.bal
+File41=home_item.bal
+File42=home_layout.bal
+File43=home-h0.jpg
+File44=home-h1.jpg
+File45=home-h2.jpg
+File46=home-h3.jpg
+File47=home-h4.jpg
+File48=icon.png
+File49=info.png
+File5=336 pish.pdf
+File50=info_layout.bal
+File51=item_darsad.bal
+File52=item_fast_run.bal
+File53=item_hogog.bal
+File54=item_list.bal
+File55=item_list_2.bal
+File56=list_layout.bal
+File57=lyscreen.bal
+File58=m1.png
+File59=m2.png
+File6=adastnevis.ttf
+File60=m3.png
+File61=main_layout.bal
+File62=mandeh.png
+File63=mohasebe_hogog.png
+File64=morakhasi_item.bal
+File65=morakhasi_layout.bal
+File66=my_calander.xls
+File67=newyear.jpg
+File68=noske_item.bal
+File69=notif.png
+File7=add_ezafe.png
+File70=payankar_layout.bal
+File71=percentage.png
+File72=set_hogog.png
+File73=set_moh.png
+File74=sett_hogog_item.bal
+File75=setting.png
+File76=setting_hogog_layout.bal
+File77=setting_layout.bal
+File78=setting_layout_items.bal
+File79=shift_layout.bal
+File8=add_morakhasi.png
+File80=shift_page_items.bal
+File81=shift_work.png
+File82=show_gozaresh_layout.bal
+File83=speed_run.png
+File84=splash_layout.bal
+File85=step0.bal
+File86=step1.bal
+File87=step2.bal
+File88=sudan bd_mrt.ttf
+File89=SYEKAN.TTF
+File9=add_other.png
+File90=tab_layout_ezafekari.bal
+File91=tab_layout_mamoriat.bal
+File92=tab_layout_morakhasi.bal
+File93=tab_layout_taradod.bal
+File94=taradod_fast_layout.bal
+File95=textBox.png
+File96=textbox2.png
+File97=transfer_time.png
+File98=user.png
+File99=Vazir.ttf
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
@@ -187,6 +192,11 @@ FileGroup91=Default Group
 FileGroup92=Default Group
 FileGroup93=Default Group
 FileGroup94=Default Group
+FileGroup95=Default Group
+FileGroup96=Default Group
+FileGroup97=Default Group
+FileGroup98=Default Group
+FileGroup99=Default Group
 Group=Default Group
 Library1=compressor
 Library10=nicespinner
@@ -235,7 +245,7 @@ Module6=dbCode
 Module7=eidi_activity
 Module8=fast_run_activity
 Module9=FingerprintManager
-NumberOfFiles=94
+NumberOfFiles=99
 NumberOfLibraries=23
 NumberOfModules=23
 Version=11.8
@@ -296,6 +306,8 @@ Sub Process_Globals
 	
 	Dim phon_num As String
 	Dim user_nameFamili As String="کاربر"
+	
+	Dim msg_page_show As Int =0
 End Sub
 
 Sub Globals
@@ -534,6 +546,8 @@ Sub Globals
 	Private lbl_chk_update_ok As Label
 	Private lbl_day_CLV As Label
 	Private cust_LV_mamoriat As CustomListView
+	
+	Dim is_new_msg As Boolean=False
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -752,7 +766,13 @@ Sub Jobdone (job As HttpJob)
 						File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
 					
 					
+					Else If (job.GetString.Contains("new_msg"))Then  ''-------new_msg
 					
+					is_new_msg=True
+						
+						
+						
+						
 					Else
 						msg=job.GetString
 					
@@ -1307,8 +1327,14 @@ Private Sub btn_menu_home_Click
 	
 	myfunc.set_font(Activity)
 	
-	
-	
+	If(is_new_msg=True)Then
+		Dim result As Int
+		result = Msgbox2("آیا الان مشاهده میکنید؟", "پیام جدید", "بله", "بعدا", "", LoadBitmap(File.DirAssets,"notif.png"))
+		If result = DialogResponse.Positive Then
+			lbl_account_Click
+			msg_page_show=1						
+		End If
+	End If
 	
 	
 	
@@ -2158,7 +2184,25 @@ Sub add_ezafe_sub
 			
 			If(is_for_edit=False)Then
 				If(dbCode.isexist_ezafekari_by_date(date1)=True)Then
-					myfunc.help_man("توجه","برای این تاریخ اضافه کاری وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+				
+					Dim result_a As Boolean
+					result_a=myfunc.msg_add_edit("توجه","برای این تاریخ اضافه کاری وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید  ")
+					If (result_a=True)Then
+						dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_mod&et_tozihat.Text,state_mod)
+					
+						Dim ls_temp_time1 As List
+						ls_temp_time1.Initialize
+					
+						ls_temp_time1.Add(lbl_tim1.Text)
+						ls_temp_time1.Add(lbl_tim2.Text)
+					
+						File.WriteList(File.DirInternal,"temp_time1.txt",ls_temp_time1)
+					
+						ToastMessageShow ("اضافه شد",False)
+						btn_menu_home_Click
+						
+					End If
+					
 				Else
 					dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_mod&et_tozihat.Text,state_mod)
 					
@@ -2214,7 +2258,16 @@ Sub add_morakhasi_sub
 			
 			If(is_for_edit=False)Then
 				If(dbCode.isexist_morakhasi_by_date(date1)=True)Then
-					myfunc.help_man("توجه","برای این تاریخ مرخصی وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+				
+					Dim result_a As Boolean
+					result_a=myfunc.msg_add_edit("توجه","برای این تاریخ مرخصی وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید  ")
+					If (result_a=True)Then
+						dbCode.add_morakhasi(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_noe2&et_tozihat.Text,index_noe_morakhasi)
+						ToastMessageShow ("اضافه شد",False)
+						btn_menu_home_Click
+					End If
+					
+					
 				Else
 					dbCode.add_morakhasi(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_noe2&et_tozihat.Text,index_noe_morakhasi)
 					ToastMessageShow ("اضافه شد",False)
@@ -2261,7 +2314,42 @@ Sub add_taradod_sub
 			
 			If(is_for_edit=False)Then
 				If(dbCode.isexist_taradod_by_date(date1)=True)Then
-					myfunc.help_man("توجه","برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+					
+					
+					Dim result_a As Boolean
+					result_a=myfunc.msg_add_edit("توجه","برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید  ")
+					If (result_a=True)Then
+						
+						
+						If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then
+						
+							Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
+							Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
+					
+							Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
+							Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
+						
+							dbCode.add_ezafekari(date1,date2,saat_fixed,lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
+							
+							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_tozih2,0)
+						Else
+							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,0)
+						End If
+					
+						Dim ls_temp_time2 As List
+						ls_temp_time2.Initialize
+						
+						ls_temp_time2.Add(lbl_tim1.Text)
+						ls_temp_time2.Add(lbl_tim2.Text)
+						
+						File.WriteList(File.DirInternal,"temp_time2.txt",ls_temp_time2)
+					
+						ToastMessageShow ("اضافه شد",False)
+						btn_menu_home_Click
+						
+					End If
+					
+					
 				Else
 				
 					If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then	
@@ -2334,17 +2422,17 @@ Sub add_mamoriat_sub
 			
 			If(is_for_edit=False)Then
 				If(dbCode.isexist_mamoriat_by_date(date1)=True)Then
-					myfunc.help_man("توجه","برای این تاریخ ماموریت وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید")
+				
+					Dim result_a As Boolean
+					result_a=myfunc.msg_add_edit("توجه","برای این تاریخ ماموریت وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید  ")
+					If (result_a=True)Then
+						dbCode.add_mamoriat(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_mod&et_tozihat.Text,state_mod)
+					
+						ToastMessageShow ("اضافه شد",False)
+						btn_menu_home_Click
+					End If
 				Else
 					dbCode.add_mamoriat(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_mod&et_tozihat.Text,state_mod)
-					
-'					Dim ls_temp_time1 As List
-'					ls_temp_time1.Initialize
-'					
-'					ls_temp_time1.Add(lbl_tim1.Text)
-'					ls_temp_time1.Add(lbl_tim2.Text)
-'					
-'					File.WriteList(File.DirInternal,"temp_time1.txt",ls_temp_time1)
 					
 					ToastMessageShow ("اضافه شد",False)
 					btn_menu_home_Click

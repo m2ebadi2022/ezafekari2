@@ -34,7 +34,7 @@ public class bime_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.bime_activity");
+			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.bime_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class bime_activity extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.WebViewWrapper _web_view1 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _label2 = null;
@@ -352,10 +343,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
-public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
-public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
@@ -368,108 +356,94 @@ public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
+public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
+public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
+public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="bime_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=20971520;
- //BA.debugLineNum = 20971520;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=20971522;
- //BA.debugLineNum = 20971522;BA.debugLine="Activity.LoadLayout(\"bime_layout\")";
+ //BA.debugLineNum = 21;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 23;BA.debugLine="Activity.LoadLayout(\"bime_layout\")";
 mostCurrent._activity.LoadLayout("bime_layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=20971523;
- //BA.debugLineNum = 20971523;BA.debugLine="If(myfunc.check_internet=True)Then";
+ //BA.debugLineNum = 24;BA.debugLine="If(myfunc.check_internet=True)Then";
 if ((mostCurrent._myfunc._check_internet /*boolean*/ (mostCurrent.activityBA)==anywheresoftware.b4a.keywords.Common.True)) { 
-RDebugUtils.currentLine=20971524;
- //BA.debugLineNum = 20971524;BA.debugLine="ProgressDialogShow(\"در حال لود ...\")";
+ //BA.debugLineNum = 25;BA.debugLine="ProgressDialogShow(\"در حال لود ...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("در حال لود ..."));
-RDebugUtils.currentLine=20971525;
- //BA.debugLineNum = 20971525;BA.debugLine="web_view1.LoadUrl(\"https://eservices.tamin.ir/vi";
+ //BA.debugLineNum = 26;BA.debugLine="web_view1.LoadUrl(\"https://eservices.tamin.ir/vi";
 mostCurrent._web_view1.LoadUrl("https://eservices.tamin.ir/view/#/history");
  }else {
-RDebugUtils.currentLine=20971527;
- //BA.debugLineNum = 20971527;BA.debugLine="myfunc.help_man(\"توجه\",\"اتصال اینترنت را بررسی ک";
+ //BA.debugLineNum = 28;BA.debugLine="myfunc.help_man(\"توجه\",\"اتصال اینترنت را بررسی ک";
 mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","اتصال اینترنت را بررسی کنید !");
  };
-RDebugUtils.currentLine=20971530;
- //BA.debugLineNum = 20971530;BA.debugLine="pan_hed_bime.Color=Main.color4";
+ //BA.debugLineNum = 31;BA.debugLine="pan_hed_bime.Color=Main.color4";
 mostCurrent._pan_hed_bime.setColor(mostCurrent._main._color4 /*int*/ );
-RDebugUtils.currentLine=20971531;
- //BA.debugLineNum = 20971531;BA.debugLine="myfunc.set_font(Activity)";
+ //BA.debugLineNum = 32;BA.debugLine="myfunc.set_font(Activity)";
 mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,mostCurrent._activity);
-RDebugUtils.currentLine=20971533;
- //BA.debugLineNum = 20971533;BA.debugLine="End Sub";
+ //BA.debugLineNum = 34;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
-RDebugUtils.currentModule="bime_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
-	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=21299200;
- //BA.debugLineNum = 21299200;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=21299201;
- //BA.debugLineNum = 21299201;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 56;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 57;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=21299203;
- //BA.debugLineNum = 21299203;BA.debugLine="lbl_back_Click";
+ //BA.debugLineNum = 59;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
-RDebugUtils.currentLine=21299205;
- //BA.debugLineNum = 21299205;BA.debugLine="Return True";
+ //BA.debugLineNum = 61;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=21299207;
- //BA.debugLineNum = 21299207;BA.debugLine="Return False";
+ //BA.debugLineNum = 63;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=21299209;
- //BA.debugLineNum = 21299209;BA.debugLine="End Sub";
+ //BA.debugLineNum = 65;BA.debugLine="End Sub";
 return false;
 }
-public static String  _lbl_back_click() throws Exception{
-RDebugUtils.currentModule="bime_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
-RDebugUtils.currentLine=21168128;
- //BA.debugLineNum = 21168128;BA.debugLine="Private Sub lbl_back_Click";
-RDebugUtils.currentLine=21168129;
- //BA.debugLineNum = 21168129;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
-RDebugUtils.currentLine=21168130;
- //BA.debugLineNum = 21168130;BA.debugLine="End Sub";
-return "";
-}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="bime_activity";
-RDebugUtils.currentLine=21102592;
- //BA.debugLineNum = 21102592;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=21102594;
- //BA.debugLineNum = 21102594;BA.debugLine="End Sub";
+ //BA.debugLineNum = 40;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 42;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="bime_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=21037056;
- //BA.debugLineNum = 21037056;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=21037058;
- //BA.debugLineNum = 21037058;BA.debugLine="End Sub";
+ //BA.debugLineNum = 36;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 38;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 16;BA.debugLine="Private web_view1 As WebView";
+mostCurrent._web_view1 = new anywheresoftware.b4a.objects.WebViewWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private Label2 As Label";
+mostCurrent._label2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Private pan_hed_bime As Panel";
+mostCurrent._pan_hed_bime = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 19;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_back_click() throws Exception{
+ //BA.debugLineNum = 45;BA.debugLine="Private Sub lbl_back_Click";
+ //BA.debugLineNum = 46;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ //BA.debugLineNum = 47;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 public static String  _web_view1_pagefinished(String _url) throws Exception{
-RDebugUtils.currentModule="bime_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "web_view1_pagefinished", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "web_view1_pagefinished", new Object[] {_url}));}
-RDebugUtils.currentLine=21233664;
- //BA.debugLineNum = 21233664;BA.debugLine="Private Sub web_view1_PageFinished (Url As String)";
-RDebugUtils.currentLine=21233665;
- //BA.debugLineNum = 21233665;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 50;BA.debugLine="Private Sub web_view1_PageFinished (Url As String)";
+ //BA.debugLineNum = 51;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=21233666;
- //BA.debugLineNum = 21233666;BA.debugLine="End Sub";
+ //BA.debugLineNum = 52;BA.debugLine="End Sub";
 return "";
 }
 }

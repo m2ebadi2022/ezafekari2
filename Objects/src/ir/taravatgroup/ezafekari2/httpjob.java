@@ -10,7 +10,7 @@ public class httpjob extends B4AClass.ImplB4AClass implements BA.SubDelegator{
     private static java.util.HashMap<String, java.lang.reflect.Method> htSubs;
     private void innerInitialize(BA _ba) throws Exception {
         if (ba == null) {
-            ba = new anywheresoftware.b4a.ShellBA(_ba, this, htSubs, "ir.taravatgroup.ezafekari2.httpjob");
+            ba = new BA(_ba, this, htSubs, "ir.taravatgroup.ezafekari2.httpjob");
             if (htSubs == null) {
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
@@ -23,13 +23,43 @@ public class httpjob extends B4AClass.ImplB4AClass implements BA.SubDelegator{
             ba.raiseEvent2(null, true, "class_globals", false);
     }
 
- 
-    public void  innerInitializeHelper(anywheresoftware.b4a.BA _ba) throws Exception{
-        innerInitialize(_ba);
-    }
-    public Object callSub(String sub, Object sender, Object[] args) throws Exception {
-        return BA.SubDelegator.SubNotFound;
-    }
+ public anywheresoftware.b4a.keywords.Common __c = null;
+public String _jobname = "";
+public boolean _success = false;
+public String _username = "";
+public String _password = "";
+public String _errormessage = "";
+public Object _target = null;
+public String _taskid = "";
+public anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest _req = null;
+public anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse _response = null;
+public Object _tag = null;
+public String _invalidurl = "";
+public String _defaultscheme = "";
+public b4a.example.dateutils _dateutils = null;
+public ir.taravatgroup.ezafekari2.main _main = null;
+public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
+public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
+public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
+public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
+public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
+public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
+public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
+public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
+public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
+public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
+public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
+public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
+public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
+public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
+public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
+public ir.taravatgroup.ezafekari2.starter _starter = null;
+public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
+public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
+public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 public static class _multipartfiledata{
 public boolean IsInitialized;
 public String Dir;
@@ -47,671 +77,367 @@ ContentType = "";
 		public String toString() {
 			return BA.TypeToString(this, false);
 		}}
-public anywheresoftware.b4a.keywords.Common __c = null;
-public String _jobname = "";
-public boolean _success = false;
-public String _username = "";
-public String _password = "";
-public String _errormessage = "";
-public Object _target = null;
-public String _taskid = "";
-public anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest _req = null;
-public anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse _response = null;
-public Object _tag = null;
-public String _invalidurl = "";
-public String _defaultscheme = "";
-public b4a.example.dateutils _dateutils = null;
-public ir.taravatgroup.ezafekari2.main _main = null;
-public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
-public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
-public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
-public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
-public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
-public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
-public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
-public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
-public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
-public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
-public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
-public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
-public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
-public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
-public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
-public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
-public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
-public ir.taravatgroup.ezafekari2.starter _starter = null;
-public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
-public String  _initialize(ir.taravatgroup.ezafekari2.httpjob __ref,anywheresoftware.b4a.BA _ba,String _name,Object _targetmodule) throws Exception{
-__ref = this;
-innerInitialize(_ba);
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "initialize", true))
-	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba,_name,_targetmodule}));}
-RDebugUtils.currentLine=38273024;
- //BA.debugLineNum = 38273024;BA.debugLine="Public Sub Initialize (Name As String, TargetModul";
-RDebugUtils.currentLine=38273025;
- //BA.debugLineNum = 38273025;BA.debugLine="JobName = Name";
-__ref._jobname /*String*/  = _name;
-RDebugUtils.currentLine=38273026;
- //BA.debugLineNum = 38273026;BA.debugLine="target = TargetModule";
-__ref._target /*Object*/  = _targetmodule;
-RDebugUtils.currentLine=38273027;
- //BA.debugLineNum = 38273027;BA.debugLine="End Sub";
-return "";
-}
-public String  _poststring(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,String _text) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "poststring", true))
-	 {return ((String) Debug.delegate(ba, "poststring", new Object[] {_link,_text}));}
-RDebugUtils.currentLine=38404096;
- //BA.debugLineNum = 38404096;BA.debugLine="Public Sub PostString(Link As String, Text As Stri";
-RDebugUtils.currentLine=38404097;
- //BA.debugLineNum = 38404097;BA.debugLine="PostBytes(Link, Text.GetBytes(\"UTF8\"))";
-__ref._postbytes /*String*/ (null,_link,_text.getBytes("UTF8"));
-RDebugUtils.currentLine=38404098;
- //BA.debugLineNum = 38404098;BA.debugLine="End Sub";
-return "";
-}
-public String  _getstring(ir.taravatgroup.ezafekari2.httpjob __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "getstring", true))
-	 {return ((String) Debug.delegate(ba, "getstring", null));}
-RDebugUtils.currentLine=39452672;
- //BA.debugLineNum = 39452672;BA.debugLine="Public Sub GetString As String";
-RDebugUtils.currentLine=39452673;
- //BA.debugLineNum = 39452673;BA.debugLine="Return GetString2(\"UTF8\")";
-if (true) return __ref._getstring2 /*String*/ (null,"UTF8");
-RDebugUtils.currentLine=39452674;
- //BA.debugLineNum = 39452674;BA.debugLine="End Sub";
-return "";
-}
-public String  _release(ir.taravatgroup.ezafekari2.httpjob __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "release", true))
-	 {return ((String) Debug.delegate(ba, "release", null));}
-RDebugUtils.currentLine=39387136;
- //BA.debugLineNum = 39387136;BA.debugLine="Public Sub Release";
-RDebugUtils.currentLine=39387138;
- //BA.debugLineNum = 39387138;BA.debugLine="File.Delete(HttpUtils2Service.TempFolder, taskId)";
-__c.File.Delete(_httputils2service._tempfolder /*String*/ ,__ref._taskid /*String*/ );
-RDebugUtils.currentLine=39387140;
- //BA.debugLineNum = 39387140;BA.debugLine="End Sub";
-return "";
-}
-public String  _download(ir.taravatgroup.ezafekari2.httpjob __ref,String _link) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "download", true))
-	 {return ((String) Debug.delegate(ba, "download", new Object[] {_link}));}
-RDebugUtils.currentLine=39059456;
- //BA.debugLineNum = 39059456;BA.debugLine="Public Sub Download(Link As String)";
-RDebugUtils.currentLine=39059457;
- //BA.debugLineNum = 39059457;BA.debugLine="Try";
-try {RDebugUtils.currentLine=39059458;
- //BA.debugLineNum = 39059458;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=39059459;
- //BA.debugLineNum = 39059459;BA.debugLine="req.InitializeGet(Link)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeGet(_link);
- } 
-       catch (Exception e5) {
-			ba.setLastException(e5);RDebugUtils.currentLine=39059461;
- //BA.debugLineNum = 39059461;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("939059461",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
-RDebugUtils.currentLine=39059462;
- //BA.debugLineNum = 39059462;BA.debugLine="req.InitializeGet(InvalidURL)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeGet(__ref._invalidurl /*String*/ );
- };
-RDebugUtils.currentLine=39059464;
- //BA.debugLineNum = 39059464;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
-__c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
-RDebugUtils.currentLine=39059465;
- //BA.debugLineNum = 39059465;BA.debugLine="End Sub";
-return "";
-}
-public anywheresoftware.b4a.objects.streams.File.InputStreamWrapper  _getinputstream(ir.taravatgroup.ezafekari2.httpjob __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "getinputstream", true))
-	 {return ((anywheresoftware.b4a.objects.streams.File.InputStreamWrapper) Debug.delegate(ba, "getinputstream", null));}
-anywheresoftware.b4a.objects.streams.File.InputStreamWrapper _in = null;
-RDebugUtils.currentLine=39911424;
- //BA.debugLineNum = 39911424;BA.debugLine="Public Sub GetInputStream As InputStream";
-RDebugUtils.currentLine=39911425;
- //BA.debugLineNum = 39911425;BA.debugLine="Dim In As InputStream";
-_in = new anywheresoftware.b4a.objects.streams.File.InputStreamWrapper();
-RDebugUtils.currentLine=39911426;
- //BA.debugLineNum = 39911426;BA.debugLine="In = File.OpenInput(HttpUtils2Service.TempFolder,";
-_in = __c.File.OpenInput(_httputils2service._tempfolder /*String*/ ,__ref._taskid /*String*/ );
-RDebugUtils.currentLine=39911427;
- //BA.debugLineNum = 39911427;BA.debugLine="Return In";
-if (true) return _in;
-RDebugUtils.currentLine=39911428;
- //BA.debugLineNum = 39911428;BA.debugLine="End Sub";
-return null;
-}
-public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _getbitmap(ir.taravatgroup.ezafekari2.httpjob __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "getbitmap", true))
-	 {return ((anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) Debug.delegate(ba, "getbitmap", null));}
-anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _b = null;
-RDebugUtils.currentLine=39714816;
- //BA.debugLineNum = 39714816;BA.debugLine="Public Sub GetBitmap As Bitmap";
-RDebugUtils.currentLine=39714817;
- //BA.debugLineNum = 39714817;BA.debugLine="Dim b As Bitmap";
-_b = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
-RDebugUtils.currentLine=39714818;
- //BA.debugLineNum = 39714818;BA.debugLine="b = LoadBitmap(HttpUtils2Service.TempFolder, task";
-_b = __c.LoadBitmap(_httputils2service._tempfolder /*String*/ ,__ref._taskid /*String*/ );
-RDebugUtils.currentLine=39714819;
- //BA.debugLineNum = 39714819;BA.debugLine="Return b";
-if (true) return _b;
-RDebugUtils.currentLine=39714820;
- //BA.debugLineNum = 39714820;BA.debugLine="End Sub";
-return null;
-}
-public String  _complete(ir.taravatgroup.ezafekari2.httpjob __ref,int _id) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "complete", true))
-	 {return ((String) Debug.delegate(ba, "complete", new Object[] {_id}));}
-RDebugUtils.currentLine=39649280;
- //BA.debugLineNum = 39649280;BA.debugLine="Public Sub Complete (id As Int)";
-RDebugUtils.currentLine=39649281;
- //BA.debugLineNum = 39649281;BA.debugLine="taskId = id";
-__ref._taskid /*String*/  = BA.NumberToString(_id);
-RDebugUtils.currentLine=39649282;
- //BA.debugLineNum = 39649282;BA.debugLine="CallSubDelayed2(target, \"JobDone\", Me)";
-__c.CallSubDelayed2(ba,__ref._target /*Object*/ ,"JobDone",this);
-RDebugUtils.currentLine=39649283;
- //BA.debugLineNum = 39649283;BA.debugLine="End Sub";
-return "";
-}
-public anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest  _getrequest(ir.taravatgroup.ezafekari2.httpjob __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "getrequest", true))
-	 {return ((anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest) Debug.delegate(ba, "getrequest", null));}
-RDebugUtils.currentLine=39583744;
- //BA.debugLineNum = 39583744;BA.debugLine="Public Sub GetRequest As OkHttpRequest";
-RDebugUtils.currentLine=39583745;
- //BA.debugLineNum = 39583745;BA.debugLine="Return req";
-if (true) return __ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ;
-RDebugUtils.currentLine=39583746;
- //BA.debugLineNum = 39583746;BA.debugLine="End Sub";
-return null;
-}
-public String  _addscheme(ir.taravatgroup.ezafekari2.httpjob __ref,String _link) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "addscheme", true))
-	 {return ((String) Debug.delegate(ba, "addscheme", new Object[] {_link}));}
-RDebugUtils.currentLine=38338560;
- //BA.debugLineNum = 38338560;BA.debugLine="Private Sub AddScheme (Link As String) As String";
-RDebugUtils.currentLine=38338561;
- //BA.debugLineNum = 38338561;BA.debugLine="If DefaultScheme = \"\" Or Link.Contains(\":\") Then";
-if ((__ref._defaultscheme /*String*/ ).equals("") || _link.contains(":")) { 
+public String  _addscheme(String _link) throws Exception{
+ //BA.debugLineNum = 43;BA.debugLine="Private Sub AddScheme (Link As String) As String";
+ //BA.debugLineNum = 44;BA.debugLine="If DefaultScheme = \"\" Or Link.Contains(\":\") Then";
+if ((_defaultscheme).equals("") || _link.contains(":")) { 
 if (true) return _link;};
-RDebugUtils.currentLine=38338562;
- //BA.debugLineNum = 38338562;BA.debugLine="Return DefaultScheme & \"://\" & Link";
-if (true) return __ref._defaultscheme /*String*/ +"://"+_link;
-RDebugUtils.currentLine=38338563;
- //BA.debugLineNum = 38338563;BA.debugLine="End Sub";
+ //BA.debugLineNum = 45;BA.debugLine="Return DefaultScheme & \"://\" & Link";
+if (true) return _defaultscheme+"://"+_link;
+ //BA.debugLineNum = 46;BA.debugLine="End Sub";
 return "";
 }
-public String  _class_globals(ir.taravatgroup.ezafekari2.httpjob __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-RDebugUtils.currentLine=38207488;
- //BA.debugLineNum = 38207488;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=38207489;
- //BA.debugLineNum = 38207489;BA.debugLine="Public JobName As String";
+public String  _class_globals() throws Exception{
+ //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";
+ //BA.debugLineNum = 3;BA.debugLine="Public JobName As String";
 _jobname = "";
-RDebugUtils.currentLine=38207490;
- //BA.debugLineNum = 38207490;BA.debugLine="Public Success As Boolean";
+ //BA.debugLineNum = 4;BA.debugLine="Public Success As Boolean";
 _success = false;
-RDebugUtils.currentLine=38207491;
- //BA.debugLineNum = 38207491;BA.debugLine="Public Username, Password As String";
+ //BA.debugLineNum = 5;BA.debugLine="Public Username, Password As String";
 _username = "";
 _password = "";
-RDebugUtils.currentLine=38207492;
- //BA.debugLineNum = 38207492;BA.debugLine="Public ErrorMessage As String";
+ //BA.debugLineNum = 6;BA.debugLine="Public ErrorMessage As String";
 _errormessage = "";
-RDebugUtils.currentLine=38207493;
- //BA.debugLineNum = 38207493;BA.debugLine="Private target As Object";
+ //BA.debugLineNum = 7;BA.debugLine="Private target As Object";
 _target = new Object();
-RDebugUtils.currentLine=38207499;
- //BA.debugLineNum = 38207499;BA.debugLine="Private taskId As String";
+ //BA.debugLineNum = 13;BA.debugLine="Private taskId As String";
 _taskid = "";
-RDebugUtils.currentLine=38207501;
- //BA.debugLineNum = 38207501;BA.debugLine="Private req As OkHttpRequest";
+ //BA.debugLineNum = 15;BA.debugLine="Private req As OkHttpRequest";
 _req = new anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest();
-RDebugUtils.currentLine=38207502;
- //BA.debugLineNum = 38207502;BA.debugLine="Public Response As OkHttpResponse";
+ //BA.debugLineNum = 16;BA.debugLine="Public Response As OkHttpResponse";
 _response = new anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse();
-RDebugUtils.currentLine=38207511;
- //BA.debugLineNum = 38207511;BA.debugLine="Public Tag As Object";
+ //BA.debugLineNum = 25;BA.debugLine="Public Tag As Object";
 _tag = new Object();
-RDebugUtils.currentLine=38207512;
- //BA.debugLineNum = 38207512;BA.debugLine="Type MultipartFileData (Dir As String, FileName A";
+ //BA.debugLineNum = 26;BA.debugLine="Type MultipartFileData (Dir As String, FileName A";
 ;
-RDebugUtils.currentLine=38207516;
- //BA.debugLineNum = 38207516;BA.debugLine="Private Const InvalidURL As String = \"https://inv";
+ //BA.debugLineNum = 30;BA.debugLine="Private Const InvalidURL As String = \"https://inv";
 _invalidurl = "https://invalid-url/";
-RDebugUtils.currentLine=38207517;
- //BA.debugLineNum = 38207517;BA.debugLine="Public DefaultScheme As String = \"https\"";
+ //BA.debugLineNum = 31;BA.debugLine="Public DefaultScheme As String = \"https\"";
 _defaultscheme = "https";
-RDebugUtils.currentLine=38207518;
- //BA.debugLineNum = 38207518;BA.debugLine="End Sub";
+ //BA.debugLineNum = 32;BA.debugLine="End Sub";
 return "";
 }
-public String  _delete(ir.taravatgroup.ezafekari2.httpjob __ref,String _link) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "delete", true))
-	 {return ((String) Debug.delegate(ba, "delete", new Object[] {_link}));}
-RDebugUtils.currentLine=39256064;
- //BA.debugLineNum = 39256064;BA.debugLine="Public Sub Delete(Link As String)";
-RDebugUtils.currentLine=39256065;
- //BA.debugLineNum = 39256065;BA.debugLine="Try";
-try {RDebugUtils.currentLine=39256066;
- //BA.debugLineNum = 39256066;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=39256067;
- //BA.debugLineNum = 39256067;BA.debugLine="req.InitializeDelete(Link)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeDelete(_link);
+public String  _complete(int _id) throws Exception{
+ //BA.debugLineNum = 306;BA.debugLine="Public Sub Complete (id As Int)";
+ //BA.debugLineNum = 307;BA.debugLine="taskId = id";
+_taskid = BA.NumberToString(_id);
+ //BA.debugLineNum = 308;BA.debugLine="CallSubDelayed2(target, \"JobDone\", Me)";
+__c.CallSubDelayed2(ba,_target,"JobDone",this);
+ //BA.debugLineNum = 309;BA.debugLine="End Sub";
+return "";
+}
+public String  _delete(String _link) throws Exception{
+ //BA.debugLineNum = 252;BA.debugLine="Public Sub Delete(Link As String)";
+ //BA.debugLineNum = 253;BA.debugLine="Try";
+try { //BA.debugLineNum = 254;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 255;BA.debugLine="req.InitializeDelete(Link)";
+_req.InitializeDelete(_link);
  } 
        catch (Exception e5) {
-			ba.setLastException(e5);RDebugUtils.currentLine=39256069;
- //BA.debugLineNum = 39256069;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("939256069",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
-RDebugUtils.currentLine=39256070;
- //BA.debugLineNum = 39256070;BA.debugLine="req.InitializeDelete(InvalidURL)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeDelete(__ref._invalidurl /*String*/ );
+			ba.setLastException(e5); //BA.debugLineNum = 257;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
+__c.LogImpl("98060933",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+ //BA.debugLineNum = 258;BA.debugLine="req.InitializeDelete(InvalidURL)";
+_req.InitializeDelete(_invalidurl);
  };
-RDebugUtils.currentLine=39256072;
- //BA.debugLineNum = 39256072;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
+ //BA.debugLineNum = 260;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
 __c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
-RDebugUtils.currentLine=39256073;
- //BA.debugLineNum = 39256073;BA.debugLine="End Sub";
+ //BA.debugLineNum = 261;BA.debugLine="End Sub";
 return "";
 }
-public String  _delete2(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,String[] _parameters) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "delete2", true))
-	 {return ((String) Debug.delegate(ba, "delete2", new Object[] {_link,_parameters}));}
-RDebugUtils.currentLine=39321600;
- //BA.debugLineNum = 39321600;BA.debugLine="Public Sub Delete2(Link As String, Parameters() As";
-RDebugUtils.currentLine=39321601;
- //BA.debugLineNum = 39321601;BA.debugLine="Try";
-try {RDebugUtils.currentLine=39321602;
- //BA.debugLineNum = 39321602;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=39321603;
- //BA.debugLineNum = 39321603;BA.debugLine="req.InitializeDelete(escapeLink(Link, Parameters";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeDelete(__ref._escapelink /*String*/ (null,_link,_parameters));
+public String  _delete2(String _link,String[] _parameters) throws Exception{
+ //BA.debugLineNum = 263;BA.debugLine="Public Sub Delete2(Link As String, Parameters() As";
+ //BA.debugLineNum = 264;BA.debugLine="Try";
+try { //BA.debugLineNum = 265;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 266;BA.debugLine="req.InitializeDelete(escapeLink(Link, Parameters";
+_req.InitializeDelete(_escapelink(_link,_parameters));
  } 
        catch (Exception e5) {
-			ba.setLastException(e5);RDebugUtils.currentLine=39321605;
- //BA.debugLineNum = 39321605;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("939321605",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
-RDebugUtils.currentLine=39321606;
- //BA.debugLineNum = 39321606;BA.debugLine="req.InitializeDelete(escapeLink(InvalidURL, Para";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeDelete(__ref._escapelink /*String*/ (null,__ref._invalidurl /*String*/ ,_parameters));
+			ba.setLastException(e5); //BA.debugLineNum = 268;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
+__c.LogImpl("98126469",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+ //BA.debugLineNum = 269;BA.debugLine="req.InitializeDelete(escapeLink(InvalidURL, Para";
+_req.InitializeDelete(_escapelink(_invalidurl,_parameters));
  };
-RDebugUtils.currentLine=39321608;
- //BA.debugLineNum = 39321608;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
+ //BA.debugLineNum = 271;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
 __c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
-RDebugUtils.currentLine=39321609;
- //BA.debugLineNum = 39321609;BA.debugLine="End Sub";
+ //BA.debugLineNum = 272;BA.debugLine="End Sub";
 return "";
 }
-public String  _escapelink(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,String[] _parameters) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "escapelink", true))
-	 {return ((String) Debug.delegate(ba, "escapelink", new Object[] {_link,_parameters}));}
+public String  _download(String _link) throws Exception{
+ //BA.debugLineNum = 210;BA.debugLine="Public Sub Download(Link As String)";
+ //BA.debugLineNum = 211;BA.debugLine="Try";
+try { //BA.debugLineNum = 212;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 213;BA.debugLine="req.InitializeGet(Link)";
+_req.InitializeGet(_link);
+ } 
+       catch (Exception e5) {
+			ba.setLastException(e5); //BA.debugLineNum = 215;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
+__c.LogImpl("97864325",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+ //BA.debugLineNum = 216;BA.debugLine="req.InitializeGet(InvalidURL)";
+_req.InitializeGet(_invalidurl);
+ };
+ //BA.debugLineNum = 218;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
+__c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
+ //BA.debugLineNum = 219;BA.debugLine="End Sub";
+return "";
+}
+public String  _download2(String _link,String[] _parameters) throws Exception{
+ //BA.debugLineNum = 226;BA.debugLine="Public Sub Download2(Link As String, Parameters()";
+ //BA.debugLineNum = 227;BA.debugLine="Try";
+try { //BA.debugLineNum = 228;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 229;BA.debugLine="req.InitializeGet(escapeLink(Link, Parameters))";
+_req.InitializeGet(_escapelink(_link,_parameters));
+ } 
+       catch (Exception e5) {
+			ba.setLastException(e5); //BA.debugLineNum = 231;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
+__c.LogImpl("97929861",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+ //BA.debugLineNum = 232;BA.debugLine="req.InitializeGet(escapeLink(InvalidURL, Paramet";
+_req.InitializeGet(_escapelink(_invalidurl,_parameters));
+ };
+ //BA.debugLineNum = 234;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
+__c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
+ //BA.debugLineNum = 235;BA.debugLine="End Sub";
+return "";
+}
+public String  _escapelink(String _link,String[] _parameters) throws Exception{
 anywheresoftware.b4a.keywords.StringBuilderWrapper _sb = null;
 anywheresoftware.b4a.objects.StringUtils _su = null;
 int _i = 0;
-RDebugUtils.currentLine=39190528;
- //BA.debugLineNum = 39190528;BA.debugLine="Private Sub escapeLink(Link As String, Parameters(";
-RDebugUtils.currentLine=39190529;
- //BA.debugLineNum = 39190529;BA.debugLine="Dim sb As StringBuilder";
+ //BA.debugLineNum = 237;BA.debugLine="Private Sub escapeLink(Link As String, Parameters(";
+ //BA.debugLineNum = 238;BA.debugLine="Dim sb As StringBuilder";
 _sb = new anywheresoftware.b4a.keywords.StringBuilderWrapper();
-RDebugUtils.currentLine=39190530;
- //BA.debugLineNum = 39190530;BA.debugLine="sb.Initialize";
+ //BA.debugLineNum = 239;BA.debugLine="sb.Initialize";
 _sb.Initialize();
-RDebugUtils.currentLine=39190531;
- //BA.debugLineNum = 39190531;BA.debugLine="sb.Append(Link)";
+ //BA.debugLineNum = 240;BA.debugLine="sb.Append(Link)";
 _sb.Append(_link);
-RDebugUtils.currentLine=39190532;
- //BA.debugLineNum = 39190532;BA.debugLine="If Parameters.Length > 0 Then sb.Append(\"?\")";
+ //BA.debugLineNum = 241;BA.debugLine="If Parameters.Length > 0 Then sb.Append(\"?\")";
 if (_parameters.length>0) { 
 _sb.Append("?");};
-RDebugUtils.currentLine=39190533;
- //BA.debugLineNum = 39190533;BA.debugLine="Dim su As StringUtils";
+ //BA.debugLineNum = 242;BA.debugLine="Dim su As StringUtils";
 _su = new anywheresoftware.b4a.objects.StringUtils();
-RDebugUtils.currentLine=39190534;
- //BA.debugLineNum = 39190534;BA.debugLine="For i = 0 To Parameters.Length - 1 Step 2";
+ //BA.debugLineNum = 243;BA.debugLine="For i = 0 To Parameters.Length - 1 Step 2";
 {
 final int step6 = 2;
 final int limit6 = (int) (_parameters.length-1);
 _i = (int) (0) ;
 for (;_i <= limit6 ;_i = _i + step6 ) {
-RDebugUtils.currentLine=39190535;
- //BA.debugLineNum = 39190535;BA.debugLine="If i > 0 Then sb.Append(\"&\")";
+ //BA.debugLineNum = 244;BA.debugLine="If i > 0 Then sb.Append(\"&\")";
 if (_i>0) { 
 _sb.Append("&");};
-RDebugUtils.currentLine=39190536;
- //BA.debugLineNum = 39190536;BA.debugLine="sb.Append(su.EncodeUrl(Parameters(i), \"UTF8\")).A";
+ //BA.debugLineNum = 245;BA.debugLine="sb.Append(su.EncodeUrl(Parameters(i), \"UTF8\")).A";
 _sb.Append(_su.EncodeUrl(_parameters[_i],"UTF8")).Append("=");
-RDebugUtils.currentLine=39190537;
- //BA.debugLineNum = 39190537;BA.debugLine="sb.Append(su.EncodeUrl(Parameters(i + 1), \"UTF8\"";
+ //BA.debugLineNum = 246;BA.debugLine="sb.Append(su.EncodeUrl(Parameters(i + 1), \"UTF8\"";
 _sb.Append(_su.EncodeUrl(_parameters[(int) (_i+1)],"UTF8"));
  }
 };
-RDebugUtils.currentLine=39190539;
- //BA.debugLineNum = 39190539;BA.debugLine="Return sb.ToString";
+ //BA.debugLineNum = 248;BA.debugLine="Return sb.ToString";
 if (true) return _sb.ToString();
-RDebugUtils.currentLine=39190540;
- //BA.debugLineNum = 39190540;BA.debugLine="End Sub";
+ //BA.debugLineNum = 249;BA.debugLine="End Sub";
 return "";
 }
-public String  _download2(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,String[] _parameters) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "download2", true))
-	 {return ((String) Debug.delegate(ba, "download2", new Object[] {_link,_parameters}));}
-RDebugUtils.currentLine=39124992;
- //BA.debugLineNum = 39124992;BA.debugLine="Public Sub Download2(Link As String, Parameters()";
-RDebugUtils.currentLine=39124993;
- //BA.debugLineNum = 39124993;BA.debugLine="Try";
-try {RDebugUtils.currentLine=39124994;
- //BA.debugLineNum = 39124994;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=39124995;
- //BA.debugLineNum = 39124995;BA.debugLine="req.InitializeGet(escapeLink(Link, Parameters))";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeGet(__ref._escapelink /*String*/ (null,_link,_parameters));
- } 
-       catch (Exception e5) {
-			ba.setLastException(e5);RDebugUtils.currentLine=39124997;
- //BA.debugLineNum = 39124997;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("939124997",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
-RDebugUtils.currentLine=39124998;
- //BA.debugLineNum = 39124998;BA.debugLine="req.InitializeGet(escapeLink(InvalidURL, Paramet";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeGet(__ref._escapelink /*String*/ (null,__ref._invalidurl /*String*/ ,_parameters));
- };
-RDebugUtils.currentLine=39125000;
- //BA.debugLineNum = 39125000;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
-__c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
-RDebugUtils.currentLine=39125001;
- //BA.debugLineNum = 39125001;BA.debugLine="End Sub";
+public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _getbitmap() throws Exception{
+anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _b = null;
+ //BA.debugLineNum = 321;BA.debugLine="Public Sub GetBitmap As Bitmap";
+ //BA.debugLineNum = 322;BA.debugLine="Dim b As Bitmap";
+_b = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
+ //BA.debugLineNum = 323;BA.debugLine="b = LoadBitmap(HttpUtils2Service.TempFolder, task";
+_b = __c.LoadBitmap(_httputils2service._tempfolder /*String*/ ,_taskid);
+ //BA.debugLineNum = 324;BA.debugLine="Return b";
+if (true) return _b;
+ //BA.debugLineNum = 325;BA.debugLine="End Sub";
+return null;
+}
+public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _getbitmapresize(int _width,int _height,boolean _keepaspectratio) throws Exception{
+ //BA.debugLineNum = 332;BA.debugLine="Public Sub GetBitmapResize(Width As Int, Height As";
+ //BA.debugLineNum = 333;BA.debugLine="Return LoadBitmapResize(HttpUtils2Service.TempFol";
+if (true) return __c.LoadBitmapResize(_httputils2service._tempfolder /*String*/ ,_taskid,_width,_height,_keepaspectratio);
+ //BA.debugLineNum = 334;BA.debugLine="End Sub";
+return null;
+}
+public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _getbitmapsample(int _width,int _height) throws Exception{
+ //BA.debugLineNum = 328;BA.debugLine="Public Sub GetBitmapSample(Width As Int, Height As";
+ //BA.debugLineNum = 329;BA.debugLine="Return LoadBitmapSample(HttpUtils2Service.TempFol";
+if (true) return __c.LoadBitmapSample(_httputils2service._tempfolder /*String*/ ,_taskid,_width,_height);
+ //BA.debugLineNum = 330;BA.debugLine="End Sub";
+return null;
+}
+public anywheresoftware.b4a.objects.streams.File.InputStreamWrapper  _getinputstream() throws Exception{
+anywheresoftware.b4a.objects.streams.File.InputStreamWrapper _in = null;
+ //BA.debugLineNum = 338;BA.debugLine="Public Sub GetInputStream As InputStream";
+ //BA.debugLineNum = 339;BA.debugLine="Dim In As InputStream";
+_in = new anywheresoftware.b4a.objects.streams.File.InputStreamWrapper();
+ //BA.debugLineNum = 340;BA.debugLine="In = File.OpenInput(HttpUtils2Service.TempFolder,";
+_in = __c.File.OpenInput(_httputils2service._tempfolder /*String*/ ,_taskid);
+ //BA.debugLineNum = 341;BA.debugLine="Return In";
+if (true) return _in;
+ //BA.debugLineNum = 342;BA.debugLine="End Sub";
+return null;
+}
+public anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest  _getrequest() throws Exception{
+ //BA.debugLineNum = 301;BA.debugLine="Public Sub GetRequest As OkHttpRequest";
+ //BA.debugLineNum = 302;BA.debugLine="Return req";
+if (true) return _req;
+ //BA.debugLineNum = 303;BA.debugLine="End Sub";
+return null;
+}
+public String  _getstring() throws Exception{
+ //BA.debugLineNum = 282;BA.debugLine="Public Sub GetString As String";
+ //BA.debugLineNum = 283;BA.debugLine="Return GetString2(\"UTF8\")";
+if (true) return _getstring2("UTF8");
+ //BA.debugLineNum = 284;BA.debugLine="End Sub";
 return "";
 }
-public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _getbitmapresize(ir.taravatgroup.ezafekari2.httpjob __ref,int _width,int _height,boolean _keepaspectratio) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "getbitmapresize", true))
-	 {return ((anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) Debug.delegate(ba, "getbitmapresize", new Object[] {_width,_height,_keepaspectratio}));}
-RDebugUtils.currentLine=39845888;
- //BA.debugLineNum = 39845888;BA.debugLine="Public Sub GetBitmapResize(Width As Int, Height As";
-RDebugUtils.currentLine=39845889;
- //BA.debugLineNum = 39845889;BA.debugLine="Return LoadBitmapResize(HttpUtils2Service.TempFol";
-if (true) return __c.LoadBitmapResize(_httputils2service._tempfolder /*String*/ ,__ref._taskid /*String*/ ,_width,_height,_keepaspectratio);
-RDebugUtils.currentLine=39845890;
- //BA.debugLineNum = 39845890;BA.debugLine="End Sub";
-return null;
-}
-public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _getbitmapsample(ir.taravatgroup.ezafekari2.httpjob __ref,int _width,int _height) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "getbitmapsample", true))
-	 {return ((anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) Debug.delegate(ba, "getbitmapsample", new Object[] {_width,_height}));}
-RDebugUtils.currentLine=39780352;
- //BA.debugLineNum = 39780352;BA.debugLine="Public Sub GetBitmapSample(Width As Int, Height As";
-RDebugUtils.currentLine=39780353;
- //BA.debugLineNum = 39780353;BA.debugLine="Return LoadBitmapSample(HttpUtils2Service.TempFol";
-if (true) return __c.LoadBitmapSample(_httputils2service._tempfolder /*String*/ ,__ref._taskid /*String*/ ,_width,_height);
-RDebugUtils.currentLine=39780354;
- //BA.debugLineNum = 39780354;BA.debugLine="End Sub";
-return null;
-}
-public String  _getstring2(ir.taravatgroup.ezafekari2.httpjob __ref,String _encoding) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "getstring2", true))
-	 {return ((String) Debug.delegate(ba, "getstring2", new Object[] {_encoding}));}
+public String  _getstring2(String _encoding) throws Exception{
 anywheresoftware.b4a.objects.streams.File.TextReaderWrapper _tr = null;
 String _res = "";
-RDebugUtils.currentLine=39518208;
- //BA.debugLineNum = 39518208;BA.debugLine="Public Sub GetString2(Encoding As String) As Strin";
-RDebugUtils.currentLine=39518212;
- //BA.debugLineNum = 39518212;BA.debugLine="Dim tr As TextReader";
+ //BA.debugLineNum = 287;BA.debugLine="Public Sub GetString2(Encoding As String) As Strin";
+ //BA.debugLineNum = 291;BA.debugLine="Dim tr As TextReader";
 _tr = new anywheresoftware.b4a.objects.streams.File.TextReaderWrapper();
-RDebugUtils.currentLine=39518213;
- //BA.debugLineNum = 39518213;BA.debugLine="tr.Initialize2(File.OpenInput(HttpUtils2Service.T";
-_tr.Initialize2((java.io.InputStream)(__c.File.OpenInput(_httputils2service._tempfolder /*String*/ ,__ref._taskid /*String*/ ).getObject()),_encoding);
-RDebugUtils.currentLine=39518214;
- //BA.debugLineNum = 39518214;BA.debugLine="Dim res As String = tr.ReadAll";
+ //BA.debugLineNum = 292;BA.debugLine="tr.Initialize2(File.OpenInput(HttpUtils2Service.T";
+_tr.Initialize2((java.io.InputStream)(__c.File.OpenInput(_httputils2service._tempfolder /*String*/ ,_taskid).getObject()),_encoding);
+ //BA.debugLineNum = 293;BA.debugLine="Dim res As String = tr.ReadAll";
 _res = _tr.ReadAll();
-RDebugUtils.currentLine=39518215;
- //BA.debugLineNum = 39518215;BA.debugLine="tr.Close";
+ //BA.debugLineNum = 294;BA.debugLine="tr.Close";
 _tr.Close();
-RDebugUtils.currentLine=39518216;
- //BA.debugLineNum = 39518216;BA.debugLine="Return res";
+ //BA.debugLineNum = 295;BA.debugLine="Return res";
 if (true) return _res;
-RDebugUtils.currentLine=39518218;
- //BA.debugLineNum = 39518218;BA.debugLine="End Sub";
+ //BA.debugLineNum = 297;BA.debugLine="End Sub";
 return "";
 }
-public String  _head(ir.taravatgroup.ezafekari2.httpjob __ref,String _link) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "head", true))
-	 {return ((String) Debug.delegate(ba, "head", new Object[] {_link}));}
-RDebugUtils.currentLine=38797312;
- //BA.debugLineNum = 38797312;BA.debugLine="Public Sub Head(Link As String)";
-RDebugUtils.currentLine=38797313;
- //BA.debugLineNum = 38797313;BA.debugLine="Try";
-try {RDebugUtils.currentLine=38797314;
- //BA.debugLineNum = 38797314;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=38797315;
- //BA.debugLineNum = 38797315;BA.debugLine="req.InitializeHead(Link)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeHead(_link);
+public String  _head(String _link) throws Exception{
+ //BA.debugLineNum = 110;BA.debugLine="Public Sub Head(Link As String)";
+ //BA.debugLineNum = 111;BA.debugLine="Try";
+try { //BA.debugLineNum = 112;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 113;BA.debugLine="req.InitializeHead(Link)";
+_req.InitializeHead(_link);
  } 
        catch (Exception e5) {
-			ba.setLastException(e5);RDebugUtils.currentLine=38797317;
- //BA.debugLineNum = 38797317;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("938797317",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
-RDebugUtils.currentLine=38797318;
- //BA.debugLineNum = 38797318;BA.debugLine="req.InitializeHead(InvalidURL)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializeHead(__ref._invalidurl /*String*/ );
+			ba.setLastException(e5); //BA.debugLineNum = 115;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
+__c.LogImpl("97602181",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+ //BA.debugLineNum = 116;BA.debugLine="req.InitializeHead(InvalidURL)";
+_req.InitializeHead(_invalidurl);
  };
-RDebugUtils.currentLine=38797320;
- //BA.debugLineNum = 38797320;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
+ //BA.debugLineNum = 118;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
 __c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
-RDebugUtils.currentLine=38797321;
- //BA.debugLineNum = 38797321;BA.debugLine="End Sub";
+ //BA.debugLineNum = 119;BA.debugLine="End Sub";
 return "";
 }
-public boolean  _multipartstartsection(ir.taravatgroup.ezafekari2.httpjob __ref,anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper _stream,boolean _empty) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "multipartstartsection", true))
-	 {return ((Boolean) Debug.delegate(ba, "multipartstartsection", new Object[] {_stream,_empty}));}
-RDebugUtils.currentLine=38928384;
- //BA.debugLineNum = 38928384;BA.debugLine="Private Sub MultipartStartSection (stream As Outpu";
-RDebugUtils.currentLine=38928385;
- //BA.debugLineNum = 38928385;BA.debugLine="If empty = False Then";
+public String  _initialize(anywheresoftware.b4a.BA _ba,String _name,Object _targetmodule) throws Exception{
+innerInitialize(_ba);
+ //BA.debugLineNum = 38;BA.debugLine="Public Sub Initialize (Name As String, TargetModul";
+ //BA.debugLineNum = 39;BA.debugLine="JobName = Name";
+_jobname = _name;
+ //BA.debugLineNum = 40;BA.debugLine="target = TargetModule";
+_target = _targetmodule;
+ //BA.debugLineNum = 41;BA.debugLine="End Sub";
+return "";
+}
+public boolean  _multipartstartsection(anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper _stream,boolean _empty) throws Exception{
+ //BA.debugLineNum = 170;BA.debugLine="Private Sub MultipartStartSection (stream As Outpu";
+ //BA.debugLineNum = 171;BA.debugLine="If empty = False Then";
 if (_empty==__c.False) { 
-RDebugUtils.currentLine=38928386;
- //BA.debugLineNum = 38928386;BA.debugLine="stream.WriteBytes(Array As Byte(13, 10), 0, 2)";
+ //BA.debugLineNum = 172;BA.debugLine="stream.WriteBytes(Array As Byte(13, 10), 0, 2)";
 _stream.WriteBytes(new byte[]{(byte) (13),(byte) (10)},(int) (0),(int) (2));
  }else {
-RDebugUtils.currentLine=38928388;
- //BA.debugLineNum = 38928388;BA.debugLine="empty = False";
+ //BA.debugLineNum = 174;BA.debugLine="empty = False";
 _empty = __c.False;
  };
-RDebugUtils.currentLine=38928390;
- //BA.debugLineNum = 38928390;BA.debugLine="Return empty";
+ //BA.debugLineNum = 176;BA.debugLine="Return empty";
 if (true) return _empty;
-RDebugUtils.currentLine=38928391;
- //BA.debugLineNum = 38928391;BA.debugLine="End Sub";
+ //BA.debugLineNum = 177;BA.debugLine="End Sub";
 return false;
 }
-public String  _patchbytes(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,byte[] _data) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "patchbytes", true))
-	 {return ((String) Debug.delegate(ba, "patchbytes", new Object[] {_link,_data}));}
-RDebugUtils.currentLine=38731776;
- //BA.debugLineNum = 38731776;BA.debugLine="Public Sub PatchBytes(Link As String, Data() As By";
-RDebugUtils.currentLine=38731777;
- //BA.debugLineNum = 38731777;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=38731785;
- //BA.debugLineNum = 38731785;BA.debugLine="Try";
-try {RDebugUtils.currentLine=38731786;
- //BA.debugLineNum = 38731786;BA.debugLine="req.InitializePatch2(Link, Data)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializePatch2(_link,_data);
+public String  _patchbytes(String _link,byte[] _data) throws Exception{
+ //BA.debugLineNum = 88;BA.debugLine="Public Sub PatchBytes(Link As String, Data() As By";
+ //BA.debugLineNum = 89;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 97;BA.debugLine="Try";
+try { //BA.debugLineNum = 98;BA.debugLine="req.InitializePatch2(Link, Data)";
+_req.InitializePatch2(_link,_data);
  } 
        catch (Exception e5) {
-			ba.setLastException(e5);RDebugUtils.currentLine=38731788;
- //BA.debugLineNum = 38731788;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("938731788",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
-RDebugUtils.currentLine=38731789;
- //BA.debugLineNum = 38731789;BA.debugLine="req.InitializePatch2(InvalidURL, Data)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializePatch2(__ref._invalidurl /*String*/ ,_data);
+			ba.setLastException(e5); //BA.debugLineNum = 100;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
+__c.LogImpl("97536652",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+ //BA.debugLineNum = 101;BA.debugLine="req.InitializePatch2(InvalidURL, Data)";
+_req.InitializePatch2(_invalidurl,_data);
  };
-RDebugUtils.currentLine=38731793;
- //BA.debugLineNum = 38731793;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
+ //BA.debugLineNum = 105;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
 __c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
-RDebugUtils.currentLine=38731794;
- //BA.debugLineNum = 38731794;BA.debugLine="End Sub";
+ //BA.debugLineNum = 106;BA.debugLine="End Sub";
 return "";
 }
-public String  _patchstring(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,String _text) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "patchstring", true))
-	 {return ((String) Debug.delegate(ba, "patchstring", new Object[] {_link,_text}));}
-RDebugUtils.currentLine=38666240;
- //BA.debugLineNum = 38666240;BA.debugLine="Public Sub PatchString(Link As String, Text As Str";
-RDebugUtils.currentLine=38666241;
- //BA.debugLineNum = 38666241;BA.debugLine="PatchBytes(Link, Text.GetBytes(\"UTF8\"))";
-__ref._patchbytes /*String*/ (null,_link,_text.getBytes("UTF8"));
-RDebugUtils.currentLine=38666242;
- //BA.debugLineNum = 38666242;BA.debugLine="End Sub";
+public String  _patchstring(String _link,String _text) throws Exception{
+ //BA.debugLineNum = 83;BA.debugLine="Public Sub PatchString(Link As String, Text As Str";
+ //BA.debugLineNum = 84;BA.debugLine="PatchBytes(Link, Text.GetBytes(\"UTF8\"))";
+_patchbytes(_link,_text.getBytes("UTF8"));
+ //BA.debugLineNum = 85;BA.debugLine="End Sub";
 return "";
 }
-public String  _postbytes(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,byte[] _data) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "postbytes", true))
-	 {return ((String) Debug.delegate(ba, "postbytes", new Object[] {_link,_data}));}
-RDebugUtils.currentLine=38469632;
- //BA.debugLineNum = 38469632;BA.debugLine="Public Sub PostBytes(Link As String, Data() As Byt";
-RDebugUtils.currentLine=38469633;
- //BA.debugLineNum = 38469633;BA.debugLine="Try";
-try {RDebugUtils.currentLine=38469634;
- //BA.debugLineNum = 38469634;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=38469635;
- //BA.debugLineNum = 38469635;BA.debugLine="req.InitializePost2(Link, Data)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializePost2(_link,_data);
+public String  _postbytes(String _link,byte[] _data) throws Exception{
+ //BA.debugLineNum = 54;BA.debugLine="Public Sub PostBytes(Link As String, Data() As Byt";
+ //BA.debugLineNum = 55;BA.debugLine="Try";
+try { //BA.debugLineNum = 56;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 57;BA.debugLine="req.InitializePost2(Link, Data)";
+_req.InitializePost2(_link,_data);
  } 
        catch (Exception e5) {
-			ba.setLastException(e5);RDebugUtils.currentLine=38469637;
- //BA.debugLineNum = 38469637;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("938469637",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
-RDebugUtils.currentLine=38469638;
- //BA.debugLineNum = 38469638;BA.debugLine="req.InitializePost2(InvalidURL, Data)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializePost2(__ref._invalidurl /*String*/ ,_data);
+			ba.setLastException(e5); //BA.debugLineNum = 59;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
+__c.LogImpl("97274501",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+ //BA.debugLineNum = 60;BA.debugLine="req.InitializePost2(InvalidURL, Data)";
+_req.InitializePost2(_invalidurl,_data);
  };
-RDebugUtils.currentLine=38469640;
- //BA.debugLineNum = 38469640;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
+ //BA.debugLineNum = 62;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
 __c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
-RDebugUtils.currentLine=38469641;
- //BA.debugLineNum = 38469641;BA.debugLine="End Sub";
+ //BA.debugLineNum = 63;BA.debugLine="End Sub";
 return "";
 }
-public String  _postfile(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,String _dir,String _filename) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "postfile", true))
-	 {return ((String) Debug.delegate(ba, "postfile", new Object[] {_link,_dir,_filename}));}
+public String  _postfile(String _link,String _dir,String _filename) throws Exception{
 int _length = 0;
 anywheresoftware.b4a.objects.streams.File.InputStreamWrapper _in = null;
 anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper _out = null;
-RDebugUtils.currentLine=38993920;
- //BA.debugLineNum = 38993920;BA.debugLine="Public Sub PostFile(Link As String, Dir As String,";
-RDebugUtils.currentLine=38993921;
- //BA.debugLineNum = 38993921;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=38993926;
- //BA.debugLineNum = 38993926;BA.debugLine="Dim length As Int";
+ //BA.debugLineNum = 181;BA.debugLine="Public Sub PostFile(Link As String, Dir As String,";
+ //BA.debugLineNum = 182;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 187;BA.debugLine="Dim length As Int";
 _length = 0;
-RDebugUtils.currentLine=38993927;
- //BA.debugLineNum = 38993927;BA.debugLine="If Dir = File.DirAssets Then";
+ //BA.debugLineNum = 188;BA.debugLine="If Dir = File.DirAssets Then";
 if ((_dir).equals(__c.File.getDirAssets())) { 
-RDebugUtils.currentLine=38993928;
- //BA.debugLineNum = 38993928;BA.debugLine="Log(\"Cannot send files from the assets folder.\")";
-__c.LogImpl("938993928","Cannot send files from the assets folder.",0);
-RDebugUtils.currentLine=38993929;
- //BA.debugLineNum = 38993929;BA.debugLine="Return";
+ //BA.debugLineNum = 189;BA.debugLine="Log(\"Cannot send files from the assets folder.\")";
+__c.LogImpl("97798792","Cannot send files from the assets folder.",0);
+ //BA.debugLineNum = 190;BA.debugLine="Return";
 if (true) return "";
  };
-RDebugUtils.currentLine=38993931;
- //BA.debugLineNum = 38993931;BA.debugLine="length = File.Size(Dir, FileName)";
+ //BA.debugLineNum = 192;BA.debugLine="length = File.Size(Dir, FileName)";
 _length = (int) (__c.File.Size(_dir,_filename));
-RDebugUtils.currentLine=38993932;
- //BA.debugLineNum = 38993932;BA.debugLine="Dim In As InputStream";
+ //BA.debugLineNum = 193;BA.debugLine="Dim In As InputStream";
 _in = new anywheresoftware.b4a.objects.streams.File.InputStreamWrapper();
-RDebugUtils.currentLine=38993933;
- //BA.debugLineNum = 38993933;BA.debugLine="In = File.OpenInput(Dir, FileName)";
+ //BA.debugLineNum = 194;BA.debugLine="In = File.OpenInput(Dir, FileName)";
 _in = __c.File.OpenInput(_dir,_filename);
-RDebugUtils.currentLine=38993934;
- //BA.debugLineNum = 38993934;BA.debugLine="If length < 1000000 Then '1mb";
+ //BA.debugLineNum = 195;BA.debugLine="If length < 1000000 Then '1mb";
 if (_length<1000000) { 
-RDebugUtils.currentLine=38993937;
- //BA.debugLineNum = 38993937;BA.debugLine="Dim out As OutputStream";
+ //BA.debugLineNum = 198;BA.debugLine="Dim out As OutputStream";
 _out = new anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper();
-RDebugUtils.currentLine=38993938;
- //BA.debugLineNum = 38993938;BA.debugLine="out.InitializeToBytesArray(length)";
+ //BA.debugLineNum = 199;BA.debugLine="out.InitializeToBytesArray(length)";
 _out.InitializeToBytesArray(_length);
-RDebugUtils.currentLine=38993939;
- //BA.debugLineNum = 38993939;BA.debugLine="File.Copy2(In, out)";
+ //BA.debugLineNum = 200;BA.debugLine="File.Copy2(In, out)";
 __c.File.Copy2((java.io.InputStream)(_in.getObject()),(java.io.OutputStream)(_out.getObject()));
-RDebugUtils.currentLine=38993940;
- //BA.debugLineNum = 38993940;BA.debugLine="PostBytes(Link, out.ToBytesArray)";
-__ref._postbytes /*String*/ (null,_link,_out.ToBytesArray());
+ //BA.debugLineNum = 201;BA.debugLine="PostBytes(Link, out.ToBytesArray)";
+_postbytes(_link,_out.ToBytesArray());
  }else {
-RDebugUtils.currentLine=38993942;
- //BA.debugLineNum = 38993942;BA.debugLine="req.InitializePost(Link, In, length)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializePost(_link,(java.io.InputStream)(_in.getObject()),_length);
-RDebugUtils.currentLine=38993943;
- //BA.debugLineNum = 38993943;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\",";
+ //BA.debugLineNum = 203;BA.debugLine="req.InitializePost(Link, In, length)";
+_req.InitializePost(_link,(java.io.InputStream)(_in.getObject()),_length);
+ //BA.debugLineNum = 204;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\",";
 __c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
  };
-RDebugUtils.currentLine=38993946;
- //BA.debugLineNum = 38993946;BA.debugLine="End Sub";
+ //BA.debugLineNum = 207;BA.debugLine="End Sub";
 return "";
 }
-public String  _postmultipart(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,anywheresoftware.b4a.objects.collections.Map _namevalues,anywheresoftware.b4a.objects.collections.List _files) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "postmultipart", true))
-	 {return ((String) Debug.delegate(ba, "postmultipart", new Object[] {_link,_namevalues,_files}));}
+public String  _postmultipart(String _link,anywheresoftware.b4a.objects.collections.Map _namevalues,anywheresoftware.b4a.objects.collections.List _files) throws Exception{
 String _boundary = "";
 anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper _stream = null;
 byte[] _b = null;
@@ -722,32 +448,23 @@ String _value = "";
 String _s = "";
 ir.taravatgroup.ezafekari2.httpjob._multipartfiledata _fd = null;
 anywheresoftware.b4a.objects.streams.File.InputStreamWrapper _in = null;
-RDebugUtils.currentLine=38862848;
- //BA.debugLineNum = 38862848;BA.debugLine="Public Sub PostMultipart(Link As String, NameValue";
-RDebugUtils.currentLine=38862849;
- //BA.debugLineNum = 38862849;BA.debugLine="Dim boundary As String = \"-----------------------";
+ //BA.debugLineNum = 124;BA.debugLine="Public Sub PostMultipart(Link As String, NameValue";
+ //BA.debugLineNum = 125;BA.debugLine="Dim boundary As String = \"-----------------------";
 _boundary = "---------------------------1461124740692";
-RDebugUtils.currentLine=38862850;
- //BA.debugLineNum = 38862850;BA.debugLine="Dim stream As OutputStream";
+ //BA.debugLineNum = 126;BA.debugLine="Dim stream As OutputStream";
 _stream = new anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper();
-RDebugUtils.currentLine=38862851;
- //BA.debugLineNum = 38862851;BA.debugLine="stream.InitializeToBytesArray(0)";
+ //BA.debugLineNum = 127;BA.debugLine="stream.InitializeToBytesArray(0)";
 _stream.InitializeToBytesArray((int) (0));
-RDebugUtils.currentLine=38862852;
- //BA.debugLineNum = 38862852;BA.debugLine="Dim b() As Byte";
+ //BA.debugLineNum = 128;BA.debugLine="Dim b() As Byte";
 _b = new byte[(int) (0)];
 ;
-RDebugUtils.currentLine=38862853;
- //BA.debugLineNum = 38862853;BA.debugLine="Dim eol As String = Chr(13) & Chr(10)";
+ //BA.debugLineNum = 129;BA.debugLine="Dim eol As String = Chr(13) & Chr(10)";
 _eol = BA.ObjectToString(__c.Chr((int) (13)))+BA.ObjectToString(__c.Chr((int) (10)));
-RDebugUtils.currentLine=38862854;
- //BA.debugLineNum = 38862854;BA.debugLine="Dim empty As Boolean = True";
+ //BA.debugLineNum = 130;BA.debugLine="Dim empty As Boolean = True";
 _empty = __c.True;
-RDebugUtils.currentLine=38862855;
- //BA.debugLineNum = 38862855;BA.debugLine="If NameValues <> Null And NameValues.IsInitialize";
+ //BA.debugLineNum = 131;BA.debugLine="If NameValues <> Null And NameValues.IsInitialize";
 if (_namevalues!= null && _namevalues.IsInitialized()) { 
-RDebugUtils.currentLine=38862856;
- //BA.debugLineNum = 38862856;BA.debugLine="For Each key As String In NameValues.Keys";
+ //BA.debugLineNum = 132;BA.debugLine="For Each key As String In NameValues.Keys";
 {
 final anywheresoftware.b4a.BA.IterableList group8 = _namevalues.Keys();
 final int groupLen8 = group8.getSize()
@@ -755,29 +472,22 @@ final int groupLen8 = group8.getSize()
 ;
 for (; index8 < groupLen8;index8++){
 _key = BA.ObjectToString(group8.Get(index8));
-RDebugUtils.currentLine=38862857;
- //BA.debugLineNum = 38862857;BA.debugLine="Dim value As String = NameValues.Get(key)";
+ //BA.debugLineNum = 133;BA.debugLine="Dim value As String = NameValues.Get(key)";
 _value = BA.ObjectToString(_namevalues.Get((Object)(_key)));
-RDebugUtils.currentLine=38862858;
- //BA.debugLineNum = 38862858;BA.debugLine="empty = MultipartStartSection (stream, empty)";
-_empty = __ref._multipartstartsection /*boolean*/ (null,_stream,_empty);
-RDebugUtils.currentLine=38862859;
- //BA.debugLineNum = 38862859;BA.debugLine="Dim s As String = _ $\"--${boundary} Content-Dis";
+ //BA.debugLineNum = 134;BA.debugLine="empty = MultipartStartSection (stream, empty)";
+_empty = _multipartstartsection(_stream,_empty);
+ //BA.debugLineNum = 135;BA.debugLine="Dim s As String = _ $\"--${boundary} Content-Dis";
 _s = ("--"+__c.SmartStringFormatter("",(Object)(_boundary))+"\n"+"Content-Disposition: form-data; name=\""+__c.SmartStringFormatter("",(Object)(_key))+"\"\n"+"\n"+""+__c.SmartStringFormatter("",(Object)(_value))+"");
-RDebugUtils.currentLine=38862864;
- //BA.debugLineNum = 38862864;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
+ //BA.debugLineNum = 140;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
 _b = _s.replace(__c.CRLF,_eol).getBytes("UTF8");
-RDebugUtils.currentLine=38862865;
- //BA.debugLineNum = 38862865;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
+ //BA.debugLineNum = 141;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
 _stream.WriteBytes(_b,(int) (0),_b.length);
  }
 };
  };
-RDebugUtils.currentLine=38862868;
- //BA.debugLineNum = 38862868;BA.debugLine="If Files <> Null And Files.IsInitialized Then";
+ //BA.debugLineNum = 144;BA.debugLine="If Files <> Null And Files.IsInitialized Then";
 if (_files!= null && _files.IsInitialized()) { 
-RDebugUtils.currentLine=38862869;
- //BA.debugLineNum = 38862869;BA.debugLine="For Each fd As MultipartFileData In Files";
+ //BA.debugLineNum = 145;BA.debugLine="For Each fd As MultipartFileData In Files";
 {
 final anywheresoftware.b4a.BA.IterableList group17 = _files;
 final int groupLen17 = group17.getSize()
@@ -785,96 +495,81 @@ final int groupLen17 = group17.getSize()
 ;
 for (; index17 < groupLen17;index17++){
 _fd = (ir.taravatgroup.ezafekari2.httpjob._multipartfiledata)(group17.Get(index17));
-RDebugUtils.currentLine=38862870;
- //BA.debugLineNum = 38862870;BA.debugLine="empty = MultipartStartSection (stream, empty)";
-_empty = __ref._multipartstartsection /*boolean*/ (null,_stream,_empty);
-RDebugUtils.currentLine=38862871;
- //BA.debugLineNum = 38862871;BA.debugLine="Dim s As String = _ $\"--${boundary} Content-Dis";
+ //BA.debugLineNum = 146;BA.debugLine="empty = MultipartStartSection (stream, empty)";
+_empty = _multipartstartsection(_stream,_empty);
+ //BA.debugLineNum = 147;BA.debugLine="Dim s As String = _ $\"--${boundary} Content-Dis";
 _s = ("--"+__c.SmartStringFormatter("",(Object)(_boundary))+"\n"+"Content-Disposition: form-data; name=\""+__c.SmartStringFormatter("",(Object)(_fd.KeyName /*String*/ ))+"\"; filename=\""+__c.SmartStringFormatter("",(Object)(_fd.FileName /*String*/ ))+"\"\n"+"Content-Type: "+__c.SmartStringFormatter("",(Object)(_fd.ContentType /*String*/ ))+"\n"+"\n"+"");
-RDebugUtils.currentLine=38862877;
- //BA.debugLineNum = 38862877;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
+ //BA.debugLineNum = 153;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
 _b = _s.replace(__c.CRLF,_eol).getBytes("UTF8");
-RDebugUtils.currentLine=38862878;
- //BA.debugLineNum = 38862878;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
+ //BA.debugLineNum = 154;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
 _stream.WriteBytes(_b,(int) (0),_b.length);
-RDebugUtils.currentLine=38862879;
- //BA.debugLineNum = 38862879;BA.debugLine="Dim in As InputStream = File.OpenInput(fd.Dir,";
+ //BA.debugLineNum = 155;BA.debugLine="Dim in As InputStream = File.OpenInput(fd.Dir,";
 _in = new anywheresoftware.b4a.objects.streams.File.InputStreamWrapper();
 _in = __c.File.OpenInput(_fd.Dir /*String*/ ,_fd.FileName /*String*/ );
-RDebugUtils.currentLine=38862880;
- //BA.debugLineNum = 38862880;BA.debugLine="File.Copy2(in, stream)";
+ //BA.debugLineNum = 156;BA.debugLine="File.Copy2(in, stream)";
 __c.File.Copy2((java.io.InputStream)(_in.getObject()),(java.io.OutputStream)(_stream.getObject()));
  }
 };
  };
-RDebugUtils.currentLine=38862883;
- //BA.debugLineNum = 38862883;BA.debugLine="empty = MultipartStartSection (stream, empty)";
-_empty = __ref._multipartstartsection /*boolean*/ (null,_stream,_empty);
-RDebugUtils.currentLine=38862884;
- //BA.debugLineNum = 38862884;BA.debugLine="s = _ $\"--${boundary}-- \"$";
+ //BA.debugLineNum = 159;BA.debugLine="empty = MultipartStartSection (stream, empty)";
+_empty = _multipartstartsection(_stream,_empty);
+ //BA.debugLineNum = 160;BA.debugLine="s = _ $\"--${boundary}-- \"$";
 _s = ("--"+__c.SmartStringFormatter("",(Object)(_boundary))+"--\n"+"");
-RDebugUtils.currentLine=38862887;
- //BA.debugLineNum = 38862887;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
+ //BA.debugLineNum = 163;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
 _b = _s.replace(__c.CRLF,_eol).getBytes("UTF8");
-RDebugUtils.currentLine=38862888;
- //BA.debugLineNum = 38862888;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
+ //BA.debugLineNum = 164;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
 _stream.WriteBytes(_b,(int) (0),_b.length);
-RDebugUtils.currentLine=38862889;
- //BA.debugLineNum = 38862889;BA.debugLine="PostBytes(Link, stream.ToBytesArray)";
-__ref._postbytes /*String*/ (null,_link,_stream.ToBytesArray());
-RDebugUtils.currentLine=38862890;
- //BA.debugLineNum = 38862890;BA.debugLine="req.SetContentType(\"multipart/form-data; boundary";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .SetContentType("multipart/form-data; boundary="+_boundary);
-RDebugUtils.currentLine=38862891;
- //BA.debugLineNum = 38862891;BA.debugLine="req.SetContentEncoding(\"UTF8\")";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .SetContentEncoding("UTF8");
-RDebugUtils.currentLine=38862892;
- //BA.debugLineNum = 38862892;BA.debugLine="End Sub";
+ //BA.debugLineNum = 165;BA.debugLine="PostBytes(Link, stream.ToBytesArray)";
+_postbytes(_link,_stream.ToBytesArray());
+ //BA.debugLineNum = 166;BA.debugLine="req.SetContentType(\"multipart/form-data; boundary";
+_req.SetContentType("multipart/form-data; boundary="+_boundary);
+ //BA.debugLineNum = 167;BA.debugLine="req.SetContentEncoding(\"UTF8\")";
+_req.SetContentEncoding("UTF8");
+ //BA.debugLineNum = 168;BA.debugLine="End Sub";
 return "";
 }
-public String  _putbytes(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,byte[] _data) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "putbytes", true))
-	 {return ((String) Debug.delegate(ba, "putbytes", new Object[] {_link,_data}));}
-RDebugUtils.currentLine=38600704;
- //BA.debugLineNum = 38600704;BA.debugLine="Public Sub PutBytes(Link As String, Data() As Byte";
-RDebugUtils.currentLine=38600705;
- //BA.debugLineNum = 38600705;BA.debugLine="Try";
-try {RDebugUtils.currentLine=38600706;
- //BA.debugLineNum = 38600706;BA.debugLine="Link = AddScheme(Link)";
-_link = __ref._addscheme /*String*/ (null,_link);
-RDebugUtils.currentLine=38600707;
- //BA.debugLineNum = 38600707;BA.debugLine="req.InitializePut2(Link, Data)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializePut2(_link,_data);
+public String  _poststring(String _link,String _text) throws Exception{
+ //BA.debugLineNum = 49;BA.debugLine="Public Sub PostString(Link As String, Text As Stri";
+ //BA.debugLineNum = 50;BA.debugLine="PostBytes(Link, Text.GetBytes(\"UTF8\"))";
+_postbytes(_link,_text.getBytes("UTF8"));
+ //BA.debugLineNum = 51;BA.debugLine="End Sub";
+return "";
+}
+public String  _putbytes(String _link,byte[] _data) throws Exception{
+ //BA.debugLineNum = 71;BA.debugLine="Public Sub PutBytes(Link As String, Data() As Byte";
+ //BA.debugLineNum = 72;BA.debugLine="Try";
+try { //BA.debugLineNum = 73;BA.debugLine="Link = AddScheme(Link)";
+_link = _addscheme(_link);
+ //BA.debugLineNum = 74;BA.debugLine="req.InitializePut2(Link, Data)";
+_req.InitializePut2(_link,_data);
  } 
        catch (Exception e5) {
-			ba.setLastException(e5);RDebugUtils.currentLine=38600709;
- //BA.debugLineNum = 38600709;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("938600709",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
-RDebugUtils.currentLine=38600710;
- //BA.debugLineNum = 38600710;BA.debugLine="req.InitializePut2(InvalidURL, Data)";
-__ref._req /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ .InitializePut2(__ref._invalidurl /*String*/ ,_data);
+			ba.setLastException(e5); //BA.debugLineNum = 76;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
+__c.LogImpl("97405573",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+ //BA.debugLineNum = 77;BA.debugLine="req.InitializePut2(InvalidURL, Data)";
+_req.InitializePut2(_invalidurl,_data);
  };
-RDebugUtils.currentLine=38600712;
- //BA.debugLineNum = 38600712;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
+ //BA.debugLineNum = 79;BA.debugLine="CallSubDelayed2(HttpUtils2Service, \"SubmitJob\", M";
 __c.CallSubDelayed2(ba,(Object)(_httputils2service.getObject()),"SubmitJob",this);
-RDebugUtils.currentLine=38600713;
- //BA.debugLineNum = 38600713;BA.debugLine="End Sub";
+ //BA.debugLineNum = 80;BA.debugLine="End Sub";
 return "";
 }
-public String  _putstring(ir.taravatgroup.ezafekari2.httpjob __ref,String _link,String _text) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="httpjob";
-if (Debug.shouldDelegate(ba, "putstring", true))
-	 {return ((String) Debug.delegate(ba, "putstring", new Object[] {_link,_text}));}
-RDebugUtils.currentLine=38535168;
- //BA.debugLineNum = 38535168;BA.debugLine="Public Sub PutString(Link As String, Text As Strin";
-RDebugUtils.currentLine=38535169;
- //BA.debugLineNum = 38535169;BA.debugLine="PutBytes(Link, Text.GetBytes(\"UTF8\"))";
-__ref._putbytes /*String*/ (null,_link,_text.getBytes("UTF8"));
-RDebugUtils.currentLine=38535170;
- //BA.debugLineNum = 38535170;BA.debugLine="End Sub";
+public String  _putstring(String _link,String _text) throws Exception{
+ //BA.debugLineNum = 66;BA.debugLine="Public Sub PutString(Link As String, Text As Strin";
+ //BA.debugLineNum = 67;BA.debugLine="PutBytes(Link, Text.GetBytes(\"UTF8\"))";
+_putbytes(_link,_text.getBytes("UTF8"));
+ //BA.debugLineNum = 68;BA.debugLine="End Sub";
 return "";
+}
+public String  _release() throws Exception{
+ //BA.debugLineNum = 275;BA.debugLine="Public Sub Release";
+ //BA.debugLineNum = 277;BA.debugLine="File.Delete(HttpUtils2Service.TempFolder, taskId)";
+__c.File.Delete(_httputils2service._tempfolder /*String*/ ,_taskid);
+ //BA.debugLineNum = 279;BA.debugLine="End Sub";
+return "";
+}
+public Object callSub(String sub, Object sender, Object[] args) throws Exception {
+BA.senderHolder.set(sender);
+return BA.SubDelegator.SubNotFound;
 }
 }
