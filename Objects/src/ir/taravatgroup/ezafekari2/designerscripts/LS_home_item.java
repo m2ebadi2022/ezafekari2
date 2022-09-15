@@ -12,9 +12,7 @@ anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.2d);
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
 views.get("pan_group1").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_group1").vw.getWidth() / 2)));
-//BA.debugLineNum = 6;BA.debugLine="pan_group2.HorizontalCenter=50%x"[home_item/General script]
 views.get("pan_group2").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_group2").vw.getWidth() / 2)));
-//BA.debugLineNum = 7;BA.debugLine="pan_group3.HorizontalCenter=50%x"[home_item/General script]
 views.get("pan_group3").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_group3").vw.getWidth() / 2)));
 //BA.debugLineNum = 8;BA.debugLine="pan_group4.HorizontalCenter=50%x"[home_item/General script]
 views.get("pan_group4").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_group4").vw.getWidth() / 2)));

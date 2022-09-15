@@ -374,6 +374,7 @@ public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
+public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -389,7 +390,6 @@ public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
-public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 
@@ -811,11 +811,11 @@ this.state = 4;
  //BA.debugLineNum = 150;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.SharedFo";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db");
  //BA.debugLineNum = 152;BA.debugLine="Log( Dir)";
-anywheresoftware.b4a.keywords.Common.LogImpl("230474247",_dir,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("628966919",_dir,0);
  //BA.debugLineNum = 153;BA.debugLine="Log(FileName)";
-anywheresoftware.b4a.keywords.Common.LogImpl("230474248",_filename,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("628966920",_filename,0);
  //BA.debugLineNum = 154;BA.debugLine="Log(File.Exists(Starter.Provider.SharedFolder,\"d";
-anywheresoftware.b4a.keywords.Common.LogImpl("230474249",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db")),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("628966921",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db")),0);
  //BA.debugLineNum = 156;BA.debugLine="Dim result As Int";
 _result = 0;
  //BA.debugLineNum = 158;BA.debugLine="result = Msgbox2(\"دیتای قبلی حذف و دیتای جدید جا";
@@ -1169,7 +1169,7 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("�
  //BA.debugLineNum = 535;BA.debugLine="ToggleBtn_finger.Checked=False";
 mostCurrent._togglebtn_finger.setChecked(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 536;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("232374798",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("630867470",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 539;BA.debugLine="End Sub";
 return "";
@@ -1196,7 +1196,7 @@ mostCurrent._et_hint_lock.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  } 
        catch (Exception e12) {
 			processBA.setLastException(e12); //BA.debugLineNum = 506;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("232178189",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("630670861",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 512;BA.debugLine="End Sub";
 return "";

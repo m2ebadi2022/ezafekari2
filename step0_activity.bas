@@ -130,7 +130,7 @@ Private Sub lbl_run1_step0_Click
 	'StartActivity(activity_step2) for test
 	
 	If(et_phonNum.Text="")Then
-		ToastMessageShow("شماره مبایل معتبر وارد کنید",False)
+		ToastMessageShow("شماره موبایل معتبر وارد کنید",False)
 		
 	Else
 		If(et_phonNum.Text.Length=11)Then
@@ -139,11 +139,11 @@ Private Sub lbl_run1_step0_Click
 				Main.phon_num=et_phonNum.Text
 				http_initial_1(1)
 			Else
-				ToastMessageShow("شماره مبایل معتبر وارد کنید",False)
+				ToastMessageShow("شماره موبایل معتبر وارد کنید",False)
 			End If
 			
 		Else
-			ToastMessageShow("شماره مبایل معتبر وارد کنید",False)
+			ToastMessageShow("شماره موبایل معتبر وارد کنید",False)
 		End If
 		
 		

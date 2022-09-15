@@ -101,6 +101,21 @@ Sub Globals
 	Dim ls_onvanHa As List
 	
 	Private printer As Printer
+	Private radio_type1 As RadioButton
+	Private radio_type2 As RadioButton
+	Private lbl_date_to As Label
+	Private lbl_date_from As Label
+	Private pan_all_set_date As Panel
+	Private pik_year1 As Label
+	Private pik_moon1 As Label
+	Private pik_day1 As Label
+	
+	
+	Dim num_dataPik As Int=0  '' for time picker
+	Dim moon_dataPik As List  '' for date picker
+	Dim index_datePik As Int
+	Dim type_mohasebe As Int=1
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -176,6 +191,15 @@ str_web1.Initialize
 	
 	
 	
+	''  for date picker
+	moon_dataPik.Initialize
+	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
+	
+	lbl_date_from.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad( myfunc.fa2en((Main.persianDate.PersianMonth)-1))&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
+	lbl_date_to.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianMonth))&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
+	
+	''-----------------
+	
 	calc_vahed_ezafekari
 	calc_vahed_ezafekari_vij
 End Sub
@@ -242,33 +266,7 @@ End Sub
 Sub et_time_inDB
 
 	
-	Select sp_moon.SelectedIndex
-		Case 0
-			moon_num="01"
-		Case 1
-			moon_num="02"
-		Case 2
-			moon_num="03"
-		Case 3
-			moon_num="04"
-		Case 4
-			moon_num="05"
-		Case 5
-			moon_num="06"
-		Case 6
-			moon_num="07"
-		Case 7
-			moon_num="08"
-		Case 8
-			moon_num="09"
-		Case 9
-			moon_num="10"
-		Case 10
-			moon_num="11"
-		Case 11
-			moon_num="12"
-	End Select
-	
+	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex)
 	
 	''--------ezafe mamoli
 	Dim list_ezafekari1 As List
@@ -285,12 +283,28 @@ Sub et_time_inDB
 	et_time_m_vij.Text=list_ezafekari2.Get(1)
 	
 	
-	
-	If(moon_num<7)Then
-		roze_kari=31
+	If(type_mohasebe=1)Then
+		If(moon_num<7)Then
+			roze_kari=31
+		Else
+			roze_kari=30
+		End If
 	Else
-		roze_kari=30
+		Dim y1_miladi As String =lbl_date_from.Text.SubString2(0,5)
+		Dim m1_miladi As String =lbl_date_from.Text.SubString2(6,8)
+		Dim d1_miladi As String =lbl_date_from.Text.SubString2(9,10)
+		Dim date1_miladi As String =Main.persianDate.PersianToGregorian(y1_miladi,m1_miladi,d1_miladi)
+		
+		Dim y2_miladi As String =lbl_date_to.Text.SubString2(0,5)
+		Dim m2_miladi As String =lbl_date_to.Text.SubString2(6,8)
+		Dim d2_miladi As String =lbl_date_to.Text.SubString2(9,10)
+		Dim date2_miladi As String =Main.persianDate.PersianToGregorian(y2_miladi,m2_miladi,d2_miladi)
+		
+		
+		
+		Main.persianDate.CalculateDaysBetween(date1_miladi,date2_miladi)
 	End If
+	
 	et_rozekari.Text=roze_kari
 End Sub
 Sub Activity_Resume
@@ -439,13 +453,20 @@ Private Sub lbl_run_mohasebe_Click
 	
 	''--------------  table ezafkari --------------
 	dbCode.connect_db
-	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
+	If(type_mohasebe=1)Then
+		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
+		str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
+	Else
+		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&lbl_date_to.Text&"' ;")
+		str1.Append("<h3>").Append("گزارش از تاریخ ").Append(lbl_date_from.Text).Append(" تا ").Append(lbl_date_to.Text).Append("</h3>")
+	End If
+	
 	
 	
 	'str1.Append("<img src='file:///storage/emulated/0/Android/data/ir.taravatgroup.ezafekari2/files/user-"&Main.phon_num&".jpg' alt='Avatar' style='width:200px;border-radius: 50%;'>")
 	
 	
-	str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
+	
 	str1.Append("نام کاربر :").Append("<span> "&Main.user_nameFamili&"</span>").Append("<br>")
 	
 	str1.Append("<div style=' background-color: #f5f5f5;'><details>")
@@ -475,7 +496,14 @@ Private Sub lbl_run_mohasebe_Click
 	
 	''--------------  table morakhasi --------------
 	
-	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
+	
+	
+	If(type_mohasebe=1)Then
+		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
+	Else
+		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&lbl_date_to.Text&"' ;")
+	End If
+	
 	
 	str1.Append("<div style=' background-color: #f5f5f5 ;'><details>")
 	str1.Append("<summary><b> مرخصی های این ماه</b></summary>")
@@ -916,4 +944,303 @@ Private Sub lbl_print_Click
 
 	'printer.PrintHtml("job", str_file_matn)
 	printer.PrintWebView("job",WebView2)
+End Sub
+
+
+Private Sub radio_type2_CheckedChange(Checked As Boolean)
+	sp_moon.Enabled=False
+	sp_year.Enabled=False
+	lbl_date_from.Enabled=True
+	lbl_date_to.Enabled=True
+	type_mohasebe=2
+End Sub
+
+Private Sub radio_type1_CheckedChange(Checked As Boolean)
+	sp_moon.Enabled=True
+	sp_year.Enabled=True
+	lbl_date_from.Enabled=False
+	lbl_date_to.Enabled=False
+	type_mohasebe=1
+End Sub
+
+Private Sub lbl_date_from_Click
+	pan_all_set_date.Visible=True
+	index_datePik=1
+	
+	pik_year1.Text=myfunc.fa2en(lbl_date_from.Text.SubString2(0,4))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date_from.Text.SubString2(6,7))
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	pik_day1.Text=myfunc.fa2en(lbl_date_from.Text.SubString2(8,10))
+	
+	
+	
+End Sub
+
+Private Sub lbl_date_to_Click
+	pan_all_set_date.Visible=True
+	index_datePik=2
+	
+	pik_year1.Text=myfunc.fa2en(lbl_date_to.Text.SubString2(0,4))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date_to.Text.SubString2(6,7))
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	pik_day1.Text=myfunc.fa2en(lbl_date_to.Text.SubString2(8,10))
+	
+	
+End Sub
+
+Private Sub pan_all_set_date_Click
+	
+	
+	
+	pan_all_set_date.Visible=False
+End Sub
+
+
+
+Private Sub lbl_save_picker_Click
+	pan_all_set_date.Visible=False
+	If(index_datePik=1) Then
+		lbl_date_from.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
+		
+	Else If(index_datePik=2) Then
+		lbl_date_to.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
+	End If
+	
+	
+	
+	Dim y1_shamsi As Int =myfunc.fa2en( lbl_date_from.Text.SubString2(0,4))
+	Dim m1_shamsi As Int =myfunc.fa2en(lbl_date_from.Text.SubString2(6,7))
+	Dim d1_shamsi As Int =myfunc.fa2en(lbl_date_from.Text.SubString2(8,10))
+	
+		
+	Dim y2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(0,4))
+	Dim m2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(6,7))
+	Dim d2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(8,10))
+	
+	Dim rozzzz As Int=0
+	
+	Dim mah1 As Int=31
+	Dim mah2 As Int=31
+	
+	If(y2_shamsi-y1_shamsi)=0 Then
+		If(m2_shamsi-m1_shamsi)=0 Then
+			rozzzz=d2_shamsi-d1_shamsi
+		Else If (m2_shamsi-m1_shamsi)=1 Then
+			rozzzz=(mah1-d1_shamsi) + (d2_shamsi)
+		Else
+			ToastMessageShow("حداکثر 31 روز باشد",False)
+		End If
+	Else
+		ToastMessageShow("حداکثر 31 روز باشد",False)
+	End If
+	If(rozzzz>31)Then
+		ToastMessageShow("حداکثر 31 روز باشد",False)
+	End If
+	
+	Log(rozzzz)
+	
+	et_rozekari.Text=rozzzz
+	
+End Sub
+
+
+
+
+
+Private Sub pik_pan_moon1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_moon1.Tag)-1
+			pik_moon1.Tag=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_moon1.Tag)+1
+			pik_moon1.Tag=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_moon1.Tag>12)Then
+			pik_moon1.Tag=1
+		End If
+		If(pik_moon1.Tag<1)Then
+			pik_moon1.Tag=12
+		End If
+		pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	End If
+	
+End Sub
+
+Private Sub pik_pan_year1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_year1.Text)-1
+			pik_year1.Text=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_year1.Text)+1
+			pik_year1.Text=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_year1.Text>1410)Then
+			pik_year1.Text=1390
+		End If
+		If(pik_year1.Text<1390)Then
+			pik_year1.Text=1410
+		End If
+		
+	End If
+	
+End Sub
+
+Private Sub pik_pan_day1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_day1.Text)-1
+			pik_day1.Text=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_day1.Text)+1
+			pik_day1.Text=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_moon1.Tag<7)Then
+			If(pik_day1.Text>31)Then
+				pik_day1.Text=1
+			End If
+			If(pik_day1.Text<1)Then
+				pik_day1.Text=31
+			End If
+		Else
+			If(pik_day1.Text>30)Then
+				pik_day1.Text=1
+			End If
+			If(pik_day1.Text<1)Then
+				pik_day1.Text=30
+			End If
+		End If
+		
+		
+	End If
+	
+End Sub
+
+Private Sub pik_moon_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_moon1.Tag)
+	pik_moon1.Tag=int1+1
+	
+	If(pik_moon1.Tag>12)Then
+		pik_moon1.Tag=1
+	End If
+	If(pik_moon1.Tag<1)Then
+		pik_moon1.Tag=12
+	End If
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	
+End Sub
+
+Private Sub pik_moon_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_moon1.Tag)
+	pik_moon1.Tag=int1-1
+	
+	If(pik_moon1.Tag>12)Then
+		pik_moon1.Tag=1
+	End If
+	If(pik_moon1.Tag<1)Then
+		pik_moon1.Tag=12
+	End If
+	pik_moon1.Text=moon_dataPik.Get(myfunc.fa2en(pik_moon1.Tag)-1)
+	
+End Sub
+
+Private Sub pik_year_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_year1.Text)
+	pik_year1.Text=int1+1
+	
+	If(pik_year1.Text>1410)Then
+		pik_year1.Text=1390
+	End If
+	If(pik_year1.Text<1390)Then
+		pik_year1.Text=1410
+	End If
+	
+End Sub
+
+Private Sub pik_year_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_year1.Text)
+	pik_year1.Text=int1-1
+	
+	If(pik_year1.Text>1410)Then
+		pik_year1.Text=1390
+	End If
+	If(pik_year1.Text<1390)Then
+		pik_year1.Text=1410
+	End If
+	
+End Sub
+
+Private Sub pik_day_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_day1.Text)
+	pik_day1.Text=int1+1
+	
+	
+	If(pik_moon1.Tag<7)Then
+		If(pik_day1.Text>31)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=31
+		End If
+	Else
+		If(pik_day1.Text>30)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=30
+		End If
+	End If
+	
+End Sub
+
+Private Sub pik_day_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_day1.Text)
+	pik_day1.Text=int1-1
+	If(pik_moon1.Tag<7)Then
+		If(pik_day1.Text>31)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=31
+		End If
+	Else
+		If(pik_day1.Text>30)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=30
+		End If
+	End If
+	
 End Sub

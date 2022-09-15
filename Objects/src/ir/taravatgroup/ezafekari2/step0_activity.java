@@ -518,7 +518,7 @@ public static String  _jobdone(ir.taravatgroup.ezafekari2.httpjob _job) throws E
 try { //BA.debugLineNum = 212;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 213;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("239518211",_job._getstring /*String*/ (),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("615532035",_job._getstring /*String*/ (),0);
  //BA.debugLineNum = 214;BA.debugLine="If job.JobName=\"ht1\" Then";
 if ((_job._jobname /*String*/ ).equals("ht1")) { 
  }else if((_job._jobname /*String*/ ).equals("ht2")) { 
@@ -549,7 +549,7 @@ _job._release /*String*/ ();
  } 
        catch (Exception e22) {
 			processBA.setLastException(e22); //BA.debugLineNum = 241;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("239518239",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("615532063",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 242;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -583,8 +583,8 @@ public static String  _lbl_run1_step0_click() throws Exception{
  //BA.debugLineNum = 122;BA.debugLine="Private Sub lbl_run1_step0_Click";
  //BA.debugLineNum = 126;BA.debugLine="If(et_phonNum.Text=\"\")Then";
 if (((mostCurrent._et_phonnum.getText()).equals(""))) { 
- //BA.debugLineNum = 127;BA.debugLine="ToastMessageShow(\"شماره مبایل معتبر وارد کنید\",F";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("شماره مبایل معتبر وارد کنید"),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 127;BA.debugLine="ToastMessageShow(\"شماره موبایل معتبر وارد کنید\",";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("شماره موبایل معتبر وارد کنید"),anywheresoftware.b4a.keywords.Common.False);
  }else {
  //BA.debugLineNum = 130;BA.debugLine="If(et_phonNum.Text.Length=11)Then";
 if ((mostCurrent._et_phonnum.getText().length()==11)) { 
@@ -595,12 +595,12 @@ mostCurrent._main._phon_num /*String*/  = mostCurrent._et_phonnum.getText();
  //BA.debugLineNum = 134;BA.debugLine="http_initial_1(1)";
 _http_initial_1((int) (1));
  }else {
- //BA.debugLineNum = 136;BA.debugLine="ToastMessageShow(\"شماره مبایل معتبر وارد کنید\"";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("شماره مبایل معتبر وارد کنید"),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 136;BA.debugLine="ToastMessageShow(\"شماره موبایل معتبر وارد کنید";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("شماره موبایل معتبر وارد کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
  }else {
- //BA.debugLineNum = 140;BA.debugLine="ToastMessageShow(\"شماره مبایل معتبر وارد کنید\",";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("شماره مبایل معتبر وارد کنید"),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 140;BA.debugLine="ToastMessageShow(\"شماره موبایل معتبر وارد کنید\"";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("شماره موبایل معتبر وارد کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
  };
  //BA.debugLineNum = 147;BA.debugLine="End Sub";
