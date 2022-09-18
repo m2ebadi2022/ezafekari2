@@ -144,7 +144,7 @@ Sub Activity_Create(FirstTime As Boolean)
 
 
 	sp_moon.SelectedIndex=myfunc.fa2en(Main.persianDate.PersianMonth)-1
-	et_time_inDB
+	
 	
 	
 	''set color 
@@ -200,8 +200,14 @@ str_web1.Initialize
 	
 	''-----------------
 	
+	et_time_inDB
+	
 	calc_vahed_ezafekari
 	calc_vahed_ezafekari_vij
+	
+	
+	
+	
 End Sub
 
 
@@ -215,6 +221,7 @@ Sub calc_vahed_ezafekari
 
 '' ezafekari ady
 	vahed_ezafekari=((paye+sanavat)/220)*1.4
+	'vahed_ezafekari=((paye+sanavat+maskan+bon)/220)*1.4
 	
 	
 	et_vahed_ezafekari.Tag=vahed_ezafekari
@@ -232,6 +239,7 @@ Sub calc_vahed_ezafekari_vij
 	
 	'' ezafekari vije
 	vahed_ezafekari_vij=((paye+sanavat)/220)*1.8
+	'vahed_ezafekari_vij=((paye+sanavat+maskan+bon)/220)*1.8
 	
 	
 	et_vahed_ezafekari_vij.Tag=vahed_ezafekari_vij
@@ -266,44 +274,43 @@ End Sub
 Sub et_time_inDB
 
 	
-	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex)
+	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex+1)
 	
 	''--------ezafe mamoli
 	Dim list_ezafekari1 As List
 	list_ezafekari1.Initialize
-	list_ezafekari1=dbCode.all_ezafekari_mah(sp_year.SelectedItem,moon_num,2)
+	
+	
+	If(type_mohasebe=1)Then
+		list_ezafekari1=dbCode.all_ezafekari_mah(myfunc.fa2en(sp_year.SelectedItem),myfunc.fa2en(moon_num),2)
+	Else
+		list_ezafekari1=dbCode.all_ezafekari_byDate(myfunc.fa2en(lbl_date_from.Text),myfunc.fa2en(lbl_date_to.Text),2)
+	End If
+	
 	et_time_h.Text=list_ezafekari1.Get(0)
 	et_time_m.Text=list_ezafekari1.Get(1)
 	
 	''--------  vije
 	Dim list_ezafekari2 As List
 	list_ezafekari2.Initialize
-	list_ezafekari2=dbCode.all_ezafekari_mah(sp_year.SelectedItem,moon_num,3)
+	
+	
+	If(type_mohasebe=1)Then
+		list_ezafekari2=dbCode.all_ezafekari_mah(sp_year.SelectedItem,moon_num,3)
+	Else
+		list_ezafekari2=dbCode.all_ezafekari_byDate(myfunc.fa2en(lbl_date_from.Text),myfunc.fa2en(lbl_date_to.Text),3)
+	End If
+	
 	et_time_h_vij.Text=list_ezafekari2.Get(0)
 	et_time_m_vij.Text=list_ezafekari2.Get(1)
 	
 	
-	If(type_mohasebe=1)Then
 		If(moon_num<7)Then
 			roze_kari=31
 		Else
 			roze_kari=30
 		End If
-	Else
-		Dim y1_miladi As String =lbl_date_from.Text.SubString2(0,5)
-		Dim m1_miladi As String =lbl_date_from.Text.SubString2(6,8)
-		Dim d1_miladi As String =lbl_date_from.Text.SubString2(9,10)
-		Dim date1_miladi As String =Main.persianDate.PersianToGregorian(y1_miladi,m1_miladi,d1_miladi)
-		
-		Dim y2_miladi As String =lbl_date_to.Text.SubString2(0,5)
-		Dim m2_miladi As String =lbl_date_to.Text.SubString2(6,8)
-		Dim d2_miladi As String =lbl_date_to.Text.SubString2(9,10)
-		Dim date2_miladi As String =Main.persianDate.PersianToGregorian(y2_miladi,m2_miladi,d2_miladi)
-		
-		
-		
-		Main.persianDate.CalculateDaysBetween(date1_miladi,date2_miladi)
-	End If
+	
 	
 	et_rozekari.Text=roze_kari
 End Sub
@@ -436,209 +443,217 @@ Private Sub lbl_run_mohasebe_Click
 	If (roze_kari > 31 Or roze_kari < 0)Then
 		ToastMessageShow(" تعداد روز کاری نادرست است",False)
 	Else
-		pan_mohasebat.Visible=True
+		If(check_date_iscorrect=True)Then
+			pan_mohasebat.Visible=True
 		pan_mohasebat.SetLayoutAnimated(100,0,0,100%x,100%y)
 		mohasebe	
-	End If
+			
+			
+		
+		
+		str1.Initialize
+		
+		str1.Append("<!DOCTYPE html><html dir='rtl' lang='fa'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /> <body style='font-family:tahoma,Arial,sans-serif;'>")
+		str1.Append("<style>table , td {border: 1px solid #707070;border-collapse: collapse; font-size:11pt;} tr:nth-child(even) { background-color: #9fd6e0; } tr:nth-child(odd) { background-color: #e8fbff; }	details {	border: 1px solid #aaa;	border-radius: 4px;	padding: .5em .5em 0;}	summary {	font-weight: bold;	margin: -.5em -.5em 0;	padding: .5em;} details[open] {	padding: .5em;	}	details[open] summary {border-bottom: 1px solid #aaa;margin-bottom: .5em;}</style>")
+		
+		
+		''--------------  table ezafkari --------------
+		dbCode.connect_db
+		If(type_mohasebe=1)Then
+			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
+			str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
+		Else
+			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&lbl_date_to.Text&"' ;")
+			str1.Append("<h3>").Append("گزارش از تاریخ ").Append(lbl_date_from.Text).Append(" تا ").Append(lbl_date_to.Text).Append("</h3>")
+		End If
+		
+		
+		
+		'str1.Append("<img src='file:///storage/emulated/0/Android/data/ir.taravatgroup.ezafekari2/files/user-"&Main.phon_num&".jpg' alt='Avatar' style='width:200px;border-radius: 50%;'>")
+		
+		
+		
+		str1.Append("نام کاربر :").Append("<span> "&Main.user_nameFamili&"</span>").Append("<br>")
+		
+		str1.Append("<div style=' background-color: #f5f5f5;'><details>")
+		
+		str1.Append("<summary><b> اضافه کاری های این ماه</b></summary>")
+		str1.Append("<table style='width:100%;'><tr style='text-align: center;'>")
+		str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b> زمان</b></td><br></tr>")
+		
+		Do While dbCode.res.NextRow
+			str1.Append("<tr style='text-align: center;'>")
+			str1.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
+			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("date_to"))).Append("</td>")
+			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
+			
+			str1.Append("<td>")
+			str1.Append(myfunc.en2fa((dbCode.res.GetString("end_tim_h")+(dbCode.res.GetString("end_tim_d")*24))))
+			str1.Append(":")
+			str1.Append(myfunc.en2fa(dbCode.res.GetString("end_tim_m"))).Append("</td>")
+			
+			str1.Append("</tr>")
+		Loop
+		
+		str1.Append("</table>")
+		str1.Append("مجموع ساعت اضافه کاری :<span style='color:#5E35B1;'> "&myfunc.en2fa(et_time_h.Text)&" ساعت و"&myfunc.en2fa(et_time_m.Text)&"دقیقه </span><br></details></div><br> ")
+		
+		
+		
+		''--------------  table morakhasi --------------
+		
+		
+		
+		If(type_mohasebe=1)Then
+			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
+		Else
+			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&lbl_date_to.Text&"' ;")
+		End If
+		
+		
+		str1.Append("<div style=' background-color: #f5f5f5 ;'><details>")
+		str1.Append("<summary><b> مرخصی های این ماه</b></summary>")
+		str1.Append("<table style='width:100%;'><tr style='text-align: center;'>")
+		str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b>زمان/روز</b></td><td><b> زمان/ساعت</b></td><br></tr>")
+		
+		Do While dbCode.res.NextRow
+			str1.Append("<tr style='text-align: center;'>")
+			str1.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
+			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("date_to"))).Append("</td>")
+			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
+			str1.Append("<td>").Append((myfunc.en2fa(dbCode.res.GetString("end_tim_d")))).Append("</td>")
+			str1.Append("<td>").Append((myfunc.en2fa(dbCode.res.GetString("end_tim_h")))&":"&myfunc.en2fa(dbCode.res.GetString("end_tim_m"))).Append("</td>")
+			
+			str1.Append("</tr>")
+			
+			
+		Loop
+		
+		str1.Append("</table>")
+		
+		Dim list_morakhasi As List
+		list_morakhasi.Initialize
+		
+		If(type_mohasebe=1)Then
+			list_morakhasi=dbCode.all_morakhasi_mah(sp_year.SelectedItem,moon_num)
+		Else
+			list_morakhasi=dbCode.all_morakhasi_byDate(lbl_date_from.Text,lbl_date_to.Text)
+		End If		
 	
-	
-	
-	
-	
-	str1.Initialize
-	
-	str1.Append("<!DOCTYPE html><html dir='rtl' lang='fa'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /> <body style='font-family:tahoma,Arial,sans-serif;'>")
-	str1.Append("<style>table , td {border: 1px solid #707070;border-collapse: collapse; font-size:11pt;} tr:nth-child(even) { background-color: #9fd6e0; } tr:nth-child(odd) { background-color: #e8fbff; }	details {	border: 1px solid #aaa;	border-radius: 4px;	padding: .5em .5em 0;}	summary {	font-weight: bold;	margin: -.5em -.5em 0;	padding: .5em;} details[open] {	padding: .5em;	}	details[open] summary {border-bottom: 1px solid #aaa;margin-bottom: .5em;}</style>")
-	
-	
-	''--------------  table ezafkari --------------
-	dbCode.connect_db
-	If(type_mohasebe=1)Then
-		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
-		str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
-	Else
-		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&lbl_date_to.Text&"' ;")
-		str1.Append("<h3>").Append("گزارش از تاریخ ").Append(lbl_date_from.Text).Append(" تا ").Append(lbl_date_to.Text).Append("</h3>")
-	End If
-	
-	
-	
-	'str1.Append("<img src='file:///storage/emulated/0/Android/data/ir.taravatgroup.ezafekari2/files/user-"&Main.phon_num&".jpg' alt='Avatar' style='width:200px;border-radius: 50%;'>")
-	
-	
-	
-	str1.Append("نام کاربر :").Append("<span> "&Main.user_nameFamili&"</span>").Append("<br>")
-	
-	str1.Append("<div style=' background-color: #f5f5f5;'><details>")
-	
-	str1.Append("<summary><b> اضافه کاری های این ماه</b></summary>")
-	str1.Append("<table style='width:100%;'><tr style='text-align: center;'>")
-	str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b> زمان</b></td><br></tr>")
-	
-	Do While dbCode.res.NextRow
-		str1.Append("<tr style='text-align: center;'>")
-		str1.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
-		str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("date_to"))).Append("</td>")
-		str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
+		
+		str1.Append("مجموع مرخصی ها :<span style='color:#5E35B1;'><b> "&myfunc.en2fa(list_morakhasi.Get(0))&" روز و "&myfunc.en2fa(list_morakhasi.Get(1))&" ساعت و "&myfunc.en2fa(list_morakhasi.Get(2))&" دقیقه ")
+		
+		str1.Append("</b></span><br></details></div><br>")
+		
+		
+		
+		
+		''--------------  table mohasebat --------------
+		str1.Append("<div style=' background-color: #f5f5f5 ;' ><details open>")
+		str1.Append("<summary><b>محاسبه حقوق</b></summary>")
+		
+		str1.Append("<table style='width:100%;'><tr>")
+		str1.Append("<td><div style='text-align: center;color:#661400;'><b> مزایا</b></div></td>")
+		str1.Append("<td><div style='text-align: center;color:#661400;'><b>کسورات</b></div></td> </tr>")
+		str1.Append("<tr style='vertical-align: text-top;'><td>")
+		str1.Append(""&ls_onvanHa.Get(0)&" برای "&myfunc.en2fa(roze_kari)&" روز کاری : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(paye_end))&"</span><br>")
+		str1.Append(""&ls_onvanHa.Get(2)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(maskan_end))&"</span><br>")
+		str1.Append(" "&ls_onvanHa.Get(3)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(bon_end)) &"</span><br>")
+		If(olad_end<>0)Then
+			str1.Append(""&ls_onvanHa.Get(4)&"  :<span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(olad_end))&"</span><br>")
+		End If
+		If(sanavat_end<>0)Then
+			str1.Append(""&ls_onvanHa.Get(1)&"  : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(sanavat_end))&"</span><br>")
+		End If
+		If(fani_end<>0)Then
+			str1.Append(""&ls_onvanHa.Get(5)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(fani_end))&"</span><br>")
+		End If
+		If(masoliat_end<>0)Then
+			str1.Append(""&ls_onvanHa.Get(6)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(masoliat_end))&"</span><br>")
+		End If
+		If(sarparasti_end<>0)Then
+			str1.Append(" "&ls_onvanHa.Get(7)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(sarparasti_end)) &"</span><br>")
+		End If
+		If(shift_end<>0)Then
+			str1.Append(" حق شیفت "&myfunc.en2fa(shift)&" درصد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(shift_end)) &"</span><br>")
+		End If
+		If(mazaya_end<>0)Then
+			str1.Append("  "&ls_onvanHa.Get(10)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(mazaya_end))&"</span><br>")
+		End If
+		
+		
+		''-------ezafekari -----------
+		
+			str1.Append("<hr>")
+			str1.Append("اضافه کاری عادی").Append("<br>")
+		
+			str1.Append(" ساعات : <span style='color:#5E35B1;'> "&myfunc.en2fa(et_time_h.Text)&":"&myfunc.en2fa(et_time_m.Text)&"</span><br>")
+		
+			str1.Append(" قیمت واحد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(vahed_ezafekari))&"</span><br>")
+			
+		
+		
+		
+		
+		If(ezafekari_end_vij<>0)Then
+		str1.Append("<hr>")
+		
+		str1.Append("اضافه کاری <span style='color:#ff4d00;'>"&"فوق العاده"&"</span>").Append("<br>")
+		
+		str1.Append(" ساعات : <span style='color:#5E35B1;'> "&myfunc.en2fa(et_time_h_vij.Text)&":"&myfunc.en2fa(et_time_m_vij.Text)&"</span><br>")
+		
+		
+		str1.Append(" قیمت واحد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(vahed_ezafekari_vij))&"</span><br>")
+		End If
+		
+		
+		str1.Append("<hr>")
+		str1.Append("مجموع اضافه کاری : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ezafekari_end+ezafekari_end_vij))&"</span><br></td>")
+		''---------------------------
 		
 		str1.Append("<td>")
-		str1.Append(myfunc.en2fa((dbCode.res.GetString("end_tim_h")+(dbCode.res.GetString("end_tim_d")*24))))
-		str1.Append(":")
-		str1.Append(myfunc.en2fa(dbCode.res.GetString("end_tim_m"))).Append("</td>")
+		str1.Append("بیمه تامین اجتماعی "&myfunc.en2fa(show_num_pool(bime_tamin))&" درصد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(bime_tamin_end)) &"</span><br>")
+
+		If(bime_takmil<>0)Then
+			str1.Append(""&ls_onvanHa.Get(9)&" :<span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(bime_takmil)) &"</span><br>")
+		End If
+		
+		If(maliat_end<>0)Then
+			str1.Append(" مالیات : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(maliat_end)) &"</span><br>")
+		End If
+		If(ksorat<>0)Then
+			str1.Append(" "&ls_onvanHa.Get(11)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ksorat))&"</span></td>")
+		End If
 		
 		str1.Append("</tr>")
-	Loop
-	
-	str1.Append("</table>")
-	str1.Append("مجموع ساعت اضافه کاری :<span style='color:#5E35B1;'> "&myfunc.en2fa(et_time_h.Text)&" ساعت و"&myfunc.en2fa(et_time_m.Text)&"دقیقه </span><br></details></div><br> ")
-	
-	
-	
-	''--------------  table morakhasi --------------
-	
-	
-	
-	If(type_mohasebe=1)Then
-		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
-	Else
-		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&lbl_date_to.Text&"' ;")
-	End If
-	
-	
-	str1.Append("<div style=' background-color: #f5f5f5 ;'><details>")
-	str1.Append("<summary><b> مرخصی های این ماه</b></summary>")
-	str1.Append("<table style='width:100%;'><tr style='text-align: center;'>")
-	str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b>زمان/روز</b></td><td><b> زمان/ساعت</b></td><br></tr>")
-	
-	Do While dbCode.res.NextRow
-		str1.Append("<tr style='text-align: center;'>")
-		str1.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
-		str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("date_to"))).Append("</td>")
-		str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
-		str1.Append("<td>").Append((myfunc.en2fa(dbCode.res.GetString("end_tim_d")))).Append("</td>")
-		str1.Append("<td>").Append((myfunc.en2fa(dbCode.res.GetString("end_tim_h")))&":"&myfunc.en2fa(dbCode.res.GetString("end_tim_m"))).Append("</td>")
+
+		str1.Append("<tr><td>")
+		str1.Append("جمع مزایا :  <span style='color:#5E35B1;'><b>"&myfunc.en2fa(show_num_pool(hogog_nakhales))&"</b></span>")
+		str1.Append("</td><td>")
+
+		str1.Append("جمع کسورات :  <span style='color:#5E35B1;'><b>"&myfunc.en2fa(show_num_pool(jame_kosorat))&"</b></span>")
+		str1.Append("</td></tr></table><br>")
+
+		str1.Append(" دریافتی خالص :  <span style='color:#388E3C;'><b>"&myfunc.en2fa(show_num_pool(hogog_khales))&" </b></span></b>")
+		str1.Append("<span style='font-size: 11px;'> تومان </span>")
 		
-		str1.Append("</tr>")
+		str1.Append("<br></details></div>")
+		
+		str1.Append("<footer style=' text-align: center; '><h6> اپلیکیشن اضافه کاری من </h6></footer>")
+		
+		str1.Append("</body></html>")
+		
+		dbCode.res.Close
+		dbCode.sql.Close
 		
 		
-	Loop
-	
-	str1.Append("</table>")
-	
-	Dim list_morakhasi As List
-	list_morakhasi.Initialize
+	'	
 
-	list_morakhasi=dbCode.all_morakhasi_mah(sp_year.SelectedItem,moon_num)
-	
-	str1.Append("مجموع مرخصی ها :<span style='color:#5E35B1;'><b> "&myfunc.en2fa(list_morakhasi.Get(0))&" روز و "&myfunc.en2fa(list_morakhasi.Get(1))&" ساعت و "&myfunc.en2fa(list_morakhasi.Get(2))&" دقیقه ")
-	
-	str1.Append("</b></span><br></details></div><br>")
-	
-	
-	
-	
-	''--------------  table mohasebat --------------
-	str1.Append("<div style=' background-color: #f5f5f5 ;' ><details open>")
-	str1.Append("<summary><b>محاسبه حقوق</b></summary>")
-	
-	str1.Append("<table style='width:100%;'><tr>")
-	str1.Append("<td><div style='text-align: center;color:#661400;'><b> مزایا</b></div></td>")
-	str1.Append("<td><div style='text-align: center;color:#661400;'><b>کسورات</b></div></td> </tr>")
-	str1.Append("<tr style='vertical-align: text-top;'><td>")
-	str1.Append(""&ls_onvanHa.Get(0)&" برای "&myfunc.en2fa(roze_kari)&" روز کاری : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(paye_end))&"</span><br>")
-	str1.Append(""&ls_onvanHa.Get(2)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(maskan_end))&"</span><br>")
-	str1.Append(" "&ls_onvanHa.Get(3)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(bon_end)) &"</span><br>")
-	If(olad_end<>0)Then
-		str1.Append(""&ls_onvanHa.Get(4)&"  :<span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(olad_end))&"</span><br>")
-	End If
-	If(sanavat_end<>0)Then
-		str1.Append(""&ls_onvanHa.Get(1)&"  : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(sanavat_end))&"</span><br>")
-	End If
-	If(fani_end<>0)Then
-		str1.Append(""&ls_onvanHa.Get(5)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(fani_end))&"</span><br>")
-	End If
-	If(masoliat_end<>0)Then
-		str1.Append(""&ls_onvanHa.Get(6)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(masoliat_end))&"</span><br>")
-	End If
-	If(sarparasti_end<>0)Then
-		str1.Append(" "&ls_onvanHa.Get(7)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(sarparasti_end)) &"</span><br>")
-	End If
-	If(shift_end<>0)Then
-		str1.Append(" حق شیفت "&myfunc.en2fa(shift)&" درصد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(shift_end)) &"</span><br>")
-	End If
-	If(mazaya_end<>0)Then
-		str1.Append("  "&ls_onvanHa.Get(10)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(mazaya_end))&"</span><br>")
+		WebView2.LoadHtml(str1.ToString)
+		End If
 	End If
 	
 	
-	''-------ezafekari -----------
-	
-		str1.Append("<hr>")
-		str1.Append("اضافه کاری عادی").Append("<br>")
-	
-		str1.Append(" ساعات : <span style='color:#5E35B1;'> "&myfunc.en2fa(et_time_h.Text)&":"&myfunc.en2fa(et_time_m.Text)&"</span><br>")
-	
-		str1.Append(" قیمت واحد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(vahed_ezafekari))&"</span><br>")
-		
-	
-	
-	
-	
-	If(ezafekari_end_vij<>0)Then
-	str1.Append("<hr>")
-	
-	str1.Append("اضافه کاری <span style='color:#ff4d00;'>"&"فوق العاده"&"</span>").Append("<br>")
-	
-	str1.Append(" ساعات : <span style='color:#5E35B1;'> "&myfunc.en2fa(et_time_h_vij.Text)&":"&myfunc.en2fa(et_time_m_vij.Text)&"</span><br>")
-	
-	
-	str1.Append(" قیمت واحد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(vahed_ezafekari_vij))&"</span><br>")
-	End If
-	
-	
-	str1.Append("<hr>")
-	str1.Append("مجموع اضافه کاری : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ezafekari_end+ezafekari_end_vij))&"</span><br></td>")
-	''---------------------------
-	
-	str1.Append("<td>")
-	str1.Append("بیمه تامین اجتماعی "&myfunc.en2fa(show_num_pool(bime_tamin))&" درصد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(bime_tamin_end)) &"</span><br>")
-
-	If(bime_takmil<>0)Then
-		str1.Append(""&ls_onvanHa.Get(9)&" :<span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(bime_takmil)) &"</span><br>")
-	End If
-	
-	If(maliat_end<>0)Then
-		str1.Append(" مالیات : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(maliat_end)) &"</span><br>")
-	End If
-	If(ksorat<>0)Then
-		str1.Append(" "&ls_onvanHa.Get(11)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ksorat))&"</span></td>")
-	End If
-	
-	str1.Append("</tr>")
-
-	str1.Append("<tr><td>")
-	str1.Append("جمع مزایا :  <span style='color:#5E35B1;'><b>"&myfunc.en2fa(show_num_pool(hogog_nakhales))&"</b></span>")
-	str1.Append("</td><td>")
-
-	str1.Append("جمع کسورات :  <span style='color:#5E35B1;'><b>"&myfunc.en2fa(show_num_pool(jame_kosorat))&"</b></span>")
-	str1.Append("</td></tr></table><br>")
-
-	str1.Append(" دریافتی خالص :  <span style='color:#388E3C;'><b>"&myfunc.en2fa(show_num_pool(hogog_khales))&" </b></span></b>")
-	str1.Append("<span style='font-size: 11px;'> تومان </span>")
-	
-	str1.Append("<br></details></div>")
-	
-	str1.Append("<footer style=' text-align: center; '><h6> اپلیکیشن اضافه کاری من </h6></footer>")
-	
-	str1.Append("</body></html>")
-	
-	dbCode.res.Close
-	dbCode.sql.Close
-	
-	
-'	
-
-	WebView2.LoadHtml(str1.ToString)
 End Sub
 
 Sub mohasebe
@@ -953,6 +968,7 @@ Private Sub radio_type2_CheckedChange(Checked As Boolean)
 	lbl_date_from.Enabled=True
 	lbl_date_to.Enabled=True
 	type_mohasebe=2
+	et_time_inDB
 End Sub
 
 Private Sub radio_type1_CheckedChange(Checked As Boolean)
@@ -961,6 +977,7 @@ Private Sub radio_type1_CheckedChange(Checked As Boolean)
 	lbl_date_from.Enabled=False
 	lbl_date_to.Enabled=False
 	type_mohasebe=1
+	et_time_inDB
 End Sub
 
 Private Sub lbl_date_from_Click
@@ -998,7 +1015,7 @@ End Sub
 
 
 Private Sub lbl_save_picker_Click
-	pan_all_set_date.Visible=False
+	
 	If(index_datePik=1) Then
 		lbl_date_from.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
 		
@@ -1006,7 +1023,25 @@ Private Sub lbl_save_picker_Click
 		lbl_date_to.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
 	End If
 	
+	et_time_inDB
 	
+	pan_all_set_date.Visible=False
+	
+End Sub
+
+Sub count_mah (adad_mah As Int) As Int
+	Dim res As Int=0
+	If(adad_mah<7)Then
+		res=31
+	Else 
+		res=30
+	End If
+	
+	Return res
+	
+End Sub
+
+Sub check_date_iscorrect As Boolean
 	
 	Dim y1_shamsi As Int =myfunc.fa2en( lbl_date_from.Text.SubString2(0,4))
 	Dim m1_shamsi As Int =myfunc.fa2en(lbl_date_from.Text.SubString2(6,7))
@@ -1017,35 +1052,51 @@ Private Sub lbl_save_picker_Click
 	Dim m2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(6,7))
 	Dim d2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(8,10))
 	
+	
 	Dim rozzzz As Int=0
+	Dim check_date As Boolean = True
 	
-	Dim mah1 As Int=31
-	Dim mah2 As Int=31
+	Dim mah1 As Int=count_mah(m1_shamsi)
 	
-	If(y2_shamsi-y1_shamsi)=0 Then
-		If(m2_shamsi-m1_shamsi)=0 Then
-			rozzzz=d2_shamsi-d1_shamsi
-		Else If (m2_shamsi-m1_shamsi)=1 Then
-			rozzzz=(mah1-d1_shamsi) + (d2_shamsi)
-		Else
-			ToastMessageShow("حداکثر 31 روز باشد",False)
+	
+	
+	
+	If(m2_shamsi-m1_shamsi)=0 Then
+		rozzzz=d2_shamsi-d1_shamsi
+		If(y2_shamsi-y1_shamsi <> 0) Then
+			check_date=False
+		End If
+	Else If (m2_shamsi-m1_shamsi)=1 Then
+		rozzzz=(mah1-d1_shamsi) + (d2_shamsi)
+			
+		If(y2_shamsi-y1_shamsi <> 0) Then
+			check_date=False
+		End If
+			
+	Else if ((m2_shamsi-m1_shamsi)=-11 ) Then
+		rozzzz=(mah1-d1_shamsi) + (d2_shamsi)
+		If(y2_shamsi-y1_shamsi <> 0) Then
+			check_date=False
+		End If
+	Else if ((m2_shamsi-m1_shamsi)>-11  And (m2_shamsi-m1_shamsi)<0) Then
+		check_date=False
+	Else
+		check_date=False
+	End If
+	
+	
+	If(check_date=True)Then
+		If(rozzzz>31)Then
+			ToastMessageShow("تاریخ را اصلاح کنید - حداکثر 31 روز باشد",False)
+			check_date=False
 		End If
 	Else
-		ToastMessageShow("حداکثر 31 روز باشد",False)
-	End If
-	If(rozzzz>31)Then
-		ToastMessageShow("حداکثر 31 روز باشد",False)
+		ToastMessageShow("تاریخ را اصلاح کنید - حداکثر 31 روز باشد",False)
 	End If
 	
-	Log(rozzzz)
 	
-	et_rozekari.Text=rozzzz
-	
+	Return check_date
 End Sub
-
-
-
-
 
 Private Sub pik_pan_moon1_Touch (Action As Int, X As Float, Y As Float)
 	If(Action=1)Then

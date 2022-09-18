@@ -22,10 +22,23 @@ Sub Globals
 	Private et_payeh As EditText
 	
 	Private lbl_payankar As Label
-	Private et_date1 As EditText
-	Private et_date2 As EditText
-	
+
 	Private pan_hed_payankar As Panel
+	Private pan_all_set_date As Panel
+	
+	Private pik_day1 As Label
+	Private pik_moon1 As Label
+	Private pik_year1 As Label
+	Private lbl_date1 As Label
+	Private lbl_date2 As Label
+	
+
+	
+	Dim num_dataPik As Int=0  '' for time picker
+	
+	Dim moon_dataPik As List  '' for date picker
+	Dim index_datePik As Int
+
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -43,13 +56,17 @@ Sub Activity_Create(FirstTime As Boolean)
 	dbCode.sql.Close
 	
 	
-	et_date1.Text=myfunc.fa2en(Main.persianDate.PersianYear&"/01/01")
-	et_date2.Text=myfunc.fa2en(Main.persianDate.PersianShortDate)
+	lbl_date1.Text=myfunc.fa2en(Main.persianDate.PersianYear&"/01/01")
+	lbl_date2.Text=myfunc.fa2en(Main.persianDate.PersianShortDate)
 	
 	et_payeh.Color=Colors.White
-	et_date1.Color=Colors.White
-
-	et_date2.Color=Colors.White
+	
+	
+	''  for date picker
+	moon_dataPik.Initialize
+	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
+	
+	''-----------------
 	
 	
 	''set color
@@ -92,7 +109,7 @@ Private Sub btn_mohasebe_payankar_Click
 	
 	
 	payankar_roz=et_payeh.Tag/365
-	rozha=time_mohasebe(et_date1.Text,et_date2.Text)
+	rozha=time_mohasebe(lbl_date1.Text,lbl_date2.Text)
 	
 	payankar=payankar_roz*rozha
 	If(rozha=365)Then
@@ -182,6 +199,244 @@ End Sub
 Private Sub et_payeh_TextChanged (Old As String, New As String)
 	et_payeh.Tag=New.Replace(",","")
 	change_formater(Old,New,et_payeh)
+End Sub
+
+
+
+
+Private Sub lbl_date1_Click
+	pan_all_set_date.Visible=True
+	index_datePik=1
+	
+	pik_year1.Text=myfunc.fa2en(lbl_date1.Text.SubString2(0,4))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date1.Text.SubString2(6,7))
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	pik_day1.Text=myfunc.fa2en(lbl_date1.Text.SubString2(8,10))
+End Sub
+
+Private Sub lbl_date2_Click
+	pan_all_set_date.Visible=True
+	index_datePik=2
+	
+	pik_year1.Text=myfunc.fa2en(lbl_date2.Text.SubString2(0,4))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date2.Text.SubString2(6,7))
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	pik_day1.Text=myfunc.fa2en(lbl_date2.Text.SubString2(8,10))
+End Sub
+
+Private Sub lbl_save_picker_Click
+	If(index_datePik=1) Then
+		lbl_date1.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
+		
+	Else If(index_datePik=2) Then
+		lbl_date2.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
+	End If
+	pan_all_set_date.Visible=False
+End Sub
+
+
+
+Private Sub pik_pan_moon1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_moon1.Tag)-1
+			pik_moon1.Tag=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_moon1.Tag)+1
+			pik_moon1.Tag=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_moon1.Tag>12)Then
+			pik_moon1.Tag=1
+		End If
+		If(pik_moon1.Tag<1)Then
+			pik_moon1.Tag=12
+		End If
+		pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	End If
+	
+End Sub
+
+Private Sub pik_pan_year1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_year1.Text)-1
+			pik_year1.Text=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_year1.Text)+1
+			pik_year1.Text=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_year1.Text>1410)Then
+			pik_year1.Text=1390
+		End If
+		If(pik_year1.Text<1390)Then
+			pik_year1.Text=1410
+		End If
+		
+	End If
+	
+End Sub
+
+Private Sub pik_pan_day1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_day1.Text)-1
+			pik_day1.Text=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_day1.Text)+1
+			pik_day1.Text=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_moon1.Tag<7)Then
+			If(pik_day1.Text>31)Then
+				pik_day1.Text=1
+			End If
+			If(pik_day1.Text<1)Then
+				pik_day1.Text=31
+			End If
+		Else
+			If(pik_day1.Text>30)Then
+				pik_day1.Text=1
+			End If
+			If(pik_day1.Text<1)Then
+				pik_day1.Text=30
+			End If
+		End If
+		
+		
+	End If
+	
+End Sub
+
+Private Sub pik_moon_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_moon1.Tag)
+	pik_moon1.Tag=int1+1
+	
+	If(pik_moon1.Tag>12)Then
+		pik_moon1.Tag=1
+	End If
+	If(pik_moon1.Tag<1)Then
+		pik_moon1.Tag=12
+	End If
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	
+End Sub
+
+Private Sub pik_moon_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_moon1.Tag)
+	pik_moon1.Tag=int1-1
+	
+	If(pik_moon1.Tag>12)Then
+		pik_moon1.Tag=1
+	End If
+	If(pik_moon1.Tag<1)Then
+		pik_moon1.Tag=12
+	End If
+	pik_moon1.Text=moon_dataPik.Get(myfunc.fa2en(pik_moon1.Tag)-1)
+	
+End Sub
+
+Private Sub pik_year_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_year1.Text)
+	pik_year1.Text=int1+1
+	
+	If(pik_year1.Text>1410)Then
+		pik_year1.Text=1390
+	End If
+	If(pik_year1.Text<1390)Then
+		pik_year1.Text=1410
+	End If
+	
+End Sub
+
+Private Sub pik_year_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_year1.Text)
+	pik_year1.Text=int1-1
+	
+	If(pik_year1.Text>1410)Then
+		pik_year1.Text=1390
+	End If
+	If(pik_year1.Text<1390)Then
+		pik_year1.Text=1410
+	End If
+	
+End Sub
+
+Private Sub pik_day_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_day1.Text)
+	pik_day1.Text=int1+1
+	
+	
+	If(pik_moon1.Tag<7)Then
+		If(pik_day1.Text>31)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=31
+		End If
+	Else
+		If(pik_day1.Text>30)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=30
+		End If
+	End If
+	
+End Sub
+
+Private Sub pik_day_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_day1.Text)
+	pik_day1.Text=int1-1
+	If(pik_moon1.Tag<7)Then
+		If(pik_day1.Text>31)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=31
+		End If
+	Else
+		If(pik_day1.Text>30)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=30
+		End If
+	End If
+	
+End Sub
+
+
+Private Sub pan_all_set_date_Click
+	pan_all_set_date.Visible=False
 End Sub
 
 

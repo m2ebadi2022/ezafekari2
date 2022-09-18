@@ -386,6 +386,62 @@ Sub all_ezafekari_mah(year As String, moon As String, type1 As Int) As List
 End Sub
 
 
+Sub all_ezafekari_byDate(date_from As String, date_to As String , type1 As Int) As List
+	
+	''---- type1 = 1   --->>>  all ezafekari mah
+	''---- type1 = 2   --->>>  mamoli ezafekari mah
+	''---- type1 = 3   --->>>  vije ezafekari mah
+	
+	
+	Dim list_ez As List
+	list_ez.Initialize
+	
+	Dim v_day As Int=0
+	Dim v_hour As Int=0
+	Dim v_min As Int=0
+	Dim div As Int=0
+	connect_db
+	
+	
+	
+	Select type1
+		Case 1
+			res= sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&date_from&"' AND '"&date_to&"';")
+		Case 2
+			res= sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&date_from&"' AND '"&date_to&"' AND state=0;")
+		Case 3
+			res= sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&date_from&"' AND '"&date_to&"' AND state=2;")
+		
+	End Select
+	
+	Do While res.NextRow
+		
+		v_day=v_day+res.GetString("end_tim_d")
+		v_hour=v_hour+res.GetString("end_tim_h")
+		v_min=v_min+res.GetString("end_tim_m")
+		
+		
+	Loop
+	res.Close
+	sql.Close
+	
+	
+	If (v_min>59)Then
+		div=v_min/60
+		v_min=v_min Mod 60
+		
+	End If
+	
+	
+	v_hour=v_hour+(v_day*24)+div
+	
+	
+	list_ez.Add(v_hour)      '' index 0
+	list_ez.Add(v_min)		'' index 1
+	
+	Return list_ez
+End Sub
+
 
 
 
@@ -402,6 +458,61 @@ Sub all_morakhasi_mah(year As String, moon As String) As List
 	Dim div2 As Int=0
 	connect_db
 	res= sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '%"&year&"/"&moon&"%';")
+	Do While res.NextRow
+		
+		v_day=v_day+res.GetString("end_tim_d")
+		v_hour=v_hour+res.GetString("end_tim_h")
+		v_min=v_min+res.GetString("end_tim_m")
+		
+		
+	Loop
+	res.Close
+	sql.Close
+	
+	
+	Dim dghige2 As Int=(v_day*Main.saat_kar_min)+(v_hour*60)+v_min
+	
+	
+'	If (v_min>59)Then
+'		div1=v_min/60
+'		v_min=v_min Mod 60
+'		
+'	End If
+'	If (v_hour>(saat_kar-1))Then
+'		div2=v_hour/saat_kar
+'		v_hour=v_hour Mod saat_kar
+'		
+'	End If
+'	
+'	v_hour=v_hour+div1
+'	v_day=v_day+div2
+	
+'	list_ez.Add(v_day)      '' index 0  day
+'	list_ez.Add(v_hour)      '' index 1  hour
+'	list_ez.Add(v_min)		'' index 2	min
+	
+	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(2))      '' index 0  day
+	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(0))      '' index 1  hour
+	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(1))		'' index 2	min
+	
+	Return list_ez
+End Sub
+
+
+
+Sub all_morakhasi_byDate(date_from As String, date_to As String) As List
+	Dim saat_kar As Int = get_setting_byName("saat_kar_darRoz")
+	
+	Dim list_ez As List
+	list_ez.Initialize
+	
+	Dim v_day As Int=0
+	Dim v_hour As Int=0
+	Dim v_min As Int=0
+	Dim div1 As Int=0
+	Dim div2 As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from BETWEEN '"&date_from&"' AND '"&date_to&"';")
 	Do While res.NextRow
 		
 		v_day=v_day+res.GetString("end_tim_d")
@@ -670,7 +781,22 @@ Sub read_onvan_db As List
 	Return onvanHa
 End Sub
 
-'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 'Sub get_day_name (year As Int, moon As Int , day As Int) As Int
 '		Try
 '			Dim result_day As Int=0
