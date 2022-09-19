@@ -206,6 +206,22 @@
 			android:screenOrientation="portrait"
 			android:exported="true">
 		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".sabt2_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".list2_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
 		<service
 			android:name=".httputils2service"
 			android:exported="true">

@@ -24,6 +24,7 @@ Sub connect_db
 	sql.Initialize(File.DirInternal,"db.db",True)
 	
 End Sub
+
 Sub install_db_tbl_taradod 
 	connect_db
 	
@@ -50,7 +51,38 @@ Sub install_db_tbl_taradod
 	End Try
 	
 	
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_mosaedeh")
+		Log( "tbl mosaedeh exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_mosaedeh' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		
+		Log ( "tbl mosaedeh created")
+	End Try
 	
+	
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_food")
+		Log( "tbl food exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_food' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		
+		Log ( "tbl food created")
+	End Try
+	
+	
+	
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_sayer")
+		Log( "tbl sayer exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_sayer' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		
+		Log ( "tbl sayer created")
+	End Try
 	
 End Sub
 
@@ -204,6 +236,28 @@ Sub add_mamoriat(date1 As String,date2 As String,time1 As String,time2 As String
 	Return True
 End Sub
 
+''-------------- list2 ----------------
+
+Sub add_mosaedeh(date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_mosaedeh (date, mablagh, tozihat , state) VALUES (?,?,?,?)", Array As Object(date,mablagh,tozih,state))
+	sql.Close
+	Return True
+End Sub
+
+Sub add_food(date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_food (date, mablagh, tozihat , state) VALUES (?,?,?,?)", Array As Object(date,mablagh,tozih,state))
+	sql.Close
+	Return True
+End Sub
+
+Sub add_sayer(onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_sayer (onvan, date, mablagh, tozihat , state) VALUES (?,?,?,?,?)", Array As Object(onvan,date,mablagh,tozih,state))
+	sql.Close
+	Return True
+End Sub
 
 ''=======  edit ==================================
 
@@ -280,6 +334,32 @@ Sub delete_mamoriat(id As Int) As Boolean
 	sql.Close
 	Return True
 End Sub
+
+'' ------------- list 2 ----------
+
+Sub delete_mosaedeh(id As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("DELETE FROM tb_mosaedeh WHERE id= ?", Array As Object(id))
+	sql.Close
+	Return True
+End Sub
+
+Sub delete_food(id As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("DELETE FROM tb_food WHERE id= ?", Array As Object(id))
+	sql.Close
+	Return True
+End Sub
+
+Sub delete_sayer(id As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("DELETE FROM tb_sayer WHERE id= ?", Array As Object(id))
+	sql.Close
+	Return True
+End Sub
+
+
+
 
 Sub add_setting_hogog (data As List) As Boolean
 	connect_db
