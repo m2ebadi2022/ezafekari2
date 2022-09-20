@@ -209,7 +209,7 @@ Private Sub lbl_date1_Click
 	index_datePik=1
 	
 	pik_year1.Text=myfunc.fa2en(lbl_date1.Text.SubString2(0,4))
-	pik_moon1.Tag=myfunc.fa2en(lbl_date1.Text.SubString2(6,7))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date1.Text.SubString2(5,7))
 	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
 	pik_day1.Text=myfunc.fa2en(lbl_date1.Text.SubString2(8,10))
 End Sub
@@ -219,7 +219,7 @@ Private Sub lbl_date2_Click
 	index_datePik=2
 	
 	pik_year1.Text=myfunc.fa2en(lbl_date2.Text.SubString2(0,4))
-	pik_moon1.Tag=myfunc.fa2en(lbl_date2.Text.SubString2(6,7))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date2.Text.SubString2(5,7))
 	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
 	pik_day1.Text=myfunc.fa2en(lbl_date2.Text.SubString2(8,10))
 End Sub

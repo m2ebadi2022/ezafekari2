@@ -116,6 +116,11 @@ Sub Globals
 	Dim index_datePik As Int
 	Dim type_mohasebe As Int=1
 	
+	
+	Dim mosaedeh_all As Int=0
+	Dim food_all As Int=0
+	Dim padash_all As Int=0
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -577,11 +582,20 @@ Private Sub lbl_run_mohasebe_Click
 		If(shift_end<>0)Then
 			str1.Append(" حق شیفت "&myfunc.en2fa(shift)&" درصد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(shift_end)) &"</span><br>")
 		End If
-		If(mazaya_end<>0)Then
-			str1.Append("  "&ls_onvanHa.Get(10)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(mazaya_end))&"</span><br>")
+		'''========list 2 items-----------------
+			If(padash_all<>0)Then
+				str1.Append("  پاداش : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(padash_all))&"</span><br>")
 		End If
 		
+		'''==========list2 --- end
+			If(mazaya_end<>0)Then
+				str1.Append("  "&ls_onvanHa.Get(10)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(mazaya_end))&"</span><br>")
+			End If
 		
+			
+			
+			
+			
 		''-------ezafekari -----------
 		
 			str1.Append("<hr>")
@@ -621,6 +635,15 @@ Private Sub lbl_run_mohasebe_Click
 		If(maliat_end<>0)Then
 			str1.Append(" مالیات : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(maliat_end)) &"</span><br>")
 		End If
+		
+		If(mosaedeh_all<>0)Then
+			str1.Append(" مساعده : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(mosaedeh_all)) &"</span><br>")
+		End If
+			
+		If(food_all<>0)Then
+				str1.Append(" هزینه غذا : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(food_all)) &"</span><br>")
+		End If
+			
 		If(ksorat<>0)Then
 			str1.Append(" "&ls_onvanHa.Get(11)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ksorat))&"</span></td>")
 		End If
@@ -735,9 +758,32 @@ Sub mohasebe
 	
 	
 	'------------------------------
+	'' mosaede ha
+	If(type_mohasebe=1)Then
+		mosaedeh_all=dbCode.all_mosaedeh_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	Else
+		mosaedeh_all=dbCode.all_mosaedeh_byDate(lbl_date_from.Text,lbl_date_to.Text)
+	End If
 	
+	'' food ha
+	If(type_mohasebe=1)Then
+		food_all=dbCode.all_food_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	Else
+		food_all=dbCode.all_food_byDate(lbl_date_from.Text,lbl_date_to.Text)
+	End If
+
+
+	'' padash ha
+	If(type_mohasebe=1)Then
+		padash_all=dbCode.all_padash_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	Else
+		padash_all=dbCode.all_padash_byDate(lbl_date_from.Text,lbl_date_to.Text)
+	End If
+	
+	
+	''-----------------------------
 	'hogog nakhales
-	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end
+	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all
 	
 	'bime tamin
 	bime_tamin_end=(hogog_nakhales-olad_end)*0.07
@@ -751,7 +797,7 @@ Sub mohasebe
 	
 	
 	
-	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat
+	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat+mosaedeh_all+food_all
 	'hogog khales
 	hogog_khales=hogog_nakhales-jame_kosorat
 	
@@ -985,7 +1031,7 @@ Private Sub lbl_date_from_Click
 	index_datePik=1
 	
 	pik_year1.Text=myfunc.fa2en(lbl_date_from.Text.SubString2(0,4))
-	pik_moon1.Tag=myfunc.fa2en(lbl_date_from.Text.SubString2(6,7))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date_from.Text.SubString2(5,7))
 	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
 	pik_day1.Text=myfunc.fa2en(lbl_date_from.Text.SubString2(8,10))
 	
@@ -998,7 +1044,7 @@ Private Sub lbl_date_to_Click
 	index_datePik=2
 	
 	pik_year1.Text=myfunc.fa2en(lbl_date_to.Text.SubString2(0,4))
-	pik_moon1.Tag=myfunc.fa2en(lbl_date_to.Text.SubString2(6,7))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date_to.Text.SubString2(5,7))
 	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
 	pik_day1.Text=myfunc.fa2en(lbl_date_to.Text.SubString2(8,10))
 	

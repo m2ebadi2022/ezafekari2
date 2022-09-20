@@ -56,7 +56,7 @@ Sub install_db_tbl_taradod
 		Log( "tbl mosaedeh exist")
 	Catch
 		
-		sql.ExecNonQuery("CREATE TABLE 'tb_mosaedeh' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		sql.ExecNonQuery("CREATE TABLE 'tb_mosaedeh' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan'	TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
 		
 		Log ( "tbl mosaedeh created")
 	End Try
@@ -67,12 +67,22 @@ Sub install_db_tbl_taradod
 		Log( "tbl food exist")
 	Catch
 		
-		sql.ExecNonQuery("CREATE TABLE 'tb_food' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		sql.ExecNonQuery("CREATE TABLE 'tb_food' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
 		
 		Log ( "tbl food created")
 	End Try
 	
 	
+	
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_padash")
+		Log( "tbl tb_padash exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_padash' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		
+		Log ( "tbl tb_padash created")
+	End Try
 	
 	Try
 		res= sql.ExecQuery("SELECT * FROM tb_sayer")
@@ -238,16 +248,23 @@ End Sub
 
 ''-------------- list2 ----------------
 
-Sub add_mosaedeh(date As String,mablagh As String, tozih As String , state As Int) As Boolean
+Sub add_mosaedeh(onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
 	connect_db
-	sql.ExecNonQuery2("INSERT INTO tb_mosaedeh (date, mablagh, tozihat , state) VALUES (?,?,?,?)", Array As Object(date,mablagh,tozih,state))
+	sql.ExecNonQuery2("INSERT INTO tb_mosaedeh (onvan, date, mablagh, tozihat , state) VALUES (?,?,?,?,?)", Array As Object(onvan,date,mablagh,tozih,state))
 	sql.Close
 	Return True
 End Sub
 
-Sub add_food(date As String,mablagh As String, tozih As String , state As Int) As Boolean
+Sub add_food(onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
 	connect_db
-	sql.ExecNonQuery2("INSERT INTO tb_food (date, mablagh, tozihat , state) VALUES (?,?,?,?)", Array As Object(date,mablagh,tozih,state))
+	sql.ExecNonQuery2("INSERT INTO tb_food (onvan, date, mablagh, tozihat , state) VALUES (?,?,?,?,?)", Array As Object(onvan,date,mablagh,tozih,state))
+	sql.Close
+	Return True
+End Sub
+
+Sub add_padash(onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_padash (onvan, date, mablagh, tozihat , state) VALUES (?,?,?,?,?)", Array As Object(onvan,date,mablagh,tozih,state))
 	sql.Close
 	Return True
 End Sub
@@ -291,6 +308,35 @@ Sub edit_mamoriat(id1 As Int, date1 As String,date2 As String,time1 As String,ti
 	Return True
 End Sub
 
+''-----------list 2 --------------
+
+Sub edit_mosaedeh(id As Int, onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("UPDATE tb_mosaedeh SET onvan=? , date=?, mablagh=?, tozihat=?, state=? WHERE id=?", Array As Object(onvan,date, mablagh,tozih,state,id))
+	sql.Close
+	Return True
+End Sub
+
+Sub edit_food(id As Int, onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("UPDATE tb_food SET onvan=? , date=?, mablagh=?, tozihat=?, state=? WHERE id=?", Array As Object(onvan,date, mablagh,tozih,state,id))
+	sql.Close
+	Return True
+End Sub
+
+Sub edit_padash(id As Int, onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("UPDATE tb_padash SET onvan=? , date=?, mablagh=?, tozihat=?, state=? WHERE id=?", Array As Object(onvan,date, mablagh,tozih,state,id))
+	sql.Close
+	Return True
+End Sub
+
+Sub edit_sayer(id As Int, onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("UPDATE tb_sayer SET onvan=? , date=?, mablagh=?, tozihat=?, state=? WHERE id=?", Array As Object(onvan,date, mablagh,tozih,state,id))
+	sql.Close
+	Return True
+End Sub
 
 ''============
 
@@ -347,6 +393,13 @@ End Sub
 Sub delete_food(id As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("DELETE FROM tb_food WHERE id= ?", Array As Object(id))
+	sql.Close
+	Return True
+End Sub
+
+Sub delete_padash(id As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("DELETE FROM tb_padash WHERE id= ?", Array As Object(id))
 	sql.Close
 	Return True
 End Sub
@@ -521,7 +574,6 @@ Sub all_ezafekari_byDate(date_from As String, date_to As String , type1 As Int) 
 	
 	Return list_ez
 End Sub
-
 
 
 
@@ -711,7 +763,93 @@ Sub all_mamoriat_mah(year As String, moon As String) As List
 End Sub
 
 
+'''================ list 2 gozareshat===========
 
+Sub all_mosaedeh_mah(year As String , moon As String) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_mosaedeh WHERE date LIKE '%"&year&"/"&moon&"%';")
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+Sub all_mosaedeh_byDate(date_from As String, date_to As String) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+
+
+	res= sql.ExecQuery("SELECT * FROM tb_mosaedeh WHERE date BETWEEN '"&date_from&"' AND '"&date_to&"';")
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+
+Sub all_food_mah(year As String , moon As String) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_food WHERE date LIKE '%"&year&"/"&moon&"%';")
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+Sub all_food_byDate(date_from As String, date_to As String) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+
+
+	res= sql.ExecQuery("SELECT * FROM tb_food WHERE date BETWEEN '"&date_from&"' AND '"&date_to&"';")
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+
+Sub all_padash_mah(year As String , moon As String) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_padash WHERE date LIKE '%"&year&"/"&moon&"%';")
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+Sub all_padash_byDate(date_from As String, date_to As String) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_padash WHERE date BETWEEN '"&date_from&"' AND '"&date_to&"';")
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+'''''================ list 2 gozareshat=========== end
 
 
 Sub isexist_ezafekari_by_date(date As String) As Boolean

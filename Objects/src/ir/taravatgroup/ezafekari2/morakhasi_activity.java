@@ -366,6 +366,8 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
+public ir.taravatgroup.ezafekari2.list2_activity _list2_activity = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -384,8 +386,6 @@ public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
-public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
-public ir.taravatgroup.ezafekari2.list2_activity _list2_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -679,7 +679,7 @@ _mande_ta_endmah = (int) (((_mande_d*mostCurrent._main._saat_kar_min /*int*/ )+(
  //BA.debugLineNum = 182;BA.debugLine="mande_ta_emroz=((mande_d*Main.saat_kar_min)+(mand";
 _mande_ta_emroz = (int) (((_mande_d*mostCurrent._main._saat_kar_min /*int*/ )+(_mande_h*60)+_mande_m)+(_mor_dar_roz*mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianDay())-_morakhasi_estefade_esteh);
  //BA.debugLineNum = 185;BA.debugLine="Log(morakhasi_estefade_esteh)";
-anywheresoftware.b4a.keywords.Common.LogImpl("728508181",BA.NumberToString(_morakhasi_estefade_esteh),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("829098005",BA.NumberToString(_morakhasi_estefade_esteh),0);
  //BA.debugLineNum = 190;BA.debugLine="lbl_mande_ta_inEndMah.Text=min_to_str(mande_ta_en";
 mostCurrent._lbl_mande_ta_inendmah.setText(BA.ObjectToCharSequence(_min_to_str(_mande_ta_endmah)));
  //BA.debugLineNum = 192;BA.debugLine="lbl_mande_ta_emroz.Text=min_to_str(mande_ta_emroz";

@@ -75,6 +75,10 @@ End Sub
 
 
 
+
+
+
+
 Sub check_internet As Boolean
 	
 	Dim connected As Boolean
@@ -402,9 +406,6 @@ Sub random_id(cont As Int) As String
 	
 	Return str_res
 End Sub
-
-
-
 
 
 

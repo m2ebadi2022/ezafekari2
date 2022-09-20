@@ -20,12 +20,11 @@ Sub Globals
 	'These variables can only be accessed from this module.
 
 	Private pan_hed_sabt2 As Panel
-	Private pan_all_msaedeh As Panel
+
 	Private pan_all_set_date As Panel
-	Private pan_all_food As Panel
-	Private lbl_date_food As Label
+	
 	Dim index_current_pan As Int
-	Private lbl_date_mosaedeh As Label
+
 	
 	Private pik_day1 As Label
 	Private pik_moon1 As Label
@@ -36,13 +35,11 @@ Sub Globals
 	
 	Private lbl_date_sayer As Label
 	Private pan_all_sayer As Panel
-	Private et_mablagh_mosaedeh As EditText
-	Private et_tozih_mosaedeh As EditText
-	Private et_mablagh_food As EditText
-	Private et_tozih_food As EditText
+	
 	Private et_onvan_sayer As EditText
 	Private et_mablagh_sayer As EditText
 	Private et_tozih_sayer As EditText
+	Private lbl_title_sayer As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -87,20 +84,7 @@ Private Sub lbl_GoToList2_Click
 	StartActivity(list2_activity)
 End Sub
 
-Private Sub pan_all_msaedeh_Click
-	pan_all_msaedeh.Visible=False
-End Sub
 
-Private Sub lbl_save_mosaedeh_Click
-	
-	dbCode.add_mosaedeh(lbl_date_mosaedeh.Text,et_mablagh_mosaedeh.Text,et_tozih_mosaedeh.Text,0)
-	
-	pan_all_msaedeh.Visible=False
-End Sub
-
-Private Sub lbl_date_mosaedeh_Click
-	pan_all_set_date.Visible=True
-End Sub
 
 Private Sub pan_all_set_date_Click
 	pan_all_set_date.Visible=False
@@ -109,58 +93,44 @@ End Sub
 
 
 Private Sub pan_mosaede_Click
-	pan_all_msaedeh.Visible=True
-	index_current_pan=1
-	lbl_date_mosaedeh.Text=myfunc.fa2en(Main.persianDate.PersianShortDate)
-	
-	pik_year1.Text=myfunc.fa2en(lbl_date_mosaedeh.Text.SubString2(0,4))
-	pik_moon1.Tag=myfunc.fa2en(lbl_date_mosaedeh.Text.SubString2(6,7))
-	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
-	pik_day1.Text=myfunc.fa2en(lbl_date_mosaedeh.Text.SubString2(8,10))
+	item_mod(1,"ثبت مساعده")
 End Sub
 
-Private Sub Panel1_Click
-	
+Private Sub pan_vam_Click
+	MsgboxAsync("در آپدیت بعدی فعال خواهد شد","توجه")
 End Sub
 
-Private Sub Panel3_Click
-	
-End Sub
-
-Private Sub pan_all_food_Click
-	pan_all_food.Visible=False
-End Sub
-
-Private Sub lbl_save_food_Click
-	pan_all_food.Visible=False
-	dbCode.add_food(lbl_date_food.Text,et_mablagh_food.Text,et_tozih_food.Text,0)
-End Sub
-
-Private Sub lbl_date_food_Click
-	
-	
-	pan_all_set_date.Visible=True
-End Sub
 
 Private Sub pan_gaza_Click
-	pan_all_food.Visible=True
-	index_current_pan=3
-	lbl_date_food.Text=myfunc.fa2en(Main.persianDate.PersianShortDate)
+	item_mod(3,"ثبت هزینه غذا")
 	
-	pik_year1.Text=myfunc.fa2en(lbl_date_food.Text.SubString2(0,4))
-	pik_moon1.Tag=myfunc.fa2en(lbl_date_food.Text.SubString2(6,7))
-	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
-	pik_day1.Text=myfunc.fa2en(lbl_date_food.Text.SubString2(8,10))
+End Sub
+
+
+Private Sub pan_padash_Click
+	item_mod(4,"ثبت پاداش")
 End Sub
 
 
 Private Sub pan_sayer_Click
-	pan_all_sayer.Visible=True
-	index_current_pan=4
+	item_mod(5,"ثبت سایر موارد")
+End Sub
+
+
+
+Sub item_mod(index As Int, title As String)
+	index_current_pan=index
+	
+	lbl_title_sayer.Text=title
+	et_onvan_sayer.Text=""
+	et_mablagh_sayer.Text=""
+	et_tozih_sayer.Text=""
 	lbl_date_sayer.Text=myfunc.fa2en(Main.persianDate.PersianShortDate)
 	
+	pan_all_sayer.Visible=True
+	
 	pik_year1.Text=myfunc.fa2en(lbl_date_sayer.Text.SubString2(0,4))
-	pik_moon1.Tag=myfunc.fa2en(lbl_date_sayer.Text.SubString2(6,7))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date_sayer.Text.SubString2(5,7))
 	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
 	pik_day1.Text=myfunc.fa2en(lbl_date_sayer.Text.SubString2(8,10))
 End Sub
@@ -179,24 +149,31 @@ Private Sub pan_all_sayer_Click
 End Sub
 
 Private Sub lbl_save_sayer_Click
+	
+	If(index_current_pan=1)Then
+		dbCode.add_mosaedeh(et_onvan_sayer.Text ,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
+	Else If (index_current_pan=2)Then
+		'vam
+		
+		
+	Else If (index_current_pan=3)Then
+		dbCode.add_food(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
+	Else If (index_current_pan=4)Then
+		dbCode.add_padash(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
+		
+	Else If (index_current_pan=5)Then
+		dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
+		
+	End If
+	
+	
 	pan_all_sayer.Visible=False
 	
-	dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Text,et_tozih_sayer.Text,0)
 End Sub
 
 
 Private Sub lbl_save_picker_Click
-	If(index_current_pan=1) Then
-		lbl_date_mosaedeh.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
-		
-	Else If(index_current_pan=2) Then
-		
-	Else If(index_current_pan=3) Then
-		lbl_date_food.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
-	Else If(index_current_pan=4) Then
-		lbl_date_sayer.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
-		
-	End If
+	lbl_date_sayer.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
 	pan_all_set_date.Visible=False
 End Sub
 
@@ -403,6 +380,9 @@ End Sub
 
 
 
-Private Sub pan_vam_Click
-	MsgboxAsync("در آپدیت بعدی فعال خواهد شد","توجه")
+
+
+Private Sub et_mablagh_sayer_TextChanged (Old As String, New As String)
+	et_mablagh_sayer.Tag=New.Replace(",","")
+	myfunc.change_formater(Old,New,et_mablagh_sayer)
 End Sub

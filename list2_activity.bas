@@ -18,11 +18,43 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
-
+	Dim xui2 As XUI
+	Dim p As B4XView
+	
 	Private pan_hed_list2 As Panel
 	
 	Private TabHost2 As TabHost
-	Private ListView1 As ListView
+	
+	
+	Private pik_day1 As Label
+	Private pik_moon1 As Label
+	Private pik_year1 As Label
+	
+	Dim num_dataPik As Int=0  '' for time picker
+	Dim moon_dataPik As List  '' for date picker
+	
+	Private lbl_onvan As Label
+	Private lbl_date As Label
+	Private lbl_mablagh As Label
+	Private lbl_edit_from_list As Label
+	Private lbl_remove_from_list As Label
+	Private lbl_tozih As Label
+	Private Panel1 As Panel
+	Private cust_LV_mosaedeh As CustomListView
+	Private pan_all_edit1 As Panel
+	Private pan_all_set_date As Panel
+	Private lbl_title_edit1 As Label
+	Private et_onvan_edit1 As EditText
+	Private lbl_date_edit1 As Label
+	Private et_mablagh_edit1 As EditText
+	Private et_tozih_edit1 As EditText
+	Dim index_current_pan As Int
+	Dim current_itemId_edit As Int
+	Private cust_LV_food As CustomListView
+	Private cust_LV_padash As CustomListView
+	Private cust_LV_sayer As CustomListView
+	Private sp_moon As Spinner
+	Private sp_year As Spinner
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -30,64 +62,294 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("list2_layout")
 	
 	
+	sp_year.Add("1401")
+	sp_year.Add("1400")
+	sp_year.Add("1399")
+	sp_year.Add("1398")
+	
+	sp_moon.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
+	
+	sp_year.SelectedIndex=0
+	sp_moon.SelectedIndex=myfunc.fa2en(Main.persianDate.PersianMonth)-1
+	
+	Dim moon_num As String=myfunc.convert_adad(sp_moon.SelectedIndex+1)
+	
 	
 	
 	TabHost2.AddTab("سایر","tab_layout_sayer")
+	TabHost2.AddTab("پاداش","tab_layout_padash")
 	TabHost2.AddTab("غذا","tab_layout_food")
 	'TabHost2.AddTab("وام","tab_layout_vam")
 	TabHost2.AddTab("مساعده","tab_layout_mosaedeh")
 
-TabHost2.CurrentTab=2
-
+	TabHost2.CurrentTab=3
+	fill_list_mosaedeh(sp_year.SelectedItem,moon_num)
 	''set color
 	
 	pan_hed_list2.Color=Main.color4
 	'myfunc.set_font(Activity)
 	
 	
+	''  for date picker
+	moon_dataPik.Initialize
+	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
+	''-----------------
 	
-	fill_lists
 	
 
 End Sub
 
-Sub fill_lists
+Sub fill_list_mosaedeh(year As String , moon As String)
+	
+	''--------- لیست مساعده ها -------------
+	cust_LV_mosaedeh.Clear
+	'list_ezafekari_id.Clear
+	
+	dbCode.connect_db
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_mosaedeh WHERE date LIKE '%"&year&"/"&moon&"%' ORDER BY  date DESC;")
+	
+	
+	Do While dbCode.res.NextRow
+		
+		
+		
+		
+		p = xui2.CreatePanel("p")
+		p.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
+		p.LoadLayout("item_list_list2")
+	
+		cust_LV_mosaedeh.Add(p,dbCode.res.GetString("id"))
+		
+		lbl_onvan.Text=dbCode.res.GetString("onvan")
+		
+		lbl_date.Text=dbCode.res.GetString("date")
+		lbl_mablagh.Tag=dbCode.res.GetString("mablagh")
+		lbl_mablagh.Text=myfunc.show_num_pool(lbl_mablagh.Tag)
+		
+		lbl_tozih.Text=dbCode.res.GetString("tozihat")
+		
+		lbl_remove_from_list.tag=dbCode.res.GetString("id")
+		lbl_edit_from_list.tag=dbCode.res.GetString("id")
+		
+	'	list_ezafekari_id.Add(dbCode.res.GetString("id"))
+		
+		
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	Loop
+	dbCode.res.Close
+	dbCode.sql.Close
+	
+	If(cust_LV_mosaedeh.LastVisibleIndex<5)Then
+		p = xui2.CreatePanel("p")
+		Select cust_LV_mosaedeh.LastVisibleIndex
+			Case -1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, (TabHost2.Height-100))
+			Case 0
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 400dip)
+			Case 1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 300dip)
+			Case 2
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 150dip)
+			Case 3
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 100dip)
+			Case 4
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 10dip)
+		End Select
+		cust_LV_mosaedeh.Add(p,"")
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	End If
+	
+End Sub
+
+
+Sub fill_list_food(year As String , moon As String)
+	
+	''--------- لیست مساعده ها -------------
+	cust_LV_food.Clear
+	'list_ezafekari_id.Clear
+	
 	dbCode.connect_db
 	
-	''------------ mosaedeh --------------
-	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_mosaedeh ")
-	ListView1.SingleLineLayout.Label.TextColor=Colors.Black
-	
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_food WHERE date LIKE '%"&year&"/"&moon&"%' ORDER BY  date DESC;")
 	
 	Do While dbCode.res.NextRow
-		Dim num As Int=(dbCode.res.Position)+1
-		Log(num & "- mosaedeh= date : "&dbCode.res.GetString("date")&" - mablagh :"&dbCode.res.GetString("mablagh"))
+		
+		
+		
+		
+		p = xui2.CreatePanel("p")
+		p.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
+		p.LoadLayout("item_list_list2")
 	
+		cust_LV_food.Add(p,dbCode.res.GetString("id"))
+		
+		lbl_onvan.Text=dbCode.res.GetString("onvan")
+		
+		lbl_date.Text=dbCode.res.GetString("date")
+		lbl_mablagh.Tag=dbCode.res.GetString("mablagh")
+		lbl_mablagh.Text=myfunc.show_num_pool(lbl_mablagh.Tag)
+		
+		lbl_tozih.Text=dbCode.res.GetString("tozihat")
+		
+		lbl_remove_from_list.tag=dbCode.res.GetString("id")
+		lbl_edit_from_list.tag=dbCode.res.GetString("id")
+		
+	'	list_ezafekari_id.Add(dbCode.res.GetString("id"))
+		
+		
+		'gest.SetOnTouchListener(p,"GesturesTouch")
 	Loop
+	dbCode.res.Close
+	dbCode.sql.Close
 	
-	''------------ food --------------
-	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_food ")
-
-	
-	
-	Do While dbCode.res.NextRow
-		Dim num As Int=(dbCode.res.Position)+1
-		Log(num & "- food= date : "&dbCode.res.GetString("date")&" - mablagh :"&dbCode.res.GetString("mablagh"))
-	
-	Loop
-	
-	''------------ sayer --------------
-	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_sayer ")
-	ListView1.SingleLineLayout.Label.TextColor=Colors.Black
-	
-	
-	Do While dbCode.res.NextRow
-		Dim num As Int=(dbCode.res.Position)+1
-		Log(num & "-sayer=  onvan : "&dbCode.res.GetString("onvan")&" - date : "&dbCode.res.GetString("date")&" - mablagh :"&dbCode.res.GetString("mablagh"))
-	
-	Loop
+	If(cust_LV_food.LastVisibleIndex<5)Then
+		p = xui2.CreatePanel("p")
+		Select cust_LV_food.LastVisibleIndex
+			Case -1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, (TabHost2.Height-100))
+			Case 0
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 400dip)
+			Case 1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 300dip)
+			Case 2
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 150dip)
+			Case 3
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 100dip)
+			Case 4
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 10dip)
+		End Select
+		cust_LV_food.Add(p,"")
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	End If
 	
 End Sub
+
+Sub fill_list_padash(year As String , moon As String)
+	
+	''--------- لیست مساعده ها -------------
+	cust_LV_padash.Clear
+	'list_ezafekari_id.Clear
+	
+	dbCode.connect_db
+	
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_padash WHERE date LIKE '%"&year&"/"&moon&"%' ORDER BY  date DESC;")
+	
+	Do While dbCode.res.NextRow
+		
+		
+		
+		
+		p = xui2.CreatePanel("p")
+		p.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
+		p.LoadLayout("item_list_list2")
+	
+		cust_LV_padash.Add(p,dbCode.res.GetString("id"))
+		
+		lbl_onvan.Text=dbCode.res.GetString("onvan")
+		
+		lbl_date.Text=dbCode.res.GetString("date")
+		lbl_mablagh.Tag=dbCode.res.GetString("mablagh")
+		lbl_mablagh.Text=myfunc.show_num_pool(lbl_mablagh.Tag)
+		
+		lbl_tozih.Text=dbCode.res.GetString("tozihat")
+		
+		lbl_remove_from_list.tag=dbCode.res.GetString("id")
+		lbl_edit_from_list.tag=dbCode.res.GetString("id")
+		
+	'	list_ezafekari_id.Add(dbCode.res.GetString("id"))
+		
+		
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	Loop
+	dbCode.res.Close
+	dbCode.sql.Close
+	
+	If(cust_LV_padash.LastVisibleIndex<5)Then
+		p = xui2.CreatePanel("p")
+		Select cust_LV_padash.LastVisibleIndex
+			Case -1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, (TabHost2.Height-100))
+			Case 0
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 400dip)
+			Case 1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 300dip)
+			Case 2
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 150dip)
+			Case 3
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 100dip)
+			Case 4
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 10dip)
+		End Select
+		cust_LV_padash.Add(p,"")
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	End If
+	
+End Sub
+
+
+Sub fill_list_sayer(year As String , moon As String)
+	
+	''--------- لیست مساعده ها -------------
+	cust_LV_sayer.Clear
+	'list_ezafekari_id.Clear
+	
+	dbCode.connect_db
+
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_sayer WHERE date LIKE '%"&year&"/"&moon&"%' ORDER BY  date DESC;")
+	
+	Do While dbCode.res.NextRow
+		
+		
+		
+		
+		p = xui2.CreatePanel("p")
+		p.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
+		p.LoadLayout("item_list_list2")
+	
+		cust_LV_sayer.Add(p,dbCode.res.GetString("id"))
+		
+		lbl_onvan.Text=dbCode.res.GetString("onvan")
+		
+		lbl_date.Text=dbCode.res.GetString("date")
+		lbl_mablagh.Tag=dbCode.res.GetString("mablagh")
+		lbl_mablagh.Text=myfunc.show_num_pool(lbl_mablagh.Tag)
+		
+		lbl_tozih.Text=dbCode.res.GetString("tozihat")
+		
+		lbl_remove_from_list.tag=dbCode.res.GetString("id")
+		lbl_edit_from_list.tag=dbCode.res.GetString("id")
+		
+	'	list_ezafekari_id.Add(dbCode.res.GetString("id"))
+		
+		
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	Loop
+	dbCode.res.Close
+	dbCode.sql.Close
+	
+	If(cust_LV_sayer.LastVisibleIndex<5)Then
+		p = xui2.CreatePanel("p")
+		Select cust_LV_sayer.LastVisibleIndex
+			Case -1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, (TabHost2.Height-100))
+			Case 0
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 400dip)
+			Case 1
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 300dip)
+			Case 2
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 150dip)
+			Case 3
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 100dip)
+			Case 4
+				p.SetLayoutAnimated(0, 0, 0, 95%x, 10dip)
+		End Select
+		cust_LV_sayer.Add(p,"")
+		'gest.SetOnTouchListener(p,"GesturesTouch")
+	End If
+	
+End Sub
+
+
 
 
 
@@ -113,4 +375,444 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 	Else
 		Return False
 	End If
+End Sub
+
+Private Sub lbl_remove_from_list_Click
+	
+	Dim b As Label
+	b = Sender
+	
+	If(TabHost2.CurrentTab=0)Then
+		Dim result As Int
+		result = Msgbox2("آیا این مورد حذف شود؟", "حذف", "بله", "", "خیر", Null)
+		If result = DialogResponse.Positive Then
+		
+			If (dbCode.delete_sayer(b.Tag))Then
+				ToastMessageShow("حذف شد.",False)
+				fill_list_sayer(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+			End If
+		End If
+	Else if (TabHost2.CurrentTab=1)Then
+		Dim result As Int
+		result = Msgbox2("آیا این مورد حذف شود؟", "حذف", "بله", "", "خیر", Null)
+		If result = DialogResponse.Positive Then
+		
+			If (dbCode.delete_padash(b.Tag))Then
+				ToastMessageShow("حذف شد.",False)
+				fill_list_padash(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+			End If
+		End If
+		
+	Else if (TabHost2.CurrentTab=2)Then
+		
+		Dim result As Int
+		result = Msgbox2("آیا این مورد حذف شود؟", "حذف", "بله", "", "خیر", Null)
+		If result = DialogResponse.Positive Then
+		
+			If (dbCode.delete_food(b.Tag))Then
+				ToastMessageShow("حذف شد.",False)
+				fill_list_food(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+			End If
+		End If
+	Else if (TabHost2.CurrentTab=3)Then
+		Dim result As Int
+		result = Msgbox2("آیا این مورد حذف شود؟", "حذف", "بله", "", "خیر", Null)
+		If result = DialogResponse.Positive Then
+		
+			If (dbCode.delete_mosaedeh(b.Tag))Then
+				ToastMessageShow("حذف شد.",False)
+			
+				'TabHost2.CurrentTab=2
+				fill_list_mosaedeh(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+				
+				
+			End If
+		End If
+	
+		
+	End If
+
+	
+	
+	
+End Sub
+
+
+Private Sub lbl_edit_from_list_Click
+	Dim b As Label
+	b = Sender
+	
+	dbCode.connect_db
+	
+	
+	If(TabHost2.CurrentTab=0)Then
+	
+		index_current_pan=0
+		current_itemId_edit=b.Tag
+		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_sayer WHERE id="&current_itemId_edit)
+		dbCode.res.Position=0
+		
+		item_edit_box_mod("ویرایش سایر",dbCode.res.GetString("onvan"),dbCode.res.GetString("date"),dbCode.res.GetString("mablagh"),dbCode.res.GetString("tozihat"),dbCode.res.GetString("state"))
+		
+	Else if (TabHost2.CurrentTab=1)Then
+		index_current_pan=1
+		current_itemId_edit=b.Tag
+		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_padash WHERE id="&current_itemId_edit)
+		dbCode.res.Position=0
+		
+		item_edit_box_mod("ویرایش پاداش",dbCode.res.GetString("onvan"),dbCode.res.GetString("date"),dbCode.res.GetString("mablagh"),dbCode.res.GetString("tozihat"),dbCode.res.GetString("state"))
+		
+	Else if (TabHost2.CurrentTab=2)Then
+		
+		
+		index_current_pan=2
+		current_itemId_edit=b.Tag
+		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_food WHERE id="&current_itemId_edit)
+		dbCode.res.Position=0
+		
+		item_edit_box_mod("ویرایش هزینه غذا",dbCode.res.GetString("onvan"),dbCode.res.GetString("date"),dbCode.res.GetString("mablagh"),dbCode.res.GetString("tozihat"),dbCode.res.GetString("state"))
+		
+	Else if (TabHost2.CurrentTab=3)Then
+		index_current_pan=3
+		current_itemId_edit=b.Tag
+		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_mosaedeh WHERE id="&current_itemId_edit)
+		dbCode.res.Position=0
+		
+		item_edit_box_mod("ویرایش مساعده",dbCode.res.GetString("onvan"),dbCode.res.GetString("date"),dbCode.res.GetString("mablagh"),dbCode.res.GetString("tozihat"),dbCode.res.GetString("state"))
+		
+		
+		
+	End If
+	
+	
+	
+End Sub
+
+Sub item_edit_box_mod(title As String,onvan As String, date As String, mablage As String, tozih As String, state As Int)
+	
+	
+	lbl_title_edit1.Text=title
+	et_onvan_edit1.Text=onvan
+	lbl_date_edit1.Text=myfunc.fa2en(date)
+	et_mablagh_edit1.Tag=mablage
+	et_mablagh_edit1.Text=myfunc.show_num_pool(mablage)
+	
+	et_tozih_edit1.Text=tozih
+	
+	
+	pan_all_edit1.Visible=True
+	
+	pik_year1.Text=myfunc.fa2en(lbl_date_edit1.Text.SubString2(0,4))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date_edit1.Text.SubString2(5,7))
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	pik_day1.Text=myfunc.fa2en(lbl_date_edit1.Text.SubString2(8,10))
+	
+	
+	
+	
+End Sub
+
+Private Sub TabHost2_TabChanged
+	If(TabHost2.CurrentTab=0)Then
+		fill_list_sayer(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	else If(TabHost2.CurrentTab=1)Then
+		fill_list_padash(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	else If(TabHost2.CurrentTab=2)Then
+		fill_list_food(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	
+	else If(TabHost2.CurrentTab=3)Then
+		fill_list_mosaedeh(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	
+	End If
+End Sub
+
+Private Sub pan_all_edit1_Click
+	pan_all_edit1.Visible=False
+End Sub
+
+Private Sub Panel4_Click
+	
+End Sub
+
+Private Sub pan_all_set_date_Click
+	pan_all_set_date.Visible=False
+End Sub
+
+
+Private Sub lbl_save_edit1_Click
+	If(index_current_pan=0)Then
+		dbCode.edit_sayer(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+		fill_list_sayer(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	else If(index_current_pan=1)Then
+	
+		dbCode.edit_padash(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+		fill_list_padash(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+		
+	else If(index_current_pan=2)Then
+		
+		dbCode.edit_food(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+		fill_list_food(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	else If(index_current_pan=3)Then
+		
+		dbCode.edit_mosaedeh(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+		fill_list_mosaedeh(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+		
+	End If
+	
+	
+	pan_all_edit1.Visible=False
+	ToastMessageShow("ویرایش شد",False)
+End Sub
+
+Private Sub lbl_date_edit1_Click
+	pan_all_set_date.Visible=True
+End Sub
+
+
+
+Private Sub et_mablagh_edit1_TextChanged (Old As String, New As String)
+	et_mablagh_edit1.Tag=New.Replace(",","")
+	myfunc.change_formater(Old,New,et_mablagh_edit1)
+End Sub
+
+
+
+Private Sub lbl_save_picker_Click
+	lbl_date_edit1.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
+	pan_all_set_date.Visible=False
+End Sub
+
+
+
+Private Sub pik_pan_moon1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_moon1.Tag)-1
+			pik_moon1.Tag=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_moon1.Tag)+1
+			pik_moon1.Tag=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_moon1.Tag>12)Then
+			pik_moon1.Tag=1
+		End If
+		If(pik_moon1.Tag<1)Then
+			pik_moon1.Tag=12
+		End If
+		pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	End If
+	
+End Sub
+
+Private Sub pik_pan_year1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_year1.Text)-1
+			pik_year1.Text=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_year1.Text)+1
+			pik_year1.Text=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_year1.Text>1410)Then
+			pik_year1.Text=1390
+		End If
+		If(pik_year1.Text<1390)Then
+			pik_year1.Text=1410
+		End If
+		
+	End If
+	
+End Sub
+
+Private Sub pik_pan_day1_Touch (Action As Int, X As Float, Y As Float)
+	If(Action=1)Then
+		Dim int1 As Int
+		num_dataPik=y
+	End If
+	
+	If(Action=2)Then
+
+		If(Y>num_dataPik+20)Then
+			int1=myfunc.fa2en(pik_day1.Text)-1
+			pik_day1.Text=int1
+			num_dataPik=y
+		End If
+		If(Y<num_dataPik-20)Then
+			int1=myfunc.fa2en(pik_day1.Text)+1
+			pik_day1.Text=int1
+			num_dataPik=y
+		End If
+		
+		If(pik_moon1.Tag<7)Then
+			If(pik_day1.Text>31)Then
+				pik_day1.Text=1
+			End If
+			If(pik_day1.Text<1)Then
+				pik_day1.Text=31
+			End If
+		Else
+			If(pik_day1.Text>30)Then
+				pik_day1.Text=1
+			End If
+			If(pik_day1.Text<1)Then
+				pik_day1.Text=30
+			End If
+		End If
+		
+		
+	End If
+	
+End Sub
+
+Private Sub pik_moon_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_moon1.Tag)
+	pik_moon1.Tag=int1+1
+	
+	If(pik_moon1.Tag>12)Then
+		pik_moon1.Tag=1
+	End If
+	If(pik_moon1.Tag<1)Then
+		pik_moon1.Tag=12
+	End If
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+	
+End Sub
+
+Private Sub pik_moon_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_moon1.Tag)
+	pik_moon1.Tag=int1-1
+	
+	If(pik_moon1.Tag>12)Then
+		pik_moon1.Tag=1
+	End If
+	If(pik_moon1.Tag<1)Then
+		pik_moon1.Tag=12
+	End If
+	pik_moon1.Text=moon_dataPik.Get(myfunc.fa2en(pik_moon1.Tag)-1)
+	
+End Sub
+
+Private Sub pik_year_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_year1.Text)
+	pik_year1.Text=int1+1
+	
+	If(pik_year1.Text>1410)Then
+		pik_year1.Text=1390
+	End If
+	If(pik_year1.Text<1390)Then
+		pik_year1.Text=1410
+	End If
+	
+End Sub
+
+Private Sub pik_year_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_year1.Text)
+	pik_year1.Text=int1-1
+	
+	If(pik_year1.Text>1410)Then
+		pik_year1.Text=1390
+	End If
+	If(pik_year1.Text<1390)Then
+		pik_year1.Text=1410
+	End If
+	
+End Sub
+
+Private Sub pik_day_bala1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_day1.Text)
+	pik_day1.Text=int1+1
+	
+	
+	If(pik_moon1.Tag<7)Then
+		If(pik_day1.Text>31)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=31
+		End If
+	Else
+		If(pik_day1.Text>30)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=30
+		End If
+	End If
+	
+End Sub
+
+Private Sub pik_day_paeen1_Click
+	Dim int1 As Int=myfunc.fa2en(pik_day1.Text)
+	pik_day1.Text=int1-1
+	If(pik_moon1.Tag<7)Then
+		If(pik_day1.Text>31)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=31
+		End If
+	Else
+		If(pik_day1.Text>30)Then
+			pik_day1.Text=1
+		End If
+		If(pik_day1.Text<1)Then
+			pik_day1.Text=30
+		End If
+	End If
+	
+End Sub
+
+
+
+
+Private Sub sp_year_ItemClick (Position As Int, Value As Object)
+	If(TabHost2.CurrentTab=0)Then
+		fill_list_sayer(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	else If(TabHost2.CurrentTab=1)Then
+		fill_list_padash(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	else If(TabHost2.CurrentTab=2)Then
+		fill_list_food(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	
+	else If(TabHost2.CurrentTab=3)Then
+		fill_list_mosaedeh(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	
+	End If
+	
+	
+	
+End Sub
+
+Private Sub sp_moon_ItemClick (Position As Int, Value As Object)
+	If(TabHost2.CurrentTab=0)Then
+		fill_list_sayer(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	else If(TabHost2.CurrentTab=1)Then
+		fill_list_padash(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	else If(TabHost2.CurrentTab=2)Then
+		fill_list_food(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	
+	else If(TabHost2.CurrentTab=3)Then
+		fill_list_mosaedeh(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	
+	End If
+	
 End Sub
