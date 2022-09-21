@@ -770,7 +770,7 @@ mostCurrent._img_p_edit.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc.
 mostCurrent._wb_show_mymsg.LoadHtml(_job._getstring /*String*/ ());
  }else if((_job._jobname /*String*/ ).equals("ht9")) { 
  //BA.debugLineNum = 373;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("117432693",_job._getstring /*String*/ (),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("414811253",_job._getstring /*String*/ (),0);
  };
  //BA.debugLineNum = 375;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
@@ -804,7 +804,7 @@ mostCurrent._img_p_edit.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc.
  } 
        catch (Exception e91) {
 			processBA.setLastException(e91); //BA.debugLineNum = 408;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("117432728",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("414811288",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 409;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -995,7 +995,7 @@ this.catchState = 17;
  //BA.debugLineNum = 472;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.Shared";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,parent.mostCurrent._picname);
  //BA.debugLineNum = 473;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("117694736",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("415073296",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1028,7 +1028,7 @@ this.catchState = 0;
  //BA.debugLineNum = 483;BA.debugLine="ToastMessageShow(\"خطا در بارگزاری\",True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در بارگزاری"),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 484;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("117694747",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("415073307",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1256,7 +1256,7 @@ this.catchState = 17;
  //BA.debugLineNum = 594;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.Shared";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,parent.mostCurrent._tempfile);
  //BA.debugLineNum = 597;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("118415642",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("415794202",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1291,7 +1291,7 @@ this.catchState = 0;
  //BA.debugLineNum = 608;BA.debugLine="ToastMessageShow(\"خطا در بارگزاری\",True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در بارگزاری"),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 609;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("118415654",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("415794214",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1365,7 +1365,7 @@ return "";
 public static String  _up_sendfile(String _value) throws Exception{
  //BA.debugLineNum = 506;BA.debugLine="Sub Up_sendFile (value As String)";
  //BA.debugLineNum = 507;BA.debugLine="Log( value)";
-anywheresoftware.b4a.keywords.Common.LogImpl("117891329",_value,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("415269889",_value,0);
  //BA.debugLineNum = 508;BA.debugLine="End Sub";
 return "";
 }

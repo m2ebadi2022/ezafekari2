@@ -188,6 +188,7 @@ Sub Globals
 	
 	Dim ls_shift_moon As List
 	Dim ls_tatili_moon As List
+	Dim ls_tatili_custom_moon As List
 	Dim ls_note_moon As List
 	
 	
@@ -331,6 +332,7 @@ Sub Globals
 	
 	
 	Private scrol_v As ScrollView
+	Private pan_all_menu_day As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -355,6 +357,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	ls_shift_moon.Initialize
 	ls_tatili_moon.Initialize
+	ls_tatili_custom_moon.Initialize
 	ls_note_moon.Initialize
 	
 	
@@ -783,6 +786,10 @@ Sub get_monasebat ( id As Int)
 		lbl_today.Text=lbl_today.Text&" (تعطیل) "
 	End If
 	
+	If (dbCode.res.GetString("state") = "tatil1")Then
+		lbl_today.Text=lbl_today.Text&" ( تعطیل قراردادی) "
+	End If
+	
 	If (dbCode.res.GetString("shift") <> "")Then
 		Dim str_sh As String
 		Select dbCode.res.GetString("shift")
@@ -931,6 +938,7 @@ Sub generat_taghvim(year As Int , moon As Int)
 	
 	ls_shift_moon.Clear
 	ls_tatili_moon.Clear
+	ls_tatili_custom_moon.Clear
 	ls_note_moon.Clear
 	
 	Dim count_day_moon As Int
@@ -996,6 +1004,13 @@ Sub generat_taghvim(year As Int , moon As Int)
 					ls_tatili_moon.Add(False)
 				End If
 				
+				''-----get tatili custom -----
+				If (dbCode.res.GetString("state") = "tatil1")Then
+					ls_tatili_custom_moon.Add(True)
+				Else
+					ls_tatili_custom_moon.Add(False)
+				End If
+				
 				''-----get note -----
 				If (dbCode.res.GetString("note") = "")Then
 					ls_note_moon.Add(False)
@@ -1044,7 +1059,10 @@ Sub generat_taghvim(year As Int , moon As Int)
 				PA(i).Color=0xFFFF5252
 			End If
 			
-			
+				''------- chek tatili custom
+				If(ls_tatili_custom_moon.Get(counter-1)=True)Then
+					PA(i).Color=0xFFF95700
+				End If
 			
 			''---------------- chek note ---------
 			If(ls_note_moon.Get(counter-1)=True)Then
@@ -1114,11 +1132,16 @@ Private Sub PA_Click
 			If(last_selected_itemTag<>0)Then
 				
 				If(ls_tatili_moon.Get(last_selected_itemTag-1)=True)Then
-				PA(d).Color=0xFFFF5252
-			Else
-				PA(d).Color=0xFFEFEFEF
-			End If
+					PA(d).Color=0xFFFF5252
+				Else
+					PA(d).Color=0xFFEFEFEF
+				End If
 				
+				If(ls_tatili_custom_moon.Get(last_selected_itemTag-1)=True)Then
+					PA(d).Color=0xFFF95700
+				Else
+					PA(d).Color=0xFFEFEFEF
+				End If
 				
 			End If
 			
@@ -1384,14 +1407,30 @@ End Sub
 
 Private Sub PA_LongClick
 	Dim B As Panel = Sender
-   
+	
+	
 	selectedDay_id=dbCode.get_day_id(lbl_year_tagvim.Text,lbl_moon_name.Tag,B.Tag)
+
+
+	Log(selectedDay_id)
+	Log(lbl_year_tagvim.Text)
+	Log(lbl_moon_name.Tag)
+	Log(B.Tag)
+	
+	
+	
 
 	B.Color=Colors.Gray
 	
-	lbl_edit_note_Click
-	
+'	lbl_edit_note_Click
+
+
+pan_all_menu_day.Visible=True	
 End Sub
+
+
+
+
 
 Private Sub pan_all_note_Click
 	pan_all_note.Visible=False
@@ -1421,10 +1460,6 @@ End Sub
 
 
 
-
-
-
-
-
-
-
+Private Sub pan_all_menu_day_Click
+	pan_all_menu_day.Visible=False
+End Sub
