@@ -55,6 +55,9 @@ Sub Globals
 	Private cust_LV_sayer As CustomListView
 	Private sp_moon As Spinner
 	Private sp_year As Spinner
+	Private lbl_icon As Label
+	Private sp_type_state As Spinner
+	Private lbl_sp_type As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -87,6 +90,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	''set color
 	
 	pan_hed_list2.Color=Main.color4
+	lbl_title_edit1.Color=Main.color4
 	'myfunc.set_font(Activity)
 	
 	
@@ -95,7 +99,9 @@ Sub Activity_Create(FirstTime As Boolean)
 	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	''-----------------
 	
-	
+	sp_type_state.Add("اضافه شدن به دریافتی ها")
+	sp_type_state.Add("کم شدن از دریافتی ها")
+
 
 End Sub
 
@@ -127,6 +133,9 @@ Sub fill_list_mosaedeh(year As String , moon As String)
 		lbl_mablagh.Text=myfunc.show_num_pool(lbl_mablagh.Tag)
 		
 		lbl_tozih.Text=dbCode.res.GetString("tozihat")
+		
+		lbl_icon.Text=Chr(0xF274)  'def
+		lbl_icon.Color=0xFF00A3FF
 		
 		lbl_remove_from_list.tag=dbCode.res.GetString("id")
 		lbl_edit_from_list.tag=dbCode.res.GetString("id")
@@ -191,6 +200,9 @@ Sub fill_list_food(year As String , moon As String)
 		
 		lbl_tozih.Text=dbCode.res.GetString("tozihat")
 		
+		lbl_icon.Text=Chr(0xF274)  'def
+		lbl_icon.Color=Colors.Blue
+		
 		lbl_remove_from_list.tag=dbCode.res.GetString("id")
 		lbl_edit_from_list.tag=dbCode.res.GetString("id")
 		
@@ -253,6 +265,9 @@ Sub fill_list_padash(year As String , moon As String)
 		
 		lbl_tozih.Text=dbCode.res.GetString("tozihat")
 		
+		lbl_icon.Text=Chr(0xF274)  'def
+		lbl_icon.Color=Colors.Blue
+		
 		lbl_remove_from_list.tag=dbCode.res.GetString("id")
 		lbl_edit_from_list.tag=dbCode.res.GetString("id")
 		
@@ -314,7 +329,22 @@ Sub fill_list_sayer(year As String , moon As String)
 		lbl_mablagh.Tag=dbCode.res.GetString("mablagh")
 		lbl_mablagh.Text=myfunc.show_num_pool(lbl_mablagh.Tag)
 		
+		
+		
+		If(dbCode.res.GetString("state")) =1 Then
+			lbl_icon.Text=Chr(0xF271)  'plus
+			lbl_icon.Color=Colors.Green
+		Else
+			lbl_icon.Text=Chr(0xF272)  'minus
+			lbl_icon.Color=Colors.Red
+		End If
+		
+	
+		
+		
 		lbl_tozih.Text=dbCode.res.GetString("tozihat")
+		
+		
 		
 		lbl_remove_from_list.tag=dbCode.res.GetString("id")
 		lbl_edit_from_list.tag=dbCode.res.GetString("id")
@@ -444,6 +474,8 @@ Private Sub lbl_edit_from_list_Click
 	
 	dbCode.connect_db
 	
+	sp_type_state.Visible=False
+	lbl_sp_type.Visible=False
 	
 	If(TabHost2.CurrentTab=0)Then
 	
@@ -451,6 +483,9 @@ Private Sub lbl_edit_from_list_Click
 		current_itemId_edit=b.Tag
 		dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_sayer WHERE id="&current_itemId_edit)
 		dbCode.res.Position=0
+		
+		sp_type_state.Visible=True
+		lbl_sp_type.Visible=True
 		
 		item_edit_box_mod("ویرایش سایر",dbCode.res.GetString("onvan"),dbCode.res.GetString("date"),dbCode.res.GetString("mablagh"),dbCode.res.GetString("tozihat"),dbCode.res.GetString("state"))
 		
@@ -499,6 +534,11 @@ Sub item_edit_box_mod(title As String,onvan As String, date As String, mablage A
 	
 	et_tozih_edit1.Text=tozih
 	
+	If(state = 1) Then
+		sp_type_state.SelectedIndex=0
+	Else
+		sp_type_state.SelectedIndex=1
+	End If
 	
 	pan_all_edit1.Visible=True
 	
@@ -541,8 +581,16 @@ End Sub
 
 Private Sub lbl_save_edit1_Click
 	If(index_current_pan=0)Then
-		dbCode.edit_sayer(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+		Dim state_type As Int=0
+		If(sp_type_state.SelectedIndex=0)Then
+			state_type=1
+		Else
+			state_type=2
+		End If
+		
+		dbCode.edit_sayer(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,state_type)
 		fill_list_sayer(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+		
 	else If(index_current_pan=1)Then
 	
 		dbCode.edit_padash(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)

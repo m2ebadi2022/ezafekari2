@@ -18,9 +18,7 @@ public static anywheresoftware.b4a.objects.WorkbookWrapper.SheetWrapper _sheet1 
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
-public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
-public ir.taravatgroup.ezafekari2.list2_activity _list2_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
@@ -28,9 +26,12 @@ public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
+public ir.taravatgroup.ezafekari2.list2_activity _list2_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
+public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
 public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
@@ -38,7 +39,6 @@ public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 public static boolean  _add_ezafekari(anywheresoftware.b4a.BA _ba,String _date1,String _date2,String _time1,String _time2,int _d,int _h,int _m,String _tozih,int _state0) throws Exception{
  //BA.debugLineNum = 213;BA.debugLine="Sub add_ezafekari(date1 As String,date2 As String,";
@@ -668,6 +668,54 @@ if (true) return _mablag_kol;
  //BA.debugLineNum = 831;BA.debugLine="End Sub";
 return 0;
 }
+public static int  _all_sayer_bydate(anywheresoftware.b4a.BA _ba,String _date_from,String _date_to,int _state1) throws Exception{
+int _mablag_kol = 0;
+ //BA.debugLineNum = 863;BA.debugLine="Sub all_sayer_byDate(date_from As String, date_to";
+ //BA.debugLineNum = 864;BA.debugLine="Dim mablag_kol As Int=0";
+_mablag_kol = (int) (0);
+ //BA.debugLineNum = 865;BA.debugLine="connect_db";
+_connect_db(_ba);
+ //BA.debugLineNum = 866;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_sayer WHERE";
+_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_sayer WHERE state="+BA.NumberToString(_state1)+" AND date BETWEEN '"+_date_from+"' AND '"+_date_to+"' ")));
+ //BA.debugLineNum = 867;BA.debugLine="Do While res.NextRow";
+while (_res.NextRow()) {
+ //BA.debugLineNum = 868;BA.debugLine="mablag_kol=mablag_kol+res.GetString(\"mablagh\")";
+_mablag_kol = (int) (_mablag_kol+(double)(Double.parseDouble(_res.GetString("mablagh"))));
+ }
+;
+ //BA.debugLineNum = 870;BA.debugLine="res.Close";
+_res.Close();
+ //BA.debugLineNum = 871;BA.debugLine="sql.Close";
+_sql.Close();
+ //BA.debugLineNum = 873;BA.debugLine="Return mablag_kol";
+if (true) return _mablag_kol;
+ //BA.debugLineNum = 874;BA.debugLine="End Sub";
+return 0;
+}
+public static int  _all_sayer_mah(anywheresoftware.b4a.BA _ba,String _year,String _moon,int _state) throws Exception{
+int _mablag_kol = 0;
+ //BA.debugLineNum = 850;BA.debugLine="Sub all_sayer_mah(year As String , moon As String";
+ //BA.debugLineNum = 851;BA.debugLine="Dim mablag_kol As Int=0";
+_mablag_kol = (int) (0);
+ //BA.debugLineNum = 852;BA.debugLine="connect_db";
+_connect_db(_ba);
+ //BA.debugLineNum = 853;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_sayer WHERE";
+_res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_sayer WHERE date LIKE '%"+_year+"/"+_moon+"%' AND state="+BA.NumberToString(_state))));
+ //BA.debugLineNum = 854;BA.debugLine="Do While res.NextRow";
+while (_res.NextRow()) {
+ //BA.debugLineNum = 855;BA.debugLine="mablag_kol=mablag_kol+res.GetString(\"mablagh\")";
+_mablag_kol = (int) (_mablag_kol+(double)(Double.parseDouble(_res.GetString("mablagh"))));
+ }
+;
+ //BA.debugLineNum = 857;BA.debugLine="res.Close";
+_res.Close();
+ //BA.debugLineNum = 858;BA.debugLine="sql.Close";
+_sql.Close();
+ //BA.debugLineNum = 860;BA.debugLine="Return mablag_kol";
+if (true) return _mablag_kol;
+ //BA.debugLineNum = 861;BA.debugLine="End Sub";
+return 0;
+}
 public static anywheresoftware.b4a.objects.collections.List  _all_taradod_mah(anywheresoftware.b4a.BA _ba,String _year,String _moon) throws Exception{
 anywheresoftware.b4a.objects.collections.List _list_ez = null;
 int _v_day = 0;
@@ -764,7 +812,7 @@ _res.Close();
  } 
        catch (Exception e22) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e22); //BA.debugLineNum = 175;BA.debugLine="Log(\"error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810551331","error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113303843","error",0);
  };
  //BA.debugLineNum = 179;BA.debugLine="End Sub";
 return "";
@@ -1003,27 +1051,27 @@ if (true) return anywheresoftware.b4a.keywords.Common.True;
 return false;
 }
 public static int  _get_day_id(anywheresoftware.b4a.BA _ba,int _year,int _moon,int _day) throws Exception{
- //BA.debugLineNum = 955;BA.debugLine="Sub get_day_id (year As Int, moon As Int , day As";
- //BA.debugLineNum = 956;BA.debugLine="Try";
-try { //BA.debugLineNum = 958;BA.debugLine="connect_db";
+ //BA.debugLineNum = 986;BA.debugLine="Sub get_day_id (year As Int, moon As Int , day As";
+ //BA.debugLineNum = 987;BA.debugLine="Try";
+try { //BA.debugLineNum = 989;BA.debugLine="connect_db";
 _connect_db(_ba);
- //BA.debugLineNum = 959;BA.debugLine="res =  sql.ExecQuery(\"SELECT * FROM 'my_calander";
+ //BA.debugLineNum = 990;BA.debugLine="res =  sql.ExecQuery(\"SELECT * FROM 'my_calander";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM 'my_calander' WHERE year="+BA.NumberToString(_year)+" AND moon="+BA.NumberToString(_moon)+" AND day_c="+BA.NumberToString(_day))));
- //BA.debugLineNum = 962;BA.debugLine="If(res.RowCount>0)Then";
+ //BA.debugLineNum = 993;BA.debugLine="If(res.RowCount>0)Then";
 if ((_res.getRowCount()>0)) { 
- //BA.debugLineNum = 963;BA.debugLine="res.Position = 0";
+ //BA.debugLineNum = 994;BA.debugLine="res.Position = 0";
 _res.setPosition((int) (0));
- //BA.debugLineNum = 964;BA.debugLine="Return res.GetInt(\"id\")";
+ //BA.debugLineNum = 995;BA.debugLine="Return res.GetInt(\"id\")";
 if (true) return _res.GetInt("id");
  };
  } 
        catch (Exception e9) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e9); //BA.debugLineNum = 970;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("812976143",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e9); //BA.debugLineNum = 1001;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("116646159",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
- //BA.debugLineNum = 973;BA.debugLine="Return -1";
+ //BA.debugLineNum = 1004;BA.debugLine="Return -1";
 if (true) return (int) (-1);
- //BA.debugLineNum = 975;BA.debugLine="End Sub";
+ //BA.debugLineNum = 1006;BA.debugLine="End Sub";
 return 0;
 }
 public static String  _get_setting_byname(anywheresoftware.b4a.BA _ba,String _name1) throws Exception{
@@ -1091,7 +1139,7 @@ _connect_db(_ba);
 try { //BA.debugLineNum = 96;BA.debugLine="res = sql.ExecQuery(\"SELECT id FROM 'my_calander";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT id FROM 'my_calander' WHERE id=1")));
  //BA.debugLineNum = 97;BA.debugLine="Log( \"tbl my_calander exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810420228","tbl my_calander exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113172740","tbl my_calander exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6); //BA.debugLineNum = 99;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'my_calander' ('i";
@@ -1099,7 +1147,7 @@ _sql.ExecNonQuery("CREATE TABLE 'my_calander' ('id' INTEGER,'year'	INTEGER,'key'
  //BA.debugLineNum = 101;BA.debugLine="insert_calander_exl";
 _insert_calander_exl(_ba);
  //BA.debugLineNum = 102;BA.debugLine="Log ( \"tbl myCalander created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810420233","tbl myCalander created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113172745","tbl myCalander created",0);
  };
  //BA.debugLineNum = 105;BA.debugLine="End Sub";
 return "";
@@ -1112,7 +1160,7 @@ _connect_db(_ba);
 try { //BA.debugLineNum = 110;BA.debugLine="res = sql.ExecQuery(\"SELECT id FROM 'tbl_onvanha";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT id FROM 'tbl_onvanha' WHERE id=1")));
  //BA.debugLineNum = 111;BA.debugLine="Log( \"tbl tbl_onvanha exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810485764","tbl tbl_onvanha exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113238276","tbl tbl_onvanha exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6); //BA.debugLineNum = 113;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tbl_onvanha' ('i";
@@ -1144,7 +1192,7 @@ _sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_
  //BA.debugLineNum = 128;BA.debugLine="sql.ExecNonQuery(\"INSERT INTO 'tbl_onvanha' ('id";
 _sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('13', 'saatKar',  'ساعت کاری در روز','ساعت کاری در روز');");
  //BA.debugLineNum = 132;BA.debugLine="Log ( \"tbl tbl_onvanha created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810485785","tbl tbl_onvanha created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113238297","tbl tbl_onvanha created",0);
  };
  //BA.debugLineNum = 134;BA.debugLine="sql.Close";
 _sql.Close();
@@ -1159,227 +1207,227 @@ _connect_db(_ba);
 try { //BA.debugLineNum = 26;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_taradod\")";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_taradod")));
  //BA.debugLineNum = 27;BA.debugLine="Log( \"tbl taradod exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354693","tbl taradod exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107205","tbl taradod exist",0);
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6); //BA.debugLineNum = 30;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tb_taradod' ( 'i";
 _sql.ExecNonQuery("CREATE TABLE 'tb_taradod' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date_from'	TEXT, 'date_to'	TEXT, 'time_from'	TEXT, 'time_to'	TEXT, 'end_tim_d'	INTEGER DEFAULT 0, 'end_tim_h'	INTEGER DEFAULT 0, 'end_tim_m'	INTEGER DEFAULT 0, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
  //BA.debugLineNum = 32;BA.debugLine="Log ( \"tbl taradod created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354698","tbl taradod created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107210","tbl taradod created",0);
  };
  //BA.debugLineNum = 37;BA.debugLine="Try";
 try { //BA.debugLineNum = 38;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_mamoriat\")";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_mamoriat")));
  //BA.debugLineNum = 39;BA.debugLine="Log( \"tbl mamoriat exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354705","tbl mamoriat exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107217","tbl mamoriat exist",0);
  } 
        catch (Exception e13) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e13); //BA.debugLineNum = 42;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tb_mamoriat' ( '";
 _sql.ExecNonQuery("CREATE TABLE 'tb_mamoriat' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date_from'	TEXT, 'date_to'	TEXT, 'time_from'	TEXT, 'time_to'	TEXT, 'end_tim_d'	INTEGER DEFAULT 0, 'end_tim_h'	INTEGER DEFAULT 0, 'end_tim_m'	INTEGER DEFAULT 0, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
  //BA.debugLineNum = 44;BA.debugLine="Log ( \"tbl mamoriat created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354710","tbl mamoriat created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107222","tbl mamoriat created",0);
  };
  //BA.debugLineNum = 48;BA.debugLine="Try";
 try { //BA.debugLineNum = 49;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_mosaedeh\")";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_mosaedeh")));
  //BA.debugLineNum = 50;BA.debugLine="Log( \"tbl mosaedeh exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354716","tbl mosaedeh exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107228","tbl mosaedeh exist",0);
  } 
        catch (Exception e20) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e20); //BA.debugLineNum = 53;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tb_mosaedeh' ( '";
 _sql.ExecNonQuery("CREATE TABLE 'tb_mosaedeh' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan'	TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
  //BA.debugLineNum = 55;BA.debugLine="Log ( \"tbl mosaedeh created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354721","tbl mosaedeh created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107233","tbl mosaedeh created",0);
  };
  //BA.debugLineNum = 59;BA.debugLine="Try";
 try { //BA.debugLineNum = 60;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_food\")";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_food")));
  //BA.debugLineNum = 61;BA.debugLine="Log( \"tbl food exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354727","tbl food exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107239","tbl food exist",0);
  } 
        catch (Exception e27) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e27); //BA.debugLineNum = 64;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tb_food' ( 'id'";
 _sql.ExecNonQuery("CREATE TABLE 'tb_food' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
  //BA.debugLineNum = 66;BA.debugLine="Log ( \"tbl food created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354732","tbl food created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107244","tbl food created",0);
  };
  //BA.debugLineNum = 71;BA.debugLine="Try";
 try { //BA.debugLineNum = 72;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_padash\")";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_padash")));
  //BA.debugLineNum = 73;BA.debugLine="Log( \"tbl tb_padash exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354739","tbl tb_padash exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107251","tbl tb_padash exist",0);
  } 
        catch (Exception e34) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e34); //BA.debugLineNum = 76;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tb_padash' ( 'id";
 _sql.ExecNonQuery("CREATE TABLE 'tb_padash' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
  //BA.debugLineNum = 78;BA.debugLine="Log ( \"tbl tb_padash created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354744","tbl tb_padash created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107256","tbl tb_padash created",0);
  };
  //BA.debugLineNum = 81;BA.debugLine="Try";
 try { //BA.debugLineNum = 82;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_sayer\")";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_sayer")));
  //BA.debugLineNum = 83;BA.debugLine="Log( \"tbl sayer exist\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354749","tbl sayer exist",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107261","tbl sayer exist",0);
  } 
        catch (Exception e41) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e41); //BA.debugLineNum = 86;BA.debugLine="sql.ExecNonQuery(\"CREATE TABLE 'tb_sayer' ( 'id'";
 _sql.ExecNonQuery("CREATE TABLE 'tb_sayer' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)");
  //BA.debugLineNum = 88;BA.debugLine="Log ( \"tbl sayer created\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("810354754","tbl sayer created",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("113107266","tbl sayer created",0);
  };
  //BA.debugLineNum = 91;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _isexist_ezafekari_by_date(anywheresoftware.b4a.BA _ba,String _date) throws Exception{
 boolean _chk1 = false;
- //BA.debugLineNum = 849;BA.debugLine="Sub isexist_ezafekari_by_date(date As String) As B";
- //BA.debugLineNum = 850;BA.debugLine="Try";
-try { //BA.debugLineNum = 851;BA.debugLine="Dim chk1 As Boolean=False";
+ //BA.debugLineNum = 880;BA.debugLine="Sub isexist_ezafekari_by_date(date As String) As B";
+ //BA.debugLineNum = 881;BA.debugLine="Try";
+try { //BA.debugLineNum = 882;BA.debugLine="Dim chk1 As Boolean=False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 852;BA.debugLine="connect_db";
+ //BA.debugLineNum = 883;BA.debugLine="connect_db";
 _connect_db(_ba);
- //BA.debugLineNum = 853;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_ezafekari W";
+ //BA.debugLineNum = 884;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_ezafekari W";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '"+_date+"';")));
- //BA.debugLineNum = 854;BA.debugLine="If (res.RowCount>0)Then";
+ //BA.debugLineNum = 885;BA.debugLine="If (res.RowCount>0)Then";
 if ((_res.getRowCount()>0)) { 
- //BA.debugLineNum = 855;BA.debugLine="chk1= True";
+ //BA.debugLineNum = 886;BA.debugLine="chk1= True";
 _chk1 = anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 857;BA.debugLine="chk1= False";
+ //BA.debugLineNum = 888;BA.debugLine="chk1= False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 859;BA.debugLine="res.Close";
+ //BA.debugLineNum = 890;BA.debugLine="res.Close";
 _res.Close();
  } 
        catch (Exception e12) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 861;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("812648460",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 892;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("116318476",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
- //BA.debugLineNum = 864;BA.debugLine="Return chk1";
+ //BA.debugLineNum = 895;BA.debugLine="Return chk1";
 if (true) return _chk1;
- //BA.debugLineNum = 867;BA.debugLine="End Sub";
+ //BA.debugLineNum = 898;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _isexist_mamoriat_by_date(anywheresoftware.b4a.BA _ba,String _date) throws Exception{
 boolean _chk1 = false;
- //BA.debugLineNum = 908;BA.debugLine="Sub isexist_mamoriat_by_date(date As String) As Bo";
- //BA.debugLineNum = 909;BA.debugLine="Try";
-try { //BA.debugLineNum = 910;BA.debugLine="Dim chk1 As Boolean=False";
+ //BA.debugLineNum = 939;BA.debugLine="Sub isexist_mamoriat_by_date(date As String) As Bo";
+ //BA.debugLineNum = 940;BA.debugLine="Try";
+try { //BA.debugLineNum = 941;BA.debugLine="Dim chk1 As Boolean=False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 911;BA.debugLine="connect_db";
+ //BA.debugLineNum = 942;BA.debugLine="connect_db";
 _connect_db(_ba);
- //BA.debugLineNum = 912;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_mamoriat WH";
+ //BA.debugLineNum = 943;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_mamoriat WH";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_mamoriat WHERE date_from LIKE '"+_date+"';")));
- //BA.debugLineNum = 913;BA.debugLine="If (res.RowCount>0)Then";
+ //BA.debugLineNum = 944;BA.debugLine="If (res.RowCount>0)Then";
 if ((_res.getRowCount()>0)) { 
- //BA.debugLineNum = 914;BA.debugLine="chk1= True";
+ //BA.debugLineNum = 945;BA.debugLine="chk1= True";
 _chk1 = anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 916;BA.debugLine="chk1= False";
+ //BA.debugLineNum = 947;BA.debugLine="chk1= False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 918;BA.debugLine="res.Close";
+ //BA.debugLineNum = 949;BA.debugLine="res.Close";
 _res.Close();
  } 
        catch (Exception e12) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 920;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("812845068",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 951;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("116515084",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
- //BA.debugLineNum = 923;BA.debugLine="Return chk1";
+ //BA.debugLineNum = 954;BA.debugLine="Return chk1";
 if (true) return _chk1;
- //BA.debugLineNum = 926;BA.debugLine="End Sub";
+ //BA.debugLineNum = 957;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _isexist_morakhasi_by_date(anywheresoftware.b4a.BA _ba,String _date) throws Exception{
 boolean _chk1 = false;
- //BA.debugLineNum = 869;BA.debugLine="Sub isexist_morakhasi_by_date(date As String) As B";
- //BA.debugLineNum = 870;BA.debugLine="Try";
-try { //BA.debugLineNum = 871;BA.debugLine="Dim chk1 As Boolean=False";
+ //BA.debugLineNum = 900;BA.debugLine="Sub isexist_morakhasi_by_date(date As String) As B";
+ //BA.debugLineNum = 901;BA.debugLine="Try";
+try { //BA.debugLineNum = 902;BA.debugLine="Dim chk1 As Boolean=False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 872;BA.debugLine="connect_db";
+ //BA.debugLineNum = 903;BA.debugLine="connect_db";
 _connect_db(_ba);
- //BA.debugLineNum = 873;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_morakhasi W";
+ //BA.debugLineNum = 904;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_morakhasi W";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '"+_date+"';")));
- //BA.debugLineNum = 874;BA.debugLine="If (res.RowCount>0)Then";
+ //BA.debugLineNum = 905;BA.debugLine="If (res.RowCount>0)Then";
 if ((_res.getRowCount()>0)) { 
- //BA.debugLineNum = 875;BA.debugLine="chk1= True";
+ //BA.debugLineNum = 906;BA.debugLine="chk1= True";
 _chk1 = anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 877;BA.debugLine="chk1= False";
+ //BA.debugLineNum = 908;BA.debugLine="chk1= False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 879;BA.debugLine="res.Close";
+ //BA.debugLineNum = 910;BA.debugLine="res.Close";
 _res.Close();
  } 
        catch (Exception e12) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 881;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("812713996",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 912;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("116384012",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
- //BA.debugLineNum = 884;BA.debugLine="Return chk1";
+ //BA.debugLineNum = 915;BA.debugLine="Return chk1";
 if (true) return _chk1;
- //BA.debugLineNum = 885;BA.debugLine="End Sub";
+ //BA.debugLineNum = 916;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _isexist_taradod_by_date(anywheresoftware.b4a.BA _ba,String _date) throws Exception{
 boolean _chk1 = false;
- //BA.debugLineNum = 887;BA.debugLine="Sub isexist_taradod_by_date(date As String) As Boo";
- //BA.debugLineNum = 888;BA.debugLine="Try";
-try { //BA.debugLineNum = 889;BA.debugLine="Dim chk1 As Boolean=False";
+ //BA.debugLineNum = 918;BA.debugLine="Sub isexist_taradod_by_date(date As String) As Boo";
+ //BA.debugLineNum = 919;BA.debugLine="Try";
+try { //BA.debugLineNum = 920;BA.debugLine="Dim chk1 As Boolean=False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 890;BA.debugLine="connect_db";
+ //BA.debugLineNum = 921;BA.debugLine="connect_db";
 _connect_db(_ba);
- //BA.debugLineNum = 891;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_taradod WHE";
+ //BA.debugLineNum = 922;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tb_taradod WHE";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tb_taradod WHERE date_from LIKE '"+_date+"';")));
- //BA.debugLineNum = 892;BA.debugLine="If (res.RowCount>0)Then";
+ //BA.debugLineNum = 923;BA.debugLine="If (res.RowCount>0)Then";
 if ((_res.getRowCount()>0)) { 
- //BA.debugLineNum = 893;BA.debugLine="chk1= True";
+ //BA.debugLineNum = 924;BA.debugLine="chk1= True";
 _chk1 = anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 895;BA.debugLine="chk1= False";
+ //BA.debugLineNum = 926;BA.debugLine="chk1= False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 897;BA.debugLine="res.Close";
+ //BA.debugLineNum = 928;BA.debugLine="res.Close";
 _res.Close();
  } 
        catch (Exception e12) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 899;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("812779532",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e12); //BA.debugLineNum = 930;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("116449548",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
- //BA.debugLineNum = 901;BA.debugLine="Return chk1";
+ //BA.debugLineNum = 932;BA.debugLine="Return chk1";
 if (true) return _chk1;
- //BA.debugLineNum = 904;BA.debugLine="End Sub";
+ //BA.debugLineNum = 935;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _istatil_by_date(anywheresoftware.b4a.BA _ba,int _id) throws Exception{
 boolean _chk1 = false;
- //BA.debugLineNum = 929;BA.debugLine="Sub istatil_by_date(id As Int) As Boolean";
- //BA.debugLineNum = 931;BA.debugLine="Try";
-try { //BA.debugLineNum = 932;BA.debugLine="Dim chk1 As Boolean=False";
+ //BA.debugLineNum = 960;BA.debugLine="Sub istatil_by_date(id As Int) As Boolean";
+ //BA.debugLineNum = 962;BA.debugLine="Try";
+try { //BA.debugLineNum = 963;BA.debugLine="Dim chk1 As Boolean=False";
 _chk1 = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 933;BA.debugLine="connect_db";
+ //BA.debugLineNum = 964;BA.debugLine="connect_db";
 _connect_db(_ba);
- //BA.debugLineNum = 934;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM 'my_calander'";
+ //BA.debugLineNum = 965;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM 'my_calander'";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id="+BA.NumberToString(_id))));
- //BA.debugLineNum = 935;BA.debugLine="If(res.RowCount>0)Then";
+ //BA.debugLineNum = 966;BA.debugLine="If(res.RowCount>0)Then";
 if ((_res.getRowCount()>0)) { 
- //BA.debugLineNum = 936;BA.debugLine="res.Position=0";
+ //BA.debugLineNum = 967;BA.debugLine="res.Position=0";
 _res.setPosition((int) (0));
- //BA.debugLineNum = 937;BA.debugLine="If (res.GetString(\"state\")=\"tatil\")Then";
+ //BA.debugLineNum = 968;BA.debugLine="If (res.GetString(\"state\")=\"tatil\")Then";
 if (((_res.GetString("state")).equals("tatil"))) { 
- //BA.debugLineNum = 938;BA.debugLine="chk1= True";
+ //BA.debugLineNum = 969;BA.debugLine="chk1= True";
 _chk1 = anywheresoftware.b4a.keywords.Common.True;
  };
  };
- //BA.debugLineNum = 942;BA.debugLine="res.Close";
+ //BA.debugLineNum = 973;BA.debugLine="res.Close";
 _res.Close();
  } 
        catch (Exception e13) {
-			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e13); //BA.debugLineNum = 944;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("812910607",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e13); //BA.debugLineNum = 975;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("116580623",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  };
- //BA.debugLineNum = 947;BA.debugLine="Return chk1";
+ //BA.debugLineNum = 978;BA.debugLine="Return chk1";
 if (true) return _chk1;
- //BA.debugLineNum = 949;BA.debugLine="End Sub";
+ //BA.debugLineNum = 980;BA.debugLine="End Sub";
 return false;
 }
 public static String  _process_globals() throws Exception{
@@ -1398,34 +1446,34 @@ return "";
 public static anywheresoftware.b4a.objects.collections.List  _read_onvan_db(anywheresoftware.b4a.BA _ba) throws Exception{
 anywheresoftware.b4a.objects.collections.List _onvanha = null;
 int _i = 0;
- //BA.debugLineNum = 979;BA.debugLine="Sub read_onvan_db As List";
- //BA.debugLineNum = 980;BA.debugLine="Dim onvanHa As List";
+ //BA.debugLineNum = 1010;BA.debugLine="Sub read_onvan_db As List";
+ //BA.debugLineNum = 1011;BA.debugLine="Dim onvanHa As List";
 _onvanha = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 981;BA.debugLine="onvanHa.Initialize";
+ //BA.debugLineNum = 1012;BA.debugLine="onvanHa.Initialize";
 _onvanha.Initialize();
- //BA.debugLineNum = 983;BA.debugLine="connect_db";
+ //BA.debugLineNum = 1014;BA.debugLine="connect_db";
 _connect_db(_ba);
- //BA.debugLineNum = 984;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tbl_onvanha\")";
+ //BA.debugLineNum = 1015;BA.debugLine="res= sql.ExecQuery(\"SELECT * FROM tbl_onvanha\")";
 _res = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(_sql.ExecQuery("SELECT * FROM tbl_onvanha")));
- //BA.debugLineNum = 986;BA.debugLine="For i=0 To res.RowCount-1";
+ //BA.debugLineNum = 1017;BA.debugLine="For i=0 To res.RowCount-1";
 {
 final int step5 = 1;
 final int limit5 = (int) (_res.getRowCount()-1);
 _i = (int) (0) ;
 for (;_i <= limit5 ;_i = _i + step5 ) {
- //BA.debugLineNum = 987;BA.debugLine="res.Position=i";
+ //BA.debugLineNum = 1018;BA.debugLine="res.Position=i";
 _res.setPosition(_i);
- //BA.debugLineNum = 988;BA.debugLine="onvanHa.Add(res.GetString(\"custom_name\"))";
+ //BA.debugLineNum = 1019;BA.debugLine="onvanHa.Add(res.GetString(\"custom_name\"))";
 _onvanha.Add((Object)(_res.GetString("custom_name")));
  }
 };
- //BA.debugLineNum = 990;BA.debugLine="res.Close";
+ //BA.debugLineNum = 1021;BA.debugLine="res.Close";
 _res.Close();
- //BA.debugLineNum = 991;BA.debugLine="sql.Close";
+ //BA.debugLineNum = 1022;BA.debugLine="sql.Close";
 _sql.Close();
- //BA.debugLineNum = 993;BA.debugLine="Return onvanHa";
+ //BA.debugLineNum = 1024;BA.debugLine="Return onvanHa";
 if (true) return _onvanha;
- //BA.debugLineNum = 994;BA.debugLine="End Sub";
+ //BA.debugLineNum = 1025;BA.debugLine="End Sub";
 return null;
 }
 }

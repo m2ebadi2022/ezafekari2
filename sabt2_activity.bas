@@ -40,6 +40,8 @@ Sub Globals
 	Private et_mablagh_sayer As EditText
 	Private et_tozih_sayer As EditText
 	Private lbl_title_sayer As Label
+	Private sp_type_state As Spinner
+	Private lbl_sp_type As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -51,10 +53,13 @@ Sub Activity_Create(FirstTime As Boolean)
 	moon_dataPik.Initialize
 	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	''-----------------
+sp_type_state.Add("اضافه شدن به دریافتی ها")
+sp_type_state.Add("کم شدن از دریافتی ها")
 
 
 	''set color
 	pan_hed_sabt2.Color=Main.color4
+	lbl_title_sayer.Color=Main.color4
 	myfunc.set_font(Activity)
 End Sub
 
@@ -120,6 +125,13 @@ End Sub
 
 Sub item_mod(index As Int, title As String)
 	index_current_pan=index
+	If(index=5)Then
+		sp_type_state.Visible=True
+		lbl_sp_type.Visible=True
+	Else
+		sp_type_state.Visible=False
+		lbl_sp_type.Visible=False
+	End If
 	
 	lbl_title_sayer.Text=title
 	et_onvan_sayer.Text=""
@@ -162,7 +174,13 @@ Private Sub lbl_save_sayer_Click
 		dbCode.add_padash(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
 		
 	Else If (index_current_pan=5)Then
-		dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
+		
+		If(sp_type_state.SelectedIndex=0)Then
+			dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,1)
+		Else
+			dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,2)
+		End If
+		
 		
 	End If
 	

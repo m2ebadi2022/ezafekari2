@@ -849,6 +849,37 @@ Sub all_padash_byDate(date_from As String, date_to As String) As Int
 	Return mablag_kol
 End Sub
 
+
+
+'' sayer ----
+
+Sub all_sayer_mah(year As String , moon As String , state As Int) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_sayer WHERE date LIKE '%"&year&"/"&moon&"%' AND state="&state)
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+Sub all_sayer_byDate(date_from As String, date_to As String , state1 As Int ) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_sayer WHERE state="&state1&" AND date BETWEEN '"&date_from&"' AND '"&date_to&"' "  )
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+
 '''''================ list 2 gozareshat=========== end
 
 

@@ -63,13 +63,15 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
-	Activity.LoadLayout("step2")
+	
 	
 	
 		
 	
 	
 	If(File.Exists(File.DirInternal,"phonNum"))Then
+		Activity.LoadLayout("step2")
+		
 		Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
 		'picName="user-"&Main.phon_num&".jpg"
 		
@@ -93,7 +95,7 @@ Sub Activity_Create(FirstTime As Boolean)
 			Up.Initialize("Up")
 		End If
 	
-	
+		ProgressDialogShow("بارگذاری ...")
 		http_initial_1(1)
 		
 '		If(File.Exists(File.DirInternal,picName))Then
@@ -105,7 +107,9 @@ Sub Activity_Create(FirstTime As Boolean)
 '			img_p_edit.Bitmap=LoadBitmap(File.DirAssets,"user.png")
 '		End If
 '		
-	
+	Label12.Color=Main.color4
+	Panel12.Color=Main.color4
+	myfunc.set_font(Activity)
 		
 		
 	Else
@@ -115,9 +119,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	''set color
 	
-	Label12.Color=Main.color4
-	Panel12.Color=Main.color4
-	myfunc.set_font(Activity)
+	
 	
 	
 	
@@ -186,6 +188,8 @@ Sub http_initial_1(type1 As Int)
 			http3.Initialize("ht1",Me)
 			Dim send As String= "var=3&phone="&Main.phon_num&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
 			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+			
+			
 		Else If(type1=2)Then ' to edit
 			Dim exist_pic As Int=0
 			If(File.Exists(Starter.Provider.SharedFolder,picName))Then
@@ -245,7 +249,7 @@ Sub http_initial_1(type1 As Int)
 			http3.Initialize("ht9",Me)
 			Dim send As String= "var=7&phone="&Main.phon_num&"&div_id="&pp.GetSettings("android_id")
 			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-				Log("bbbbbbbbbbbbb")
+			
 			
 		End If
 		
@@ -374,7 +378,7 @@ Sub Jobdone (job As HttpJob)
 			else If job.JobName="ht9" Then  '  i see
 				Log(job.GetString)
 			End If
-		
+			ProgressDialogHide
 			job.Release
 		
 		Else
@@ -631,6 +635,7 @@ Private Sub lbl_send_up_icon_Click
 End Sub
 
 Private Sub lbl_all_msg_Click
+	ProgressDialogShow("بارگذاری ...")
 	http_initial_1(7)
 	pan_all_show_myMsg.Visible=True
 	

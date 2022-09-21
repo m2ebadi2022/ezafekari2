@@ -4100,7 +4100,7 @@ Private Sub lbl_account_Click
 		'Else
 			
 			If (myfunc.check_internet)Then	
-				StartActivity(step0_activity)
+				StartActivity(step2_activity)
 			Else
 				myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
 			End If
