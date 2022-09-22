@@ -333,13 +333,18 @@ Sub Globals
 	
 	Private scrol_v As ScrollView
 	Private pan_all_menu_day As Panel
+	Private CheckBox_tatil_garardadi As CheckBox
+	Private lbl_CheckBox_tatil_garardadi As Label
+	Private lbl_title_day_menu As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
+	
 	Activity.LoadLayout("shift_layout")
 	
 	scrol_v.Panel.LoadLayout("shift_page_items")
+	
 	pan_hed_shift.Color=Main.color4
 	lbl_hed_set_shift.Color=Main.color4
 	
@@ -511,7 +516,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	lbl_go_today_Click
 	
 	myfunc.set_font(Activity)
-	
+	ProgressDialogHide
 	
 End Sub
 
@@ -1051,6 +1056,17 @@ Sub generat_taghvim(year As Int , moon As Int)
 		
 		If(counter-1 < count_day_moon)Then
 			SH(i).Text=ls_shift_moon.Get(counter-1)  ''---set shift
+				If(SH(i).Text="ر")Then
+					SH(i).Color=0x96FFFA00
+				Else If (SH(i).Text="ع")Then
+					SH(i).Color=0x960066FF
+				Else If (SH(i).Text="ش")Then
+					SH(i).Color=0x96414141
+				Else If (SH(i).Text="ا")Then
+					SH(i).Color=0x9600FF24
+				Else
+					SH(i).Color=Colors.Transparent
+				End If
 			
 			
 			
@@ -1061,7 +1077,7 @@ Sub generat_taghvim(year As Int , moon As Int)
 			
 				''------- chek tatili custom
 				If(ls_tatili_custom_moon.Get(counter-1)=True)Then
-					PA(i).Color=0xFFF95700
+					PA(i).Color=0xFF00BB8B
 				End If
 			
 			''---------------- chek note ---------
@@ -1091,7 +1107,8 @@ Sub generat_taghvim(year As Int , moon As Int)
 		
 		If(counter=this_day And moon=date.PersianMonth And year=this_year)Then
 			'PA(i).Initialize("PA")
-			PA(i).Color=0xFFFFBD30
+			'PA(i).Color=0xFFFFBD30
+				Lb(i).TextColor=0xFFFF9000
 			index_i_today=i
 		End If
 		
@@ -1138,7 +1155,7 @@ Private Sub PA_Click
 				End If
 				
 				If(ls_tatili_custom_moon.Get(last_selected_itemTag-1)=True)Then
-					PA(d).Color=0xFFF95700
+					PA(d).Color=0xFF00BB8B
 				Else
 					PA(d).Color=0xFFEFEFEF
 				End If
@@ -1153,7 +1170,8 @@ Private Sub PA_Click
 	
 	Dim moon_tag As Int=lbl_moon_name.Tag
 	If( moon_tag=this_moon)Then
-		PA(index_i_today).Color=0xFFFFBD30
+		'PA(index_i_today).Color=0xFFFFBD30
+		Lb(index_i_today).TextColor=0xFFFF9000
 	End If
 	
 	
@@ -1411,24 +1429,40 @@ Private Sub PA_LongClick
 	
 	selectedDay_id=dbCode.get_day_id(lbl_year_tagvim.Text,lbl_moon_name.Tag,B.Tag)
 
-
-	Log(selectedDay_id)
-	Log(lbl_year_tagvim.Text)
-	Log(lbl_moon_name.Tag)
-	Log(B.Tag)
-	
-	
 	
 
-	B.Color=Colors.Gray
+	'B.Color=Colors.Gray
 	
 '	lbl_edit_note_Click
-
-
+	lbl_title_day_menu.Text=lbl_year_tagvim.Text&"/"&lbl_moon_name.Tag&"/"&B.Tag
+	mod_tatil_garardadi(selectedDay_id)
 pan_all_menu_day.Visible=True	
 End Sub
 
+Sub mod_tatil_garardadi (id As Int) 
+	dbCode.connect_db
+	dbCode.res =  dbCode.sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id="&id)
+	dbCode.res.Position=0
+	
+	
+	If(dbCode.res.GetString("state")="tatil") Then
+		CheckBox_tatil_garardadi.Enabled=False
+		lbl_CheckBox_tatil_garardadi.Enabled=False
+		CheckBox_tatil_garardadi.Checked=False
+		
+	Else If(dbCode.res.GetString("state")="tatil1") Then
+		CheckBox_tatil_garardadi.Enabled=True
+		lbl_CheckBox_tatil_garardadi.Enabled=True
+		CheckBox_tatil_garardadi.Checked=True
+	Else
+		CheckBox_tatil_garardadi.Enabled=True
+		lbl_CheckBox_tatil_garardadi.Enabled=True
+		CheckBox_tatil_garardadi.Checked=False
+	End If
 
+
+
+End Sub
 
 
 
@@ -1462,4 +1496,44 @@ End Sub
 
 Private Sub pan_all_menu_day_Click
 	pan_all_menu_day.Visible=False
+End Sub
+
+Private Sub Panel8_Click
+	
+End Sub
+
+Private Sub lbl_note_day_menu_Click
+	lbl_edit_note_Click
+	pan_all_menu_day_Click
+End Sub
+
+Private Sub lbl_CheckBox_tatil_garardadi_Click
+	  
+	If(CheckBox_tatil_garardadi.Checked=True)Then
+		 CheckBox_tatil_garardadi.Checked=False
+	Else
+		CheckBox_tatil_garardadi.Checked=True
+	End If
+	
+End Sub
+
+Private Sub CheckBox_tatil_garardadi_CheckedChange(Checked As Boolean)
+	dbCode.connect_db
+	If(Checked=True)Then
+		
+		dbCode.sql.ExecNonQuery("UPDATE 'my_calander' set state='tatil1' WHERE id="&selectedDay_id)
+
+		
+	Else
+		dbCode.sql.ExecNonQuery("UPDATE 'my_calander' set state='' WHERE id="&selectedDay_id)
+			
+	End If
+	generat_taghvim(lbl_year_tagvim.Text,lbl_moon_name.Tag)
+
+	pan_all_menu_day_Click
+	ToastMessageShow(" ذخیره شد",True)
+End Sub
+
+Private Sub lbl_help_shift_Click
+	myfunc.help_man("راهنما","1- با نگهداشتن انگشت روی روزها منو ابزارها باز میشود. "&CRLF&" 2- برای شیفت بندی روزها از قسمت تنظیم شیفت اقدام کنید.")
 End Sub

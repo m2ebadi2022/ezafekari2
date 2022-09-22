@@ -3774,6 +3774,7 @@ End Sub
 
 
 Private Sub pan_shift_Click
+	
 	StartActivity(shift_activity)
 	'Activity.Finish
 End Sub
