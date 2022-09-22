@@ -286,8 +286,8 @@ Version=11.8
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 19
-	#VersionName: 4.8
+	#VersionCode: 20
+	#VersionName: 4.9
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true

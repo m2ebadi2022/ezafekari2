@@ -349,9 +349,11 @@ Sub Jobdone (job As HttpJob)
 				Dim out As OutputStream = File.OpenOutput(File.DirInternal,"db.db", False)
 				File.Copy2(http3.GetInputStream, out)
 				out.Close
+				ProgressDialogHide
+				myfunc.help_man("تبریک","اطلاعات بازگردانده شد ، برای اعمال تغییرات یک بار از برنامه خارج و دوباره وارد شوید.")
 				ToastMessageShow("اطلاعات بازگردانده شد",False)
 			
-				lbl_back_home_Click
+				'lbl_back_home_Click
 			
 			
 			else If job.JobName="ht7" Then  '  recive pic
@@ -506,6 +508,7 @@ Sub upload_img(path As String)
 End Sub
 
 Sub upload_file(path As String)
+	ProgressDialogShow("بارگیری...")
 	Up.doFileUpload( Null,Null,path,"https://taravatgroup.ir/file_up.php")
 End Sub
 
@@ -519,6 +522,7 @@ Sub Up_statusUpload (value As String)
 	
 	If(value>=100)Then
 		lbl_back_Click
+		ProgressDialogHide
 		ToastMessageShow(" ذخیره شد",False)
 	End If
 	
@@ -550,7 +554,7 @@ Private Sub lbl_reseve_db_Click
 	Dim result As Int
 	result = Msgbox2("اطلاعات من از سرور بازیابی شوند.توجه داشته باشید اطلاعات قبلی حذف می شوند", "بازگرداندن اطلاعات ", "مطمئن هستم", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
 	If result = DialogResponse.Positive Then
-		
+		ProgressDialogShow("در حال دریافت ...")
 		http3.Initialize("ht6", Me)
 		http3.Download("https://taravatgroup.ir/uploads_ezaf/"&Main.phon_num&"-db-"&user_key&".db")
 	
