@@ -1,23 +1,24 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
 File1=1171 hes.pdf
 File10=add_other2.png
-File100=tab_layout_ezafekari.bal
-File101=tab_layout_food.bal
-File102=tab_layout_mamoriat.bal
-File103=tab_layout_morakhasi.bal
-File104=tab_layout_mosaedeh.bal
-File105=tab_layout_padash.bal
-File106=tab_layout_sayer.bal
-File107=tab_layout_taradod.bal
-File108=tab_layout_vam.bal
-File109=taradod_fast_layout.bal
+File100=SYEKAN.TTF
+File101=tab_layout_ezafekari.bal
+File102=tab_layout_food.bal
+File103=tab_layout_mamoriat.bal
+File104=tab_layout_morakhasi.bal
+File105=tab_layout_mosaedeh.bal
+File106=tab_layout_padash.bal
+File107=tab_layout_sayer.bal
+File108=tab_layout_taradod.bal
+File109=tab_layout_vam.bal
 File11=attention.png
-File110=textBox.png
-File111=textbox2.png
-File112=transfer_time.png
-File113=user.png
-File114=vam.png
-File115=Vazir.ttf
+File110=taradod_fast_layout.bal
+File111=textBox.png
+File112=textbox2.png
+File113=transfer_time.png
+File114=user.png
+File115=vam.png
+File116=Vazir.ttf
 File12=bg3.jpg
 File13=bime_icon.jpg
 File14=bime_layout.bal
@@ -31,89 +32,89 @@ File20=b-traffic.ttf
 File21=buy.png
 File22=calc_layout.bal
 File23=calculator.png
-File24=ccr.png
-File25=comment.png
-File26=comment_layout.bal
-File27=darsad_layout.bal
-File28=db.db
-File29=eidi_layout.bal
+File24=car.png
+File25=ccr.png
+File26=comment.png
+File27=comment_layout.bal
+File28=darsad_layout.bal
+File29=db.db
 File3=336 fak.pdf
-File30=email.png
-File31=endwork.png
-File32=equal.png
-File33=eydi.png
-File34=fast_run_layout.bal
-File35=fingerprint.png
-File36=food.png
-File37=ganon.html
-File38=ganon_layout.bal
-File39=gift.jpg
+File30=eidi_layout.bal
+File31=email.png
+File32=endwork.png
+File33=equal.png
+File34=eydi.png
+File35=fast_run_layout.bal
+File36=fingerprint.png
+File37=food.png
+File38=ganon.html
+File39=ganon_layout.bal
 File4=336 hav.pdf
-File40=gozaresh_layout.bal
-File41=help.png
-File42=help_font.png
-File43=hogog_layout.bal
-File44=home_item.bal
-File45=home_layout.bal
-File46=home-h0.jpg
-File47=home-h1.jpg
-File48=home-h2.jpg
-File49=home-h3.jpg
+File40=gift.jpg
+File41=gozaresh_layout.bal
+File42=help.png
+File43=help_font.png
+File44=hogog_layout.bal
+File45=home_item.bal
+File46=home_layout.bal
+File47=home-h0.jpg
+File48=home-h1.jpg
+File49=home-h2.jpg
 File5=336 pish.pdf
-File50=home-h4.jpg
-File51=icon.png
-File52=info.png
-File53=info_layout.bal
-File54=item_darsad.bal
-File55=item_fast_run.bal
-File56=item_hogog.bal
-File57=item_list.bal
-File58=item_list_2.bal
-File59=item_list_list2.bal
+File50=home-h3.jpg
+File51=home-h4.jpg
+File52=icon.png
+File53=info.png
+File54=info_layout.bal
+File55=item_darsad.bal
+File56=item_fast_run.bal
+File57=item_hogog.bal
+File58=item_list.bal
+File59=item_list_2.bal
 File6=adastnevis.ttf
-File60=list_layout.bal
-File61=list2_layout.bal
-File62=lyscreen.bal
-File63=m1.png
-File64=m2.JPG
-File65=m2.png
-File66=m3.png
-File67=main_layout.bal
-File68=mamoriat.png
-File69=mandeh.png
+File60=item_list_list2.bal
+File61=list_layout.bal
+File62=list2_layout.bal
+File63=lyscreen.bal
+File64=m1.png
+File65=m2.JPG
+File66=m2.png
+File67=m3.png
+File68=main_layout.bal
+File69=mamoriat.png
 File7=add_ezafe.png
-File70=mohasebe_hogog.png
-File71=morakhasi_item.bal
-File72=morakhasi_layout.bal
-File73=mosaedeh.png
-File74=my_calander.xls
-File75=newyear.jpg
-File76=noske_item.bal
-File77=notif.png
-File78=padash.png
-File79=payankar_layout.bal
+File70=mandeh.png
+File71=mohasebe_hogog.png
+File72=morakhasi_item.bal
+File73=morakhasi_layout.bal
+File74=mosaedeh.png
+File75=my_calander.xls
+File76=newyear.jpg
+File77=noske_item.bal
+File78=notif.png
+File79=padash.png
 File8=add_morakhasi.png
-File80=percentage.png
-File81=sabt2_layout.bal
-File82=set_hogog.png
-File83=set_moh.png
-File84=sett_hogog_item.bal
-File85=setting.png
-File86=setting_hogog_layout.bal
-File87=setting_layout.bal
-File88=setting_layout_items.bal
-File89=shift_layout.bal
+File80=payankar_layout.bal
+File81=percentage.png
+File82=sabt2_layout.bal
+File83=set_hogog.png
+File84=set_moh.png
+File85=sett_hogog_item.bal
+File86=setting.png
+File87=setting_hogog_layout.bal
+File88=setting_layout.bal
+File89=setting_layout_items.bal
 File9=add_other.png
-File90=shift_page_items.bal
-File91=shift_work.png
-File92=show_gozaresh_layout.bal
-File93=speed_run.png
-File94=splash_layout.bal
-File95=step0.bal
-File96=step1.bal
-File97=step2.bal
-File98=sudan bd_mrt.ttf
-File99=SYEKAN.TTF
+File90=shift_layout.bal
+File91=shift_page_items.bal
+File92=shift_work.png
+File93=show_gozaresh_layout.bal
+File94=speed_run.png
+File95=splash_layout.bal
+File96=step0.bal
+File97=step1.bal
+File98=step2.bal
+File99=sudan bd_mrt.ttf
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup100=Default Group
@@ -133,6 +134,7 @@ FileGroup112=Default Group
 FileGroup113=Default Group
 FileGroup114=Default Group
 FileGroup115=Default Group
+FileGroup116=Default Group
 FileGroup12=Default Group
 FileGroup13=Default Group
 FileGroup14=Default Group
@@ -279,7 +281,7 @@ Module6=dbCode
 Module7=eidi_activity
 Module8=fast_run_activity
 Module9=FingerprintManager
-NumberOfFiles=115
+NumberOfFiles=116
 NumberOfLibraries=23
 NumberOfModules=25
 Version=11.8
@@ -2303,16 +2305,17 @@ Sub add_taradod_sub
 					result_a=myfunc.msg_add_edit("توجه","برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید  ")
 					If (result_a=True)Then
 						
+						'error
 						
 						If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then
 						
-							Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
-							Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
+'							Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
+'							Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
 					
 							Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
 							Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
-						
-							dbCode.add_ezafekari(date1,date2,saat_fixed,lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
+							
+							dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
 							
 							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_tozih2,0)
 						Else
@@ -2337,13 +2340,13 @@ Sub add_taradod_sub
 				
 					If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then	
 						
-						Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
-						Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
+'						Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
+'						Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
 					
 						Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
 						Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
 						
-						dbCode.add_ezafekari(date1,date2,saat_fixed,lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
+						dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
 							
 						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_tozih2,0)
 					Else
@@ -2577,16 +2580,44 @@ Sub time_show
 		lbl_time_show.Text=str_show
 		If(index_box=3)Then
 			
-			tim_min=(hour_bt*60)+min_bt
+			
+			
+			tim_min=(day_bt*24*60)+(hour_bt*60)+min_bt
+			
+			
+			If(tim_min>saat_kar_min) Then
+					
+					Log(tim_min)
+					
+				Dim date_vorod_0 As String=lbl_date1.Text
+				Dim date_khoroj_0 As String=lbl_date2.Text
+					
+					'error
+					
+'				Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
+'			If(dagige_fixed>1440)Then
+'				dagige_fixed=dagige_fixed-1440
+'					Dim temp_date0() As String =Regex.Split("/", date_vorod_0)
+'				If((temp_date0(2)-1)=0)Then
+'					date_vorod_0=temp_date0(0)&"/"&myfunc.convert_adad(temp_date0(1)-1)&"/30"
+'				Else
+'					date_vorod_0=temp_date0(0)&"/"&temp_date0(1)&"/"&myfunc.convert_adad(temp_date0(2)-1)
+'				End If
+'						
+'			End If
+'			Dim saat_fixed As String = myfunc.convert_adad(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&myfunc.convert_adad(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
+'					
+			
 			
 			
 			'If(hour_bt>saat_kar Or (hour_bt=saat_kar And min_bt>0 )) Then
-			If(tim_min>saat_kar_min) Then
+		
 				ckb_ezaf_taradod.Enabled=True
 			
-				
+	
+			
 				'lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(hour_bt-saat_kar)&" ساعت و "& min_bt&" دقیقه "
-				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))&" ساعت و "& myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)&" دقیقه "
+				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))&" ساعت و "& (myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min)).Get(1)&" دقیقه "
 				
 			
 			Else
@@ -2608,7 +2639,8 @@ End Sub
 Sub time_show2 (dat1 As String,dat2 As String, tim1 As String,tim2 As String)
 	
 	Try  
-	
+		Log(dat1)
+		Log(dat2)
 	
 	Dim list_date_per1 , list_date_per2 As List
 	Dim list_date_miladi1 ,list_date_miladi2 As List
@@ -2620,32 +2652,9 @@ Sub time_show2 (dat1 As String,dat2 As String, tim1 As String,tim2 As String)
 	list_date_miladi1.Initialize
 	list_date_miladi1.Initialize
 	
-		Select pik_moon1.Tag
-			Case 1
-				pik_moon1.Tag="01"
-			Case 2
-				pik_moon1.Tag="02"
-			Case 3
-				pik_moon1.Tag="03"
-			Case 4
-				pik_moon1.Tag="04"
-			Case 5
-				pik_moon1.Tag="05"
-			Case 6
-				pik_moon1.Tag="06"
-			Case 7
-				pik_moon1.Tag="07"
-			Case 8
-				pik_moon1.Tag="08"
-			Case 9
-				pik_moon1.Tag="09"
-			Case 10
-				pik_moon1.Tag="10"
-			Case 11
-				pik_moon1.Tag="11"
-			Case 12
-				pik_moon1.Tag="12"
-		End Select
+	
+	'pik_moon1.Tag=myfunc.convert_adad(pik_moon1.Tag)
+		
 		
 		
 		
@@ -3058,32 +3067,8 @@ Private Sub sp_year_ItemClick (Position As Int, Value As Object)
 '		
 '		Else
 			Dim moon_num As String
-			Select sp_moon.SelectedIndex
-				Case 0
-					moon_num="01"
-				Case 1
-					moon_num="02"
-				Case 2
-					moon_num="03"
-				Case 3
-					moon_num="04"
-				Case 4
-					moon_num="05"
-				Case 5
-					moon_num="06"
-				Case 6
-					moon_num="07"
-				Case 7
-					moon_num="08"
-				Case 8
-					moon_num="09"
-				Case 9
-					moon_num="10"
-				Case 10
-					moon_num="11"
-				Case 11
-					moon_num="12"
-			End Select
+	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex)
+			
 			fill_lists(sp_year.SelectedItem,moon_num)
 	'End If
 	TabHost1_TabChanged
@@ -3092,32 +3077,9 @@ End Sub
 
 Private Sub sp_moon_ItemClick (Position As Int, Value As Object)
 	Dim moon_num As String
-	Select sp_moon.SelectedIndex
-		Case 0
-			moon_num="01"
-		Case 1
-			moon_num="02"
-		Case 2
-			moon_num="03"
-		Case 3
-			moon_num="04"
-		Case 4
-			moon_num="05"
-		Case 5
-			moon_num="06"
-		Case 6
-			moon_num="07"
-		Case 7
-			moon_num="08"
-		Case 8
-			moon_num="09"
-		Case 9
-			moon_num="10"
-		Case 10
-			moon_num="11"
-		Case 11
-			moon_num="12"
-	End Select
+	
+	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex)
+	
 	
 	fill_lists(sp_year.SelectedItem,moon_num)
 	TabHost1_TabChanged
@@ -3206,98 +3168,19 @@ Private Sub lbl_save_picker_Click
 	
 	Dim value As String
 	value=pik_hour1.Text
-	Select value
-		Case "1"
-			pik_hour1.Text="01"
-		Case "2"
-			pik_hour1.Text="02"
-		Case "3"
-			pik_hour1.Text="03"
-		Case "4"
-			pik_hour1.Text="04"
-		Case "5"
-			pik_hour1.Text="05"
-		Case "6"
-			pik_hour1.Text="06"
-		Case "7"
-			pik_hour1.Text="07"
-		Case "8"
-			pik_hour1.Text="08"
-		Case "9"
-			pik_hour1.Text="09"
-	End Select
+	pik_hour1.Text=myfunc.convert_adad(value)
+	
 	
 	Dim value1 As String
 	value1=pik_min1.Text
-	Select value1
-		Case "1"
-			pik_min1.Text="01"
-		Case "2"
-			pik_min1.Text="02"
-		Case "3"
-			pik_min1.Text="03"
-		Case "4"
-			pik_min1.Text="04"
-		Case "5"
-			pik_min1.Text="05"
-		Case "6"
-			pik_min1.Text="06"
-		Case "7"
-			pik_min1.Text="07"
-		Case "8"
-			pik_min1.Text="08"
-		Case "9"
-			pik_min1.Text="09"
-	End Select
+	pik_min1.Text=myfunc.convert_adad(value1)
+	
 	
 	Dim value2 As String
 	value2=pik_day1.Text
-	Select value2
-		Case "1"
-			pik_day1.Text="01"
-		Case "2"
-			pik_day1.Text="02"
-		Case "3"
-			pik_day1.Text="03"
-		Case "4"
-			pik_day1.Text="04"
-		Case "5"
-			pik_day1.Text="05"
-		Case "6"
-			pik_day1.Text="06"
-		Case "7"
-			pik_day1.Text="07"
-		Case "8"
-			pik_day1.Text="08"
-		Case "9"
-			pik_day1.Text="09"
-	End Select
-	Select pik_moon1.Tag
-		Case 1
-			pik_moon1.Tag="01"
-		Case 2
-			pik_moon1.Tag="02"
-		Case 3
-			pik_moon1.Tag="03"
-		Case 4
-			pik_moon1.Tag="04"
-		Case 5
-			pik_moon1.Tag="05"
-		Case 6
-			pik_moon1.Tag="06"
-		Case 7
-			pik_moon1.Tag="07"
-		Case 8
-			pik_moon1.Tag="08"
-		Case 9
-			pik_moon1.Tag="09"
-		Case 10
-			pik_moon1.Tag="10"
-		Case 11
-			pik_moon1.Tag="11"
-		Case 12
-			pik_moon1.Tag="12"
-	End Select
+	pik_day1.Text=myfunc.convert_adad(value2)
+	pik_moon1.Tag=myfunc.convert_adad(pik_moon1.Tag)
+	
 	
 	
 	
@@ -3800,10 +3683,131 @@ Private Sub sp_year_gozaresh_ItemClick (Position As Int, Value As Object)
 	fill_list_gozareshat(sp_year_gozaresh.SelectedItem)
 End Sub
 
-
+Sub isExistFile_taradod_fast As Boolean
+	Return File.Exists(File.DirInternal,"taradod_fs_id.txt")
+End Sub
 
 
 Private Sub pan_add_taradod_fast_Click
+	pan_all_FT.Visible=True
+	lbl_date_FT.Text=myfunc.fa2en(persianDate.PersianShortDate)
+	DateTime.TimeFormat = "HH:mm"
+	
+	
+	
+	Try
+		
+	
+		If(isExistFile_taradod_fast=True)Then
+			Dim id_last_fast_taradod As Int
+			id_last_fast_taradod=File.ReadString(File.DirInternal,"taradod_fs_id.txt")
+			dbCode.connect_db
+			dbCode.res=dbCode.sql.ExecQuery("SELECT * FROM tb_taradod WHERE id="&id_last_fast_taradod)
+			dbCode.res.Position=0
+		
+			lbl_tim_vorod_FT.Text=dbCode.res.GetString("time_from")
+			lbl_tim_khoroj_FT.Text=dbCode.res.GetString("time_to")
+		
+			et_tozihat_FT.Text=dbCode.res.GetString("tozihat")
+		
+			current_id_edit=dbCode.res.GetInt("id")
+			Log(dbCode.res.GetInt("state"))
+	
+			lbl_vorod_FT.TextColor=Colors.Gray
+			lbl_khoroj_FT.TextColor=Colors.Gray
+		
+	
+			If(dbCode.res.GetInt("state")=10)Then  ''vorod not ezafekari
+				lbl_vorod_FT.TextColor=Colors.Green
+				lbl_khoroj_FT.TextColor=Colors.Gray
+				ckb_ezaf_taradod_FT.Checked=False
+				ckb_ezaf_taradod_FT.Enabled=False
+			
+				code_fast_taradod=10
+			Else If (dbCode.res.GetInt("state")=20)Then  ''vorod yes ezafekari
+				lbl_vorod_FT.TextColor=Colors.Green
+				lbl_khoroj_FT.TextColor=Colors.Gray
+				ckb_ezaf_taradod_FT.Checked=True
+				ckb_ezaf_taradod_FT.Enabled=False
+			
+				code_fast_taradod=20
+			Else If (dbCode.res.GetInt("state")=11)Then  ''khoroj not ezafekari
+				lbl_vorod_FT.TextColor=Colors.Green
+				lbl_khoroj_FT.TextColor=Colors.Green
+				ckb_ezaf_taradod_FT.Checked=False
+				ckb_ezaf_taradod_FT.Enabled=False
+		
+				et_tozihat_FT.Enabled=False
+			
+				time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
+				code_fast_taradod=11
+				ToastMessageShow("تردد امروز ثبت شده است",False)
+			
+			
+			Else If (dbCode.res.GetInt("state")=21)Then  ''khoroj yes ezafekari
+				lbl_vorod_FT.TextColor=Colors.Green
+				lbl_khoroj_FT.TextColor=Colors.Green
+				ckb_ezaf_taradod_FT.Checked=True
+				ckb_ezaf_taradod_FT.Enabled=False
+			
+				et_tozihat_FT.Enabled=False
+			
+				time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
+			
+				code_fast_taradod=21
+				ToastMessageShow("تردد امروز ثبت شده است",False)
+				'myfunc.help_man("تردد امروز ثبت شده است")
+			
+			Else If (dbCode.res.GetInt("state")=0)Then  ''dasty
+				File.Delete(File.DirInternal,"taradod_fs_id.txt")
+				pan_add_taradod_fast_Click
+			
+'			lbl_vorod_FT.TextColor=Colors.Red
+'			lbl_khoroj_FT.TextColor=Colors.Red
+'			ckb_ezaf_taradod_FT.Checked=False
+'			ckb_ezaf_taradod_FT.Enabled=False
+'			
+'			et_tozihat_FT.Enabled=False
+'			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
+'			
+'			ToastMessageShow("برای امروز تردد دستی ثبت شده است",False)
+'			
+'			code_fast_taradod=0
+			End If
+		Else
+			lbl_vorod_FT.TextColor=Colors.Gray
+			lbl_khoroj_FT.TextColor=Colors.Gray
+		
+			ckb_ezaf_taradod_FT.Checked=True
+			ckb_ezaf_taradod_FT.Enabled=True
+			code_fast_taradod=1
+			et_tozihat_FT.Enabled=True
+		
+			lbl_tim_vorod_FT.Text="00:00"
+			lbl_tim_khoroj_FT.Text="00:00"
+			lbl_time_show_FT.Text=""
+			et_tozihat_FT.Text=""
+		End If
+		
+		
+		
+	Catch
+		File.Delete(File.DirInternal,"taradod_fs_id.txt")
+		pan_all_FT_Click
+		pan_add_taradod_fast_Click
+		Log(LastException)
+	End Try
+	
+	
+End Sub
+
+
+
+
+
+
+
+Private Sub pan_add_taradod_fast_Click_org
 	pan_all_FT.Visible=True
 	lbl_date_FT.Text=myfunc.fa2en(persianDate.PersianShortDate)
 	DateTime.TimeFormat = "HH:mm"
@@ -3889,34 +3893,40 @@ Private Sub pan_add_taradod_fast_Click
 	End If
 End Sub
 
+
 Private Sub lbl_close_FT_Click
 	
-	If(dbCode.isexist_taradod_by_date(myfunc.fa2en(persianDate.PersianShortDate))=True)Then
+	If(isExistFile_taradod_fast=True)Then
 		Dim result As Int
-		result = Msgbox2("تردد و اضافه کاری امروز پاک شود؟", "توجه", "بله", "", "خیر", LoadBitmap(File.DirAssets, "attention.png"))
+		result = Msgbox2("از اول ثبت تردد میکنید؟", "توجه", "بله", "", "خیر", LoadBitmap(File.DirAssets, "attention.png"))
 		If result = DialogResponse.Positive Then
 		
+			Dim id_last_fast_taradod1 As Int
+			id_last_fast_taradod1=File.ReadString(File.DirInternal,"taradod_fs_id.txt")
 			dbCode.connect_db
 			
-			dbCode.sql.ExecNonQuery("DELETE FROM tb_taradod WHERE date_from LIKE '%"&lbl_date_FT.Text&"%'; ")
+			dbCode.sql.ExecNonQuery("DELETE FROM tb_taradod WHERE  id="&id_last_fast_taradod1)
 			
-			dbCode.sql.ExecNonQuery("DELETE FROM tb_ezafekari WHERE date_from LIKE '%"&lbl_date_FT.Text&"%'; ")
-			lbl_vorod_FT.TextColor=Colors.Gray
-			lbl_khoroj_FT.TextColor=Colors.Gray
-		
-			ckb_ezaf_taradod_FT.Checked=True
-			ckb_ezaf_taradod_FT.Enabled=True
-			lbl_tim_vorod_FT.Text="00:00"
-			lbl_tim_khoroj_FT.Text="00:00"
-			lbl_time_show_FT.Text=""
-			et_tozihat_FT.Enabled=True
-			et_tozihat_FT.Text=""
-			code_fast_taradod=1
+			File.Delete(File.DirInternal,"taradod_fs_id.txt")
+			pan_add_taradod_fast_Click
+			
+'			lbl_vorod_FT.TextColor=Colors.Gray
+'			lbl_khoroj_FT.TextColor=Colors.Gray
+'		
+'			ckb_ezaf_taradod_FT.Checked=True
+'			ckb_ezaf_taradod_FT.Enabled=True
+'			lbl_tim_vorod_FT.Text="00:00"
+'			lbl_tim_khoroj_FT.Text="00:00"
+'			lbl_time_show_FT.Text=""
+'			et_tozihat_FT.Enabled=True
+'			et_tozihat_FT.Text=""
+'			code_fast_taradod=1
 		End If
 	Else
 		
-		myfunc.help_man("توجه","برای امروز هنوز ترددی ثبت نشده است")
+		'myfunc.help_man("توجه","هنوز ترددی ثبت نشده است")
 		code_fast_taradod=1
+		pan_add_taradod_fast_Click
 	End If
 	
 End Sub
@@ -3940,7 +3950,7 @@ Private Sub lbl_vorod_FT_LongClick
 		lbl_tim_vorod_FT.Text=DateTime.Time(DateTime.Now)
 		code_fast_taradod=10
 		add_end
-		pan_add_taradod_fast_Click
+		
 	Else If(code_fast_taradod=0)Then
 		ToastMessageShow(" تردد امروز دستی ثبت شده است",False)
 	Else
@@ -3969,7 +3979,7 @@ Sub add_taradod_fast
 	
 Try
 		
-		If(dbCode.isexist_taradod_by_date(lbl_date_FT.Text)=False)Then
+		If(isExistFile_taradod_fast=False)Then
 			'' creat new
 				Dim str_Ft1 As String=et_tozihat_FT.Text
 			If (ckb_ezaf_taradod_FT.Checked=True)Then
@@ -3981,43 +3991,77 @@ Try
 				
 				dbCode.add_taradod(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,0,0,0,str_Ft1,10)
 			
-			End If			
-				Log("is frest")
+			End If	
+			
+			dbCode.connect_db
+			dbCode.res=dbCode.sql.ExecQuery("SELECT id FROM tb_taradod WHERE id = (SELECT MAX(id) FROM tb_taradod)")
+			dbCode.res.Position=0
+			File.WriteString(File.DirInternal,"taradod_fs_id.txt",dbCode.res.GetString("id"))
+			
+			dbCode.sql.Close
+			
+				
 			ToastMessageShow("ورود ثبت شد",False)	
 			
 			
 			lbl_vorod_FT.TextColor=Colors.Green
 			ckb_ezaf_taradod_FT.Enabled=False
 			
+			pan_add_taradod_fast_Click
 				
 		Else
 			'' edit it
+			Dim id_last_fast_taradod2 As Int
+			id_last_fast_taradod2=File.ReadString(File.DirInternal,"taradod_fs_id.txt")
+			dbCode.connect_db
 			
-			time_show2(lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
+			dbCode.res=dbCode.sql.ExecQuery("SELECT * FROM tb_taradod WHERE id="&id_last_fast_taradod2)
+			dbCode.res.Position=0
+			Dim date_fast1 As String=dbCode.res.GetString("date_from")
+			time_show2(	date_fast1,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text)
 			
 			If (ckb_ezaf_taradod_FT.Checked=True)Then
 				
-				Dim tim_min2 As Int=(hour_bt*60)+min_bt
+				Dim tim_min2 As Int=(day_bt*24*60)+(hour_bt*60)+min_bt
 			
 			
 				If(tim_min2>saat_kar_min) Then
 					
-					Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim_vorod_FT.Text)
-					Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
 					
-					dbCode.add_ezafekari(lbl_date_FT.Text,lbl_date_FT.Text,saat_fixed,lbl_tim_khoroj_FT.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min2-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min2-saat_kar_min).Get(1))," (ثبت سریع-تردد دارد)- ",0)
+'					Dim date_vorod_0 As String=lbl_date_FT.Text
+'					Dim date_khoroj_0 As String=lbl_date_FT.Text
+'					
+'					
+'					Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim_vorod_FT.Text)
+'					If(dagige_fixed>1440)Then
+'						dagige_fixed=dagige_fixed-1440
+'						Dim temp_date0() As String =Regex.Split("/", lbl_date_FT.Text)
+'						If((temp_date0(2)-1)=0)Then
+'							date_vorod_0=temp_date0(0)&"/"&myfunc.convert_adad(temp_date0(1)-1)&"/30"
+'						Else
+'							date_vorod_0=temp_date0(0)&"/"&temp_date0(1)&"/"&myfunc.convert_adad(temp_date0(2)-1)
+'						End If
+'						
+'					End If
+'					Dim saat_fixed As String = myfunc.convert_adad(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&myfunc.convert_adad(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
+'					
+
+							
+					
+					dbCode.add_ezafekari(date_fast1,lbl_date_FT.Text,"0:0",lbl_tim_khoroj_FT.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min2-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min2-saat_kar_min).Get(1))," (ثبت سریع-تردد دارد)- ",0)
 					
 				End If
 				Dim str_Ft2 As String="(ثبت سریع-اضافه کاری)-"&et_tozihat_FT.Text
-				dbCode.edit_taradod(current_id_edit,lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,day_bt,hour_bt,min_bt,str_Ft2,21)
+				dbCode.edit_taradod(current_id_edit,date_fast1,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,day_bt,hour_bt,min_bt,str_Ft2,21)
 			Else
 				Dim str_Ft3 As String="(ثبت سریع)-"&et_tozihat_FT.Text
-				dbCode.edit_taradod(current_id_edit,lbl_date_FT.Text,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,day_bt,hour_bt,min_bt,str_Ft3,11)
+				dbCode.edit_taradod(current_id_edit,date_fast1,lbl_date_FT.Text,lbl_tim_vorod_FT.Text,lbl_tim_khoroj_FT.Text,day_bt,hour_bt,min_bt,str_Ft3,11)
 			
 			End If
-			Log("is secend")
+		
 			ToastMessageShow("خروج ثبت شد",False)
 			
+			File.Delete(File.DirInternal,"taradod_fs_id.txt")
 			
 			lbl_khoroj_FT.TextColor=Colors.Green
 			
@@ -4025,7 +4069,7 @@ Try
 			
 		End If	
 				
-			
+		
 			
 	Catch
 		ToastMessageShow("خطا",False)
@@ -4033,6 +4077,82 @@ Try
 	
 	
 	End Sub
+	
+	
+Sub min_between_to_time(dat1 As String,dat2 As String,tim1 As String,tim2 As String) As Int
+'Dim spleted_tim1() As String=	Regex.Split(":",time1)
+'Dim spleted_tim2() As String=	Regex.Split(":",time2)
+'
+'	Dim saa1 As Int=spleted_tim2(1)-spleted_tim1(1)   ' saat
+'	Dim min1 As Int=spleted_tim2(0)-spleted_tim1(0)   ' saat
+'	
+'	If(min1<0)Then
+'		saa1=saa1-1
+'		min1=60-min1
+'	End If
+
+
+	Try
+		
+		Dim list_date_per1 , list_date_per2 As List
+		Dim list_date_miladi1 ,list_date_miladi2 As List
+		Dim dat_mil_2 As String
+		Dim dat_mil_1 As String
+	
+		list_date_per1.Initialize
+		list_date_per2.Initialize
+		list_date_miladi1.Initialize
+		list_date_miladi1.Initialize
+	
+	
+		'pik_moon1.Tag=myfunc.convert_adad(pik_moon1.Tag)
+		
+		
+		
+		
+	
+		date1=dat1
+		date2=dat2
+		list_date_per1=strfun.Split(date1,"/")
+		list_date_per2=strfun.Split(date2,"/")
+	
+	
+	
+		dat_mil_2=persianDate.PersianToGregorian(list_date_per2.Get(0),list_date_per2.Get(1),list_date_per2.Get(2))
+		dat_mil_1=persianDate.PersianToGregorian(list_date_per1.Get(0),list_date_per1.Get(1),list_date_per1.Get(2))
+	
+	
+		list_date_miladi1=strfun.Split(dat_mil_1,"/")
+		list_date_miladi2=strfun.Split(dat_mil_2,"/")
+	
+	
+		Dim date_end1 ,date_end2 As String
+		Dim time_end1 ,time_end2 As String
+	
+		date_end2=list_date_miladi2.Get(1)&"/"&list_date_miladi2.Get(2)&"/"&list_date_miladi2.Get(0)
+		date_end1=list_date_miladi1.Get(1)&"/"&list_date_miladi1.Get(2)&"/"&list_date_miladi1.Get(0)
+	
+		time_end2=tim2&":00"
+		time_end1=tim1&":00"
+	
+		Dim tim1_long As Long
+		Dim tim2_long As Long
+		tim1_long=DateTime.DateTimeParse(myfunc.fa2en(date_end1),myfunc.fa2en(time_end1))
+		tim2_long=DateTime.DateTimeParse(myfunc.fa2en(date_end2),myfunc.fa2en(time_end2))
+	
+	
+	
+		Dim period_between As Period
+		period_between=DateUtils.PeriodBetween(myfunc.fa2en(tim1_long),myfunc.fa2en(tim2_long))
+	
+	
+		
+	Catch
+		ToastMessageShow("خطا",False)
+	End Try
+	
+	Return (period_between.Days*24*60)+(period_between.Hours*60)+period_between.Minutes
+End Sub
 
 Private Sub Panel6_Click
 	

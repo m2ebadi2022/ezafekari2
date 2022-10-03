@@ -14,8 +14,9 @@ views.get("pan_group1").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_g
 views.get("pan_vam").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_vam").vw.getWidth() / 2)));
 views.get("pan_mosaede").vw.setLeft((int)((views.get("pan_vam").vw.getLeft() + views.get("pan_vam").vw.getWidth())));
 views.get("pan_gaza").vw.setLeft((int)((views.get("pan_vam").vw.getLeft()) - (views.get("pan_gaza").vw.getWidth())));
-views.get("pan_sayer").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_sayer").vw.getWidth() / 2)));
+views.get("pan_aybzahab").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_aybzahab").vw.getWidth() / 2)));
 views.get("pan_padash").vw.setLeft((int)((views.get("pan_vam").vw.getLeft() + views.get("pan_vam").vw.getWidth())));
+views.get("pan_sayer").vw.setLeft((int)((views.get("pan_vam").vw.getLeft()) - (views.get("pan_sayer").vw.getWidth())));
 views.get("pan_picker").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_picker").vw.getWidth() / 2)));
 views.get("pan_picker").vw.setTop((int)((50d / 100 * height) - (views.get("pan_picker").vw.getHeight() / 2)));
 views.get("panel4").vw.setLeft((int)((50d / 100 * width) - (views.get("panel4").vw.getWidth() / 2)));

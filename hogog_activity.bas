@@ -123,6 +123,9 @@ Sub Globals
 	Dim sayer_1_all As Int=0
 	Dim sayer_2_all As Int=0
 	
+	
+	Dim date2_fixed As String
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -207,6 +210,11 @@ str_web1.Initialize
 	
 	''-----------------
 	
+	
+	
+	fix_date2_decreceOne
+	
+	
 	et_time_inDB
 	
 	calc_vahed_ezafekari
@@ -217,7 +225,35 @@ str_web1.Initialize
 	
 End Sub
 
-
+Sub fix_date2_decreceOne
+	
+	''------------- decrece from date 2 --------
+	Dim y_date2 As Int =myfunc.fa2en( lbl_date_to.Text.SubString2(0,4))
+	Dim m_date2 As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(6,7))
+	Dim d_date2 As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(8,10))
+	
+	If(d_date2-1=0)Then
+		
+		
+		If(m_date2-1=0)Then
+			d_date2=29
+			m_date2=12
+			y_date2=y_date2-1
+		Else
+			d_date2=count_mah(m_date2-1)
+			m_date2=m_date2-1
+		End If
+		
+		
+	Else
+		d_date2=d_date2-1
+		
+	End If
+	
+	date2_fixed=y_date2&"/"&myfunc.convert_adad(m_date2)&"/"&myfunc.convert_adad(d_date2)
+	'''----------------------------------
+	
+End Sub
 
 Sub calc_vahed_ezafekari
 	'payeh
@@ -291,7 +327,7 @@ Sub et_time_inDB
 	If(type_mohasebe=1)Then
 		list_ezafekari1=dbCode.all_ezafekari_mah(myfunc.fa2en(sp_year.SelectedItem),myfunc.fa2en(moon_num),2)
 	Else
-		list_ezafekari1=dbCode.all_ezafekari_byDate(myfunc.fa2en(lbl_date_from.Text),myfunc.fa2en(lbl_date_to.Text),2)
+		list_ezafekari1=dbCode.all_ezafekari_byDate(myfunc.fa2en(lbl_date_from.Text),myfunc.fa2en(date2_fixed),2)
 	End If
 	
 	et_time_h.Text=list_ezafekari1.Get(0)
@@ -305,7 +341,7 @@ Sub et_time_inDB
 	If(type_mohasebe=1)Then
 		list_ezafekari2=dbCode.all_ezafekari_mah(sp_year.SelectedItem,moon_num,3)
 	Else
-		list_ezafekari2=dbCode.all_ezafekari_byDate(myfunc.fa2en(lbl_date_from.Text),myfunc.fa2en(lbl_date_to.Text),3)
+		list_ezafekari2=dbCode.all_ezafekari_byDate(myfunc.fa2en(lbl_date_from.Text),myfunc.fa2en(date2_fixed),3)
 	End If
 	
 	et_time_h_vij.Text=list_ezafekari2.Get(0)
@@ -470,8 +506,8 @@ Private Sub lbl_run_mohasebe_Click
 			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
 			str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
 		Else
-			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&lbl_date_to.Text&"' ;")
-			str1.Append("<h3>").Append("گزارش از تاریخ ").Append(lbl_date_from.Text).Append(" تا ").Append(lbl_date_to.Text).Append("</h3>")
+				dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&date2_fixed&"' ;")
+				str1.Append("<h3>").Append("گزارش از تاریخ ").Append(lbl_date_from.Text).Append(" تا ").Append(date2_fixed).Append("</h3>")
 		End If
 		
 		
@@ -772,14 +808,14 @@ Sub mohasebe
 	If(type_mohasebe=1)Then
 		mosaedeh_all=dbCode.all_mosaedeh_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
 	Else
-		mosaedeh_all=dbCode.all_mosaedeh_byDate(lbl_date_from.Text,lbl_date_to.Text)
+		mosaedeh_all=dbCode.all_mosaedeh_byDate(lbl_date_from.Text,date2_fixed)
 	End If
 	
 	'' food ha
 	If(type_mohasebe=1)Then
 		food_all=dbCode.all_food_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
 	Else
-		food_all=dbCode.all_food_byDate(lbl_date_from.Text,lbl_date_to.Text)
+		food_all=dbCode.all_food_byDate(lbl_date_from.Text,date2_fixed)
 	End If
 
 
@@ -787,7 +823,7 @@ Sub mohasebe
 	If(type_mohasebe=1)Then
 		padash_all=dbCode.all_padash_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
 	Else
-		padash_all=dbCode.all_padash_byDate(lbl_date_from.Text,lbl_date_to.Text)
+		padash_all=dbCode.all_padash_byDate(lbl_date_from.Text,date2_fixed)
 	End If
 	
 	'' sayer ha
@@ -795,8 +831,8 @@ Sub mohasebe
 		sayer_1_all=dbCode.all_sayer_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1),1)
 		sayer_2_all=dbCode.all_sayer_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1),2)
 	Else
-		sayer_1_all=dbCode.all_sayer_byDate(lbl_date_from.Text,lbl_date_to.Text,1)
-		sayer_2_all=dbCode.all_sayer_byDate(lbl_date_from.Text,lbl_date_to.Text,2)
+		sayer_1_all=dbCode.all_sayer_byDate(lbl_date_from.Text,date2_fixed,1)
+		sayer_2_all=dbCode.all_sayer_byDate(lbl_date_from.Text,date2_fixed,2)
 	End If
 	
 	
@@ -1034,6 +1070,7 @@ Private Sub radio_type2_CheckedChange(Checked As Boolean)
 	lbl_date_from.Enabled=True
 	lbl_date_to.Enabled=True
 	type_mohasebe=2
+	fix_date2_decreceOne
 	et_time_inDB
 End Sub
 
@@ -1043,6 +1080,7 @@ Private Sub radio_type1_CheckedChange(Checked As Boolean)
 	lbl_date_from.Enabled=False
 	lbl_date_to.Enabled=False
 	type_mohasebe=1
+	fix_date2_decreceOne
 	et_time_inDB
 End Sub
 
@@ -1087,10 +1125,12 @@ Private Sub lbl_save_picker_Click
 		
 	Else If(index_datePik=2) Then
 		lbl_date_to.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
+		fix_date2_decreceOne
 	End If
 	
 	et_time_inDB
 	
+	et_rozekari.Text=myfunc.time_mohasebe(lbl_date_from.Text,date2_fixed)
 	pan_all_set_date.Visible=False
 	
 End Sub

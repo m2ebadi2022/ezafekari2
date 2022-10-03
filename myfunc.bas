@@ -413,6 +413,61 @@ End Sub
 
 
 
+Sub time_mohasebe(date1 As String, date2 As String) As Int
+	
+	Try
+	
+		Dim strfun As StringFunctions
+		strfun.Initialize
+		Dim list_date_per1 , list_date_per2 As List
+		Dim list_date_miladi1 ,list_date_miladi2 As List
+		Dim dat_mil_2 As String
+		Dim dat_mil_1 As String
+	
+		list_date_per1.Initialize
+		list_date_per2.Initialize
+		list_date_miladi1.Initialize
+		list_date_miladi1.Initialize
+	
+	
+		
+		list_date_per1=strfun.Split(date1,"/")
+		list_date_per2=strfun.Split(date2,"/")
+	
+	
+	
+		dat_mil_2=Main.persianDate.PersianToGregorian(list_date_per2.Get(0),list_date_per2.Get(1),list_date_per2.Get(2))
+		dat_mil_1=Main.persianDate.PersianToGregorian(list_date_per1.Get(0),list_date_per1.Get(1),list_date_per1.Get(2))
+	
+	
+		list_date_miladi1=strfun.Split(dat_mil_1,"/")
+		list_date_miladi2=strfun.Split(dat_mil_2,"/")
+	
+	
+		Dim date_end1 ,date_end2 As String
+		
+	
+		date_end2=list_date_miladi2.Get(1)&"/"&list_date_miladi2.Get(2)&"/"&list_date_miladi2.Get(0)
+		date_end1=list_date_miladi1.Get(1)&"/"&list_date_miladi1.Get(2)&"/"&list_date_miladi1.Get(0)
+	
+	
+		
+	
+		Dim tim1_long As Long
+		Dim tim2_long As Long
+		tim1_long=DateTime.DateTimeParse(fa2en(date_end1),"00:00:00")
+		tim2_long=DateTime.DateTimeParse(fa2en(date_end2),"00:00:00")
+		Dim rozha As Int
+		rozha=Main.persianDate.CalculateDaysBetween(fa2en(date_end1),fa2en(date_end2))
+		
+	
+		Return rozha+1
+		
+	Catch
+		ToastMessageShow("خطا",False)
+	End Try
+End Sub
+
 
 
 

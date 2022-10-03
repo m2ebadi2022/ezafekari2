@@ -1150,15 +1150,15 @@ Private Sub PA_Click
 				
 				If(ls_tatili_moon.Get(last_selected_itemTag-1)=True)Then
 					PA(d).Color=0xFFFF5252
+					
+				Else If(ls_tatili_custom_moon.Get(last_selected_itemTag-1)=True)Then
+					PA(d).Color=0xFF00BB8B
 				Else
+					
 					PA(d).Color=0xFFEFEFEF
 				End If
 				
-				If(ls_tatili_custom_moon.Get(last_selected_itemTag-1)=True)Then
-					PA(d).Color=0xFF00BB8B
-				Else
-					PA(d).Color=0xFFEFEFEF
-				End If
+		
 				
 			End If
 			

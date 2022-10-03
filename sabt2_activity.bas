@@ -161,31 +161,30 @@ Private Sub pan_all_sayer_Click
 End Sub
 
 Private Sub lbl_save_sayer_Click
-	
-	If(index_current_pan=1)Then
-		dbCode.add_mosaedeh(et_onvan_sayer.Text ,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
-	Else If (index_current_pan=2)Then
-		'vam
-		
-		
-	Else If (index_current_pan=3)Then
-		dbCode.add_food(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
-	Else If (index_current_pan=4)Then
-		dbCode.add_padash(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
-		
-	Else If (index_current_pan=5)Then
-		
-		If(sp_type_state.SelectedIndex=0)Then
-			dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,1)
-		Else
-			dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,2)
+	If(et_onvan_sayer.Text="")Then
+		ToastMessageShow("عنوان خالی است!",False)
+	Else If(et_mablagh_sayer.Tag="")Then
+		ToastMessageShow("مبلغ خالی است!",False)
+	Else
+			
+		If(index_current_pan=1)Then
+			dbCode.add_mosaedeh(et_onvan_sayer.Text ,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
+		Else If (index_current_pan=2)Then
+			'vam
+		Else If (index_current_pan=3)Then
+			dbCode.add_food(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
+		Else If (index_current_pan=4)Then
+			dbCode.add_padash(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,0)
+		Else If (index_current_pan=5)Then
+			If(sp_type_state.SelectedIndex=0)Then
+				dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,1)
+			Else
+				dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,2)
+			End If
 		End If
-		
+		pan_all_sayer.Visible=False
 		
 	End If
-	
-	
-	pan_all_sayer.Visible=False
 	
 End Sub
 
@@ -403,4 +402,8 @@ End Sub
 Private Sub et_mablagh_sayer_TextChanged (Old As String, New As String)
 	et_mablagh_sayer.Tag=New.Replace(",","")
 	myfunc.change_formater(Old,New,et_mablagh_sayer)
+End Sub
+
+Private Sub pan_aybZahab_Click
+	MsgboxAsync("در آپدیت بعدی فعال خواهد شد","توجه")
 End Sub
