@@ -125,7 +125,7 @@ End Sub
 
 Sub item_mod(index As Int, title As String)
 	index_current_pan=index
-	If(index=5)Then
+	If(index=5 Or index=6)Then
 		sp_type_state.Visible=True
 		lbl_sp_type.Visible=True
 	Else
@@ -180,6 +180,12 @@ Private Sub lbl_save_sayer_Click
 				dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,1)
 			Else
 				dbCode.add_sayer(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,2)
+			End If
+		Else If (index_current_pan=6)Then
+			If(sp_type_state.SelectedIndex=0)Then
+				dbCode.add_aybZahab(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,1)
+			Else
+				dbCode.add_aybZahab(et_onvan_sayer.Text,lbl_date_sayer.Text,et_mablagh_sayer.Tag,et_tozih_sayer.Text,2)
 			End If
 		End If
 		pan_all_sayer.Visible=False
@@ -405,5 +411,9 @@ Private Sub et_mablagh_sayer_TextChanged (Old As String, New As String)
 End Sub
 
 Private Sub pan_aybZahab_Click
-	MsgboxAsync("در آپدیت بعدی فعال خواهد شد","توجه")
+	'MsgboxAsync("در آپدیت بعدی فعال خواهد شد","توجه")
+	
+	item_mod(6,"ثبت ایاب ذهاب")
+	
+	
 End Sub

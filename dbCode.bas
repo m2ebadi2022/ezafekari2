@@ -94,6 +94,19 @@ Sub install_db_tbl_taradod
 		Log ( "tbl sayer created")
 	End Try
 	
+	
+	
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_ayabzahab")
+		Log( "tbl tb_ayabzahab exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_ayabzahab' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		
+		Log ( "tbl tb_ayabzahab created")
+	End Try
+	
+	
 End Sub
 
 Sub install_db_tbl_myCalander
@@ -276,6 +289,16 @@ Sub add_sayer(onvan As String, date As String,mablagh As String, tozih As String
 	Return True
 End Sub
 
+
+
+Sub add_aybZahab(onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_ayabzahab (onvan, date, mablagh, tozihat , state) VALUES (?,?,?,?,?)", Array As Object(onvan,date,mablagh,tozih,state))
+	sql.Close
+	Return True
+End Sub
+
+
 ''=======  edit ==================================
 
 Sub edit_ezafekari(id1 As Int, date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
@@ -334,6 +357,15 @@ End Sub
 Sub edit_sayer(id As Int, onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
 	connect_db
 	sql.ExecNonQuery2("UPDATE tb_sayer SET onvan=? , date=?, mablagh=?, tozihat=?, state=? WHERE id=?", Array As Object(onvan,date, mablagh,tozih,state,id))
+	sql.Close
+	Return True
+End Sub
+
+
+
+Sub edit_ayabZahab(id As Int, onvan As String, date As String,mablagh As String, tozih As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("UPDATE tb_ayabzahab SET onvan=? , date=?, mablagh=?, tozihat=?, state=? WHERE id=?", Array As Object(onvan,date, mablagh,tozih,state,id))
 	sql.Close
 	Return True
 End Sub
@@ -411,7 +443,12 @@ Sub delete_sayer(id As Int) As Boolean
 	Return True
 End Sub
 
-
+Sub delete_ayabZahab(id As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("DELETE FROM tb_ayabzahab WHERE id= ?", Array As Object(id))
+	sql.Close
+	Return True
+End Sub
 
 
 Sub add_setting_hogog (data As List) As Boolean
@@ -879,6 +916,36 @@ Sub all_sayer_byDate(date_from As String, date_to As String , state1 As Int ) As
 	Return mablag_kol
 End Sub
 
+
+
+
+'' ayab zahab ----
+
+Sub all_ayabZahab_mah(year As String , moon As String , state As Int) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_ayabzahab WHERE date LIKE '%"&year&"/"&moon&"%' AND state="&state)
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+Sub all_ayabZahab_byDate(date_from As String, date_to As String , state1 As Int ) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_ayabzahab WHERE state="&state1&" AND date BETWEEN '"&date_from&"' AND '"&date_to&"' "  )
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablagh")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
 
 '''''================ list 2 gozareshat=========== end
 
