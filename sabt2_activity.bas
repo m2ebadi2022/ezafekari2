@@ -98,7 +98,8 @@ End Sub
 
 
 Private Sub pan_mosaede_Click
-	item_mod(1,"ثبت مساعده")
+	'item_mod(1,"ثبت مساعده")
+	StartActivity(mosaedeh_activity)
 End Sub
 
 Private Sub pan_vam_Click
