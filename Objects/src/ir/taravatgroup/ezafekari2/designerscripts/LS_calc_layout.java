@@ -9,11 +9,8 @@ public class LS_calc_layout{
 public static void LS_general(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
 java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
-//BA.debugLineNum = 3;BA.debugLine="AutoScaleAll"[calc_layout/General script]
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
-//BA.debugLineNum = 5;BA.debugLine="calcpnl.HorizontalCenter = 50%x"[calc_layout/General script]
 views.get("calcpnl").vw.setLeft((int)((50d / 100 * width) - (views.get("calcpnl").vw.getWidth() / 2)));
-//BA.debugLineNum = 6;BA.debugLine="calcpnl.VerticalCenter = 50%y"[calc_layout/General script]
 views.get("calcpnl").vw.setTop((int)((50d / 100 * height) - (views.get("calcpnl").vw.getHeight() / 2)));
 
 }

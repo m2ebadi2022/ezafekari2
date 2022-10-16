@@ -58,7 +58,7 @@ Sub Globals
 	Private lbl_icon As Label
 	Private sp_type_state As Spinner
 	Private lbl_sp_type As Label
-
+Dim addEdit_id As Int=0
 	
 End Sub
 
@@ -218,6 +218,7 @@ Private Sub lbl_edit_from_list_Click
 	Dim b As Label
 	b = Sender
 	
+	addEdit_id=1
 	dbCode.connect_db
 	
 	sp_type_state.Visible=False
@@ -281,13 +282,26 @@ End Sub
 
 Private Sub lbl_save_edit1_Click
 	
-		dbCode.edit_mosaedeh(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
-		fill_list_mosaedeh(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	If(et_onvan_edit1.Text="")Then
+		ToastMessageShow("عنوان خالی است!",False)
+	Else If(et_mablagh_edit1.Tag="")Then
+		ToastMessageShow("مبلغ خالی است!",False)
+	Else
 		
+		If(addEdit_id=0)Then
+			dbCode.add_mosaedeh(et_onvan_edit1.Text ,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+			
+		Else If(addEdit_id=1)Then
+				dbCode.edit_mosaedeh(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+			ToastMessageShow("ویرایش شد",False)
+		End If
+		
+			
+			
 
-	
-	pan_all_edit1.Visible=False
-	ToastMessageShow("ویرایش شد",False)
+		fill_list_mosaedeh(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+		pan_all_edit1.Visible=False
+	End If
 End Sub
 
 Private Sub lbl_date_edit1_Click
@@ -527,4 +541,6 @@ End Sub
 
 Private Sub lbl_add_mosaedeh_Click
 	
+	addEdit_id=0
+	item_edit_box_mod("افزودن مساعده","",myfunc.fa2en(Main.persianDate.PersianShortDate),"0","",0)
 End Sub

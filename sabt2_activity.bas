@@ -108,18 +108,20 @@ End Sub
 
 
 Private Sub pan_gaza_Click
-	item_mod(3,"ثبت هزینه غذا")
-	
+	'item_mod(3,"ثبت هزینه غذا")
+	StartActivity(food_activity)
 End Sub
 
 
 Private Sub pan_padash_Click
-	item_mod(4,"ثبت پاداش")
+	'item_mod(4,"ثبت پاداش")
+	StartActivity(padash_activity)
 End Sub
 
 
 Private Sub pan_sayer_Click
-	item_mod(5,"ثبت سایر موارد")
+	'item_mod(5,"ثبت سایر موارد")
+	StartActivity(sayer_activity)
 End Sub
 
 
@@ -414,7 +416,7 @@ End Sub
 Private Sub pan_aybZahab_Click
 	'MsgboxAsync("در آپدیت بعدی فعال خواهد شد","توجه")
 	
-	item_mod(6,"ثبت ایاب ذهاب")
-	
+	'item_mod(6,"ثبت ایاب ذهاب")
+	StartActivity(ayabzahab_activity)
 	
 End Sub
