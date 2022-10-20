@@ -107,6 +107,28 @@ Sub install_db_tbl_taradod
 	End Try
 	
 	
+	'vam ====================================
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_vam")
+		Log( "tbl tb_vam exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_vam' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'onvan' TEXT ,'mablag' TEXT , 'count'	TEXT,'rate'	TEXT , 'doreh'	TEXT DEFAULT 1 ,'date'	TEXT , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		
+		Log ( "tbl tb_vam created")
+	End Try
+	
+	'' aghsat=========================
+'	Try
+'		res= sql.ExecQuery("SELECT * FROM tb_ayabzahab")
+'		Log( "tbl tb_ayabzahab exist")
+'	Catch
+'		
+'		sql.ExecNonQuery("CREATE TABLE 'tb_ayabzahab' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+'		
+'		Log ( "tbl tb_ayabzahab created")
+'	End Try
+'	
 End Sub
 
 Sub install_db_tbl_myCalander
@@ -299,6 +321,17 @@ Sub add_aybZahab(onvan As String, date As String,mablagh As String, tozih As Str
 End Sub
 
 
+'=======vam ======================
+
+
+Sub add_vam(onvan As String,mablag As String,  count As String, rate As String, doreh As String, date As String, tozihat As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_vam (onvan, mablag,count, rate, doreh, date, tozihat , state) VALUES (?,?,?,?,?,?,?,?)", Array As Object(onvan ,mablag,  count, rate , doreh , date , tozihat  , state))
+	sql.Close
+	Return True
+End Sub
+
+
 ''=======  edit ==================================
 
 Sub edit_ezafekari(id1 As Int, date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
@@ -449,6 +482,17 @@ Sub delete_ayabZahab(id As Int) As Boolean
 	sql.Close
 	Return True
 End Sub
+
+
+Sub delete_vam(id As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("DELETE FROM tb_vam WHERE id= ?", Array As Object(id))
+	sql.Close
+	Return True
+End Sub
+
+
+
 
 
 Sub add_setting_hogog (data As List) As Boolean

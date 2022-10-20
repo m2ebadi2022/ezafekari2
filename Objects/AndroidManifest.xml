@@ -73,7 +73,31 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".mosaedeh_activity"
+			android:name=".sayer_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".ayabzahab_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".hogog_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".vam_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -129,7 +153,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".ganon_activity"
+			android:name=".food_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -137,7 +161,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".hogog_activity"
+			android:name=".ganon_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -154,6 +178,22 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".morakhasi_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".mosaedeh_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".padash_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -226,38 +266,6 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".step2_activity"
-			android:label="اضافه کاری من"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".food_activity"
-			android:label="اضافه کاری من"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".padash_activity"
-			android:label="اضافه کاری من"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".sayer_activity"
-			android:label="اضافه کاری من"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".ayabzahab_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">

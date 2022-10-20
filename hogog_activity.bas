@@ -123,6 +123,8 @@ Sub Globals
 	Dim sayer_1_all As Int=0
 	Dim sayer_2_all As Int=0
 	
+	Dim ayab_1_all As Int=0
+	Dim ayab_2_all As Int=0
 	
 	Dim date2_fixed As String
 	
@@ -629,6 +631,9 @@ Private Sub lbl_run_mohasebe_Click
 				str1.Append("  سایر: <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(sayer_1_all))&"</span><br>")
 			End If
 			
+			If(ayab_1_all<>0)Then
+				str1.Append(" ایاب ذهاب: <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ayab_1_all))&"</span><br>")
+			End If
 		'''==========list2 --- end
 			If(mazaya_end<>0)Then
 				str1.Append("  "&ls_onvanHa.Get(10)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(mazaya_end))&"</span><br>")
@@ -688,6 +693,10 @@ Private Sub lbl_run_mohasebe_Click
 		
 			If(sayer_2_all<>0)Then
 				str1.Append(" سایر : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(sayer_2_all)) &"</span><br>")
+			End If
+			
+			If(ayab_2_all<>0)Then
+				str1.Append(" ایاب ذهاب : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ayab_2_all)) &"</span><br>")
 			End If
 			
 		If(ksorat<>0)Then
@@ -835,11 +844,19 @@ Sub mohasebe
 		sayer_2_all=dbCode.all_sayer_byDate(lbl_date_from.Text,date2_fixed,2)
 	End If
 	
+	''ayab ha
+	If(type_mohasebe=1)Then
+		ayab_1_all=dbCode.all_ayabZahab_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1),1)
+		ayab_2_all=dbCode.all_ayabZahab_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1),2)
+	Else
+		ayab_1_all=dbCode.all_ayabZahab_byDate(lbl_date_from.Text,date2_fixed,1)
+		ayab_2_all=dbCode.all_ayabZahab_byDate(lbl_date_from.Text,date2_fixed,2)
+	End If
 	
 	
 	''-----------------------------
 	'hogog nakhales
-	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all+sayer_1_all
+	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all+sayer_1_all+ayab_1_all
 	
 	'bime tamin
 	bime_tamin_end=(hogog_nakhales-olad_end)*0.07
@@ -853,7 +870,7 @@ Sub mohasebe
 	
 	
 	
-	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat+mosaedeh_all+food_all+sayer_2_all
+	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat+mosaedeh_all+food_all+sayer_2_all+ayab_2_all
 	'hogog khales
 	hogog_khales=hogog_nakhales-jame_kosorat
 	

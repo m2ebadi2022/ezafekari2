@@ -103,7 +103,8 @@ Private Sub pan_mosaede_Click
 End Sub
 
 Private Sub pan_vam_Click
-	MsgboxAsync("در آپدیت بعدی فعال خواهد شد","توجه")
+	'MsgboxAsync("در آپدیت بعدی فعال خواهد شد","توجه")
+	StartActivity(vam_activity)
 End Sub
 
 
