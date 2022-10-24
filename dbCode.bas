@@ -113,21 +113,21 @@ Sub install_db_tbl_taradod
 		Log( "tbl tb_vam exist")
 	Catch
 		
-		sql.ExecNonQuery("CREATE TABLE 'tb_vam' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'onvan' TEXT ,'mablag' TEXT , 'count'	TEXT,'rate'	TEXT , 'doreh'	TEXT DEFAULT 1 ,'date'	TEXT , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
+		sql.ExecNonQuery("CREATE TABLE 'tb_vam' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'idvam' TEXT , 'onvan' TEXT ,'mablag' TEXT , 'count'	TEXT,'rate'	TEXT , 'doreh'	TEXT DEFAULT 1 ,'date'	TEXT ,'bazpardakht' TEXT,'harghest' TEXT, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
 		
 		Log ( "tbl tb_vam created")
 	End Try
 	
-	'' aghsat=========================
-'	Try
-'		res= sql.ExecQuery("SELECT * FROM tb_ayabzahab")
-'		Log( "tbl tb_ayabzahab exist")
-'	Catch
-'		
-'		sql.ExecNonQuery("CREATE TABLE 'tb_ayabzahab' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")
-'		
-'		Log ( "tbl tb_ayabzahab created")
-'	End Try
+	' aghsat=========================
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_gestha")
+		Log( "tbl tb_gestha exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_gestha' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'idvam' TEXT , 'date' TEXT,'mablag'	TEXT , 'tozihat' TEXT, 'state'	INTEGER DEFAULT 0)")
+		
+		Log ( "tbl tb_gestha created")
+	End Try
 '	
 End Sub
 
@@ -324,13 +324,23 @@ End Sub
 '=======vam ======================
 
 
-Sub add_vam(onvan As String,mablag As String,  count As String, rate As String, doreh As String, date As String, tozihat As String , state As Int) As Boolean
+'bazpardakht' TEXT,'harghest' TEXT,
+
+Sub add_vam(idvam As String, onvan As String,mablag As String,  count As String, rate As String, doreh As String, date As String, bazpardakht As String, harghest As String, tozihat As String , state As Int) As Boolean
 	connect_db
-	sql.ExecNonQuery2("INSERT INTO tb_vam (onvan, mablag,count, rate, doreh, date, tozihat , state) VALUES (?,?,?,?,?,?,?,?)", Array As Object(onvan ,mablag,  count, rate , doreh , date , tozihat  , state))
+	sql.ExecNonQuery2("INSERT INTO tb_vam (idvam ,onvan, mablag,count, rate, doreh, date, bazpardakht, harghest, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?,?,?)", Array As Object(idvam, onvan ,mablag,  count, rate , doreh , date ,  bazpardakht, harghest, tozihat  , state))
 	sql.Close
 	Return True
 End Sub
 
+
+
+Sub add_gest(idvam As String, date As String, mablag As String, tozihat As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_gestha (idvam, date, mablag, tozihat , state) VALUES (?,?,?,?,?)", Array As Object(idvam , date, mablag, tozihat, state))
+	sql.Close
+	Return True
+End Sub
 
 ''=======  edit ==================================
 
@@ -492,6 +502,12 @@ Sub delete_vam(id As Int) As Boolean
 End Sub
 
 
+Sub delete_ghestha(idvam As String) As Boolean
+	connect_db
+	sql.ExecNonQuery("DELETE FROM tb_gestha WHERE idvam='"&"idvam'")
+	sql.Close
+	Return True
+End Sub
 
 
 

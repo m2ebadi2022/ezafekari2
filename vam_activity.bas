@@ -26,7 +26,7 @@ Sub Globals
 
 
 
-	Private pik_day1 As Label
+	
 	Private pik_moon1 As Label
 	Private pik_year1 As Label
 	
@@ -36,7 +36,7 @@ Sub Globals
 	Private lbl_onvan2 As Label
 	Private lbl_date2 As Label
 	Private lbl_mablagh2 As Label
-	Private lbl_show2 As Label
+	
 	Private lbl_remove_from_list2 As Label
 	Private lbl_tozih2 As Label
 	Private Panel1_2 As Panel
@@ -45,24 +45,8 @@ Sub Globals
 	
 	
 	
-'	Private pan_all_edit1 As Panel
 	Private pan_all_set_date As Panel
-'	Private lbl_title_edit1 As Label
-'	Private et_onvan_edit1 As EditText
-'	Private lbl_date_edit1 As Label
-'	Private et_mablagh_edit1 As EditText
-'	Private et_tozih_edit1 As EditText
-'	Dim index_current_pan As Int
-'	Dim current_itemId_edit As Int
-'	Private cust_LV_food As CustomListView
-'	Private cust_LV_padash As CustomListView
-'	Private cust_LV_sayer As CustomListView
-'	
-	
-'	Private sp_type_state As Spinner
-'	Private lbl_sp_type As Label
-'	Dim addEdit_id As Int=0
-	
+
 	Private pan_all_add As Panel
 	Private cust_LV_vam As CustomListView
 	Private et_onvan As EditText
@@ -73,6 +57,13 @@ Sub Globals
 	Private lbl_harGest As Label
 	Private lbl_date As Label
 	Private et_tozih As EditText
+	Private wb_show_result As WebView
+	Private pan_all_show_info As Panel
+	Private lbl_info As Label
+	
+	Private lbl_go_agsatPage As Label
+
+	Private pan_hed_vam As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -80,9 +71,9 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("vam_layout")
 	
 	
-	pan_hed_list2.Color=Main.color4
-	'lbl_title.Color=Main.color4
-	'myfunc.set_font(Activity)
+	
+	pan_hed_vam.Color=Main.color4
+	myfunc.set_font(Activity)
 	
 	
 	
@@ -93,8 +84,12 @@ Sub Activity_Create(FirstTime As Boolean)
 	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	''-----------------
 	
-	
+	lbl_date.Text=Main.persianDate.PersianYear&"/"&myfunc.convert_adad( Main.persianDate.PersianMonth)
 
+
+	wb_show_result.Color=Colors.ARGB(0,0,0,0)
+	wb_show_result.ZoomEnabled=False
+	
 End Sub
 
 Sub Activity_Resume
@@ -123,7 +118,7 @@ Sub fill_list_vam
 		
 		
 		p = xui2.CreatePanel("p")
-		p.SetLayoutAnimated(0, 0, 0, 95%x, 154dip)
+		p.SetLayoutAnimated(0, 0, 0, 95%x, 165dip)
 		p.LoadLayout("item_list_vam")
 	
 		cust_LV_vam.Add(p,dbCode.res.GetString("id"))
@@ -131,6 +126,7 @@ Sub fill_list_vam
 		lbl_onvan2.Text=dbCode.res.GetString("onvan")
 		
 		'lbl_date.Text=dbCode.res.GetString("date")
+		
 		lbl_mablagh2.Tag=dbCode.res.GetString("mablag")
 		lbl_mablagh2.Text=" مبلغ وام :" & myfunc.show_num_pool(lbl_mablagh2.Tag)
 		
@@ -140,7 +136,9 @@ Sub fill_list_vam
 		lbl_icon2.Color=0xFF00A3FF
 		
 		lbl_remove_from_list2.tag=dbCode.res.GetString("id")
-		lbl_show2.tag=dbCode.res.GetString("id")
+		lbl_info.tag=dbCode.res.GetString("id")
+		
+		lbl_go_agsatPage.Tag=dbCode.res.GetString("idvam")
 		
 		'	list_ezafekari_id.Add(dbCode.res.GetString("id"))
 		
@@ -180,7 +178,17 @@ End Sub
 
 Sub Activity_KeyPress (KeyCode As Int) As Boolean
 	If KeyCode = KeyCodes.KEYCODE_BACK Then
-		lbl_back_Click
+		If(pan_all_set_date.Visible=True)Then
+			pan_all_set_date.Visible=False
+		Else If (pan_all_add.Visible=True)Then
+			pan_all_add.Visible=False
+			
+		Else If (pan_all_show_info.Visible=True)Then
+			pan_all_show_info.Visible=False
+		Else 
+				lbl_back_Click
+		End If
+		
 		Return True
 	Else
 		Return False
@@ -192,12 +200,18 @@ Private Sub lbl_remove_from_list2_Click
 	Dim b As Label
 	b = Sender
 	
+	dbCode.connect_db
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_vam WHERE id="&b.Tag)
+	dbCode.res.Position=0
+	Dim  get_idvam As String= dbCode.res.GetString("idvam")
 	
 	Dim result As Int
 	result = Msgbox2("آیا این مورد حذف شود؟", "حذف", "بله", "", "خیر", Null)
 	If result = DialogResponse.Positive Then
 		
 		If (dbCode.delete_vam(b.Tag))Then
+			
+			dbCode.delete_ghestha(get_idvam)
 			ToastMessageShow("حذف شد.",False)
 			
 		
@@ -213,100 +227,17 @@ Private Sub lbl_remove_from_list2_Click
 End Sub
 
 
-Private Sub lbl_show2_Click
-'	Dim b As Label
-'	b = Sender
-	
-'	addEdit_id=1
-'	dbCode.connect_db
-'	
-'	sp_type_state.Visible=False
-'	lbl_sp_type.Visible=False
-'	
-'	index_current_pan=3
-'	current_itemId_edit=b.Tag
-	'dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_mosaedeh WHERE id="&current_itemId_edit)
-	'dbCode.res.Position=0
-		
-'	item_edit_box_mod("ویرایش مساعده",dbCode.res.GetString("onvan"),dbCode.res.GetString("date"),dbCode.res.GetString("mablagh"),dbCode.res.GetString("tozihat"),dbCode.res.GetString("state"))
-		
-		
-	
-	
-End Sub
-'
-'Sub item_edit_box_mod(title As String,onvan As String, date As String, mablage As String, tozih As String, state As Int)
-'	
-'	
-'	lbl_title_edit1.Text=title
-'	et_onvan_edit1.Text=onvan
-'	lbl_date_edit1.Text=myfunc.fa2en(date)
-'	et_mablagh_edit1.Tag=mablage
-'	et_mablagh_edit1.Text=myfunc.show_num_pool(mablage)
-'	
-'	et_tozih_edit1.Text=tozih
-'	
-'	If(state = 1) Then
-'		sp_type_state.SelectedIndex=0
-'	Else
-'		sp_type_state.SelectedIndex=1
-'	End If
-'	
-'	pan_all_edit1.Visible=True
-'	
-'	pik_year1.Text=myfunc.fa2en(lbl_date_edit1.Text.SubString2(0,4))
-'	pik_moon1.Tag=myfunc.fa2en(lbl_date_edit1.Text.SubString2(5,7))
-'	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
-'	pik_day1.Text=myfunc.fa2en(lbl_date_edit1.Text.SubString2(8,10))
-'	
-'	
-'	
-'	
-'End Sub
 
-
-
-Private Sub pan_all_edit1_Click
-	'pan_all_edit1.Visible=False
-End Sub
 
 Private Sub Panel4_Click
 	
 End Sub
 
 Private Sub pan_all_set_date_Click
-	'pan_all_set_date.Visible=False
+	pan_all_set_date.Visible=False
 End Sub
 
-'
-'Private Sub lbl_save_edit1_Click
-'	
-'	If(et_onvan_edit1.Text="")Then
-'		ToastMessageShow("عنوان خالی است!",False)
-'	Else If(et_mablagh_edit1.Tag="")Then
-'		ToastMessageShow("مبلغ خالی است!",False)
-'	Else
-'		
-'		If(addEdit_id=0)Then
-'			dbCode.add_mosaedeh(et_onvan_edit1.Text ,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
-'			
-'		Else If(addEdit_id=1)Then
-'			dbCode.edit_mosaedeh(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
-'			ToastMessageShow("ویرایش شد",False)
-'		End If
-'		
-'			
-'			
-'
-'	'	fill_list_mosaedeh(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
-'		pan_all_edit1.Visible=False
-'	End If
-'End Sub
-'
-'Private Sub lbl_date_edit1_Click
-'	pan_all_set_date.Visible=True
-'End Sub
-'
+
 '
 
 Private Sub et_mablagh_vam_TextChanged (Old As String, New As String)
@@ -318,7 +249,7 @@ End Sub
 
 
 Private Sub lbl_save_picker_Click
-	lbl_date.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
+	lbl_date.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)
 	pan_all_set_date.Visible=False
 End Sub
 
@@ -384,45 +315,6 @@ Private Sub pik_pan_year1_Touch (Action As Int, X As Float, Y As Float)
 	
 End Sub
 
-Private Sub pik_pan_day1_Touch (Action As Int, X As Float, Y As Float)
-	If(Action=1)Then
-		Dim int1 As Int
-		num_dataPik=y
-	End If
-	
-	If(Action=2)Then
-
-		If(Y>num_dataPik+20)Then
-			int1=myfunc.fa2en(pik_day1.Text)-1
-			pik_day1.Text=int1
-			num_dataPik=y
-		End If
-		If(Y<num_dataPik-20)Then
-			int1=myfunc.fa2en(pik_day1.Text)+1
-			pik_day1.Text=int1
-			num_dataPik=y
-		End If
-		
-		If(pik_moon1.Tag<7)Then
-			If(pik_day1.Text>31)Then
-				pik_day1.Text=1
-			End If
-			If(pik_day1.Text<1)Then
-				pik_day1.Text=31
-			End If
-		Else
-			If(pik_day1.Text>30)Then
-				pik_day1.Text=1
-			End If
-			If(pik_day1.Text<1)Then
-				pik_day1.Text=30
-			End If
-		End If
-		
-		
-	End If
-	
-End Sub
 
 Private Sub pik_moon_bala1_Click
 	Dim int1 As Int=myfunc.fa2en(pik_moon1.Tag)
@@ -478,57 +370,10 @@ Private Sub pik_year_paeen1_Click
 	
 End Sub
 
-Private Sub pik_day_bala1_Click
-	Dim int1 As Int=myfunc.fa2en(pik_day1.Text)
-	pik_day1.Text=int1+1
-	
-	
-	If(pik_moon1.Tag<7)Then
-		If(pik_day1.Text>31)Then
-			pik_day1.Text=1
-		End If
-		If(pik_day1.Text<1)Then
-			pik_day1.Text=31
-		End If
-	Else
-		If(pik_day1.Text>30)Then
-			pik_day1.Text=1
-		End If
-		If(pik_day1.Text<1)Then
-			pik_day1.Text=30
-		End If
-	End If
-	
-End Sub
-
-Private Sub pik_day_paeen1_Click
-	Dim int1 As Int=myfunc.fa2en(pik_day1.Text)
-	pik_day1.Text=int1-1
-	If(pik_moon1.Tag<7)Then
-		If(pik_day1.Text>31)Then
-			pik_day1.Text=1
-		End If
-		If(pik_day1.Text<1)Then
-			pik_day1.Text=31
-		End If
-	Else
-		If(pik_day1.Text>30)Then
-			pik_day1.Text=1
-		End If
-		If(pik_day1.Text<1)Then
-			pik_day1.Text=30
-		End If
-	End If
-	
-End Sub
-
-
 
 
 Private Sub lbl_add_vam_Click
 	
-'	addEdit_id=0
-'	item_edit_box_mod("افزودن مساعده","",myfunc.fa2en(Main.persianDate.PersianShortDate),"0","",0)
 	pan_all_add.Visible=True
 
 End Sub
@@ -538,28 +383,65 @@ Private Sub pan_all_add_Click
 End Sub
 
 Private Sub lbl_date_Click
+	pan_all_set_date.Visible=True
 	
+	
+	pik_year1.Text=myfunc.fa2en(lbl_date.Text.SubString2(0,4))
+	pik_moon1.Tag=myfunc.fa2en(lbl_date.Text.SubString2(5,7))
+	pik_moon1.Text=moon_dataPik.Get(pik_moon1.Tag-1)
+
+	
+
 End Sub
 
 Private Sub lbl_save_Click
+	If(et_onvan.Text="")Then
+		ToastMessageShow(" عنوان وام را وارد کنید",False)
 	
-	dbCode.add_vam(et_onvan.Text,et_mablagh_vam.Tag,et_tedad_gest.Text,et_nerkh_vam.Text,1,lbl_date.Text,et_tozih.Text , 0)
-'			
-
-	fill_list_vam
-	
-	pan_all_add.Visible=False
-End Sub
-
-Sub mohasebe
-	If(et_mablagh_vam.Text="")Then
+	else If(et_mablagh_vam.Text="")Then
 		ToastMessageShow("مبلغ وام را وارد کنید",False)
 	
 	else If(et_nerkh_vam.Text="")Then
-		ToastMessageShow("نرخ را وارد کنید",False)
+		ToastMessageShow("نرخ وام را وارد کنید",False)
 	
 	else If(et_tedad_gest.Text="")Then
 		ToastMessageShow("تعداد قسط ها را وارد کنید",False)
+		
+	Else
+		Dim random_idvam As String=myfunc.random_id(5)
+		
+		dbCode.add_vam(random_idvam,et_onvan.Text,et_mablagh_vam.Tag,et_tedad_gest.Text,et_nerkh_vam.Text,1,lbl_date.Text,lbl_kol_bazPardakht.Tag , lbl_harGest.Tag ,et_tozih.Text , 0)
+		Dim shomare_gest As String=""
+		Dim date_gest As String= lbl_date.Text
+		Dim date_year As Int=lbl_date.Text.SubString2(0,4)
+		Dim date_moon As Int=lbl_date.Text.SubString2(5,7)
+		
+		For i=1 To et_tedad_gest.Text
+			
+			
+			shomare_gest = "شماره قسط :"& (i)
+			dbCode.add_gest(random_idvam,date_gest,lbl_harGest.Tag, "" ,0)
+			
+		
+			date_moon=date_moon+1
+			If(date_moon>12)Then
+				date_moon=1
+				date_year=date_year+1
+			End If
+			
+			date_gest=myfunc.convert_adad( date_year)&"/"&myfunc.convert_adad( date_moon)
+		Next
+		
+
+		fill_list_vam
+		pan_all_add.Visible=False
+	
+	End If
+	
+End Sub
+
+Sub mohasebe
+	If(et_mablagh_vam.Text="" Or et_nerkh_vam.Text="" Or et_tedad_gest.Text="")Then
 		
 	Else
 				
@@ -570,6 +452,10 @@ Sub mohasebe
 		Dim gest As Double=sorat/makhraj
 		
 		Dim sod As Double=(gest*et_tedad_gest.Text)-et_mablagh_vam.Tag
+		
+		
+		lbl_harGest.Tag=Round(gest)
+		lbl_kol_bazPardakht.Tag=Round(et_mablagh_vam.Tag+sod)
 		
 		lbl_harGest.Text=myfunc.show_num_pool(Round(gest))&" تومان "
 		lbl_kol_bazPardakht.Text=myfunc.show_num_pool(Round(et_mablagh_vam.Tag+sod))&" تومان "
@@ -586,3 +472,73 @@ End Sub
 Private Sub et_tedad_gest_TextChanged (Old As String, New As String)
 	mohasebe
 End Sub
+
+Private Sub lbl_go_agsatPage_Click
+	Main.current_idvam=lbl_go_agsatPage.Tag
+	StartActivity(gestha_activity)
+End Sub
+
+Private Sub pan_all_show_info_Click
+	pan_all_show_info.Visible=False
+End Sub
+
+Private Sub Panel2_Click
+	
+End Sub
+
+Private Sub lbl_agsat_Click
+	pan_all_show_info.Visible=False
+	
+	StartActivity(gestha_activity)
+End Sub
+
+Private Sub lbl_close_Click
+	pan_all_show_info.Visible=False
+End Sub
+
+
+Private Sub lbl_info_Click
+	
+	Dim b As Label
+	b = Sender
+
+	dbCode.connect_db
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_vam WHERE id="&b.Tag)
+	dbCode.res.Position=0
+	Main.current_idvam= dbCode.res.GetString("idvam")
+	
+	
+	pan_all_show_info.Visible=True
+	
+	
+		
+	Dim str_show As StringBuilder
+	str_show.Initialize
+		
+	str_show.Append("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body>")
+		
+	str_show.Append("<h5 align='center'>عنوان وام <br>")
+	str_show.Append(dbCode.res.GetString("onvan"))
+	str_show.Append("</h5>")
+		
+	str_show.Append("<div style=' border: 2px solid gray;  padding: 10px; border-radius: 20px;'>")
+	str_show.Append(" مبلغ وام : "&myfunc.show_num_pool(dbCode.res.GetString("mablag"))).Append("<br>")
+	str_show.Append("نرخ وام % : "&(dbCode.res.GetString("rate"))).Append("<br>")
+	str_show.Append(" تعداد اقساط : "&(dbCode.res.GetString("count"))).Append("<br>")
+	str_show.Append(" ماه شروع : "&(dbCode.res.GetString("date"))).Append("<br>")
+	str_show.Append(" توضیحات : "&(dbCode.res.GetString("tozihat"))).Append("<br>")
+	str_show.Append("</div>").Append("<br>")
+
+	str_show.Append("<div style=' border: 3px solid green;  padding: 10px; border-radius: 20px;'>")
+	str_show.Append(" کل مبلغ بازپرداخت  : "&myfunc.show_num_pool(dbCode.res.GetString("bazpardakht"))).Append("<br>")
+	str_show.Append(" مبلغ هر قسط : <mark> "&myfunc.show_num_pool(dbCode.res.GetString("harghest"))&"</mark>")
+	str_show.Append("</div>")
+		
+	str_show.Append("</body></html>")
+		
+		
+	wb_show_result.LoadHtml(str_show.ToString)
+		
+	
+End Sub
+

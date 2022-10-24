@@ -1,32 +1,33 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
 File1=1171 hes.pdf
 File10=add_other2.png
-File100=speed_run.png
-File101=splash_layout.bal
-File102=step0.bal
-File103=step1.bal
-File104=step2.bal
-File105=sudan bd_mrt.ttf
-File106=SYEKAN.TTF
-File107=tab_layout_ezafekari.bal
-File108=tab_layout_food.bal
-File109=tab_layout_mamoriat.bal
+File100=show_gozaresh_layout.bal
+File101=speed_run.png
+File102=splash_layout.bal
+File103=step0.bal
+File104=step1.bal
+File105=step2.bal
+File106=sudan bd_mrt.ttf
+File107=SYEKAN.TTF
+File108=tab_layout_ezafekari.bal
+File109=tab_layout_food.bal
 File11=attention.png
-File110=tab_layout_morakhasi.bal
-File111=tab_layout_mosaedeh.bal
-File112=tab_layout_padash.bal
-File113=tab_layout_sayer.bal
-File114=tab_layout_taradod.bal
-File115=tab_layout_vam.bal
-File116=taradod_fast_layout.bal
-File117=textBox.png
-File118=textbox2.png
-File119=transfer_time.png
+File110=tab_layout_mamoriat.bal
+File111=tab_layout_morakhasi.bal
+File112=tab_layout_mosaedeh.bal
+File113=tab_layout_padash.bal
+File114=tab_layout_sayer.bal
+File115=tab_layout_taradod.bal
+File116=tab_layout_vam.bal
+File117=taradod_fast_layout.bal
+File118=textBox.png
+File119=textbox2.png
 File12=ayabzahab_layout.bal
-File120=user.png
-File121=vam.png
-File122=vam_layout.bal
-File123=Vazir.ttf
+File120=transfer_time.png
+File121=user.png
+File122=vam.png
+File123=vam_layout.bal
+File124=Vazir.ttf
 File13=bg3.jpg
 File14=bime_icon.jpg
 File15=bime_layout.bal
@@ -59,69 +60,69 @@ File39=food_layout.bal
 File4=336 hav.pdf
 File40=ganon.html
 File41=ganon_layout.bal
-File42=gift.jpg
-File43=gozaresh_layout.bal
-File44=help.png
-File45=help_font.png
-File46=hogog_layout.bal
-File47=home_item.bal
-File48=home_layout.bal
-File49=home-h0.jpg
+File42=gestha_layout.bal
+File43=gift.jpg
+File44=gozaresh_layout.bal
+File45=help.png
+File46=help_font.png
+File47=hogog_layout.bal
+File48=home_item.bal
+File49=home_layout.bal
 File5=336 pish.pdf
-File50=home-h1.jpg
-File51=home-h2.jpg
-File52=home-h3.jpg
-File53=home-h4.jpg
-File54=icon.png
-File55=info.png
-File56=info_layout.bal
-File57=item_darsad.bal
-File58=item_fast_run.bal
-File59=item_hogog.bal
+File50=home-h0.jpg
+File51=home-h1.jpg
+File52=home-h2.jpg
+File53=home-h3.jpg
+File54=home-h4.jpg
+File55=icon.png
+File56=info.png
+File57=info_layout.bal
+File58=item_darsad.bal
+File59=item_fast_run.bal
 File6=adastnevis.ttf
-File60=item_list.bal
-File61=item_list_2.bal
-File62=item_list_list2.bal
-File63=item_list_vam.bal
-File64=list_layout.bal
-File65=list2_layout.bal
-File66=lyscreen.bal
-File67=m1.png
-File68=m2.JPG
-File69=m2.png
+File60=item_hogog.bal
+File61=item_list.bal
+File62=item_list_2.bal
+File63=item_list_list2.bal
+File64=item_list_vam.bal
+File65=list_layout.bal
+File66=list2_layout.bal
+File67=lyscreen.bal
+File68=m1.png
+File69=m2.JPG
 File7=add_ezafe.png
-File70=m3.png
-File71=main_layout.bal
-File72=mamoriat.png
-File73=mandeh.png
-File74=mohasebe_hogog.png
-File75=morakhasi_item.bal
-File76=morakhasi_layout.bal
-File77=mosaedeh.png
-File78=mosaedeh_layout.bal
-File79=my_calander.xls
+File70=m2.png
+File71=m3.png
+File72=main_layout.bal
+File73=mamoriat.png
+File74=mandeh.png
+File75=mohasebe_hogog.png
+File76=morakhasi_item.bal
+File77=morakhasi_layout.bal
+File78=mosaedeh.png
+File79=mosaedeh_layout.bal
 File8=add_morakhasi.png
-File80=newyear.jpg
-File81=noske_item.bal
-File82=notif.png
-File83=padash.png
-File84=padash_layout.bal
-File85=payankar_layout.bal
-File86=percentage.png
-File87=sabt2_layout.bal
-File88=sayer_layout.bal
-File89=set_hogog.png
+File80=my_calander.xls
+File81=newyear.jpg
+File82=noske_item.bal
+File83=notif.png
+File84=padash.png
+File85=padash_layout.bal
+File86=payankar_layout.bal
+File87=percentage.png
+File88=sabt2_layout.bal
+File89=sayer_layout.bal
 File9=add_other.png
-File90=set_moh.png
-File91=sett_hogog_item.bal
-File92=setting.png
-File93=setting_hogog_layout.bal
-File94=setting_layout.bal
-File95=setting_layout_items.bal
-File96=shift_layout.bal
-File97=shift_page_items.bal
-File98=shift_work.png
-File99=show_gozaresh_layout.bal
+File90=set_hogog.png
+File91=set_moh.png
+File92=sett_hogog_item.bal
+File93=setting.png
+File94=setting_hogog_layout.bal
+File95=setting_layout.bal
+File96=setting_layout_items.bal
+File97=shift_layout.bal
+File98=shift_page_items.bal
+File99=shift_work.png
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup100=Default Group
@@ -150,6 +151,7 @@ FileGroup120=Default Group
 FileGroup121=Default Group
 FileGroup122=Default Group
 FileGroup123=Default Group
+FileGroup124=Default Group
 FileGroup13=Default Group
 FileGroup14=Default Group
 FileGroup15=Default Group
@@ -274,36 +276,37 @@ Module1=ayabzahab_activity
 Module10=FingerprintManager
 Module11=food_activity
 Module12=ganon_activity
-Module13=hogog_activity
-Module14=info_activity
-Module15=list2_activity
-Module16=morakhasi_activity
-Module17=mosaedeh_activity
-Module18=myfunc
-Module19=padash_activity
+Module13=gestha_activity
+Module14=hogog_activity
+Module15=info_activity
+Module16=list2_activity
+Module17=morakhasi_activity
+Module18=mosaedeh_activity
+Module19=myfunc
 Module2=B4XLoadingIndicator
-Module20=payankar_activity
-Module21=sabt2_activity
-Module22=sayer_activity
-Module23=setting_activity
-Module24=setting_hogog_activity
-Module25=shift_activity
-Module26=show_gozaresh_activity
-Module27=Starter
-Module28=step0_activity
-Module29=step1_activity
+Module20=padash_activity
+Module21=payankar_activity
+Module22=sabt2_activity
+Module23=sayer_activity
+Module24=setting_activity
+Module25=setting_hogog_activity
+Module26=shift_activity
+Module27=show_gozaresh_activity
+Module28=Starter
+Module29=step0_activity
 Module3=bime_activity
-Module30=step2_activity
-Module31=vam_activity
+Module30=step1_activity
+Module31=step2_activity
+Module32=vam_activity
 Module4=calc_activity
 Module5=comment_activity
 Module6=darsad_activity
 Module7=dbCode
 Module8=eidi_activity
 Module9=fast_run_activity
-NumberOfFiles=123
+NumberOfFiles=124
 NumberOfLibraries=23
-NumberOfModules=31
+NumberOfModules=32
 Version=11.8
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -364,6 +367,8 @@ Sub Process_Globals
 	Dim user_nameFamili As String="کاربر"
 	
 	Dim msg_page_show As Int =0
+	
+	Dim current_idvam As String=""
 End Sub
 
 Sub Globals
@@ -1509,7 +1514,7 @@ End Sub
 
 
 Sub fill_lists (year1 As String, moon1 As String)
-	
+	Log(moon1)
 	
 	''--------- لیست اضافه کاری ها -------------
 	cust_LV_ezafekari.Clear
@@ -3087,7 +3092,7 @@ Private Sub sp_year_ItemClick (Position As Int, Value As Object)
 '		
 '		Else
 			Dim moon_num As String
-	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex)
+	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex+1)
 			
 			fill_lists(sp_year.SelectedItem,moon_num)
 	'End If
@@ -3098,7 +3103,7 @@ End Sub
 Private Sub sp_moon_ItemClick (Position As Int, Value As Object)
 	Dim moon_num As String
 	
-	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex)
+	moon_num=myfunc.convert_adad(sp_moon.SelectedIndex+1)
 	
 	
 	fill_lists(sp_year.SelectedItem,moon_num)
