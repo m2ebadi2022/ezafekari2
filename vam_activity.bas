@@ -64,6 +64,7 @@ Sub Globals
 	Private lbl_go_agsatPage As Label
 
 	Private pan_hed_vam As Panel
+	Private pan_tools As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -118,7 +119,7 @@ Sub fill_list_vam
 		
 		
 		p = xui2.CreatePanel("p")
-		p.SetLayoutAnimated(0, 0, 0, 95%x, 165dip)
+		p.SetLayoutAnimated(0, 0, 0, 98%x, 165dip)
 		p.LoadLayout("item_list_vam")
 	
 		cust_LV_vam.Add(p,dbCode.res.GetString("id"))
@@ -142,8 +143,9 @@ Sub fill_list_vam
 		
 		'	list_ezafekari_id.Add(dbCode.res.GetString("id"))
 		
-		
+		pan_tools.SetLayoutAnimated(200,0,pan_tools.Top,pan_tools.Width,pan_tools.Height)
 		'gest.SetOnTouchListener(p,"GesturesTouch")
+		Sleep(10)
 	Loop
 	dbCode.res.Close
 	dbCode.sql.Close
@@ -373,6 +375,11 @@ End Sub
 
 
 Private Sub lbl_add_vam_Click
+	et_onvan.Text=""
+	et_mablagh_vam.Text=""
+	et_mablagh_vam.tag=""
+	et_nerkh_vam.Text=""
+	et_tedad_gest.Text=""
 	
 	pan_all_add.Visible=True
 
@@ -398,13 +405,13 @@ Private Sub lbl_save_Click
 	If(et_onvan.Text="")Then
 		ToastMessageShow(" عنوان وام را وارد کنید",False)
 	
-	else If(et_mablagh_vam.Text="")Then
+	else If(et_mablagh_vam.Text="" Or et_mablagh_vam.Text=0)Then
 		ToastMessageShow("مبلغ وام را وارد کنید",False)
 	
-	else If(et_nerkh_vam.Text="")Then
+	else If(et_nerkh_vam.Text="" Or et_nerkh_vam.Text=0)Then
 		ToastMessageShow("نرخ وام را وارد کنید",False)
 	
-	else If(et_tedad_gest.Text="")Then
+	else If(et_tedad_gest.Text="" Or et_tedad_gest.Text=0)Then
 		ToastMessageShow("تعداد قسط ها را وارد کنید",False)
 		
 	Else
@@ -420,7 +427,7 @@ Private Sub lbl_save_Click
 			
 			
 			shomare_gest = "شماره قسط :"& (i)
-			dbCode.add_gest(random_idvam,date_gest,lbl_harGest.Tag, "" ,0)
+			dbCode.add_gest(random_idvam,date_gest,lbl_harGest.Tag, et_onvan.Text ,0)
 			
 		
 			date_moon=date_moon+1
@@ -476,6 +483,7 @@ End Sub
 Private Sub lbl_go_agsatPage_Click
 	Main.current_idvam=lbl_go_agsatPage.Tag
 	StartActivity(gestha_activity)
+	
 End Sub
 
 Private Sub pan_all_show_info_Click

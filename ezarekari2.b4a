@@ -3125,10 +3125,10 @@ Private Sub pan_info_Click
 
 	'Activity.Finish
 End Sub
-
-Private Sub lbl_goTo_list2_Click
-	StartActivity(list2_activity)
-End Sub
+'
+'Private Sub lbl_goTo_list2_Click
+'	StartActivity(list2_activity)
+'End Sub
 
 Private Sub pan_add_other_Click
 		StartActivity(sabt2_activity)

@@ -3017,13 +3017,6 @@ mostCurrent._rspop_noe.Show();
  //BA.debugLineNum = 1611;BA.debugLine="End Sub";
 return "";
 }
-public static String  _lbl_goto_list2_click() throws Exception{
- //BA.debugLineNum = 2818;BA.debugLine="Private Sub lbl_goTo_list2_Click";
- //BA.debugLineNum = 2819;BA.debugLine="StartActivity(list2_activity)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._list2_activity.getObject()));
- //BA.debugLineNum = 2820;BA.debugLine="End Sub";
-return "";
-}
 public static String  _lbl_help_click() throws Exception{
  //BA.debugLineNum = 3008;BA.debugLine="Private Sub lbl_help_Click";
  //BA.debugLineNum = 3011;BA.debugLine="bit_img0.Initialize(File.DirAssets,\"home-h0.jpg\")";

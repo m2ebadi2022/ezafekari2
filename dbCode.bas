@@ -505,6 +505,7 @@ End Sub
 Sub delete_ghestha(idvam As String) As Boolean
 	connect_db
 	sql.ExecNonQuery("DELETE FROM tb_gestha WHERE idvam='"&"idvam'")
+	'sql.ExecNonQuery("DELETE FROM tb_gestha")
 	sql.Close
 	Return True
 End Sub
@@ -1006,6 +1007,39 @@ Sub all_ayabZahab_byDate(date_from As String, date_to As String , state1 As Int 
 	
 	Return mablag_kol
 End Sub
+
+''================= get gest vam
+
+
+
+Sub all_gestVam_mah(year As String , moon As String) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_gestha WHERE date LIKE '%"&year&"/"&moon&"%' ")
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablag")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+Sub all_gestVam_byDate(date_to As String  ) As Int
+	Dim mablag_kol As Int=0
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tb_gestha WHERE date LIKE '%"&date_to&"%' ")
+	Do While res.NextRow	
+		mablag_kol=mablag_kol+res.GetString("mablag")	
+	Loop
+	res.Close
+	sql.Close
+	
+	Return mablag_kol
+End Sub
+
+
+
 
 '''''================ list 2 gozareshat=========== end
 

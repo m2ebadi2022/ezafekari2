@@ -22,22 +22,12 @@ Sub Globals
 	Dim xui2 As XUI
 	Dim p As B4XView
 	
-	Private pan_hed_list2 As Panel
 
-
-
-	
-	Private pik_moon1 As Label
-	Private pik_year1 As Label
-	
-	Dim num_dataPik As Int=0  '' for time picker
-	Dim moon_dataPik As List  '' for date picker
 	
 	Private lbl_onvan2 As Label
 	Private lbl_date2 As Label
 	Private lbl_mablagh2 As Label
 	
-	Private lbl_remove_from_list2 As Label
 	Private lbl_tozih2 As Label
 	Private Panel1_2 As Panel
 	Private cust_LV_gestha As CustomListView
@@ -46,30 +36,25 @@ Sub Globals
 	
 	
 '
-	
-	Private lbl_go_agsatPage As Label
-	Private lbl_info As Label
 	Private pan_hed_gestha As Panel
+	Private pan_tools As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
-	Activity.LoadLayout("gestha_layout")
 	
+	Activity.LoadLayout("gestha_layout")
+
 	
 	
 	pan_hed_gestha.Color=Main.color4
 	myfunc.set_font(Activity)
 	
-	
+	ProgressDialogShow("لطفا منتظر بمانید ")
+	Sleep(100)
 	
 	fill_list_gestha
 	
-	''  for date picker
-	moon_dataPik.Initialize
-	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
-	''-----------------
-
 	
 End Sub
 
@@ -85,9 +70,9 @@ End Sub
 
 Sub fill_list_gestha
 	
-	''--------- لیست مساعده ها -------------
+	''--------- لیست قسط ها -------------
 	cust_LV_gestha.Clear
-	'list_ezafekari_id.Clear
+	
 	
 	dbCode.connect_db
 	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_gestha WHERE idvam='"&Main.current_idvam&"'")
@@ -100,7 +85,7 @@ Sub fill_list_gestha
 		
 		
 		p = xui2.CreatePanel("p")
-		p.SetLayoutAnimated(0, 0, 0, 95%x, 164dip)
+		p.SetLayoutAnimated(0, 0, 0, 98%x, 164dip)
 		p.LoadLayout("item_list_vam")
 	
 		cust_LV_gestha.Add(p,dbCode.res.GetString("id"))
@@ -112,8 +97,8 @@ Sub fill_list_gestha
 		lbl_mablagh2.Tag=dbCode.res.GetString("mablag")
 		lbl_mablagh2.Text=" مبلغ قسط : " & myfunc.show_num_pool(lbl_mablagh2.Tag)
 		
-		lbl_tozih2.Visible=False
-		
+		lbl_tozih2.Visible=True
+		lbl_tozih2.Text=dbCode.res.GetString("tozihat")
 		
 		If(lbl_date2.Text.SubString2(0,4) < Main.persianDate.PersianYear)Then
 			
@@ -143,20 +128,10 @@ Sub fill_list_gestha
 		
 		
 		
+		pan_tools.Visible=False
 		
 		
-		lbl_remove_from_list2.Visible=False
-		lbl_go_agsatPage.Visible=False
-		 lbl_info.Visible=False
 		
-		
-		'lbl_remove_from_list2.tag=dbCode.res.GetString("id")
-		'lbl_show2.tag=dbCode.res.GetString("id")
-		
-		'	list_ezafekari_id.Add(dbCode.res.GetString("id"))
-		
-		
-		'gest.SetOnTouchListener(p,"GesturesTouch")
 	Loop
 	dbCode.res.Close
 	dbCode.sql.Close
@@ -181,6 +156,7 @@ Sub fill_list_gestha
 		'gest.SetOnTouchListener(p,"GesturesTouch")
 	End If
 	
+	ProgressDialogHide
 End Sub
 
 

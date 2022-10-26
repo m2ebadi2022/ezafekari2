@@ -126,6 +126,7 @@ Sub Globals
 	Dim ayab_1_all As Int=0
 	Dim ayab_2_all As Int=0
 	
+	Dim gest_vam As Int=0
 	Dim date2_fixed As String
 	
 End Sub
@@ -231,7 +232,7 @@ Sub fix_date2_decreceOne
 	
 	''------------- decrece from date 2 --------
 	Dim y_date2 As Int =myfunc.fa2en( lbl_date_to.Text.SubString2(0,4))
-	Dim m_date2 As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(6,7))
+	Dim m_date2 As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(5,7))
 	Dim d_date2 As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(8,10))
 	
 	If(d_date2-1=0)Then
@@ -691,13 +692,19 @@ Private Sub lbl_run_mohasebe_Click
 				str1.Append(" هزینه غذا : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(food_all)) &"</span><br>")
 		End If
 		
-			If(sayer_2_all<>0)Then
-				str1.Append(" سایر : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(sayer_2_all)) &"</span><br>")
-			End If
-			
-			If(ayab_2_all<>0)Then
-				str1.Append(" ایاب ذهاب : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ayab_2_all)) &"</span><br>")
-			End If
+		If(sayer_2_all<>0)Then
+			str1.Append(" سایر : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(sayer_2_all)) &"</span><br>")
+		End If
+		
+		If(ayab_2_all<>0)Then
+			str1.Append(" ایاب ذهاب : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ayab_2_all)) &"</span><br>")
+		End If
+		
+		If(gest_vam<>0)Then
+			str1.Append(" قسط وام  : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(gest_vam)) &"</span><br>")
+		End If
+		
+		
 			
 		If(ksorat<>0)Then
 			str1.Append(" "&ls_onvanHa.Get(11)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(ksorat))&"</span></td>")
@@ -854,6 +861,14 @@ Sub mohasebe
 	End If
 	
 	
+	'' gest vam
+	If(type_mohasebe=1)Then
+		gest_vam=dbCode.all_gestVam_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+	Else
+		gest_vam=dbCode.all_gestVam_byDate(date2_fixed.SubString2(0,7))
+	End If
+	
+	
 	''-----------------------------
 	'hogog nakhales
 	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all+sayer_1_all+ayab_1_all
@@ -870,7 +885,7 @@ Sub mohasebe
 	
 	
 	
-	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat+mosaedeh_all+food_all+sayer_2_all+ayab_2_all
+	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat+mosaedeh_all+food_all+sayer_2_all+ayab_2_all+gest_vam
 	'hogog khales
 	hogog_khales=hogog_nakhales-jame_kosorat
 	
@@ -1127,9 +1142,6 @@ Private Sub lbl_date_to_Click
 End Sub
 
 Private Sub pan_all_set_date_Click
-	
-	
-	
 	pan_all_set_date.Visible=False
 End Sub
 
@@ -1167,12 +1179,12 @@ End Sub
 Sub check_date_iscorrect As Boolean
 	
 	Dim y1_shamsi As Int =myfunc.fa2en( lbl_date_from.Text.SubString2(0,4))
-	Dim m1_shamsi As Int =myfunc.fa2en(lbl_date_from.Text.SubString2(6,7))
+	Dim m1_shamsi As Int =myfunc.fa2en(lbl_date_from.Text.SubString2(5,7))
 	Dim d1_shamsi As Int =myfunc.fa2en(lbl_date_from.Text.SubString2(8,10))
 	
 		
 	Dim y2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(0,4))
-	Dim m2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(6,7))
+	Dim m2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(5,7))
 	Dim d2_shamsi As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(8,10))
 	
 	
