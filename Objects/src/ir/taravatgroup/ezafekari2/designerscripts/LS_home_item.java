@@ -56,6 +56,8 @@ views.get("pan_comment").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_
 views.get("pan_setting").vw.setLeft((int)((views.get("pan_comment").vw.getLeft() + views.get("pan_comment").vw.getWidth())));
 //BA.debugLineNum = 42;BA.debugLine="pan_info.Right=pan_comment.Left"[home_item/General script]
 views.get("pan_info").vw.setLeft((int)((views.get("pan_comment").vw.getLeft()) - (views.get("pan_info").vw.getWidth())));
+//BA.debugLineNum = 44;BA.debugLine="pan_help_kharid.Left=pan_setting.Left"[home_item/General script]
+views.get("pan_help_kharid").vw.setLeft((int)((views.get("pan_setting").vw.getLeft())));
 
 }
 }

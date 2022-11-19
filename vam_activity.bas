@@ -481,7 +481,9 @@ Private Sub et_tedad_gest_TextChanged (Old As String, New As String)
 End Sub
 
 Private Sub lbl_go_agsatPage_Click
-	Main.current_idvam=lbl_go_agsatPage.Tag
+	Dim b As Label
+	b = Sender
+	Main.current_idvam=b.Tag
 	StartActivity(gestha_activity)
 	
 End Sub
