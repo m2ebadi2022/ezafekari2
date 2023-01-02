@@ -129,6 +129,9 @@ Sub Globals
 	Dim gest_vam As Int=0
 	Dim date2_fixed As String
 	
+	Private pan_paen As Panel
+	Private et_maliat As EditText
+	Private et_bime As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -160,12 +163,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	
 	
-	''set color 
-	pan_hed_hogog.Color=Main.color4
-	pan_main_hed_hogog.Color=Main.color4
-	pan_hed_gozaresh.Color=Main.color4
-	myfunc.set_font(Activity)
-	''============
 	
 	WebView1.Color=Colors.ARGB(0,0,0,0)
 	WebView2.Color=Colors.ARGB(0,0,0,0)
@@ -224,7 +221,33 @@ str_web1.Initialize
 	calc_vahed_ezafekari_vij
 	
 	
+	If(dbCode.get_setting_byName("tog_maliat")=1)Then
+		et_maliat.Text="محاسبه اتوماتیک"
+		et_maliat.Enabled=False
+	Else
+		et_maliat.Text=0
+		et_maliat.Tag=0
+		et_maliat.Enabled=True
+	End If
 	
+	If(dbCode.get_setting_byName("tog_bime")=1)Then
+		et_bime.Text="محاسبه اتوماتیک"
+		et_bime.Enabled=False
+	Else
+		et_bime.Text=0
+		et_bime.Tag=0
+		et_bime.Enabled=True
+	End If
+	
+	
+	
+	''set color
+	
+	pan_hed_hogog.Color=Main.color4
+	pan_main_hed_hogog.Color=Main.color4
+	pan_hed_gozaresh.Color=Main.color4
+	myfunc.set_font(Activity)
+	''============
 	
 End Sub
 
@@ -683,20 +706,20 @@ Private Sub lbl_run_mohasebe_Click
 		
 		str1.Append("<td>")
 		
-		If(dbCode.get_setting_byName("tog_bime")=1)Then
-			str1.Append("بیمه تامین اجتماعی "&myfunc.en2fa(show_num_pool(bime_tamin))&" درصد : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(bime_tamin_end)) &"</span><br>")
+		
+			str1.Append("بیمه تامین اجتماعی : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(bime_tamin_end)) &"</span><br>")
 			
 
 			If(bime_takmil<>0)Then
 				str1.Append(""&ls_onvanHa.Get(9)&" :<span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(bime_takmil)) &"</span><br>")
 			End If
-		End If
 		
-		If(dbCode.get_setting_byName("tog_maliat")=1)Then
+		
+		
 			If(maliat_end<>0)Then
 				str1.Append(" مالیات : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(maliat_end)) &"</span><br>")
 			End If
-		End If
+		
 		
 		If(dbCode.get_setting_byName("tog_mosaede")=1)Then
 			If(mosaedeh_all<>0)Then
@@ -917,6 +940,19 @@ Sub mohasebe
 	'bime tamin
 	If(dbCode.get_setting_byName("tog_bime")=1)Then
 		bime_tamin_end=(hogog_nakhales-olad_end)*0.07
+		
+	Else
+		
+		If(et_bime.Tag="")Then
+			bime_tamin_end=0
+			et_bime.Text=0
+			et_bime.Tag=0
+		Else
+			bime_tamin_end=et_bime.Tag
+				
+		End If
+		
+		
 	End If
 	
 	
@@ -927,6 +963,19 @@ Sub mohasebe
 	If(dbCode.get_setting_byName("tog_maliat")=1)Then
 		'maliat_end=mohasebe_maliat(hogog_nakhales,sp_year.SelectedItem)
 		maliat_end=mohasebe_maliat(nak_mal,sp_year.SelectedItem)
+	
+	Else
+		
+		
+		If(et_maliat.Tag="")Then
+			maliat_end=0
+			et_maliat.Text=0
+			et_maliat.Tag=0
+		Else
+			maliat_end=et_maliat.Tag
+				
+		End If
+		
 	End If
 	
 	
@@ -1474,4 +1523,15 @@ Private Sub pik_day_paeen1_Click
 		End If
 	End If
 	
+End Sub
+
+
+Private Sub et_maliat_TextChanged (Old As String, New As String)
+	et_maliat.Tag=New.Replace(",","")
+	myfunc.change_formater(Old,New,et_maliat)
+End Sub
+
+Private Sub et_bime_TextChanged (Old As String, New As String)
+	et_bime.Tag=New.Replace(",","")
+	myfunc.change_formater(Old,New,et_bime)
 End Sub

@@ -65,6 +65,14 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
+			android:name=".hogog_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
 			android:name=".ayabzahab_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
@@ -146,14 +154,6 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".help_kharid_activity"
-			android:label="اضافه کاری من"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".hogog_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">

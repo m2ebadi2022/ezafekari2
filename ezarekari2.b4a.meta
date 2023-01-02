@@ -97,6 +97,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=3,4,5,6,7,9,10,11,12,13,14,15,16,17
 ModuleClosedNodes8=10,11,12,13,17,18,19,20,21,22,23,24,25
 ModuleClosedNodes9=
-NavigationStack=hogog_activity,Globals,48,0,Visual Designer,setting_layout_items.bal,-100,1,setting_activity,Globals,62,0,setting_activity,tog_maliat_CheckedChange,723,0,Main,Activity_Create,334,0,hogog_activity,mohasebe,844,3,hogog_activity,lbl_run_mohasebe_Click,660,6,setting_activity,chek_togel,647,6,setting_activity,tog_mosaede_CheckedChange,739,0,setting_activity,chek_db_togels,155,4
+NavigationStack=hogog_activity,pik_day_paeen1_Click,1494,0,hogog_activity,et_vahed_ezafekari_TextChanged,313,0,hogog_activity,et_maliat_TextChanged,1503,0,hogog_activity,et_bime_TextChanged,1509,0,hogog_activity,Globals,84,0,hogog_activity,Activity_Create,231,0,hogog_activity,mohasebe,937,6,Main,Process_Globals,24,0,Main,time_show,2346,0,Main,add_taradod_fast,3749,0,Main,add_taradod_sub,2035,0
 SelectedBuild=0
 VisibleModules=19,7,24,15
