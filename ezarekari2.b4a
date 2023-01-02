@@ -653,8 +653,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	dbCode.init_notfound("tog_vam",1)
 	dbCode.init_notfound("tog_ayab",1)
 	dbCode.init_notfound("tog_padash",1)
+	dbCode.init_notfound("tog_mosaede",1)
 	dbCode.init_notfound("tog_sayer",1)
-	
 	
 	
 	

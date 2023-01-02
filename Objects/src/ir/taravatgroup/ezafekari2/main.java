@@ -593,7 +593,7 @@ mostCurrent._inapp.Initialize(processBA,"inapp",mostCurrent._key);
  } 
        catch (Exception e4) {
 			processBA.setLastException(e4); //BA.debugLineNum = 311;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("6131079",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5131079",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 316;BA.debugLine="dbCode.init_notfound(\"ksorat\",0)";
 mostCurrent._dbcode._init_notfound /*String*/ (mostCurrent.activityBA,"ksorat",BA.NumberToString(0));
@@ -623,7 +623,9 @@ mostCurrent._dbcode._init_notfound /*String*/ (mostCurrent.activityBA,"tog_vam",
 mostCurrent._dbcode._init_notfound /*String*/ (mostCurrent.activityBA,"tog_ayab",BA.NumberToString(1));
  //BA.debugLineNum = 334;BA.debugLine="dbCode.init_notfound(\"tog_padash\",1)";
 mostCurrent._dbcode._init_notfound /*String*/ (mostCurrent.activityBA,"tog_padash",BA.NumberToString(1));
- //BA.debugLineNum = 335;BA.debugLine="dbCode.init_notfound(\"tog_sayer\",1)";
+ //BA.debugLineNum = 335;BA.debugLine="dbCode.init_notfound(\"tog_mosaede\",1)";
+mostCurrent._dbcode._init_notfound /*String*/ (mostCurrent.activityBA,"tog_mosaede",BA.NumberToString(1));
+ //BA.debugLineNum = 336;BA.debugLine="dbCode.init_notfound(\"tog_sayer\",1)";
 mostCurrent._dbcode._init_notfound /*String*/ (mostCurrent.activityBA,"tog_sayer",BA.NumberToString(1));
  //BA.debugLineNum = 342;BA.debugLine="dbCode.install_db_tbl_taradod";
 mostCurrent._dbcode._install_db_tbl_taradod /*String*/ (mostCurrent.activityBA);
@@ -1326,7 +1328,7 @@ _tim_lock_lbl.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 808;BA.debugLine="ToastMessageShow($\"Error: ${ErrorMessage}\"$, Tru";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(("Error: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_errormessage))+"")),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 809;BA.debugLine="Log(ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("61048582",_errormessage,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("51048582",_errormessage,0);
  };
  //BA.debugLineNum = 811;BA.debugLine="End Sub";
 return "";
@@ -1738,7 +1740,7 @@ mostCurrent._pan_item_gozaresh.setTag((Object)(mostCurrent._dbcode._res /*anywhe
  //BA.debugLineNum = 1525;BA.debugLine="list_gozareshat_id.Add(dbCode.res.GetString(\"id\"";
 mostCurrent._list_gozareshat_id.Add((Object)(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id")));
  //BA.debugLineNum = 1526;BA.debugLine="Log(dbCode.res.GetString(\"id\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62424852",mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("52424852",mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id"),0);
  }
 ;
  //BA.debugLineNum = 1528;BA.debugLine="dbCode.res.Close";
@@ -1754,7 +1756,7 @@ anywheresoftware.b4a.keywords.StringBuilderWrapper _str2 = null;
 anywheresoftware.b4a.objects.B4XViewWrapper _p2 = null;
  //BA.debugLineNum = 1217;BA.debugLine="Sub fill_lists (year1 As String, moon1 As String)";
  //BA.debugLineNum = 1218;BA.debugLine="Log(moon1)";
-anywheresoftware.b4a.keywords.Common.LogImpl("62293761",_moon1,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("52293761",_moon1,0);
  //BA.debugLineNum = 1221;BA.debugLine="cust_LV_ezafekari.Clear";
 mostCurrent._cust_lv_ezafekari._clear();
  //BA.debugLineNum = 1222;BA.debugLine="list_ezafekari_id.Clear";
@@ -2602,7 +2604,7 @@ mostCurrent._img_help.setBitmap((android.graphics.Bitmap)(mostCurrent._bit_img4.
  break; }
 default: {
  //BA.debugLineNum = 3110;BA.debugLine="Log(\"error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("66225937","error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("56225937","error",0);
  break; }
 }
 ;
@@ -2810,7 +2812,7 @@ mostCurrent._lbl_chk_update_ok.setText(BA.ObjectToCharSequence("باشه"));
  } 
        catch (Exception e91) {
 			processBA.setLastException(e91); //BA.debugLineNum = 610;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("6393353",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5393353",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 611;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -2894,7 +2896,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_op.getObj
 			processBA.setLastException(e8); //BA.debugLineNum = 3978;BA.debugLine="myfunc.help_man(\"توجه\",\"برنامه بازار را نصب کنی";
 mostCurrent._myfunc._help_man /*String*/ (mostCurrent.activityBA,"توجه","برنامه بازار را نصب کنید !");
  //BA.debugLineNum = 3980;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("69109514",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("59109514",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  };
  //BA.debugLineNum = 3987;BA.debugLine="pan_all_chekUpdate_Click";
@@ -2979,7 +2981,7 @@ _b = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 3118;BA.debugLine="b = Sender";
 _b = (anywheresoftware.b4a.objects.LabelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.LabelWrapper(), (android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Sender(mostCurrent.activityBA)));
  //BA.debugLineNum = 3119;BA.debugLine="Log(b.Tag)";
-anywheresoftware.b4a.keywords.Common.LogImpl("66291459",BA.ObjectToString(_b.getTag()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("56291459",BA.ObjectToString(_b.getTag()),0);
  //BA.debugLineNum = 3120;BA.debugLine="current_id_edit=b.Tag";
 _current_id_edit = (int)(BA.ObjectToNumber(_b.getTag()));
  //BA.debugLineNum = 3123;BA.debugLine="If(TabHost1.CurrentTab=0)Then";
@@ -3860,7 +3862,7 @@ mostCurrent._et_tozihat_ft.setText(BA.ObjectToCharSequence(mostCurrent._dbcode._
  //BA.debugLineNum = 3440;BA.debugLine="current_id_edit=dbCode.res.GetInt(\"id\")";
 _current_id_edit = mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("id");
  //BA.debugLineNum = 3441;BA.debugLine="Log(dbCode.res.GetInt(\"state\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("67798807",BA.NumberToString(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("state")),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("57798807",BA.NumberToString(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("state")),0);
  //BA.debugLineNum = 3443;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
 mostCurrent._lbl_vorod_ft.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Gray);
  //BA.debugLineNum = 3444;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
@@ -3959,7 +3961,7 @@ _pan_all_ft_click();
  //BA.debugLineNum = 3524;BA.debugLine="pan_add_taradod_fast_Click";
 _pan_add_taradod_fast_click();
  //BA.debugLineNum = 3525;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("67798891",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("57798891",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 3529;BA.debugLine="End Sub";
 return "";
@@ -3987,7 +3989,7 @@ mostCurrent._et_tozihat_ft.setText(BA.ObjectToCharSequence(mostCurrent._dbcode._
  //BA.debugLineNum = 3551;BA.debugLine="current_id_edit=dbCode.res.GetInt(\"id\")";
 _current_id_edit = mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("id");
  //BA.debugLineNum = 3552;BA.debugLine="Log(dbCode.res.GetInt(\"state\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("67864335",BA.NumberToString(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("state")),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("57864335",BA.NumberToString(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetInt("state")),0);
  //BA.debugLineNum = 3554;BA.debugLine="lbl_vorod_FT.TextColor=Colors.Gray";
 mostCurrent._lbl_vorod_ft.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Gray);
  //BA.debugLineNum = 3555;BA.debugLine="lbl_khoroj_FT.TextColor=Colors.Gray";
@@ -5366,9 +5368,9 @@ anywheresoftware.b4a.keywords.StringBuilderWrapper _str_show = null;
  //BA.debugLineNum = 2366;BA.debugLine="Sub time_show2 (dat1 As String,dat2 As String, tim";
  //BA.debugLineNum = 2368;BA.debugLine="Try";
 try { //BA.debugLineNum = 2369;BA.debugLine="Log(dat1)";
-anywheresoftware.b4a.keywords.Common.LogImpl("63801091",_dat1,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("53801091",_dat1,0);
  //BA.debugLineNum = 2370;BA.debugLine="Log(dat2)";
-anywheresoftware.b4a.keywords.Common.LogImpl("63801092",_dat2,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("53801092",_dat2,0);
  //BA.debugLineNum = 2372;BA.debugLine="Dim list_date_per1 , list_date_per2 As List";
 _list_date_per1 = new anywheresoftware.b4a.objects.collections.List();
 _list_date_per2 = new anywheresoftware.b4a.objects.collections.List();
@@ -5524,7 +5526,7 @@ _tim_lock_lbl.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  } 
        catch (Exception e27) {
 			processBA.setLastException(e27); //BA.debugLineNum = 772;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("6852009",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5852009",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  };
  };

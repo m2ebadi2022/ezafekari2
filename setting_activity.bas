@@ -65,6 +65,7 @@ Sub Globals
 	Private tog_ayab As ToggleButton
 	Private tog_padash As ToggleButton
 	Private tog_sayer As ToggleButton
+	Private tog_mosaede As ToggleButton
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -113,13 +114,13 @@ End Sub
 
 
 Sub chek_db_togels
-	If(dbCode.get_setting_byName("tog_maliat")==1)Then
+	If(dbCode.get_setting_byName("tog_maliat")=1)Then
 		tog_maliat.Checked=True
 	Else
 		tog_maliat.Checked=False
 	End If
 	
-	If(dbCode.get_setting_byName("tog_bime")==1)Then
+	If(dbCode.get_setting_byName("tog_bime")=1)Then
 		tog_bime.Checked=True
 	Else
 		tog_bime.Checked=False
@@ -155,6 +156,11 @@ Sub chek_db_togels
 		tog_sayer.Checked=False
 	End If
 	
+	If(dbCode.get_setting_byName("tog_mosaede")=1)Then
+		tog_mosaede.Checked=True
+	Else
+		tog_mosaede.Checked=False
+	End If
 	
 End Sub
 
@@ -608,15 +614,13 @@ Sub chek_togel
 	Dim color_off As String=0xFFE70300
 	
 	
-	If(tog_maliat.Checked==True)Then
+	If(tog_maliat.Checked=True)Then
 		tog_maliat.TextColor=color_on	
 	Else
 		tog_maliat.TextColor=color_off
 	End If
 	
-	Log("color ==  "&tog_maliat.Checked)
-	
-	If(tog_bime.Checked==True)Then
+	If(tog_bime.Checked=True)Then
 		tog_bime.TextColor=color_on
 	Else
 		tog_bime.TextColor=color_off
@@ -650,6 +654,12 @@ Sub chek_togel
 		tog_sayer.TextColor=color_on
 	Else
 		tog_sayer.TextColor=color_off
+	End If
+	
+	If(tog_mosaede.Checked=True)Then
+		tog_mosaede.TextColor=color_on
+	Else
+		tog_mosaede.TextColor=color_off
 	End If
 	
 End Sub
@@ -721,11 +731,21 @@ Private Sub tog_maliat_CheckedChange(Checked As Boolean)
 
 	If(tog_maliat.Checked=True)Then
 		dbCode.update_setting_byname("tog_maliat",1)
-		Log("maliat ==> 1")
 	Else
 		dbCode.update_setting_byname("tog_maliat",0)
-		Log("maliat ==> 0")
 	End If
 	
 	chek_togel
+End Sub
+
+Private Sub tog_mosaede_CheckedChange(Checked As Boolean)
+	
+	If(tog_mosaede.Checked=True)Then
+		dbCode.update_setting_byname("tog_mosaede",1)
+	Else
+		dbCode.update_setting_byname("tog_mosaede",0)
+	End If
+	
+	chek_togel
+	
 End Sub
