@@ -321,8 +321,8 @@ Version=11.8
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 20
-	#VersionName: 4.9
+	#VersionCode: 21
+	#VersionName: 5.0
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true
@@ -646,7 +646,19 @@ Sub Activity_Create(FirstTime As Boolean)
 	''---------------
 	dbCode.init_notfound("saat_kar_darRoz",480)
 	
+	'============== ver 21 db add
+	dbCode.init_notfound("tog_maliat",1)
+	dbCode.init_notfound("tog_bime",1)
+	dbCode.init_notfound("tog_food",1)
+	dbCode.init_notfound("tog_vam",1)
+	dbCode.init_notfound("tog_ayab",1)
+	dbCode.init_notfound("tog_padash",1)
+	dbCode.init_notfound("tog_sayer",1)
 	
+	
+	
+	
+	'=================================
 	
 	dbCode.install_db_tbl_taradod
 	dbCode.install_db_tbl_myCalander
@@ -2324,7 +2336,7 @@ Sub add_taradod_sub
 		If(hour_bt<0 Or min_bt<0 )Then
 			ToastMessageShow("خطا! زمان منفی نمی شود",True)
 		
-		Else If (moon_bt<>0 Or year_bt<>0 Or day_bt<>0)Then
+		Else If (moon_bt<>0 Or year_bt<>0 Or day_bt>2)Then
 			ToastMessageShow("خطا! زمان نادرست است",True)
 		Else If (hour_bt=0 And min_bt=0 )Then
 			ToastMessageShow("خطا! انتخاب زمان  ",True)
@@ -2350,7 +2362,7 @@ Sub add_taradod_sub
 							Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
 							Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
 							
-							dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
+							dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,0,(((myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))+((myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(2))*8))),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
 							
 							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_tozih2,0)
 						Else
@@ -2622,7 +2634,7 @@ Sub time_show
 			
 			If(tim_min>saat_kar_min) Then
 					
-					Log(tim_min)
+					
 					
 				Dim date_vorod_0 As String=lbl_date1.Text
 				Dim date_khoroj_0 As String=lbl_date2.Text
@@ -2652,8 +2664,9 @@ Sub time_show
 	
 			
 				'lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(hour_bt-saat_kar)&" ساعت و "& min_bt&" دقیقه "
-				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))&" ساعت و "& (myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min)).Get(1)&" دقیقه "
+				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))+((myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(2))*8))&" ساعت و "& (myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min)).Get(1)&" دقیقه "
 				
+			
 			
 			Else
 				lbl_ezaf_taradod.Text=""

@@ -57,6 +57,14 @@ Sub Globals
 	Dim fingerprint1 As FingerprintManager
 	Private sc_view_items As ScrollView
 	Private et_hint_lock As EditText
+	
+	Private tog_maliat As ToggleButton
+	Private tog_bime As ToggleButton
+	Private tog_food As ToggleButton
+	Private tog_vam As ToggleButton
+	Private tog_ayab As ToggleButton
+	Private tog_padash As ToggleButton
+	Private tog_sayer As ToggleButton
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -87,6 +95,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	
 	
+	chek_db_togels
+	
+	chek_togel
+	
 	sp_font.SelectedIndex=sp_font.IndexOf(Main.main_font)
 	
 End Sub
@@ -97,6 +109,53 @@ End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
 
+End Sub
+
+
+Sub chek_db_togels
+	If(dbCode.get_setting_byName("tog_maliat")==1)Then
+		tog_maliat.Checked=True
+	Else
+		tog_maliat.Checked=False
+	End If
+	
+	If(dbCode.get_setting_byName("tog_bime")==1)Then
+		tog_bime.Checked=True
+	Else
+		tog_bime.Checked=False
+	End If
+	
+	If(dbCode.get_setting_byName("tog_food")=1)Then
+		tog_food.Checked=True
+	Else
+		tog_food.Checked=False
+	End If
+	
+	If(dbCode.get_setting_byName("tog_vam")=1)Then
+		tog_vam.Checked=True
+	Else
+		tog_vam.Checked=False
+	End If
+	
+	If(dbCode.get_setting_byName("tog_ayab")=1)Then
+		tog_ayab.Checked=True
+	Else
+		tog_ayab.Checked=False
+	End If
+	
+	If(dbCode.get_setting_byName("tog_padash")=1)Then
+		tog_padash.Checked=True
+	Else
+		tog_padash.Checked=False
+	End If
+	
+	If(dbCode.get_setting_byName("tog_sayer")=1)Then
+		tog_sayer.Checked=True
+	Else
+		tog_sayer.Checked=False
+	End If
+	
+	
 End Sub
 
 Sub Activity_KeyPress (KeyCode As Int) As Boolean
@@ -542,4 +601,131 @@ Private Sub ToggleBtn_finger_CheckedChange(Checked As Boolean)
 		Log(LastException)
 	End Try
 	
+End Sub
+
+Sub chek_togel 
+	Dim color_on As String=0xFF059C00
+	Dim color_off As String=0xFFE70300
+	
+	
+	If(tog_maliat.Checked==True)Then
+		tog_maliat.TextColor=color_on	
+	Else
+		tog_maliat.TextColor=color_off
+	End If
+	
+	Log("color ==  "&tog_maliat.Checked)
+	
+	If(tog_bime.Checked==True)Then
+		tog_bime.TextColor=color_on
+	Else
+		tog_bime.TextColor=color_off
+	End If
+	
+	If( tog_food.Checked=True)Then
+		tog_food.TextColor=color_on
+	Else
+		tog_food.TextColor=color_off
+	End If
+	
+	If(tog_vam.Checked=True)Then
+		tog_vam.TextColor=color_on
+	Else
+		tog_vam.TextColor=color_off
+	End If
+	
+	If( tog_ayab.Checked=True)Then
+		tog_ayab.TextColor=color_on
+	Else
+		tog_ayab.TextColor=color_off
+	End If
+	
+	If(tog_padash.Checked=True)Then
+		tog_padash.TextColor=color_on
+	Else
+		tog_padash.TextColor=color_off
+	End If
+	
+	If(tog_sayer.Checked=True)Then
+		tog_sayer.TextColor=color_on
+	Else
+		tog_sayer.TextColor=color_off
+	End If
+	
+End Sub
+
+Private Sub tog_sayer_CheckedChange(Checked As Boolean)
+	If(tog_sayer.Checked=True)Then
+		dbCode.update_setting_byname("tog_sayer","1")
+	Else
+		dbCode.update_setting_byname("tog_sayer","0")
+	End If
+	
+	chek_togel
+End Sub
+
+Private Sub tog_padash_CheckedChange(Checked As Boolean)
+	If(tog_padash.Checked=True)Then
+		dbCode.update_setting_byname("tog_padash","1")
+	Else
+		dbCode.update_setting_byname("tog_padash","0")
+	End If
+	
+	chek_togel
+End Sub
+
+Private Sub tog_ayab_CheckedChange(Checked As Boolean)
+	If(tog_ayab.Checked=True)Then
+		dbCode.update_setting_byname("tog_ayab","1")
+	Else
+		dbCode.update_setting_byname("tog_ayab","0")
+	End If
+	
+	chek_togel
+End Sub
+
+Private Sub tog_vam_CheckedChange(Checked As Boolean)
+	
+	If(tog_vam.Checked=True)Then
+		dbCode.update_setting_byname("tog_vam","1")
+	Else
+		dbCode.update_setting_byname("tog_vam","0")
+	End If
+	
+	chek_togel
+End Sub
+
+Private Sub tog_food_CheckedChange(Checked As Boolean)
+	
+	If(tog_food.Checked=True)Then
+		dbCode.update_setting_byname("tog_food","1")
+	Else
+		dbCode.update_setting_byname("tog_food","0")
+	End If
+	
+	chek_togel
+End Sub
+
+Private Sub tog_bime_CheckedChange(Checked As Boolean)
+	
+	If(tog_bime.Checked=True)Then
+		dbCode.update_setting_byname("tog_bime",1)
+	Else
+		dbCode.update_setting_byname("tog_bime",0)
+	End If
+	
+	chek_togel
+End Sub
+
+Private Sub tog_maliat_CheckedChange(Checked As Boolean)
+
+	If(tog_maliat.Checked=True)Then
+		dbCode.update_setting_byname("tog_maliat",1)
+		Log("maliat ==> 1")
+	Else
+		dbCode.update_setting_byname("tog_maliat",0)
+		Log("maliat ==> 0")
+	End If
+	
+	chek_togel
 End Sub

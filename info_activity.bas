@@ -56,18 +56,22 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 	End If
 End Sub
 
+
+
 Private Sub lbl_whatsapp_Click
 	Try
 		
 		Dim Intent1 As Intent
-		Intent1.Initialize(Intent1.ACTION_VIEW, "https://api.whatsapp.com/send?phone=989229796485text=")
-		Dim jo1 As JavaObject = Intent1
-		jo1.RunMethod("setPackage", Array("com.whatsapp"))
+		'Intent1.Initialize(Intent1.ACTION_VIEW, "https://api.whatsapp.com/send?phone=989229796485text=")
+		Intent1.Initialize(Intent1.ACTION_VIEW, "tel:09233176420")
+'		Dim jo1 As JavaObject = Intent1
+'		jo1.RunMethod("setPackage", Array("com.whatsapp"))
 		StartActivity(Intent1)
 		
 	Catch
 		Log(LastException)
-		ToastMessageShow("برنامه واتساپ را نصب کنید",False)
+		'ToastMessageShow("برنامه واتساپ را نصب کنید",False)
+		ToastMessageShow("خطا در تماس",False)
 	End Try
 	
 

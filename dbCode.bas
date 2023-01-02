@@ -550,6 +550,11 @@ Sub get_setting_byName (name1 As String) As String
 	Return res.GetString("value")
 End Sub
 
+Sub update_setting_byname(name As String , val As String)
+	connect_db
+	sql.ExecNonQuery("UPDATE tb_setting SET value ="&val&" WHERE name='"&name&"'")
+	sql.Close
+End Sub
 Sub add_setting_run (data As List) As Boolean
 	connect_db
 	sql.ExecNonQuery2("UPDATE tb_setting SET value = ? WHERE name= ? ", Array As Object(data.Get(0), "sett_rial_toman"))
