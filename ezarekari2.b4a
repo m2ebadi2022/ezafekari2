@@ -1,39 +1,40 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
 File1=1171 hes.pdf
 File10=add_morakhasi.png
-File100=setting_layout.bal
-File101=setting_layout_items.bal
-File102=shift_layout.bal
-File103=shift_page_items.bal
-File104=shift_work.png
-File105=show_gozaresh_layout.bal
-File106=speed_run.png
-File107=splash_layout.bal
-File108=step0.bal
-File109=step1.bal
+File100=setting_hogog_layout.bal
+File101=setting_layout.bal
+File102=setting_layout_items.bal
+File103=shift_layout.bal
+File104=shift_page_items.bal
+File105=shift_work.png
+File106=show_gozaresh_layout.bal
+File107=speed_run.png
+File108=splash_layout.bal
+File109=step0.bal
 File11=add_other.png
-File110=step2.bal
-File111=sudan bd_mrt.ttf
-File112=SYEKAN.TTF
-File113=tab_layout_ezafekari.bal
-File114=tab_layout_food.bal
-File115=tab_layout_mamoriat.bal
-File116=tab_layout_morakhasi.bal
-File117=tab_layout_mosaedeh.bal
-File118=tab_layout_padash.bal
-File119=tab_layout_sayer.bal
+File110=step1.bal
+File111=step2.bal
+File112=sudan bd_mrt.ttf
+File113=SYEKAN.TTF
+File114=tab_layout_ezafekari.bal
+File115=tab_layout_food.bal
+File116=tab_layout_mamoriat.bal
+File117=tab_layout_morakhasi.bal
+File118=tab_layout_mosaedeh.bal
+File119=tab_layout_padash.bal
 File12=add_other2.png
-File120=tab_layout_taradod.bal
-File121=tab_layout_vam.bal
-File122=taradod_fast_layout.bal
-File123=textBox.png
-File124=textbox2.png
-File125=transfer_time.png
-File126=user.png
-File127=vam.png
-File128=vam_layout.bal
-File129=Vazir.ttf
+File120=tab_layout_sayer.bal
+File121=tab_layout_taradod.bal
+File122=tab_layout_vam.bal
+File123=taradod_fast_layout.bal
+File124=textBox.png
+File125=textbox2.png
+File126=transfer_time.png
+File127=user.png
+File128=vam.png
+File129=vam_layout.bal
 File13=attention.png
+File130=Vazir.ttf
 File14=ayabzahab_layout.bal
 File15=bg3.jpg
 File16=bime_icon.jpg
@@ -61,73 +62,73 @@ File35=endwork.png
 File36=equal.png
 File37=eydi.png
 File38=fast_run_layout.bal
-File39=fingerprint.png
+File39=figerprint.gif
 File4=336 hav.pdf
-File40=food.png
-File41=food_layout.bal
-File42=ganon.html
-File43=ganon_layout.bal
-File44=gestha_layout.bal
-File45=gift.jpg
-File46=gozaresh_layout.bal
-File47=header1.png
-File48=help.png
-File49=help_font.png
+File40=fingerprint.png
+File41=food.png
+File42=food_layout.bal
+File43=ganon.html
+File44=ganon_layout.bal
+File45=gestha_layout.bal
+File46=gift.jpg
+File47=gozaresh_layout.bal
+File48=header1.png
+File49=help.png
 File5=336 pish.pdf
-File50=help_kharid.png
-File51=help_kharid_layout.bal
-File52=hogog_layout.bal
-File53=home_item.bal
-File54=home_layout.bal
-File55=home-h0.jpg
-File56=home-h1.jpg
-File57=home-h2.jpg
-File58=home-h3.jpg
-File59=home-h4.jpg
+File50=help_font.png
+File51=help_kharid.png
+File52=help_kharid_layout.bal
+File53=hogog_layout.bal
+File54=home_item.bal
+File55=home_layout.bal
+File56=home-h0.jpg
+File57=home-h1.jpg
+File58=home-h2.jpg
+File59=home-h3.jpg
 File6=902075.jpg
-File60=icon.png
-File61=info.png
-File62=info_layout.bal
-File63=item_darsad.bal
-File64=item_fast_run.bal
-File65=item_hogog.bal
-File66=item_list.bal
-File67=item_list_2.bal
-File68=item_list_list2.bal
-File69=item_list_vam.bal
+File60=home-h4.jpg
+File61=icon.png
+File62=info.png
+File63=info_layout.bal
+File64=item_darsad.bal
+File65=item_fast_run.bal
+File66=item_hogog.bal
+File67=item_list.bal
+File68=item_list_2.bal
+File69=item_list_list2.bal
 File7=Abstract-blue-iphone-wallpaper-ilikewallpaper_com.jpg
-File70=list_layout.bal
-File71=lyscreen.bal
-File72=m1.JPG
-File73=m1.png
-File74=m2.JPG
-File75=m2.png
-File76=m3.png
-File77=main_layout.bal
-File78=mamoriat.png
-File79=mandeh.png
+File70=item_list_vam.bal
+File71=list_layout.bal
+File72=lyscreen.bal
+File73=m1.JPG
+File74=m1.png
+File75=m2.JPG
+File76=m2.png
+File77=m3.png
+File78=main_layout.bal
+File79=mamoriat.png
 File8=adastnevis.ttf
-File80=mohasebe_hogog.png
-File81=morakhasi_item.bal
-File82=morakhasi_layout.bal
-File83=mosaedeh.png
-File84=mosaedeh_layout.bal
-File85=my_calander.xls
-File86=newyear.jpg
-File87=noske_item.bal
-File88=notif.png
-File89=padash.png
+File80=mandeh.png
+File81=mohasebe_hogog.png
+File82=morakhasi_item.bal
+File83=morakhasi_layout.bal
+File84=mosaedeh.png
+File85=mosaedeh_layout.bal
+File86=my_calander.xls
+File87=newyear.jpg
+File88=noske_item.bal
+File89=notif.png
 File9=add_ezafe.png
-File90=padash_layout.bal
-File91=payankar_layout.bal
-File92=percentage.png
-File93=sabt2_layout.bal
-File94=sayer_layout.bal
-File95=set_hogog.png
-File96=set_moh.png
-File97=sett_hogog_item.bal
-File98=setting.png
-File99=setting_hogog_layout.bal
+File90=padash.png
+File91=padash_layout.bal
+File92=payankar_layout.bal
+File93=percentage.png
+File94=sabt2_layout.bal
+File95=sayer_layout.bal
+File96=set_hogog.png
+File97=set_moh.png
+File98=sett_hogog_item.bal
+File99=setting.png
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup100=Default Group
@@ -163,6 +164,7 @@ FileGroup127=Default Group
 FileGroup128=Default Group
 FileGroup129=Default Group
 FileGroup13=Default Group
+FileGroup130=Default Group
 FileGroup14=Default Group
 FileGroup15=Default Group
 FileGroup16=Default Group
@@ -314,7 +316,7 @@ Module6=darsad_activity
 Module7=dbCode
 Module8=eidi_activity
 Module9=fast_run_activity
-NumberOfFiles=129
+NumberOfFiles=130
 NumberOfLibraries=23
 NumberOfModules=32
 Version=11.8
@@ -620,6 +622,8 @@ Sub Globals
 	
 	Dim is_new_msg As Boolean=False
 	
+	Private radio_ez_fog As RadioButton
+	Private radio_ez_adi As RadioButton
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -1895,6 +1899,10 @@ End Sub
 Private Sub pan_add_morakhasi_Click
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
+	
+	radio_ez_adi.Visible=False
+	radio_ez_fog.Visible=False
+	
 	pan_all.Visible=True
 	lbl_box_title.Text="ثبت مرخصی"
 	lbl_time_as.Text="از :"
@@ -1966,6 +1974,10 @@ End Sub
 Private Sub pan_add_ezafekari_Click
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
+	
+	radio_ez_adi.Visible=False
+	radio_ez_fog.Visible=False
+	
 	pan_all.Visible=True
 	lbl_box_title.Text="ثبت اضافه کاری"
 	lbl_time_as.Text="از :"
@@ -2015,6 +2027,12 @@ End Sub
 Private Sub pan_add_taradod_Click
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
+	
+	radio_ez_adi.Visible=True
+	radio_ez_fog.Visible=True
+	radio_ez_adi.Checked=True
+	radio_ez_fog.Checked=False
+	
 	pan_all.Visible=True
 	lbl_box_title.Text="ثبت تردد"
 	lbl_time_as.Text="ورود :"
@@ -2390,10 +2408,18 @@ Sub add_taradod_sub
 '						Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
 '						Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
 					
+						Dim str_tozih0 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
 						Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
 						Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
 						
-						dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
+						'kkk
+						If(radio_ez_fog.Checked=True)Then
+							dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih0,2)
+						Else
+							dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
+						End If
+						
+						
 							
 						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_tozih2,0)
 					Else
@@ -2660,7 +2686,8 @@ Sub time_show
 			'If(hour_bt>saat_kar Or (hour_bt=saat_kar And min_bt>0 )) Then
 		
 				ckb_ezaf_taradod.Enabled=True
-			
+				radio_ez_adi.Enabled=True
+				radio_ez_fog.Enabled=True
 	
 			
 				'lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(hour_bt-saat_kar)&" ساعت و "& min_bt&" دقیقه "
@@ -2671,6 +2698,8 @@ Sub time_show
 			Else
 				lbl_ezaf_taradod.Text=""
 				ckb_ezaf_taradod.Enabled=False
+				radio_ez_adi.Enabled=False
+				radio_ez_fog.Enabled=False
 			
 			End If
 
@@ -4324,4 +4353,14 @@ Private Sub pan_help_kharid_Click
 	End If
 			
 	
+End Sub
+
+Private Sub ckb_ezaf_taradod_CheckedChange(Checked As Boolean)
+	If(Checked=True)Then
+		radio_ez_adi.Enabled=True
+		radio_ez_fog.Enabled=True
+	Else
+		radio_ez_adi.Enabled=False
+		radio_ez_fog.Enabled=False
+	End If
 End Sub

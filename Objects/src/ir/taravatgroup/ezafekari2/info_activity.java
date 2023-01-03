@@ -457,7 +457,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in2.getOb
  } 
        catch (Exception e9) {
 			processBA.setLastException(e9); //BA.debugLineNum = 106;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("435782670",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("238535182",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 107;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه جمیل را نصب/فعال کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -483,7 +483,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in1.getOb
  } 
        catch (Exception e8) {
 			processBA.setLastException(e8); //BA.debugLineNum = 86;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("435717131",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("238469643",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 87;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه اینستاگرام را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -503,7 +503,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_intent1.g
  } 
        catch (Exception e6) {
 			processBA.setLastException(e6); //BA.debugLineNum = 66;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("435651595",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("238404107",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 68;BA.debugLine="ToastMessageShow(\"خطا در تماس\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در تماس"),anywheresoftware.b4a.keywords.Common.False);
  };
