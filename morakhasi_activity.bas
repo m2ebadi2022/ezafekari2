@@ -65,10 +65,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("morakhasi_layout")
 	
-	ScrollView1.Panel.LoadLayout("morakhasi_item")
+	ScrollView1.Panel.LoadLayout("morakhasi_item2")
 	get_mande_db
 	
-	lbl_mah.Text=Main.persianDate.PersianMonthName
+	'lbl_mah.Text=Main.persianDate.PersianMonthName
 	
 	''set color
 	pan_hed_mandeMorakh.Color=Main.color4

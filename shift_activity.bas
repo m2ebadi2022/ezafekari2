@@ -635,7 +635,7 @@ Sub rsPOP_mah_MenuItemClick (ItemId As Int) As Boolean
 	End Select
 	
 	
-	lbl_mah.Text=mmah
+	'lbl_mah.Text=mmah
 	lbl_mah_tagID=ItemId
 	
 	Return False
@@ -649,10 +649,10 @@ End Sub
 Private Sub lbl_years_Click
 	rsPOP_year.Show
 End Sub
-
-Private Sub lbl_mah_Click
-	rsPOP_mah.Show
-End Sub
+'
+'Private Sub lbl_mah_Click
+'	rsPOP_mah.Show
+'End Sub
 
 Private Sub lbl_roz_Click
 	rsPOP_roz.Show
