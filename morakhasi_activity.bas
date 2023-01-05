@@ -49,8 +49,8 @@ Sub Globals
 	Private lbl_morakhasi_baHogog As Label
 	Private lbl_morakhasi_estelaj As Label
 	Private lbl_morakhasi_estehgag As Label
-	Private lbl_mande_ta_inEndMah As Label
-	Private lbl_mah As Label
+	'Private lbl_mande_ta_inEndMah As Label
+	'Private lbl_mah As Label
 	Private lbl_estehgag_darMah As Label
 	Private lbl_box_edit As Label
 	
@@ -59,6 +59,9 @@ Sub Globals
 	Private chk_manfi As CheckBox
 	Private pan_hed_mandeMorakh As Panel
 	Private lbl_help_mandeh As Label
+	Private lbl_date1 As Label
+	Private lbl_date2 As Label
+	Private lbl_rozha As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -168,39 +171,58 @@ End Sub
 
 
 Private Sub lbl_run_mohasebe_Click
-	Dim mor_dar_roz As Double=0  '' ============= min
-	mor_dar_roz=((morkasiDarMah_d*Main.saat_kar_min)+(morkasiDarMah_h*60)+morkasiDarMah_m)/30
+'	Dim mor_dar_roz As Double=0  '' ============= min
+'	mor_dar_roz=((morkasiDarMah_d*Main.saat_kar_min)+(morkasiDarMah_h*60)+morkasiDarMah_m)/30
+'	
+'	
+	lbl_morakhasi_estehgag.Text=all_morakhasiha_byDate(lbl_date1.Text,lbl_date2.Text,0)
+	lbl_morakhasi_estelaj.Text=all_morakhasiha_byDate(lbl_date1.Text,lbl_date2.Text,1)
+	lbl_morakhasi_baHogog.Text=all_morakhasiha_byDate(lbl_date1.Text,lbl_date2.Text,2)
+	lbl_morakhasi_BiHogog.Text=all_morakhasiha_byDate(lbl_date1.Text,lbl_date2.Text,3)
+'	
+'	
+'	
+'	
+'	
+'	Dim mande_ta_emroz As Int   ''---------- min
+'	Dim mande_ta_endMah As Int   ''---------- min
+'	
+'	mande_ta_endMah=((mande_d*Main.saat_kar_min)+(mande_h*60)+mande_m)+(mor_dar_roz*30)-morakhasi_estefade_esteh
+'	mande_ta_emroz=((mande_d*Main.saat_kar_min)+(mande_h*60)+mande_m)+(mor_dar_roz*Main.persianDate.PersianDay)-morakhasi_estefade_esteh
+'	
+'
+'	Log(morakhasi_estefade_esteh)
+'	
+'
+'	
+'	
+'	lbl_mande_ta_inEndMah.Text=min_to_str(mande_ta_endMah)
+'	
+'	lbl_mande_ta_emroz.Text=min_to_str(mande_ta_emroz)
 	
 	
-	lbl_morakhasi_estehgag.Text=all_morakhasiha_mah(Main.year_num,Main.moon_num,0)
-	lbl_morakhasi_estelaj.Text=all_morakhasiha_mah(Main.year_num,Main.moon_num,1)
-	lbl_morakhasi_baHogog.Text=all_morakhasiha_mah(Main.year_num,Main.moon_num,2)
-	lbl_morakhasi_BiHogog.Text=all_morakhasiha_mah(Main.year_num,Main.moon_num,3)
+	Dim rozha As Int
+	rozha=myfunc.time_mohasebe(lbl_date1.Text,lbl_date2.Text)
 	
-	
-	
-	
-	
-	Dim mande_ta_emroz As Int   ''---------- min
-	Dim mande_ta_endMah As Int   ''---------- min
-	
-	mande_ta_endMah=((mande_d*Main.saat_kar_min)+(mande_h*60)+mande_m)+(mor_dar_roz*30)-morakhasi_estefade_esteh
-	mande_ta_emroz=((mande_d*Main.saat_kar_min)+(mande_h*60)+mande_m)+(mor_dar_roz*Main.persianDate.PersianDay)-morakhasi_estefade_esteh
+	lbl_rozha.Text=rozha
+	Dim zarib As Double=((morkasiDarMah_d*8)+morkasiDarMah_h)/30.5
 	
 
-	Log(morakhasi_estefade_esteh)
+	Dim all_mor1 As Int= (Round(zarib*rozha))+1+((mande_d*8)+mande_h)
 	
-
+	Log("rond : : "&Round(zarib*rozha))
+	Log("all mande estehgag saat:"&all_mor1)
 	
+	Log(" mande saat:"& (all_mor1-(morakhasi_estefade_esteh/60)))
 	
-	lbl_mande_ta_inEndMah.Text=min_to_str(mande_ta_endMah)
+	lbl_mande_ta_emroz.Text=saat_To_RozSaat(all_mor1-(morakhasi_estefade_esteh/60))
 	
-	lbl_mande_ta_emroz.Text=min_to_str(mande_ta_emroz)
+End Sub
+Sub saat_To_RozSaat(saat As Double)As String
 	
-	
-	
-	
-	
+	Dim roz2 As Int = (saat/8)
+	Dim saat2 As Int =saat Mod 8
+	Return roz2&" روز و "& saat2 & "ساعت "
 End Sub
 
 Sub min_to_str (min1 As Int ) As String
@@ -273,6 +295,66 @@ Sub min_to_str (min1 As Int ) As String
 	Return str_result
 	
 End Sub
+
+Sub all_morakhasiha_byDate(date1 As String , date2 As String ,state As String ) As String
+	
+	Dim str As String
+	
+
+	
+	Dim v_day As Int=0
+	Dim v_hour As Int=0
+	Dim v_min As Int=0
+	Dim div1 As Int=0
+	Dim div2 As Int=0
+	dbCode.connect_db
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from  BETWEEN '"&date1&"' AND '"&date2&"' AND state="&state)
+	Do While dbCode.res.NextRow
+		
+		v_day=v_day+dbCode.res.GetString("end_tim_d")
+		v_hour=v_hour+dbCode.res.GetString("end_tim_h")
+		v_min=v_min+dbCode.res.GetString("end_tim_m")
+		
+		
+	Loop
+	dbCode.res.Close
+	dbCode.sql.Close
+	
+	
+	Dim all_min As Int
+	all_min=(v_day*Main.saat_kar_min)+(v_hour*60)+v_min
+	v_hour=	myfunc.Min_to_saatMinRoz(all_min).Get(0)
+	v_min=	myfunc.Min_to_saatMinRoz(all_min).Get(1)
+	v_day=	myfunc.Min_to_saatMinRoz(all_min).Get(2)
+	
+	
+'	If (v_min>59)Then
+'		div1=v_min/60
+'		v_min=v_min Mod 60
+'		
+'	End If
+'	If (v_hour>(saat_kar_darRoz-1))Then
+'		div2=v_hour/saat_kar_darRoz
+'		v_hour=v_hour Mod saat_kar_darRoz
+'		
+'	End If
+'	
+'	v_hour=v_hour+div1
+'	v_day=v_day+div2
+	
+	
+	
+	
+	If(state=0)Then
+		morakhasi_estefade_esteh=all_min
+	End If
+	
+	
+	str=modify_str_showTime(v_day,v_hour,v_min)
+	Return str
+	
+End Sub
+
 
 Sub all_morakhasiha_mah(year As String, moon As String , state As Int) As String
 	Dim str As String
@@ -417,4 +499,12 @@ Private Sub lbl_help_mandeh_Click
 	If(index_box_edit=2)Then
 		myfunc.help_man("راهنما","در قانون کار مرخصی استحقاقی در ماه 2 روز و 4 ساعت برای مشاغل عادی و 3 روز برای مشاغل سخت میباشد")
 	End If
+End Sub
+
+Private Sub lbl_date2_Click
+	
+End Sub
+
+Private Sub lbl_date1_Click
+	
 End Sub
