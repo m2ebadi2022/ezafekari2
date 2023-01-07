@@ -366,6 +366,7 @@ E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\desi
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_main_layout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_item.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_item2.dex
+E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_layout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_mosaedeh_layout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_padash_layout.dex
 E:\b4a\b4a new projects\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_payankar_layout.dex
