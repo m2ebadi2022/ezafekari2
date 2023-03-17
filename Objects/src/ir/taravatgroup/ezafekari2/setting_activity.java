@@ -101,7 +101,7 @@ public class setting_activity extends Activity implements B4AActivity{
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (setting_activity) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (setting_activity) Create " + (isFirst ? "(first time)" : "") + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
@@ -381,7 +381,6 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -395,6 +394,7 @@ public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
+public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
 public ir.taravatgroup.ezafekari2.padash_activity _padash_activity = null;
 public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
@@ -992,11 +992,11 @@ this.state = 4;
  //BA.debugLineNum = 215;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.SharedFo";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db");
  //BA.debugLineNum = 217;BA.debugLine="Log( Dir)";
-anywheresoftware.b4a.keywords.Common.LogImpl("843319303",_dir,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("046530567",_dir,0);
  //BA.debugLineNum = 218;BA.debugLine="Log(FileName)";
-anywheresoftware.b4a.keywords.Common.LogImpl("843319304",_filename,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("046530568",_filename,0);
  //BA.debugLineNum = 219;BA.debugLine="Log(File.Exists(Starter.Provider.SharedFolder,\"d";
-anywheresoftware.b4a.keywords.Common.LogImpl("843319305",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db")),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("046530569",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,"db2.db")),0);
  //BA.debugLineNum = 221;BA.debugLine="Dim result As Int";
 _result = 0;
  //BA.debugLineNum = 223;BA.debugLine="result = Msgbox2(\"دیتای قبلی حذف و دیتای جدید جا";
@@ -1470,7 +1470,7 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("�
  //BA.debugLineNum = 600;BA.debugLine="ToggleBtn_finger.Checked=False";
 mostCurrent._togglebtn_finger.setChecked(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 601;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("845219854",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("048431118",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 604;BA.debugLine="End Sub";
 return "";
@@ -1497,7 +1497,7 @@ mostCurrent._et_hint_lock.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  } 
        catch (Exception e12) {
 			processBA.setLastException(e12); //BA.debugLineNum = 571;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("845023245",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("048234509",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 577;BA.debugLine="End Sub";
 return "";

@@ -64,7 +64,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("padash_layout")
 	
-	
+	sp_year.Add("1402")
 	sp_year.Add("1401")
 	sp_year.Add("1400")
 	sp_year.Add("1399")
@@ -72,7 +72,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	sp_moon.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	
-	sp_year.SelectedIndex=0
+	sp_year.SelectedIndex=1
 	sp_moon.SelectedIndex=myfunc.fa2en(Main.persianDate.PersianMonth)-1
 	
 	Dim moon_num As String=myfunc.convert_adad(sp_moon.SelectedIndex+1)

@@ -124,6 +124,11 @@ Private Sub btn_mohasebe_eidi_Click
 	If(rozha=365)Then
 		eidi_nakhales=et_payeh.Tag*2
 	End If
+	
+	If(eidi_nakhales>12539250)Then
+		eidi_nakhales=12539250
+	End If
+	
 	eidi_maliat=mohasebe_maliat(eidi_nakhales , myfunc.fa2en(Main.persianDate.PersianYear))
 	eidi_khales=eidi_nakhales-eidi_maliat
 	

@@ -325,7 +325,7 @@ Module9=fast_run_activity
 NumberOfFiles=133
 NumberOfLibraries=23
 NumberOfModules=32
-Version=11.8
+Version=12.2
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
@@ -794,7 +794,7 @@ Sub http_initial_1(type1 As Int)
 	ht.Initialize("ht",Me)
 	Dim send As String
 	send = "username=mahdi&password=1234&div_id="&phon.GetSettings("android_id")&"&sdk_ver="&phon.SdkVersion&"&oprator="&phon.GetNetworkOperatorName&"&type_app="&type1&"&div_model="&phon.Model&"&last_notif="&last_notif&"&var=0&is_now_instal="&is_now_instal&"&version_code="&Application.VersionCode
-	ht.PostString("https://azarfadak.com/ezafekari2.php",send)
+	ht.PostString("https://taravatgroup.ir/ezafekari2.php",send)
 	
 	
 End Sub
@@ -1453,7 +1453,7 @@ Private Sub btn_menu_list_Click
 	pan_main.RemoveAllViews
 	pan_main.LoadLayout("list_layout")
 	
-	
+	sp_year.Add("1402")
 	sp_year.Add("1401")
 	sp_year.Add("1400")
 	sp_year.Add("1399")
@@ -1462,7 +1462,7 @@ Private Sub btn_menu_list_Click
 	sp_moon.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	
 	
-	sp_year.SelectedIndex=0
+	sp_year.SelectedIndex=1
 	sp_moon.SelectedIndex=myfunc.fa2en(persianDate.PersianMonth)-1
 	
 	Dim moon_num As String=myfunc.convert_adad(sp_moon.SelectedIndex+1)
@@ -2086,6 +2086,10 @@ Private Sub pan_add_mamoriat_Click
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
 	pan_all.Visible=True
+	
+	radio_ez_adi.Visible=False
+	radio_ez_fog.Visible=False
+	
 	lbl_box_title.Text="ثبت ماموریت"
 	lbl_time_as.Text="از :"
 	lbl_time_ta.Text="تا :"

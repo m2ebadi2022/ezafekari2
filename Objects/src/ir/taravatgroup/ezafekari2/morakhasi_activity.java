@@ -101,7 +101,7 @@ public class morakhasi_activity extends Activity implements B4AActivity{
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (morakhasi_activity) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (morakhasi_activity) Create " + (isFirst ? "(first time)" : "") + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
