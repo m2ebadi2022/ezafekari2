@@ -145,6 +145,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	Main.time_page_load.Enabled=True
 	B4XLoadingIndicator1.Show
 	
+	sp_year.Add("1402")
 	sp_year.Add("1401")
 	sp_year.Add("1400")
 	sp_year.Add("1399")
@@ -205,8 +206,8 @@ str_web1.Initialize
 	moon_dataPik.Initialize
 	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	
-	lbl_date_from.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad( myfunc.fa2en((Main.persianDate.PersianMonth)-1))&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
-	lbl_date_to.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianMonth))&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
+	lbl_date_from.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad( myfunc.fa2en((Main.persianDate.PersianMonth)))&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
+	lbl_date_to.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianMonth)+1)&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
 	
 	''-----------------
 	
@@ -937,6 +938,12 @@ Sub mohasebe
 	'hogog nakhales
 	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all+sayer_1_all+ayab_1_all
 	
+	'shamel maliat
+	Dim hogog_nakhales_maliaty As Int
+	
+	hogog_nakhales_maliaty=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end
+	
+	
 	'bime tamin
 	If(dbCode.get_setting_byName("tog_bime")=1)Then
 		bime_tamin_end=(hogog_nakhales-olad_end)*0.07
@@ -957,7 +964,7 @@ Sub mohasebe
 	
 	
 	Dim nak_mal As Int
-	nak_mal=hogog_nakhales-((bime_tamin_end*2)/7)  '' 2/7 بیمه مالیات ندارد
+	nak_mal=hogog_nakhales_maliaty-((bime_tamin_end*2)/7)  '' 2/7 بیمه مالیات ندارد
 	
 	'maliat
 	If(dbCode.get_setting_byName("tog_maliat")=1)Then
@@ -1073,6 +1080,29 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 		End If
 	End If
 	
+	
+	If (year=1402)Then
+		If(hogog>10000001 And hogog<14000001)Then	  ''-----stat1
+			state1=(hogog-10000000)*0.1
+		End If
+		If(hogog>14000001 And hogog<23000001)Then	  ''-----stat2
+			state1=(4000000)*0.1
+			state2=(hogog-14000000)*0.15
+		End If
+		If(hogog>23000001 And hogog<34000001)Then	  ''-----stat3
+			state1=(4000000)*0.1
+			state2=(9000000)*0.15
+			state3=(hogog-23000000)*0.2
+		End If
+	
+		If(hogog>34000001)Then	  ''-----stat4
+			state1=(4000000)*0.1
+			state2=(9000000)*0.15
+			state3=(11000000)*0.2
+			
+			state4=(hogog-34000001)*0.3
+		End If
+	End If
 	
 	all_maliat=state1+state2+state3+state4+state5+state6
 	Return all_maliat

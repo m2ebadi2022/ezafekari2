@@ -74,7 +74,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	sp_moon.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	
-	sp_year.SelectedIndex=1
+	sp_year.SelectedIndex=0
 	sp_moon.SelectedIndex=myfunc.fa2en(Main.persianDate.PersianMonth)-1
 	
 	Dim moon_num As String=myfunc.convert_adad(sp_moon.SelectedIndex+1)

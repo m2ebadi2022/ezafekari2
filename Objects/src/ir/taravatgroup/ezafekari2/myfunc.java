@@ -11,6 +11,7 @@ public static Object getObject() {
     throw new RuntimeException("Code module does not support this method.");
 }
  public anywheresoftware.b4a.keywords.Common __c = null;
+public static adr.stringfunctions.stringfunctions _strfun2 = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
@@ -43,6 +44,143 @@ public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
+public static int  _calc_time(anywheresoftware.b4a.BA _ba,String _date1,String _date2,String _time1,String _time2) throws Exception{
+int _final_min = 0;
+anywheresoftware.b4a.objects.collections.List _list1_date = null;
+anywheresoftware.b4a.objects.collections.List _list1_hour = null;
+int _date1_y = 0;
+int _date1_m = 0;
+int _date1_d = 0;
+int _time1_h = 0;
+int _time1_m = 0;
+anywheresoftware.b4a.objects.collections.List _list2_date = null;
+anywheresoftware.b4a.objects.collections.List _list2_hour = null;
+int _date2_y = 0;
+int _date2_m = 0;
+int _date2_d = 0;
+int _time2_h = 0;
+int _time2_m = 0;
+int _num_day_in_month = 0;
+int _temp_y = 0;
+ //BA.debugLineNum = 468;BA.debugLine="Sub calc_time(date1 As String,date2 As String,time";
+ //BA.debugLineNum = 471;BA.debugLine="Dim final_min As Int=0";
+_final_min = (int) (0);
+ //BA.debugLineNum = 474;BA.debugLine="Dim list1_date As List";
+_list1_date = new anywheresoftware.b4a.objects.collections.List();
+ //BA.debugLineNum = 475;BA.debugLine="list1_date.Initialize";
+_list1_date.Initialize();
+ //BA.debugLineNum = 476;BA.debugLine="list1_date=strfun2.Split(date1,\"/\")";
+_list1_date = _strfun2._vvvvvv5(_date1,"/");
+ //BA.debugLineNum = 478;BA.debugLine="Dim list1_hour As List";
+_list1_hour = new anywheresoftware.b4a.objects.collections.List();
+ //BA.debugLineNum = 479;BA.debugLine="list1_hour.Initialize";
+_list1_hour.Initialize();
+ //BA.debugLineNum = 480;BA.debugLine="list1_hour=strfun2.Split(time1,\":\")";
+_list1_hour = _strfun2._vvvvvv5(_time1,":");
+ //BA.debugLineNum = 484;BA.debugLine="Dim date1_y As Int=list1_date.Get(0)";
+_date1_y = (int)(BA.ObjectToNumber(_list1_date.Get((int) (0))));
+ //BA.debugLineNum = 485;BA.debugLine="Dim date1_m As Int=list1_date.Get(1)";
+_date1_m = (int)(BA.ObjectToNumber(_list1_date.Get((int) (1))));
+ //BA.debugLineNum = 486;BA.debugLine="Dim date1_d As Int=list1_date.Get(2)";
+_date1_d = (int)(BA.ObjectToNumber(_list1_date.Get((int) (2))));
+ //BA.debugLineNum = 487;BA.debugLine="Dim time1_h As Int=list1_hour.Get(0)";
+_time1_h = (int)(BA.ObjectToNumber(_list1_hour.Get((int) (0))));
+ //BA.debugLineNum = 488;BA.debugLine="Dim time1_m As Int=list1_hour.Get(1)";
+_time1_m = (int)(BA.ObjectToNumber(_list1_hour.Get((int) (1))));
+ //BA.debugLineNum = 492;BA.debugLine="Dim list2_date As List";
+_list2_date = new anywheresoftware.b4a.objects.collections.List();
+ //BA.debugLineNum = 493;BA.debugLine="list2_date.Initialize";
+_list2_date.Initialize();
+ //BA.debugLineNum = 494;BA.debugLine="list2_date=strfun2.Split(date2,\"/\")";
+_list2_date = _strfun2._vvvvvv5(_date2,"/");
+ //BA.debugLineNum = 496;BA.debugLine="Dim list2_hour As List";
+_list2_hour = new anywheresoftware.b4a.objects.collections.List();
+ //BA.debugLineNum = 497;BA.debugLine="list2_hour.Initialize";
+_list2_hour.Initialize();
+ //BA.debugLineNum = 498;BA.debugLine="list2_hour=strfun2.Split(time2,\":\")";
+_list2_hour = _strfun2._vvvvvv5(_time2,":");
+ //BA.debugLineNum = 502;BA.debugLine="Dim date2_y As Int=list2_date.Get(0)";
+_date2_y = (int)(BA.ObjectToNumber(_list2_date.Get((int) (0))));
+ //BA.debugLineNum = 503;BA.debugLine="Dim date2_m As Int=list2_date.Get(1)";
+_date2_m = (int)(BA.ObjectToNumber(_list2_date.Get((int) (1))));
+ //BA.debugLineNum = 504;BA.debugLine="Dim date2_d As Int=list2_date.Get(2)";
+_date2_d = (int)(BA.ObjectToNumber(_list2_date.Get((int) (2))));
+ //BA.debugLineNum = 505;BA.debugLine="Dim time2_h As Int=list2_hour.Get(0)";
+_time2_h = (int)(BA.ObjectToNumber(_list2_hour.Get((int) (0))));
+ //BA.debugLineNum = 506;BA.debugLine="Dim time2_m As Int=list2_hour.Get(1)";
+_time2_m = (int)(BA.ObjectToNumber(_list2_hour.Get((int) (1))));
+ //BA.debugLineNum = 508;BA.debugLine="Dim num_day_in_month As Int";
+_num_day_in_month = 0;
+ //BA.debugLineNum = 511;BA.debugLine="If(date1_m<7)Then";
+if ((_date1_m<7)) { 
+ //BA.debugLineNum = 512;BA.debugLine="num_day_in_month=31";
+_num_day_in_month = (int) (31);
+ }else {
+ //BA.debugLineNum = 514;BA.debugLine="num_day_in_month=30";
+_num_day_in_month = (int) (30);
+ };
+ //BA.debugLineNum = 517;BA.debugLine="If(date1_m=12)Then";
+if ((_date1_m==12)) { 
+ //BA.debugLineNum = 519;BA.debugLine="Dim temp_y As Int=1399  ' kabise year";
+_temp_y = (int) (1399);
+ //BA.debugLineNum = 520;BA.debugLine="Do While (temp_y<=date1_y)";
+while ((_temp_y<=_date1_y)) {
+ //BA.debugLineNum = 522;BA.debugLine="If(date1_y=temp_y)Then";
+if ((_date1_y==_temp_y)) { 
+ //BA.debugLineNum = 523;BA.debugLine="num_day_in_month=30";
+_num_day_in_month = (int) (30);
+ }else {
+ //BA.debugLineNum = 525;BA.debugLine="num_day_in_month=29";
+_num_day_in_month = (int) (29);
+ };
+ //BA.debugLineNum = 528;BA.debugLine="temp_y=temp_y+4";
+_temp_y = (int) (_temp_y+4);
+ }
+;
+ };
+ //BA.debugLineNum = 540;BA.debugLine="If(date1_y=date2_y)Then";
+if ((_date1_y==_date2_y)) { 
+ //BA.debugLineNum = 541;BA.debugLine="If(date1_m=date2_m)Then";
+if ((_date1_m==_date2_m)) { 
+ //BA.debugLineNum = 542;BA.debugLine="If(date1_d=date2_d)Then";
+if ((_date1_d==_date2_d)) { 
+ //BA.debugLineNum = 547;BA.debugLine="final_min =	((time2_h*60)+time2_m)-((time1_h*6";
+_final_min = (int) (((_time2_h*60)+_time2_m)-((_time1_h*60)+_time1_m));
+ }else {
+ //BA.debugLineNum = 550;BA.debugLine="If(date2_d-date1_d<2)Then";
+if ((_date2_d-_date1_d<2)) { 
+ //BA.debugLineNum = 552;BA.debugLine="final_min =	(1440-((time1_h*60)+time1_m))+((t";
+_final_min = (int) ((1440-((_time1_h*60)+_time1_m))+((_time2_h*60)+_time2_m));
+ }else {
+ //BA.debugLineNum = 557;BA.debugLine="final_min =(1440-((time1_h*60)+time1_m))+((ti";
+_final_min = (int) ((1440-((_time1_h*60)+_time1_m))+((_time2_h*60)+_time2_m)+((_date2_d-_date1_d-1)*1440));
+ };
+ };
+ }else {
+ //BA.debugLineNum = 568;BA.debugLine="If(date2_m-date1_m<2)Then";
+if ((_date2_m-_date1_m<2)) { 
+ //BA.debugLineNum = 572;BA.debugLine="final_min =(1440-((time1_h*60)+time1_m))+((tim";
+_final_min = (int) ((1440-((_time1_h*60)+_time1_m))+((_time2_h*60)+_time2_m)+(((_num_day_in_month-_date1_d)+_date2_d)-1)*1440);
+ }else {
+ //BA.debugLineNum = 577;BA.debugLine="final_min =(1440-((time1_h*60)+time1_m))+((tim";
+_final_min = (int) ((1440-((_time1_h*60)+_time1_m))+((_time2_h*60)+_time2_m)+((((_num_day_in_month-_date1_d)+_date2_d)-1)*1440)+((_date2_m-_date1_m-1)*_num_day_in_month*1440));
+ };
+ };
+ }else {
+ //BA.debugLineNum = 588;BA.debugLine="If(date2_y-date1_y<2)Then";
+if ((_date2_y-_date1_y<2)) { 
+ //BA.debugLineNum = 591;BA.debugLine="final_min =(1440-((time1_h*60)+time1_m))+((time";
+_final_min = (int) ((1440-((_time1_h*60)+_time1_m))+((_time2_h*60)+_time2_m)+((((_num_day_in_month-_date1_d)+_date2_d)-1)*1440)+(((12-_date1_m)+_date2_m-1)*_num_day_in_month*1440));
+ }else {
+ //BA.debugLineNum = 596;BA.debugLine="final_min =(1440-((time1_h*60)+time1_m))+((time";
+_final_min = (int) ((1440-((_time1_h*60)+_time1_m))+((_time2_h*60)+_time2_m)+((((_num_day_in_month-_date1_d)+_date2_d)-1)*1440)+(((12-_date1_m)+_date2_m-1)*_num_day_in_month*1440)+((_date2_y-_date1_y-1)*365*1440));
+ };
+ };
+ //BA.debugLineNum = 627;BA.debugLine="Return final_min";
+if (true) return _final_min;
+ //BA.debugLineNum = 628;BA.debugLine="End Sub";
+return 0;
+}
 public static String  _change_formater(anywheresoftware.b4a.BA _ba,String _old,String _new,anywheresoftware.b4a.objects.EditTextWrapper _et_name) throws Exception{
 double _d = 0;
 String _s = "";
@@ -515,6 +653,8 @@ return null;
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 7;BA.debugLine="Dim strfun2 As StringFunctions";
+_strfun2 = new adr.stringfunctions.stringfunctions();
  //BA.debugLineNum = 9;BA.debugLine="End Sub";
 return "";
 }

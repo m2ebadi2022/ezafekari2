@@ -10,7 +10,7 @@ Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
 
-	
+	Dim strfun2 As StringFunctions
 	
 End Sub
 
@@ -470,6 +470,168 @@ End Sub
 
 
 
+
+Sub calc_time(date1 As String,date2 As String,time1 As String,time2 As String) As Int
+	'way2
+	'its my calc & is true way
+	Dim final_min As Int=0
+	
+	'date time 1
+	Dim list1_date As List
+	list1_date.Initialize
+	list1_date=strfun2.Split(date1,"/")
+	
+	Dim list1_hour As List
+	list1_hour.Initialize
+	list1_hour=strfun2.Split(time1,":")
+	
+	
+	
+	Dim date1_y As Int=list1_date.Get(0)
+	Dim date1_m As Int=list1_date.Get(1)
+	Dim date1_d As Int=list1_date.Get(2)
+	Dim time1_h As Int=list1_hour.Get(0)
+	Dim time1_m As Int=list1_hour.Get(1)
+	
+	
+	'date time 2
+	Dim list2_date As List
+	list2_date.Initialize
+	list2_date=strfun2.Split(date2,"/")
+	
+	Dim list2_hour As List
+	list2_hour.Initialize
+	list2_hour=strfun2.Split(time2,":")
+	
+	
+	
+	Dim date2_y As Int=list2_date.Get(0)
+	Dim date2_m As Int=list2_date.Get(1)
+	Dim date2_d As Int=list2_date.Get(2)
+	Dim time2_h As Int=list2_hour.Get(0)
+	Dim time2_m As Int=list2_hour.Get(1)
+	
+	Dim num_day_in_month As Int
+	
+	
+	If(date1_m<7)Then
+		num_day_in_month=31
+	Else
+		num_day_in_month=30	
+	End If
+	
+	If(date1_m=12)Then
+		
+		Dim temp_y As Int=1399  ' kabise year
+		Do While (temp_y<=date1_y)
+			
+			If(date1_y=temp_y)Then
+				num_day_in_month=30
+			Else
+				num_day_in_month=29
+			End If
+			
+			temp_y=temp_y+4
+		Loop
+	
+	End If
+	
+	
+	'================================================
+	
+	
+	
+	
+	
+	If(date1_y=date2_y)Then
+		If(date1_m=date2_m)Then
+			If(date1_d=date2_d)Then
+			' dates equal
+			
+				
+			
+				final_min =	((time2_h*60)+time2_m)-((time1_h*60)+time1_m)
+			
+			Else
+				If(date2_d-date1_d<2)Then
+					
+					final_min =	(1440-((time1_h*60)+time1_m))+((time2_h*60)+time2_m)
+				
+				Else
+					
+					
+					final_min =(1440-((time1_h*60)+time1_m))+((time2_h*60)+time2_m)+((date2_d-date1_d-1)*1440)
+					
+				End If
+				
+				
+			End If
+			
+			
+			
+		Else
+			
+			If(date2_m-date1_m<2)Then
+					
+				
+				
+				final_min =(1440-((time1_h*60)+time1_m))+((time2_h*60)+time2_m)+(((num_day_in_month-date1_d)+date2_d)-1)*1440
+				
+				
+			Else
+					
+				final_min =(1440-((time1_h*60)+time1_m))+((time2_h*60)+time2_m)+((((num_day_in_month-date1_d)+date2_d)-1)*1440)+((date2_m-date1_m-1)*num_day_in_month*1440)
+				
+					
+			End If
+			
+				
+		End If
+		
+	Else
+		
+		
+		If(date2_y-date1_y<2)Then
+					
+		
+			final_min =(1440-((time1_h*60)+time1_m))+((time2_h*60)+time2_m)+((((num_day_in_month-date1_d)+date2_d)-1)*1440)+(((12-date1_m)+date2_m-1)*num_day_in_month*1440)
+			
+		
+				
+		Else
+			final_min =(1440-((time1_h*60)+time1_m))+((time2_h*60)+time2_m)+((((num_day_in_month-date1_d)+date2_d)-1)*1440)+(((12-date1_m)+date2_m-1)*num_day_in_month*1440)+((date2_y-date1_y-1)*365*1440)
+			
+					
+		End If
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+	End If
+	
+	
+'	Log(final_min)
+'	Log("------------------")
+'	Log(Min_to_saatMinRoz(final_min).Get(2))
+'	Log(Min_to_saatMinRoz(final_min).Get(0))
+'	Log(Min_to_saatMinRoz(final_min).Get(1))
+'	Log("------------------")
+	
+	
+	Return final_min
+End Sub
 
 
 
