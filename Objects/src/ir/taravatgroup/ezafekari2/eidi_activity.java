@@ -352,6 +352,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -362,7 +363,6 @@ public ir.taravatgroup.ezafekari2.food_activity _food_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
@@ -487,10 +487,10 @@ if ((_rozha==365)) {
  //BA.debugLineNum = 119;BA.debugLine="eidi_nakhales=et_payeh.Tag*2";
 _eidi_nakhales = (int) ((double)(BA.ObjectToNumber(mostCurrent._et_payeh.getTag()))*2);
  };
- //BA.debugLineNum = 122;BA.debugLine="If(eidi_nakhales>12539250)Then";
-if ((_eidi_nakhales>12539250)) { 
- //BA.debugLineNum = 123;BA.debugLine="eidi_nakhales=12539250";
-_eidi_nakhales = (int) (12539250);
+ //BA.debugLineNum = 122;BA.debugLine="If(eidi_nakhales>(3*5308284) )Then";
+if ((_eidi_nakhales>(3*5308284))) { 
+ //BA.debugLineNum = 123;BA.debugLine="eidi_nakhales= (3*5308284)";
+_eidi_nakhales = (int) ((3*5308284));
  };
  //BA.debugLineNum = 126;BA.debugLine="eidi_maliat=mohasebe_maliat(eidi_nakhales , myfun";
 _eidi_maliat = _mohasebe_maliat(_eidi_nakhales,(int)(Double.parseDouble(mostCurrent._myfunc._fa2en /*String*/ (mostCurrent.activityBA,BA.NumberToString(mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianYear())))));

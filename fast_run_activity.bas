@@ -290,7 +290,7 @@ Sub get_data_hogogi
 	et_olad.Text=myfunc.show_num_pool(olad)
 
 	If(olad<>0)Then
-		Dim tedad_olad As Int=olad/417975
+		Dim tedad_olad As Int=olad/530828
 		sp_olad.SelectedIndex=tedad_olad
 	End If
 
@@ -386,7 +386,7 @@ End If
 	
 	'maliat
 	'maliat_end=mohasebe_maliat(hogog_nakhales,sp_year.SelectedItem)
-	maliat_end=mohasebe_maliat(nak_mal,1401)
+	maliat_end=mohasebe_maliat(nak_mal,1402)
 	
 	
 	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat
@@ -394,6 +394,7 @@ End If
 	hogog_khales=hogog_nakhales-jame_kosorat
 	
 End Sub
+
 
 
 Sub mohasebe_maliat (hogog As Int , year As Int) As Int
@@ -405,7 +406,62 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 	Dim state5 As Int=0
 	Dim state6 As Int=0
 	
+	If (year=1399)Then
+		If(hogog>3000001 And hogog<7500001)Then	  ''-----stat1
+			state1=(hogog-3000000)*0.1
+		End If
+		If(hogog>7500001 And hogog<10500001)Then	  ''-----stat2
+			state1=(3000000)*0.1
+			state2=(hogog-7500000)*0.15
+		End If
+		If(hogog>10500001 And hogog<15000001)Then	  ''-----stat3
+			state1=(3000000)*0.1
+			state2=(3000000)*0.15
+			state3=(hogog-10500000)*0.2
+		End If
+		If(hogog>15000001)Then	  ''-----stat4
+			state1=(3000000)*0.1
+			state2=(3000000)*0.15
+			state3=(4500000)*0.2
+			state4=(hogog-15000001)*0.25
+		End If
+	End If
 	
+	If (year=1400)Then
+		If(hogog>4000001 And hogog<8000001)Then	  ''-----stat1
+			state1=(hogog-4000000)*0.1
+		End If
+		If(hogog>8000001 And hogog<12000001)Then	  ''-----stat2
+			state1=(4000000)*0.1
+			state2=(hogog-8000000)*0.15
+		End If
+		If(hogog>12000001 And hogog<18000001)Then	  ''-----stat3
+			state1=(4000000)*0.1
+			state2=(4000000)*0.15
+			state3=(hogog-12000000)*0.2
+		End If
+		If(hogog>18000001 And hogog<24000001)Then	  ''-----stat4
+			state1=(4000000)*0.1
+			state2=(4000000)*0.15
+			state3=(4000000)*0.2
+			state4=(hogog-18000000)*0.25
+		End If
+		If(hogog>24000001 And hogog<32000001)Then	  ''-----stat4
+			state1=(4000000)*0.1
+			state2=(4000000)*0.15
+			state3=(4000000)*0.2
+			state4=(6000000)*0.25
+			state5=(hogog-24000000)*0.3
+		End If
+		If(hogog>32000001)Then	  ''-----stat4
+			state1=(4000000)*0.1
+			state2=(4000000)*0.15
+			state3=(4000000)*0.2
+			state4=(6000000)*0.25
+			state5=(6000000)*0.3
+			state6=(hogog-32000000)*0.35
+		End If
+	End If
 	
 	If (year=1401)Then
 		If(hogog>5600001 And hogog<12500001)Then	  ''-----stat1
@@ -430,6 +486,29 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 		End If
 	End If
 	
+	
+	If (year=1402)Then
+		If(hogog>10000001 And hogog<14000001)Then	  ''-----stat1
+			state1=(hogog-10000000)*0.1
+		End If
+		If(hogog>14000001 And hogog<23000001)Then	  ''-----stat2
+			state1=(4000000)*0.1
+			state2=(hogog-14000000)*0.15
+		End If
+		If(hogog>23000001 And hogog<34000001)Then	  ''-----stat3
+			state1=(4000000)*0.1
+			state2=(9000000)*0.15
+			state3=(hogog-23000000)*0.2
+		End If
+	
+		If(hogog>34000001)Then	  ''-----stat4
+			state1=(4000000)*0.1
+			state2=(9000000)*0.15
+			state3=(11000000)*0.2
+			
+			state4=(hogog-34000001)*0.3
+		End If
+	End If
 	
 	all_maliat=state1+state2+state3+state4+state5+state6
 	Return all_maliat
