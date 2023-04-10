@@ -1,48 +1,49 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
 File1=1171 hes.pdf
 File10=add_ezafe.png
-File100=payankar_layout.bal
-File101=percentage.png
-File102=sabt2_layout.bal
-File103=sayer_layout.bal
-File104=set_hogog.png
-File105=set_moh.png
-File106=sett_hogog_item.bal
-File107=setting.png
-File108=setting_hogog_layout.bal
-File109=setting_layout.bal
+File100=padash_layout.bal
+File101=payankar_layout.bal
+File102=percentage.png
+File103=sabt2_layout.bal
+File104=sayer_layout.bal
+File105=set_hogog.png
+File106=set_moh.png
+File107=sett_hogog_item.bal
+File108=setting.png
+File109=setting_hogog_layout.bal
 File11=add_morakhasi.png
-File110=setting_layout_items.bal
-File111=shift_layout.bal
-File112=shift_page_items.bal
-File113=shift_work.png
-File114=show_gozaresh_layout.bal
-File115=speed_run.png
-File116=splash_layout.bal
-File117=step0.bal
-File118=step1.bal
-File119=step2.bal
+File110=setting_layout.bal
+File111=setting_layout_items.bal
+File112=shift_layout.bal
+File113=shift_page_items.bal
+File114=shift_work.png
+File115=show_gozaresh_layout.bal
+File116=speed_run.png
+File117=splash_layout.bal
+File118=step0.bal
+File119=step1.bal
 File12=add_other.png
-File120=sudan bd_mrt.ttf
-File121=SYEKAN.TTF
-File122=tab_layout_ezafekari.bal
-File123=tab_layout_food.bal
-File124=tab_layout_mamoriat.bal
-File125=tab_layout_morakhasi.bal
-File126=tab_layout_mosaedeh.bal
-File127=tab_layout_padash.bal
-File128=tab_layout_sayer.bal
-File129=tab_layout_taradod.bal
+File120=step2.bal
+File121=sudan bd_mrt.ttf
+File122=SYEKAN.TTF
+File123=tab_layout_ezafekari.bal
+File124=tab_layout_food.bal
+File125=tab_layout_mamoriat.bal
+File126=tab_layout_morakhasi.bal
+File127=tab_layout_mosaedeh.bal
+File128=tab_layout_padash.bal
+File129=tab_layout_sayer.bal
 File13=add_other2.png
-File130=tab_layout_vam.bal
-File131=taradod_fast_layout.bal
-File132=textBox.png
-File133=textbox2.png
-File134=transfer_time.png
-File135=user.png
-File136=vam.png
-File137=vam_layout.bal
-File138=Vazir.ttf
+File130=tab_layout_taradod.bal
+File131=tab_layout_vam.bal
+File132=taradod_fast_layout.bal
+File133=textBox.png
+File134=textbox2.png
+File135=transfer_time.png
+File136=user.png
+File137=vam.png
+File138=vam_layout.bal
+File139=Vazir.ttf
 File14=attention.png
 File15=ayabzahab_layout.bal
 File16=bg.jpg
@@ -120,23 +121,23 @@ File80=m1.JPG
 File81=m1.png
 File82=m2.JPG
 File83=m2.png
-File84=m3.png
-File85=main_layout.bal
-File86=mamoriat.png
-File87=mandeh.png
-File88=mohasebe_hogog.png
-File89=morakhasi_item.bal
+File84=m3.JPG
+File85=m3.png
+File86=main_layout.bal
+File87=mamoriat.png
+File88=mandeh.png
+File89=mohasebe_hogog.png
 File9=adastnevis.ttf
-File90=morakhasi_item2.bal
-File91=morakhasi_layout.bal
-File92=mosaedeh.png
-File93=mosaedeh_layout.bal
-File94=my_calander.xls
-File95=newyear.jpg
-File96=noske_item.bal
-File97=notif.png
-File98=padash.png
-File99=padash_layout.bal
+File90=morakhasi_item.bal
+File91=morakhasi_item2.bal
+File92=morakhasi_layout.bal
+File93=mosaedeh.png
+File94=mosaedeh_layout.bal
+File95=my_calander.xls
+File96=newyear.jpg
+File97=noske_item.bal
+File98=notif.png
+File99=padash.png
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup100=Default Group
@@ -181,6 +182,7 @@ FileGroup135=Default Group
 FileGroup136=Default Group
 FileGroup137=Default Group
 FileGroup138=Default Group
+FileGroup139=Default Group
 FileGroup14=Default Group
 FileGroup15=Default Group
 FileGroup16=Default Group
@@ -332,7 +334,7 @@ Module6=darsad_activity
 Module7=dbCode
 Module8=eidi_activity
 Module9=fast_run_activity
-NumberOfFiles=138
+NumberOfFiles=139
 NumberOfLibraries=23
 NumberOfModules=32
 Version=12.2
@@ -754,17 +756,17 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	
 	''----------- msg new year
-	tim_msg_newYear.Initialize("tim_msg_newYear" , 2000)
-	
-	If (File.Exists(File.DirInternal,"new_msg2")=True)Then
-		
-	Else
-		
-		File.WriteString(File.DirInternal,"new_msg2","")
-		
-		tim_msg_newYear.Enabled=True
-		
-	End If
+'	tim_msg_newYear.Initialize("tim_msg_newYear" , 2000)
+'	
+'	If (File.Exists(File.DirInternal,"new_msg2")=True)Then
+'		
+'	Else
+'		
+'		File.WriteString(File.DirInternal,"new_msg2","")
+'		
+'		tim_msg_newYear.Enabled=True
+'		
+'	End If
 '	
 	
 	If(File.Exists(File.DirInternal,"phonNum"))Then

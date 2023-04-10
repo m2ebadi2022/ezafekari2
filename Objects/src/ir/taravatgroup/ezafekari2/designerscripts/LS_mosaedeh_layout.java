@@ -13,10 +13,10 @@ views.get("pan_picker").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_p
 views.get("pan_picker").vw.setTop((int)((50d / 100 * height) - (views.get("pan_picker").vw.getHeight() / 2)));
 views.get("panel4").vw.setLeft((int)((50d / 100 * width) - (views.get("panel4").vw.getWidth() / 2)));
 views.get("panel4").vw.setTop((int)((40d / 100 * height) - (views.get("panel4").vw.getHeight() / 2)));
-views.get("sp_moon").vw.setLeft((int)((30d / 100 * width)));
-views.get("sp_moon").vw.setWidth((int)((55d / 100 * width) - ((30d / 100 * width))));
+views.get("sp_moon").vw.setLeft((int)((15d / 100 * width)));
+views.get("sp_moon").vw.setWidth((int)((50d / 100 * width) - ((15d / 100 * width))));
 views.get("sp_year").vw.setLeft((int)((55d / 100 * width)));
-views.get("sp_year").vw.setWidth((int)((80d / 100 * width) - ((55d / 100 * width))));
+views.get("sp_year").vw.setWidth((int)((85d / 100 * width) - ((55d / 100 * width))));
 
 }
 }

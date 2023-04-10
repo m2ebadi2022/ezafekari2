@@ -588,7 +588,7 @@ End Sub
 
 Private Sub sp_olad_ItemClick (Position As Int, Value As Object)
 	Dim num As Int=Value
-	et_olad.Tag=417975*num
+	et_olad.Tag=530828*num
 	et_olad.Text=myfunc.show_num_pool(et_olad.Tag)
 End Sub
 
