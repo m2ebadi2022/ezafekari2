@@ -435,61 +435,6 @@ mostCurrent._activity.Finish();
  //BA.debugLineNum = 42;BA.debugLine="End Sub";
 return "";
 }
-public static String  _lbl_email_click() throws Exception{
-anywheresoftware.b4a.objects.IntentWrapper _in2 = null;
-anywheresoftware.b4j.object.JavaObject _jo2 = null;
- //BA.debugLineNum = 92;BA.debugLine="Private Sub lbl_email_Click";
- //BA.debugLineNum = 93;BA.debugLine="Try";
-try { //BA.debugLineNum = 95;BA.debugLine="mail.To.Add(\"m2ebadi1369@outlook.com\")";
-mostCurrent._mail.To.Add((Object)("m2ebadi1369@outlook.com"));
- //BA.debugLineNum = 97;BA.debugLine="Dim in2 As Intent = mail.GetIntent";
-_in2 = new anywheresoftware.b4a.objects.IntentWrapper();
-_in2 = (anywheresoftware.b4a.objects.IntentWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.IntentWrapper(), (android.content.Intent)(mostCurrent._mail.GetIntent()));
- //BA.debugLineNum = 98;BA.debugLine="in2.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION";
-_in2.setFlags((int) (1));
- //BA.debugLineNum = 100;BA.debugLine="Dim jo2 As JavaObject = in2";
-_jo2 = new anywheresoftware.b4j.object.JavaObject();
-_jo2 = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_in2.getObject()));
- //BA.debugLineNum = 101;BA.debugLine="jo2.RunMethod(\"setPackage\", Array(\"com.google.an";
-_jo2.RunMethod("setPackage",new Object[]{(Object)("com.google.android.gm")});
- //BA.debugLineNum = 102;BA.debugLine="StartActivity(in2)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in2.getObject()));
- } 
-       catch (Exception e9) {
-			processBA.setLastException(e9); //BA.debugLineNum = 106;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("133030158",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
- //BA.debugLineNum = 107;BA.debugLine="ToastMessageShow(\"برنامه جمیل را نصب/فعال کنید\",";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه جمیل را نصب/فعال کنید"),anywheresoftware.b4a.keywords.Common.False);
- };
- //BA.debugLineNum = 111;BA.debugLine="End Sub";
-return "";
-}
-public static String  _lbl_insta_click() throws Exception{
-anywheresoftware.b4a.objects.IntentWrapper _in1 = null;
-anywheresoftware.b4j.object.JavaObject _jo = null;
- //BA.debugLineNum = 75;BA.debugLine="Private Sub lbl_insta_Click";
- //BA.debugLineNum = 76;BA.debugLine="Try";
-try { //BA.debugLineNum = 78;BA.debugLine="Dim in1 As Intent";
-_in1 = new anywheresoftware.b4a.objects.IntentWrapper();
- //BA.debugLineNum = 79;BA.debugLine="in1.Initialize(in1.ACTION_VIEW, \"http://instagra";
-_in1.Initialize(_in1.ACTION_VIEW,"http://instagram.com/_u/taravat_group_official");
- //BA.debugLineNum = 80;BA.debugLine="Dim jo As JavaObject = in1";
-_jo = new anywheresoftware.b4j.object.JavaObject();
-_jo = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_in1.getObject()));
- //BA.debugLineNum = 81;BA.debugLine="jo.RunMethod(\"setPackage\", Array(\"com.instagram.";
-_jo.RunMethod("setPackage",new Object[]{(Object)("com.instagram.android")});
- //BA.debugLineNum = 83;BA.debugLine="StartActivity(in1)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in1.getObject()));
- } 
-       catch (Exception e8) {
-			processBA.setLastException(e8); //BA.debugLineNum = 86;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("132964619",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
- //BA.debugLineNum = 87;BA.debugLine="ToastMessageShow(\"برنامه اینستاگرام را نصب کنید\"";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("برنامه اینستاگرام را نصب کنید"),anywheresoftware.b4a.keywords.Common.False);
- };
- //BA.debugLineNum = 90;BA.debugLine="End Sub";
-return "";
-}
 public static String  _lbl_whatsapp_click() throws Exception{
 anywheresoftware.b4a.objects.IntentWrapper _intent1 = null;
  //BA.debugLineNum = 55;BA.debugLine="Private Sub lbl_whatsapp_Click";
@@ -503,7 +448,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_intent1.g
  } 
        catch (Exception e6) {
 			processBA.setLastException(e6); //BA.debugLineNum = 66;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("132899083",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("532899083",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 68;BA.debugLine="ToastMessageShow(\"خطا در تماس\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در تماس"),anywheresoftware.b4a.keywords.Common.False);
  };

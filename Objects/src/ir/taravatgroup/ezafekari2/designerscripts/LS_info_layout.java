@@ -11,6 +11,7 @@ java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAnd
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
 views.get("imageview1").vw.setLeft((int)((50d / 100 * width) - (views.get("imageview1").vw.getWidth() / 2)));
+views.get("panel1").vw.setLeft((int)((views.get("lbl_whatsapp").vw.getLeft() + views.get("lbl_whatsapp").vw.getWidth()/2) - (views.get("panel1").vw.getWidth() / 2)));
 
 }
 }
