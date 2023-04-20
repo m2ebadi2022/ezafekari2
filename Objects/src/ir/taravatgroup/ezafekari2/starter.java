@@ -15,7 +15,7 @@ public class starter extends android.app.Service{
 			android.content.Intent in = new android.content.Intent(context, starter.class);
 			if (intent != null)
 				in.putExtra("b4a_internal_intent", intent);
-            ServiceHelper.StarterHelper.startServiceFromReceiver (context, in, true, BA.class);
+            ServiceHelper.StarterHelper.startServiceFromReceiver (context, in, true, anywheresoftware.b4a.ShellBA.class);
 		}
 
 	}
@@ -30,7 +30,7 @@ public class starter extends android.app.Service{
         super.onCreate();
         mostCurrent = this;
         if (processBA == null) {
-		    processBA = new BA(this, null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.starter");
+		    processBA = new anywheresoftware.b4a.ShellBA(this, null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.starter");
             if (BA.isShellModeRuntimeCheck(processBA)) {
                 processBA.raiseEvent2(null, true, "SHELL", false);
 		    }
@@ -125,12 +125,14 @@ public class starter extends android.app.Service{
 @Override
 	public android.os.IBinder onBind(android.content.Intent intent) {
 		return null;
-	}public anywheresoftware.b4a.keywords.Common __c = null;
+	}
+public anywheresoftware.b4a.keywords.Common __c = null;
 public static ir.taravatgroup.ezafekari2.fileprovider _provider = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -143,7 +145,6 @@ public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
-public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
 public ir.taravatgroup.ezafekari2.padash_activity _padash_activity = null;
@@ -160,41 +161,62 @@ public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
- //BA.debugLineNum = 43;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
- //BA.debugLineNum = 44;BA.debugLine="Return True";
+RDebugUtils.currentModule="starter";
+if (Debug.shouldDelegate(processBA, "application_error", false))
+	 {return ((Boolean) Debug.delegate(processBA, "application_error", new Object[] {_error,_stacktrace}));}
+RDebugUtils.currentLine=55640064;
+ //BA.debugLineNum = 55640064;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
+RDebugUtils.currentLine=55640065;
+ //BA.debugLineNum = 55640065;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 45;BA.debugLine="End Sub";
+RDebugUtils.currentLine=55640066;
+ //BA.debugLineNum = 55640066;BA.debugLine="End Sub";
 return false;
 }
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 9;BA.debugLine="Dim Provider As FileProvider";
-_provider = new ir.taravatgroup.ezafekari2.fileprovider();
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
-return "";
-}
 public static String  _service_create() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Service_Create";
- //BA.debugLineNum = 15;BA.debugLine="Provider.Initialize";
-_provider._initialize /*String*/ (processBA);
- //BA.debugLineNum = 16;BA.debugLine="End Sub";
+RDebugUtils.currentModule="starter";
+if (Debug.shouldDelegate(processBA, "service_create", false))
+	 {return ((String) Debug.delegate(processBA, "service_create", null));}
+RDebugUtils.currentLine=55443456;
+ //BA.debugLineNum = 55443456;BA.debugLine="Sub Service_Create";
+RDebugUtils.currentLine=55443459;
+ //BA.debugLineNum = 55443459;BA.debugLine="Provider.Initialize";
+_provider._initialize /*String*/ (null,processBA);
+RDebugUtils.currentLine=55443460;
+ //BA.debugLineNum = 55443460;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_destroy() throws Exception{
- //BA.debugLineNum = 47;BA.debugLine="Sub Service_Destroy";
- //BA.debugLineNum = 49;BA.debugLine="End Sub";
+RDebugUtils.currentModule="starter";
+if (Debug.shouldDelegate(processBA, "service_destroy", false))
+	 {return ((String) Debug.delegate(processBA, "service_destroy", null));}
+RDebugUtils.currentLine=55705600;
+ //BA.debugLineNum = 55705600;BA.debugLine="Sub Service_Destroy";
+RDebugUtils.currentLine=55705602;
+ //BA.debugLineNum = 55705602;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_start(anywheresoftware.b4a.objects.IntentWrapper _startingintent) throws Exception{
- //BA.debugLineNum = 18;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
- //BA.debugLineNum = 35;BA.debugLine="Service.StopAutomaticForeground 'Starter service";
+RDebugUtils.currentModule="starter";
+if (Debug.shouldDelegate(processBA, "service_start", false))
+	 {return ((String) Debug.delegate(processBA, "service_start", new Object[] {_startingintent}));}
+RDebugUtils.currentLine=55508992;
+ //BA.debugLineNum = 55508992;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
+RDebugUtils.currentLine=55509009;
+ //BA.debugLineNum = 55509009;BA.debugLine="Service.StopAutomaticForeground 'Starter service";
 mostCurrent._service.StopAutomaticForeground();
- //BA.debugLineNum = 36;BA.debugLine="End Sub";
+RDebugUtils.currentLine=55509010;
+ //BA.debugLineNum = 55509010;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_taskremoved() throws Exception{
- //BA.debugLineNum = 38;BA.debugLine="Sub Service_TaskRemoved";
- //BA.debugLineNum = 40;BA.debugLine="End Sub";
+RDebugUtils.currentModule="starter";
+if (Debug.shouldDelegate(processBA, "service_taskremoved", false))
+	 {return ((String) Debug.delegate(processBA, "service_taskremoved", null));}
+RDebugUtils.currentLine=55574528;
+ //BA.debugLineNum = 55574528;BA.debugLine="Sub Service_TaskRemoved";
+RDebugUtils.currentLine=55574530;
+ //BA.debugLineNum = 55574530;BA.debugLine="End Sub";
 return "";
 }
 public void _onCreate() { //@cafetoseeh

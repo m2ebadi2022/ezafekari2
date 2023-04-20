@@ -1239,7 +1239,171 @@ End Sub
 
 
 
-
+Sub refind_time_to_m 
+	
+	Dim mod_tim As Int = get_setting_byName("refind_time_m")
+	If (mod_tim=0)Then
+		
+		Dim	saat_kar_in_day_min As Int =get_setting_byName("saat_kar_darRoz")
+		
+		
+		'' refind ezafekari time
+		Dim ls_ezafekari_id As List
+		ls_ezafekari_id.Initialize
+		Dim ls_ezafekari_timH As List
+		ls_ezafekari_timH.Initialize
+		Dim ls_ezafekari_timM As List
+		ls_ezafekari_timM.Initialize
+		
+		
+		connect_db
+	    res= sql.ExecQuery("SELECT * FROM tb_ezafekari;")
+	
+	
+		Do While res.NextRow
+		
+			ls_ezafekari_id.Add(res.GetInt("id"))
+			ls_ezafekari_timH.Add(res.GetInt("end_tim_h"))
+			ls_ezafekari_timM.Add(res.GetInt("end_tim_m"))
+		
+		Loop
+		res.Close
+		sql.Close
+		
+		
+		
+		connect_db
+		For i=0 To ls_ezafekari_id.Size-1
+			Dim temp_calc As Int=(ls_ezafekari_timH.Get(i)*60)+ls_ezafekari_timM.Get(i)
+			sql.ExecNonQuery2("UPDATE tb_ezafekari SET end_tim_h=0 , end_tim_m =? WHERE id=?", Array As Object(temp_calc,ls_ezafekari_id.Get(i)))
+		Next
+		
+		sql.Close
+		
+		
+		'' refind morakhasi time
+		Dim ls_morakhasi_id As List
+		ls_morakhasi_id.Initialize
+		Dim ls_morakhasi_timD As List
+		ls_morakhasi_timD.Initialize
+		Dim ls_morakhasi_timH As List
+		ls_morakhasi_timH.Initialize
+		Dim ls_morakhasi_timM As List
+		ls_morakhasi_timM.Initialize
+		
+		
+		connect_db
+		res= sql.ExecQuery("SELECT * FROM tb_morakhasi;")
+	
+	
+		Do While res.NextRow
+		
+			ls_morakhasi_id.Add(res.GetInt("id"))
+			ls_morakhasi_timD.Add(res.GetInt("end_tim_d"))
+			ls_morakhasi_timH.Add(res.GetInt("end_tim_h"))
+			ls_morakhasi_timM.Add(res.GetInt("end_tim_m"))
+		
+		Loop
+		res.Close
+		sql.Close
+		
+		
+		
+		connect_db
+		For i=0 To ls_morakhasi_id.Size-1
+			Dim temp_calc As Int=((ls_morakhasi_timD.Get(i))*saat_kar_in_day_min)+(ls_morakhasi_timH.Get(i)*60)+ls_morakhasi_timM.Get(i)
+			sql.ExecNonQuery2("UPDATE tb_morakhasi SET end_tim_d=0 , end_tim_h=0 , end_tim_m =? WHERE id=?", Array As Object(temp_calc,ls_morakhasi_id.Get(i)))
+		Next
+		
+		sql.Close
+		
+		'' refind taradod time
+		
+		Dim ls_taradod_id As List
+		ls_taradod_id.Initialize
+		Dim ls_taradod_timD As List
+		ls_taradod_timD.Initialize
+		Dim ls_taradod_timH As List
+		ls_taradod_timH.Initialize
+		Dim ls_taradod_timM As List
+		ls_taradod_timM.Initialize
+		
+		
+		connect_db
+		res= sql.ExecQuery("SELECT * FROM tb_taradod;")
+	
+	
+		Do While res.NextRow
+		
+			ls_taradod_id.Add(res.GetInt("id"))
+			ls_taradod_timD.Add(res.GetInt("end_tim_d"))
+			ls_taradod_timH.Add(res.GetInt("end_tim_h"))
+			ls_taradod_timM.Add(res.GetInt("end_tim_m"))
+		
+		Loop
+		res.Close
+		sql.Close
+		
+		
+		
+		connect_db
+		For i=0 To ls_taradod_id.Size-1
+			Dim temp_calc As Int=((ls_taradod_timD.Get(i))*1440)+(ls_taradod_timH.Get(i)*60)+ls_taradod_timM.Get(i)
+			sql.ExecNonQuery2("UPDATE tb_taradod SET end_tim_h=0 , end_tim_m =? WHERE id=?", Array As Object(temp_calc,ls_taradod_id.Get(i)))
+		Next
+		
+		sql.Close
+		
+		
+		
+		'' refind mamoriat time
+		
+		Dim ls_mamoriat_id As List
+		ls_mamoriat_id.Initialize
+		Dim ls_mamoriat_timD As List
+		ls_mamoriat_timD.Initialize
+		Dim ls_mamoriat_timH As List
+		ls_mamoriat_timH.Initialize
+		Dim ls_mamoriat_timM As List
+		ls_mamoriat_timM.Initialize
+		
+		
+		connect_db
+		res= sql.ExecQuery("SELECT * FROM tb_mamoriat;")
+	
+	
+		Do While res.NextRow
+		
+			ls_mamoriat_id.Add(res.GetInt("id"))
+			ls_mamoriat_timD.Add(res.GetInt("end_tim_d"))
+			ls_mamoriat_timH.Add(res.GetInt("end_tim_h"))
+			ls_mamoriat_timM.Add(res.GetInt("end_tim_m"))
+		
+		Loop
+		res.Close
+		sql.Close
+		
+		
+		
+		connect_db
+		For i=0 To ls_mamoriat_id.Size-1
+			Dim temp_calc As Int=((ls_mamoriat_timD.Get(i))*1440)+(ls_mamoriat_timH.Get(i)*60)+ls_mamoriat_timM.Get(i)
+			sql.ExecNonQuery2("UPDATE tb_mamoriat SET end_tim_h=0 , end_tim_m =? WHERE id=?", Array As Object(temp_calc,ls_mamoriat_id.Get(i)))
+		Next
+		
+		sql.Close
+		
+		
+		
+		update_setting_byname("refind_time_m",1)
+		ToastMessageShow("successFully refinded *_* ",False)
+	End If
+	
+	
+	
+	
+	
+End Sub
 
 
 

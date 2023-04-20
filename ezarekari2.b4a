@@ -684,7 +684,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	dbCode.init_notfound("tog_mosaede",1)
 	dbCode.init_notfound("tog_sayer",1)
 	
-	
+	dbCode.init_notfound("refind_time_m",0)
 	
 	'=================================
 	
@@ -692,6 +692,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	dbCode.install_db_tbl_myCalander
 	dbCode.cheng_tagvim
 	dbCode.install_db_tbl_onvanha
+	
+	dbCode.refind_time_to_m
 	''---------------------------------
 	
 	
