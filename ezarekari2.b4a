@@ -1577,12 +1577,23 @@ Sub fill_lists (year1 As String, moon1 As String)
 	Do While dbCode.res.NextRow
 		Dim str1 As StringBuilder
 		str1.Initialize
-		If(dbCode.res.GetString("end_tim_d")<>0)Then
-			str1.Append(dbCode.res.GetString("end_tim_d")&" روز ").Append(CRLF)
-		End If
-		str1.Append(dbCode.res.GetString("end_tim_h")&" ساعت ").Append(CRLF)
-		str1.Append(dbCode.res.GetString("end_tim_m")&" دقیقه ")
+'		If(dbCode.res.GetString("end_tim_d")<>0)Then
+'			str1.Append(dbCode.res.GetString("end_tim_d")&" روز ").Append(CRLF)
+'		End If
+Dim ls_ezafe As List
+ls_ezafe.Initialize
+
+		ls_ezafe=myfunc.Min_to_saatMinRoz2_dontDay(dbCode.res.GetString("end_tim_m"))
 		
+		If((ls_ezafe.Get(0))<>0)Then
+			str1.Append(ls_ezafe.Get(0)&" ساعت ")
+			If((ls_ezafe.Get(1))<>0)Then
+				str1.Append(CRLF)
+			End If
+		End If	
+		If((ls_ezafe.Get(1))<>0)Then
+			str1.Append(ls_ezafe.Get(1)&" دقیقه ")
+		End If
 		
 		
 		p = xui.CreatePanel("p")
@@ -1636,12 +1647,29 @@ Sub fill_lists (year1 As String, moon1 As String)
 	Do While dbCode.res.NextRow
 		Dim str2 As StringBuilder
 		str2.Initialize
-		If(dbCode.res.GetString("end_tim_d")<>0)Then
-			str2.Append(dbCode.res.GetString("end_tim_d")&" روز ").Append(CRLF)
-		End If
-		str2.Append(dbCode.res.GetString("end_tim_h")&" ساعت ").Append(CRLF)
-		str2.Append(dbCode.res.GetString("end_tim_m")&" دقیقه ")
 		
+		Dim ls_morkh As List
+		ls_morkh.Initialize
+
+		ls_morkh=myfunc.Min_to_saatMinRoz(dbCode.res.GetString("end_tim_m"))
+		
+		
+		
+		If((ls_morkh.Get(2))<>0)Then
+			str2.Append(ls_morkh.Get(2)&" روز ")
+			If((ls_morkh.Get(0))<>0 Or (ls_morkh.Get(1))<>0)Then
+				str2.Append(CRLF)
+			End If
+		End If
+		If((ls_morkh.Get(0))<>0)Then
+			str2.Append(ls_morkh.Get(0)&" ساعت ")
+			If((ls_morkh.Get(1))<>0)Then
+				str2.Append(CRLF)
+			End If
+		End If
+			If((ls_morkh.Get(1))<>0)Then
+		str2.Append(ls_morkh.Get(1)&" دقیقه ")
+		End If
 		
 		
 		Dim p2 As B4XView = xui.CreatePanel("")
@@ -1700,12 +1728,29 @@ Sub fill_lists (year1 As String, moon1 As String)
 	Do While dbCode.res.NextRow
 		Dim str1 As StringBuilder
 		str1.Initialize
-		If(dbCode.res.GetString("end_tim_d")<>0)Then
-			str1.Append(dbCode.res.GetString("end_tim_d")&" روز ").Append(CRLF)
-		End If
-		str1.Append(dbCode.res.GetString("end_tim_h")&" ساعت ").Append(CRLF)
-		str1.Append(dbCode.res.GetString("end_tim_m")&" دقیقه ")
 		
+		Dim ls_tarad As List
+		ls_tarad.Initialize
+
+		ls_tarad=myfunc.Min_to_saatMinRoz(dbCode.res.GetString("end_tim_m"))
+		
+		
+		
+		If((ls_tarad.Get(2))<>0)Then
+			str1.Append(ls_tarad.Get(2)&" روز ")
+			If((ls_tarad.Get(0))<>0 Or (ls_tarad.Get(1))<>0)Then
+				str1.Append(CRLF)
+			End If
+		End If
+		If((ls_tarad.Get(0))<>0)Then
+			str1.Append(ls_tarad.Get(0)&" ساعت ")
+			If((ls_tarad.Get(1))<>0)Then
+				str1.Append(CRLF)
+			End If
+		End If
+		If((ls_tarad.Get(1))<>0)Then
+			str1.Append(ls_tarad.Get(1)&" دقیقه ")
+		End If
 		
 		
 		p = xui.CreatePanel("p")
@@ -1765,12 +1810,29 @@ Sub fill_lists (year1 As String, moon1 As String)
 	Do While dbCode.res.NextRow
 		Dim str1 As StringBuilder
 		str1.Initialize
-		If(dbCode.res.GetString("end_tim_d")<>0)Then
-			str1.Append(dbCode.res.GetString("end_tim_d")&" روز ").Append(CRLF)
-		End If
-		str1.Append(dbCode.res.GetString("end_tim_h")&" ساعت ").Append(CRLF)
-		str1.Append(dbCode.res.GetString("end_tim_m")&" دقیقه ")
 		
+		Dim ls_mamor As List
+		ls_mamor.Initialize
+
+		ls_mamor=myfunc.Min_to_saatMinRoz(dbCode.res.GetString("end_tim_m"))
+		
+		
+		
+		If((ls_mamor.Get(2))<>0)Then
+			str1.Append(ls_mamor.Get(2)&" روز ")
+			If((ls_mamor.Get(0))<>0 Or (ls_mamor.Get(1))<>0)Then
+				str1.Append(CRLF)
+			End If
+		End If
+		If((ls_mamor.Get(0))<>0)Then
+			str1.Append(ls_mamor.Get(0)&" ساعت ")
+			If((ls_mamor.Get(1))<>0)Then
+				str1.Append(CRLF)
+			End If
+		End If
+		If((ls_mamor.Get(1))<>0)Then
+			str1.Append(ls_mamor.Get(1)&" دقیقه ")
+		End If
 		
 		
 		p = xui.CreatePanel("p")
@@ -2406,15 +2468,36 @@ Sub add_taradod_sub
 						
 '							Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
 '							Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
-					
+							Dim tim_ezaf_min As Int=tim_min-saat_kar_min
+							Dim str_tozih0 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
 							Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
 							Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
+						    Dim ls_res_tim1 As List
+							ls_res_tim1.Initialize
+							ls_res_tim1=myfunc.find_tim1_taradod(lbl_tim2.Text,tim_ezaf_min)
+							Dim tim1_saat As String=ls_res_tim1.Get(0)
+							Dim date1_refind As String=""
+							If(ls_res_tim1.Get(1)=1) Then
+								date1_refind=date2
+							Else
+								date1_refind=date1
+							End If
 							
-							dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,0,(((myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))+((myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(2))*8))),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
+							'kkk
+							If(radio_ez_fog.Checked=True)Then
+								dbCode.add_ezafekari(date1_refind,date2,tim1_saat,lbl_tim2.Text,0,0,tim_ezaf_min,str_tozih0,2)
+							Else
+								dbCode.add_ezafekari(date1_refind,date2,tim1_saat,lbl_tim2.Text,0,0,tim_ezaf_min,str_tozih1,0)
+							End If
 							
-							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_tozih2,0)
+							
+							
+							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
 						Else
-							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,0)
+							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,et_tozihat.Text,0)
+							
+							
+							
 						End If
 					
 						Dim ls_temp_time2 As List
@@ -2437,23 +2520,35 @@ Sub add_taradod_sub
 						
 '						Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
 '						Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
-					
+						Dim tim_ezaf_min As Int=tim_min-saat_kar_min
+						
 						Dim str_tozih0 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
 						Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
 						Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
 						
+						
+						Dim ls_res_tim1 As List
+						ls_res_tim1.Initialize
+						ls_res_tim1=myfunc.find_tim1_taradod(lbl_tim2.Text,tim_ezaf_min)
+						Dim tim1_saat As String=ls_res_tim1.Get(0)
+						Dim date1_refind As String=""
+						If(ls_res_tim1.Get(1)=1) Then
+							date1_refind=date2
+						Else
+							date1_refind=date1
+						End If
+							
 						'kkk
 						If(radio_ez_fog.Checked=True)Then
-							dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih0,2)
+							dbCode.add_ezafekari(date1_refind,date2,tim1_saat,lbl_tim2.Text,0,0,tim_ezaf_min,str_tozih0,2)
 						Else
-							dbCode.add_ezafekari(date1,date2,"0:0",lbl_tim2.Text,day_bt,(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0)),(myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(1)),str_tozih1,0)
+							dbCode.add_ezafekari(date1_refind,date2,tim1_saat,lbl_tim2.Text,0,0,tim_ezaf_min,str_tozih1,0)
 						End If
 						
-						
 							
-						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,str_tozih2,0)
+						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
 					Else
-						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,0)		
+						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,et_tozihat.Text,0)
 					End If
 					
 					Dim ls_temp_time2 As List
@@ -3521,6 +3616,8 @@ Private Sub lbl_edit_from_list_Click
 		lbl_box_title.Text="ویرایش تردد"
 		ckb_ezaf_taradod.Visible=False
 		lbl_ezaf_taradod.Visible=False
+		radio_ez_adi.Visible=False
+		radio_ez_fog.Visible=False
 	Else if (TabHost1.CurrentTab=3)Then
 		pan_add_mamoriat_Click
 		lbl_box_title.Text="ویرایش ماموریت"

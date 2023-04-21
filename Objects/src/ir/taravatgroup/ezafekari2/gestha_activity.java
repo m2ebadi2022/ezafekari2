@@ -34,7 +34,7 @@ public class gestha_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.gestha_activity");
+			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.gestha_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class gestha_activity extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui2 = null;
 public anywheresoftware.b4a.objects.B4XViewWrapper _p = null;
@@ -360,7 +351,6 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -372,6 +362,7 @@ public ir.taravatgroup.ezafekari2.food_activity _food_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
+public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
 public ir.taravatgroup.ezafekari2.padash_activity _padash_activity = null;
@@ -388,10 +379,15 @@ public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static void  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="gestha_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}); return;}
 ResumableSub_Activity_Create rsub = new ResumableSub_Activity_Create(null,_firsttime);
 rsub.resume(processBA, null);
 }
@@ -405,7 +401,6 @@ boolean _firsttime;
 
 @Override
 public void resume(BA ba, Object[] result) throws Exception{
-RDebugUtils.currentModule="gestha_activity";
 
     while (true) {
         switch (state) {
@@ -415,247 +410,201 @@ return;
 case 0:
 //C
 this.state = -1;
-RDebugUtils.currentLine=19595267;
- //BA.debugLineNum = 19595267;BA.debugLine="Activity.LoadLayout(\"gestha_layout\")";
+ //BA.debugLineNum = 40;BA.debugLine="Activity.LoadLayout(\"gestha_layout\")";
 parent.mostCurrent._activity.LoadLayout("gestha_layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=19595271;
- //BA.debugLineNum = 19595271;BA.debugLine="pan_hed_gestha.Color=Main.color4";
+ //BA.debugLineNum = 44;BA.debugLine="pan_hed_gestha.Color=Main.color4";
 parent.mostCurrent._pan_hed_gestha.setColor(parent.mostCurrent._main._color4 /*int*/ );
-RDebugUtils.currentLine=19595272;
- //BA.debugLineNum = 19595272;BA.debugLine="myfunc.set_font(Activity)";
+ //BA.debugLineNum = 45;BA.debugLine="myfunc.set_font(Activity)";
 parent.mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,parent.mostCurrent._activity);
-RDebugUtils.currentLine=19595274;
- //BA.debugLineNum = 19595274;BA.debugLine="ProgressDialogShow(\"لطفا منتظر بمانید \")";
+ //BA.debugLineNum = 47;BA.debugLine="ProgressDialogShow(\"لطفا منتظر بمانید \")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("لطفا منتظر بمانید "));
-RDebugUtils.currentLine=19595275;
- //BA.debugLineNum = 19595275;BA.debugLine="Sleep(100)";
-anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "gestha_activity", "activity_create"),(int) (100));
+ //BA.debugLineNum = 48;BA.debugLine="Sleep(100)";
+anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (100));
 this.state = 1;
 return;
 case 1:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=19595277;
- //BA.debugLineNum = 19595277;BA.debugLine="fill_list_gestha";
+ //BA.debugLineNum = 50;BA.debugLine="fill_list_gestha";
 _fill_list_gestha();
-RDebugUtils.currentLine=19595280;
- //BA.debugLineNum = 19595280;BA.debugLine="End Sub";
+ //BA.debugLineNum = 53;BA.debugLine="End Sub";
 if (true) break;
 
             }
         }
     }
 }
+public static boolean  _activity_keypress(int _keycode) throws Exception{
+ //BA.debugLineNum = 162;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 163;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
+ //BA.debugLineNum = 164;BA.debugLine="lbl_back_Click";
+_lbl_back_click();
+ //BA.debugLineNum = 165;BA.debugLine="Return True";
+if (true) return anywheresoftware.b4a.keywords.Common.True;
+ }else {
+ //BA.debugLineNum = 167;BA.debugLine="Return False";
+if (true) return anywheresoftware.b4a.keywords.Common.False;
+ };
+ //BA.debugLineNum = 169;BA.debugLine="End Sub";
+return false;
+}
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+ //BA.debugLineNum = 59;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 61;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+ //BA.debugLineNum = 55;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 57;BA.debugLine="End Sub";
+return "";
+}
 public static String  _fill_list_gestha() throws Exception{
-RDebugUtils.currentModule="gestha_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "fill_list_gestha", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "fill_list_gestha", null));}
 int _chek_date = 0;
-RDebugUtils.currentLine=19791872;
- //BA.debugLineNum = 19791872;BA.debugLine="Sub fill_list_gestha";
-RDebugUtils.currentLine=19791875;
- //BA.debugLineNum = 19791875;BA.debugLine="cust_LV_gestha.Clear";
+ //BA.debugLineNum = 65;BA.debugLine="Sub fill_list_gestha";
+ //BA.debugLineNum = 68;BA.debugLine="cust_LV_gestha.Clear";
 mostCurrent._cust_lv_gestha._clear();
-RDebugUtils.currentLine=19791878;
- //BA.debugLineNum = 19791878;BA.debugLine="dbCode.connect_db";
+ //BA.debugLineNum = 71;BA.debugLine="dbCode.connect_db";
 mostCurrent._dbcode._connect_db /*String*/ (mostCurrent.activityBA);
-RDebugUtils.currentLine=19791879;
- //BA.debugLineNum = 19791879;BA.debugLine="dbCode.res= dbCode.sql.ExecQuery(\"SELECT * FROM t";
+ //BA.debugLineNum = 72;BA.debugLine="dbCode.res= dbCode.sql.ExecQuery(\"SELECT * FROM t";
 mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/  = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(mostCurrent._dbcode._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery("SELECT * FROM tb_gestha WHERE idvam='"+mostCurrent._main._current_idvam /*String*/ +"'")));
-RDebugUtils.currentLine=19791881;
- //BA.debugLineNum = 19791881;BA.debugLine="Dim chek_date As Int=0";
+ //BA.debugLineNum = 74;BA.debugLine="Dim chek_date As Int=0";
 _chek_date = (int) (0);
-RDebugUtils.currentLine=19791883;
- //BA.debugLineNum = 19791883;BA.debugLine="Do While dbCode.res.NextRow";
+ //BA.debugLineNum = 76;BA.debugLine="Do While dbCode.res.NextRow";
 while (mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .NextRow()) {
-RDebugUtils.currentLine=19791888;
- //BA.debugLineNum = 19791888;BA.debugLine="p = xui2.CreatePanel(\"p\")";
+ //BA.debugLineNum = 81;BA.debugLine="p = xui2.CreatePanel(\"p\")";
 mostCurrent._p = mostCurrent._xui2.CreatePanel(processBA,"p");
-RDebugUtils.currentLine=19791889;
- //BA.debugLineNum = 19791889;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 98%x, 164dip)";
+ //BA.debugLineNum = 82;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 98%x, 164dip)";
 mostCurrent._p.SetLayoutAnimated((int) (0),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (98),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (164)));
-RDebugUtils.currentLine=19791890;
- //BA.debugLineNum = 19791890;BA.debugLine="p.LoadLayout(\"item_list_vam\")";
+ //BA.debugLineNum = 83;BA.debugLine="p.LoadLayout(\"item_list_vam\")";
 mostCurrent._p.LoadLayout("item_list_vam",mostCurrent.activityBA);
-RDebugUtils.currentLine=19791892;
- //BA.debugLineNum = 19791892;BA.debugLine="cust_LV_gestha.Add(p,dbCode.res.GetString(\"id\"))";
+ //BA.debugLineNum = 85;BA.debugLine="cust_LV_gestha.Add(p,dbCode.res.GetString(\"id\"))";
 mostCurrent._cust_lv_gestha._add(mostCurrent._p,(Object)(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("id")));
-RDebugUtils.currentLine=19791894;
- //BA.debugLineNum = 19791894;BA.debugLine="lbl_onvan2.Text=\" قسط \"& (dbCode.res.Position+1)";
+ //BA.debugLineNum = 87;BA.debugLine="lbl_onvan2.Text=\" قسط \"& (dbCode.res.Position+1)";
 mostCurrent._lbl_onvan2.setText(BA.ObjectToCharSequence(" قسط "+BA.NumberToString((mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .getPosition()+1))));
-RDebugUtils.currentLine=19791896;
- //BA.debugLineNum = 19791896;BA.debugLine="lbl_date2.Text=dbCode.res.GetString(\"date\")";
+ //BA.debugLineNum = 89;BA.debugLine="lbl_date2.Text=dbCode.res.GetString(\"date\")";
 mostCurrent._lbl_date2.setText(BA.ObjectToCharSequence(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("date")));
-RDebugUtils.currentLine=19791898;
- //BA.debugLineNum = 19791898;BA.debugLine="lbl_mablagh2.Tag=dbCode.res.GetString(\"mablag\")";
+ //BA.debugLineNum = 91;BA.debugLine="lbl_mablagh2.Tag=dbCode.res.GetString(\"mablag\")";
 mostCurrent._lbl_mablagh2.setTag((Object)(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("mablag")));
-RDebugUtils.currentLine=19791899;
- //BA.debugLineNum = 19791899;BA.debugLine="lbl_mablagh2.Text=\" مبلغ قسط : \" & myfunc.show_n";
+ //BA.debugLineNum = 92;BA.debugLine="lbl_mablagh2.Text=\" مبلغ قسط : \" & myfunc.show_n";
 mostCurrent._lbl_mablagh2.setText(BA.ObjectToCharSequence(" مبلغ قسط : "+mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int)(BA.ObjectToNumber(mostCurrent._lbl_mablagh2.getTag())))));
-RDebugUtils.currentLine=19791901;
- //BA.debugLineNum = 19791901;BA.debugLine="lbl_tozih2.Visible=True";
+ //BA.debugLineNum = 94;BA.debugLine="lbl_tozih2.Visible=True";
 mostCurrent._lbl_tozih2.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=19791902;
- //BA.debugLineNum = 19791902;BA.debugLine="lbl_tozih2.Text=dbCode.res.GetString(\"tozihat\")";
+ //BA.debugLineNum = 95;BA.debugLine="lbl_tozih2.Text=dbCode.res.GetString(\"tozihat\")";
 mostCurrent._lbl_tozih2.setText(BA.ObjectToCharSequence(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("tozihat")));
-RDebugUtils.currentLine=19791904;
- //BA.debugLineNum = 19791904;BA.debugLine="If(lbl_date2.Text.SubString2(0,4) < Main.persian";
+ //BA.debugLineNum = 97;BA.debugLine="If(lbl_date2.Text.SubString2(0,4) < Main.persian";
 if (((double)(Double.parseDouble(mostCurrent._lbl_date2.getText().substring((int) (0),(int) (4))))<mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianYear())) { 
-RDebugUtils.currentLine=19791906;
- //BA.debugLineNum = 19791906;BA.debugLine="chek_date=0";
+ //BA.debugLineNum = 99;BA.debugLine="chek_date=0";
 _chek_date = (int) (0);
- }else 
-{RDebugUtils.currentLine=19791908;
- //BA.debugLineNum = 19791908;BA.debugLine="Else If(lbl_date2.Text.SubString2(0,4) = Main.pe";
-if (((mostCurrent._lbl_date2.getText().substring((int) (0),(int) (4))).equals(BA.NumberToString(mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianYear())))) { 
-RDebugUtils.currentLine=19791911;
- //BA.debugLineNum = 19791911;BA.debugLine="If(lbl_date2.Text.SubString2(5,7) < Main.persia";
+ }else if(((mostCurrent._lbl_date2.getText().substring((int) (0),(int) (4))).equals(BA.NumberToString(mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianYear())))) { 
+ //BA.debugLineNum = 104;BA.debugLine="If(lbl_date2.Text.SubString2(5,7) < Main.persia";
 if (((double)(Double.parseDouble(mostCurrent._lbl_date2.getText().substring((int) (5),(int) (7))))<mostCurrent._main._persiandate /*com.b4a.manamsoftware.PersianDate.ManamPersianDate*/ .getPersianMonth())) { 
-RDebugUtils.currentLine=19791912;
- //BA.debugLineNum = 19791912;BA.debugLine="chek_date=0";
+ //BA.debugLineNum = 105;BA.debugLine="chek_date=0";
 _chek_date = (int) (0);
  }else {
-RDebugUtils.currentLine=19791914;
- //BA.debugLineNum = 19791914;BA.debugLine="chek_date=1";
+ //BA.debugLineNum = 107;BA.debugLine="chek_date=1";
 _chek_date = (int) (1);
  };
  }else {
-RDebugUtils.currentLine=19791917;
- //BA.debugLineNum = 19791917;BA.debugLine="chek_date=1";
+ //BA.debugLineNum = 110;BA.debugLine="chek_date=1";
 _chek_date = (int) (1);
- }}
-;
-RDebugUtils.currentLine=19791922;
- //BA.debugLineNum = 19791922;BA.debugLine="lbl_icon2.Text=Chr(0xF274)  'def";
+ };
+ //BA.debugLineNum = 115;BA.debugLine="lbl_icon2.Text=Chr(0xF274)  'def";
 mostCurrent._lbl_icon2.setText(BA.ObjectToCharSequence(anywheresoftware.b4a.keywords.Common.Chr(((int)0xf274))));
-RDebugUtils.currentLine=19791923;
- //BA.debugLineNum = 19791923;BA.debugLine="If(chek_date=0)Then";
+ //BA.debugLineNum = 116;BA.debugLine="If(chek_date=0)Then";
 if ((_chek_date==0)) { 
-RDebugUtils.currentLine=19791924;
- //BA.debugLineNum = 19791924;BA.debugLine="lbl_icon2.Color=Colors.Green";
+ //BA.debugLineNum = 117;BA.debugLine="lbl_icon2.Color=Colors.Green";
 mostCurrent._lbl_icon2.setColor(anywheresoftware.b4a.keywords.Common.Colors.Green);
  }else {
-RDebugUtils.currentLine=19791926;
- //BA.debugLineNum = 19791926;BA.debugLine="lbl_icon2.Color=Colors.Gray";
+ //BA.debugLineNum = 119;BA.debugLine="lbl_icon2.Color=Colors.Gray";
 mostCurrent._lbl_icon2.setColor(anywheresoftware.b4a.keywords.Common.Colors.Gray);
  };
-RDebugUtils.currentLine=19791932;
- //BA.debugLineNum = 19791932;BA.debugLine="pan_tools.Visible=False";
+ //BA.debugLineNum = 125;BA.debugLine="pan_tools.Visible=False";
 mostCurrent._pan_tools.setVisible(anywheresoftware.b4a.keywords.Common.False);
  }
 ;
-RDebugUtils.currentLine=19791937;
- //BA.debugLineNum = 19791937;BA.debugLine="dbCode.res.Close";
+ //BA.debugLineNum = 130;BA.debugLine="dbCode.res.Close";
 mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .Close();
-RDebugUtils.currentLine=19791938;
- //BA.debugLineNum = 19791938;BA.debugLine="dbCode.sql.Close";
+ //BA.debugLineNum = 131;BA.debugLine="dbCode.sql.Close";
 mostCurrent._dbcode._sql /*anywheresoftware.b4a.sql.SQL*/ .Close();
-RDebugUtils.currentLine=19791940;
- //BA.debugLineNum = 19791940;BA.debugLine="If(cust_LV_gestha.LastVisibleIndex<5)Then";
+ //BA.debugLineNum = 133;BA.debugLine="If(cust_LV_gestha.LastVisibleIndex<5)Then";
 if ((mostCurrent._cust_lv_gestha._getlastvisibleindex()<5)) { 
-RDebugUtils.currentLine=19791941;
- //BA.debugLineNum = 19791941;BA.debugLine="p = xui2.CreatePanel(\"p\")";
+ //BA.debugLineNum = 134;BA.debugLine="p = xui2.CreatePanel(\"p\")";
 mostCurrent._p = mostCurrent._xui2.CreatePanel(processBA,"p");
-RDebugUtils.currentLine=19791942;
- //BA.debugLineNum = 19791942;BA.debugLine="Select cust_LV_gestha.LastVisibleIndex";
+ //BA.debugLineNum = 135;BA.debugLine="Select cust_LV_gestha.LastVisibleIndex";
 switch (BA.switchObjectToInt(mostCurrent._cust_lv_gestha._getlastvisibleindex(),(int) (-1),(int) (0),(int) (1),(int) (2),(int) (3),(int) (4))) {
 case 0: {
-RDebugUtils.currentLine=19791944;
- //BA.debugLineNum = 19791944;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, (380-100))";
+ //BA.debugLineNum = 137;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, (380-100))";
 mostCurrent._p.SetLayoutAnimated((int) (0),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (95),mostCurrent.activityBA),(int) ((380-100)));
  break; }
 case 1: {
-RDebugUtils.currentLine=19791946;
- //BA.debugLineNum = 19791946;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 400dip)";
+ //BA.debugLineNum = 139;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 400dip)";
 mostCurrent._p.SetLayoutAnimated((int) (0),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (95),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (400)));
  break; }
 case 2: {
-RDebugUtils.currentLine=19791948;
- //BA.debugLineNum = 19791948;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 300dip)";
+ //BA.debugLineNum = 141;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 300dip)";
 mostCurrent._p.SetLayoutAnimated((int) (0),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (95),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (300)));
  break; }
 case 3: {
-RDebugUtils.currentLine=19791950;
- //BA.debugLineNum = 19791950;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 150dip)";
+ //BA.debugLineNum = 143;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 150dip)";
 mostCurrent._p.SetLayoutAnimated((int) (0),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (95),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (150)));
  break; }
 case 4: {
-RDebugUtils.currentLine=19791952;
- //BA.debugLineNum = 19791952;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 100dip)";
+ //BA.debugLineNum = 145;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 100dip)";
 mostCurrent._p.SetLayoutAnimated((int) (0),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (95),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (100)));
  break; }
 case 5: {
-RDebugUtils.currentLine=19791954;
- //BA.debugLineNum = 19791954;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 10dip)";
+ //BA.debugLineNum = 147;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, 95%x, 10dip)";
 mostCurrent._p.SetLayoutAnimated((int) (0),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (95),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10)));
  break; }
 }
 ;
-RDebugUtils.currentLine=19791956;
- //BA.debugLineNum = 19791956;BA.debugLine="cust_LV_gestha.Add(p,\"\")";
+ //BA.debugLineNum = 149;BA.debugLine="cust_LV_gestha.Add(p,\"\")";
 mostCurrent._cust_lv_gestha._add(mostCurrent._p,(Object)(""));
  };
-RDebugUtils.currentLine=19791960;
- //BA.debugLineNum = 19791960;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 153;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=19791961;
- //BA.debugLineNum = 19791961;BA.debugLine="End Sub";
+ //BA.debugLineNum = 154;BA.debugLine="End Sub";
 return "";
 }
-public static boolean  _activity_keypress(int _keycode) throws Exception{
-RDebugUtils.currentModule="gestha_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
-	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=19922944;
- //BA.debugLineNum = 19922944;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=19922945;
- //BA.debugLineNum = 19922945;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
-if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=19922946;
- //BA.debugLineNum = 19922946;BA.debugLine="lbl_back_Click";
-_lbl_back_click();
-RDebugUtils.currentLine=19922947;
- //BA.debugLineNum = 19922947;BA.debugLine="Return True";
-if (true) return anywheresoftware.b4a.keywords.Common.True;
- }else {
-RDebugUtils.currentLine=19922949;
- //BA.debugLineNum = 19922949;BA.debugLine="Return False";
-if (true) return anywheresoftware.b4a.keywords.Common.False;
- };
-RDebugUtils.currentLine=19922951;
- //BA.debugLineNum = 19922951;BA.debugLine="End Sub";
-return false;
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 16;BA.debugLine="Dim xui2 As XUI";
+mostCurrent._xui2 = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
+ //BA.debugLineNum = 17;BA.debugLine="Dim p As B4XView";
+mostCurrent._p = new anywheresoftware.b4a.objects.B4XViewWrapper();
+ //BA.debugLineNum = 21;BA.debugLine="Private lbl_onvan2 As Label";
+mostCurrent._lbl_onvan2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 22;BA.debugLine="Private lbl_date2 As Label";
+mostCurrent._lbl_date2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 23;BA.debugLine="Private lbl_mablagh2 As Label";
+mostCurrent._lbl_mablagh2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 25;BA.debugLine="Private lbl_tozih2 As Label";
+mostCurrent._lbl_tozih2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 26;BA.debugLine="Private Panel1_2 As Panel";
+mostCurrent._panel1_2 = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 27;BA.debugLine="Private cust_LV_gestha As CustomListView";
+mostCurrent._cust_lv_gestha = new b4a.example3.customlistview();
+ //BA.debugLineNum = 28;BA.debugLine="Private lbl_icon2 As Label";
+mostCurrent._lbl_icon2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 33;BA.debugLine="Private pan_hed_gestha As Panel";
+mostCurrent._pan_hed_gestha = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 34;BA.debugLine="Private pan_tools As Panel";
+mostCurrent._pan_tools = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 35;BA.debugLine="End Sub";
+return "";
 }
 public static String  _lbl_back_click() throws Exception{
-RDebugUtils.currentModule="gestha_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
-RDebugUtils.currentLine=19857408;
- //BA.debugLineNum = 19857408;BA.debugLine="Private Sub lbl_back_Click";
-RDebugUtils.currentLine=19857409;
- //BA.debugLineNum = 19857409;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 158;BA.debugLine="Private Sub lbl_back_Click";
+ //BA.debugLineNum = 159;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=19857410;
- //BA.debugLineNum = 19857410;BA.debugLine="End Sub";
+ //BA.debugLineNum = 160;BA.debugLine="End Sub";
 return "";
 }
-public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="gestha_activity";
-RDebugUtils.currentLine=19726336;
- //BA.debugLineNum = 19726336;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=19726338;
- //BA.debugLineNum = 19726338;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="gestha_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=19660800;
- //BA.debugLineNum = 19660800;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=19660802;
- //BA.debugLineNum = 19660802;BA.debugLine="End Sub";
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 }

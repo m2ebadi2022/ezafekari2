@@ -291,31 +291,37 @@ End Sub
 
 
 Sub add_ezafekari(date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
+	
+	Dim tim_m As Int =(d*Main.saat_kar_min)+(h*60)+m
+	
 	connect_db
-	sql.ExecNonQuery2("INSERT INTO tb_ezafekari (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state0))
+	sql.ExecNonQuery2("INSERT INTO tb_ezafekari (date_from , date_to, time_from , time_to, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,tim_m,tozih,state0))
 	sql.Close
 	Return True
 End Sub
 
 
 Sub add_morakhasi(date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
+	Dim tim_m As Int =(d*Main.saat_kar_min)+(h*60)+m
 	connect_db
-	sql.ExecNonQuery2("INSERT INTO tb_morakhasi (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state))
+	sql.ExecNonQuery2("INSERT INTO tb_morakhasi (date_from , date_to, time_from , time_to, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,tim_m,tozih,state))
 	sql.Close
 	Return True
 End Sub
 
 Sub add_taradod (date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
+	Dim tim_m As Int =(d*Main.saat_kar_min)+(h*60)+m
 	connect_db
-	sql.ExecNonQuery2("INSERT INTO tb_taradod (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat, state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state))
+	sql.ExecNonQuery2("INSERT INTO tb_taradod (date_from , date_to, time_from , time_to, end_tim_m, tozihat, state) VALUES (?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,tim_m,tozih,state))
 	sql.Close
 	Return True
 End Sub
 
 
 Sub add_mamoriat(date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
+	Dim tim_m As Int =(d*Main.saat_kar_min)+(h*60)+m
 	connect_db
-	sql.ExecNonQuery2("INSERT INTO tb_mamoriat (date_from , date_to, time_from , time_to, end_tim_d, end_tim_h, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state0))
+	sql.ExecNonQuery2("INSERT INTO tb_mamoriat (date_from , date_to, time_from , time_to, end_tim_m, tozihat , state) VALUES (?,?,?,?,?,?,?)", Array As Object(date1,date2, time1, time2,tim_m,tozih,state0))
 	sql.Close
 	Return True
 End Sub
@@ -384,31 +390,35 @@ End Sub
 ''=======  edit ==================================
 
 Sub edit_ezafekari(id1 As Int, date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
+	Dim tim_m As Int =(d*Main.saat_kar_min)+(h*60)+m
 	connect_db
-	sql.ExecNonQuery2("UPDATE tb_ezafekari SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state0,id1))
+	sql.ExecNonQuery2("UPDATE tb_ezafekari SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,tim_m,tozih,state0,id1))
 	sql.Close
 	Return True
 End Sub
 
 
 Sub edit_morakhasi(id1 As Int,date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
+	Dim tim_m As Int =(d*Main.saat_kar_min)+(h*60)+m
 	connect_db
-	sql.ExecNonQuery2("UPDATE tb_morakhasi SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state,id1))
+	sql.ExecNonQuery2("UPDATE tb_morakhasi SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,tim_m,tozih,state,id1))
 	sql.Close
 	Return True
 End Sub
 
 Sub edit_taradod (id1 As Int,date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String, state As Int) As Boolean
+	Dim tim_m As Int =(d*Main.saat_kar_min)+(h*60)+m
 	connect_db
-	sql.ExecNonQuery2("UPDATE tb_taradod SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =? ,state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state,id1))
+	sql.ExecNonQuery2("UPDATE tb_taradod SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_m =?, tozihat =? ,state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,tim_m,tozih,state,id1))
 	sql.Close
 	Return True
 End Sub
 
 
 Sub edit_mamoriat(id1 As Int, date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
+	Dim tim_m As Int =(d*Main.saat_kar_min)+(h*60)+m
 	connect_db
-	sql.ExecNonQuery2("UPDATE tb_mamoriat SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_d =?, end_tim_h =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,d,h,m,tozih,state0,id1))
+	sql.ExecNonQuery2("UPDATE tb_mamoriat SET date_from=? , date_to=?, time_from =?, time_to =?, end_tim_m =?, tozihat =?, state=?  WHERE id=?", Array As Object(date1,date2, time1, time2,tim_m,tozih,state0,id1))
 	sql.Close
 	Return True
 End Sub
@@ -634,8 +644,8 @@ Sub all_ezafekari_mah(year As String, moon As String, type1 As Int) As List
 	
 	Do While res.NextRow
 		
-		v_day=v_day+res.GetString("end_tim_d")
-		v_hour=v_hour+res.GetString("end_tim_h")
+		'v_day=v_day+res.GetString("end_tim_d")
+		'v_hour=v_hour+res.GetString("end_tim_h")
 		v_min=v_min+res.GetString("end_tim_m")
 		
 		
@@ -734,8 +744,8 @@ Sub all_morakhasi_mah(year As String, moon As String) As List
 	res= sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '%"&year&"/"&moon&"%';")
 	Do While res.NextRow
 		
-		v_day=v_day+res.GetString("end_tim_d")
-		v_hour=v_hour+res.GetString("end_tim_h")
+		'v_day=v_day+res.GetString("end_tim_d")
+		'v_hour=v_hour+res.GetString("end_tim_h")
 		v_min=v_min+res.GetString("end_tim_m")
 		
 		
@@ -744,7 +754,7 @@ Sub all_morakhasi_mah(year As String, moon As String) As List
 	sql.Close
 	
 	
-	Dim dghige2 As Int=(v_day*Main.saat_kar_min)+(v_hour*60)+v_min
+	'Dim dghige2 As Int=(v_day*Main.saat_kar_min)+(v_hour*60)+v_min
 	
 	
 '	If (v_min>59)Then
@@ -765,9 +775,9 @@ Sub all_morakhasi_mah(year As String, moon As String) As List
 '	list_ez.Add(v_hour)      '' index 1  hour
 '	list_ez.Add(v_min)		'' index 2	min
 	
-	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(2))      '' index 0  day
-	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(0))      '' index 1  hour
-	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(1))		'' index 2	min
+	list_ez.Add(myfunc.Min_to_saatMinRoz(v_min).Get(2))      '' index 0  day
+	list_ez.Add(myfunc.Min_to_saatMinRoz(v_min).Get(0))      '' index 1  hour
+	list_ez.Add(myfunc.Min_to_saatMinRoz(v_min).Get(1))		'' index 2	min
 	
 	Return list_ez
 End Sub
@@ -1243,6 +1253,7 @@ Sub refind_time_to_m
 	
 	Dim mod_tim As Int = get_setting_byName("refind_time_m")
 	If (mod_tim=0)Then
+		ProgressDialogShow2("در حال پردازش ...",False)
 		
 		Dim	saat_kar_in_day_min As Int =get_setting_byName("saat_kar_darRoz")
 		
@@ -1396,7 +1407,9 @@ Sub refind_time_to_m
 		
 		
 		update_setting_byname("refind_time_m",1)
-		ToastMessageShow("successFully refinded *_* ",False)
+		
+		ProgressDialogHide
+		
 	End If
 	
 	

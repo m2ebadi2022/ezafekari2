@@ -634,10 +634,50 @@ Sub calc_time(date1 As String,date2 As String,time1 As String,time2 As String) A
 End Sub
 
 
+Sub find_tim1_taradod (tim2 As String, ezaf_min As Int) As List
+	Dim ls_result As List
+	ls_result.Initialize
+	
+	Dim tm1 As String=""
+	If (saat_toMin(tim2)-ezaf_min)>0 Then
+		
+		tm1=min_toSaat(saat_toMin(tim2)-ezaf_min)
+		ls_result.Add(tm1)
+		ls_result.Add(1)
+		
+	Else
+		tm1=min_toSaat(1440-(ezaf_min-saat_toMin(tim2)))
+		ls_result.Add(tm1)
+		
+		If (saat_toMin(tim2)>tm1)Then
+			ls_result.Add(1)
+		Else
+			ls_result.Add(2)
+		End If
+		
+	End If
+	
+	
+	Return ls_result
+End Sub
 
+Sub saat_toMin (tim As String) As Int
+	Dim strfun As StringFunctions
+	strfun.Initialize
+	Dim ls_tim2 As List
+	ls_tim2.Initialize
+	ls_tim2=strfun.Split(tim,":")
 
+	Dim dag_tim2 As Int =(ls_tim2.Get(0)*60)+ls_tim2.Get(1)
+	Return  dag_tim2
+End Sub
 
-
+Sub min_toSaat (min1 As Int) As String
+	Dim sat As Int=min1/60
+	Dim dag As Int=min1 Mod 60
+	
+	Return sat&":"&dag
+End Sub
 
 '' backup ----------------->>>
 
