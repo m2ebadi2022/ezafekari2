@@ -448,7 +448,7 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_intent1.g
  } 
        catch (Exception e6) {
 			processBA.setLastException(e6); //BA.debugLineNum = 66;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("132899083",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("233095691",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 68;BA.debugLine="ToastMessageShow(\"خطا در تماس\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در تماس"),anywheresoftware.b4a.keywords.Common.False);
  };

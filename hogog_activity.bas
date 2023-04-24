@@ -259,23 +259,24 @@ Sub fix_date2_decreceOne
 	Dim m_date2 As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(5,7))
 	Dim d_date2 As Int =myfunc.fa2en(lbl_date_to.Text.SubString2(8,10))
 	
-	If(d_date2-1=0)Then
-		
-		
-		If(m_date2-1=0)Then
-			d_date2=29
-			m_date2=12
-			y_date2=y_date2-1
-		Else
-			d_date2=count_mah(m_date2-1)
-			m_date2=m_date2-1
-		End If
-		
-		
-	Else
-		d_date2=d_date2-1
-		
-	End If
+
+'	If(d_date2-1=0)Then
+'		
+'		
+'		If(m_date2-1=0)Then
+'			d_date2=29
+'			m_date2=12
+'			y_date2=y_date2-1
+'		Else
+'			d_date2=count_mah(m_date2-1)
+'			m_date2=m_date2-1
+'		End If
+'		
+'		
+'	Else
+'		d_date2=d_date2-1
+'		
+'	End If
 	
 	date2_fixed=y_date2&"/"&myfunc.convert_adad(m_date2)&"/"&myfunc.convert_adad(d_date2)
 	'''----------------------------------
