@@ -339,7 +339,7 @@ Sub get_data_hogogi
 	
 End Sub
 Sub show_num_pool (num As Int) As String
-	Return NumberFormat(num,0,2)
+	Return NumberFormat(num,0,0)
 End Sub
 
 
@@ -567,21 +567,23 @@ End Sub
 
 
 Sub calc_vahed_ezafekari
-	Dim a1,a2,a3 As Int
-	a1=et_paye.Tag
-	a2=et_sanavat.Tag
-	a3=et_rozeKari.Text
-	'payeh
-	paye_end=(a1/30)*a3
-	
-	'sanavat
-	sanavat_end=(a2/30)*a3
+	Try
+		Dim a1,a2,a3 As Int
+		a1=et_paye.Tag
+		a2=et_sanavat.Tag
+		a3=et_rozeKari.Text
+		'payeh
+		paye_end=(a1/30)*a3
+		
+		'sanavat
+		sanavat_end=(a2/30)*a3
 
-	'' ezafekari ady
-	vahed_ezafekari=((a1+a2)/220)*1.4
-	et_vahed_ezafekari.Text=myfunc.show_num_pool(vahed_ezafekari)
-	et_vahed_ezafekari.Tag=vahed_ezafekari
-	
+		'' ezafekari ady
+		vahed_ezafekari=((a1+a2)/220)*1.4
+		et_vahed_ezafekari.Text=myfunc.show_num_pool(vahed_ezafekari)
+		et_vahed_ezafekari.Tag=vahed_ezafekari
+	Catch
+	End Try	
 	
 End Sub
 

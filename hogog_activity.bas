@@ -340,7 +340,7 @@ Sub time_page_load_Tick
 End Sub
 
 Sub show_num_pool (num As Int) As String
-	Return NumberFormat(num,0,2)
+	Return NumberFormat(num,0,0)
 End Sub
 Sub et_time_inDB
 

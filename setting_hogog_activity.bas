@@ -139,6 +139,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	et_olad.Tag=dbCode.res.GetString("value")
 	et_olad.Text=myfunc.show_num_pool(dbCode.res.GetString("value"))
 	
+	
+	
 	dbCode.res.Position=4 ''--------fani------
 	et_fani.Tag=dbCode.res.GetString("value")
 	et_fani.Text=myfunc.show_num_pool(dbCode.res.GetString("value"))

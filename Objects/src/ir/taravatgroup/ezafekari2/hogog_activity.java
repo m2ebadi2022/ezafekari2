@@ -2431,8 +2431,8 @@ return "";
 }
 public static String  _show_num_pool(int _num) throws Exception{
  //BA.debugLineNum = 336;BA.debugLine="Sub show_num_pool (num As Int) As String";
- //BA.debugLineNum = 337;BA.debugLine="Return NumberFormat(num,0,2)";
-if (true) return anywheresoftware.b4a.keywords.Common.NumberFormat(_num,(int) (0),(int) (2));
+ //BA.debugLineNum = 337;BA.debugLine="Return NumberFormat(num,0,0)";
+if (true) return anywheresoftware.b4a.keywords.Common.NumberFormat(_num,(int) (0),(int) (0));
  //BA.debugLineNum = 338;BA.debugLine="End Sub";
 return "";
 }

@@ -369,6 +369,7 @@ Sub Process_Globals
 	
 	Dim tim_lock_lbl As Timer
 	Dim tim_msg_newYear As Timer
+	Dim tim_check_update As Timer
 	
 	Dim current_gozaresh_id As Int
 	Dim persianDate As ManamPersianDate
@@ -403,6 +404,7 @@ Sub Process_Globals
 	Dim msg_page_show As Int =0
 	
 	Dim current_idvam As String=""
+	dim is_first_time as Boolean=False
 End Sub
 
 Sub Globals
@@ -676,9 +678,12 @@ Sub Activity_Create(FirstTime As Boolean)
 		timer1.Initialize("timer1" , 1500)
 		
 		timer1.Enabled=True
-		Else
+		is_first_time=True
+	Else
 		Activity.LoadLayout("main_layout")
 		btn_menu_home_Click
+		is_first_time=False
+		
 	End If
 
 	''  for date picker
@@ -723,6 +728,7 @@ Sub Activity_Create(FirstTime As Boolean)
 		Else
 			http_initial_1(1)
 		End If
+	
 	End If
 	
 	''----------- msg new year
@@ -751,12 +757,15 @@ Sub Activity_Create(FirstTime As Boolean)
 	End If
 	
 	
-	If(FirstTime=True)Then
-		chk_update_auto
-		Log("now cheking ....")
-	End If
+
+	tim_check_update.Initialize("tim_check_update",9000)
+	tim_check_update.Enabled=True
 	
-	
+End Sub
+Sub tim_check_update_Tick
+	chk_update_auto
+	Log("now cheking ....")
+	tim_check_update.Enabled=False
 End Sub
 '
 Sub tim_msg_newYear_Tick
@@ -782,7 +791,7 @@ Sub http_initial_1(type1 As Int)
 	Dim send As String
 	send = "username=mahdi&password=1234&div_id="&phon.GetSettings("android_id")&"&sdk_ver="&phon.SdkVersion&"&oprator="&phon.GetNetworkOperatorName&"&type_app="&type1&"&div_model="&phon.Model&"&last_notif="&last_notif&"&var=0&is_now_instal="&is_now_instal&"&version_code="&Application.VersionCode
 	ht.PostString("https://taravatgroup.ir/ezafekari2.php",send)
-	
+	Log("ht sended")
 	
 End Sub
  
@@ -847,6 +856,8 @@ Sub Jobdone (job As HttpJob)
 						File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
 					
 					
+						
+					
 					Else If (job.GetString.Contains("new_msg"))Then  ''-------new_msg
 					
 					is_new_msg=True
@@ -863,6 +874,8 @@ Sub Jobdone (job As HttpJob)
 				
 				End If
 			
+				
+
 			
 			End If
 		
@@ -1404,13 +1417,15 @@ Private Sub btn_menu_home_Click
 	
 	myfunc.set_font(Activity)
 	
-	If(is_new_msg=True)Then
+	
+	If(is_new_msg=True And is_first_time=True)Then
 		Dim result As Int
 		result = Msgbox2("آیا الان مشاهده میکنید؟", "پیام جدید", "بله", "بعدا", "", LoadBitmap(File.DirAssets,"notif.png"))
 		If result = DialogResponse.Positive Then
 			lbl_account_Click
 			msg_page_show=1						
 		End If
+		is_first_time=False
 	End If
 	
 	
@@ -1590,8 +1605,11 @@ ls_ezafe.Initialize
 		
 		lbl_day_CLV.Text=myfunc.get_day_name(dbCode.res.GetString("date_from"))
 		
-		lbl_date_CLV.Text=dbCode.res.GetString("date_from")&" - "&dbCode.res.GetString("date_to")
-		lbl_hour_CLV.Text=dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("time_to")
+		
+		lbl_date_CLV.Text="از : "&dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("date_from")
+		lbl_hour_CLV.Text="تا : "&dbCode.res.GetString("time_to")&" - "&dbCode.res.GetString("date_to")
+		
+		
 		lbl_time_CLV.Text=str1.ToString
 		lbl_tozih_CLV.Text=dbCode.res.GetString("tozihat")
 		lbl_remove_from_list.tag=dbCode.res.GetString("id")
@@ -1666,8 +1684,8 @@ ls_ezafe.Initialize
 		
 		lbl_day_CLV.Text=myfunc.get_day_name(dbCode.res.GetString("date_from"))
 		
-		lbl_date_CLV.Text=dbCode.res.GetString("date_from")&" - "&dbCode.res.GetString("date_to")
-		lbl_hour_CLV.Text=dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("time_to")
+		lbl_date_CLV.Text="از : "&dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("date_from")
+		lbl_hour_CLV.Text="تا : "&dbCode.res.GetString("time_to")&" - "&dbCode.res.GetString("date_to")
 		lbl_time_CLV.Text=str2.ToString
 		lbl_tozih_CLV.Text=dbCode.res.GetString("tozihat")
 		lbl_remove_from_list.tag=dbCode.res.GetString("id")
@@ -1747,8 +1765,8 @@ ls_ezafe.Initialize
 		
 		lbl_day_CLV.Text=myfunc.get_day_name(dbCode.res.GetString("date_from"))
 		
-		lbl_date_CLV.Text=dbCode.res.GetString("date_from")&" - "&dbCode.res.GetString("date_to")
-		lbl_hour_CLV.Text=" ورود : "&dbCode.res.GetString("time_from")&" -- "&" خروج : "&dbCode.res.GetString("time_to")
+		lbl_date_CLV.Text="ورود : "&dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("date_from")
+		lbl_hour_CLV.Text="خروج : "&dbCode.res.GetString("time_to")&" - "&dbCode.res.GetString("date_to")
 		'lbl_time_CLV.Text=str1.ToString
 		lbl_time_CLV.Typeface=Typeface.MATERIALICONS
 		lbl_time_CLV.Text=Chr(0xE8D5)
@@ -1791,8 +1809,11 @@ ls_ezafe.Initialize
 	cust_LV_mamoriat.Clear
 	list_mamoriat_id.Clear
 	
+	
 	dbCode.connect_db
 	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_mamoriat WHERE date_from LIKE '%"&year1&"/"&moon1&"%' ORDER BY  date_from DESC;")
+	
+	
 	Do While dbCode.res.NextRow
 		Dim str1 As StringBuilder
 		str1.Initialize
@@ -1829,8 +1850,8 @@ ls_ezafe.Initialize
 		
 		lbl_day_CLV.Text=myfunc.get_day_name(dbCode.res.GetString("date_from"))
 		
-		lbl_date_CLV.Text=dbCode.res.GetString("date_from")&" - "&dbCode.res.GetString("date_to")
-		lbl_hour_CLV.Text=dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("time_to")
+		lbl_date_CLV.Text="از : "&dbCode.res.GetString("time_from")&" - "&dbCode.res.GetString("date_from")
+		lbl_hour_CLV.Text="تا : "&dbCode.res.GetString("time_to")&" - "&dbCode.res.GetString("date_to")
 		lbl_time_CLV.Text=str1.ToString
 		lbl_tozih_CLV.Text=dbCode.res.GetString("tozihat")
 		lbl_remove_from_list.tag=dbCode.res.GetString("id")
@@ -1843,6 +1864,8 @@ ls_ezafe.Initialize
 	Loop
 	dbCode.res.Close
 	dbCode.sql.Close
+	
+	
 	
 	If(cust_LV_mamoriat.LastVisibleIndex<5)Then
 		p = xui.CreatePanel("p")
@@ -1972,6 +1995,9 @@ Private Sub pan_run_hogog_Click
 End Sub
 
 Private Sub pan_add_morakhasi_Click
+	lbl_finger_vorod.TextColor=0xFF3B78D5
+	lbl_finger_khoroj.TextColor=0xFF3B78D5
+	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
 	
@@ -2074,6 +2100,9 @@ Sub rsPOP_noe_MenuItemClick (ItemId As Int) As Boolean
 End Sub
 
 Private Sub pan_add_ezafekari_Click
+	lbl_finger_vorod.TextColor=0xFF3B78D5
+	lbl_finger_khoroj.TextColor=0xFF3B78D5
+	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
 	
@@ -2139,6 +2168,9 @@ Private Sub pan_add_ezafekari_Click
 End Sub
 
 Private Sub pan_add_taradod_Click
+	lbl_finger_vorod.TextColor=0xFF3B78D5
+	lbl_finger_khoroj.TextColor=0xFF3B78D5
+	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
 	
@@ -2197,6 +2229,17 @@ Private Sub pan_add_taradod_Click
 
 	''=====================
 	
+	If(lbl_date1.Text=persianDate.PersianShortDate)Then
+		lbl_finger_vorod.TextColor=Colors.Green
+	Else
+		lbl_finger_vorod.TextColor=0xFF3B78D5
+	End If
+	
+	If(lbl_date2.Text=persianDate.PersianShortDate)Then
+		lbl_finger_khoroj.TextColor=Colors.Green
+	Else
+		lbl_finger_khoroj.TextColor=0xFF3B78D5
+	End If
 	
 	time_show
 	
@@ -2207,6 +2250,9 @@ End Sub
 
 
 Private Sub pan_add_mamoriat_Click
+	lbl_finger_vorod.TextColor=0xFF3B78D5
+	lbl_finger_khoroj.TextColor=0xFF3B78D5
+	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
 	pan_all.Visible=True
@@ -2265,6 +2311,17 @@ Private Sub pan_add_mamoriat_Click
 	End If
 
 	''=====================
+	If(lbl_date1.Text=persianDate.PersianShortDate)Then
+		lbl_finger_vorod.TextColor=Colors.Green
+	Else
+		lbl_finger_vorod.TextColor=0xFF3B78D5
+	End If
+	
+	If(lbl_date2.Text=persianDate.PersianShortDate)Then
+		lbl_finger_khoroj.TextColor=Colors.Green
+	Else
+		lbl_finger_khoroj.TextColor=0xFF3B78D5
+	End If
 	
 	time_show
 	
@@ -4097,8 +4154,11 @@ Private Sub lbl_finger_vorod_Click
 			File.WriteList(File.DirInternal,"temp_from_morakhasi.txt",ls_vorod)
 		Case 3
 			File.WriteList(File.DirInternal,"temp_vorod_taradod.txt",ls_vorod)
+			lbl_finger_vorod.TextColor=Colors.Green
+					
 		Case 5
 			File.WriteList(File.DirInternal,"temp_from_mamoriat.txt",ls_vorod)
+			lbl_finger_vorod.TextColor=Colors.Green
 	End Select
 	
 	
@@ -4125,8 +4185,10 @@ Private Sub lbl_finger_khoroj_Click
 			File.WriteList(File.DirInternal,"temp_to_morakhasi.txt",ls_khoroj)
 		Case 3
 			File.WriteList(File.DirInternal,"temp_khoroj_taradod.txt",ls_khoroj)
+			lbl_finger_khoroj.TextColor=Colors.Green
 		Case 5
 			File.WriteList(File.DirInternal,"temp_to_mamoriat.txt",ls_khoroj)
+			lbl_finger_khoroj.TextColor=Colors.Green
 	End Select
 	
 	ToastMessageShow("ثبت زمان 2",False)

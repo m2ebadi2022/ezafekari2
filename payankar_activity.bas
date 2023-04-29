@@ -124,7 +124,7 @@ End Sub
 
 
 Sub show_num_pool (num As Int) As String
-	Return NumberFormat(num,0,2)
+	Return NumberFormat(num,0,0)
 End Sub
 Sub change_formater (Old As String, New As String, et_name As EditText)
 	Dim D As Double				'این متغیر رو برای این ایجاد میکنیم که عدد رو برای محاسبه درونش قرار بدیم
