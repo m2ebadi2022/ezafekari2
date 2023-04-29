@@ -131,6 +131,20 @@ Sub install_db_tbl_taradod
 '	
 End Sub
 
+Sub install_db_tb_savabeg
+connect_db
+	
+	Try
+		res= sql.ExecQuery("SELECT * FROM tb_savabeg")
+		Log( "tbl savabeg exist")
+	Catch
+		
+		sql.ExecNonQuery("CREATE TABLE 'tb_savabeg' ('id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'title'	TEXT, 'date'	TEXT, 'matn'	TEXT,'state'	INTEGER DEFAULT 0);")
+		
+		Log ( "tbl savabeg created")
+	End Try
+End Sub
+
 Sub install_db_tbl_myCalander
 	connect_db
 	Try
@@ -369,6 +383,9 @@ End Sub
 '=======vam ======================
 
 
+
+
+
 'bazpardakht' TEXT,'harghest' TEXT,
 
 Sub add_vam(idvam As String, onvan As String,mablag As String,  count As String, rate As String, doreh As String, date As String, bazpardakht As String, harghest As String, tozihat As String , state As Int) As Boolean
@@ -386,6 +403,21 @@ Sub add_gest(idvam As String, date As String, mablag As String, tozihat As Strin
 	sql.Close
 	Return True
 End Sub
+
+
+'' ad savabeg
+
+
+Sub add_savabeg(title As String, date As String, matn As String , state As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("INSERT INTO tb_savabeg (title, date, matn, state) VALUES (?,?,?,?)", Array As Object(title,date,matn,state))
+	sql.Close
+	Return True
+End Sub
+
+
+
+
 
 ''=======  edit ==================================
 
@@ -559,6 +591,13 @@ Sub delete_ghestha(idvam As String) As Boolean
 	Return True
 End Sub
 
+
+Sub delete_savabeg(id As Int) As Boolean
+	connect_db
+	sql.ExecNonQuery2("DELETE FROM tb_savabeg WHERE id= ?", Array As Object(id))
+	sql.Close
+	Return True
+End Sub
 
 
 Sub add_setting_hogog (data As List) As Boolean
@@ -1425,6 +1464,7 @@ End Sub
 
 Sub check_old_adds 
 	
+	install_db_tb_savabeg
 	init_notfound("old_adds",0)
 	
 	Dim res_val As Int = get_setting_byName("old_adds")

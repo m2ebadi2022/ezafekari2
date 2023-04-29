@@ -80,6 +80,9 @@ Sub Globals
 	Dim imm2 As BitmapDrawable
 	
 	Private wb_show_result As WebView
+	Dim str_show As StringBuilder
+	Private pan_all_savabeg As Panel
+	Private et_title_savabeg As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -178,15 +181,15 @@ Private Sub btn_run_Click
 		
 		mohasebe
 		
-		Dim str_show As StringBuilder
+		
 		str_show.Initialize
 		
-		str_show.Append("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body>")
+		str_show.Append("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body>   ")
 		
-		str_show.Append("<h5 align='center'>واحد : تومان <br>")
-		str_show.Append("تعداد روز کاری : "&myfunc.en2fa(et_rozeKari.Text)&"</h5>")
+		str_show.Append("<h6 align='center'>واحد : تومان <br>")
+		str_show.Append("تعداد روز کاری : "&myfunc.en2fa(et_rozeKari.Text)&"</h6>")
 		
-		str_show.Append("<div style=' border: 2px solid gray;  padding: 10px; border-radius: 20px;'>")
+		str_show.Append("<div style=' border: 2px solid  #99a3a4 ;  padding: 10px; border-radius: 20px;'>")
 		str_show.Append(" پایه حقوق : "&myfunc.en2fa(show_num_pool(paye_end))).Append("<br>")
 		str_show.Append(" حق سنوات : "&myfunc.en2fa(show_num_pool(sanavat_end))).Append("<br>")
 		str_show.Append(" حق اولاد : "&myfunc.en2fa(show_num_pool(olad_end))).Append("<br>")
@@ -194,13 +197,22 @@ Private Sub btn_run_Click
 		str_show.Append(" کسورات : "&myfunc.en2fa(show_num_pool(ksorat_end))).Append("<br>")
 		str_show.Append("</div>").Append("<br>")
 		
-		str_show.Append("<div style=' border: 2px solid red;  padding: 10px; border-radius: 20px;'>")
+		str_show.Append("<div style=' border: 2px solid #5dade2 ;  padding: 10px; border-radius: 20px;'>")
+		str_show.Append(" ساعات اضافه کاری = "& myfunc.en2fa(et_time_m.Text)&" : "&myfunc.en2fa(et_time_h.Text) ).Append("<br>")
+		str_show.Append("  واحد اضافه کاری : "&myfunc.en2fa(show_num_pool(vahed_ezafekari))).Append("<br>")
+		str_show.Append("  مجموع اضافه کاری : "&myfunc.en2fa(show_num_pool(ezafekari_end))).Append("<br>")
+		str_show.Append("</div>").Append("<br>")
+		
+		
+		
+		
+		str_show.Append("<div style=' border: 2px solid  #ec7063 ;  padding: 10px; border-radius: 20px;'>")
 		str_show.Append(" بیمه تامین اجتماعی : "&myfunc.en2fa(show_num_pool(bime_tamin_end))).Append("<br>")
 		str_show.Append(" مالیات : "&myfunc.en2fa(show_num_pool(maliat_end))).Append("<br>")
 		str_show.Append(" جمع کسورات : "&myfunc.en2fa(show_num_pool(jame_kosorat))).Append("<br>")
 		str_show.Append("</div>").Append("<br>")
 		
-		str_show.Append("<div style=' border: 3px solid green;  padding: 10px; border-radius: 20px;'>")
+		str_show.Append("<div style=' border: 3px solid  #58d68d ;  padding: 10px; border-radius: 20px;'>")
 		str_show.Append(" ناخالص حقوق : "&myfunc.en2fa(show_num_pool(hogog_nakhales))).Append("<br>")
 		str_show.Append(" خالص دریافتی : <mark> "&myfunc.en2fa(show_num_pool(hogog_khales))&"</mark>")
 		str_show.Append("</div>")
@@ -209,6 +221,7 @@ Private Sub btn_run_Click
 		
 		
 		wb_show_result.LoadHtml(str_show.ToString)
+		
 		
 		
 		
@@ -659,4 +672,40 @@ End Sub
 
 Private Sub lbl_help_1_Click
 	myfunc.help_man("راهنما","اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1402 می باشد. ")
+End Sub
+
+Private Sub lbl_save_result_Click
+	et_title_savabeg.Text=""
+	pan_all_savabeg.Visible=True
+	
+End Sub
+
+Private Sub lbl_savabeg_Click
+	StartActivity(savabeg_activity)
+End Sub
+
+Private Sub pan_all_savabeg_Click
+	pan_all_savabeg.Visible=False
+End Sub
+
+Private Sub btn_save_db_Click
+	
+	If(et_title_savabeg.Text<>"")Then
+		
+		str_show.Insert(120,"<h5 align='center'>عنوان : "&et_title_savabeg.Text &" </h5>")
+		
+		If(dbCode.add_savabeg(et_title_savabeg.Text,myfunc.fa2en( Main.persianDate.PersianShortDate),str_show,0))Then
+			ToastMessageShow("در سوابق ذخیره شد",False)
+		End If
+		pan_all_savabeg.Visible=False
+		pan_all.Visible=False
+	Else
+		ToastMessageShow("عنوان خالی است!",False)
+	End If
+	
+	
+End Sub
+
+Private Sub Panel1_Click
+	
 End Sub
