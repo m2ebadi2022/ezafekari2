@@ -595,8 +595,10 @@ Sub get_setting_byName (name1 As String) As String
 	res.Position=0 ''--------saat  kari dar roz ------
 	
 	
+		Return res.GetString("value")
 	
-	Return res.GetString("value")
+	
+	
 End Sub
 
 Sub update_setting_byname(name As String , val As String)
@@ -1421,7 +1423,52 @@ End Sub
 
 
 
-
+Sub check_old_adds 
+	
+	init_notfound("old_adds",0)
+	
+	Dim res_val As Int = get_setting_byName("old_adds")
+	If (res_val=0)Then
+		
+		init_notfound("ksorat",0)
+		init_notfound("morakhasi_mande_d",0)
+		init_notfound("morakhasi_mande_h",0)
+		init_notfound("morakhasi_mande_m",0)
+		'-------
+		init_notfound("morakhasi_darMah_d",2)
+		init_notfound("morakhasi_darMah_h",4)
+		init_notfound("morakhasi_darMah_m",0)
+		'----------
+		init_notfound("saat_kar_darRoz",480)
+		
+		'======== ver 21 db add
+		init_notfound("tog_maliat",1)
+		init_notfound("tog_bime",1)
+		init_notfound("tog_food",1)
+		init_notfound("tog_vam",1)
+		init_notfound("tog_ayab",1)
+		init_notfound("tog_padash",1)
+		init_notfound("tog_mosaede",1)
+		init_notfound("tog_sayer",1)
+		
+		init_notfound("refind_time_m",0)
+		
+		'===========================
+		
+		install_db_tbl_taradod
+		install_db_tbl_myCalander
+		install_db_tbl_onvanha
+		refind_time_to_m
+	
+		cheng_tagvim
+		
+		
+		update_setting_byname("old_adds",1)
+		
+	End If
+	
+	
+End Sub
 
 
 

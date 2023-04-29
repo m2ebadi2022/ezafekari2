@@ -558,10 +558,21 @@ Private Sub lbl_run_mohasebe_Click
 			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("date_to"))).Append("</td>")
 			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
 			
-			str1.Append("<td>")
-			str1.Append(myfunc.en2fa((dbCode.res.GetString("end_tim_h")+(dbCode.res.GetString("end_tim_d")*24))))
-			str1.Append(":")
-			str1.Append(myfunc.en2fa(dbCode.res.GetString("end_tim_m"))).Append("</td>")
+				str1.Append("<td>")
+				
+				Dim ls_ezafe As List
+				ls_ezafe.Initialize
+
+				ls_ezafe=myfunc.Min_to_saatMinRoz2_dontDay(dbCode.res.GetString("end_tim_m"))
+		
+	
+				str1.Append(ls_ezafe.Get(0))
+				str1.Append(":")
+				str1.Append(ls_ezafe.Get(1)).Append("</td>")
+			
+		
+			
+			str1.Append("</td>")
 			
 			str1.Append("</tr>")
 		Loop
@@ -592,9 +603,23 @@ Private Sub lbl_run_mohasebe_Click
 			str1.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
 			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("date_to"))).Append("</td>")
 			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
-			str1.Append("<td>").Append((myfunc.en2fa(dbCode.res.GetString("end_tim_d")))).Append("</td>")
-			str1.Append("<td>").Append((myfunc.en2fa(dbCode.res.GetString("end_tim_h")))&":"&myfunc.en2fa(dbCode.res.GetString("end_tim_m"))).Append("</td>")
 			
+			
+			
+			Dim ls_ezafe As List
+			ls_ezafe.Initialize
+
+				ls_ezafe=myfunc.Min_to_saatMinRoz(dbCode.res.GetString("end_tim_m"))
+				str1.Append("<td>").Append(ls_ezafe.Get(2)).Append("</td>")
+		
+				str1.Append("<td>")
+
+			str1.Append(ls_ezafe.Get(0))
+			str1.Append(":")
+			str1.Append(ls_ezafe.Get(1)).Append("</td>")
+		
+
+		
 			str1.Append("</tr>")
 			
 			

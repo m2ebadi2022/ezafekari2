@@ -20,8 +20,6 @@ views.get("pan_imag").vw.setTop((int)((100d / 100 * height) - (views.get("pan_im
 views.get("btn_menu_gozaresh").vw.setHeight((int)((views.get("pan_imag").vw.getHeight())));
 views.get("btn_menu_home").vw.setHeight((int)((views.get("pan_imag").vw.getHeight())));
 views.get("btn_menu_list").vw.setHeight((int)((views.get("pan_imag").vw.getHeight())));
-views.get("panel6").vw.setLeft((int)((50d / 100 * width) - (views.get("panel6").vw.getWidth() / 2)));
-views.get("panel6").vw.setTop((int)((40d / 100 * height) - (views.get("panel6").vw.getHeight() / 2)));
 views.get("panel4").vw.setLeft((int)((50d / 100 * width) - (views.get("panel4").vw.getWidth() / 2)));
 views.get("panel4").vw.setTop((int)((40d / 100 * height) - (views.get("panel4").vw.getHeight() / 2)));
 views.get("pan_picker").vw.setTop((int)((40d / 100 * height) - (views.get("pan_picker").vw.getHeight() / 2)));
@@ -51,43 +49,42 @@ views.get("pik_day_paeen1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_day_paeen1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
 views.get("pik_pan_hour1").vw.setLeft((int)((65d / 100 * width)));
 views.get("pik_pan_hour1").vw.setWidth((int)((80d / 100 * width) - ((65d / 100 * width))));
-//BA.debugLineNum = 46;BA.debugLine="pik_hour_bala1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
 views.get("pik_hour_bala1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_hour_bala1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
-//BA.debugLineNum = 47;BA.debugLine="pik_hour1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
+//BA.debugLineNum = 42;BA.debugLine="pik_hour1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
 views.get("pik_hour1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_hour1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
-//BA.debugLineNum = 48;BA.debugLine="pik_hour_paeen1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
+//BA.debugLineNum = 43;BA.debugLine="pik_hour_paeen1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
 views.get("pik_hour_paeen1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_hour_paeen1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
-//BA.debugLineNum = 52;BA.debugLine="pik_pan_min1.SetLeftAndRight(80%x,95%x)"[main_layout/General script]
+//BA.debugLineNum = 47;BA.debugLine="pik_pan_min1.SetLeftAndRight(80%x,95%x)"[main_layout/General script]
 views.get("pik_pan_min1").vw.setLeft((int)((80d / 100 * width)));
 views.get("pik_pan_min1").vw.setWidth((int)((95d / 100 * width) - ((80d / 100 * width))));
-//BA.debugLineNum = 53;BA.debugLine="pik_min_bala1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
+//BA.debugLineNum = 48;BA.debugLine="pik_min_bala1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
 views.get("pik_min_bala1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_min_bala1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
-//BA.debugLineNum = 54;BA.debugLine="pik_min1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
+//BA.debugLineNum = 49;BA.debugLine="pik_min1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
 views.get("pik_min1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_min1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
-//BA.debugLineNum = 55;BA.debugLine="pik_min_paeen1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
+//BA.debugLineNum = 50;BA.debugLine="pik_min_paeen1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
 views.get("pik_min_paeen1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_min_paeen1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
-//BA.debugLineNum = 60;BA.debugLine="ImageView1.SetLeftAndRight(10%x,90%x)"[main_layout/General script]
+//BA.debugLineNum = 55;BA.debugLine="ImageView1.SetLeftAndRight(10%x,90%x)"[main_layout/General script]
 views.get("imageview1").vw.setLeft((int)((10d / 100 * width)));
 views.get("imageview1").vw.setWidth((int)((90d / 100 * width) - ((10d / 100 * width))));
-//BA.debugLineNum = 61;BA.debugLine="ImageView1.Height=ImageView1.Width*1.5"[main_layout/General script]
+//BA.debugLineNum = 56;BA.debugLine="ImageView1.Height=ImageView1.Width*1.5"[main_layout/General script]
 views.get("imageview1").vw.setHeight((int)((views.get("imageview1").vw.getWidth())*1.5d));
-//BA.debugLineNum = 62;BA.debugLine="ImageView1.VerticalCenter=50%y"[main_layout/General script]
+//BA.debugLineNum = 57;BA.debugLine="ImageView1.VerticalCenter=50%y"[main_layout/General script]
 views.get("imageview1").vw.setTop((int)((50d / 100 * height) - (views.get("imageview1").vw.getHeight() / 2)));
-//BA.debugLineNum = 65;BA.debugLine="pan_lock_c.HorizontalCenter=50%x"[main_layout/General script]
+//BA.debugLineNum = 60;BA.debugLine="pan_lock_c.HorizontalCenter=50%x"[main_layout/General script]
 views.get("pan_lock_c").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_lock_c").vw.getWidth() / 2)));
-//BA.debugLineNum = 66;BA.debugLine="pan_lock_c.VerticalCenter=43%y"[main_layout/General script]
+//BA.debugLineNum = 61;BA.debugLine="pan_lock_c.VerticalCenter=43%y"[main_layout/General script]
 views.get("pan_lock_c").vw.setTop((int)((43d / 100 * height) - (views.get("pan_lock_c").vw.getHeight() / 2)));
-//BA.debugLineNum = 68;BA.debugLine="lbl_finger.HorizontalCenter=50%x"[main_layout/General script]
+//BA.debugLineNum = 63;BA.debugLine="lbl_finger.HorizontalCenter=50%x"[main_layout/General script]
 views.get("lbl_finger").vw.setLeft((int)((50d / 100 * width) - (views.get("lbl_finger").vw.getWidth() / 2)));
-//BA.debugLineNum = 71;BA.debugLine="Panel10.HorizontalCenter=50%x"[main_layout/General script]
+//BA.debugLineNum = 66;BA.debugLine="Panel10.HorizontalCenter=50%x"[main_layout/General script]
 views.get("panel10").vw.setLeft((int)((50d / 100 * width) - (views.get("panel10").vw.getWidth() / 2)));
-//BA.debugLineNum = 72;BA.debugLine="Panel10.VerticalCenter=45%y"[main_layout/General script]
+//BA.debugLineNum = 67;BA.debugLine="Panel10.VerticalCenter=45%y"[main_layout/General script]
 views.get("panel10").vw.setTop((int)((45d / 100 * height) - (views.get("panel10").vw.getHeight() / 2)));
 
 }
