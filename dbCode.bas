@@ -987,10 +987,15 @@ Sub all_mosaedeh_byDate(date_from As String, date_to As String) As Int
 End Sub
 
 
-Sub all_food_mah(year As String , moon As String) As Int
+Sub all_food_mah(year As String , moon As String, state As Int) As Int
 	Dim mablag_kol As Int=0
 	connect_db
-	res= sql.ExecQuery("SELECT * FROM tb_food WHERE date LIKE '%"&year&"/"&moon&"%';")
+	If(state=2)Then
+		res= sql.ExecQuery("SELECT * FROM tb_food WHERE date LIKE '%"&year&"/"&moon&"%' AND (state="&state&" OR state=0)")
+	Else
+		res= sql.ExecQuery("SELECT * FROM tb_food WHERE date LIKE '%"&year&"/"&moon&"%' AND state="&state)
+	End If
+	
 	Do While res.NextRow	
 		mablag_kol=mablag_kol+res.GetString("mablagh")	
 	Loop
@@ -1000,12 +1005,18 @@ Sub all_food_mah(year As String , moon As String) As Int
 	Return mablag_kol
 End Sub
 
-Sub all_food_byDate(date_from As String, date_to As String) As Int
+Sub all_food_byDate(date_from As String, date_to As String,state As Int) As Int
 	Dim mablag_kol As Int=0
 	connect_db
 
+	If(state=2)Then
+		res= sql.ExecQuery("SELECT * FROM tb_food WHERE (state="&state&" OR state=0) AND date BETWEEN '"&date_from&"' AND '"&date_to&"';")
+	Else
+		res= sql.ExecQuery("SELECT * FROM tb_food WHERE state="&state&" AND date BETWEEN '"&date_from&"' AND '"&date_to&"';")
+	End If
 
-	res= sql.ExecQuery("SELECT * FROM tb_food WHERE date BETWEEN '"&date_from&"' AND '"&date_to&"';")
+	
+	
 	Do While res.NextRow	
 		mablag_kol=mablag_kol+res.GetString("mablagh")	
 	Loop
@@ -1467,6 +1478,7 @@ Sub check_old_adds
 	install_db_tb_savabeg
 	init_notfound("old_adds",0)
 	
+	
 	Dim res_val As Int = get_setting_byName("old_adds")
 	If (res_val=0)Then
 		
@@ -1508,8 +1520,15 @@ Sub check_old_adds
 	End If
 	
 	
+	
 End Sub
 
+Sub check_new_add
+	init_notfound("setting_show_date",0)
+	
+	
+	
+End Sub
 
 
 

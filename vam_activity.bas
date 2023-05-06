@@ -408,7 +408,7 @@ Private Sub lbl_save_Click
 	else If(et_mablagh_vam.Text="" Or et_mablagh_vam.Text=0)Then
 		ToastMessageShow("مبلغ وام را وارد کنید",False)
 	
-	else If(et_nerkh_vam.Text="" Or et_nerkh_vam.Text=0)Then
+	else If(et_nerkh_vam.Text="" )Then
 		ToastMessageShow("نرخ وام را وارد کنید",False)
 	
 	else If(et_tedad_gest.Text="" Or et_tedad_gest.Text=0)Then
@@ -450,6 +450,20 @@ End Sub
 Sub mohasebe
 	If(et_mablagh_vam.Text="" Or et_nerkh_vam.Text="" Or et_tedad_gest.Text="")Then
 		
+	Else If (et_mablagh_vam.Text<>"" And et_nerkh_vam.Text=0 And et_tedad_gest.Text<>"") Then
+		
+		
+		
+		lbl_harGest.Tag=Round(et_mablagh_vam.Tag/et_tedad_gest.Text)
+		lbl_kol_bazPardakht.Tag=Round(et_mablagh_vam.Tag)
+		
+		lbl_harGest.Text=myfunc.show_num_pool(lbl_harGest.Tag)&" تومان "
+		lbl_kol_bazPardakht.Text=myfunc.show_num_pool(lbl_kol_bazPardakht.Tag)&" تومان "
+		
+		
+		
+		
+		
 	Else
 				
 		Dim eb1 As Double=Power( (1+(et_nerkh_vam.Text/1200)),et_tedad_gest.Text)
@@ -464,8 +478,10 @@ Sub mohasebe
 		lbl_harGest.Tag=Round(gest)
 		lbl_kol_bazPardakht.Tag=Round(et_mablagh_vam.Tag+sod)
 		
-		lbl_harGest.Text=myfunc.show_num_pool(Round(gest))&" تومان "
-		lbl_kol_bazPardakht.Text=myfunc.show_num_pool(Round(et_mablagh_vam.Tag+sod))&" تومان "
+		lbl_harGest.Text=myfunc.show_num_pool(lbl_harGest.Tag)&" تومان "
+		lbl_kol_bazPardakht.Text=myfunc.show_num_pool(lbl_kol_bazPardakht.Tag)&" تومان "
+		
+
 		
 	End If
 	

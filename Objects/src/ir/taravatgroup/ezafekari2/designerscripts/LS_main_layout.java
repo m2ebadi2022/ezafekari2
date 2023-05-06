@@ -86,6 +86,8 @@ views.get("lbl_finger").vw.setLeft((int)((50d / 100 * width) - (views.get("lbl_f
 views.get("panel10").vw.setLeft((int)((50d / 100 * width) - (views.get("panel10").vw.getWidth() / 2)));
 //BA.debugLineNum = 67;BA.debugLine="Panel10.VerticalCenter=45%y"[main_layout/General script]
 views.get("panel10").vw.setTop((int)((45d / 100 * height) - (views.get("panel10").vw.getHeight() / 2)));
+//BA.debugLineNum = 70;BA.debugLine="Panel6.HorizontalCenter=50%x"[main_layout/General script]
+views.get("panel6").vw.setLeft((int)((50d / 100 * width) - (views.get("panel6").vw.getWidth() / 2)));
 
 }
 }

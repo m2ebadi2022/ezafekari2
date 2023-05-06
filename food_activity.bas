@@ -94,6 +94,17 @@ Sub Activity_Create(FirstTime As Boolean)
 	sp_type_state.Add("کم شدن از دریافتی ها")
 
 
+	If(File.Exists(File.DirInternal,"temp_state_sabt2_0.txt"))Then  ' default selected user
+		If((File.ReadString(File.DirInternal,"temp_state_sabt2_0.txt"))="0") Then
+			sp_type_state.SelectedIndex=0
+		Else
+			sp_type_state.SelectedIndex=1
+		End If
+		
+	Else
+		sp_type_state.SelectedIndex=1
+	End If
+
 End Sub
 
 Sub Activity_Resume
@@ -135,8 +146,14 @@ Sub fill_list_food(year As String , moon As String)
 		
 		lbl_tozih.Text=dbCode.res.GetString("tozihat")
 		
-		lbl_icon.Text=Chr(0xF274)  'def
-		lbl_icon.Color=0xFF00A3FF
+		If(dbCode.res.GetString("state")) =1 Then
+			lbl_icon.Text=Chr(0xF271)  'plus
+			lbl_icon.Color=Colors.Green
+		Else
+			lbl_icon.Text=Chr(0xF272)  'minus
+			lbl_icon.Color=Colors.Red
+		End If
+		
 		
 		lbl_remove_from_list.tag=dbCode.res.GetString("id")
 		lbl_edit_from_list.tag=dbCode.res.GetString("id")
@@ -219,8 +236,8 @@ Private Sub lbl_edit_from_list_Click
 	addEdit_id=1
 	dbCode.connect_db
 	
-	sp_type_state.Visible=False
-	lbl_sp_type.Visible=False
+'	sp_type_state.Visible=False
+'	lbl_sp_type.Visible=False
 	
 	index_current_pan=3
 	current_itemId_edit=b.Tag
@@ -237,6 +254,16 @@ End Sub
 Sub item_edit_box_mod(title As String,onvan As String, date As String, mablage As String, tozih As String, state As Int)
 	
 	
+	If(addEdit_id=1)Then
+		If(state=1)Then
+			sp_type_state.SelectedIndex=0
+		Else
+			sp_type_state.SelectedIndex=1
+		End If
+		
+	End If
+	
+	
 	lbl_title_edit1.Text=title
 	et_onvan_edit1.Text=onvan
 	lbl_date_edit1.Text=myfunc.fa2en(date)
@@ -245,11 +272,11 @@ Sub item_edit_box_mod(title As String,onvan As String, date As String, mablage A
 	
 	et_tozih_edit1.Text=tozih
 	
-	If(state = 1) Then
-		sp_type_state.SelectedIndex=0
-	Else
-		sp_type_state.SelectedIndex=1
-	End If
+'	If(state = 1) Then
+'		sp_type_state.SelectedIndex=0
+'	Else
+'		sp_type_state.SelectedIndex=1
+'	End If
 	
 	pan_all_edit1.Visible=True
 	
@@ -287,11 +314,27 @@ Private Sub lbl_save_edit1_Click
 	Else
 		
 		If(addEdit_id=0)Then
-			dbCode.add_food(et_onvan_edit1.Text ,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+			
+			
+			If(sp_type_state.SelectedIndex=0)Then
+				dbCode.add_food(et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,1)
+			Else
+				dbCode.add_food(et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,2)
+			End If
+			ToastMessageShow("اضافه شد",False)
+			
 			
 		Else If(addEdit_id=1)Then
-			dbCode.edit_food(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,0)
+			
+			
+			If(sp_type_state.SelectedIndex=0)Then
+				dbCode.edit_food(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,1)
+			Else
+				dbCode.edit_food(current_itemId_edit,et_onvan_edit1.Text,lbl_date_edit1.Text,et_mablagh_edit1.Tag,et_tozih_edit1.Text,2)
+			End If
+			
 			ToastMessageShow("ویرایش شد",False)
+			
 		End If
 		
 			
@@ -299,6 +342,10 @@ Private Sub lbl_save_edit1_Click
 
 		fill_list_food(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
 		pan_all_edit1.Visible=False
+		
+		File.WriteString(File.DirInternal,"temp_state_sabt2_0.txt",sp_type_state.SelectedIndex )
+		
+		
 	End If
 End Sub
 

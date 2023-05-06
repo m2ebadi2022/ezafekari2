@@ -350,8 +350,8 @@ Version=12.2
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 25
-	#VersionName: 5.4
+	#VersionCode: 26
+	#VersionName: 5.5
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true
@@ -646,6 +646,10 @@ Sub Globals
 	Private lbl_finger_vorod As Label
 	
 	Dim user_request_update As Boolean=False
+	Private lbl_setting_date As Label
+	Private pan_all_setting_date As Panel
+	Private ckb_setting_date_finger As CheckBox
+	Private ckb_setting_date_date As CheckBox
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -660,6 +664,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	If(FirstTime=True)Then
 		dbCode.check_old_adds
+		dbCode.check_new_add
 	End If
 	
 	
@@ -2044,32 +2049,50 @@ Private Sub pan_add_morakhasi_Click
 	
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
+	lbl_setting_date.Visible=True
 	
 	
-	''------------finger-------
-	If(File.Exists(File.DirInternal,"temp_from_morakhasi.txt")=True)Then
-		Dim ls_vorod As List
-		ls_vorod.Initialize
-		ls_vorod=File.ReadList(File.DirInternal,"temp_from_morakhasi.txt")
-		lbl_date1.Text=ls_vorod.Get(0)
-		lbl_tim1.Text=ls_vorod.Get(1)
-	Else
-		lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
-		lbl_tim1.Text="00:00"
-	End If
+	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
-	
-	If(File.Exists(File.DirInternal,"temp_to_morakhasi.txt")=True)Then
-		Dim ls_khoroj As List
-		ls_khoroj.Initialize
-		ls_khoroj=File.ReadList(File.DirInternal,"temp_to_morakhasi.txt")
-		lbl_date2.Text=ls_khoroj.Get(0)
-		lbl_tim2.Text=ls_khoroj.Get(1)
-	Else
-		lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
-		lbl_tim2.Text="00:00"
-	End If
+		''------------finger-------
+		If(File.Exists(File.DirInternal,"temp_from_morakhasi.txt")=True)Then
+			Dim ls_vorod As List
+			ls_vorod.Initialize
+			ls_vorod=File.ReadList(File.DirInternal,"temp_from_morakhasi.txt")
+			
+			If(res_val1=1)Then
+				lbl_date1.Text=ls_vorod.Get(0)
+			Else
+				lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			End If		
+			
+			
+			lbl_tim1.Text=ls_vorod.Get(1)
+		Else
+			lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			lbl_tim1.Text="00:00"
+		End If
+		
+		
+		If(File.Exists(File.DirInternal,"temp_to_morakhasi.txt")=True)Then
+			Dim ls_khoroj As List
+			ls_khoroj.Initialize
+			ls_khoroj=File.ReadList(File.DirInternal,"temp_to_morakhasi.txt")
+			
+			If(res_val1=1)Then
+				lbl_date2.Text=ls_khoroj.Get(0)
+			Else
+				lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			End If
+			
+			
+			lbl_tim2.Text=ls_khoroj.Get(1)
+		Else
+			lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			lbl_tim2.Text="00:00"
+		End If
 
+	
 	''=====================
 	
 	time_show
@@ -2141,33 +2164,52 @@ Private Sub pan_add_ezafekari_Click
 	
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
+	lbl_setting_date.Visible=True
 	
-	''------------finger-------
-	If(File.Exists(File.DirInternal,"temp_from_ezafekari.txt")=True)Then
-		Dim ls_vorod As List
-		ls_vorod.Initialize
-		ls_vorod=File.ReadList(File.DirInternal,"temp_from_ezafekari.txt")
-		lbl_date1.Text=ls_vorod.Get(0)
-		lbl_tim1.Text=ls_vorod.Get(1)
-	Else
-		lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
-		lbl_tim1.Text="00:00"
-	End If
+	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
-	
-	If(File.Exists(File.DirInternal,"temp_to_ezafekari.txt")=True)Then
-		Dim ls_khoroj As List
-		ls_khoroj.Initialize
-		ls_khoroj=File.ReadList(File.DirInternal,"temp_to_ezafekari.txt")
-		lbl_date2.Text=ls_khoroj.Get(0)
-		lbl_tim2.Text=ls_khoroj.Get(1)
-	Else
-		lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
-		lbl_tim2.Text="00:00"
-	End If
+		''------------finger-------
+		If(File.Exists(File.DirInternal,"temp_from_ezafekari.txt")=True)Then
+			Dim ls_vorod As List
+			ls_vorod.Initialize
+			ls_vorod=File.ReadList(File.DirInternal,"temp_from_ezafekari.txt")
+			
+			If(res_val1=1)Then
+				lbl_date1.Text=ls_vorod.Get(0)
+			Else
+				lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			End If
+			
+			
+			lbl_tim1.Text=ls_vorod.Get(1)
+		Else
+			lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			lbl_tim1.Text="00:00"
+		End If
+		
+		
+		If(File.Exists(File.DirInternal,"temp_to_ezafekari.txt")=True)Then
+			Dim ls_khoroj As List
+			ls_khoroj.Initialize
+			ls_khoroj=File.ReadList(File.DirInternal,"temp_to_ezafekari.txt")
+			
+			
+			If(res_val1=1)Then
+				lbl_date2.Text=ls_khoroj.Get(0)
+			Else
+				lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			End If
+			
+			
+			lbl_tim2.Text=ls_khoroj.Get(1)
+		Else
+			lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			lbl_tim2.Text="00:00"
+		End If
 
-	''=====================
+		''=====================
 	
+
 	time_show
 	
 	
@@ -2208,40 +2250,59 @@ Private Sub pan_add_taradod_Click
 	
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
+	lbl_setting_date.Visible=True
 	
-	''------------finger-------
-	If(File.Exists(File.DirInternal,"temp_vorod_taradod.txt")=True)Then
-		Dim ls_vorod As List
-		ls_vorod.Initialize
-		ls_vorod=File.ReadList(File.DirInternal,"temp_vorod_taradod.txt")
-		lbl_date1.Text=ls_vorod.Get(0)
-		lbl_tim1.Text=ls_vorod.Get(1)
-	Else
-		lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
-		lbl_tim1.Text="00:00"
-	End If
+	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
+		''------------finger-------
+		If(File.Exists(File.DirInternal,"temp_vorod_taradod.txt")=True)Then
+			Dim ls_vorod As List
+			ls_vorod.Initialize
+			ls_vorod=File.ReadList(File.DirInternal,"temp_vorod_taradod.txt")
+			
+			If(res_val1=1)Then
+				lbl_date1.Text=ls_vorod.Get(0)
+			Else
+				lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			End If	
 	
-	If(File.Exists(File.DirInternal,"temp_khoroj_taradod.txt")=True)Then
-		Dim ls_khoroj As List
-		ls_khoroj.Initialize
-		ls_khoroj=File.ReadList(File.DirInternal,"temp_khoroj_taradod.txt")
-		lbl_date2.Text=ls_khoroj.Get(0)
-		lbl_tim2.Text=ls_khoroj.Get(1)
-	Else
-		lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
-		lbl_tim2.Text="00:00"
-	End If
+			lbl_tim1.Text=ls_vorod.Get(1)
+		Else
+			lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			lbl_tim1.Text="00:00"
+		End If
+		
+		
+		If(File.Exists(File.DirInternal,"temp_khoroj_taradod.txt")=True)Then
+			Dim ls_khoroj As List
+			ls_khoroj.Initialize
+			ls_khoroj=File.ReadList(File.DirInternal,"temp_khoroj_taradod.txt")
+			
+			If(res_val1=1)Then
+				lbl_date2.Text=ls_khoroj.Get(0)
+			Else
+				lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			End If
+			
+			
+			
+			lbl_tim2.Text=ls_khoroj.Get(1)
+		Else
+			lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			lbl_tim2.Text="00:00"
+		End If
 
-	''=====================
+		''=====================
+		
 	
-	If(lbl_date1.Text=persianDate.PersianShortDate)Then
+	
+	If(ls_vorod.Get(0)=persianDate.PersianShortDate)Then
 		lbl_finger_vorod.TextColor=Colors.Green
 	Else
 		lbl_finger_vorod.TextColor=0xFF3B78D5
 	End If
 	
-	If(lbl_date2.Text=persianDate.PersianShortDate)Then
+	If(ls_khoroj.Get(0)=persianDate.PersianShortDate)Then
 		lbl_finger_khoroj.TextColor=Colors.Green
 	Else
 		lbl_finger_khoroj.TextColor=0xFF3B78D5
@@ -2291,13 +2352,23 @@ Private Sub pan_add_mamoriat_Click
 	
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
+	lbl_setting_date.Visible=True
+		
+	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
+	
 		
 	''------------finger-------
 	If(File.Exists(File.DirInternal,"temp_from_mamoriat.txt")=True)Then
 		Dim ls_vorod As List
 		ls_vorod.Initialize
 		ls_vorod=File.ReadList(File.DirInternal,"temp_from_mamoriat.txt")
-		lbl_date1.Text=ls_vorod.Get(0)
+		If(res_val1=1)Then
+			lbl_date1.Text=ls_vorod.Get(0)
+		Else
+			lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+		End If
+		
+		
 		lbl_tim1.Text=ls_vorod.Get(1)
 	Else
 		lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
@@ -2309,7 +2380,14 @@ Private Sub pan_add_mamoriat_Click
 		Dim ls_khoroj As List
 		ls_khoroj.Initialize
 		ls_khoroj=File.ReadList(File.DirInternal,"temp_to_mamoriat.txt")
-		lbl_date2.Text=ls_khoroj.Get(0)
+		If(res_val1=1)Then
+			lbl_date2.Text=ls_khoroj.Get(0)
+		Else
+			lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+		End If
+		
+		
+	
 		lbl_tim2.Text=ls_khoroj.Get(1)
 	Else
 		lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
@@ -2317,13 +2395,13 @@ Private Sub pan_add_mamoriat_Click
 	End If
 
 	''=====================
-	If(lbl_date1.Text=persianDate.PersianShortDate)Then
+	If(ls_vorod.Get(0)=persianDate.PersianShortDate)Then
 		lbl_finger_vorod.TextColor=Colors.Green
 	Else
 		lbl_finger_vorod.TextColor=0xFF3B78D5
 	End If
 	
-	If(lbl_date2.Text=persianDate.PersianShortDate)Then
+	If(ls_khoroj.Get(0)=persianDate.PersianShortDate)Then
 		lbl_finger_khoroj.TextColor=Colors.Green
 	Else
 		lbl_finger_khoroj.TextColor=0xFF3B78D5
@@ -2742,7 +2820,8 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 		
 		else If (pan_help.Visible=True)Then
 			lbl_close_help_Click
-		
+		Else If (pan_all_setting_date.Visible==True)Then
+			pan_all_setting_date.Visible=False
 		Else If (pan_all.Visible=True )Then
 			
 			If(pan_all2.Visible=True)Then
@@ -2761,6 +2840,7 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 			pan_all_liteMenu.Visible=False
 		Else If (pan_all_chekUpdate.Visible==True)Then
 			pan_all_chekUpdate.Visible=False
+		
 		Else 
 		
 			
@@ -3666,7 +3746,7 @@ Private Sub lbl_edit_from_list_Click
 
 	lbl_finger_vorod.Visible=False
 	lbl_finger_khoroj.Visible=False
-	
+	lbl_setting_date.Visible=False
 
 	
 	time_show
@@ -4328,4 +4408,39 @@ str_file_matn.Append("</body></html>")
 	StartActivity(in)
 	
 	
+End Sub
+
+Private Sub lbl_setting_date_Click
+	
+	Dim res_val As Int =dbCode.get_setting_byName("setting_show_date")
+	
+	
+	If(res_val=0)Then
+		ckb_setting_date_date.Checked=False
+	Else
+		ckb_setting_date_date.Checked=True
+	End If
+	
+	
+	
+	pan_all_setting_date.Visible=True
+	
+End Sub
+
+Private Sub pan_all_setting_date_Click
+	pan_all_setting_date.Visible=False
+End Sub
+
+Private Sub lbl_save_setting_date_Click
+	
+	
+	
+	If(ckb_setting_date_date.Checked=True)Then
+		dbCode.update_setting_byname("setting_show_date",1)
+	Else
+		dbCode.update_setting_byname("setting_show_date",0)
+	End If
+	
+	
+	pan_all_setting_date.Visible=False
 End Sub

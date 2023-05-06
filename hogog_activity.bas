@@ -118,14 +118,17 @@ Sub Globals
 	
 	
 	Dim mosaedeh_all As Int=0
-	Dim food_all As Int=0
-	Dim padash_all As Int=0
+	
+	Dim food_1_all As Int=0
+	Dim food_2_all As Int=0
+	
 	Dim sayer_1_all As Int=0
 	Dim sayer_2_all As Int=0
 	
 	Dim ayab_1_all As Int=0
 	Dim ayab_2_all As Int=0
 	
+	Dim padash_all As Int=0
 	Dim gest_vam As Int=0
 	Dim date2_fixed As String
 	
@@ -681,6 +684,12 @@ Private Sub lbl_run_mohasebe_Click
 				End If
 			End If
 			
+			If(dbCode.get_setting_byName("tog_food")=1)Then
+				If(food_1_all<>0)Then
+					str1.Append(" هزینه غذا: <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(food_1_all))&"</span><br>")
+				End If
+			End If
+			
 			If(dbCode.get_setting_byName("tog_sayer")=1)Then
 				If(sayer_1_all<>0)Then
 					str1.Append("  سایر: <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(sayer_1_all))&"</span><br>")
@@ -755,8 +764,8 @@ Private Sub lbl_run_mohasebe_Click
 		End If	
 		
 			If(dbCode.get_setting_byName("tog_food")=1)Then
-				If(food_all<>0)Then
-					str1.Append(" هزینه غذا : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(food_all)) &"</span><br>")
+				If(food_2_all<>0)Then
+					str1.Append(" هزینه غذا : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(food_2_all)) &"</span><br>")
 				End If
 			End If	
 				
@@ -905,15 +914,17 @@ Sub mohasebe
 			mosaedeh_all=dbCode.all_mosaedeh_byDate(lbl_date_from.Text,date2_fixed)
 		End If
 	End If
+	
 	'' food ha
 	If(dbCode.get_setting_byName("tog_food")=1)Then
 		If(type_mohasebe=1)Then
-			food_all=dbCode.all_food_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+			food_1_all=dbCode.all_food_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1),1)
+			food_2_all=dbCode.all_food_mah(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1),2)
 		Else
-			food_all=dbCode.all_food_byDate(lbl_date_from.Text,date2_fixed)
+			food_1_all=dbCode.all_food_byDate(lbl_date_from.Text,date2_fixed,1)
+			food_2_all=dbCode.all_food_byDate(lbl_date_from.Text,date2_fixed,2)
 		End If
 	End If
-	
 
 
 	'' padash ha
@@ -962,7 +973,7 @@ Sub mohasebe
 	
 	''-----------------------------
 	'hogog nakhales
-	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all+sayer_1_all+ayab_1_all
+	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all+food_1_all+sayer_1_all+ayab_1_all
 	
 	'shamel maliat
 	Dim hogog_nakhales_maliaty As Int
@@ -1012,7 +1023,7 @@ Sub mohasebe
 	End If
 	
 	
-	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat+mosaedeh_all+food_all+sayer_2_all+ayab_2_all+gest_vam
+	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat+mosaedeh_all+food_2_all+sayer_2_all+ayab_2_all+gest_vam
 	'hogog khales
 	hogog_khales=hogog_nakhales-jame_kosorat
 	

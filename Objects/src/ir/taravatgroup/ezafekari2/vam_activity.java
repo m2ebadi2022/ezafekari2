@@ -480,17 +480,17 @@ _mohasebe();
 return "";
 }
 public static String  _et_nerkh_vam_textchanged(String _old,String _new) throws Exception{
- //BA.debugLineNum = 469;BA.debugLine="Private Sub et_nerkh_vam_TextChanged (Old As Strin";
- //BA.debugLineNum = 470;BA.debugLine="mohasebe";
+ //BA.debugLineNum = 485;BA.debugLine="Private Sub et_nerkh_vam_TextChanged (Old As Strin";
+ //BA.debugLineNum = 486;BA.debugLine="mohasebe";
 _mohasebe();
- //BA.debugLineNum = 471;BA.debugLine="End Sub";
+ //BA.debugLineNum = 487;BA.debugLine="End Sub";
 return "";
 }
 public static String  _et_tedad_gest_textchanged(String _old,String _new) throws Exception{
- //BA.debugLineNum = 473;BA.debugLine="Private Sub et_tedad_gest_TextChanged (Old As Stri";
- //BA.debugLineNum = 474;BA.debugLine="mohasebe";
+ //BA.debugLineNum = 489;BA.debugLine="Private Sub et_tedad_gest_TextChanged (Old As Stri";
+ //BA.debugLineNum = 490;BA.debugLine="mohasebe";
 _mohasebe();
- //BA.debugLineNum = 475;BA.debugLine="End Sub";
+ //BA.debugLineNum = 491;BA.debugLine="End Sub";
 return "";
 }
 public static void  _fill_list_vam() throws Exception{
@@ -778,12 +778,12 @@ mostCurrent._pan_all_add.setVisible(anywheresoftware.b4a.keywords.Common.True);
 return "";
 }
 public static String  _lbl_agsat_click() throws Exception{
- //BA.debugLineNum = 493;BA.debugLine="Private Sub lbl_agsat_Click";
- //BA.debugLineNum = 494;BA.debugLine="pan_all_show_info.Visible=False";
+ //BA.debugLineNum = 509;BA.debugLine="Private Sub lbl_agsat_Click";
+ //BA.debugLineNum = 510;BA.debugLine="pan_all_show_info.Visible=False";
 mostCurrent._pan_all_show_info.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 496;BA.debugLine="StartActivity(gestha_activity)";
+ //BA.debugLineNum = 512;BA.debugLine="StartActivity(gestha_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._gestha_activity.getObject()));
- //BA.debugLineNum = 497;BA.debugLine="End Sub";
+ //BA.debugLineNum = 513;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_back_click() throws Exception{
@@ -794,10 +794,10 @@ mostCurrent._activity.Finish();
 return "";
 }
 public static String  _lbl_close_click() throws Exception{
- //BA.debugLineNum = 499;BA.debugLine="Private Sub lbl_close_Click";
- //BA.debugLineNum = 500;BA.debugLine="pan_all_show_info.Visible=False";
+ //BA.debugLineNum = 515;BA.debugLine="Private Sub lbl_close_Click";
+ //BA.debugLineNum = 516;BA.debugLine="pan_all_show_info.Visible=False";
 mostCurrent._pan_all_show_info.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 501;BA.debugLine="End Sub";
+ //BA.debugLineNum = 517;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_date_click() throws Exception{
@@ -815,75 +815,75 @@ return "";
 }
 public static String  _lbl_go_agsatpage_click() throws Exception{
 anywheresoftware.b4a.objects.LabelWrapper _b = null;
- //BA.debugLineNum = 477;BA.debugLine="Private Sub lbl_go_agsatPage_Click";
- //BA.debugLineNum = 478;BA.debugLine="Dim b As Label";
+ //BA.debugLineNum = 493;BA.debugLine="Private Sub lbl_go_agsatPage_Click";
+ //BA.debugLineNum = 494;BA.debugLine="Dim b As Label";
 _b = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 479;BA.debugLine="b = Sender";
+ //BA.debugLineNum = 495;BA.debugLine="b = Sender";
 _b = (anywheresoftware.b4a.objects.LabelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.LabelWrapper(), (android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Sender(mostCurrent.activityBA)));
- //BA.debugLineNum = 480;BA.debugLine="Main.current_idvam=b.Tag";
+ //BA.debugLineNum = 496;BA.debugLine="Main.current_idvam=b.Tag";
 mostCurrent._main._current_idvam /*String*/  = BA.ObjectToString(_b.getTag());
- //BA.debugLineNum = 481;BA.debugLine="StartActivity(gestha_activity)";
+ //BA.debugLineNum = 497;BA.debugLine="StartActivity(gestha_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._gestha_activity.getObject()));
- //BA.debugLineNum = 483;BA.debugLine="End Sub";
+ //BA.debugLineNum = 499;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_info_click() throws Exception{
 anywheresoftware.b4a.objects.LabelWrapper _b = null;
 anywheresoftware.b4a.keywords.StringBuilderWrapper _str_show = null;
- //BA.debugLineNum = 504;BA.debugLine="Private Sub lbl_info_Click";
- //BA.debugLineNum = 506;BA.debugLine="Dim b As Label";
+ //BA.debugLineNum = 520;BA.debugLine="Private Sub lbl_info_Click";
+ //BA.debugLineNum = 522;BA.debugLine="Dim b As Label";
 _b = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 507;BA.debugLine="b = Sender";
+ //BA.debugLineNum = 523;BA.debugLine="b = Sender";
 _b = (anywheresoftware.b4a.objects.LabelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.LabelWrapper(), (android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Sender(mostCurrent.activityBA)));
- //BA.debugLineNum = 509;BA.debugLine="dbCode.connect_db";
+ //BA.debugLineNum = 525;BA.debugLine="dbCode.connect_db";
 mostCurrent._dbcode._connect_db /*String*/ (mostCurrent.activityBA);
- //BA.debugLineNum = 510;BA.debugLine="dbCode.res= dbCode.sql.ExecQuery(\"SELECT * FROM t";
+ //BA.debugLineNum = 526;BA.debugLine="dbCode.res= dbCode.sql.ExecQuery(\"SELECT * FROM t";
 mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/  = (anywheresoftware.b4a.sql.SQL.ResultSetWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.ResultSetWrapper(), (android.database.Cursor)(mostCurrent._dbcode._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery("SELECT * FROM tb_vam WHERE id="+BA.ObjectToString(_b.getTag()))));
- //BA.debugLineNum = 511;BA.debugLine="dbCode.res.Position=0";
+ //BA.debugLineNum = 527;BA.debugLine="dbCode.res.Position=0";
 mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .setPosition((int) (0));
- //BA.debugLineNum = 512;BA.debugLine="Main.current_idvam= dbCode.res.GetString(\"idvam\")";
+ //BA.debugLineNum = 528;BA.debugLine="Main.current_idvam= dbCode.res.GetString(\"idvam\")";
 mostCurrent._main._current_idvam /*String*/  = mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("idvam");
- //BA.debugLineNum = 515;BA.debugLine="pan_all_show_info.Visible=True";
+ //BA.debugLineNum = 531;BA.debugLine="pan_all_show_info.Visible=True";
 mostCurrent._pan_all_show_info.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 519;BA.debugLine="Dim str_show As StringBuilder";
+ //BA.debugLineNum = 535;BA.debugLine="Dim str_show As StringBuilder";
 _str_show = new anywheresoftware.b4a.keywords.StringBuilderWrapper();
- //BA.debugLineNum = 520;BA.debugLine="str_show.Initialize";
+ //BA.debugLineNum = 536;BA.debugLine="str_show.Initialize";
 _str_show.Initialize();
- //BA.debugLineNum = 522;BA.debugLine="str_show.Append(\"<html dir='rtl'><meta charset='U";
+ //BA.debugLineNum = 538;BA.debugLine="str_show.Append(\"<html dir='rtl'><meta charset='U";
 _str_show.Append("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body>");
- //BA.debugLineNum = 524;BA.debugLine="str_show.Append(\"<h5 align='center'>عنوان وام <br";
+ //BA.debugLineNum = 540;BA.debugLine="str_show.Append(\"<h5 align='center'>عنوان وام <br";
 _str_show.Append("<h5 align='center'>عنوان وام <br>");
- //BA.debugLineNum = 525;BA.debugLine="str_show.Append(dbCode.res.GetString(\"onvan\"))";
+ //BA.debugLineNum = 541;BA.debugLine="str_show.Append(dbCode.res.GetString(\"onvan\"))";
 _str_show.Append(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("onvan"));
- //BA.debugLineNum = 526;BA.debugLine="str_show.Append(\"</h5>\")";
+ //BA.debugLineNum = 542;BA.debugLine="str_show.Append(\"</h5>\")";
 _str_show.Append("</h5>");
- //BA.debugLineNum = 528;BA.debugLine="str_show.Append(\"<div style=' border: 2px solid g";
+ //BA.debugLineNum = 544;BA.debugLine="str_show.Append(\"<div style=' border: 2px solid g";
 _str_show.Append("<div style=' border: 2px solid gray;  padding: 10px; border-radius: 20px;'>");
- //BA.debugLineNum = 529;BA.debugLine="str_show.Append(\" مبلغ وام : \"&myfunc.show_num_po";
+ //BA.debugLineNum = 545;BA.debugLine="str_show.Append(\" مبلغ وام : \"&myfunc.show_num_po";
 _str_show.Append(" مبلغ وام : "+mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int)(Double.parseDouble(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("mablag"))))).Append("<br>");
- //BA.debugLineNum = 530;BA.debugLine="str_show.Append(\"نرخ وام % : \"&(dbCode.res.GetStr";
+ //BA.debugLineNum = 546;BA.debugLine="str_show.Append(\"نرخ وام % : \"&(dbCode.res.GetStr";
 _str_show.Append("نرخ وام % : "+(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("rate"))).Append("<br>");
- //BA.debugLineNum = 531;BA.debugLine="str_show.Append(\" تعداد اقساط : \"&(dbCode.res.Get";
+ //BA.debugLineNum = 547;BA.debugLine="str_show.Append(\" تعداد اقساط : \"&(dbCode.res.Get";
 _str_show.Append(" تعداد اقساط : "+(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("count"))).Append("<br>");
- //BA.debugLineNum = 532;BA.debugLine="str_show.Append(\" ماه شروع : \"&(dbCode.res.GetStr";
+ //BA.debugLineNum = 548;BA.debugLine="str_show.Append(\" ماه شروع : \"&(dbCode.res.GetStr";
 _str_show.Append(" ماه شروع : "+(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("date"))).Append("<br>");
- //BA.debugLineNum = 533;BA.debugLine="str_show.Append(\" توضیحات : \"&(dbCode.res.GetStri";
+ //BA.debugLineNum = 549;BA.debugLine="str_show.Append(\" توضیحات : \"&(dbCode.res.GetStri";
 _str_show.Append(" توضیحات : "+(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("tozihat"))).Append("<br>");
- //BA.debugLineNum = 534;BA.debugLine="str_show.Append(\"</div>\").Append(\"<br>\")";
+ //BA.debugLineNum = 550;BA.debugLine="str_show.Append(\"</div>\").Append(\"<br>\")";
 _str_show.Append("</div>").Append("<br>");
- //BA.debugLineNum = 536;BA.debugLine="str_show.Append(\"<div style=' border: 3px solid g";
+ //BA.debugLineNum = 552;BA.debugLine="str_show.Append(\"<div style=' border: 3px solid g";
 _str_show.Append("<div style=' border: 3px solid green;  padding: 10px; border-radius: 20px;'>");
- //BA.debugLineNum = 537;BA.debugLine="str_show.Append(\" کل مبلغ بازپرداخت  : \"&myfunc.s";
+ //BA.debugLineNum = 553;BA.debugLine="str_show.Append(\" کل مبلغ بازپرداخت  : \"&myfunc.s";
 _str_show.Append(" کل مبلغ بازپرداخت  : "+mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int)(Double.parseDouble(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("bazpardakht"))))).Append("<br>");
- //BA.debugLineNum = 538;BA.debugLine="str_show.Append(\" مبلغ هر قسط : <mark> \"&myfunc.s";
+ //BA.debugLineNum = 554;BA.debugLine="str_show.Append(\" مبلغ هر قسط : <mark> \"&myfunc.s";
 _str_show.Append(" مبلغ هر قسط : <mark> "+mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int)(Double.parseDouble(mostCurrent._dbcode._res /*anywheresoftware.b4a.sql.SQL.ResultSetWrapper*/ .GetString("harghest"))))+"</mark>");
- //BA.debugLineNum = 539;BA.debugLine="str_show.Append(\"</div>\")";
+ //BA.debugLineNum = 555;BA.debugLine="str_show.Append(\"</div>\")";
 _str_show.Append("</div>");
- //BA.debugLineNum = 541;BA.debugLine="str_show.Append(\"</body></html>\")";
+ //BA.debugLineNum = 557;BA.debugLine="str_show.Append(\"</body></html>\")";
 _str_show.Append("</body></html>");
- //BA.debugLineNum = 544;BA.debugLine="wb_show_result.LoadHtml(str_show.ToString)";
+ //BA.debugLineNum = 560;BA.debugLine="wb_show_result.LoadHtml(str_show.ToString)";
 mostCurrent._wb_show_result.LoadHtml(_str_show.ToString());
- //BA.debugLineNum = 547;BA.debugLine="End Sub";
+ //BA.debugLineNum = 563;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_remove_from_list2_click() throws Exception{
@@ -937,7 +937,7 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(" 
  }else if(((mostCurrent._et_mablagh_vam.getText()).equals("") || (mostCurrent._et_mablagh_vam.getText()).equals(BA.NumberToString(0)))) { 
  //BA.debugLineNum = 403;BA.debugLine="ToastMessageShow(\"مبلغ وام را وارد کنید\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("مبلغ وام را وارد کنید"),anywheresoftware.b4a.keywords.Common.False);
- }else if(((mostCurrent._et_nerkh_vam.getText()).equals("") || (mostCurrent._et_nerkh_vam.getText()).equals(BA.NumberToString(0)))) { 
+ }else if(((mostCurrent._et_nerkh_vam.getText()).equals(""))) { 
  //BA.debugLineNum = 406;BA.debugLine="ToastMessageShow(\"نرخ وام را وارد کنید\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("نرخ وام را وارد کنید"),anywheresoftware.b4a.keywords.Common.False);
  }else if(((mostCurrent._et_tedad_gest.getText()).equals("") || (mostCurrent._et_tedad_gest.getText()).equals(BA.NumberToString(0)))) { 
@@ -1005,27 +1005,36 @@ double _sod = 0;
  //BA.debugLineNum = 444;BA.debugLine="Sub mohasebe";
  //BA.debugLineNum = 445;BA.debugLine="If(et_mablagh_vam.Text=\"\" Or et_nerkh_vam.Text=\"\"";
 if (((mostCurrent._et_mablagh_vam.getText()).equals("") || (mostCurrent._et_nerkh_vam.getText()).equals("") || (mostCurrent._et_tedad_gest.getText()).equals(""))) { 
+ }else if(((mostCurrent._et_mablagh_vam.getText()).equals("") == false && (mostCurrent._et_nerkh_vam.getText()).equals(BA.NumberToString(0)) && (mostCurrent._et_tedad_gest.getText()).equals("") == false)) { 
+ //BA.debugLineNum = 451;BA.debugLine="lbl_harGest.Tag=Round(et_mablagh_vam.Tag/et_teda";
+mostCurrent._lbl_hargest.setTag((Object)(anywheresoftware.b4a.keywords.Common.Round((double)(BA.ObjectToNumber(mostCurrent._et_mablagh_vam.getTag()))/(double)(double)(Double.parseDouble(mostCurrent._et_tedad_gest.getText())))));
+ //BA.debugLineNum = 452;BA.debugLine="lbl_kol_bazPardakht.Tag=Round(et_mablagh_vam.Tag";
+mostCurrent._lbl_kol_bazpardakht.setTag((Object)(anywheresoftware.b4a.keywords.Common.Round((double)(BA.ObjectToNumber(mostCurrent._et_mablagh_vam.getTag())))));
+ //BA.debugLineNum = 454;BA.debugLine="lbl_harGest.Text=myfunc.show_num_pool(lbl_harGes";
+mostCurrent._lbl_hargest.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int)(BA.ObjectToNumber(mostCurrent._lbl_hargest.getTag())))+" تومان "));
+ //BA.debugLineNum = 455;BA.debugLine="lbl_kol_bazPardakht.Text=myfunc.show_num_pool(lb";
+mostCurrent._lbl_kol_bazpardakht.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int)(BA.ObjectToNumber(mostCurrent._lbl_kol_bazpardakht.getTag())))+" تومان "));
  }else {
- //BA.debugLineNum = 449;BA.debugLine="Dim eb1 As Double=Power( (1+(et_nerkh_vam.Text/1";
+ //BA.debugLineNum = 463;BA.debugLine="Dim eb1 As Double=Power( (1+(et_nerkh_vam.Text/1";
 _eb1 = anywheresoftware.b4a.keywords.Common.Power((1+((double)(Double.parseDouble(mostCurrent._et_nerkh_vam.getText()))/(double)1200)),(double)(Double.parseDouble(mostCurrent._et_tedad_gest.getText())));
- //BA.debugLineNum = 450;BA.debugLine="Dim sorat As Double=et_mablagh_vam.Tag*(et_nerkh";
+ //BA.debugLineNum = 464;BA.debugLine="Dim sorat As Double=et_mablagh_vam.Tag*(et_nerkh";
 _sorat = (double)(BA.ObjectToNumber(mostCurrent._et_mablagh_vam.getTag()))*((double)(Double.parseDouble(mostCurrent._et_nerkh_vam.getText()))/(double)1200)*_eb1;
- //BA.debugLineNum = 451;BA.debugLine="Dim makhraj As Double=eb1-1";
+ //BA.debugLineNum = 465;BA.debugLine="Dim makhraj As Double=eb1-1";
 _makhraj = _eb1-1;
- //BA.debugLineNum = 453;BA.debugLine="Dim gest As Double=sorat/makhraj";
+ //BA.debugLineNum = 467;BA.debugLine="Dim gest As Double=sorat/makhraj";
 _gest = _sorat/(double)_makhraj;
- //BA.debugLineNum = 455;BA.debugLine="Dim sod As Double=(gest*et_tedad_gest.Text)-et_m";
+ //BA.debugLineNum = 469;BA.debugLine="Dim sod As Double=(gest*et_tedad_gest.Text)-et_m";
 _sod = (_gest*(double)(Double.parseDouble(mostCurrent._et_tedad_gest.getText())))-(double)(BA.ObjectToNumber(mostCurrent._et_mablagh_vam.getTag()));
- //BA.debugLineNum = 458;BA.debugLine="lbl_harGest.Tag=Round(gest)";
+ //BA.debugLineNum = 472;BA.debugLine="lbl_harGest.Tag=Round(gest)";
 mostCurrent._lbl_hargest.setTag((Object)(anywheresoftware.b4a.keywords.Common.Round(_gest)));
- //BA.debugLineNum = 459;BA.debugLine="lbl_kol_bazPardakht.Tag=Round(et_mablagh_vam.Tag";
+ //BA.debugLineNum = 473;BA.debugLine="lbl_kol_bazPardakht.Tag=Round(et_mablagh_vam.Tag";
 mostCurrent._lbl_kol_bazpardakht.setTag((Object)(anywheresoftware.b4a.keywords.Common.Round((double)(BA.ObjectToNumber(mostCurrent._et_mablagh_vam.getTag()))+_sod)));
- //BA.debugLineNum = 461;BA.debugLine="lbl_harGest.Text=myfunc.show_num_pool(Round(gest";
-mostCurrent._lbl_hargest.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int) (anywheresoftware.b4a.keywords.Common.Round(_gest)))+" تومان "));
- //BA.debugLineNum = 462;BA.debugLine="lbl_kol_bazPardakht.Text=myfunc.show_num_pool(Ro";
-mostCurrent._lbl_kol_bazpardakht.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int) (anywheresoftware.b4a.keywords.Common.Round((double)(BA.ObjectToNumber(mostCurrent._et_mablagh_vam.getTag()))+_sod)))+" تومان "));
+ //BA.debugLineNum = 475;BA.debugLine="lbl_harGest.Text=myfunc.show_num_pool(lbl_harGes";
+mostCurrent._lbl_hargest.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int)(BA.ObjectToNumber(mostCurrent._lbl_hargest.getTag())))+" تومان "));
+ //BA.debugLineNum = 476;BA.debugLine="lbl_kol_bazPardakht.Text=myfunc.show_num_pool(lb";
+mostCurrent._lbl_kol_bazpardakht.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._show_num_pool /*String*/ (mostCurrent.activityBA,(int)(BA.ObjectToNumber(mostCurrent._lbl_kol_bazpardakht.getTag())))+" تومان "));
  };
- //BA.debugLineNum = 467;BA.debugLine="End Sub";
+ //BA.debugLineNum = 483;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_all_add_click() throws Exception{
@@ -1043,15 +1052,15 @@ mostCurrent._pan_all_set_date.setVisible(anywheresoftware.b4a.keywords.Common.Fa
 return "";
 }
 public static String  _pan_all_show_info_click() throws Exception{
- //BA.debugLineNum = 485;BA.debugLine="Private Sub pan_all_show_info_Click";
- //BA.debugLineNum = 486;BA.debugLine="pan_all_show_info.Visible=False";
+ //BA.debugLineNum = 501;BA.debugLine="Private Sub pan_all_show_info_Click";
+ //BA.debugLineNum = 502;BA.debugLine="pan_all_show_info.Visible=False";
 mostCurrent._pan_all_show_info.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 487;BA.debugLine="End Sub";
+ //BA.debugLineNum = 503;BA.debugLine="End Sub";
 return "";
 }
 public static String  _panel2_click() throws Exception{
- //BA.debugLineNum = 489;BA.debugLine="Private Sub Panel2_Click";
- //BA.debugLineNum = 491;BA.debugLine="End Sub";
+ //BA.debugLineNum = 505;BA.debugLine="Private Sub Panel2_Click";
+ //BA.debugLineNum = 507;BA.debugLine="End Sub";
 return "";
 }
 public static String  _panel4_click() throws Exception{
