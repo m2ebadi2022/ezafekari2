@@ -89,7 +89,9 @@ Sub Activity_Create(FirstTime As Boolean)
 	moon_dataPik.Initialize
 	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	
-	
+	If(File.Exists(File.DirInternal,"date1_morakhasi.txt"))Then
+		lbl_date1.Text=File.ReadString(File.DirInternal,"date1_morakhasi.txt")
+	End If
 	
 	''set color
 	pan_hed_mandeMorakh.Color=Main.color4
@@ -412,6 +414,7 @@ End Sub
 Private Sub lbl_save_picker_Click
 	If(index_datePik=1) Then
 		lbl_date1.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
+		File.WriteString(File.DirInternal,"date1_morakhasi.txt",lbl_date1.Text)
 		
 	Else If(index_datePik=2) Then
 		lbl_date2.Text=pik_year1.Text&"/"&myfunc.convert_adad(pik_moon1.Tag)&"/"&myfunc.convert_adad(pik_day1.Text)
@@ -515,7 +518,7 @@ Private Sub pik_pan_day1_Touch (Action As Int, X As Float, Y As Float)
 				pik_day1.Text=30
 			End If
 		End If
-		
+		pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
 		
 	End If
 	
@@ -595,7 +598,7 @@ Private Sub pik_day_bala1_Click
 			pik_day1.Text=30
 		End If
 	End If
-	
+	pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
 End Sub
 
 Private Sub pik_day_paeen1_Click
@@ -616,7 +619,7 @@ Private Sub pik_day_paeen1_Click
 			pik_day1.Text=30
 		End If
 	End If
-	
+	pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
 End Sub
 
 

@@ -275,7 +275,7 @@ Private Sub pik_pan_day1_Touch (Action As Int, X As Float, Y As Float)
 				pik_day1.Text=30
 			End If
 		End If
-		
+		pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
 		
 	End If
 	
@@ -355,7 +355,7 @@ Private Sub pik_day_bala1_Click
 			pik_day1.Text=30
 		End If
 	End If
-	
+	pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
 End Sub
 
 Private Sub pik_day_paeen1_Click
@@ -376,7 +376,7 @@ Private Sub pik_day_paeen1_Click
 			pik_day1.Text=30
 		End If
 	End If
-	
+	pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
 End Sub
 
 

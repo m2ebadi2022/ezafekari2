@@ -352,6 +352,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -363,7 +364,6 @@ public ir.taravatgroup.ezafekari2.food_activity _food_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
-public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
 public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
@@ -650,6 +650,8 @@ if (((double)(Double.parseDouble(mostCurrent._pik_day1.getText()))<1)) {
 mostCurrent._pik_day1.setText(BA.ObjectToCharSequence(30));
  };
  };
+ //BA.debugLineNum = 352;BA.debugLine="pik_day1.Text=myfunc.convert_adad(pik_day1.Text)";
+mostCurrent._pik_day1.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._convert_adad /*String*/ (mostCurrent.activityBA,(int)(Double.parseDouble(mostCurrent._pik_day1.getText())))));
  //BA.debugLineNum = 353;BA.debugLine="End Sub";
 return "";
 }
@@ -684,6 +686,8 @@ if (((double)(Double.parseDouble(mostCurrent._pik_day1.getText()))<1)) {
 mostCurrent._pik_day1.setText(BA.ObjectToCharSequence(30));
  };
  };
+ //BA.debugLineNum = 373;BA.debugLine="pik_day1.Text=myfunc.convert_adad(pik_day1.Text)";
+mostCurrent._pik_day1.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._convert_adad /*String*/ (mostCurrent.activityBA,(int)(Double.parseDouble(mostCurrent._pik_day1.getText())))));
  //BA.debugLineNum = 374;BA.debugLine="End Sub";
 return "";
 }
@@ -785,6 +789,8 @@ if (((double)(Double.parseDouble(mostCurrent._pik_day1.getText()))<1)) {
 mostCurrent._pik_day1.setText(BA.ObjectToCharSequence(30));
  };
  };
+ //BA.debugLineNum = 272;BA.debugLine="pik_day1.Text=myfunc.convert_adad(pik_day1.Text)";
+mostCurrent._pik_day1.setText(BA.ObjectToCharSequence(mostCurrent._myfunc._convert_adad /*String*/ (mostCurrent.activityBA,(int)(Double.parseDouble(mostCurrent._pik_day1.getText())))));
  };
  //BA.debugLineNum = 276;BA.debugLine="End Sub";
 return "";

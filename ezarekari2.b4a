@@ -2253,7 +2253,7 @@ Private Sub pan_add_taradod_Click
 				lbl_finger_fs_vorod.TextColor=Colors.Gray
 				lbl_finger_fs_khoroj.TextColor=Colors.Gray
 				lbl_finger_fs_vorod.Tag=1
-				lbl_finger_fs_khoroj.Tag=0
+				lbl_finger_fs_khoroj.Tag=2
 				lbl_time_show_fs.Text=""
 				
 			Else if (temp_finger=1)Then
@@ -2308,7 +2308,7 @@ Private Sub pan_add_taradod_Click
 			lbl_finger_fs_khoroj.TextColor=Colors.Gray
 			
 			lbl_finger_fs_vorod.Tag=1
-			lbl_finger_fs_khoroj.Tag=1
+			lbl_finger_fs_khoroj.Tag=2
 			
 		End If	
 		
@@ -3058,8 +3058,8 @@ Sub time_show
 					
 					
 					
-				Dim date_vorod_0 As String=lbl_date1.Text
-				Dim date_khoroj_0 As String=lbl_date2.Text
+'				Dim date_vorod_0 As String=lbl_date1.Text
+'				Dim date_khoroj_0 As String=lbl_date2.Text
 					
 					'error
 					
@@ -3099,8 +3099,8 @@ Sub time_show
 				ckb_ezaf_taradod.Enabled=False
 				radio_ez_adi.Enabled=False
 				radio_ez_fog.Enabled=False
-				lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
-				ckb_ezaf_taradod_fs.Enabled=ckb_ezaf_taradod.Enabled
+				lbl_ezaf_taradod_fs.Text=""
+				ckb_ezaf_taradod_fs.Enabled=False
 			End If
 
 		End If
@@ -3128,12 +3128,16 @@ Private Sub pik_hour_bala1_Click
 	Dim int1 As Int=myfunc.fa2en(pik_hour1.Text)
 	pik_hour1.Text=int1+1
 	
+	
+	
 	If(pik_hour1.Text>23)Then
-		pik_hour1.Text=00
+		pik_hour1.Text=0
 	End If
 	If(pik_hour1.Text<0)Then
 		pik_hour1.Text=23
 	End If
+	
+	pik_hour1.Text=myfunc.convert_adad(pik_hour1.Text)
 	
 End Sub
 
@@ -3142,12 +3146,13 @@ Private Sub pik_hour_paeen1_Click
 	pik_hour1.Text=int1-1
 	
 	If(pik_hour1.Text>23)Then
-		pik_hour1.Text=00
+		pik_hour1.Text=0
 	End If
 	If(pik_hour1.Text<0)Then
 		pik_hour1.Text=23
 	End If
 	
+	pik_hour1.Text=myfunc.convert_adad(pik_hour1.Text)
 End Sub
 
 Private Sub pik_min_bala1_Click
@@ -3155,11 +3160,13 @@ Private Sub pik_min_bala1_Click
 	pik_min1.Text=int1+1
 	
 	If(pik_min1.Text>59)Then
-		pik_min1.Text=00
+		pik_min1.Text=0
 	End If
 	If(pik_min1.Text<0)Then
 		pik_min1.Text=59
 	End If
+
+	pik_min1.Text=myfunc.convert_adad(pik_min1.Text)
 	
 End Sub
 
@@ -3168,11 +3175,12 @@ Private Sub pik_min_paeen1_Click
 	pik_min1.Text=int1-1
 	
 	If(pik_min1.Text>59)Then
-		pik_min1.Text=00
+		pik_min1.Text=0
 	End If
 	If(pik_min1.Text<0)Then
 		pik_min1.Text=59
 	End If
+	pik_min1.Text=myfunc.convert_adad(pik_min1.Text)
 	
 End Sub
 
@@ -3196,13 +3204,16 @@ Private Sub pik_pan_hour1_Touch (Action As Int, X As Float, Y As Float)
 		End If
 		
 		If(pik_hour1.Text>23)Then
-			pik_hour1.Text=00
+			pik_hour1.Text=0
 		End If
 		If(pik_hour1.Text<0)Then
 			pik_hour1.Text=23
 		End If
 		
+		pik_hour1.Text=myfunc.convert_adad(pik_hour1.Text)
 	End If
+	
+	
 	
 End Sub
 
@@ -3233,16 +3244,17 @@ Private Sub pik_pan_min1_Touch (Action As Int, X As Float, Y As Float)
 	
 		
 		If(pik_min1.Text>59)Then
-			pik_min1.Text=00
+			pik_min1.Text=0
 			
 		End If
 		If(pik_min1.Text<0)Then
-		pik_min1.Text=59
-			
-			
+			pik_min1.Text=59	
 		End If
+		pik_min1.Text=myfunc.convert_adad(pik_min1.Text)
 		
 	End If
+	
+	
 	
 End Sub
 
@@ -3345,7 +3357,7 @@ Private Sub pik_pan_day1_Touch (Action As Int, X As Float, Y As Float)
 			End If
 		End If
 		
-		
+		pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
 	End If
 	
 End Sub
@@ -3425,6 +3437,8 @@ Private Sub pik_day_bala1_Click
 		End If
 	End If
 	
+	pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
+	
 End Sub
 
 Private Sub pik_day_paeen1_Click
@@ -3445,6 +3459,8 @@ Private Sub pik_day_paeen1_Click
 			pik_day1.Text=30
 		End If
 	End If
+	
+	pik_day1.Text=myfunc.convert_adad(pik_day1.Text)
 	
 End Sub
 
@@ -3577,6 +3593,7 @@ Private Sub lbl_save_picker_Click
 	
 	
 	If(index_piker=1)Then  'date1
+		
 		
 		lbl_tim1.Text=pik_hour1.Text&":"&pik_min1.Text
 		lbl_date1.Text=pik_year1.Text&"/"&pik_moon1.Tag&"/"&pik_day1.Text
@@ -4350,11 +4367,11 @@ Private Sub lbl_finger_vorod_Click
 			File.WriteList(File.DirInternal,"temp_from_morakhasi.txt",ls_vorod)
 		Case 3
 			File.WriteList(File.DirInternal,"temp_vorod_taradod.txt",ls_vorod)
-			lbl_finger_vorod.TextColor=Colors.Green
+			'lbl_finger_vorod.TextColor=Colors.Green
 					
 		Case 5
 			File.WriteList(File.DirInternal,"temp_from_mamoriat.txt",ls_vorod)
-			lbl_finger_vorod.TextColor=Colors.Green
+			'lbl_finger_vorod.TextColor=Colors.Green
 	End Select
 	
 	
@@ -4381,10 +4398,10 @@ Private Sub lbl_finger_khoroj_Click
 			File.WriteList(File.DirInternal,"temp_to_morakhasi.txt",ls_khoroj)
 		Case 3
 			File.WriteList(File.DirInternal,"temp_khoroj_taradod.txt",ls_khoroj)
-			lbl_finger_khoroj.TextColor=Colors.Green
+			'lbl_finger_khoroj.TextColor=Colors.Green
 		Case 5
 			File.WriteList(File.DirInternal,"temp_to_mamoriat.txt",ls_khoroj)
-			lbl_finger_khoroj.TextColor=Colors.Green
+			'lbl_finger_khoroj.TextColor=Colors.Green
 	End Select
 	
 	ToastMessageShow("ثبت زمان 2",False)
@@ -4579,16 +4596,15 @@ Private Sub lbl_finger_fs_khoroj_Click
 	
 	If(lbl_finger_fs_khoroj.Tag=0)Then
 		ToastMessageShow("قبلا ثبت شده-برای ثبت دوباره روی آن نگه دارید",False)
+	Else If (lbl_finger_fs_khoroj.Tag=2)Then
+		ToastMessageShow("ابتدا ورود را بزنید",False)
 	Else
 		lbl_finger_khoroj_Click
 		lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
 		File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","2")
 		lbl_finger_fs_khoroj.TextColor=Colors.Green	
+		lbl_finger_fs_khoroj.Tag=0
 	End If
-	
-	
-	
-	
 	
 	
 End Sub
@@ -4602,7 +4618,8 @@ Private Sub lbl_finger_fs_vorod_Click
 		lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
 		File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","1")
 		lbl_finger_fs_vorod.TextColor=Colors.Green	
-				
+		lbl_finger_fs_vorod.Tag=0
+		lbl_finger_fs_khoroj.Tag=1
 	End If
 	
 	
@@ -4612,14 +4629,14 @@ End Sub
 Private Sub lbl_finger_fs_khoroj_LongClick
 	lbl_finger_khoroj_Click
 	lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
-	File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","2")
+	'File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","2")
 	lbl_finger_fs_khoroj.TextColor=Colors.Green
 End Sub
 
 Private Sub lbl_finger_fs_vorod_LongClick
 	lbl_finger_vorod_Click
 	lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
-	File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","1")
+	'File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","1")
 	lbl_finger_fs_vorod.TextColor=Colors.Green
 End Sub
 
@@ -4631,7 +4648,7 @@ Private Sub lbl_rest_finger_fs_taradod_Click
 	lbl_finger_fs_khoroj.TextColor=Colors.Gray
 	
 	lbl_finger_fs_vorod.Tag=1
-	lbl_finger_fs_khoroj.Tag=1
+	lbl_finger_fs_khoroj.Tag=2
 End Sub
 
 Private Sub ckb_ezaf_taradod_fs_CheckedChange(Checked As Boolean)
@@ -4640,4 +4657,12 @@ Private Sub ckb_ezaf_taradod_fs_CheckedChange(Checked As Boolean)
 	Else
 		ckb_ezaf_taradod.Checked=False
 	End If
+End Sub
+
+Private Sub lbl_help_setting_finger_Click
+	myfunc.help_man("راهنما","با فعال کردن این گزینه ثبت ترددها به صورت انگشتی انجام میشود - به این صورت که در موقع ورود و خروج انگشت میزنیم تا زمان ثبت شود و در آخر ذخیره میکنیم.")
+End Sub
+
+Private Sub lbl_help_setting_date_Click
+	myfunc.help_man("راهنما","تاریخ ثبت شده ثابت میماند و در روزهای بعد هم تغییر نمیکند.")
 End Sub

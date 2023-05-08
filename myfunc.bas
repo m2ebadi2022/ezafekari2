@@ -17,26 +17,32 @@ End Sub
 
 Sub convert_adad(adad As Int) As String
 	Dim str As String =adad
-	Select adad
-		Case 1
-			str="01"
-		Case 2
-			str="02"
-		Case 3
-			str="03"
-		Case 4
-			str="04"
-		Case 5
-			str="05"
-		Case 6
-			str="06"
-		Case 7
-			str="07"
-		Case 8
-			str="08"
-		Case 9
-			str="09"
-	End Select
+	
+	If(adad<10)Then
+		str="0"&str
+	End If
+	
+	
+'	Select adad
+'		Case 1
+'			str="01"
+'		Case 2
+'			str="02"
+'		Case 3
+'			str="03"
+'		Case 4
+'			str="04"
+'		Case 5
+'			str="05"
+'		Case 6
+'			str="06"
+'		Case 7
+'			str="07"
+'		Case 8
+'			str="08"
+'		Case 9
+'			str="09"
+'	End Select
 	Return str
 End Sub
 
