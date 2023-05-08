@@ -650,6 +650,14 @@ Sub Globals
 	Private pan_all_setting_date As Panel
 	Private ckb_setting_date_finger As CheckBox
 	Private ckb_setting_date_date As CheckBox
+	Private pan_finger_taradod As Panel
+	Private lbl_finger_fs_vorod As Label
+	Private lbl_finger_fs_khoroj As Label
+	Private lbl_finger_fs_vorod_time As Label
+	Private lbl_finger_fs_khoroj_time As Label
+	Private lbl_time_show_fs As Label
+	Private lbl_ezaf_taradod_fs As Label
+	Private ckb_ezaf_taradod_fs As CheckBox
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -2008,6 +2016,7 @@ End Sub
 Private Sub pan_add_morakhasi_Click
 	lbl_finger_vorod.TextColor=0xFF3B78D5
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
+	pan_finger_taradod.Visible=False
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
@@ -2131,6 +2140,7 @@ End Sub
 Private Sub pan_add_ezafekari_Click
 	lbl_finger_vorod.TextColor=0xFF3B78D5
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
+	pan_finger_taradod.Visible=False
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
@@ -2219,6 +2229,92 @@ Private Sub pan_add_taradod_Click
 	lbl_finger_vorod.TextColor=0xFF3B78D5
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	
+	
+	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
+	If(res_val2=0)Then
+		pan_finger_taradod.Visible=False
+	Else
+		
+		pan_finger_taradod.Visible=True
+		
+		lbl_finger_fs_vorod.Typeface=Typeface.MATERIALICONS
+		lbl_finger_fs_khoroj.Typeface=Typeface.MATERIALICONS
+		lbl_finger_fs_vorod.Text=Chr(0xE90D)
+		lbl_finger_fs_khoroj.Text=Chr(0xE90D)
+		
+		If(File.Exists(File.DirInternal,"finger_vorod_taradod_fs.txt")=True)Then
+			
+		
+			Dim temp_finger As String = File.readString(File.DirInternal,"finger_vorod_taradod_fs.txt")
+			If(temp_finger=0)Then
+				
+				lbl_finger_fs_vorod_time.Text=" - "
+				lbl_finger_fs_khoroj_time.Text=" - "
+				lbl_finger_fs_vorod.TextColor=Colors.Gray
+				lbl_finger_fs_khoroj.TextColor=Colors.Gray
+				lbl_finger_fs_vorod.Tag=1
+				lbl_finger_fs_khoroj.Tag=0
+				lbl_time_show_fs.Text=""
+				
+			Else if (temp_finger=1)Then
+				
+				
+				lbl_finger_fs_vorod.TextColor=Colors.Green
+				lbl_finger_fs_khoroj.TextColor=Colors.Gray
+				
+				Dim ls_vorod0 As List
+				ls_vorod0.Initialize
+				ls_vorod0=File.ReadList(File.DirInternal,"temp_vorod_taradod.txt")
+			
+				lbl_date1.Text=ls_vorod0.Get(0)
+				lbl_tim1.Text=ls_vorod0.Get(1)
+				
+				lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
+				
+				lbl_finger_fs_vorod.Tag=0
+				lbl_finger_fs_khoroj.Tag=1
+				
+			Else if (temp_finger=2)Then
+					
+				lbl_finger_fs_vorod.TextColor=Colors.Green
+				lbl_finger_fs_khoroj.TextColor=Colors.Green
+				
+				Dim ls_vorod0 As List
+				ls_vorod0.Initialize
+				ls_vorod0=File.ReadList(File.DirInternal,"temp_vorod_taradod.txt")
+				lbl_date1.Text=ls_vorod0.Get(0)
+				lbl_tim1.Text=ls_vorod0.Get(1)
+				lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
+				
+					
+				
+				Dim ls_vorod1 As List
+				ls_vorod1.Initialize
+				ls_vorod1=File.ReadList(File.DirInternal,"temp_khoroj_taradod.txt")
+				lbl_date2.Text=ls_vorod1.Get(0)
+				lbl_tim2.Text=ls_vorod1.Get(1)	
+				lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
+				
+				lbl_finger_fs_vorod.Tag=0
+				lbl_finger_fs_khoroj.Tag=0
+				
+					
+						
+			End If
+		Else
+			lbl_finger_fs_vorod_time.Text=" - "
+			lbl_finger_fs_khoroj_time.Text=" - "
+			lbl_finger_fs_vorod.TextColor=Colors.Gray
+			lbl_finger_fs_khoroj.TextColor=Colors.Gray
+			
+			lbl_finger_fs_vorod.Tag=1
+			lbl_finger_fs_khoroj.Tag=1
+			
+		End If	
+		
+	End If
+	
+	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
 	
@@ -2233,6 +2329,8 @@ Private Sub pan_add_taradod_Click
 	lbl_time_ta.Text="خروج :"
 	index_box=3
 	lbl_time_show.Text=""
+	lbl_time_show_fs.Text=""
+	
 	et_tozihat.Text=""
 	lbl_ezaf_taradod.Visible=True
 	lbl_ezaf_taradod.Text=""
@@ -2296,17 +2394,17 @@ Private Sub pan_add_taradod_Click
 		
 	
 	
-	If(ls_vorod.Get(0)=persianDate.PersianShortDate)Then
-		lbl_finger_vorod.TextColor=Colors.Green
-	Else
-		lbl_finger_vorod.TextColor=0xFF3B78D5
-	End If
-	
-	If(ls_khoroj.Get(0)=persianDate.PersianShortDate)Then
-		lbl_finger_khoroj.TextColor=Colors.Green
-	Else
-		lbl_finger_khoroj.TextColor=0xFF3B78D5
-	End If
+'	If(ls_vorod.Get(0)=persianDate.PersianShortDate)Then
+'		lbl_finger_vorod.TextColor=Colors.Green
+'	Else
+'		lbl_finger_vorod.TextColor=0xFF3B78D5
+'	End If
+'	
+'	If(ls_khoroj.Get(0)=persianDate.PersianShortDate)Then
+'		lbl_finger_khoroj.TextColor=Colors.Green
+'	Else
+'		lbl_finger_khoroj.TextColor=0xFF3B78D5
+'	End If
 	
 	time_show
 	
@@ -2319,6 +2417,8 @@ End Sub
 Private Sub pan_add_mamoriat_Click
 	lbl_finger_vorod.TextColor=0xFF3B78D5
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
+	pan_finger_taradod.Visible=False
+	
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
@@ -2395,17 +2495,17 @@ Private Sub pan_add_mamoriat_Click
 	End If
 
 	''=====================
-	If(ls_vorod.Get(0)=persianDate.PersianShortDate)Then
-		lbl_finger_vorod.TextColor=Colors.Green
-	Else
-		lbl_finger_vorod.TextColor=0xFF3B78D5
-	End If
-	
-	If(ls_khoroj.Get(0)=persianDate.PersianShortDate)Then
-		lbl_finger_khoroj.TextColor=Colors.Green
-	Else
-		lbl_finger_khoroj.TextColor=0xFF3B78D5
-	End If
+'	If(ls_vorod.Get(0)=persianDate.PersianShortDate)Then
+'		lbl_finger_vorod.TextColor=Colors.Green
+'	Else
+'		lbl_finger_vorod.TextColor=0xFF3B78D5
+'	End If
+'	
+'	If(ls_khoroj.Get(0)=persianDate.PersianShortDate)Then
+'		lbl_finger_khoroj.TextColor=Colors.Green
+'	Else
+'		lbl_finger_khoroj.TextColor=0xFF3B78D5
+'	End If
 	
 	time_show
 	
@@ -2471,11 +2571,14 @@ Sub add_end
 		If(chek=False)Then
 			If(alist.Get(3)<5)Then
 				add_taradod_sub
+				File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","0")
+				
 			Else
 				lbl_vip_Click
 			End If
 		Else
 			add_taradod_sub
+			File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","0")
 		End If
 		
 		
@@ -2942,6 +3045,8 @@ Sub time_show
 		
 		
 		lbl_time_show.Text=str_show
+		lbl_time_show_fs.Text=lbl_time_show.Text
+		
 		If(index_box=3)Then
 			
 			
@@ -2977,6 +3082,7 @@ Sub time_show
 			'If(hour_bt>saat_kar Or (hour_bt=saat_kar And min_bt>0 )) Then
 		
 				ckb_ezaf_taradod.Enabled=True
+				ckb_ezaf_taradod_fs.Enabled=ckb_ezaf_taradod.Enabled
 				radio_ez_adi.Enabled=True
 				radio_ez_fog.Enabled=True
 	
@@ -2986,12 +3092,15 @@ Sub time_show
 				
 				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min)).Get(1)&" دقیقه "
 			
+				lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
+			
 			Else
 				lbl_ezaf_taradod.Text=""
 				ckb_ezaf_taradod.Enabled=False
 				radio_ez_adi.Enabled=False
 				radio_ez_fog.Enabled=False
-			
+				lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
+				ckb_ezaf_taradod_fs.Enabled=ckb_ezaf_taradod.Enabled
 			End If
 
 		End If
@@ -3742,6 +3851,7 @@ Private Sub lbl_edit_from_list_Click
 		lbl_ezaf_taradod.Visible=False
 	End If
 	is_for_edit=True
+	pan_finger_taradod.Visible=False
 	get_dataEdit_byId(current_id_edit)
 
 	lbl_finger_vorod.Visible=False
@@ -4412,15 +4522,21 @@ End Sub
 
 Private Sub lbl_setting_date_Click
 	
-	Dim res_val As Int =dbCode.get_setting_byName("setting_show_date")
+	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
+	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
 	
 	
-	If(res_val=0)Then
+	If(res_val1=0)Then
 		ckb_setting_date_date.Checked=False
 	Else
 		ckb_setting_date_date.Checked=True
 	End If
 	
+	If(res_val2=0)Then
+		ckb_setting_date_finger.Checked=False
+	Else
+		ckb_setting_date_finger.Checked=True
+	End If
 	
 	
 	pan_all_setting_date.Visible=True
@@ -4434,7 +4550,6 @@ End Sub
 Private Sub lbl_save_setting_date_Click
 	
 	
-	
 	If(ckb_setting_date_date.Checked=True)Then
 		dbCode.update_setting_byname("setting_show_date",1)
 	Else
@@ -4442,5 +4557,87 @@ Private Sub lbl_save_setting_date_Click
 	End If
 	
 	
+	If(ckb_setting_date_finger.Checked=True)Then
+		dbCode.update_setting_byname("setting_finger_mode",1)
+		pan_finger_taradod.Visible=True
+	Else
+		dbCode.update_setting_byname("setting_finger_mode",0)
+		pan_finger_taradod.Visible=False
+	End If
+	
+	
+	
+	
 	pan_all_setting_date.Visible=False
+End Sub
+
+Private Sub pan_finger_taradod_Click
+	
+End Sub
+
+Private Sub lbl_finger_fs_khoroj_Click
+	
+	If(lbl_finger_fs_khoroj.Tag=0)Then
+		ToastMessageShow("قبلا ثبت شده-برای ثبت دوباره روی آن نگه دارید",False)
+	Else
+		lbl_finger_khoroj_Click
+		lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
+		File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","2")
+		lbl_finger_fs_khoroj.TextColor=Colors.Green	
+	End If
+	
+	
+	
+	
+	
+	
+End Sub
+
+Private Sub lbl_finger_fs_vorod_Click
+	
+	If(lbl_finger_fs_vorod.Tag=0)Then
+		ToastMessageShow("قبلا ثبت شده-برای ثبت دوباره روی آن نگه دارید",False)
+	Else
+		lbl_finger_vorod_Click
+		lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
+		File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","1")
+		lbl_finger_fs_vorod.TextColor=Colors.Green	
+				
+	End If
+	
+	
+	
+End Sub
+
+Private Sub lbl_finger_fs_khoroj_LongClick
+	lbl_finger_khoroj_Click
+	lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
+	File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","2")
+	lbl_finger_fs_khoroj.TextColor=Colors.Green
+End Sub
+
+Private Sub lbl_finger_fs_vorod_LongClick
+	lbl_finger_vorod_Click
+	lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
+	File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","1")
+	lbl_finger_fs_vorod.TextColor=Colors.Green
+End Sub
+
+Private Sub lbl_rest_finger_fs_taradod_Click
+	lbl_finger_fs_vorod_time.Text=" - "
+	lbl_finger_fs_khoroj_time.Text=" - "
+	File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","0")
+	lbl_finger_fs_vorod.TextColor=Colors.Gray
+	lbl_finger_fs_khoroj.TextColor=Colors.Gray
+	
+	lbl_finger_fs_vorod.Tag=1
+	lbl_finger_fs_khoroj.Tag=1
+End Sub
+
+Private Sub ckb_ezaf_taradod_fs_CheckedChange(Checked As Boolean)
+	If(Checked=True)Then
+		ckb_ezaf_taradod.Checked=True
+	Else
+		ckb_ezaf_taradod.Checked=False
+	End If
 End Sub

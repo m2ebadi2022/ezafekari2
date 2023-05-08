@@ -1525,7 +1525,7 @@ End Sub
 
 Sub check_new_add
 	init_notfound("setting_show_date",0)
-	
+	init_notfound("setting_finger_mode",0)
 	
 	
 End Sub
