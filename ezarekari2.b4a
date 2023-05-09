@@ -649,7 +649,7 @@ Sub Globals
 	Private lbl_setting_date As Label
 	Private pan_all_setting_date As Panel
 	Private ckb_setting_date_finger As CheckBox
-	Private ckb_setting_date_date As CheckBox
+	
 	Private pan_finger_taradod As Panel
 	Private lbl_finger_fs_vorod As Label
 	Private lbl_finger_fs_khoroj As Label
@@ -658,6 +658,7 @@ Sub Globals
 	Private lbl_time_show_fs As Label
 	Private lbl_ezaf_taradod_fs As Label
 	Private ckb_ezaf_taradod_fs As CheckBox
+	Private lbl_save_box As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -2017,6 +2018,8 @@ Private Sub pan_add_morakhasi_Click
 	lbl_finger_vorod.TextColor=0xFF3B78D5
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	pan_finger_taradod.Visible=False
+	lbl_setting_date.Visible=False
+	lbl_save_box.Enabled=True
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
@@ -2058,10 +2061,10 @@ Private Sub pan_add_morakhasi_Click
 	
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
-	lbl_setting_date.Visible=True
 	
 	
-	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
+	
+	'Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
 		''------------finger-------
 		If(File.Exists(File.DirInternal,"temp_from_morakhasi.txt")=True)Then
@@ -2069,11 +2072,11 @@ Private Sub pan_add_morakhasi_Click
 			ls_vorod.Initialize
 			ls_vorod=File.ReadList(File.DirInternal,"temp_from_morakhasi.txt")
 			
-			If(res_val1=1)Then
-				lbl_date1.Text=ls_vorod.Get(0)
-			Else
+'			If(res_val1=1)Then
+'				lbl_date1.Text=ls_vorod.Get(0)
+'			Else
 				lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
-			End If		
+'			End If		
 			
 			
 			lbl_tim1.Text=ls_vorod.Get(1)
@@ -2088,11 +2091,11 @@ Private Sub pan_add_morakhasi_Click
 			ls_khoroj.Initialize
 			ls_khoroj=File.ReadList(File.DirInternal,"temp_to_morakhasi.txt")
 			
-			If(res_val1=1)Then
-				lbl_date2.Text=ls_khoroj.Get(0)
-			Else
+'			If(res_val1=1)Then
+'				lbl_date2.Text=ls_khoroj.Get(0)
+'			Else
 				lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
-			End If
+			'End If
 			
 			
 			lbl_tim2.Text=ls_khoroj.Get(1)
@@ -2141,7 +2144,8 @@ Private Sub pan_add_ezafekari_Click
 	lbl_finger_vorod.TextColor=0xFF3B78D5
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	pan_finger_taradod.Visible=False
-	
+	lbl_setting_date.Visible=False
+	lbl_save_box.Enabled=True
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
 	
@@ -2174,9 +2178,9 @@ Private Sub pan_add_ezafekari_Click
 	
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
-	lbl_setting_date.Visible=True
 	
-	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
+	
+	'Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
 		''------------finger-------
 		If(File.Exists(File.DirInternal,"temp_from_ezafekari.txt")=True)Then
@@ -2184,11 +2188,11 @@ Private Sub pan_add_ezafekari_Click
 			ls_vorod.Initialize
 			ls_vorod=File.ReadList(File.DirInternal,"temp_from_ezafekari.txt")
 			
-			If(res_val1=1)Then
-				lbl_date1.Text=ls_vorod.Get(0)
-			Else
+'			If(res_val1=1)Then
+'				lbl_date1.Text=ls_vorod.Get(0)
+'			Else
 				lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
-			End If
+			'End If
 			
 			
 			lbl_tim1.Text=ls_vorod.Get(1)
@@ -2204,11 +2208,11 @@ Private Sub pan_add_ezafekari_Click
 			ls_khoroj=File.ReadList(File.DirInternal,"temp_to_ezafekari.txt")
 			
 			
-			If(res_val1=1)Then
-				lbl_date2.Text=ls_khoroj.Get(0)
-			Else
+'			If(res_val1=1)Then
+'				lbl_date2.Text=ls_khoroj.Get(0)
+'			Else
 				lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
-			End If
+			'End If
 			
 			
 			lbl_tim2.Text=ls_khoroj.Get(1)
@@ -2226,98 +2230,11 @@ Private Sub pan_add_ezafekari_Click
 End Sub
 
 Private Sub pan_add_taradod_Click
-	lbl_finger_vorod.TextColor=0xFF3B78D5
-	lbl_finger_khoroj.TextColor=0xFF3B78D5
-	
-	
-	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
-	If(res_val2=0)Then
-		pan_finger_taradod.Visible=False
-	Else
-		
-		pan_finger_taradod.Visible=True
-		
-		lbl_finger_fs_vorod.Typeface=Typeface.MATERIALICONS
-		lbl_finger_fs_khoroj.Typeface=Typeface.MATERIALICONS
-		lbl_finger_fs_vorod.Text=Chr(0xE90D)
-		lbl_finger_fs_khoroj.Text=Chr(0xE90D)
-		
-		If(File.Exists(File.DirInternal,"finger_vorod_taradod_fs.txt")=True)Then
-			
-		
-			Dim temp_finger As String = File.readString(File.DirInternal,"finger_vorod_taradod_fs.txt")
-			If(temp_finger=0)Then
-				
-				lbl_finger_fs_vorod_time.Text=" - "
-				lbl_finger_fs_khoroj_time.Text=" - "
-				lbl_finger_fs_vorod.TextColor=Colors.Gray
-				lbl_finger_fs_khoroj.TextColor=Colors.Gray
-				lbl_finger_fs_vorod.Tag=1
-				lbl_finger_fs_khoroj.Tag=2
-				lbl_time_show_fs.Text=""
-				
-			Else if (temp_finger=1)Then
-				
-				
-				lbl_finger_fs_vorod.TextColor=Colors.Green
-				lbl_finger_fs_khoroj.TextColor=Colors.Gray
-				
-				Dim ls_vorod0 As List
-				ls_vorod0.Initialize
-				ls_vorod0=File.ReadList(File.DirInternal,"temp_vorod_taradod.txt")
-			
-				lbl_date1.Text=ls_vorod0.Get(0)
-				lbl_tim1.Text=ls_vorod0.Get(1)
-				
-				lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
-				
-				lbl_finger_fs_vorod.Tag=0
-				lbl_finger_fs_khoroj.Tag=1
-				
-			Else if (temp_finger=2)Then
-					
-				lbl_finger_fs_vorod.TextColor=Colors.Green
-				lbl_finger_fs_khoroj.TextColor=Colors.Green
-				
-				Dim ls_vorod0 As List
-				ls_vorod0.Initialize
-				ls_vorod0=File.ReadList(File.DirInternal,"temp_vorod_taradod.txt")
-				lbl_date1.Text=ls_vorod0.Get(0)
-				lbl_tim1.Text=ls_vorod0.Get(1)
-				lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
-				
-					
-				
-				Dim ls_vorod1 As List
-				ls_vorod1.Initialize
-				ls_vorod1=File.ReadList(File.DirInternal,"temp_khoroj_taradod.txt")
-				lbl_date2.Text=ls_vorod1.Get(0)
-				lbl_tim2.Text=ls_vorod1.Get(1)	
-				lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
-				
-				lbl_finger_fs_vorod.Tag=0
-				lbl_finger_fs_khoroj.Tag=0
-				
-					
-						
-			End If
-		Else
-			lbl_finger_fs_vorod_time.Text=" - "
-			lbl_finger_fs_khoroj_time.Text=" - "
-			lbl_finger_fs_vorod.TextColor=Colors.Gray
-			lbl_finger_fs_khoroj.TextColor=Colors.Gray
-			
-			lbl_finger_fs_vorod.Tag=1
-			lbl_finger_fs_khoroj.Tag=2
-			
-		End If	
-		
-	End If
 	
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
-	
+	lbl_save_box.Enabled=True
 	radio_ez_adi.Visible=True
 	radio_ez_fog.Visible=True
 	radio_ez_adi.Checked=True
@@ -2337,8 +2254,9 @@ Private Sub pan_add_taradod_Click
 	lbl_ezaf_taradod.TextColor=Colors.Black
 	
 	ckb_ezaf_taradod.Enabled=False
-	ckb_ezaf_taradod.Visible=True
+	'ckb_ezaf_taradod.Visible=True
 	ckb_ezaf_taradod.Checked=True
+	ckb_ezaf_taradod_fs.Checked=True
 	
 	pik_year1.Text=myfunc.fa2en(persianDate.PersianYear)
 	pik_moon1.Tag=myfunc.fa2en(persianDate.PersianMonth)
@@ -2348,21 +2266,128 @@ Private Sub pan_add_taradod_Click
 	
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
+
+	
+
+
+
+
+
+
+	lbl_finger_vorod.TextColor=0xFF3B78D5
+	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	lbl_setting_date.Visible=True
 	
-	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
+	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
+	If(res_val2=1)Then
 	
+		pan_finger_taradod.Visible=True
+		
+		lbl_finger_fs_vorod.Typeface=Typeface.MATERIALICONS
+		lbl_finger_fs_khoroj.Typeface=Typeface.MATERIALICONS
+		lbl_finger_fs_vorod.Text=Chr(0xE90D)
+		lbl_finger_fs_khoroj.Text=Chr(0xE90D)
+		
+		If(File.Exists(File.DirInternal,"finger_vorod_taradod_fs.txt")=True)Then
+			
+		
+			Dim temp_finger As String = File.readString(File.DirInternal,"finger_vorod_taradod_fs.txt")
+			If(temp_finger=0)Then
+				
+				lbl_finger_fs_vorod_time.Text=" - "
+				lbl_finger_fs_khoroj_time.Text=" - "
+				lbl_finger_fs_vorod.TextColor=Colors.Gray
+				lbl_finger_fs_khoroj.TextColor=Colors.Gray
+				lbl_finger_fs_vorod.Tag=1
+				lbl_finger_fs_khoroj.Tag=2
+			
+				lbl_time_show.Text=""
+				lbl_time_show_fs.Text=""
+				
+				lbl_ezaf_taradod.Text=""
+				lbl_ezaf_taradod_fs.Text=""
+				
+				lbl_save_box.Enabled=False
+				
+			Else if (temp_finger=1)Then
+				
+				
+				lbl_finger_fs_vorod.TextColor=Colors.Green
+				lbl_finger_fs_khoroj.TextColor=Colors.Gray
+				
+				Dim ls_vorod0 As List
+				ls_vorod0.Initialize
+				ls_vorod0=File.ReadList(File.DirInternal,"temp_finger_vorod.txt")
+			
+				lbl_date1.Text=ls_vorod0.Get(0)
+				lbl_tim1.Text=ls_vorod0.Get(1)
+				
+				lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
+				
+				lbl_finger_fs_vorod.Tag=0
+				lbl_finger_fs_khoroj.Tag=1
+				
+				lbl_time_show.Text=""
+				lbl_time_show_fs.Text=""
+				
+				lbl_ezaf_taradod.Text=""
+				lbl_ezaf_taradod_fs.Text=""
+				
+				lbl_save_box.Enabled=False
+				
+			Else if (temp_finger=2)Then
+					
+				lbl_finger_fs_vorod.TextColor=Colors.Green
+				lbl_finger_fs_khoroj.TextColor=Colors.Green
+				
+				Dim ls_vorod0 As List
+				ls_vorod0.Initialize
+				ls_vorod0=File.ReadList(File.DirInternal,"temp_finger_vorod.txt")
+				lbl_date1.Text=ls_vorod0.Get(0)
+				lbl_tim1.Text=ls_vorod0.Get(1)
+				lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
+				
+					
+				
+				Dim ls_vorod1 As List
+				ls_vorod1.Initialize
+				ls_vorod1=File.ReadList(File.DirInternal,"temp_finger_khoroj.txt")
+				lbl_date2.Text=ls_vorod1.Get(0)
+				lbl_tim2.Text=ls_vorod1.Get(1)
+				lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
+				
+				lbl_finger_fs_vorod.Tag=0
+				lbl_finger_fs_khoroj.Tag=0
+				
+				time_show
+						
+				lbl_save_box.Enabled=True
+			End If
+		Else
+			lbl_finger_fs_vorod_time.Text=" - "
+			lbl_finger_fs_khoroj_time.Text=" - "
+			lbl_finger_fs_vorod.TextColor=Colors.Gray
+			lbl_finger_fs_khoroj.TextColor=Colors.Gray
+			
+			lbl_finger_fs_vorod.Tag=1
+			lbl_finger_fs_khoroj.Tag=2
+			
+		
+			
+		End If
+	Else
+		
 		''------------finger-------
 		If(File.Exists(File.DirInternal,"temp_vorod_taradod.txt")=True)Then
 			Dim ls_vorod As List
 			ls_vorod.Initialize
 			ls_vorod=File.ReadList(File.DirInternal,"temp_vorod_taradod.txt")
 			
-			If(res_val1=1)Then
-				lbl_date1.Text=ls_vorod.Get(0)
-			Else
-				lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
-			End If	
+'			If(res_val1=1)Then
+'				lbl_date1.Text=ls_vorod.Get(0)
+'			Else
+			lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			'End If
 	
 			lbl_tim1.Text=ls_vorod.Get(1)
 		Else
@@ -2376,11 +2401,11 @@ Private Sub pan_add_taradod_Click
 			ls_khoroj.Initialize
 			ls_khoroj=File.ReadList(File.DirInternal,"temp_khoroj_taradod.txt")
 			
-			If(res_val1=1)Then
-				lbl_date2.Text=ls_khoroj.Get(0)
-			Else
-				lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
-			End If
+'			If(res_val1=1)Then
+'				lbl_date2.Text=ls_khoroj.Get(0)
+'			Else
+			lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+			'End If
 			
 			
 			
@@ -2392,21 +2417,15 @@ Private Sub pan_add_taradod_Click
 
 		''=====================
 		
+		time_show
+		
+			
+	End If
 	
+
+
 	
-'	If(ls_vorod.Get(0)=persianDate.PersianShortDate)Then
-'		lbl_finger_vorod.TextColor=Colors.Green
-'	Else
-'		lbl_finger_vorod.TextColor=0xFF3B78D5
-'	End If
-'	
-'	If(ls_khoroj.Get(0)=persianDate.PersianShortDate)Then
-'		lbl_finger_khoroj.TextColor=Colors.Green
-'	Else
-'		lbl_finger_khoroj.TextColor=0xFF3B78D5
-'	End If
-	
-	time_show
+
 	
 	
 	
@@ -2418,7 +2437,8 @@ Private Sub pan_add_mamoriat_Click
 	lbl_finger_vorod.TextColor=0xFF3B78D5
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	pan_finger_taradod.Visible=False
-	
+	lbl_setting_date.Visible=False
+	lbl_save_box.Enabled=True
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
@@ -2452,9 +2472,9 @@ Private Sub pan_add_mamoriat_Click
 	
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
-	lbl_setting_date.Visible=True
+	
 		
-	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
+	'Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
 		
 	''------------finger-------
@@ -2462,11 +2482,11 @@ Private Sub pan_add_mamoriat_Click
 		Dim ls_vorod As List
 		ls_vorod.Initialize
 		ls_vorod=File.ReadList(File.DirInternal,"temp_from_mamoriat.txt")
-		If(res_val1=1)Then
-			lbl_date1.Text=ls_vorod.Get(0)
-		Else
+'		If(res_val1=1)Then
+'			lbl_date1.Text=ls_vorod.Get(0)
+'		Else
 			lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
-		End If
+		'End If
 		
 		
 		lbl_tim1.Text=ls_vorod.Get(1)
@@ -2480,11 +2500,11 @@ Private Sub pan_add_mamoriat_Click
 		Dim ls_khoroj As List
 		ls_khoroj.Initialize
 		ls_khoroj=File.ReadList(File.DirInternal,"temp_to_mamoriat.txt")
-		If(res_val1=1)Then
-			lbl_date2.Text=ls_khoroj.Get(0)
-		Else
+'		If(res_val1=1)Then
+'			lbl_date2.Text=ls_khoroj.Get(0)
+'		Else
 			lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
-		End If
+		'End If
 		
 		
 	
@@ -2846,6 +2866,8 @@ Sub add_taradod_sub
 		End If
 		
 	Catch
+		Log(date1)
+		Log(date2)
 		ToastMessageShow("خطا",False)
 	End Try
 	
@@ -3056,40 +3078,17 @@ Sub time_show
 			
 			If(tim_min>saat_kar_min) Then
 					
-					
-					
-'				Dim date_vorod_0 As String=lbl_date1.Text
-'				Dim date_khoroj_0 As String=lbl_date2.Text
-					
-					'error
-					
-'				Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
-'			If(dagige_fixed>1440)Then
-'				dagige_fixed=dagige_fixed-1440
-'					Dim temp_date0() As String =Regex.Split("/", date_vorod_0)
-'				If((temp_date0(2)-1)=0)Then
-'					date_vorod_0=temp_date0(0)&"/"&myfunc.convert_adad(temp_date0(1)-1)&"/30"
-'				Else
-'					date_vorod_0=temp_date0(0)&"/"&temp_date0(1)&"/"&myfunc.convert_adad(temp_date0(2)-1)
-'				End If
-'						
-'			End If
-'			Dim saat_fixed As String = myfunc.convert_adad(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&myfunc.convert_adad(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
-'					
 			
-			
-			
-			'If(hour_bt>saat_kar Or (hour_bt=saat_kar And min_bt>0 )) Then
-		
 				ckb_ezaf_taradod.Enabled=True
-				ckb_ezaf_taradod_fs.Enabled=ckb_ezaf_taradod.Enabled
+				ckb_ezaf_taradod.Visible=True
+				ckb_ezaf_taradod_fs.Enabled=True
+				ckb_ezaf_taradod_fs.Visible=True
+				
+				
 				radio_ez_adi.Enabled=True
 				radio_ez_fog.Enabled=True
 	
-			
-				'lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&(hour_bt-saat_kar)&" ساعت و "& min_bt&" دقیقه "
-				'lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(0))+((myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min).Get(2))*8))&" ساعت و "& (myfunc.Min_to_saatMinRoz(tim_min-saat_kar_min)).Get(1)&" دقیقه "
-				
+		
 				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min)).Get(1)&" دقیقه "
 			
 				lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
@@ -3097,10 +3096,23 @@ Sub time_show
 			Else
 				lbl_ezaf_taradod.Text=""
 				ckb_ezaf_taradod.Enabled=False
+				ckb_ezaf_taradod.Visible=False
 				radio_ez_adi.Enabled=False
 				radio_ez_fog.Enabled=False
 				lbl_ezaf_taradod_fs.Text=""
 				ckb_ezaf_taradod_fs.Enabled=False
+				ckb_ezaf_taradod_fs.Visible=False
+			End If
+			
+			If(is_for_edit=True)Then
+				lbl_ezaf_taradod.Text=""
+				ckb_ezaf_taradod.Enabled=False
+				ckb_ezaf_taradod.Visible=False
+				radio_ez_adi.Enabled=False
+				radio_ez_fog.Enabled=False
+				lbl_ezaf_taradod_fs.Text=""
+				ckb_ezaf_taradod_fs.Enabled=False
+				ckb_ezaf_taradod_fs.Visible=False
 			End If
 
 		End If
@@ -3846,6 +3858,7 @@ Private Sub lbl_edit_from_list_Click
 	current_id_edit=b.Tag
 	
 	
+	
 	If(TabHost1.CurrentTab=0)Then
 		pan_add_ezafekari_Click
 		lbl_box_title.Text="ویرایش اضافه کاری"
@@ -3857,26 +3870,29 @@ Private Sub lbl_edit_from_list_Click
 	Else if (TabHost1.CurrentTab=2)Then
 		pan_add_taradod_Click
 		lbl_box_title.Text="ویرایش تردد"
-		ckb_ezaf_taradod.Visible=False
-		lbl_ezaf_taradod.Visible=False
+		
 		radio_ez_adi.Visible=False
 		radio_ez_fog.Visible=False
+		
+		
 	Else if (TabHost1.CurrentTab=3)Then
 		pan_add_mamoriat_Click
 		lbl_box_title.Text="ویرایش مأموریت"
-		ckb_ezaf_taradod.Visible=False
-		lbl_ezaf_taradod.Visible=False
+		
 	End If
 	is_for_edit=True
 	pan_finger_taradod.Visible=False
 	get_dataEdit_byId(current_id_edit)
 
-	lbl_finger_vorod.Visible=False
-	lbl_finger_khoroj.Visible=False
+'	lbl_finger_vorod.Visible=False
+'	lbl_finger_khoroj.Visible=False
 	lbl_setting_date.Visible=False
-
+	lbl_save_box.Enabled=True
+	
+	
 	
 	time_show
+	
 	
 	
 End Sub
@@ -4539,15 +4555,15 @@ End Sub
 
 Private Sub lbl_setting_date_Click
 	
-	Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
+	'Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
 	
 	
-	If(res_val1=0)Then
-		ckb_setting_date_date.Checked=False
-	Else
-		ckb_setting_date_date.Checked=True
-	End If
+'	If(res_val1=0)Then
+'		ckb_setting_date_date.Checked=False
+'	Else
+'		ckb_setting_date_date.Checked=True
+'	End If
 	
 	If(res_val2=0)Then
 		ckb_setting_date_finger.Checked=False
@@ -4567,20 +4583,25 @@ End Sub
 Private Sub lbl_save_setting_date_Click
 	
 	
-	If(ckb_setting_date_date.Checked=True)Then
-		dbCode.update_setting_byname("setting_show_date",1)
-	Else
-		dbCode.update_setting_byname("setting_show_date",0)
-	End If
+'	If(ckb_setting_date_date.Checked=True)Then
+'		dbCode.update_setting_byname("setting_show_date",1)
+'	Else
+'		dbCode.update_setting_byname("setting_show_date",0)
+'	End If
 	
 	
 	If(ckb_setting_date_finger.Checked=True)Then
 		dbCode.update_setting_byname("setting_finger_mode",1)
+		lbl_rest_finger_fs_taradod_Click
 		pan_finger_taradod.Visible=True
 	Else
 		dbCode.update_setting_byname("setting_finger_mode",0)
 		pan_finger_taradod.Visible=False
+		lbl_rest_finger_fs_taradod_Click
+		lbl_save_box.Enabled=True
 	End If
+	
+	
 	
 	
 	
@@ -4599,11 +4620,26 @@ Private Sub lbl_finger_fs_khoroj_Click
 	Else If (lbl_finger_fs_khoroj.Tag=2)Then
 		ToastMessageShow("ابتدا ورود را بزنید",False)
 	Else
-		lbl_finger_khoroj_Click
+		
+		lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+		lbl_tim2.Text=myfunc.fa2en(DateTime.Time(DateTime.Now).SubString2(0,5))
+		Dim ls_khoroj As List
+		ls_khoroj.Initialize
+		ls_khoroj.Add(lbl_date2.Text)
+		ls_khoroj.Add(lbl_tim2.Text)
+		File.WriteList(File.DirInternal,"temp_finger_khoroj.txt",ls_khoroj)
+		
+		
+
+		
+		
 		lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
 		File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","2")
 		lbl_finger_fs_khoroj.TextColor=Colors.Green	
 		lbl_finger_fs_khoroj.Tag=0
+		ToastMessageShow("ثبت زمان خروج",False)
+		time_show
+		lbl_save_box.Enabled=True
 	End If
 	
 	
@@ -4614,12 +4650,27 @@ Private Sub lbl_finger_fs_vorod_Click
 	If(lbl_finger_fs_vorod.Tag=0)Then
 		ToastMessageShow("قبلا ثبت شده-برای ثبت دوباره روی آن نگه دارید",False)
 	Else
-		lbl_finger_vorod_Click
+		
+		
+		lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+		lbl_tim1.Text=myfunc.fa2en(DateTime.Time(DateTime.Now).SubString2(0,5))
+		Dim ls_vorod As List
+		ls_vorod.Initialize
+		ls_vorod.Add(lbl_date1.Text)
+		ls_vorod.Add(lbl_tim1.Text)
+		File.WriteList(File.DirInternal,"temp_finger_vorod.txt",ls_vorod)
+		
+		
+	
+		
 		lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
 		File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","1")
 		lbl_finger_fs_vorod.TextColor=Colors.Green	
 		lbl_finger_fs_vorod.Tag=0
 		lbl_finger_fs_khoroj.Tag=1
+		ToastMessageShow("ثبت زمان ورود",False)
+		
+		
 	End If
 	
 	
@@ -4627,28 +4678,64 @@ Private Sub lbl_finger_fs_vorod_Click
 End Sub
 
 Private Sub lbl_finger_fs_khoroj_LongClick
-	lbl_finger_khoroj_Click
-	lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
-	'File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","2")
-	lbl_finger_fs_khoroj.TextColor=Colors.Green
+		
+		lbl_date2.Text=myfunc.fa2en(persianDate.PersianShortDate)
+		lbl_tim2.Text=myfunc.fa2en(DateTime.Time(DateTime.Now).SubString2(0,5))
+		Dim ls_khoroj As List
+		ls_khoroj.Initialize
+		ls_khoroj.Add(lbl_date2.Text)
+		ls_khoroj.Add(lbl_tim2.Text)
+		File.WriteList(File.DirInternal,"temp_finger_khoroj.txt",ls_khoroj)
+		
+	
+		lbl_finger_fs_khoroj_time.Text=lbl_date2.Text&" - "&lbl_tim2.Text
+		'File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","2")
+		lbl_finger_fs_khoroj.TextColor=Colors.Green
+		ToastMessageShow("ثبت زمان خروج",False)
+		time_show		
+
 End Sub
 
 Private Sub lbl_finger_fs_vorod_LongClick
-	lbl_finger_vorod_Click
+	lbl_date1.Text=myfunc.fa2en(persianDate.PersianShortDate)
+	lbl_tim1.Text=myfunc.fa2en(DateTime.Time(DateTime.Now).SubString2(0,5))
+	Dim ls_vorod As List
+	ls_vorod.Initialize
+	ls_vorod.Add(lbl_date1.Text)
+	ls_vorod.Add(lbl_tim1.Text)
+	File.WriteList(File.DirInternal,"temp_finger_vorod.txt",ls_vorod)
+	
+
+	
 	lbl_finger_fs_vorod_time.Text=lbl_date1.Text&" - "&lbl_tim1.Text
 	'File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","1")
 	lbl_finger_fs_vorod.TextColor=Colors.Green
+	ToastMessageShow("ثبت زمان ورود",False)
+	time_show
+	
 End Sub
 
 Private Sub lbl_rest_finger_fs_taradod_Click
 	lbl_finger_fs_vorod_time.Text=" - "
 	lbl_finger_fs_khoroj_time.Text=" - "
-	File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","0")
+	
+	lbl_time_show.Text=""
+	lbl_time_show_fs.Text=""
+				
+	lbl_ezaf_taradod.Text=""
+	lbl_ezaf_taradod_fs.Text=""
+	ckb_ezaf_taradod.Enabled=False
+	ckb_ezaf_taradod.Visible=False
+	ckb_ezaf_taradod_fs.Enabled=False
+	ckb_ezaf_taradod_fs.Visible=False
+	
 	lbl_finger_fs_vorod.TextColor=Colors.Gray
 	lbl_finger_fs_khoroj.TextColor=Colors.Gray
 	
 	lbl_finger_fs_vorod.Tag=1
 	lbl_finger_fs_khoroj.Tag=2
+	File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","0")
+	lbl_save_box.Enabled=False
 End Sub
 
 Private Sub ckb_ezaf_taradod_fs_CheckedChange(Checked As Boolean)
@@ -4661,8 +4748,4 @@ End Sub
 
 Private Sub lbl_help_setting_finger_Click
 	myfunc.help_man("راهنما","با فعال کردن این گزینه ثبت ترددها به صورت انگشتی انجام میشود - به این صورت که در موقع ورود و خروج انگشت میزنیم تا زمان ثبت شود و در آخر ذخیره میکنیم.")
-End Sub
-
-Private Sub lbl_help_setting_date_Click
-	myfunc.help_man("راهنما","تاریخ ثبت شده ثابت میماند و در روزهای بعد هم تغییر نمیکند.")
 End Sub

@@ -770,7 +770,7 @@ End Sub
 
 
 
-Sub all_morakhasi_mah(year As String, moon As String) As List
+Sub all_morakhasi_mah(year As String, moon As String ) As List
 	Dim saat_kar As Int = get_setting_byName("saat_kar_darRoz")
 	
 	Dim list_ez As List
@@ -795,35 +795,13 @@ Sub all_morakhasi_mah(year As String, moon As String) As List
 	sql.Close
 	
 	
-	'Dim dghige2 As Int=(v_day*Main.saat_kar_min)+(v_hour*60)+v_min
-	
-	
-'	If (v_min>59)Then
-'		div1=v_min/60
-'		v_min=v_min Mod 60
-'		
-'	End If
-'	If (v_hour>(saat_kar-1))Then
-'		div2=v_hour/saat_kar
-'		v_hour=v_hour Mod saat_kar
-'		
-'	End If
-'	
-'	v_hour=v_hour+div1
-'	v_day=v_day+div2
-	
-'	list_ez.Add(v_day)      '' index 0  day
-'	list_ez.Add(v_hour)      '' index 1  hour
-'	list_ez.Add(v_min)		'' index 2	min
-	
+
 	list_ez.Add(myfunc.Min_to_saatMinRoz(v_min).Get(2))      '' index 0  day
 	list_ez.Add(myfunc.Min_to_saatMinRoz(v_min).Get(0))      '' index 1  hour
 	list_ez.Add(myfunc.Min_to_saatMinRoz(v_min).Get(1))		'' index 2	min
 	
 	Return list_ez
 End Sub
-
-
 
 Sub all_morakhasi_byDate(date_from As String, date_to As String) As List
 	Dim saat_kar As Int = get_setting_byName("saat_kar_darRoz")
@@ -853,23 +831,6 @@ Sub all_morakhasi_byDate(date_from As String, date_to As String) As List
 	Dim dghige2 As Int=(v_day*Main.saat_kar_min)+(v_hour*60)+v_min
 	
 	
-'	If (v_min>59)Then
-'		div1=v_min/60
-'		v_min=v_min Mod 60
-'		
-'	End If
-'	If (v_hour>(saat_kar-1))Then
-'		div2=v_hour/saat_kar
-'		v_hour=v_hour Mod saat_kar
-'		
-'	End If
-'	
-'	v_hour=v_hour+div1
-'	v_day=v_day+div2
-	
-'	list_ez.Add(v_day)      '' index 0  day
-'	list_ez.Add(v_hour)      '' index 1  hour
-'	list_ez.Add(v_min)		'' index 2	min
 	
 	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(2))      '' index 0  day
 	list_ez.Add(myfunc.Min_to_saatMinRoz(dghige2).Get(0))      '' index 1  hour
@@ -877,6 +838,10 @@ Sub all_morakhasi_byDate(date_from As String, date_to As String) As List
 	
 	Return list_ez
 End Sub
+
+
+
+
 
 
 Sub all_taradod_mah(year As String, moon As String) As List
