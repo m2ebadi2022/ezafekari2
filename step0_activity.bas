@@ -42,8 +42,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	et_phonNum.Color=Colors.ARGB(0,0,0,0)
 	et_code_num.Color=Colors.ARGB(0,0,0,0)
 	
-	If (File.Exists(File.DirInternal,"phonNum"))Then
-		Main.phon_num=File.ReadString(File.DirInternal,"phonNum")
+	If (File.Exists(File.DirInternal,"phonNum_step0"))Then
+		Main.phon_num=File.ReadString(File.DirInternal,"phonNum_step0")
 	End If
 	
 	
@@ -193,7 +193,7 @@ Sub http_initial_1(type1 As Int)
 		send = "id=1&num="&Main.phon_num&"&code=0"
 		http1.PostString("https://taravatgroup.ir/sms_req.php",send)
 		
-		File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
+		File.WriteString(File.DirInternal,"phonNum_step0",Main.phon_num)
 		
 		lbl_run2_step0.Enabled=False
 		pan_all_send.Visible=True
@@ -223,14 +223,15 @@ Sub Jobdone (job As HttpJob)
 			else if job.JobName="ht2" Then
 				If(job.GetString.Contains("okuser")=True) Then
 					File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
+					job.Release
 					StartActivity(step2_activity)
 					Activity.Finish
 				
 				
 				Else if (job.GetString.Contains("nouser")=True)Then
 				
-					File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
-				
+					File.WriteString(File.DirInternal,"phonNum_step1",Main.phon_num)
+					job.Release
 					StartActivity(step1_activity)
 					Activity.Finish
 				Else

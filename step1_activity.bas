@@ -93,6 +93,8 @@ Sub Jobdone (job As HttpJob)
 		
 			If job.JobName="http2" Then
 				If(job.GetString.Contains("true"))Then
+					File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
+					job.Release
 					StartActivity(step2_activity)
 					Activity.Finish
 					ToastMessageShow("تبریک",False)

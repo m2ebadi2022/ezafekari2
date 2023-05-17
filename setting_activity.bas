@@ -66,6 +66,7 @@ Sub Globals
 	Private tog_padash As ToggleButton
 	Private tog_sayer As ToggleButton
 	Private tog_mosaede As ToggleButton
+	Private sp_backup_online As Spinner
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -94,11 +95,36 @@ Sub Activity_Create(FirstTime As Boolean)
 	lbl_skb_f2.Text=Main.size_f2
 	lbl_skb_f3.Text=Main.size_f3
 	
+	sp_backup_online.Add("1هفته")
+	sp_backup_online.Add("2هفته")
+	sp_backup_online.Add("1ماه")
+	sp_backup_online.Add("غیرفعال")
+	
+	
+	
 	
 	
 	chek_db_togels
 	
 	chek_togel
+	
+	
+	
+	Dim res_backup As Int = dbCode.get_setting_byName("backup_online")
+	Select res_backup
+		Case 0
+			sp_backup_online.SelectedIndex=0
+		Case 1
+			sp_backup_online.SelectedIndex=1
+		Case 2
+			sp_backup_online.SelectedIndex=2
+		Case 3
+			sp_backup_online.SelectedIndex=3
+	End Select
+	
+	
+	
+	
 	
 	sp_font.SelectedIndex=sp_font.IndexOf(Main.main_font)
 	
@@ -747,5 +773,12 @@ Private Sub tog_mosaede_CheckedChange(Checked As Boolean)
 	End If
 	
 	chek_togel
+	
+End Sub
+
+Private Sub sp_backup_online_ItemClick (Position As Int, Value As Object)
+	dbCode.update_setting_byname("backup_online",Position)
+	Main.backup_page_show=0
+	File.WriteString(File.DirInternal,"chk_backup.txt",myfunc.fa2en(DateTime.Date(DateTime.Now)))
 	
 End Sub

@@ -569,7 +569,7 @@ End Sub
 
 Sub delete_ayabZahab(id As Int) As Boolean
 	connect_db
-	sql.ExecNonQuery2("DELETE FROM tb_ayabzahab WHERE id= ?", Array As Object(id))
+	sql.ExecNonQuery2("DELETE FROM tb_ayabzahab WHERE id= ? ;", Array As Object(id))
 	sql.Close
 	Return True
 End Sub
@@ -577,7 +577,7 @@ End Sub
 
 Sub delete_vam(id As Int) As Boolean
 	connect_db
-	sql.ExecNonQuery2("DELETE FROM tb_vam WHERE id= ?", Array As Object(id))
+	sql.ExecNonQuery2("DELETE FROM tb_vam WHERE id= ? ;", Array As Object(id))
 	sql.Close
 	Return True
 End Sub
@@ -585,7 +585,7 @@ End Sub
 
 Sub delete_ghestha(idvam As String) As Boolean
 	connect_db
-	sql.ExecNonQuery("DELETE FROM tb_gestha WHERE idvam='"&"idvam'")
+	sql.ExecNonQuery("DELETE FROM tb_gestha WHERE idvam='"&idvam&"' ;")
 	'sql.ExecNonQuery("DELETE FROM tb_gestha")
 	sql.Close
 	Return True
@@ -594,11 +594,22 @@ End Sub
 
 Sub delete_savabeg(id As Int) As Boolean
 	connect_db
-	sql.ExecNonQuery2("DELETE FROM tb_savabeg WHERE id= ?", Array As Object(id))
+	sql.ExecNonQuery2("DELETE FROM tb_savabeg WHERE id= ? ;", Array As Object(id))
 	sql.Close
 	Return True
 End Sub
 
+Sub delete_all_vam
+	connect_db
+	sql.ExecNonQuery("DELETE FROM tb_vam ; ") 
+	sql.ExecNonQuery("DELETE FROM tb_gestha;") 
+	'sql.ExecNonQuery("DELETE FROM tb_gestha")
+	sql.Close
+	
+	
+	
+	
+End Sub
 
 Sub add_setting_hogog (data As List) As Boolean
 	connect_db
@@ -1489,36 +1500,12 @@ Sub check_old_adds
 End Sub
 
 Sub check_new_add
-	init_notfound("setting_show_date",0)
+	
 	init_notfound("setting_finger_mode",0)
+	init_notfound("backup_online",0)
 	
 	
 End Sub
 
 
 
-
-
-'Sub get_day_name (year As Int, moon As Int , day As Int) As Int
-'		Try
-'			Dim result_day As Int=0
-'		
-'			connect_db
-'			res =  sql.ExecQuery("SELECT * FROM 'my_calander' WHERE year="&year&" AND moon="&moon&" AND day_c="&day)
-'		
-'		If(res.RowCount>0)Then
-'			res.Position = 0
-'			result_day= res.GetInt("day_h")
-'		
-'		End If
-'		
-''		res.Close
-''		sql.Close
-'		
-'		Catch
-'			Log(LastException)
-'		End Try
-'	
-'	
-'	Return result_day
-'End Sub

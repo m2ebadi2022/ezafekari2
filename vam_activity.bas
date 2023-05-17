@@ -568,3 +568,19 @@ Private Sub lbl_info_Click
 	
 End Sub
 
+
+
+Private Sub lbl_restAll_Click
+	Dim result As Int
+	result = Msgbox2("با این گزینه همه وام ها و قسط ها حذف میشوند!", "بازنشانی", "بازنشانی همه", "", "بستن", Null)
+	If result = DialogResponse.Positive Then
+
+		dbCode.delete_all_vam
+		ToastMessageShow("انجام شد.",False)
+		fill_list_vam
+				
+				
+	End If
+	
+	
+End Sub

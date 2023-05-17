@@ -350,7 +350,7 @@ Version=12.2
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 26
+	#VersionCode: 27
 	#VersionName: 5.5
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
@@ -407,6 +407,7 @@ Sub Process_Globals
 	Dim user_nameFamili As String="کاربر"
 	
 	Dim msg_page_show As Int =0
+	Dim backup_page_show As Int =0
 	
 	Dim current_idvam As String=""
 	Dim is_first_time As Boolean=False
@@ -639,6 +640,7 @@ Sub Globals
 	Private cust_LV_mamoriat As CustomListView
 	
 	Dim is_new_msg As Boolean=False
+	Dim is_time_backup As Boolean=False
 	
 	Private radio_ez_fog As RadioButton
 	Private radio_ez_adi As RadioButton
@@ -659,6 +661,7 @@ Sub Globals
 	Private lbl_ezaf_taradod_fs As Label
 	Private ckb_ezaf_taradod_fs As CheckBox
 	Private lbl_save_box As Label
+	Dim save_box_allow As Boolean=True
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -1438,6 +1441,11 @@ Private Sub btn_menu_home_Click
 	myfunc.set_font(Activity)
 	
 	
+	If(is_first_time=True)Then
+		chek_time_backup
+	End If
+	
+	
 	If(is_new_msg=True And is_first_time=True)Then
 		Dim result As Int
 		result = Msgbox2("آیا الان مشاهده میکنید؟", "پیام جدید", "بله", "بعدا", "", LoadBitmap(File.DirAssets,"notif.png"))
@@ -1446,14 +1454,62 @@ Private Sub btn_menu_home_Click
 			msg_page_show=1						
 		End If
 		is_first_time=False
+	else If(is_time_backup=True And is_first_time=True)Then
+		Dim result As Int
+		result = Msgbox2("پشتیبان گیری از داده ها انجام گردد؟", "یاد آور پشتیبان گیری", "بله", "بعدا", "", LoadBitmap(File.DirAssets,"notif.png"))
+		If result = DialogResponse.Positive Then
+			lbl_account_Click
+			backup_page_show=1
+			
+		End If
+		is_first_time=False
 	End If
+		
 	
 	
 	
 	
 End Sub
 
+Sub chek_time_backup
+	
 
+	
+	If(File.Exists(File.DirInternal,"chk_backup.txt")=False)Then
+		File.WriteString(File.DirInternal,"chk_backup.txt",myfunc.fa2en(DateTime.Date(DateTime.Now)))
+	Else 
+			
+		Dim tim1_ck_backup As String=File.ReadString(File.DirInternal,"chk_backup.txt")
+		Dim tim2_ck_backup As String=myfunc.fa2en(DateTime.Date(DateTime.Now))
+		Dim time_between As Long = persianDate.CalculateDaysBetween(tim1_ck_backup,tim2_ck_backup)
+		
+		Dim days_for_backup As Int
+		Dim res_backup As Int = dbCode.get_setting_byName("backup_online")
+		Select res_backup
+			Case 0
+				days_for_backup=7
+			Case 1
+				days_for_backup=14
+			Case 2
+				days_for_backup=30
+			Case 3
+				days_for_backup=-1
+		End Select
+		
+		'test
+		'is_time_backup=True
+		
+		If(days_for_backup<0)Then
+			is_time_backup=False
+		else If(time_between>= days_for_backup)Then
+			is_time_backup=True
+		End If
+		
+	End If
+	
+	
+	
+End Sub
 
 Sub get_today_shift
 	Dim id_today As Int
@@ -2019,7 +2075,8 @@ Private Sub pan_add_morakhasi_Click
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	pan_finger_taradod.Visible=False
 	lbl_setting_date.Visible=False
-	lbl_save_box.Enabled=True
+	
+	save_box_allow=True
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
@@ -2064,7 +2121,6 @@ Private Sub pan_add_morakhasi_Click
 	
 	
 	
-	'Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
 		''------------finger-------
 		If(File.Exists(File.DirInternal,"temp_from_morakhasi.txt")=True)Then
@@ -2145,7 +2201,7 @@ Private Sub pan_add_ezafekari_Click
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	pan_finger_taradod.Visible=False
 	lbl_setting_date.Visible=False
-	lbl_save_box.Enabled=True
+	save_box_allow=True
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
 	
@@ -2179,8 +2235,6 @@ Private Sub pan_add_ezafekari_Click
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
 	
-	
-	'Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
 		''------------finger-------
 		If(File.Exists(File.DirInternal,"temp_from_ezafekari.txt")=True)Then
@@ -2234,7 +2288,7 @@ Private Sub pan_add_taradod_Click
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
-	lbl_save_box.Enabled=True
+	save_box_allow=True
 	radio_ez_adi.Visible=True
 	radio_ez_fog.Visible=True
 	radio_ez_adi.Checked=True
@@ -2294,20 +2348,9 @@ Private Sub pan_add_taradod_Click
 			Dim temp_finger As String = File.readString(File.DirInternal,"finger_vorod_taradod_fs.txt")
 			If(temp_finger=0)Then
 				
-				lbl_finger_fs_vorod_time.Text=" - "
-				lbl_finger_fs_khoroj_time.Text=" - "
-				lbl_finger_fs_vorod.TextColor=Colors.Gray
-				lbl_finger_fs_khoroj.TextColor=Colors.Gray
-				lbl_finger_fs_vorod.Tag=1
-				lbl_finger_fs_khoroj.Tag=2
-			
-				lbl_time_show.Text=""
-				lbl_time_show_fs.Text=""
+				lbl_rest_finger_fs_taradod_Click
 				
-				lbl_ezaf_taradod.Text=""
-				lbl_ezaf_taradod_fs.Text=""
-				
-				lbl_save_box.Enabled=False
+				save_box_allow=False
 				
 			Else if (temp_finger=1)Then
 				
@@ -2333,7 +2376,14 @@ Private Sub pan_add_taradod_Click
 				lbl_ezaf_taradod.Text=""
 				lbl_ezaf_taradod_fs.Text=""
 				
-				lbl_save_box.Enabled=False
+				ckb_ezaf_taradod.Enabled=False
+				ckb_ezaf_taradod.Visible=False
+				ckb_ezaf_taradod_fs.Enabled=False
+				ckb_ezaf_taradod_fs.Visible=False
+				
+				
+				
+				save_box_allow=False
 				
 			Else if (temp_finger=2)Then
 					
@@ -2361,7 +2411,7 @@ Private Sub pan_add_taradod_Click
 				
 				time_show
 						
-				lbl_save_box.Enabled=True
+				save_box_allow=True
 			End If
 		Else
 			lbl_finger_fs_vorod_time.Text=" - "
@@ -2438,7 +2488,7 @@ Private Sub pan_add_mamoriat_Click
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	pan_finger_taradod.Visible=False
 	lbl_setting_date.Visible=False
-	lbl_save_box.Enabled=True
+	save_box_allow=True
 	
 	is_for_edit=False
 	pan_ezaf_taradod.Visible=True
@@ -2473,10 +2523,7 @@ Private Sub pan_add_mamoriat_Click
 	lbl_finger_vorod.Visible=True
 	lbl_finger_khoroj.Visible=True
 	
-		
-	'Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
 	
-		
 	''------------finger-------
 	If(File.Exists(File.DirInternal,"temp_from_mamoriat.txt")=True)Then
 		Dim ls_vorod As List
@@ -2544,8 +2591,13 @@ End Sub
 
 Private Sub lbl_save_box_Click
 	''\\\\\\\\\\\\\\\
-	time_show
-	add_end
+	If(save_box_allow=False)Then
+		ToastMessageShow("ورود یا خروج ناقص است.",False)
+	Else
+		time_show
+		add_end	
+	End If
+	
 	
 	
 End Sub
@@ -2591,14 +2643,20 @@ Sub add_end
 		If(chek=False)Then
 			If(alist.Get(3)<5)Then
 				add_taradod_sub
-				File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","0")
+				
+				If(is_for_edit=False)Then
+					lbl_rest_finger_fs_taradod_Click
+				End If
 				
 			Else
 				lbl_vip_Click
 			End If
 		Else
 			add_taradod_sub
-			File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","0")
+			If(is_for_edit=False)Then
+				lbl_rest_finger_fs_taradod_Click
+			End If
+			
 		End If
 		
 		
@@ -2866,8 +2924,7 @@ Sub add_taradod_sub
 		End If
 		
 	Catch
-		Log(date1)
-		Log(date2)
+		
 		ToastMessageShow("خطا",False)
 	End Try
 	
@@ -3887,7 +3944,7 @@ Private Sub lbl_edit_from_list_Click
 '	lbl_finger_vorod.Visible=False
 '	lbl_finger_khoroj.Visible=False
 	lbl_setting_date.Visible=False
-	lbl_save_box.Enabled=True
+	save_box_allow=True
 	
 	
 	
@@ -4237,8 +4294,11 @@ End Sub
 		
 
 Private Sub pan_bime_Click
-	StartActivity(bime_activity)
+	'StartActivity(bime_activity)
 	'Activity.Finish
+	Dim PhoneIntents1 As PhoneIntents
+	StartActivity (PhoneIntents1.OpenBrowser("https://eservices.tamin.ir/view/#/history"))
+	
 End Sub
 
 Private Sub pan_lock_Click
@@ -4297,13 +4357,19 @@ Private Sub lbl_account_Click
 		'	Activity.Finish
 		'Else
 			
-			If (myfunc.check_internet)Then	
-				StartActivity(step2_activity)
-			Else
-				myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
+	If (myfunc.check_internet)Then
+		StartActivity(step2_activity)
+				
+	Else
+				
+				
+			Dim result12 As Int
+		result12 = Msgbox2("اتصال اینترنت را بررسی کنید", "توجه!", "تلاش دوباره", "", "بستن", LoadBitmap(File.DirAssets, "attention.png"))
+			If result12 = DialogResponse.Positive Then
+				lbl_account_Click
 			End If
 			
-	'	End If
+		End If
 	
 	
 	pan_all_liteMenu_Click
@@ -4555,16 +4621,10 @@ End Sub
 
 Private Sub lbl_setting_date_Click
 	
-	'Dim res_val1 As Int =dbCode.get_setting_byName("setting_show_date")
+	
 	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
 	
-	
-'	If(res_val1=0)Then
-'		ckb_setting_date_date.Checked=False
-'	Else
-'		ckb_setting_date_date.Checked=True
-'	End If
-	
+
 	If(res_val2=0)Then
 		ckb_setting_date_finger.Checked=False
 	Else
@@ -4582,13 +4642,7 @@ End Sub
 
 Private Sub lbl_save_setting_date_Click
 	
-	
-'	If(ckb_setting_date_date.Checked=True)Then
-'		dbCode.update_setting_byname("setting_show_date",1)
-'	Else
-'		dbCode.update_setting_byname("setting_show_date",0)
-'	End If
-	
+
 	
 	If(ckb_setting_date_finger.Checked=True)Then
 		dbCode.update_setting_byname("setting_finger_mode",1)
@@ -4598,7 +4652,7 @@ Private Sub lbl_save_setting_date_Click
 		dbCode.update_setting_byname("setting_finger_mode",0)
 		pan_finger_taradod.Visible=False
 		lbl_rest_finger_fs_taradod_Click
-		lbl_save_box.Enabled=True
+		save_box_allow=True
 	End If
 	
 	
@@ -4639,7 +4693,7 @@ Private Sub lbl_finger_fs_khoroj_Click
 		lbl_finger_fs_khoroj.Tag=0
 		ToastMessageShow("ثبت زمان خروج",False)
 		time_show
-		lbl_save_box.Enabled=True
+		save_box_allow=True
 	End If
 	
 	
@@ -4735,7 +4789,7 @@ Private Sub lbl_rest_finger_fs_taradod_Click
 	lbl_finger_fs_vorod.Tag=1
 	lbl_finger_fs_khoroj.Tag=2
 	File.WriteString(File.DirInternal,"finger_vorod_taradod_fs.txt","0")
-	lbl_save_box.Enabled=False
+	save_box_allow=False
 End Sub
 
 Private Sub ckb_ezaf_taradod_fs_CheckedChange(Checked As Boolean)
@@ -4747,5 +4801,5 @@ Private Sub ckb_ezaf_taradod_fs_CheckedChange(Checked As Boolean)
 End Sub
 
 Private Sub lbl_help_setting_finger_Click
-	myfunc.help_man("راهنما","با فعال کردن این گزینه ثبت ترددها به صورت انگشتی انجام میشود - به این صورت که در موقع ورود و خروج انگشت میزنیم تا زمان ثبت شود و در آخر ذخیره میکنیم.")
+	myfunc.help_man("راهنما","با فعال کردن این گزینه ثبت ترددها به انگشتی انجام میشود . به این صورت که در موقع ورود و خروج انگشت میزنیم تا زمان ثبت شود و در آخر ذخیره میکنیم.")
 End Sub

@@ -351,6 +351,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -377,7 +378,6 @@ public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 
@@ -398,33 +398,33 @@ _time_remind.Initialize(processBA,"time_remind",(long) (1000));
 mostCurrent._et_phonnum.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (0),(int) (0),(int) (0)));
  //BA.debugLineNum = 37;BA.debugLine="et_code_num.Color=Colors.ARGB(0,0,0,0)";
 mostCurrent._et_code_num.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 39;BA.debugLine="If (File.Exists(File.DirInternal,\"phonNum\"))Then";
-if ((anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum"))) { 
+ //BA.debugLineNum = 39;BA.debugLine="If (File.Exists(File.DirInternal,\"phonNum_step0\")";
+if ((anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum_step0"))) { 
  //BA.debugLineNum = 40;BA.debugLine="Main.phon_num=File.ReadString(File.DirInternal,\"";
-mostCurrent._main._phon_num /*String*/  = anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum");
+mostCurrent._main._phon_num /*String*/  = anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum_step0");
  };
  //BA.debugLineNum = 45;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 258;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 259;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 259;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 260;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 260;BA.debugLine="If(pan_all_send.Visible=True)Then";
+ //BA.debugLineNum = 261;BA.debugLine="If(pan_all_send.Visible=True)Then";
 if ((mostCurrent._pan_all_send.getVisible()==anywheresoftware.b4a.keywords.Common.True)) { 
- //BA.debugLineNum = 261;BA.debugLine="lbl_back_run1_Click";
+ //BA.debugLineNum = 262;BA.debugLine="lbl_back_run1_Click";
 _lbl_back_run1_click();
  }else {
- //BA.debugLineNum = 263;BA.debugLine="lbl_back_Click";
+ //BA.debugLineNum = 264;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
  };
- //BA.debugLineNum = 266;BA.debugLine="Return True";
+ //BA.debugLineNum = 267;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 268;BA.debugLine="Return False";
+ //BA.debugLineNum = 269;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 270;BA.debugLine="End Sub";
+ //BA.debugLineNum = 271;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -451,16 +451,16 @@ mostCurrent._lbl_run2_step0.setEnabled(anywheresoftware.b4a.keywords.Common.True
 return "";
 }
 public static String  _et_phonnum_textchanged(String _old,String _new) throws Exception{
- //BA.debugLineNum = 250;BA.debugLine="Private Sub et_phonNum_TextChanged (Old As String,";
- //BA.debugLineNum = 251;BA.debugLine="If(et_phonNum.Text=\"\")Then";
+ //BA.debugLineNum = 251;BA.debugLine="Private Sub et_phonNum_TextChanged (Old As String,";
+ //BA.debugLineNum = 252;BA.debugLine="If(et_phonNum.Text=\"\")Then";
 if (((mostCurrent._et_phonnum.getText()).equals(""))) { 
- //BA.debugLineNum = 252;BA.debugLine="lbl_run1_step0.Enabled=False";
+ //BA.debugLineNum = 253;BA.debugLine="lbl_run1_step0.Enabled=False";
 mostCurrent._lbl_run1_step0.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 254;BA.debugLine="lbl_run1_step0.Enabled=True";
+ //BA.debugLineNum = 255;BA.debugLine="lbl_run1_step0.Enabled=True";
 mostCurrent._lbl_run1_step0.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 256;BA.debugLine="End Sub";
+ //BA.debugLineNum = 257;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -501,8 +501,8 @@ _send = "";
 _send = "id=1&num="+mostCurrent._main._phon_num /*String*/ +"&code=0";
  //BA.debugLineNum = 188;BA.debugLine="http1.PostString(\"https://taravatgroup.ir/sms_re";
 mostCurrent._http1._poststring /*String*/ ("https://taravatgroup.ir/sms_req.php",_send);
- //BA.debugLineNum = 190;BA.debugLine="File.WriteString(File.DirInternal,\"phonNum\",Main";
-anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum",mostCurrent._main._phon_num /*String*/ );
+ //BA.debugLineNum = 190;BA.debugLine="File.WriteString(File.DirInternal,\"phonNum_step0";
+anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum_step0",mostCurrent._main._phon_num /*String*/ );
  //BA.debugLineNum = 192;BA.debugLine="lbl_run2_step0.Enabled=False";
 mostCurrent._lbl_run2_step0.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 193;BA.debugLine="pan_all_send.Visible=True";
@@ -528,7 +528,7 @@ public static String  _jobdone(ir.taravatgroup.ezafekari2.httpjob _job) throws E
 try { //BA.debugLineNum = 212;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 213;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("556098819",_job._getstring /*String*/ (),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("558589187",_job._getstring /*String*/ (),0);
  //BA.debugLineNum = 214;BA.debugLine="If job.JobName=\"ht1\" Then";
 if ((_job._jobname /*String*/ ).equals("ht1")) { 
  }else if((_job._jobname /*String*/ ).equals("ht2")) { 
@@ -536,41 +536,45 @@ if ((_job._jobname /*String*/ ).equals("ht1")) {
 if ((_job._getstring /*String*/ ().contains("okuser")==anywheresoftware.b4a.keywords.Common.True)) { 
  //BA.debugLineNum = 219;BA.debugLine="File.WriteString(File.DirInternal,\"phonNum\",M";
 anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum",mostCurrent._main._phon_num /*String*/ );
- //BA.debugLineNum = 220;BA.debugLine="StartActivity(step2_activity)";
+ //BA.debugLineNum = 220;BA.debugLine="job.Release";
+_job._release /*String*/ ();
+ //BA.debugLineNum = 221;BA.debugLine="StartActivity(step2_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step2_activity.getObject()));
- //BA.debugLineNum = 221;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 222;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  }else if((_job._getstring /*String*/ ().contains("nouser")==anywheresoftware.b4a.keywords.Common.True)) { 
- //BA.debugLineNum = 226;BA.debugLine="File.WriteString(File.DirInternal,\"phonNum\",M";
-anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum",mostCurrent._main._phon_num /*String*/ );
- //BA.debugLineNum = 228;BA.debugLine="StartActivity(step1_activity)";
+ //BA.debugLineNum = 227;BA.debugLine="File.WriteString(File.DirInternal,\"phonNum_st";
+anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum_step1",mostCurrent._main._phon_num /*String*/ );
+ //BA.debugLineNum = 228;BA.debugLine="job.Release";
+_job._release /*String*/ ();
+ //BA.debugLineNum = 229;BA.debugLine="StartActivity(step1_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step1_activity.getObject()));
- //BA.debugLineNum = 229;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 230;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  }else {
- //BA.debugLineNum = 231;BA.debugLine="ToastMessageShow(\"کد تائید اشتباه است\",False)";
+ //BA.debugLineNum = 232;BA.debugLine="ToastMessageShow(\"کد تائید اشتباه است\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("کد تائید اشتباه است"),anywheresoftware.b4a.keywords.Common.False);
  };
  };
- //BA.debugLineNum = 236;BA.debugLine="job.Release";
+ //BA.debugLineNum = 237;BA.debugLine="job.Release";
 _job._release /*String*/ ();
  }else {
  };
  } 
-       catch (Exception e22) {
-			processBA.setLastException(e22); //BA.debugLineNum = 241;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("556098847",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
- //BA.debugLineNum = 242;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
+       catch (Exception e24) {
+			processBA.setLastException(e24); //BA.debugLineNum = 242;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("558589216",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 243;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 245;BA.debugLine="End Sub";
+ //BA.debugLineNum = 246;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_back_click() throws Exception{
- //BA.debugLineNum = 272;BA.debugLine="Private Sub lbl_back_Click";
- //BA.debugLineNum = 274;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 273;BA.debugLine="Private Sub lbl_back_Click";
+ //BA.debugLineNum = 275;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 275;BA.debugLine="End Sub";
+ //BA.debugLineNum = 276;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_back_run1_click() throws Exception{
@@ -581,12 +585,12 @@ mostCurrent._pan_all_send.setVisible(anywheresoftware.b4a.keywords.Common.False)
 return "";
 }
 public static String  _lbl_code_recived_click() throws Exception{
- //BA.debugLineNum = 277;BA.debugLine="Private Sub lbl_code_recived_Click";
- //BA.debugLineNum = 278;BA.debugLine="lbl_time_remind.Text=\"00:00\"";
+ //BA.debugLineNum = 278;BA.debugLine="Private Sub lbl_code_recived_Click";
+ //BA.debugLineNum = 279;BA.debugLine="lbl_time_remind.Text=\"00:00\"";
 mostCurrent._lbl_time_remind.setText(BA.ObjectToCharSequence("00:00"));
- //BA.debugLineNum = 279;BA.debugLine="pan_all_send.Visible=True";
+ //BA.debugLineNum = 280;BA.debugLine="pan_all_send.Visible=True";
 mostCurrent._pan_all_send.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 280;BA.debugLine="End Sub";
+ //BA.debugLineNum = 281;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_run1_step0_click() throws Exception{

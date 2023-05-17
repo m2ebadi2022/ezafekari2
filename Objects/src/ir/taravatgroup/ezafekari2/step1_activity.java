@@ -346,6 +346,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -372,7 +373,6 @@ public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 
@@ -403,20 +403,20 @@ _type_app = (int) (1);
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 112;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 113;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 114;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 115;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 114;BA.debugLine="StartActivity(Main)";
+ //BA.debugLineNum = 116;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
- //BA.debugLineNum = 115;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 117;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 117;BA.debugLine="Return True";
+ //BA.debugLineNum = 119;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 119;BA.debugLine="Return False";
+ //BA.debugLineNum = 121;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 121;BA.debugLine="End Sub";
+ //BA.debugLineNum = 123;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -475,29 +475,33 @@ if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) {
 if ((_job._jobname /*String*/ ).equals("http2")) { 
  //BA.debugLineNum = 89;BA.debugLine="If(job.GetString.Contains(\"true\"))Then";
 if ((_job._getstring /*String*/ ().contains("true"))) { 
- //BA.debugLineNum = 90;BA.debugLine="StartActivity(step2_activity)";
+ //BA.debugLineNum = 90;BA.debugLine="File.WriteString(File.DirInternal,\"phonNum\",M";
+anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum",mostCurrent._main._phon_num /*String*/ );
+ //BA.debugLineNum = 91;BA.debugLine="job.Release";
+_job._release /*String*/ ();
+ //BA.debugLineNum = 92;BA.debugLine="StartActivity(step2_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step2_activity.getObject()));
- //BA.debugLineNum = 91;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 93;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 92;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
+ //BA.debugLineNum = 94;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تبریک"),anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 94;BA.debugLine="ToastMessageShow(job.GetString,False)";
+ //BA.debugLineNum = 96;BA.debugLine="ToastMessageShow(job.GetString,False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_job._getstring /*String*/ ()),anywheresoftware.b4a.keywords.Common.False);
  };
  };
- //BA.debugLineNum = 99;BA.debugLine="job.Release";
+ //BA.debugLineNum = 101;BA.debugLine="job.Release";
 _job._release /*String*/ ();
  }else {
  };
  } 
-       catch (Exception e16) {
-			processBA.setLastException(e16); //BA.debugLineNum = 105;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("556885269",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
- //BA.debugLineNum = 106;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
+       catch (Exception e18) {
+			processBA.setLastException(e18); //BA.debugLineNum = 107;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("559375639",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 108;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 109;BA.debugLine="End Sub";
+ //BA.debugLineNum = 111;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_run_step1_click() throws Exception{

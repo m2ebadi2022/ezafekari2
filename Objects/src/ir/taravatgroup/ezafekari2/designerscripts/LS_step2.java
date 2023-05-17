@@ -18,6 +18,7 @@ views.get("panel9").vw.setLeft((int)((50d / 100 * width) - (views.get("panel9").
 views.get("img_p_edit").vw.setLeft((int)((50d / 100 * width) - (views.get("img_p_edit").vw.getWidth() / 2)));
 views.get("lbl_image_up").vw.setLeft((int)((50d / 100 * width) - (views.get("lbl_image_up").vw.getWidth() / 2)));
 views.get("img_pofil").vw.setLeft((int)((50d / 100 * width) - (views.get("img_pofil").vw.getWidth() / 2)));
+views.get("panel13").vw.setLeft((int)((50d / 100 * width) - (views.get("panel13").vw.getWidth() / 2)));
 
 }
 }

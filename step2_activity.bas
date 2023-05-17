@@ -14,6 +14,7 @@ Sub Process_Globals
 	'These variables can be accessed from all modules.
 	Dim comp As Compressor
 	Dim CC As ContentChooser 'Phone Library
+	Dim tim_send_backup As Timer
 End Sub
 
 Sub Globals
@@ -59,6 +60,11 @@ Sub Globals
 	Private lbl_icon_noUp As Label
 	Private Label12 As Label
 	Private Panel12 As Panel
+	
+	Private pan_all_sendBackup As Panel
+	Private ProgressBar1 As ProgressBar
+	Private pan_progressBar As Panel
+	Private lbl_progressBar1 As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -83,7 +89,15 @@ Sub Activity_Create(FirstTime As Boolean)
 			type_app=1
 		End If
 		
-	
+	If (Main.backup_page_show=1)Then
+		pan_all_sendBackup.Visible=True
+			pan_progressBar.Visible=True
+			ProgressBar1.Enabled=True
+			ProgressDialogShow2("پشتیبان گیری آنلاین ...",False)
+	Else
+		pan_all_sendBackup.Visible=False
+		ProgressDialogShow("بارگذاری ...")
+	End If
 		
 		
 		
@@ -95,7 +109,7 @@ Sub Activity_Create(FirstTime As Boolean)
 			Up.Initialize("Up")
 		End If
 	
-		ProgressDialogShow("بارگذاری ...")
+		
 		http_initial_1(1)
 		
 '		If(File.Exists(File.DirInternal,picName))Then
@@ -120,7 +134,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	''set color
 	
 	
-	
+	tim_send_backup.Initialize("tim_send_backup",4500)
 	
 	
 End Sub
@@ -163,7 +177,7 @@ Private Sub lbl_logOff_Click
 	Dim result As Int
 	result = Msgbox2("آیا از حساب خود خارج می شوید؟", "توجه", "بله", "", "خیر", LoadBitmap(File.DirAssets, "attention.png"))
 	If result = DialogResponse.Positive Then
-		File.Delete(File.DirInternal,"userAcc")
+		File.Delete(File.DirInternal,"phonNum")
 	
 		StartActivity(Main)
 		Activity.Finish
@@ -177,83 +191,96 @@ End Sub
 
 
 Sub http_initial_1(type1 As Int)
-	If (myfunc.check_internet=False)Then
-		myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
+	Try
 		
-	Else
+		
+		If (myfunc.check_internet=False)Then
+			myfunc.help_man("توجه","اتصال اینترنت را بررسی کنید !")
+		
+		Else
 			
 		
-		If(type1=1)Then
+			If(type1=1)Then
 			
-			http3.Initialize("ht1",Me)
-			Dim send As String= "var=3&phone="&Main.phon_num&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
-			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-			
-			
-		Else If(type1=2)Then ' to edit
-			Dim exist_pic As Int=0
-			If(File.Exists(Starter.Provider.SharedFolder,picName))Then
-				upload_img(Starter.Provider.SharedFolder&"/"&picName)
-				exist_pic=1
-			End If
-			
-			http3.Initialize("ht2",Me)
-			Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic&"&pic_name="&picName
-			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-			
-			
-			
-		Else If(type1=3)Then '  req transfer noskhe
-			http3.Initialize("ht3",Me)
-			Dim send As String= "var=4&phone="&Main.phon_num&"&name="&lbl_nameFamili.Text
-			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-			
-		Else If(type1=4)Then '  req chek noskhe
-			http3.Initialize("ht4",Me)
-			Dim send As String= "var=5&phone="&Main.phon_num&"&name="&lbl_nameFamili.Text
-			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-			
-		Else If(type1=5)Then '  send msg
-			If(File.Exists(Starter.Provider.SharedFolder,tempFile))Then
-				upload_file(Starter.Provider.SharedFolder&"/"&tempFile)
-			Else
-				tempFile=""	
-			End If
-			
-			If(et_msg.Text.Trim="")Then
-				ToastMessageShow("کادر پیام خالی است",False)
-			Else
-					
-				http3.Initialize("ht5",Me)
-				Dim send As String= "var=6&phone="&Main.phon_num&"&msg="&et_msg.Text&"&file_name="&tempFile&"&name="&lbl_nameFamili.Text
+				http3.Initialize("ht1",Me)
+				Dim send As String= "var=3&phone="&Main.phon_num&"&type_app="&type_app&"&div_id="&pp.GetSettings("android_id")&"&div_model="&pp.Model
 				http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-				pan_all_msg.Visible=False
+			
+			
+			Else If(type1=2)Then ' to edit
+				Dim exist_pic As Int=0
+				If(File.Exists(Starter.Provider.SharedFolder,picName))Then
+					upload_img(Starter.Provider.SharedFolder&"/"&picName)
+					exist_pic=1
+				End If
+			
+				http3.Initialize("ht2",Me)
+				Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic&"&pic_name="&picName
+				http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+			
+			
+			
+			Else If(type1=3)Then '  req transfer noskhe
+				http3.Initialize("ht3",Me)
+				Dim send As String= "var=4&phone="&Main.phon_num&"&name="&lbl_nameFamili.Text
+				http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+			
+			Else If(type1=4)Then '  req chek noskhe
+				http3.Initialize("ht4",Me)
+				Dim send As String= "var=5&phone="&Main.phon_num&"&name="&lbl_nameFamili.Text
+				http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+			
+			Else If(type1=5)Then '  send msg
+				If(File.Exists(Starter.Provider.SharedFolder,tempFile))Then
+					upload_file(Starter.Provider.SharedFolder&"/"&tempFile)
+				Else
+					tempFile=""
+				End If
+			
+				If(et_msg.Text.Trim="")Then
+					ToastMessageShow("کادر پیام خالی است",False)
+				Else
+					
+					http3.Initialize("ht5",Me)
+					Dim send As String= "var=6&phone="&Main.phon_num&"&msg="&et_msg.Text&"&file_name="&tempFile&"&name="&lbl_nameFamili.Text
+					http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+					pan_all_msg.Visible=False
 		
 				
+				End If
+			
+			
+			Else If (type1=6) Then  ' recive pic
+				http3.Initialize("ht7", Me)
+				http3.Download("https://taravatgroup.ir/avatar_ezaf_users/"&picName)
+			Else If(type1=7)Then
+			
+				http3.Initialize("ht8", Me)
+		
+				Dim send As String= "var=1&phone="&Main.phon_num&"&key=mME22eBbA20aDd1401"
+				http3.PostString("https://taravatgroup.ir/user_msg.php",send)
+			
+			
+			Else If(type1=8)Then
+		
+				http3.Initialize("ht9",Me)
+				Dim send As String= "var=7&phone="&Main.phon_num&"&div_id="&pp.GetSettings("android_id")
+				http3.PostString("https://taravatgroup.ir/save_acc.php",send)
+			
+			
 			End If
-			
-			
-		Else If (type1=6) Then  ' recive pic
-			http3.Initialize("ht7", Me)
-			http3.Download("https://taravatgroup.ir/avatar_ezaf_users/"&picName)
-		Else If(type1=7)Then	
-			
-			http3.Initialize("ht8", Me)
 		
-			Dim send As String= "var=1&phone="&Main.phon_num&"&key=mME22eBbA20aDd1401"
-			http3.PostString("https://taravatgroup.ir/user_msg.php",send)
-			
-			
-		Else If(type1=8)Then
-		
-			http3.Initialize("ht9",Me)
-			Dim send As String= "var=7&phone="&Main.phon_num&"&div_id="&pp.GetSettings("android_id")
-			http3.PostString("https://taravatgroup.ir/save_acc.php",send)
-			
-			
 		End If
 		
-	End If
+		
+		
+		
+		
+	Catch
+		Log(LastException)
+	End Try
+	
+	
 	
 End Sub
  
@@ -268,6 +295,7 @@ Sub Jobdone (job As HttpJob)
 				If(job.GetString.Contains("nouser"))Then
 				
 					File.Delete(File.DirInternal,"userAcc")
+					job.Release
 					StartActivity(step0_activity)
 					Activity.Finish
 				Else
@@ -288,6 +316,20 @@ Sub Jobdone (job As HttpJob)
 					
 					user_key=a(4)
 					
+					
+					
+					If(Main.msg_page_show=1)Then
+						lbl_all_msg_Click
+					Else If (Main.backup_page_show=1)Then
+						tim_send_backup.Enabled=True
+						
+					End If
+					
+					
+					File.WriteList(File.DirInternal,"userAcc",a)
+					
+						job.Release
+						
 					picName="user-"&Main.phon_num&"-"&a(4)&".jpg"
 					If(File.Exists(File.DirInternal,picName)=False)Then
 						If(a(3)="1")Then
@@ -300,13 +342,11 @@ Sub Jobdone (job As HttpJob)
 					End If
 				
 				
-					File.WriteList(File.DirInternal,"userAcc",a)
+					
 				
-				job.Release
+			
 				
-					If(Main.msg_page_show=1)Then
-						lbl_all_msg_Click
-					End If
+					
 					
 
 				End If
@@ -380,7 +420,10 @@ Sub Jobdone (job As HttpJob)
 			else If job.JobName="ht9" Then  '  i see
 				Log(job.GetString)
 			End If
-			ProgressDialogHide
+			If (Main.backup_page_show<>1)Then
+				ProgressDialogHide
+			End If
+			
 			job.Release
 		
 		Else
@@ -417,6 +460,26 @@ Sub Jobdone (job As HttpJob)
 		ToastMessageShow("خطا در اتصال",False)
 	End Try
 
+End Sub
+
+Sub tim_send_backup_Tick
+	send_backup_func
+	tim_send_backup.Enabled=False
+	
+	
+	ToastMessageShow(" ذخیره شد",False)
+	
+	lbl_back_home_Click
+ProgressDialogHide
+End Sub
+
+Sub send_backup_func
+
+	File.Copy(File.DirInternal,"db.db",Starter.Provider.SharedFolder,Main.phon_num&"-db-"&user_key&".db")
+	upload_file(Starter.Provider.SharedFolder&"/"&Main.phon_num&"-db-"&user_key&".db")
+	Main.backup_page_show=0
+	File.WriteString(File.DirInternal,"chk_backup.txt",myfunc.fa2en(DateTime.Date(DateTime.Now)))
+	
 End Sub
 
 
@@ -498,37 +561,59 @@ End Sub
 
 Sub upload_img(path As String)
 	
-	File.Copy(Starter.Provider.SharedFolder,picName,File.DirInternal,picName)
-	Path_Phone_Image = path
-	Up.doFileUpload( Null,Null,Path_Phone_Image,Url_Php_Page)
+		File.Copy(Starter.Provider.SharedFolder,picName,File.DirInternal,picName)
+		Path_Phone_Image = path
+		Up.doFileUpload( Null,Null,Path_Phone_Image,Url_Php_Page)
+		
+		img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+		img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
 	
-	img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
-	img_p_edit.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
+	
 	
 End Sub
 
 Sub upload_file(path As String)
-	ProgressDialogShow("بارگیری...")
-	Up.doFileUpload( Null,Null,path,"https://taravatgroup.ir/file_up.php")
+	
+		If (Main.backup_page_show<>1)Then
+			'ProgressDialogShow("بارگیری...")
+			
+		End If
+		pan_progressBar.Visible=True
+		Up.doFileUpload( Null,Null,path,"https://taravatgroup.ir/file_up.php")
+	
+
 End Sub
 
 Sub Up_sendFile (value As String)
-	Log( value)
+	
 End Sub
 
 Sub Up_statusUpload (value As String)
-	lbl_image_up.Text=value&" %"
+
+		lbl_image_up.Text=value&" %"
+		If(value>=100)Then
+			lbl_back_Click
+			
+				ProgressDialogHide
+			pan_progressBar.Visible=False
+			lbl_progressBar1.Enabled=False
+			
+				ToastMessageShow(" ذخیره شد",False)
+			
+		
+		Else
+			ProgressBar1.Progress=value
+			lbl_progressBar1.Text=value&"%"
+		
+		End If
+		
+
 	
-	
-	If(value>=100)Then
-		lbl_back_Click
-		ProgressDialogHide
-		ToastMessageShow(" ذخیره شد",False)
-	End If
 	
 End Sub
 
 Private Sub lbl_transfer_Click
+	
 	Dim result As Int
 	result = Msgbox2("درخواست انتقال نسخه طلایی به گوشی جدید", "درخواست انتقال", "ثبت درخواست ", "", "لغو", LoadBitmap(File.DirAssets, "attention.png"))
 	If result = DialogResponse.Positive Then
@@ -570,6 +655,8 @@ Private Sub lbl_send_db_Click
 	If result = DialogResponse.Positive Then
 		
 		upload_file(Starter.Provider.SharedFolder&"/"&Main.phon_num&"-db-"&user_key&".db")
+		pan_progressBar.Visible=True
+		ProgressBar1.Enabled=True
 		
 	End If
 End Sub
@@ -663,4 +750,8 @@ File.Delete(Starter.Provider.SharedFolder, tempFile)
 	
 lbl_icon_up.Text=""
 lbl_icon_noUp.Visible=False
+End Sub
+
+Private Sub pan_all_sendBackup_Click
+	
 End Sub

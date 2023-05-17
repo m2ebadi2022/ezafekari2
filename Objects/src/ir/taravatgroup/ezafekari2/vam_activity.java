@@ -371,6 +371,7 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -398,7 +399,6 @@ public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -920,6 +920,25 @@ _fill_list_vam();
  };
  };
  //BA.debugLineNum = 223;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_restall_click() throws Exception{
+int _result = 0;
+ //BA.debugLineNum = 567;BA.debugLine="Private Sub lbl_restAll_Click";
+ //BA.debugLineNum = 568;BA.debugLine="Dim result As Int";
+_result = 0;
+ //BA.debugLineNum = 569;BA.debugLine="result = Msgbox2(\"با این گزینه همه وام ها و قسط ه";
+_result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence("با این گزینه همه وام ها و قسط ها حذف میشوند!"),BA.ObjectToCharSequence("بازنشانی"),"بازنشانی همه","","بستن",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA);
+ //BA.debugLineNum = 570;BA.debugLine="If result = DialogResponse.Positive Then";
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
+ //BA.debugLineNum = 572;BA.debugLine="dbCode.delete_all_vam";
+mostCurrent._dbcode._delete_all_vam /*String*/ (mostCurrent.activityBA);
+ //BA.debugLineNum = 573;BA.debugLine="ToastMessageShow(\"انجام شد.\",False)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("انجام شد."),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 574;BA.debugLine="fill_list_vam";
+_fill_list_vam();
+ };
+ //BA.debugLineNum = 580;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_save_click() throws Exception{
