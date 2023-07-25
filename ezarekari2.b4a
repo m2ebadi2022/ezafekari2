@@ -350,8 +350,8 @@ Version=12.2
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 27
-	#VersionName: 5.5
+	#VersionCode: 28
+	#VersionName: 5.6
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true
@@ -662,6 +662,10 @@ Sub Globals
 	Private ckb_ezaf_taradod_fs As CheckBox
 	Private lbl_save_box As Label
 	Dim save_box_allow As Boolean=True
+	
+	Dim state_tatil As Int=0
+	Private ckb_tatil_rasmi As CheckBox
+	Private ckb_tatil_garardadi As CheckBox
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -2467,6 +2471,9 @@ Private Sub pan_add_taradod_Click
 
 		''=====================
 		
+		state_tatil= chek_tatil_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
+		
+		
 		time_show
 		
 			
@@ -2574,6 +2581,11 @@ Private Sub pan_add_mamoriat_Click
 '		lbl_finger_khoroj.TextColor=0xFF3B78D5
 '	End If
 	
+	
+	
+	
+	
+	
 	time_show
 	
 		
@@ -2642,8 +2654,17 @@ Sub add_end
 		
 		If(chek=False)Then
 			If(alist.Get(3)<5)Then
-				add_taradod_sub
 				
+				If(state_tatil=0)Then
+					add_taradod_sub
+				Else If (state_tatil=1) Then 'tatil rasmi
+					add_taradod_sub2
+				Else If (state_tatil=2) Then   'tatil garardadi
+				Else If (state_tatil=3) Then   'tatil jome
+				End If
+				
+				
+				'eeeeeeeeeee
 				If(is_for_edit=False)Then
 					lbl_rest_finger_fs_taradod_Click
 				End If
@@ -2652,7 +2673,14 @@ Sub add_end
 				lbl_vip_Click
 			End If
 		Else
-			add_taradod_sub
+			If(state_tatil=0)Then
+				add_taradod_sub
+			Else If (state_tatil=1) Then 'tatil rasmi
+				add_taradod_sub2
+			Else If (state_tatil=2) Then   'tatil garardadi
+			Else If (state_tatil=3) Then   'tatil jome
+			End If
+			
 			If(is_for_edit=False)Then
 				lbl_rest_finger_fs_taradod_Click
 			End If
@@ -2932,6 +2960,94 @@ End Sub
 
 
 
+Sub add_taradod_sub2
+	Try
+		
+		If(hour_bt<0 Or min_bt<0 )Then
+			ToastMessageShow("خطا! زمان منفی نمی شود",True)
+		
+		Else If (moon_bt<>0 Or year_bt<>0 Or day_bt>2)Then
+			ToastMessageShow("خطا! زمان نادرست است",True)
+		Else If (hour_bt=0 And min_bt=0 )Then
+			ToastMessageShow("خطا! انتخاب زمان  ",True)
+		Else
+			
+			
+			
+			If(is_for_edit=False)Then
+				If(dbCode.isexist_taradod_by_date(date1)=True)Then
+					
+					
+					Dim result_a As Boolean
+					result_a=myfunc.msg_add_edit("توجه","برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید  ")
+					If (result_a=True)Then
+						
+						'
+
+							If(radio_ez_fog.Checked=True)Then
+								Dim str_tozih1 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
+							Else
+								Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
+							End If		
+
+							Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
+						   
+						
+						
+							dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih1,0)
+							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
+						
+					
+							ToastMessageShow ("اضافه شد",False)
+							btn_menu_home_Click
+						
+					End If
+					
+					
+				Else
+				
+					If(radio_ez_fog.Checked=True)Then
+						Dim str_tozih1 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
+					Else
+						Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
+					End If
+
+					Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
+						   
+						
+						
+					dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih1,0)
+					dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
+						
+					
+					ToastMessageShow ("اضافه شد",False)
+					btn_menu_home_Click
+				
+				
+				End If
+			Else
+				dbCode.edit_taradod(current_id_edit,date1,date2,lbl_tim1.Text,lbl_tim2.Text,day_bt,hour_bt,min_bt,et_tozihat.Text,0)
+					
+				ToastMessageShow ("ویرایش شد",False)
+				fill_lists(sp_year.SelectedItem,myfunc.convert_adad(sp_moon.SelectedIndex+1))
+				'btn_menu_list_Click
+				'TabHost1.CurrentTab=2
+			End If
+			
+			
+			pan_all_Click
+			
+		End If
+		
+	Catch
+		
+		ToastMessageShow("خطا",False)
+	End Try
+	
+End Sub
+
+
+
 Sub add_mamoriat_sub
 	Dim state_mod As Int=0
 	Dim str_mod As String=""
@@ -3132,34 +3248,60 @@ Sub time_show
 			
 			tim_min=(day_bt*24*60)+(hour_bt*60)+min_bt
 			
-			
-			If(tim_min>saat_kar_min) Then
+			If(state_tatil=0) Then  'tatil nist
+				If(tim_min>saat_kar_min) Then
+						
+				
+					ckb_ezaf_taradod.Enabled=True
+					ckb_ezaf_taradod.Visible=True
+					ckb_ezaf_taradod_fs.Enabled=True
+					ckb_ezaf_taradod_fs.Visible=True
 					
+					
+					radio_ez_adi.Enabled=True
+					radio_ez_fog.Enabled=True
+		
 			
+					lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min)).Get(1)&" دقیقه "
+				
+					lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
+				
+				Else
+					lbl_ezaf_taradod.Text=""
+					ckb_ezaf_taradod.Enabled=False
+					ckb_ezaf_taradod.Visible=False
+					radio_ez_adi.Enabled=False
+					radio_ez_fog.Enabled=False
+					lbl_ezaf_taradod_fs.Text=""
+					ckb_ezaf_taradod_fs.Enabled=False
+					ckb_ezaf_taradod_fs.Visible=False
+				End If
+			Else If (state_tatil=1) Then 'tatil rasmi
+				'eeeeeeeeee
+				
 				ckb_ezaf_taradod.Enabled=True
 				ckb_ezaf_taradod.Visible=True
 				ckb_ezaf_taradod_fs.Enabled=True
 				ckb_ezaf_taradod_fs.Visible=True
-				
-				
+					
+					
 				radio_ez_adi.Enabled=True
 				radio_ez_fog.Enabled=True
-	
 		
-				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min)).Get(1)&" دقیقه "
 			
+				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min)).Get(1)&" دقیقه "
+				
 				lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
+				
+				
+				
+				
+			Else If (state_tatil=2) Then 'tatil garardadi
 			
-			Else
-				lbl_ezaf_taradod.Text=""
-				ckb_ezaf_taradod.Enabled=False
-				ckb_ezaf_taradod.Visible=False
-				radio_ez_adi.Enabled=False
-				radio_ez_fog.Enabled=False
-				lbl_ezaf_taradod_fs.Text=""
-				ckb_ezaf_taradod_fs.Enabled=False
-				ckb_ezaf_taradod_fs.Visible=False
-			End If
+			Else If (state_tatil=3) Then   'tatil jome
+			
+			
+			End If	
 			
 			If(is_for_edit=True)Then
 				lbl_ezaf_taradod.Text=""
@@ -3687,6 +3829,10 @@ Private Sub lbl_save_picker_Click
 	
 		End If
 	
+		state_tatil= chek_tatil_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
+		
+		'eeeeeeeeeeee
+		
 		
 	Else If (index_piker=2)Then  'date2
 		
@@ -3722,6 +3868,34 @@ Private Sub lbl_save_picker_Click
 	pan_all2.Visible=False
 	time_show
 End Sub
+
+
+Sub chek_tatil_day (year1 As Int,moon1 As Int, day1 As Int) As Int
+	
+	Dim id_thisDay As Int
+	id_thisDay=dbCode.get_day_id(year1,moon1,day1)
+	
+	dbCode.connect_db
+	dbCode.res =  dbCode.sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id="&id_thisDay)
+	
+	dbCode.res.Position = 0
+	
+	
+	Dim result_int As Int=0
+	If (dbCode.res.GetString("state") = "tatil")Then
+		result_int=1
+	else If (dbCode.res.GetString("state") = "tatil1")Then
+		result_int=2
+	End If
+	
+	If(dbCode.res.GetInt("day_h")=7)Then
+		result_int=3
+	End If
+	
+	Return result_int    ' result_int=0 is not tatil   & 1 => tatil rasmi  &  tatil1 => tatil garardadi  & 3 => jome
+	
+End Sub
+
 
 Private Sub pan_all2_Click
 	
@@ -4623,13 +4797,27 @@ Private Sub lbl_setting_date_Click
 	
 	
 	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
-	
-
 	If(res_val2=0)Then
 		ckb_setting_date_finger.Checked=False
 	Else
 		ckb_setting_date_finger.Checked=True
 	End If
+	
+	Dim res_tatil_rasmi As Int =dbCode.get_setting_byName("setting_tatil_rasmi")
+	If(res_tatil_rasmi=0)Then
+		ckb_tatil_rasmi.Checked=False
+	Else
+		ckb_tatil_rasmi.Checked=True
+	End If
+	
+	Dim res_tatil_garardadi As Int =dbCode.get_setting_byName("setting_tatil_garardadi")
+	If(res_tatil_garardadi=0)Then
+		ckb_tatil_garardadi.Checked=False
+	Else
+		ckb_tatil_garardadi.Checked=True
+	End If
+	
+	
 	
 	
 	pan_all_setting_date.Visible=True
@@ -4655,8 +4843,17 @@ Private Sub lbl_save_setting_date_Click
 		save_box_allow=True
 	End If
 	
+	If(ckb_tatil_rasmi.Checked=True)Then
+		dbCode.update_setting_byname("setting_tatil_rasmi",1)
+	Else
+		dbCode.update_setting_byname("setting_tatil_rasmi",0)
+	End If
 	
-	
+	If(ckb_tatil_garardadi.Checked=True)Then
+		dbCode.update_setting_byname("setting_tatil_garardadi",1)
+	Else
+		dbCode.update_setting_byname("setting_tatil_garardadi",0)
+	End If
 	
 	
 	
@@ -4802,4 +4999,13 @@ End Sub
 
 Private Sub lbl_help_setting_finger_Click
 	myfunc.help_man("راهنما","با فعال کردن این گزینه ثبت ترددها به انگشتی انجام میشود . به این صورت که در موقع ورود و خروج انگشت میزنیم تا زمان ثبت شود و در آخر ذخیره میکنیم.")
+End Sub
+
+
+Private Sub lbl_help_tatil_rasmi_Click
+	myfunc.help_man("راهنما","تردد در روزهای تعطیل رسمی و جمعه ها اضافه کاری محسوب شوند.")
+End Sub
+
+Private Sub lbl_help_tatil_garardadi_Click
+	myfunc.help_man("راهنما","تردد در روزهای تعطیل قراردادی اضافه کاری محسوب شود- برای تعین روزها به عنوان تعطیل قراردادی در صفحه تقویم روی هر روز انگشت خود را نگه دارید و بعد تیک تعطیل قراردادی را بزنید. ")
 End Sub

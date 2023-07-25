@@ -1505,6 +1505,12 @@ Sub check_new_add
 	init_notfound("backup_online",0)
 	
 	
+	
+	init_notfound("setting_tatil_rasmi",1)
+	init_notfound("setting_tatil_garardadi",1)
+	
+	
+	
 End Sub
 
 
