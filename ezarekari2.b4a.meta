@@ -100,6 +100,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=11,12,17,18,20,21,22,23,26
 ModuleClosedNodes9=
-NavigationStack=Main,Globals,302,0,Main,pan_add_taradod_Click,1988,0,Main,lbl_save_setting_date_Click,4489,0,dbCode,check_new_add,1501,0,Visual Designer,main_layout.bal,-100,3,Main,lbl_setting_date_Click,4462,1,Main,lbl_help_setting_finger_Click,4650,0,Main,lbl_help_tatil_rasmi_Click,4655,6,Main,ckb_ezaf_taradod_fs_CheckedChange,4647,0,Main,lbl_help_tatil_garardadi_Click,4659,6
+NavigationStack=Main,pan_all_Click,2262,0,Main,lbl_save_setting_date_Click,4643,6,shift_activity,Activity_Create,509,0,shift_activity,lbl_go_today_Click,528,0,setting_hogog_activity,Activity_Create,187,0,Main,lbl_edit_from_list_Click,3883,6,myfunc,Min_to_saatMinRoz2_dontDay,284,0,myfunc,Min_to_saatMinRoz,252,0,shift_activity,get_ezafekari,875,6,shift_activity,get_morakhasi,909,0
 SelectedBuild=0
 VisibleModules=19,7,27

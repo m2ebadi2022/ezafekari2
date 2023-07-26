@@ -309,7 +309,7 @@ Library6=fileprovider
 Library7=inappbazzar
 Library8=json
 Library9=manampersiandate
-ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="32"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
+ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
 Module1=ayabzahab_activity
 Module10=FingerprintManager
 Module11=food_activity
@@ -346,7 +346,7 @@ Module9=fast_run_activity
 NumberOfFiles=143
 NumberOfLibraries=23
 NumberOfModules=33
-Version=12.2
+Version=12.5
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
@@ -664,8 +664,11 @@ Sub Globals
 	Dim save_box_allow As Boolean=True
 	
 	Dim state_tatil As Int=0
+	Dim state_tatil_setting As Int=0  ' 0 all is off -- 1 all is on -- 11 just 1 is on  -- 22 just 2 is on 
+	
 	Private ckb_tatil_rasmi As CheckBox
 	Private ckb_tatil_garardadi As CheckBox
+	Private lbl_tatil_show As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -2102,6 +2105,7 @@ Private Sub pan_add_morakhasi_Click
 	ckb_ezaf_taradod.Visible=False
 	ckb_ezaf_taradod.Checked=False
 	
+	
 	''--------------------------
 	
 	rsPOP_noe.Initialize("rsPOP_noe",lbl_ezaf_taradod)
@@ -2166,9 +2170,9 @@ Private Sub pan_add_morakhasi_Click
 
 	
 	''=====================
+	lbl_tatil_show.Text=""
 	
 	time_show
-	
 	
 	
 	
@@ -2229,7 +2233,6 @@ Private Sub pan_add_ezafekari_Click
 	
 	
 	
-	
 	pik_year1.Text=myfunc.fa2en(persianDate.PersianYear)
 	pik_moon1.Tag=myfunc.fa2en(persianDate.PersianMonth)
 	pik_moon1.Text=moon.Get(pik_moon1.Tag-1)
@@ -2281,7 +2284,8 @@ Private Sub pan_add_ezafekari_Click
 
 		''=====================
 	
-
+	lbl_tatil_show.Text=""
+	
 	time_show
 	
 	
@@ -2328,13 +2332,25 @@ Private Sub pan_add_taradod_Click
 	
 
 
-
-
-
-
 	lbl_finger_vorod.TextColor=0xFF3B78D5
 	lbl_finger_khoroj.TextColor=0xFF3B78D5
 	lbl_setting_date.Visible=True
+	
+	
+	''eeeeeeeeeee
+	state_tatil= chek_tatil_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
+		
+	state_tatil_setting = chek_tatil_setting
+		
+	If(state_tatil=0)Then
+		lbl_tatil_show.Text=""
+	Else if (state_tatil=1) Then
+		lbl_tatil_show.Text="(تعطیل رسمی)"
+	Else if (state_tatil=2) Then
+		lbl_tatil_show.Text="(تعطیل قراردادی)"
+	End If
+	
+	
 	
 	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
 	If(res_val2=1)Then
@@ -2471,7 +2487,9 @@ Private Sub pan_add_taradod_Click
 
 		''=====================
 		
-		state_tatil= chek_tatil_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
+		
+	
+		
 		
 		
 		time_show
@@ -2516,7 +2534,6 @@ Private Sub pan_add_mamoriat_Click
 	ckb_ezaf_taradod.Enabled=False
 	ckb_ezaf_taradod.Visible=False
 	ckb_ezaf_taradod.Checked=False
-	
 	
 	
 	
@@ -2584,12 +2601,12 @@ Private Sub pan_add_mamoriat_Click
 	
 	
 	
-	
+	lbl_tatil_show.Text=""
 	
 	time_show
 	
 		
-		
+	
 	
 End Sub
 
@@ -2655,13 +2672,34 @@ Sub add_end
 		If(chek=False)Then
 			If(alist.Get(3)<5)Then
 				
-				If(state_tatil=0)Then
-					add_taradod_sub
-				Else If (state_tatil=1) Then 'tatil rasmi
-					add_taradod_sub2
-				Else If (state_tatil=2) Then   'tatil garardadi
-				Else If (state_tatil=3) Then   'tatil jome
-				End If
+			
+				Select state_tatil_setting
+					Case 0
+						add_taradod_sub
+					Case 1
+						If (state_tatil=1 Or state_tatil=2) Then 'tatil rasmi 'tatil garardadi
+							add_taradod_sub2
+						Else
+							add_taradod_sub
+						End If
+						
+					Case 11
+						
+						If (state_tatil=1) Then 'tatil rasmi 
+							add_taradod_sub2
+						Else
+							add_taradod_sub
+						End If
+						
+					Case 22
+						
+						If (state_tatil=2) Then  'tatil garardadi
+							add_taradod_sub2
+						Else
+							add_taradod_sub
+						End If
+						
+				End Select
 				
 				
 				'eeeeeeeeeee
@@ -2673,13 +2711,36 @@ Sub add_end
 				lbl_vip_Click
 			End If
 		Else
-			If(state_tatil=0)Then
-				add_taradod_sub
-			Else If (state_tatil=1) Then 'tatil rasmi
-				add_taradod_sub2
-			Else If (state_tatil=2) Then   'tatil garardadi
-			Else If (state_tatil=3) Then   'tatil jome
-			End If
+			
+			Select state_tatil_setting
+				Case 0
+					add_taradod_sub
+				Case 1
+					If (state_tatil=1 Or state_tatil=2) Then 'tatil rasmi 'tatil garardadi
+						add_taradod_sub2
+					Else
+						add_taradod_sub
+					End If
+						
+				Case 11
+						
+					If (state_tatil=1) Then 'tatil rasmi
+						add_taradod_sub2
+					Else
+						add_taradod_sub
+					End If
+						
+				Case 22
+						
+					If (state_tatil=2) Then  'tatil garardadi
+						add_taradod_sub2
+					Else
+						add_taradod_sub
+					End If
+						
+			End Select
+			
+			
 			
 			If(is_for_edit=False)Then
 				lbl_rest_finger_fs_taradod_Click
@@ -2852,15 +2913,16 @@ Sub add_taradod_sub
 					If (result_a=True)Then
 						
 						'error
+						Dim str_tozih0 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
+						Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
+						Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
 						
 						If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then
 						
 '							Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
 '							Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
 							Dim tim_ezaf_min As Int=tim_min-saat_kar_min
-							Dim str_tozih0 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
-							Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
-							Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
+							
 						    Dim ls_res_tim1 As List
 							ls_res_tim1.Initialize
 							ls_res_tim1=myfunc.find_tim1_taradod(lbl_tim2.Text,tim_ezaf_min)
@@ -2897,16 +2959,18 @@ Sub add_taradod_sub
 					
 					
 				Else
+					
+					
+					Dim str_tozih0 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
+					Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
+					Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
+						
 				
 					If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then	
 						
 '						Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
 '						Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
 						Dim tim_ezaf_min As Int=tim_min-saat_kar_min
-						
-						Dim str_tozih0 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
-						Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
-						Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
 						
 						
 						Dim ls_res_tim1 As List
@@ -2982,21 +3046,25 @@ Sub add_taradod_sub2
 					result_a=myfunc.msg_add_edit("توجه","برای این تاریخ تردد وجود دارد میتوانید در صفحه لیست آن را ویرایش نمائید  ")
 					If (result_a=True)Then
 						
-						'
-
-							If(radio_ez_fog.Checked=True)Then
-								Dim str_tozih1 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
-							Else
-								Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
-							End If		
-
-							Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
-						   
+						Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
 						
-						
-							dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih1,0)
+						If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then
+
+								If(radio_ez_fog.Checked=True)Then
+									Dim str_tozih1 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
+									dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih1,2)
+								Else
+									Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
+									dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih1,0)
+								End If		
+
+							
+							   
+							
+								dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
+						Else
 							dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
-						
+						End If	
 					
 							ToastMessageShow ("اضافه شد",False)
 							btn_menu_home_Click
@@ -3005,20 +3073,28 @@ Sub add_taradod_sub2
 					
 					
 				Else
-				
-					If(radio_ez_fog.Checked=True)Then
-						Dim str_tozih1 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
-					Else
-						Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
-					End If
-
+					
 					Dim str_tozih2 As String="(اضافه کاری دارد)-"&et_tozihat.Text
-						   
+				
+					If (ckb_ezaf_taradod.Checked==True And ckb_ezaf_taradod.Enabled==True)Then
+				
+						If(radio_ez_fog.Checked=True)Then
+							Dim str_tozih1 As String="(فوق العاده)(تردد دارد)-"&et_tozihat.Text
+							dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih1,2)
+						Else
+							Dim str_tozih1 As String="(تردد دارد)-"&et_tozihat.Text
+							dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih1,0)
+						End If
+
 						
-						
-					dbCode.add_ezafekari(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih1,0)
-					dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
-						
+							   
+							
+							
+						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
+					
+					Else
+						dbCode.add_taradod(date1,date2,lbl_tim1.Text,lbl_tim2.Text,0,0,tim_min,str_tozih2,0)
+					End If
 					
 					ToastMessageShow ("اضافه شد",False)
 					btn_menu_home_Click
@@ -3245,63 +3321,40 @@ Sub time_show
 		If(index_box=3)Then
 			
 			
-			
+			''eeeeeeeeee
 			tim_min=(day_bt*24*60)+(hour_bt*60)+min_bt
 			
-			If(state_tatil=0) Then  'tatil nist
-				If(tim_min>saat_kar_min) Then
-						
+			
+			Select state_tatil_setting
 				
-					ckb_ezaf_taradod.Enabled=True
-					ckb_ezaf_taradod.Visible=True
-					ckb_ezaf_taradod_fs.Enabled=True
-					ckb_ezaf_taradod_fs.Visible=True
+				Case 0
+					tatil_nist
+				Case 1
 					
+					If (state_tatil=1 Or state_tatil=2 ) Then 'tatil rasmi  'tatil garardadi
+						tatil_hast
+					Else
+						tatil_nist
+					End If
 					
-					radio_ez_adi.Enabled=True
-					radio_ez_fog.Enabled=True
-		
-			
-					lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min)).Get(1)&" دقیقه "
-				
-					lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
-				
-				Else
-					lbl_ezaf_taradod.Text=""
-					ckb_ezaf_taradod.Enabled=False
-					ckb_ezaf_taradod.Visible=False
-					radio_ez_adi.Enabled=False
-					radio_ez_fog.Enabled=False
-					lbl_ezaf_taradod_fs.Text=""
-					ckb_ezaf_taradod_fs.Enabled=False
-					ckb_ezaf_taradod_fs.Visible=False
-				End If
-			Else If (state_tatil=1) Then 'tatil rasmi
-				'eeeeeeeeee
-				
-				ckb_ezaf_taradod.Enabled=True
-				ckb_ezaf_taradod.Visible=True
-				ckb_ezaf_taradod_fs.Enabled=True
-				ckb_ezaf_taradod_fs.Visible=True
+				Case 11
+					If (state_tatil=1 ) Then 'tatil rasmi 
+						tatil_hast
+					Else
+						tatil_nist
+					End If
 					
+				Case 22
 					
-				radio_ez_adi.Enabled=True
-				radio_ez_fog.Enabled=True
-		
-			
-				lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min)).Get(1)&" دقیقه "
+					If (state_tatil=2 ) Then  'tatil garardadi
+						tatil_hast
+					Else
+						tatil_nist
+					End If
 				
-				lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
-				
-				
-				
-				
-			Else If (state_tatil=2) Then 'tatil garardadi
-			
-			Else If (state_tatil=3) Then   'tatil jome
+			End Select
 			
 			
-			End If	
 			
 			If(is_for_edit=True)Then
 				lbl_ezaf_taradod.Text=""
@@ -3324,15 +3377,58 @@ Sub time_show
 	
 	
 	
-	
-	
-	
-	
 End Sub
 
 
+Sub tatil_nist
+	If(tim_min>saat_kar_min) Then
+						
+				
+		ckb_ezaf_taradod.Enabled=True
+		ckb_ezaf_taradod.Visible=True
+		ckb_ezaf_taradod_fs.Enabled=True
+		ckb_ezaf_taradod_fs.Visible=True
+					
+					
+		radio_ez_adi.Enabled=True
+		radio_ez_fog.Enabled=True
+		
+			
+		lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min)).Get(1)&" دقیقه "
+				
+		lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
+				
+	Else
+		lbl_ezaf_taradod.Text=""
+		ckb_ezaf_taradod.Enabled=False
+		ckb_ezaf_taradod.Visible=False
+		radio_ez_adi.Enabled=False
+		radio_ez_fog.Enabled=False
+		lbl_ezaf_taradod_fs.Text=""
+		ckb_ezaf_taradod_fs.Enabled=False
+		ckb_ezaf_taradod_fs.Visible=False
+	End If
+	
+End Sub
 
-
+Sub tatil_hast
+	
+	ckb_ezaf_taradod.Enabled=True
+	ckb_ezaf_taradod.Visible=True
+	ckb_ezaf_taradod_fs.Enabled=True
+	ckb_ezaf_taradod_fs.Visible=True
+					
+					
+	radio_ez_adi.Enabled=True
+	radio_ez_fog.Enabled=True
+		
+			
+	lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min)).Get(1)&" دقیقه "
+				
+	lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
+				
+	
+End Sub
 
 Private Sub pik_hour_bala1_Click
 	
@@ -3830,8 +3926,20 @@ Private Sub lbl_save_picker_Click
 		End If
 	
 		state_tatil= chek_tatil_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
-		
+		state_tatil_setting = chek_tatil_setting
 		'eeeeeeeeeeee
+		
+		If(state_tatil=0)Then
+			lbl_tatil_show.Text=""
+		Else if (state_tatil=1) Then
+			lbl_tatil_show.Text="(تعطیل رسمی)"
+		Else if (state_tatil=2) Then
+			lbl_tatil_show.Text="(تعطیل قراردادی)"
+		End If
+		
+		If (index_box <> 3) Then
+			lbl_tatil_show.Text=""
+		End If
 		
 		
 	Else If (index_piker=2)Then  'date2
@@ -3888,14 +3996,39 @@ Sub chek_tatil_day (year1 As Int,moon1 As Int, day1 As Int) As Int
 		result_int=2
 	End If
 	
-	If(dbCode.res.GetInt("day_h")=7)Then
-		result_int=3
-	End If
+'	If(dbCode.res.GetInt("day_h")=7)Then
+'		result_int=3
+'	End If
 	
 	Return result_int    ' result_int=0 is not tatil   & 1 => tatil rasmi  &  tatil1 => tatil garardadi  & 3 => jome
 	
 End Sub
 
+Sub chek_tatil_setting As Int
+	Dim temp As Int=0
+	Dim sett_a ,sett_b  As Int=0
+	
+	sett_a=dbCode.get_setting_byName("setting_tatil_rasmi")
+	sett_b=dbCode.get_setting_byName("setting_tatil_garardadi")
+	
+	
+	If(sett_a=1)Then
+		temp=11
+		If (sett_b=1)Then
+			temp=1
+		End If
+		
+	Else
+		temp=0
+		If (sett_b=1)Then
+			temp=22
+		End If
+	End If
+	
+	
+	Return temp
+	
+End Sub
 
 Private Sub pan_all2_Click
 	
@@ -4105,7 +4238,7 @@ Private Sub lbl_edit_from_list_Click
 		radio_ez_adi.Visible=False
 		radio_ez_fog.Visible=False
 		
-		
+		myfunc.help_man("توجه","اگر برای این تردد اضافه کاری ثبت شده است، لازم است آن را هم ویرایش کنید.")
 	Else if (TabHost1.CurrentTab=3)Then
 		pan_add_mamoriat_Click
 		lbl_box_title.Text="ویرایش مأموریت"
@@ -4856,8 +4989,9 @@ Private Sub lbl_save_setting_date_Click
 	End If
 	
 	
-	
+	ToastMessageShow("تغییرات ذخیره شد",False)
 	pan_all_setting_date.Visible=False
+	pan_all_Click
 End Sub
 
 Private Sub pan_finger_taradod_Click

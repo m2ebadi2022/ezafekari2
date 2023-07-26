@@ -873,12 +873,18 @@ Sub get_ezafekari(date1 As String)
 		For K=0 To dbCode.res.RowCount-1
 			dbCode.res.Position=K
 			
-			ezList.Add(newLine&"از "&dbCode.res.GetString("time_from")&" تا "&dbCode.res.GetString("time_to")&"  ( "&dbCode.res.GetInt("end_tim_h")&":"&dbCode.res.GetInt("end_tim_m")&")")
+			
+			Dim ls_time_conv As List
+			ls_time_conv.Initialize
+			ls_time_conv=myfunc.Min_to_saatMinRoz2_dontDay(dbCode.res.GetInt("end_tim_m"))'
+			
+			
+			ezList.Add(newLine&"از "&dbCode.res.GetString("time_from")&" تا "&dbCode.res.GetString("time_to")&"  ( "&ls_time_conv.Get(0)&":"&ls_time_conv.Get(1)&")")
 			newLine=CRLF
 			
 		Next
 
-	'	
+	
 	Else
 		ezList.Add("-")
 	End If
@@ -902,7 +908,12 @@ Sub get_morakhasi(date1 As String)
 		For K=0 To dbCode.res.RowCount-1
 			dbCode.res.Position=K
 			
-			ezList.Add(newLine&"از "&dbCode.res.GetString("time_from")&" تا "&dbCode.res.GetString("time_to")&"  ( "&dbCode.res.GetInt("end_tim_d")&":"&dbCode.res.GetInt("end_tim_h")&":"&dbCode.res.GetInt("end_tim_m")&")")
+			Dim ls_time_conv As List
+			ls_time_conv.Initialize
+			ls_time_conv=myfunc.Min_to_saatMinRoz(dbCode.res.GetInt("end_tim_m"))'
+			
+			
+			ezList.Add(newLine&"از "&dbCode.res.GetString("time_from")&" تا "&dbCode.res.GetString("time_to")&"  ( "&ls_time_conv.Get(2)&":"&ls_time_conv.Get(0)&":"&ls_time_conv.Get(1)&")")
 			newLine=CRLF
 			
 		Next
