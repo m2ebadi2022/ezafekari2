@@ -1,54 +1,55 @@
 ﻿Build1=Default,ir.taravatgroup.ezafekari2
 File1=1171 hes.pdf
 File10=add_ezafe.png
-File100=notif.png
-File101=padash.png
-File102=padash_layout.bal
-File103=payankar_layout.bal
-File104=percentage.png
-File105=sabt2_layout.bal
-File106=savabeg_layout.bal
-File107=sayer_layout.bal
-File108=set_hogog.png
-File109=set_moh.png
+File100=noske_item.bal
+File101=notif.png
+File102=padash.png
+File103=padash_layout.bal
+File104=payankar_layout.bal
+File105=percentage.png
+File106=sabt2_layout.bal
+File107=savabeg_layout.bal
+File108=sayer_layout.bal
+File109=set_hogog.png
 File11=add_morakhasi.png
-File110=sett_hogog_item.bal
-File111=setting.png
-File112=setting_hogog_layout.bal
-File113=setting_layout.bal
-File114=setting_layout_items.bal
-File115=shift_layout.bal
-File116=shift_page_items.bal
-File117=shift_work.png
-File118=show_gozaresh_layout.bal
-File119=speed_run.png
+File110=set_moh.png
+File111=sett_hogog_item.bal
+File112=setting.png
+File113=setting_hogog_layout.bal
+File114=setting_layout.bal
+File115=setting_layout_items.bal
+File116=shift_layout.bal
+File117=shift_page_items.bal
+File118=shift_work.png
+File119=show_gozaresh_layout.bal
 File12=add_other.png
-File120=splash_layout.bal
-File121=step0.bal
-File122=step1.bal
-File123=step2.bal
-File124=sudan bd_mrt.ttf
-File125=SYEKAN.TTF
-File126=tab_layout_ezafekari.bal
-File127=tab_layout_food.bal
-File128=tab_layout_mamoriat.bal
-File129=tab_layout_morakhasi.bal
+File120=speed_run.png
+File121=splash_layout.bal
+File122=step0.bal
+File123=step1.bal
+File124=step2.bal
+File125=sudan bd_mrt.ttf
+File126=SYEKAN.TTF
+File127=tab_layout_ezafekari.bal
+File128=tab_layout_food.bal
+File129=tab_layout_mamoriat.bal
 File13=add_other2.png
-File130=tab_layout_mosaedeh.bal
-File131=tab_layout_padash.bal
-File132=tab_layout_sayer.bal
-File133=tab_layout_taradod.bal
-File134=tab_layout_vam.bal
-File135=telegram_icon.png
-File136=textBox.png
-File137=textbox2.png
-File138=transfer_time.png
-File139=user.png
+File130=tab_layout_morakhasi.bal
+File131=tab_layout_mosaedeh.bal
+File132=tab_layout_padash.bal
+File133=tab_layout_sayer.bal
+File134=tab_layout_taradod.bal
+File135=tab_layout_vam.bal
+File136=telegram_icon.png
+File137=textBox.png
+File138=textbox2.png
+File139=transfer_time.png
 File14=attention.png
-File140=vam.png
-File141=vam_layout.bal
-File142=Vazir.ttf
-File143=whatsapp_icon.png
+File140=user.png
+File141=vam.png
+File142=vam_layout.bal
+File143=Vazir.ttf
+File144=whatsapp_icon.png
 File15=ayabzahab_layout.bal
 File16=bg.jpg
 File17=bg1.jpg
@@ -119,29 +120,29 @@ File75=item_list_2.bal
 File76=item_list_list2.bal
 File77=item_list_savabeg.bal
 File78=item_list_vam.bal
-File79=j9VlOf.jpg
+File79=item_settingTaradod_layout.bal
 File8=Abstract-blue-iphone-wallpaper-ilikewallpaper_com.jpg
-File80=list_layout.bal
-File81=lyscreen.bal
-File82=m1.JPG
-File83=m1.png
-File84=m2.JPG
-File85=m2.png
-File86=m3.JPG
-File87=m3.png
-File88=main_layout.bal
-File89=mamoriat.png
+File80=j9VlOf.jpg
+File81=list_layout.bal
+File82=lyscreen.bal
+File83=m1.JPG
+File84=m1.png
+File85=m2.JPG
+File86=m2.png
+File87=m3.JPG
+File88=m3.png
+File89=main_layout.bal
 File9=adastnevis.ttf
-File90=mandeh.png
-File91=mohasebe_hogog.png
-File92=morakhasi_item.bal
-File93=morakhasi_item2.bal
-File94=morakhasi_layout.bal
-File95=mosaedeh.png
-File96=mosaedeh_layout.bal
-File97=my_calander.xls
-File98=newyear.jpg
-File99=noske_item.bal
+File90=mamoriat.png
+File91=mandeh.png
+File92=mohasebe_hogog.png
+File93=morakhasi_item.bal
+File94=morakhasi_item2.bal
+File95=morakhasi_layout.bal
+File96=mosaedeh.png
+File97=mosaedeh_layout.bal
+File98=my_calander.xls
+File99=newyear.jpg
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup100=Default Group
@@ -192,6 +193,7 @@ FileGroup140=Default Group
 FileGroup141=Default Group
 FileGroup142=Default Group
 FileGroup143=Default Group
+FileGroup144=Default Group
 FileGroup15=Default Group
 FileGroup16=Default Group
 FileGroup17=Default Group
@@ -343,7 +345,7 @@ Module6=darsad_activity
 Module7=dbCode
 Module8=eidi_activity
 Module9=fast_run_activity
-NumberOfFiles=143
+NumberOfFiles=144
 NumberOfLibraries=23
 NumberOfModules=33
 Version=12.5
@@ -669,6 +671,20 @@ Sub Globals
 	Private ckb_tatil_rasmi As CheckBox
 	Private ckb_tatil_garardadi As CheckBox
 	Private lbl_tatil_show As Label
+	Private ScrollView_sett_taradod As ScrollView
+	
+	Private et_saat_kari0 As EditText
+	Private et_min_kari0 As EditText
+	Private et_saat_kari1 As EditText
+	Private et_min_kari1 As EditText
+	Private et_min_kari2 As EditText
+	Private et_saat_kari2 As EditText
+	Private et_saat_kari3 As EditText
+	Private et_min_kari3 As EditText
+	Private et_min_kari4 As EditText
+	Private et_saat_kari4 As EditText
+	Private et_saat_kari5 As EditText
+	Private et_min_kari5 As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -4928,6 +4944,7 @@ End Sub
 
 Private Sub lbl_setting_date_Click
 	
+	ScrollView_sett_taradod.Panel.LoadLayout("item_settingTaradod_layout")
 	
 	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
 	If(res_val2=0)Then
@@ -4951,6 +4968,38 @@ Private Sub lbl_setting_date_Click
 	End If
 	
 	
+	Dim minRoz_0 , minRoz_1, minRoz_2, minRoz_3, minRoz_4, minRoz_5 As Int=0
+	minRoz_0=dbCode.get_setting_byName("saat_kar_Shanbe")
+	minRoz_1=dbCode.get_setting_byName("saat_kar_Yekshanbe")
+	minRoz_2=dbCode.get_setting_byName("saat_kar_Doshanbe")
+	minRoz_3=dbCode.get_setting_byName("saat_kar_Seshanbe")
+	minRoz_4=dbCode.get_setting_byName("saat_kar_Charshanbe")
+	minRoz_5=dbCode.get_setting_byName("saat_kar_Panjshanbe")
+	
+	
+	
+	et_saat_kari0.Text=myfunc.strTOint(minRoz_0/60)
+	et_min_kari0.Text=myfunc.strTOint(minRoz_0 Mod 60)
+	
+	et_saat_kari1.Text=myfunc.strTOint(minRoz_1/60)
+	et_min_kari1.Text=myfunc.strTOint(minRoz_1 Mod 60)
+	
+	et_saat_kari2.Text=myfunc.strTOint(minRoz_2/60)
+	et_min_kari2.Text=myfunc.strTOint(minRoz_2 Mod 60)
+	
+	et_saat_kari3.Text=myfunc.strTOint(minRoz_3/60)
+	et_min_kari3.Text=myfunc.strTOint(minRoz_3 Mod 60)
+	
+	et_saat_kari4.Text=myfunc.strTOint(minRoz_4/60)
+	et_min_kari4.Text=myfunc.strTOint(minRoz_4 Mod 60)
+	
+	et_saat_kari5.Text=myfunc.strTOint(minRoz_5/60)
+	et_min_kari5.Text=myfunc.strTOint(minRoz_5 Mod 60)
+	
+	
+	
+	
+
 	
 	
 	pan_all_setting_date.Visible=True
@@ -4987,6 +5036,21 @@ Private Sub lbl_save_setting_date_Click
 	Else
 		dbCode.update_setting_byname("setting_tatil_garardadi",0)
 	End If
+	
+	
+	
+	
+	dbCode.update_setting_byname("saat_kar_Shanbe",((et_saat_kari0.Text)*60)+et_min_kari0.Text)
+	dbCode.update_setting_byname("saat_kar_Yekshanbe",((et_saat_kari1.Text)*60)+et_min_kari1.Text)
+	dbCode.update_setting_byname("saat_kar_Doshanbe",((et_saat_kari2.Text)*60)+et_min_kari2.Text)
+	dbCode.update_setting_byname("saat_kar_Seshanbe",((et_saat_kari3.Text)*60)+et_min_kari3.Text)
+	dbCode.update_setting_byname("saat_kar_Charshanbe",((et_saat_kari4.Text)*60)+et_min_kari4.Text)
+	dbCode.update_setting_byname("saat_kar_Panjshanbe",((et_saat_kari5.Text)*60)+et_min_kari5.Text)
+	
+	
+	
+	
+	
 	
 	
 	ToastMessageShow("تغییرات ذخیره شد",False)

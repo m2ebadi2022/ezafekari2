@@ -553,15 +553,15 @@ Private Sub lbl_run_mohasebe_Click
 		
 		str1.Append("<summary><b> اضافه کاری های این ماه</b></summary>")
 		str1.Append("<table style='width:100%;'><tr style='text-align: center;'>")
-		str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b> زمان</b></td><br></tr>")
+		str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b> زمان</b></td> <td>توضیحات</td> <br></tr>")
 		
 		Do While dbCode.res.NextRow
 			str1.Append("<tr style='text-align: center;'>")
 			str1.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
-			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("date_to"))).Append("</td>")
+			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))).Append("</td>")
 			str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
 			
-				str1.Append("<td>")
+			str1.Append("<td>")
 				
 				Dim ls_ezafe As List
 				ls_ezafe.Initialize
@@ -569,12 +569,14 @@ Private Sub lbl_run_mohasebe_Click
 				ls_ezafe=myfunc.Min_to_saatMinRoz2_dontDay(dbCode.res.GetString("end_tim_m"))
 		
 	
-				str1.Append(ls_ezafe.Get(0))
+				str1.Append(myfunc.en2fa(ls_ezafe.Get(0)))
 				str1.Append(":")
-				str1.Append(ls_ezafe.Get(1)).Append("</td>")
+				str1.Append(myfunc.en2fa(ls_ezafe.Get(1)))
 			
-		
+			str1.Append("</td>")
 			
+			str1.Append("<td>")
+				str1.Append(dbCode.res.GetString("tozihat"))
 			str1.Append("</td>")
 			
 			str1.Append("</tr>")
@@ -599,7 +601,7 @@ Private Sub lbl_run_mohasebe_Click
 		str1.Append("<div style=' background-color: #f5f5f5 ;'><details>")
 		str1.Append("<summary><b> مرخصی های این ماه</b></summary>")
 		str1.Append("<table style='width:100%;'><tr style='text-align: center;'>")
-		str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b>زمان/روز</b></td><td><b> زمان/ساعت</b></td><br></tr>")
+		str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b>زمان/روز</b></td><td><b> زمان/ساعت</b></td><td>توضیحات</td><br></tr>")
 		
 		Do While dbCode.res.NextRow
 			str1.Append("<tr style='text-align: center;'>")
@@ -613,15 +615,18 @@ Private Sub lbl_run_mohasebe_Click
 			ls_ezafe.Initialize
 
 				ls_ezafe=myfunc.Min_to_saatMinRoz(dbCode.res.GetString("end_tim_m"))
-				str1.Append("<td>").Append(ls_ezafe.Get(2)).Append("</td>")
+				str1.Append("<td>").Append(myfunc.en2fa(ls_ezafe.Get(2))).Append("</td>")
 		
 				str1.Append("<td>")
 
-			str1.Append(ls_ezafe.Get(0))
+				str1.Append(myfunc.en2fa(ls_ezafe.Get(0)))
 			str1.Append(":")
-			str1.Append(ls_ezafe.Get(1)).Append("</td>")
+				str1.Append(myfunc.en2fa(ls_ezafe.Get(1))).Append("</td>")
 		
 
+				str1.Append("<td>")
+				str1.Append(dbCode.res.GetString("tozihat"))
+				str1.Append("</td>")
 		
 			str1.Append("</tr>")
 			
@@ -983,7 +988,7 @@ Sub mohasebe
 	
 	'bime tamin
 	If(dbCode.get_setting_byName("tog_bime")=1)Then
-		bime_tamin_end=(hogog_nakhales-olad_end)*0.07
+		bime_tamin_end=(hogog_nakhales_maliaty-olad_end)*0.07
 		
 	Else
 		

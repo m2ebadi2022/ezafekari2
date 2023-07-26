@@ -1509,7 +1509,15 @@ Sub check_new_add
 	init_notfound("setting_tatil_rasmi",1)
 	init_notfound("setting_tatil_garardadi",1)
 	
+	'sssssssssss
+	Dim skDR As Int = get_setting_byName("saat_kar_darRoz")
 	
+	init_notfound("saat_kar_Shanbe",skDR)
+	init_notfound("saat_kar_Yekshanbe",skDR)
+	init_notfound("saat_kar_Doshanbe",skDR)
+	init_notfound("saat_kar_Seshanbe",skDR)
+	init_notfound("saat_kar_Charshanbe",skDR)
+	init_notfound("saat_kar_Panjshanbe",skDR)
 	
 End Sub
 

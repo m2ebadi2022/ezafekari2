@@ -47,6 +47,12 @@ Sub convert_adad(adad As Int) As String
 End Sub
 
 
+Sub strTOint (str As String) As Int
+	Dim a As Int
+	a=str
+	Return a
+End Sub
+
 Sub en2fa(a As String) As String
 	Dim fa As String="۰۱۲۳۴۵۶۷۸۹"
 	For la=0 To 9
