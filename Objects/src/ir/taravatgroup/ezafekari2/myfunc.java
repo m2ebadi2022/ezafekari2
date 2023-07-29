@@ -15,7 +15,7 @@ public static adr.stringfunctions.stringfunctions _strfun2 = null;
 public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
+public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -37,7 +37,7 @@ public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
 public ir.taravatgroup.ezafekari2.savabeg_activity _savabeg_activity = null;
 public ir.taravatgroup.ezafekari2.sayer_activity _sayer_activity = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
-public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
+public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
@@ -490,6 +490,48 @@ _day_index_name = "جمعه";
 if (true) return _day_index_name;
  //BA.debugLineNum = 397;BA.debugLine="End Sub";
 return "";
+}
+public static int  _get_saatkari_inweek(anywheresoftware.b4a.BA _ba,int _dayid) throws Exception{
+int _saatkari_inweek = 0;
+ //BA.debugLineNum = 689;BA.debugLine="Sub get_saatKari_inWeek (dayID As Int) As Int";
+ //BA.debugLineNum = 690;BA.debugLine="Dim saatKari_InWeek As Int=0";
+_saatkari_inweek = (int) (0);
+ //BA.debugLineNum = 692;BA.debugLine="Select dayID";
+switch (_dayid) {
+case 1: {
+ //BA.debugLineNum = 694;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+_saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Shanbe")));
+ break; }
+case 2: {
+ //BA.debugLineNum = 696;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+_saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Yekshanbe")));
+ break; }
+case 3: {
+ //BA.debugLineNum = 698;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+_saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Doshanbe")));
+ break; }
+case 4: {
+ //BA.debugLineNum = 700;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+_saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Seshanbe")));
+ break; }
+case 5: {
+ //BA.debugLineNum = 702;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+_saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Charshanbe")));
+ break; }
+case 6: {
+ //BA.debugLineNum = 704;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+_saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Panjshanbe")));
+ break; }
+case 7: {
+ //BA.debugLineNum = 706;BA.debugLine="saatKari_InWeek=Main.saat_kar_min";
+_saatkari_inweek = mostCurrent._main._saat_kar_min /*int*/ ;
+ break; }
+}
+;
+ //BA.debugLineNum = 711;BA.debugLine="Return saatKari_InWeek";
+if (true) return _saatkari_inweek;
+ //BA.debugLineNum = 712;BA.debugLine="End Sub";
+return 0;
 }
 public static String  _help_man(anywheresoftware.b4a.BA _ba,String _title,String _matn) throws Exception{
 int _result = 0;

@@ -666,7 +666,11 @@ Sub Globals
 	Dim save_box_allow As Boolean=True
 	
 	Dim state_tatil As Int=0
+	Dim day_inWeek_id As Int=0
+	Dim day_inWeek_name As String=""
 	Dim state_tatil_setting As Int=0  ' 0 all is off -- 1 all is on -- 11 just 1 is on  -- 22 just 2 is on 
+	
+	
 	
 	Private ckb_tatil_rasmi As CheckBox
 	Private ckb_tatil_garardadi As CheckBox
@@ -685,6 +689,7 @@ Sub Globals
 	Private et_saat_kari4 As EditText
 	Private et_saat_kari5 As EditText
 	Private et_min_kari5 As EditText
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -2357,13 +2362,16 @@ Private Sub pan_add_taradod_Click
 	state_tatil= chek_tatil_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
 		
 	state_tatil_setting = chek_tatil_setting
-		
+	
+	day_inWeek_id=what_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
+	
+	
 	If(state_tatil=0)Then
-		lbl_tatil_show.Text=""
+		lbl_tatil_show.Text=day_inWeek_name&""
 	Else if (state_tatil=1) Then
-		lbl_tatil_show.Text="(تعطیل رسمی)"
+		lbl_tatil_show.Text=day_inWeek_name&" (تعطیل رسمی) "
 	Else if (state_tatil=2) Then
-		lbl_tatil_show.Text="(تعطیل قراردادی)"
+		lbl_tatil_show.Text=day_inWeek_name&" (تعطیل قراردادی) "
 	End If
 	
 	
@@ -2937,7 +2945,10 @@ Sub add_taradod_sub
 						
 '							Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
 '							Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
-							Dim tim_ezaf_min As Int=tim_min-saat_kar_min
+
+'eeeeeeeeeee
+							
+							Dim tim_ezaf_min As Int=tim_min-myfunc.get_saatKari_inWeek(day_inWeek_id)
 							
 						    Dim ls_res_tim1 As List
 							ls_res_tim1.Initialize
@@ -2986,7 +2997,7 @@ Sub add_taradod_sub
 						
 '						Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
 '						Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
-						Dim tim_ezaf_min As Int=tim_min-saat_kar_min
+						Dim tim_ezaf_min As Int=tim_min-myfunc.get_saatKari_inWeek(day_inWeek_id)
 						
 						
 						Dim ls_res_tim1 As List
@@ -3397,7 +3408,9 @@ End Sub
 
 
 Sub tatil_nist
-	If(tim_min>saat_kar_min) Then
+	Dim min_satKari_inWeek As Int =myfunc.get_saatKari_inWeek(day_inWeek_id)
+	
+	If(tim_min>min_satKari_inWeek) Then
 						
 				
 		ckb_ezaf_taradod.Enabled=True
@@ -3410,7 +3423,7 @@ Sub tatil_nist
 		radio_ez_fog.Enabled=True
 		
 			
-		lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min-saat_kar_min)).Get(1)&" دقیقه "
+		lbl_ezaf_taradod.Text="افزودن به اضافه کاری "&((myfunc.Min_to_saatMinRoz2_dontDay(tim_min-min_satKari_inWeek).Get(0)))&" ساعت و "& (myfunc.Min_to_saatMinRoz2_dontDay(tim_min-min_satKari_inWeek)).Get(1)&" دقیقه "
 				
 		lbl_ezaf_taradod_fs.Text=lbl_ezaf_taradod.Text
 				
@@ -3945,13 +3958,20 @@ Private Sub lbl_save_picker_Click
 		state_tatil_setting = chek_tatil_setting
 		'eeeeeeeeeeee
 		
+		
+		day_inWeek_id=what_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
+	
+	
 		If(state_tatil=0)Then
-			lbl_tatil_show.Text=""
+			lbl_tatil_show.Text=day_inWeek_name&""
 		Else if (state_tatil=1) Then
-			lbl_tatil_show.Text="(تعطیل رسمی)"
+			lbl_tatil_show.Text=day_inWeek_name&" (تعطیل رسمی)"
 		Else if (state_tatil=2) Then
-			lbl_tatil_show.Text="(تعطیل قراردادی)"
+			lbl_tatil_show.Text=day_inWeek_name&" (تعطیل قراردادی)"
 		End If
+		
+		
+		
 		
 		If (index_box <> 3) Then
 			lbl_tatil_show.Text=""
@@ -3992,6 +4012,41 @@ Private Sub lbl_save_picker_Click
 	pan_all2.Visible=False
 	time_show
 End Sub
+
+Sub what_day (year1 As Int,moon1 As Int, day1 As Int) As Int
+	Dim id_MyDay As Int
+	id_MyDay=dbCode.get_day_id(year1,moon1,day1)
+	
+	dbCode.connect_db
+	dbCode.res =  dbCode.sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id="&id_MyDay)
+	
+	dbCode.res.Position = 0
+	Dim result_int As Int=dbCode.res.GetInt("day_h")
+	' 1 is shanbe
+	' 7 is jome
+	
+	Select result_int
+		Case 1
+			day_inWeek_name="شنبه"
+		Case 2
+			day_inWeek_name="یکشنبه"
+		Case 3
+			day_inWeek_name="دوشنبه"
+		Case 4
+			day_inWeek_name="سه شنبه"
+		Case 5
+			day_inWeek_name="چهارشنبه"
+		Case 6
+			day_inWeek_name="پنجشنبه"
+		Case 7
+			day_inWeek_name="جمعه"
+				
+	End Select
+	
+	Return result_int
+End Sub
+
+
 
 
 Sub chek_tatil_day (year1 As Int,moon1 As Int, day1 As Int) As Int
@@ -5039,13 +5094,12 @@ Private Sub lbl_save_setting_date_Click
 	
 	
 	
-	
-	dbCode.update_setting_byname("saat_kar_Shanbe",((et_saat_kari0.Text)*60)+et_min_kari0.Text)
-	dbCode.update_setting_byname("saat_kar_Yekshanbe",((et_saat_kari1.Text)*60)+et_min_kari1.Text)
-	dbCode.update_setting_byname("saat_kar_Doshanbe",((et_saat_kari2.Text)*60)+et_min_kari2.Text)
-	dbCode.update_setting_byname("saat_kar_Seshanbe",((et_saat_kari3.Text)*60)+et_min_kari3.Text)
-	dbCode.update_setting_byname("saat_kar_Charshanbe",((et_saat_kari4.Text)*60)+et_min_kari4.Text)
-	dbCode.update_setting_byname("saat_kar_Panjshanbe",((et_saat_kari5.Text)*60)+et_min_kari5.Text)
+	dbCode.update_setting_byname("saat_kar_Shanbe",((validat_et_saatKari(et_saat_kari0.Text))*60)+validat_et_saatKari(et_min_kari0.Text))
+	dbCode.update_setting_byname("saat_kar_Yekshanbe",((validat_et_saatKari(et_saat_kari1.Text))*60)+validat_et_saatKari(et_min_kari1.Text))
+	dbCode.update_setting_byname("saat_kar_Doshanbe",((validat_et_saatKari(et_saat_kari2.Text))*60)+validat_et_saatKari(et_min_kari2.Text))
+	dbCode.update_setting_byname("saat_kar_Seshanbe",((validat_et_saatKari(et_saat_kari3.Text))*60)+validat_et_saatKari(et_min_kari3.Text))
+	dbCode.update_setting_byname("saat_kar_Charshanbe",((validat_et_saatKari(et_saat_kari4.Text))*60)+validat_et_saatKari(et_min_kari4.Text))
+	dbCode.update_setting_byname("saat_kar_Panjshanbe",((validat_et_saatKari(et_saat_kari5.Text))*60)+validat_et_saatKari(et_min_kari5.Text))
 	
 	
 	
@@ -5057,6 +5111,15 @@ Private Sub lbl_save_setting_date_Click
 	pan_all_setting_date.Visible=False
 	pan_all_Click
 End Sub
+
+Sub validat_et_saatKari (val As String) As Int
+	If (val="") Then
+		val=0
+	End If
+	Return val
+End Sub
+
+
 
 Private Sub pan_finger_taradod_Click
 	
@@ -5206,4 +5269,10 @@ End Sub
 
 Private Sub lbl_help_tatil_garardadi_Click
 	myfunc.help_man("راهنما","تردد در روزهای تعطیل قراردادی اضافه کاری محسوب شود- برای تعین روزها به عنوان تعطیل قراردادی در صفحه تقویم روی هر روز انگشت خود را نگه دارید و بعد تیک تعطیل قراردادی را بزنید. ")
+End Sub
+
+
+
+Private Sub lbl_help_saatKari_inWeek_Click
+	myfunc.help_man("راهنما","اگر در روزهای هفته ساعت کاری مختلف دارید آنها را تنظیم کنید تا در موقع ثبت تردد با آن حساب شود. ")
 End Sub

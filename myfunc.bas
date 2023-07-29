@@ -691,6 +691,36 @@ Sub min_toSaat (min1 As Int) As String
 	Return sat&":"&dag
 End Sub
 
+
+Sub get_saatKari_inWeek (dayID As Int) As Int
+	Dim saatKari_InWeek As Int=0
+	
+	Select dayID
+		Case 1
+			saatKari_InWeek=dbCode.get_setting_byName("saat_kar_Shanbe")
+		Case 2
+			saatKari_InWeek=dbCode.get_setting_byName("saat_kar_Yekshanbe")
+		Case 3
+			saatKari_InWeek=dbCode.get_setting_byName("saat_kar_Doshanbe")
+		Case 4
+			saatKari_InWeek=dbCode.get_setting_byName("saat_kar_Seshanbe")
+		Case 5
+			saatKari_InWeek=dbCode.get_setting_byName("saat_kar_Charshanbe")
+		Case 6
+			saatKari_InWeek=dbCode.get_setting_byName("saat_kar_Panjshanbe")
+		Case 7
+			saatKari_InWeek=Main.saat_kar_min
+	End Select
+	
+	
+	
+	Return saatKari_InWeek
+End Sub
+
+
+
+
+
 '' backup ----------------->>>
 
 
