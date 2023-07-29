@@ -127,8 +127,9 @@ Sub Activity_Create(FirstTime As Boolean)
 		
 		
 	Else
-		StartActivity(step0_activity)
 		Activity.Finish
+		StartActivity(step0_activity)
+		
 	End If
 	
 	''set color
@@ -179,8 +180,9 @@ Private Sub lbl_logOff_Click
 	If result = DialogResponse.Positive Then
 		File.Delete(File.DirInternal,"phonNum")
 	
-		StartActivity(Main)
 		Activity.Finish
+		StartActivity(Main)
+		
 		
 	End If
 	
@@ -296,8 +298,10 @@ Sub Jobdone (job As HttpJob)
 				
 					File.Delete(File.DirInternal,"userAcc")
 					job.Release
-					StartActivity(step0_activity)
+					
 					Activity.Finish
+					StartActivity(step0_activity)
+					
 				Else
 				
 					Dim a() As String
@@ -521,8 +525,9 @@ End Sub
 
 
 Private Sub lbl_back_home_Click
-	StartActivity(Main)
 	Activity.Finish
+	StartActivity(Main)
+	
 End Sub
 
 Private Sub lbl_image_up_Click

@@ -224,16 +224,19 @@ Sub Jobdone (job As HttpJob)
 				If(job.GetString.Contains("okuser")=True) Then
 					File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
 					job.Release
-					StartActivity(step2_activity)
+					
 					Activity.Finish
+					StartActivity(step2_activity)
+					
 				
 				
 				Else if (job.GetString.Contains("nouser")=True)Then
 				
 					File.WriteString(File.DirInternal,"phonNum_step1",Main.phon_num)
 					job.Release
-					StartActivity(step1_activity)
 					Activity.Finish
+					StartActivity(step1_activity)
+					
 				Else
 					ToastMessageShow("کد تائید اشتباه است",False)
 				End If

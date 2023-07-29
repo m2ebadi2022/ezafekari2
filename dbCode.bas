@@ -644,8 +644,13 @@ Sub get_setting_byName (name1 As String) As String
 	res= sql.ExecQuery("SELECT * FROM tb_setting WHERE name='"&name1&"'")
 	res.Position=0 ''--------saat  kari dar roz ------
 	
+	Dim result As String =res.GetString("value")
 	
-		Return res.GetString("value")
+	
+	sql.Close
+	res.Close
+	
+	Return result
 	
 	
 	

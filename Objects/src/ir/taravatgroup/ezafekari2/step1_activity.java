@@ -403,20 +403,20 @@ _type_app = (int) (1);
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 114;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 115;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 115;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 116;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 116;BA.debugLine="StartActivity(Main)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
  //BA.debugLineNum = 117;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 119;BA.debugLine="Return True";
+ //BA.debugLineNum = 118;BA.debugLine="StartActivity(Main)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
+ //BA.debugLineNum = 121;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 121;BA.debugLine="Return False";
+ //BA.debugLineNum = 123;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 123;BA.debugLine="End Sub";
+ //BA.debugLineNum = 125;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -479,29 +479,29 @@ if ((_job._getstring /*String*/ ().contains("true"))) {
 anywheresoftware.b4a.keywords.Common.File.WriteString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"phonNum",mostCurrent._main._phon_num /*String*/ );
  //BA.debugLineNum = 91;BA.debugLine="job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 92;BA.debugLine="StartActivity(step2_activity)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step2_activity.getObject()));
- //BA.debugLineNum = 93;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 92;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 94;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
+ //BA.debugLineNum = 93;BA.debugLine="StartActivity(step2_activity)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._step2_activity.getObject()));
+ //BA.debugLineNum = 95;BA.debugLine="ToastMessageShow(\"تبریک\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("تبریک"),anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 96;BA.debugLine="ToastMessageShow(job.GetString,False)";
+ //BA.debugLineNum = 97;BA.debugLine="ToastMessageShow(job.GetString,False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_job._getstring /*String*/ ()),anywheresoftware.b4a.keywords.Common.False);
  };
  };
- //BA.debugLineNum = 101;BA.debugLine="job.Release";
+ //BA.debugLineNum = 102;BA.debugLine="job.Release";
 _job._release /*String*/ ();
  }else {
  };
  } 
        catch (Exception e18) {
-			processBA.setLastException(e18); //BA.debugLineNum = 107;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("357540631",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
- //BA.debugLineNum = 108;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
+			processBA.setLastException(e18); //BA.debugLineNum = 108;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("557540632",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 109;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 111;BA.debugLine="End Sub";
+ //BA.debugLineNum = 112;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_run_step1_click() throws Exception{

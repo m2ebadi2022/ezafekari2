@@ -95,8 +95,9 @@ Sub Jobdone (job As HttpJob)
 				If(job.GetString.Contains("true"))Then
 					File.WriteString(File.DirInternal,"phonNum",Main.phon_num)
 					job.Release
-					StartActivity(step2_activity)
 					Activity.Finish
+					StartActivity(step2_activity)
+					
 					ToastMessageShow("تبریک",False)
 				Else
 					ToastMessageShow(job.GetString,False)
@@ -119,8 +120,9 @@ End Sub
 
 Sub Activity_KeyPress (KeyCode As Int) As Boolean
 	If KeyCode = KeyCodes.KEYCODE_BACK Then
-		StartActivity(Main)
 		Activity.Finish
+		StartActivity(Main)
+		
 		
 		Return True
 	Else

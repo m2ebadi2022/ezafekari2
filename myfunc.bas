@@ -674,14 +674,18 @@ Sub find_tim1_taradod (tim2 As String, ezaf_min As Int) As List
 End Sub
 
 Sub saat_toMin (tim As String) As Int
+
 	Dim strfun As StringFunctions
 	strfun.Initialize
 	Dim ls_tim2 As List
 	ls_tim2.Initialize
 	ls_tim2=strfun.Split(tim,":")
+	
+	Dim sa1 As Int =ls_tim2.Get(0)
+	Dim dag1 As Int =ls_tim2.Get(1)
 
-	Dim dag_tim2 As Int =(ls_tim2.Get(0)*60)+ls_tim2.Get(1)
-	Return  dag_tim2
+	
+	Return  (sa1*60)+dag1
 End Sub
 
 Sub min_toSaat (min1 As Int) As String

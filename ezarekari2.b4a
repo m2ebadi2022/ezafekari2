@@ -863,6 +863,7 @@ Sub Jobdone (job As HttpJob)
 						Else
 							File.WriteString(File.DirInternal,"payokok","")
 							myfunc.help_man("توجه","نسخه طلایی از طرف ادمین فعال شد")
+							
 						End If
 					
 					Else If (job.GetString.Contains("accessno"))Then
@@ -870,6 +871,7 @@ Sub Jobdone (job As HttpJob)
 						If File.Exists(File.DirInternal,"payokok") Then
 							File.Delete(File.DirInternal,"payokok")
 							myfunc.help_man("توجه"," نسخه طلایی از طرف ادمین غیرفعال شد")
+							
 						End If
 					Else If (job.GetString.Contains("lockok"))Then
 					
@@ -1136,7 +1138,9 @@ Sub timer1_Tick
 	timer1.Enabled=False
 	cv_loader.Hide
 	btn_menu_home_Click
+	ScrollView_sett_taradod.Panel.LoadLayout("item_settingTaradod_layout")
 	
+		
 	
 	
 	'''===============lock app
@@ -1322,7 +1326,7 @@ End Sub
 
 
 Sub Activity_Resume
-
+	
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -1335,14 +1339,19 @@ Private Sub btn_menu_home_Click
 	pan_imag.Background=img1
 	
 	pan_main.RemoveAllViews
-	pan_main.LoadLayout("home_layout")
-	scv_home_item.Panel.LoadLayout("home_item")
+	
+		pan_main.LoadLayout("home_layout")
+		scv_home_item.Panel.LoadLayout("home_item")
+	
+	
+	
+	
 	lbl_date_home.Text=myfunc.fa2en(persianDate.PersianLongDate)
 	
 	saat_kar_min =dbCode.get_setting_byName("saat_kar_darRoz")
 	
 	If(saat_kar_min<18)Then
-		myfunc.help_man("توجه","لطفا ساعت کاری خود را تنظیم کنید")
+		myfunc.help_man("توجه","لطفا ساعت کاری خود را در صفحه ثبت اطلاعات حقوق تنظیم کنید")
 	End If
 	
 	Dim list_ezafekari As List
@@ -1464,6 +1473,10 @@ Private Sub btn_menu_home_Click
 	
 	
 	get_today_shift
+	
+	
+	
+	
 	
 	
 	myfunc.set_font(Activity)
@@ -2071,7 +2084,7 @@ End Sub
 
 Private Sub pan_setting_hogog_Click
 	StartActivity(setting_hogog_activity)
-	Activity.Finish
+	'Activity.Finish
 	
 End Sub
 
@@ -2091,7 +2104,7 @@ Private Sub pan_run_hogog_Click
 		StartActivity(hogog_activity)
 	Else
 		StartActivity(hogog_activity)
-		Activity.Finish
+		'Activity.Finish
 	End If
 	
 	
@@ -2948,7 +2961,7 @@ Sub add_taradod_sub
 
 'eeeeeeeeeee
 							
-							Dim tim_ezaf_min As Int=tim_min-myfunc.get_saatKari_inWeek(day_inWeek_id)
+							Dim tim_ezaf_min As Int=tim_min-(myfunc.get_saatKari_inWeek(day_inWeek_id))
 							
 						    Dim ls_res_tim1 As List
 							ls_res_tim1.Initialize
@@ -2997,7 +3010,7 @@ Sub add_taradod_sub
 						
 '						Dim dagige_fixed As Int = tim_vorod_conv_ezaf(lbl_tim1.Text)
 '						Dim saat_fixed As String = (myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(0))&":"&(myfunc.Min_to_saatMinRoz2_dontDay(dagige_fixed).Get(1))
-						Dim tim_ezaf_min As Int=tim_min-myfunc.get_saatKari_inWeek(day_inWeek_id)
+						Dim tim_ezaf_min As Int=tim_min-(myfunc.get_saatKari_inWeek(day_inWeek_id))
 						
 						
 						Dim ls_res_tim1 As List
@@ -3248,6 +3261,7 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 			Dim result As Int
 			result = Msgbox2("آیا قصد خروج دارید؟", "خروج", "بله", "", "خیر", Null)
 			If result = DialogResponse.Positive Then
+				Activity.Finish
 				ExitApplication
 				
 			End If
@@ -3954,11 +3968,12 @@ Private Sub lbl_save_picker_Click
 	
 		End If
 	
+	
+	'eeeeeeeeeeee
+	
 		state_tatil= chek_tatil_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
 		state_tatil_setting = chek_tatil_setting
-		'eeeeeeeeeeee
-		
-		
+
 		day_inWeek_id=what_day(myfunc.fa2en(pik_year1.Text),myfunc.fa2en(pik_moon1.Tag),myfunc.fa2en(pik_day1.Text))
 	
 	
@@ -4043,6 +4058,9 @@ Sub what_day (year1 As Int,moon1 As Int, day1 As Int) As Int
 				
 	End Select
 	
+	dbCode.sql.Close
+	dbCode.res.Close
+	
 	Return result_int
 End Sub
 
@@ -4070,6 +4088,10 @@ Sub chek_tatil_day (year1 As Int,moon1 As Int, day1 As Int) As Int
 '	If(dbCode.res.GetInt("day_h")=7)Then
 '		result_int=3
 '	End If
+
+	dbCode.sql.Close
+	dbCode.res.Close
+	
 	
 	Return result_int    ' result_int=0 is not tatil   & 1 => tatil rasmi  &  tatil1 => tatil garardadi  & 3 => jome
 	
@@ -4999,65 +5021,72 @@ End Sub
 
 Private Sub lbl_setting_date_Click
 	
-	ScrollView_sett_taradod.Panel.LoadLayout("item_settingTaradod_layout")
+	Try
+		
+		Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
+		If(res_val2=0)Then
+			ckb_setting_date_finger.Checked=False
+		Else
+			ckb_setting_date_finger.Checked=True
+		End If
 	
-	Dim res_val2 As Int =dbCode.get_setting_byName("setting_finger_mode")
-	If(res_val2=0)Then
-		ckb_setting_date_finger.Checked=False
-	Else
-		ckb_setting_date_finger.Checked=True
-	End If
+		Dim res_tatil_rasmi As Int =dbCode.get_setting_byName("setting_tatil_rasmi")
+		If(res_tatil_rasmi=0)Then
+			ckb_tatil_rasmi.Checked=False
+		Else
+			ckb_tatil_rasmi.Checked=True
+		End If
 	
-	Dim res_tatil_rasmi As Int =dbCode.get_setting_byName("setting_tatil_rasmi")
-	If(res_tatil_rasmi=0)Then
-		ckb_tatil_rasmi.Checked=False
-	Else
-		ckb_tatil_rasmi.Checked=True
-	End If
-	
-	Dim res_tatil_garardadi As Int =dbCode.get_setting_byName("setting_tatil_garardadi")
-	If(res_tatil_garardadi=0)Then
-		ckb_tatil_garardadi.Checked=False
-	Else
-		ckb_tatil_garardadi.Checked=True
-	End If
-	
-	
-	Dim minRoz_0 , minRoz_1, minRoz_2, minRoz_3, minRoz_4, minRoz_5 As Int=0
-	minRoz_0=dbCode.get_setting_byName("saat_kar_Shanbe")
-	minRoz_1=dbCode.get_setting_byName("saat_kar_Yekshanbe")
-	minRoz_2=dbCode.get_setting_byName("saat_kar_Doshanbe")
-	minRoz_3=dbCode.get_setting_byName("saat_kar_Seshanbe")
-	minRoz_4=dbCode.get_setting_byName("saat_kar_Charshanbe")
-	minRoz_5=dbCode.get_setting_byName("saat_kar_Panjshanbe")
+		Dim res_tatil_garardadi As Int =dbCode.get_setting_byName("setting_tatil_garardadi")
+		If(res_tatil_garardadi=0)Then
+			ckb_tatil_garardadi.Checked=False
+		Else
+			ckb_tatil_garardadi.Checked=True
+		End If
 	
 	
-	
-	et_saat_kari0.Text=myfunc.strTOint(minRoz_0/60)
-	et_min_kari0.Text=myfunc.strTOint(minRoz_0 Mod 60)
-	
-	et_saat_kari1.Text=myfunc.strTOint(minRoz_1/60)
-	et_min_kari1.Text=myfunc.strTOint(minRoz_1 Mod 60)
-	
-	et_saat_kari2.Text=myfunc.strTOint(minRoz_2/60)
-	et_min_kari2.Text=myfunc.strTOint(minRoz_2 Mod 60)
-	
-	et_saat_kari3.Text=myfunc.strTOint(minRoz_3/60)
-	et_min_kari3.Text=myfunc.strTOint(minRoz_3 Mod 60)
-	
-	et_saat_kari4.Text=myfunc.strTOint(minRoz_4/60)
-	et_min_kari4.Text=myfunc.strTOint(minRoz_4 Mod 60)
-	
-	et_saat_kari5.Text=myfunc.strTOint(minRoz_5/60)
-	et_min_kari5.Text=myfunc.strTOint(minRoz_5 Mod 60)
+		Dim minRoz_0 , minRoz_1, minRoz_2, minRoz_3, minRoz_4, minRoz_5 As Int=0
+		minRoz_0=dbCode.get_setting_byName("saat_kar_Shanbe")
+		minRoz_1=dbCode.get_setting_byName("saat_kar_Yekshanbe")
+		minRoz_2=dbCode.get_setting_byName("saat_kar_Doshanbe")
+		minRoz_3=dbCode.get_setting_byName("saat_kar_Seshanbe")
+		minRoz_4=dbCode.get_setting_byName("saat_kar_Charshanbe")
+		minRoz_5=dbCode.get_setting_byName("saat_kar_Panjshanbe")
 	
 	
 	
+		et_saat_kari0.Text=myfunc.strTOint(minRoz_0/60)
+		et_min_kari0.Text=myfunc.strTOint(minRoz_0 Mod 60)
 	
-
+		et_saat_kari1.Text=myfunc.strTOint(minRoz_1/60)
+		et_min_kari1.Text=myfunc.strTOint(minRoz_1 Mod 60)
+	
+		et_saat_kari2.Text=myfunc.strTOint(minRoz_2/60)
+		et_min_kari2.Text=myfunc.strTOint(minRoz_2 Mod 60)
+	
+		et_saat_kari3.Text=myfunc.strTOint(minRoz_3/60)
+		et_min_kari3.Text=myfunc.strTOint(minRoz_3 Mod 60)
+	
+		et_saat_kari4.Text=myfunc.strTOint(minRoz_4/60)
+		et_min_kari4.Text=myfunc.strTOint(minRoz_4 Mod 60)
+	
+		et_saat_kari5.Text=myfunc.strTOint(minRoz_5/60)
+		et_min_kari5.Text=myfunc.strTOint(minRoz_5 Mod 60)
 	
 	
-	pan_all_setting_date.Visible=True
+	
+	
+		pan_all_setting_date.Visible=True
+		
+		
+		
+		
+	Catch
+		ScrollView_sett_taradod.Panel.LoadLayout("item_settingTaradod_layout")
+		lbl_setting_date_Click
+		Log(LastException)
+	End Try
+	
 	
 End Sub
 

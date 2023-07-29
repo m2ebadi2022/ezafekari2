@@ -398,8 +398,10 @@ End Sub
 
 
 Private Sub lbl_back_Click
-	StartActivity(Main)
+	
 	Activity.Finish
+	StartActivity(Main)
+	
 End Sub
 
 
@@ -1182,8 +1184,10 @@ Sub save_gozaresh
 			ToastMessageShow("گزارش ذخیره شد", False)	
 		Else
 			Main.buy_index=1
-			StartActivity(Main)
+			
 			Activity.Finish
+			StartActivity(Main)
+			
 		End If
 	Else
 		dbCode.add_gozaresh(myfunc.fa2en(Main.persianDate.PersianShortDate),et_name_gozaresh.Text,et_tozih_gozaresh.Text,str1.ToString,hogog_nakhales,hogog_khales)

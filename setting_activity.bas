@@ -212,8 +212,9 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 End Sub
 
 Private Sub lbl_back_Click
-	StartActivity(Main)
+	
 	Activity.Finish
+	StartActivity(Main)
 End Sub
 
 
@@ -255,8 +256,8 @@ Private Sub lbl_restore_Click
 		result = Msgbox2("دیتای قبلی حذف و دیتای جدید جایگزین می شود.", "توجه", "باشه", "", "نه",LoadBitmap(File.DirAssets,"attention.png"))
 		If result = DialogResponse.Positive Then
 			File.Copy(Starter.Provider.SharedFolder,"db2.db",File.DirInternal,"db.db")
-			StartActivity(Main)
 			Activity.Finish
+			StartActivity(Main)
 			
 		End If
 		

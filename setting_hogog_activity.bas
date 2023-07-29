@@ -250,9 +250,11 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Private Sub lbl_back_Click
-	StartActivity(Main)
 	
 	Activity.Finish
+	StartActivity(Main)
+	
+	
 End Sub
 
 Private Sub lbl_save_Click

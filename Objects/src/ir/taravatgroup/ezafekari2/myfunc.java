@@ -493,44 +493,44 @@ return "";
 }
 public static int  _get_saatkari_inweek(anywheresoftware.b4a.BA _ba,int _dayid) throws Exception{
 int _saatkari_inweek = 0;
- //BA.debugLineNum = 689;BA.debugLine="Sub get_saatKari_inWeek (dayID As Int) As Int";
- //BA.debugLineNum = 690;BA.debugLine="Dim saatKari_InWeek As Int=0";
+ //BA.debugLineNum = 693;BA.debugLine="Sub get_saatKari_inWeek (dayID As Int) As Int";
+ //BA.debugLineNum = 694;BA.debugLine="Dim saatKari_InWeek As Int=0";
 _saatkari_inweek = (int) (0);
- //BA.debugLineNum = 692;BA.debugLine="Select dayID";
+ //BA.debugLineNum = 696;BA.debugLine="Select dayID";
 switch (_dayid) {
 case 1: {
- //BA.debugLineNum = 694;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+ //BA.debugLineNum = 698;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
 _saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Shanbe")));
  break; }
 case 2: {
- //BA.debugLineNum = 696;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+ //BA.debugLineNum = 700;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
 _saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Yekshanbe")));
  break; }
 case 3: {
- //BA.debugLineNum = 698;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+ //BA.debugLineNum = 702;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
 _saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Doshanbe")));
  break; }
 case 4: {
- //BA.debugLineNum = 700;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+ //BA.debugLineNum = 704;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
 _saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Seshanbe")));
  break; }
 case 5: {
- //BA.debugLineNum = 702;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+ //BA.debugLineNum = 706;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
 _saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Charshanbe")));
  break; }
 case 6: {
- //BA.debugLineNum = 704;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
+ //BA.debugLineNum = 708;BA.debugLine="saatKari_InWeek=dbCode.get_setting_byName(\"saat";
 _saatkari_inweek = (int)(Double.parseDouble(mostCurrent._dbcode._get_setting_byname /*String*/ (_ba,"saat_kar_Panjshanbe")));
  break; }
 case 7: {
- //BA.debugLineNum = 706;BA.debugLine="saatKari_InWeek=Main.saat_kar_min";
+ //BA.debugLineNum = 710;BA.debugLine="saatKari_InWeek=Main.saat_kar_min";
 _saatkari_inweek = mostCurrent._main._saat_kar_min /*int*/ ;
  break; }
 }
 ;
- //BA.debugLineNum = 711;BA.debugLine="Return saatKari_InWeek";
+ //BA.debugLineNum = 715;BA.debugLine="Return saatKari_InWeek";
 if (true) return _saatkari_inweek;
- //BA.debugLineNum = 712;BA.debugLine="End Sub";
+ //BA.debugLineNum = 716;BA.debugLine="End Sub";
 return 0;
 }
 public static String  _help_man(anywheresoftware.b4a.BA _ba,String _title,String _matn) throws Exception{
@@ -619,14 +619,14 @@ return null;
 public static String  _min_tosaat(anywheresoftware.b4a.BA _ba,int _min1) throws Exception{
 int _sat = 0;
 int _dag = 0;
- //BA.debugLineNum = 681;BA.debugLine="Sub min_toSaat (min1 As Int) As String";
- //BA.debugLineNum = 682;BA.debugLine="Dim sat As Int=min1/60";
+ //BA.debugLineNum = 685;BA.debugLine="Sub min_toSaat (min1 As Int) As String";
+ //BA.debugLineNum = 686;BA.debugLine="Dim sat As Int=min1/60";
 _sat = (int) (_min1/(double)60);
- //BA.debugLineNum = 683;BA.debugLine="Dim dag As Int=min1 Mod 60";
+ //BA.debugLineNum = 687;BA.debugLine="Dim dag As Int=min1 Mod 60";
 _dag = (int) (_min1%60);
- //BA.debugLineNum = 685;BA.debugLine="Return sat&\":\"&dag";
+ //BA.debugLineNum = 689;BA.debugLine="Return sat&\":\"&dag";
 if (true) return BA.NumberToString(_sat)+":"+BA.NumberToString(_dag);
- //BA.debugLineNum = 686;BA.debugLine="End Sub";
+ //BA.debugLineNum = 690;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _msg_add_edit(anywheresoftware.b4a.BA _ba,String _title,String _matn) throws Exception{
@@ -743,23 +743,26 @@ return "";
 public static int  _saat_tomin(anywheresoftware.b4a.BA _ba,String _tim) throws Exception{
 adr.stringfunctions.stringfunctions _strfun = null;
 anywheresoftware.b4a.objects.collections.List _ls_tim2 = null;
-int _dag_tim2 = 0;
+int _sa1 = 0;
+int _dag1 = 0;
  //BA.debugLineNum = 670;BA.debugLine="Sub saat_toMin (tim As String) As Int";
- //BA.debugLineNum = 671;BA.debugLine="Dim strfun As StringFunctions";
+ //BA.debugLineNum = 672;BA.debugLine="Dim strfun As StringFunctions";
 _strfun = new adr.stringfunctions.stringfunctions();
- //BA.debugLineNum = 672;BA.debugLine="strfun.Initialize";
+ //BA.debugLineNum = 673;BA.debugLine="strfun.Initialize";
 _strfun._initialize((_ba.processBA == null ? _ba : _ba.processBA));
- //BA.debugLineNum = 673;BA.debugLine="Dim ls_tim2 As List";
+ //BA.debugLineNum = 674;BA.debugLine="Dim ls_tim2 As List";
 _ls_tim2 = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 674;BA.debugLine="ls_tim2.Initialize";
+ //BA.debugLineNum = 675;BA.debugLine="ls_tim2.Initialize";
 _ls_tim2.Initialize();
- //BA.debugLineNum = 675;BA.debugLine="ls_tim2=strfun.Split(tim,\":\")";
+ //BA.debugLineNum = 676;BA.debugLine="ls_tim2=strfun.Split(tim,\":\")";
 _ls_tim2 = _strfun._vvvvvv5(_tim,":");
- //BA.debugLineNum = 677;BA.debugLine="Dim dag_tim2 As Int =(ls_tim2.Get(0)*60)+ls_tim2.";
-_dag_tim2 = (int) (((double)(BA.ObjectToNumber(_ls_tim2.Get((int) (0))))*60)+(double)(BA.ObjectToNumber(_ls_tim2.Get((int) (1)))));
- //BA.debugLineNum = 678;BA.debugLine="Return  dag_tim2";
-if (true) return _dag_tim2;
- //BA.debugLineNum = 679;BA.debugLine="End Sub";
+ //BA.debugLineNum = 678;BA.debugLine="Dim sa1 As Int =ls_tim2.Get(0)";
+_sa1 = (int)(BA.ObjectToNumber(_ls_tim2.Get((int) (0))));
+ //BA.debugLineNum = 679;BA.debugLine="Dim dag1 As Int =ls_tim2.Get(1)";
+_dag1 = (int)(BA.ObjectToNumber(_ls_tim2.Get((int) (1))));
+ //BA.debugLineNum = 682;BA.debugLine="Return  (sa1*60)+dag1";
+if (true) return (int) ((_sa1*60)+_dag1);
+ //BA.debugLineNum = 683;BA.debugLine="End Sub";
 return 0;
 }
 public static String  _set_font(anywheresoftware.b4a.BA _ba,anywheresoftware.b4a.objects.ActivityWrapper _activity1) throws Exception{
