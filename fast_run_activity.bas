@@ -399,7 +399,7 @@ End If
 	
 	'maliat
 	'maliat_end=mohasebe_maliat(hogog_nakhales,sp_year.SelectedItem)
-	maliat_end=mohasebe_maliat(nak_mal,1402)
+	maliat_end=mohasebe_maliat(nak_mal,1403)
 	
 	
 	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat
@@ -523,6 +523,48 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 		End If
 	End If
 	
+	
+	'' sal 1403  
+	If (year=1403)Then
+		If(hogog>12000001 And hogog<16500001)Then	  ''-----stat1
+			state1=(hogog-12000000)*0.1
+		End If
+		If(hogog>16500001 And hogog<27000001)Then	  ''-----stat2
+			state1=(4500000)*0.1
+			state2=(hogog-16500000)*0.15
+		End If
+		If(hogog>27000001 And hogog<40000001)Then	  ''-----stat3
+			state1=(4500000)*0.1
+			state2=(10500000)*0.15
+			state3=(hogog-27000000)*0.2
+		End If
+	
+		If(hogog>40000001)Then	  ''-----stat4
+			state1=(4500000)*0.1
+			state2=(10500000)*0.15
+			state3=(13000000)*0.2
+			
+			state4=(hogog-40000001)*0.3
+		End If
+	End If
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	all_maliat=state1+state2+state3+state4+state5+state6
 	Return all_maliat
 	
@@ -603,7 +645,7 @@ End Sub
 
 Private Sub sp_olad_ItemClick (Position As Int, Value As Object)
 	Dim num As Int=Value
-	et_olad.Tag=530828*num
+	et_olad.Tag=716618*num
 	et_olad.Text=myfunc.show_num_pool(et_olad.Tag)
 End Sub
 
@@ -671,7 +713,7 @@ Private Sub lbl_help_2_Click
 End Sub
 
 Private Sub lbl_help_1_Click
-	myfunc.help_man("راهنما","اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1402 می باشد. ")
+	myfunc.help_man("راهنما","اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1403 می باشد. ")
 End Sub
 
 Private Sub lbl_save_result_Click

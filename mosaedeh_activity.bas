@@ -66,6 +66,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("mosaedeh_layout")
 	
+	sp_year.Add("1403")
 	sp_year.Add("1402")
 	sp_year.Add("1401")
 	sp_year.Add("1400")

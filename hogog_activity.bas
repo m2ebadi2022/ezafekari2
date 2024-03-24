@@ -148,6 +148,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	Main.time_page_load.Enabled=True
 	B4XLoadingIndicator1.Show
 	
+	sp_year.Add("1403")
 	sp_year.Add("1402")
 	sp_year.Add("1401")
 	sp_year.Add("1400")
@@ -295,6 +296,7 @@ Sub calc_vahed_ezafekari
 
 '' ezafekari ady
 	vahed_ezafekari=((paye+sanavat)/220)*1.4
+	'vahed_ezafekari=((paye+sanavat)/192)*1.4
 	'vahed_ezafekari=((paye+sanavat+maskan+bon)/220)*1.4
 	
 	
@@ -313,6 +315,7 @@ Sub calc_vahed_ezafekari_vij
 	
 	'' ezafekari vije
 	vahed_ezafekari_vij=((paye+sanavat)/220)*1.8
+	'vahed_ezafekari_vij=((paye+sanavat)/192)*1.8
 	'vahed_ezafekari_vij=((paye+sanavat+maskan+bon)/220)*1.8
 	
 	
@@ -1147,6 +1150,49 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 			state4=(hogog-34000001)*0.3
 		End If
 	End If
+	
+	'' sal 1403 
+	
+	If (year=1403)Then
+		If(hogog>12000001 And hogog<16500001)Then	  ''-----stat1
+			state1=(hogog-12000000)*0.1
+		End If
+		If(hogog>16500001 And hogog<27000001)Then	  ''-----stat2
+			state1=(4500000)*0.1
+			state2=(hogog-16500000)*0.15
+		End If
+		If(hogog>27000001 And hogog<40000001)Then	  ''-----stat3
+			state1=(4500000)*0.1
+			state2=(10500000)*0.15
+			state3=(hogog-27000000)*0.2
+		End If
+	
+		If(hogog>40000001)Then	  ''-----stat4
+			state1=(4500000)*0.1
+			state2=(10500000)*0.15
+			state3=(13000000)*0.2
+			
+			state4=(hogog-40000001)*0.3
+		End If
+	End If
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	all_maliat=state1+state2+state3+state4+state5+state6
 	Return all_maliat

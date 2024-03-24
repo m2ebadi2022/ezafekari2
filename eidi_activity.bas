@@ -125,8 +125,8 @@ Private Sub btn_mohasebe_eidi_Click
 		eidi_nakhales=et_payeh.Tag*2
 	End If
 	
-	If(eidi_nakhales>(3*5308284) )Then
-		eidi_nakhales= (3*5308284)
+	If(eidi_nakhales>(3*7166184) )Then
+		eidi_nakhales= (3*7166184)
 	End If
 	
 	eidi_maliat=mohasebe_maliat(eidi_nakhales , myfunc.fa2en(Main.persianDate.PersianYear))
@@ -248,6 +248,56 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 			state3=(8330000)*0.2
 			
 			state4=(hogog-29160000)*0.3
+		End If
+	End If
+	
+	
+	
+	If (year=1402)Then
+		If(hogog>10000001 And hogog<14000001)Then	  ''-----stat1
+			state1=(hogog-10000000)*0.1
+		End If
+		If(hogog>14000001 And hogog<23000001)Then	  ''-----stat2
+			state1=(4000000)*0.1
+			state2=(hogog-14000000)*0.15
+		End If
+		If(hogog>23000001 And hogog<34000001)Then	  ''-----stat3
+			state1=(4000000)*0.1
+			state2=(9000000)*0.15
+			state3=(hogog-23000000)*0.2
+		End If
+	
+		If(hogog>34000001)Then	  ''-----stat4
+			state1=(4000000)*0.1
+			state2=(9000000)*0.15
+			state3=(11000000)*0.2
+			
+			state4=(hogog-34000001)*0.3
+		End If
+	End If
+	
+	
+	'' sal 1403
+	If (year=1403)Then
+		If(hogog>12000001 And hogog<16500001)Then	  ''-----stat1
+			state1=(hogog-12000000)*0.1
+		End If
+		If(hogog>16500001 And hogog<27000001)Then	  ''-----stat2
+			state1=(4500000)*0.1
+			state2=(hogog-16500000)*0.15
+		End If
+		If(hogog>27000001 And hogog<40000001)Then	  ''-----stat3
+			state1=(4500000)*0.1
+			state2=(10500000)*0.15
+			state3=(hogog-27000000)*0.2
+		End If
+	
+		If(hogog>40000001)Then	  ''-----stat4
+			state1=(4500000)*0.1
+			state2=(10500000)*0.15
+			state3=(13000000)*0.2
+			
+			state4=(hogog-40000001)*0.3
 		End If
 	End If
 	

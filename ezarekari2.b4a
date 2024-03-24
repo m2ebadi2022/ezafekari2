@@ -293,22 +293,21 @@ Library10=nicespinner
 Library11=okhttputils2
 Library12=phone
 Library13=picasso
-Library14=pnmultiplesharing
-Library15=printing
-Library16=reflection
-Library17=rspopupmenu
-Library18=runtimepermissions
-Library19=sql
+Library14=reflection
+Library15=rspopupmenu
+Library16=runtimepermissions
+Library17=sql
+Library18=stringfunctions
+Library19=uploadfilephp
 Library2=contentresolver
-Library20=stringfunctions
-Library21=uploadfilephp
-Library22=xcustomlistview
-Library23=xui
+Library20=xcustomlistview
+Library21=xui
+Library22=printing
 Library3=core
 Library4=dateutils
 Library5=excel
 Library6=fileprovider
-Library7=inappbazzar
+Library7=inappbilling3
 Library8=json
 Library9=manampersiandate
 ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
@@ -346,9 +345,9 @@ Module7=dbCode
 Module8=eidi_activity
 Module9=fast_run_activity
 NumberOfFiles=144
-NumberOfLibraries=23
+NumberOfLibraries=22
 NumberOfModules=33
-Version=12.5
+Version=12.8
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
@@ -703,12 +702,14 @@ Sub Activity_Create(FirstTime As Boolean)
 	End Try
 	
 	If(FirstTime=True)Then
+		dbCode.cheng_tagvim2
 		dbCode.check_old_adds
 		dbCode.check_new_add
+		dbCode.init_notfound("hag_hamsar",0)
+		dbCode.init_notfound_onvanha(14,"hamsar","حق تأهل")
 	End If
 	
-	
-	
+
 	''---------------------------------
 	
 	
@@ -1592,6 +1593,7 @@ Private Sub btn_menu_list_Click
 	pan_main.RemoveAllViews
 	pan_main.LoadLayout("list_layout")
 	
+	sp_year.Add("1403")
 	sp_year.Add("1402")
 	sp_year.Add("1401")
 	sp_year.Add("1400")
@@ -2020,6 +2022,7 @@ Private Sub btn_menu_gozaresh_Click
 	pan_main.RemoveAllViews
 	pan_main.LoadLayout("gozaresh_layout")
 	
+	sp_year_gozaresh.Add("1403")
 	sp_year_gozaresh.Add("1402")
 	sp_year_gozaresh.Add("1401")
 	sp_year_gozaresh.Add("1400")

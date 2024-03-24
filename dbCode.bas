@@ -181,6 +181,7 @@ Sub install_db_tbl_onvanha
 		sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('11', 'mazaya',  'سایر مزایا','سایر مزایا');")
 		sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('12', 'kosorat',  'سایر کسورات','سایر کسورات');")
 		sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('13', 'saatKar',  'ساعت کاری در روز','ساعت کاری در روز');")
+		sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('14', 'hamsar',  'حق تأهل','حق تأهل');")
 		
 		
 		
@@ -189,6 +190,26 @@ Sub install_db_tbl_onvanha
 	sql.Close
 End Sub
 
+Sub cheng_tagvim2
+	connect_db
+	''  roz 30 esfand add
+	Try
+		
+		res = sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id=2192")
+		'res.Position=0
+		If(res.RowCount = 0 )Then
+			sql.ExecNonQuery("INSERT INTO 'my_calander' ('id', 'year' , 'key' , 'moon', 'day_c', 'day_h', 'monasebat', 'state' , 'shift' , 'note')  VALUES (2192, 1403 , 366 , 12, 30 , 6 , 'روز جهانی شادی' , 'tatil' , '',''); ")
+		End If
+		
+	Catch
+		Log(LastException)
+	End Try
+	
+	res.Close
+	Log("hear------------")
+	
+	
+End Sub
 
 
 
@@ -302,6 +323,21 @@ Sub init_notfound (rowname As String , val As String )
 		sql.ExecNonQuery2("INSERT INTO tb_setting (name, value) VALUES ( ?,?)", Array As Object(rowname,val))
 	End If
 End Sub
+sql.ExecNonQuery("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('14', 'hamsar',  'حق تأهل','حق تأهل');")
+
+Sub init_notfound_onvanha (id As Int ,rowname As String , def_name As String )
+	connect_db
+	res= sql.ExecQuery("SELECT * FROM tbl_onvanha WHERE name='"&rowname&"'")
+	
+	If(res.RowCount=0)Then
+		sql.ExecNonQuery2("INSERT INTO tbl_onvanha ('id', 'name', 'def_name', 'custom_name') VALUES ( ?,?,?,?)", Array As Object(id,rowname,def_name,def_name))
+	End If
+End Sub
+
+
+
+
+
 
 
 Sub add_ezafekari(date1 As String,date2 As String,time1 As String,time2 As String,d As Int,h As Int,m As Int, tozih As String , state0 As Int) As Boolean
@@ -630,6 +666,7 @@ Sub add_setting_hogog (data As List) As Boolean
 	sql.ExecNonQuery2("UPDATE tb_setting SET value = ? WHERE name= ? ", Array As Object(data.Get(14), "ksorat"))
 	
 	sql.ExecNonQuery2("UPDATE tb_setting SET value = ? WHERE name= ? ", Array As Object(data.Get(15), "saat_kar_darRoz"))
+	sql.ExecNonQuery2("UPDATE tb_setting SET value = ? WHERE name= ? ", Array As Object(data.Get(16), "hag_hamsar"))
 	
 	
 	

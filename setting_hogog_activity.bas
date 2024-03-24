@@ -70,6 +70,8 @@ Sub Globals
 	Private et_min_kari As EditText
 	
 	Dim min_saat_kari As Int
+	Private et_hamsar As EditText
+	Private lbl_onv16 As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -82,6 +84,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	et_masoliat.Color=Colors.White
 	et_olad.Color=Colors.White
 	et_bon.Color=Colors.White
+	et_hamsar.Color=Colors.White
+	
 	et_bime_takmil.Color=Colors.White
 	et_maliat.Color=Colors.White
 	et_bime_tamin.Color=Colors.White
@@ -103,11 +107,13 @@ Sub Activity_Create(FirstTime As Boolean)
 
 	'sanavat_vahed=140000
 	'olad_vahed=417975   sal 1401
-	olad_vahed=530828    ' sal 1402
+	'olad_vahed=530828    ' sal 1402
+	olad_vahed=716618    ' sal 1403
 	
 	
 	
 	
+	sp_ganon_kar.Add("سال 1403")
 	sp_ganon_kar.Add("سال 1402")
 	sp_ganon_kar.Add("سال 1401")
 	sp_ganon_kar.Add("سال 1400")
@@ -152,6 +158,13 @@ Sub Activity_Create(FirstTime As Boolean)
 	dbCode.res.Position=2 ''--------bon------
 	et_bon.Tag=dbCode.res.GetString("value")
 	et_bon.Text=myfunc.show_num_pool(dbCode.res.GetString("value"))
+	
+	
+	dbCode.res.Position=48 ''--------hag hamsar------
+	et_hamsar.Tag=dbCode.res.GetString("value")
+	et_hamsar.Text=myfunc.show_num_pool(dbCode.res.GetString("value"))
+	
+	
 	
 	dbCode.res.Position=6 ''--------bime_tamin------
 	et_bime_tamin.Text=dbCode.res.GetString("value")
@@ -211,19 +224,22 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	Dim pay_ch As Int=et_paye.tag
 	
-	If (pay_ch=5308284)Then
+	If (pay_ch=7166184)Then   '' sal 1403
 	sp_ganon_kar.SelectedIndex=0
 	
-	else If (pay_ch=4179755)Then
+	else If (pay_ch=5308284)Then    ''sal 1402
 	sp_ganon_kar.SelectedIndex=1
 	
+	else If (pay_ch=4179755)Then
+	sp_ganon_kar.SelectedIndex=2
+	
 	else If (pay_ch=2655492)Then
-		sp_ganon_kar.SelectedIndex=2
+		sp_ganon_kar.SelectedIndex=3
 		
 	Else If (pay_ch=1910427) Then
-		sp_ganon_kar.SelectedIndex=3
-	Else
 		sp_ganon_kar.SelectedIndex=4
+	Else
+		sp_ganon_kar.SelectedIndex=5
 		
 	End If
 	
@@ -266,6 +282,8 @@ Private Sub lbl_save_Click
 	et_masoliat.Color=Colors.White
 	et_olad.Color=Colors.White
 	et_bon.Color=Colors.White
+	et_hamsar.Color=Colors.White
+	
 	et_bime_takmil.Color=Colors.White
 	'et_maliat.Color=Colors.White
 	'et_bime_tamin.Color=Colors.White
@@ -340,6 +358,9 @@ Private Sub lbl_save_Click
 	If(empty_fild(et_bon)=True)Then
 		exep=False
 	End If
+	If(empty_fild(et_hamsar)=True)Then
+		exep=False
+	End If
 	
 	If(et_sanavat.Text="")Then
 		et_sanavat.Text=0
@@ -372,7 +393,7 @@ Private Sub lbl_save_Click
 	If(exep=True)Then
 		Dim data As List
 		data.Initialize
-		data.AddAll(Array As String(et_paye.Tag,et_maskan.Tag,et_olad.Tag,et_fani.Tag,et_masoliat.Tag,et_bon.Tag,et_bime_tamin.Text,et_bime_takmil.Tag,10,et_shift.Text,et_sanavat.Tag,et_sarparast.Tag,et_mazaya.Tag,sp_olad.SelectedItem,et_ksorat.Tag, min_sat_kar))
+		data.AddAll(Array As String(et_paye.Tag,et_maskan.Tag,et_olad.Tag,et_fani.Tag,et_masoliat.Tag,et_bon.Tag,et_bime_tamin.Text,et_bime_takmil.Tag,10,et_shift.Text,et_sanavat.Tag,et_sarparast.Tag,et_mazaya.Tag,sp_olad.SelectedItem,et_ksorat.Tag, min_sat_kar,et_hamsar.Tag))
 		
 		
 		If (dbCode.add_setting_hogog(data)) Then
@@ -401,10 +422,37 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 	
 	
 	Select Value
+		Case "سال 1403"
+			et_paye.Text=7166184
+			et_maskan.Text=900000
+			et_bon.Text=1400000
+			et_hamsar.Text=500000
+			
+			
+			et_bime_tamin.Text=7
+			'et_maliat.Text=10
+		
+			et_fani.Text=0
+			et_masoliat.Text=0
+			et_sarparast.Text=0
+			et_mazaya.Text=0
+			
+			'olad har farzand   265549
+			olad_vahed=716618
+			et_olad.Text=0
+		
+			'sanavat - har sal       140000
+			'sanavat_vahed=140000
+			et_sanavat.Text=0
+		
+		
+		
+		
 		Case "سال 1402"
 			et_paye.Text=5308284
 			et_maskan.Text=900000
 			et_bon.Text=1100000
+			et_hamsar.Text=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -425,6 +473,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=4179755
 			et_maskan.Text=650000
 			et_bon.Text=850000
+			et_hamsar.Text=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -445,6 +494,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=2655492
 			et_maskan.Text=450000
 			et_bon.Text=600000
+			et_hamsar.Text=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -465,6 +515,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=1910427
 			et_maskan.Text=300000
 			et_bon.Text=400000
+			et_hamsar.Text=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -485,6 +536,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=0
 			et_maskan.Text=0
 			et_bon.Text=0
+			et_hamsar.Text=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -534,6 +586,15 @@ Private Sub et_bon_TextChanged (Old As String, New As String)
 	et_bon.Tag=New.Replace(",","")
 	myfunc.change_formater(Old,New,et_bon)
 End Sub
+
+Private Sub et_hamsar_TextChanged (Old As String, New As String)
+	et_hamsar.Tag=New.Replace(",","")
+	myfunc.change_formater(Old,New,et_hamsar)
+End Sub
+
+
+
+
 
 Private Sub et_sarparast_TextChanged (Old As String, New As String)
 	et_sarparast.Tag=New.Replace(",","")
@@ -597,6 +658,7 @@ Sub read_onvan
 	lbl_onv11.Text=ls_onv.Get(10)
 	lbl_onv12.Text=ls_onv.Get(11)
 	lbl_onv13.Text=ls_onv.Get(12)
+	lbl_onv16.Text=ls_onv.Get(13)
 
 	
 End Sub
@@ -653,3 +715,4 @@ End Sub
 Private Sub lbl_help_onv_Click
 	myfunc.help_man("راهنما","با نگه داشتن انگشت روی عنوان آیتم ها میتوانید آنها را ویرایش کنید. توجه داشته باشید که عملکرد آنها در محاسبات تغییر نخواهد کرد.")
 End Sub
+
