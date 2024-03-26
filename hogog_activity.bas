@@ -11,7 +11,7 @@ Version=11
 
 Sub Process_Globals
 	'These global variables will be declared once when the application starts.
-	'These variables can be accessed from all modules.
+	'These variables can be accessed from all modules
 
 End Sub
 
@@ -24,6 +24,8 @@ Sub Globals
 	Dim fani As Int
 	Dim masoliat As Int
 	Dim bon As Int
+	Dim hamsar As Int
+	
 	Dim bime_tamin As Int
 	Dim bime_takmil As Int
 	'Dim maliat As Int
@@ -60,6 +62,9 @@ Sub Globals
 	Dim olad_end As Int
 	Dim fani_end As Int
 	Dim bon_end As Int
+	Dim hamsar_end As Int
+	
+	
 	Dim masoliat_end As Int
 	Dim sarparasti_end As Int
 	Dim mazaya_end As Int
@@ -180,11 +185,13 @@ Sub Activity_Create(FirstTime As Boolean)
 str_web1.Initialize
 	str_web1.Append("<html dir='rtl'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /><body>")
 	str_web1.Append("<h4 align='center' >اطلاعات حقوق برای ۳۰ روز</h4>")
-	str_web1.Append("<h6 align='center'>واحد : تومان</h6>")
+''	str_web1.Append("<h6 align='center'>واحد : تومان</h6>")
 	str_web1.Append("<table style='width:100%'><tr>")
 	str_web1.Append("<td>"&""&ls_onvanHa.Get(0)&" : "&myfunc.en2fa(show_num_pool(paye))&"<br>")
 	str_web1.Append(""&ls_onvanHa.Get(2)&" : "&myfunc.en2fa(show_num_pool(maskan))&"<br>")
 	str_web1.Append(" "&ls_onvanHa.Get(3)&" : "&myfunc.en2fa(show_num_pool(bon)) &"<br>")
+	str_web1.Append(" "&ls_onvanHa.Get(13)&" : "&myfunc.en2fa(show_num_pool(hamsar)) &"<br>")
+	
 	str_web1.Append(""&ls_onvanHa.Get(4)&"  : "&myfunc.en2fa(show_num_pool(olad))&"<br>")
 	str_web1.Append(""&ls_onvanHa.Get(5)&" : "&myfunc.en2fa(show_num_pool(fani))&"<br>")
 	str_web1.Append(""&ls_onvanHa.Get(6)&" : "&myfunc.en2fa(show_num_pool(masoliat))&"<br>")
@@ -445,6 +452,9 @@ Sub get_data_hogogi
 	dbCode.res.Position=2 ''--------bon------
 	bon=dbCode.res.GetString("value")
 	
+	
+	
+	
 	dbCode.res.Position=6 ''--------bime_tamin------
 	bime_tamin=dbCode.res.GetString("value")
 	
@@ -483,6 +493,9 @@ Sub get_data_hogogi
 	dbCode.res.Close
 	dbCode.sql.Close
 	
+	
+	''--------hamsar------
+	hamsar=dbCode.get_setting_byName("hag_hamsar")
 	
 	
 End Sub
@@ -668,6 +681,9 @@ Private Sub lbl_run_mohasebe_Click
 		str1.Append(""&ls_onvanHa.Get(0)&" برای "&myfunc.en2fa(roze_kari)&" روز کاری : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(paye_end))&"</span><br>")
 		str1.Append(""&ls_onvanHa.Get(2)&" : <span style='color:#5E35B1;'>"&myfunc.en2fa(show_num_pool(maskan_end))&"</span><br>")
 		str1.Append(" "&ls_onvanHa.Get(3)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(bon_end)) &"</span><br>")
+		str1.Append(" "&ls_onvanHa.Get(13)&" : <span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(hamsar_end)) &"</span><br>")
+		
+		
 		If(olad_end<>0)Then
 			str1.Append(""&ls_onvanHa.Get(4)&"  :<span style='color:#5E35B1;'> "&myfunc.en2fa(show_num_pool(olad_end))&"</span><br>")
 		End If
@@ -865,6 +881,15 @@ Sub mohasebe
 		bon_end=bon
 	End If
 	
+		
+	'hamsar
+	If(roze_kari<30)Then
+		hamsar_end=(hamsar/30)*roze_kari
+	Else
+		hamsar_end=hamsar
+	End If
+	
+	
 	
 	'olad
 	If(roze_kari<30)Then
@@ -983,12 +1008,12 @@ Sub mohasebe
 	
 	''-----------------------------
 	'hogog nakhales
-	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all+food_1_all+sayer_1_all+ayab_1_all
+	hogog_nakhales=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+hamsar_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end+padash_all+food_1_all+sayer_1_all+ayab_1_all
 	
 	'shamel maliat
 	Dim hogog_nakhales_maliaty As Int
 	
-	hogog_nakhales_maliaty=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end
+	hogog_nakhales_maliaty=paye_end+ezafekari_end+ezafekari_end_vij+maskan_end+bon_end+hamsar_end+olad_end+fani_end+masoliat_end+sarparasti_end+sanavat_end+mazaya_end+shift_end
 	
 	
 	'bime tamin

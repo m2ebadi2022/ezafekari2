@@ -72,6 +72,9 @@ Sub Globals
 	Dim min_saat_kari As Int
 	Private et_hamsar As EditText
 	Private lbl_onv16 As Label
+	Private chek_hamsar As CheckBox
+	
+	Dim hamsar_int As Int=500000
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -160,10 +163,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	et_bon.Text=myfunc.show_num_pool(dbCode.res.GetString("value"))
 	
 	
-	dbCode.res.Position=48 ''--------hag hamsar------
-	et_hamsar.Tag=dbCode.res.GetString("value")
-	et_hamsar.Text=myfunc.show_num_pool(dbCode.res.GetString("value"))
-	
 	
 	
 	dbCode.res.Position=6 ''--------bime_tamin------
@@ -220,6 +219,19 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	dbCode.res.Close
 	dbCode.sql.Close
+	
+	
+
+
+	et_hamsar.Tag=dbCode.get_setting_byName("hag_hamsar")
+	et_hamsar.Text=myfunc.show_num_pool(et_hamsar.Tag)
+	If(et_hamsar.Tag > 0)Then
+		chek_hamsar.Checked=True
+	Else
+		chek_hamsar.Checked=False
+	End If
+	
+	
 	
 	
 	Dim pay_ch As Int=et_paye.tag
@@ -426,8 +438,8 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=7166184
 			et_maskan.Text=900000
 			et_bon.Text=1400000
-			et_hamsar.Text=500000
 			
+			hamsar_int=500000
 			
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
@@ -452,7 +464,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=5308284
 			et_maskan.Text=900000
 			et_bon.Text=1100000
-			et_hamsar.Text=0
+			hamsar_int=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -473,7 +485,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=4179755
 			et_maskan.Text=650000
 			et_bon.Text=850000
-			et_hamsar.Text=0
+			hamsar_int=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -494,7 +506,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=2655492
 			et_maskan.Text=450000
 			et_bon.Text=600000
-			et_hamsar.Text=0
+			hamsar_int=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -515,7 +527,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=1910427
 			et_maskan.Text=300000
 			et_bon.Text=400000
-			et_hamsar.Text=0
+			hamsar_int=0
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -536,7 +548,7 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 			et_paye.Text=0
 			et_maskan.Text=0
 			et_bon.Text=0
-			et_hamsar.Text=0
+			hamsar_int=500000
 			et_bime_tamin.Text=7
 			'et_maliat.Text=10
 		
@@ -716,3 +728,16 @@ Private Sub lbl_help_onv_Click
 	myfunc.help_man("راهنما","با نگه داشتن انگشت روی عنوان آیتم ها میتوانید آنها را ویرایش کنید. توجه داشته باشید که عملکرد آنها در محاسبات تغییر نخواهد کرد.")
 End Sub
 
+
+
+Private Sub chek_hamsar_CheckedChange(Checked As Boolean)
+	If(Checked)Then
+		et_hamsar.Tag=hamsar_int
+		et_hamsar.Text=myfunc.show_num_pool(hamsar_int)
+		
+	Else
+		et_hamsar.Tag=0
+		et_hamsar.Text=myfunc.show_num_pool(0)
+			
+	End If
+End Sub

@@ -206,7 +206,7 @@ Sub cheng_tagvim2
 	End Try
 	
 	res.Close
-	Log("hear------------")
+	''Log("hear------------")
 	
 	
 End Sub
@@ -1562,6 +1562,4 @@ Sub check_new_add
 	init_notfound("saat_kar_Panjshanbe",skDR)
 	
 End Sub
-
-
 

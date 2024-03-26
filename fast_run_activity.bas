@@ -43,6 +43,7 @@ Sub Globals
 	Dim sarparasti As Int
 	Dim mazaya As Int
 	Dim bon As Int
+	Dim hamsar As Int
 	
 	Dim bime_tamin As Int
 	Dim bime_takmil As Int
@@ -270,6 +271,8 @@ Sub get_data_hogogi
 	dbCode.res.Position=2 ''--------bon------
 	bon=dbCode.res.GetString("value")
 	
+
+	
 	dbCode.res.Position=15 ''--------hag sarparasti------
 	sarparasti=dbCode.res.GetString("value")
 	
@@ -299,6 +302,11 @@ Sub get_data_hogogi
 	dbCode.sql.Close
 	
 	
+	'hag hamsar
+	hamsar=dbCode.get_setting_byName("hag_hamsar")
+	
+	
+	
 	et_olad.Tag=olad
 	et_olad.Text=myfunc.show_num_pool(olad)
 
@@ -308,7 +316,7 @@ Sub get_data_hogogi
 	End If
 
 	
-	mazaya_end=maskan+fani+masoliat+sarparasti+bon+mazaya
+	mazaya_end=maskan+fani+masoliat+sarparasti+bon+mazaya+hamsar
 	ksorat_end=bime_takmil+ksorat
 	
 	
@@ -708,7 +716,7 @@ Private Sub lbl_help_3_Click
 End Sub
 
 Private Sub lbl_help_2_Click
-	myfunc.help_man("راهنما","همه مزایا شامل: حق مسکن، بن کارگری، حق مسئولیت، حق فنی و ...")
+	myfunc.help_man("راهنما","همه مزایا شامل: حق مسکن، بن کارگری، حق تأهل، حق مسئولیت، حق فنی و ...")
 	
 End Sub
 

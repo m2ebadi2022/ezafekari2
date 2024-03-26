@@ -231,9 +231,9 @@ Private Sub pik_pan_year1_Touch (Action As Int, X As Float, Y As Float)
 		End If
 		
 		If(pik_year1.Text>1410)Then
-			pik_year1.Text=1390
+			pik_year1.Text=1380
 		End If
-		If(pik_year1.Text<1390)Then
+		If(pik_year1.Text<1380)Then
 			pik_year1.Text=1410
 		End If
 		
@@ -314,9 +314,9 @@ Private Sub pik_year_bala1_Click
 	pik_year1.Text=int1+1
 	
 	If(pik_year1.Text>1410)Then
-		pik_year1.Text=1390
+		pik_year1.Text=1380
 	End If
-	If(pik_year1.Text<1390)Then
+	If(pik_year1.Text<1380)Then
 		pik_year1.Text=1410
 	End If
 	
@@ -327,9 +327,9 @@ Private Sub pik_year_paeen1_Click
 	pik_year1.Text=int1-1
 	
 	If(pik_year1.Text>1410)Then
-		pik_year1.Text=1390
+		pik_year1.Text=1380
 	End If
-	If(pik_year1.Text<1390)Then
+	If(pik_year1.Text<1380)Then
 		pik_year1.Text=1410
 	End If
 	
