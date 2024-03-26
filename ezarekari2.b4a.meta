@@ -100,6 +100,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=11,12,17,18,20,21,22,23,26
 ModuleClosedNodes9=
-NavigationStack=step2_activity,http_initial_1,230,0,step2_activity,upload_file,576,0,Visual Designer,noske_item.bal,-100,2,Main,add_end,2399,0,Main,lbl_vip_Click,3854,0,Main,pan_darsad_Click,3786,0,Main,pan_comment_Click,3798,0,Main,Globals,170,0,Main,Activity_Create,347,0,Main,kharid,749,0,Main,inapp_PurchaseCompleted,761,0
+NavigationStack=Main,Globals,172,4,Main,lbl_finger_khoroj_Click,4554,0,Main,lbl_vip_now_Click,4206,6,Main,lbl_chk_update_ok_Click,4500,0,Main,kharid,748,2,Main,pan_notifi_all_Click,742,0,Main,inapp_PurchaseCompleted,776,5,Main,Activity_Create,351,0
 SelectedBuild=0
 VisibleModules=19,7,9,15

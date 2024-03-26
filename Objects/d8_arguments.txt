@@ -5,12 +5,12 @@ G:\ezarekari2\Objects
 C:\SDK\platforms\android-33\android.jar
 C:\SDK\tools\..\extras\b4a_local\unpacked-b4ashared-63837465156000\dex_v1\b4ashared.zip
 c:\sdk\tools\..\extras\b4a_local\unpacked-compressor-63643033920000\jars\classes.zip
+c:\sdk\tools\..\extras\b4a_remote\androidx\legacy\legacy-support-v4\1.0.0\unpacked-legacy-support-v4-1.0.0\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\core\core\1.9.0\unpacked-core-1.9.0\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\core\core-ktx\1.9.0\unpacked-core-ktx-1.9.0\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\annotation\annotation-experimental\1.3.0\unpacked-annotation-experimental-1.3.0\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\lifecycle\lifecycle-runtime\2.5.1\unpacked-lifecycle-runtime-2.5.1\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\versionedparcelable\versionedparcelable\1.1.1\unpacked-versionedparcelable-1.1.1\jars\classes.zip
-c:\sdk\tools\..\extras\b4a_remote\androidx\legacy\legacy-support-v4\1.0.0\unpacked-legacy-support-v4-1.0.0\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\media\media\1.6.0\unpacked-media-1.6.0\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\legacy\legacy-support-core-utils\1.0.0\unpacked-legacy-support-core-utils-1.0.0\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\documentfile\documentfile\1.0.1\unpacked-documentfile-1.0.1\jars\classes.zip
@@ -42,12 +42,13 @@ C:\SDK\tools\..\extras\b4a_local\unpacked-contentresolver-63837465158000\dex_v1\
 C:\SDK\tools\..\extras\b4a_local\unpacked-core-63837465158000\dex_v1\core.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-dateutils-63837465158000\dex_v1\dateutils.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-excel-63494768280000\dex_v1\excel.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-inappbilling3-63676298766000\dex_v1\inappbilling3.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-inappbillingbazaar-63548334340000\dex_v1\inappbillingbazaar.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-json-63837465158000\dex_v1\json.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-manampersiandate-63538413788000\dex_v1\manampersiandate.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-nicespinner-63578932122000\dex_v1\nicespinner.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-phone-63837465158000\dex_v1\phone.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-picasso-63511374902000\dex_v1\picasso.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-printing-63725374434000\dex_v1\printing.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-reflection-63837465158000\dex_v1\reflection.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-rspopupmenu-63542926204000\dex_v1\rspopupmenu.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-runtimepermissions.androidx-63837465158000\dex_v1\runtimepermissions.zip
@@ -56,7 +57,6 @@ C:\SDK\tools\..\extras\b4a_local\unpacked-stringfunctions-63530416118000\dex_v1\
 C:\SDK\tools\..\extras\b4a_local\unpacked-uploadfilephp-63533088602000\dex_v1\uploadfilephp.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-xcustomlistview-63837465158000\dex_v1\xcustomlistview.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-xui-63837465158000\dex_v1\xui.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-printing-63725374434000\dex_v1\printing.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-jxl-63454601748000\dex_v1\jxl.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-picassonative-63510654876000\dex_v1\picassonative.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-stringutils-63837465158000\dex_v1\stringutils.zip
