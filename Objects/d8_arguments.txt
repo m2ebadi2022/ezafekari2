@@ -1,9 +1,9 @@
 --release
 --output
-G:\ezarekari2\Objects
+D:\it files\b4a\ezarekari2\Objects
 --lib
-C:\SDK\platforms\android-33\android.jar
-C:\SDK\tools\..\extras\b4a_local\unpacked-b4ashared-63837465156000\dex_v1\b4ashared.zip
+C:\SDK\platforms\android-34\android.jar
+C:\SDK\tools\..\extras\b4a_local\unpacked-b4ashared-63836843678000\dex_v1\b4ashared.zip
 c:\sdk\tools\..\extras\b4a_local\unpacked-compressor-63643033920000\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\legacy\legacy-support-v4\1.0.0\unpacked-legacy-support-v4-1.0.0\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\core\core\1.9.0\unpacked-core-1.9.0\jars\classes.zip
@@ -38,561 +38,561 @@ c:\sdk\tools\..\extras\b4a_remote\androidx\lifecycle\lifecycle-runtime-ktx\2.5.1
 c:\sdk\tools\..\extras\b4a_remote\androidx\lifecycle\lifecycle-viewmodel-ktx\2.5.1\unpacked-lifecycle-viewmodel-ktx-2.5.1\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\savedstate\savedstate-ktx\1.2.0\unpacked-savedstate-ktx-1.2.0\jars\classes.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-compressor-63643035210000\dex_v1\compressor.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-contentresolver-63837465158000\dex_v1\contentresolver.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-core-63837465158000\dex_v1\core.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-dateutils-63837465158000\dex_v1\dateutils.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-contentresolver-63836843678000\dex_v1\contentresolver.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-core-63836843678000\dex_v1\core.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-dateutils-63836843678000\dex_v1\dateutils.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-excel-63494768280000\dex_v1\excel.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-inappbillingbazaar-63548334340000\dex_v1\inappbillingbazaar.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-json-63837465158000\dex_v1\json.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-json-63836843678000\dex_v1\json.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-manampersiandate-63538413788000\dex_v1\manampersiandate.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-nicespinner-63578932122000\dex_v1\nicespinner.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-phone-63837465158000\dex_v1\phone.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-phone-63836843678000\dex_v1\phone.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-picasso-63511374902000\dex_v1\picasso.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-printing-63725374434000\dex_v1\printing.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-reflection-63837465158000\dex_v1\reflection.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-reflection-63836843678000\dex_v1\reflection.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-rspopupmenu-63542926204000\dex_v1\rspopupmenu.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-runtimepermissions.androidx-63837465158000\dex_v1\runtimepermissions.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-sql-63837465158000\dex_v1\sql.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-runtimepermissions.androidx-63836843678000\dex_v1\runtimepermissions.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-sql-63836843678000\dex_v1\sql.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-stringfunctions-63530416118000\dex_v1\stringfunctions.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-uploadfilephp-63533088602000\dex_v1\uploadfilephp.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-xcustomlistview-63837465158000\dex_v1\xcustomlistview.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-xui-63837465158000\dex_v1\xui.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-xcustomlistview-63836843678000\dex_v1\xcustomlistview.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-xui-63836843678000\dex_v1\xui.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-jxl-63454601748000\dex_v1\jxl.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-picassonative-63510654876000\dex_v1\picassonative.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-stringutils-63837465158000\dex_v1\stringutils.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-javaobject-63837465158000\dex_v1\javaobject.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-63837465158000\dex_v1\okhttp.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-4.9.0-63837465158000\dex_v1\okhttp-4.9.0.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-okio-2.8.0-63837465158000\dex_v1\okio-2.8.0.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-urlconnection-4.9.3-63837465158000\dex_v1\okhttp-urlconnection-4.9.3.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-kotlin-stdlib-1.6.10-63837465158000\dex_v1\kotlin-stdlib-1.6.10.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-stringutils-63836843678000\dex_v1\stringutils.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-javaobject-63836843678000\dex_v1\javaobject.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-63836843678000\dex_v1\okhttp.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-4.9.0-63836843678000\dex_v1\okhttp-4.9.0.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-okio-2.8.0-63836843678000\dex_v1\okio-2.8.0.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-urlconnection-4.9.3-63836843678000\dex_v1\okhttp-urlconnection-4.9.3.zip
+C:\SDK\tools\..\extras\b4a_local\unpacked-kotlin-stdlib-1.6.10-63836843678000\dex_v1\kotlin-stdlib-1.6.10.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\annotation\annotation\1.5.0\annotation-1.5.0.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\arch\core\core-common\2.1.0\core-common-2.1.0.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\lifecycle\lifecycle-common\2.5.1\lifecycle-common-2.5.1.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\lifecycle\lifecycle-common-java8\2.5.1\lifecycle-common-java8-2.5.1.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\collection\collection\1.2.0\collection-1.2.0.zip
-G:\ezarekari2\Objects\dexed\androidx\activity\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\R.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\activity\ktx\R.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\annotation\experimental\R.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\core\R.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\core\ktx\R.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\drawerlayout\R.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\fragment\R.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\media\R.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\R.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$anim.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$animator.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$attr.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$color.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$dimen.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$drawable.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$id.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$integer.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$layout.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$string.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$style.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$styleable.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$xml.dex
-G:\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\b4xloadingindicator$ResumableSub_MainLoop.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\b4xloadingindicator.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\dbcode.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fileprovider.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fingerprintmanager$FingerprintAuthentication.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fingerprintmanager.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$ResumableSub_Activity_Create.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\httpjob$_multipartfiledata.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\httpjob.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\httputils2service.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\myfunc.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$anim.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$animator.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$attr.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$color.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$dimen.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$drawable.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$id.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$integer.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$string.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$style.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$styleable.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$xml.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$ResumableSub_lbl_restore_Click.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\starter$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\starter$2.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\starter$starter_BR.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\starter.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$ResumableSub_lbl_image_up_Click.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$ResumableSub_lbl_send_up_Click.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$B4AMenuItemsClickListener.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$HandleKeyDelayed.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$ResumableSub_fill_list_vam.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$ResumeMessage.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$WaitForLayout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_ayabzahab_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_calc_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_eidi_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_fast_run_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_food_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_gozaresh_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_hogog_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_home_item.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_home_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_info_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_item_darsad.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_item_fast_run.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_item_hogog.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_list_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_lyscreen.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_main_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_item.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_item2.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_mosaedeh_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_padash_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_payankar_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_sabt2_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_savabeg_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_sayer_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_hogog_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_layout_items.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_sett_hogog_item.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_shift_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_shift_page_items.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_show_gozaresh_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_splash_layout.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_step0.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_step1.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_step2.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_tab_layout_vam.dex
-G:\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_vam_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\activity\ktx\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\annotation\experimental\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\coordinatorlayout\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\core\ktx\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\drawerlayout\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\fragment\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\ktx\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\livedata\core\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\runtime\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\ktx\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\lifecycle\viewmodel\savedstate\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\localbroadcastmanager\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\media\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\savedstate\ktx\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\slidingpanelayout\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\androidx\swiperefreshlayout\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ayabzahab_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\b4xloadingindicator$ResumableSub_MainLoop.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\b4xloadingindicator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\bime_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\calc_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\comment_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\darsad_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\dbcode.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\eidi_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fast_run_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fileprovider.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fingerprintmanager$FingerprintAuthentication.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\fingerprintmanager.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\food_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\ganon_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$ResumableSub_Activity_Create.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\gestha_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\help_kharid_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\hogog_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\httpjob$_multipartfiledata.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\httpjob.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\httputils2service.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\info_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\main.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\morakhasi_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\mosaedeh_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\myfunc.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\padash_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\payankar_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$anim.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$animator.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$attr.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$color.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$dimen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$drawable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$id.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$integer.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$string.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$style.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$styleable.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R$xml.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\R.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sabt2_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\savabeg_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\sayer_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$ResumableSub_lbl_restore_Click.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\setting_hogog_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\shift_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\show_gozaresh_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\starter$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\starter$2.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\starter$starter_BR.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\starter.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step0_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step1_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$ResumableSub_lbl_image_up_Click.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$ResumableSub_lbl_send_up_Click.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\step2_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$B4AMenuItemsClickListener.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$HandleKeyDelayed.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$ResumableSub_fill_list_vam.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$ResumeMessage.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity$WaitForLayout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\vam_activity.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_ayabzahab_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_calc_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_eidi_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_fast_run_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_food_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_gozaresh_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_hogog_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_home_item.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_home_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_info_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_item_darsad.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_item_fast_run.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_item_hogog.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_list_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_lyscreen.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_main_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_item.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_item2.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_morakhasi_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_mosaedeh_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_padash_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_payankar_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_sabt2_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_savabeg_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_sayer_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_hogog_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_setting_layout_items.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_sett_hogog_item.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_shift_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_shift_page_items.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_show_gozaresh_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_splash_layout.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_step0.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_step1.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_step2.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_tab_layout_vam.dex
+D:\it files\b4a\ezarekari2\Objects\dexed\ir\taravatgroup\ezafekari2\designerscripts\LS_vam_layout.dex

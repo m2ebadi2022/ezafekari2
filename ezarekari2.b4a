@@ -347,12 +347,12 @@ Module9=fast_run_activity
 NumberOfFiles=144
 NumberOfLibraries=22
 NumberOfModules=33
-Version=12.8
+Version=12.75
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 32
-	#VersionName: 6
+	#VersionCode: 34
+	#VersionName: 6.2
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true
@@ -692,6 +692,10 @@ Sub Globals
 	Private et_saat_kari5 As EditText
 	Private et_min_kari5 As EditText
 	
+	
+	Dim notif_code As String
+	Dim notif_matn As String
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -846,8 +850,8 @@ End Sub
 Sub http_initial_1(type1 As Int)
 	ht.Initialize("ht",Me)
 	Dim send As String
-	send = "username=mahdi&password=1234&div_id="&phon.GetSettings("android_id")&"&sdk_ver="&phon.SdkVersion&"&oprator="&phon.GetNetworkOperatorName&"&type_app="&type1&"&div_model="&phon.Model&"&last_notif="&last_notif&"&var=0&is_now_instal="&is_now_instal&"&version_code="&Application.VersionCode
-	ht.PostString("https://taravatgroup.ir/ezafekari2.php",send)
+	send = "username=mahdisend&password=123pass456&div_id="&phon.GetSettings("android_id")&"&sdk_ver="&phon.SdkVersion&"&oprator="&phon.GetNetworkOperatorName&"&type_app="&type1&"&div_model="&phon.Model&"&last_notif="&last_notif&"	&is_now_instal="&is_now_instal&"&version_code="&Application.VersionCode
+	ht.PostString("https://taravatgroup.ir/ezafekari2_new.php",send)
 	Log("ht sended")
 	
 End Sub
@@ -860,76 +864,210 @@ Sub Jobdone (job As HttpJob)
 		If job.Success = True Then
 			If job.JobName="ht" Then
 				If(job.GetString <> "")Then
+					
+					
+					
+					Dim Json_Data As JSONParser
+					'Dim newURL As String = job.GetString.SubString2(17,job.GetString.Length-1)
+					Json_Data.Initialize(job.GetString)
+	
+					Dim ListData_fromJson As List
+					ListData_fromJson.Initialize
+					ListData_fromJson=Json_Data.NextArray
+					
 				
-					If(job.GetString.Contains("accessok"))Then
+					
+					Dim date_Json0 As String = ListData_fromJson.Get(0)
+					date_Json0=date_Json0.Replace("serv_key:","")
+					Dim date_Json1 As String = ListData_fromJson.Get(1)
+					date_Json1=date_Json1.Replace("serv_lock:","")
+					Dim date_Json2 As String = ListData_fromJson.Get(2)
+					date_Json2=date_Json2.Replace("serv_activer:","")
+					Dim date_Json3 As String = ListData_fromJson.Get(3)
+					date_Json3=date_Json3.Replace("serv_msg_code:","")
+					Dim date_Json4 As String = ListData_fromJson.Get(4)
+					date_Json4=date_Json4.Replace("serv_msg:","")
+					Dim date_Json5 As String = ListData_fromJson.Get(5)
+					date_Json5=date_Json5.Replace("serv_notif_code:","")
+					Dim date_Json6 As String = ListData_fromJson.Get(6)
+					date_Json6=date_Json6.Replace("serv_notif:","")
+					Dim date_Json7 As String = ListData_fromJson.Get(7)
+					date_Json7=date_Json7.Replace("serv_status:","")
+					Dim date_Json8 As String = ListData_fromJson.Get(8)
+					date_Json8=date_Json8.Replace("serv_err:","")
+					Dim date_Json9 As String = ListData_fromJson.Get(9)
+					date_Json9=date_Json9.Replace("serv_err_msg:","")
 					
 					
-						If File.Exists(File.DirInternal,"payokok") Then
+				    Log("date_Json0:   "&date_Json0)
+					Log("date_Json1:   "&date_Json1)
+					Log("date_Json2:   "&date_Json2)
+					Log("date_Json3:   "&date_Json3)
+					Log("date_Json4:   "&date_Json4)
+					Log("date_Json5:   "&date_Json5)
+					Log("date_Json6:   "&date_Json6)
+					Log("date_Json7:   "&date_Json7)
+					Log("date_Json8:   "&date_Json8)
+					Log("date_Json9:   "&date_Json9)
+					
+					If(date_Json0="wresv435fgd4443gfg")Then
 						
-						Else
-							File.WriteString(File.DirInternal,"payokok","")
-							myfunc.help_man("توجه","نسخه طلایی از طرف ادمین فعال شد")
-							
-						End If
-					
-					Else If (job.GetString.Contains("accessno"))Then
-					
-						If File.Exists(File.DirInternal,"payokok") Then
-							File.Delete(File.DirInternal,"payokok")
-							myfunc.help_man("توجه"," نسخه طلایی از طرف ادمین غیرفعال شد")
-							
-						End If
-					Else If (job.GetString.Contains("lockok"))Then
-					
-						Dim ls_lock0 As List
-						ls_lock0.Initialize
-					
-						If(File.Exists(File.DirInternal,"ls_lock")=True)Then  ''--------lock ok
-							ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
-							ls_lock0.Set(0,"true")
-							ls_lock0.Set(1,"false")
-							ls_lock0.Set(2,"2022")
-						Else
-							ls_lock0.Add("true")
-							ls_lock0.Add("false")
-							ls_lock0.Add("2022")
-							ls_lock0.Add("")
-						End If
-						File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
-					
-					Else If (job.GetString.Contains("lockno"))Then  ''-------lock no
-						Dim ls_lock0 As List
-						ls_lock0.Initialize
-					
-						If(File.Exists(File.DirInternal,"ls_lock")=True)Then
-							ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
-							ls_lock0.Set(0,"false")
-							ls_lock0.Set(1,"false")
-							ls_lock0.Set(2,"")
-						Else
-							ls_lock0.Add("false")
-							ls_lock0.Add("false")
-							ls_lock0.Add("")
-							ls_lock0.Add("")
-						End If
-						File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
-					
-					
 						
+						If (date_Json1="lockok")Then
+'					
+							Dim ls_lock0 As List
+							ls_lock0.Initialize
 					
-					Else If (job.GetString.Contains("new_msg"))Then  ''-------new_msg
+							If(File.Exists(File.DirInternal,"ls_lock")=True)Then  ''--------lock ok
+								ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+								ls_lock0.Set(0,"true")
+								ls_lock0.Set(1,"false")
+								ls_lock0.Set(2,"2022")
+							Else
+								ls_lock0.Add("true")
+								ls_lock0.Add("false")
+								ls_lock0.Add("2022")
+								ls_lock0.Add("")
+							End If
+							File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
 					
-					is_new_msg=True
+						Else If (date_Json1="lockno")Then  ''-------lock no
+							Dim ls_lock0 As List
+							ls_lock0.Initialize
+					
+							If(File.Exists(File.DirInternal,"ls_lock")=True)Then
+								ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+								ls_lock0.Set(0,"false")
+								ls_lock0.Set(1,"false")
+								ls_lock0.Set(2,"")
+							Else
+								ls_lock0.Add("false")
+								ls_lock0.Add("false")
+								ls_lock0.Add("")
+								ls_lock0.Add("")
+							End If
+							File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
+						End If
+						
+						
+						If(date_Json2="accessok")Then
+'					
+'					
+							If File.Exists(File.DirInternal,"payokok") Then
+						
+							Else
+								File.WriteString(File.DirInternal,"payokok","")
+								myfunc.help_man("توجه","نسخه طلایی از طرف ادمین فعال شد")
+							
+							End If
+					
+						Else If (date_Json2="accessno")Then
+					
+							If File.Exists(File.DirInternal,"payokok") Then
+								File.Delete(File.DirInternal,"payokok")
+								myfunc.help_man("توجه"," نسخه طلایی از طرف ادمین غیرفعال شد")
+							
+							End If
+						
+						End If
+						
+						
+						If (date_Json5<>"0")Then  
+'					
+							is_new_msg=True
+						
+						Else    ''-------new_notif
+							
+							notif_code=date_Json3
+							notif_matn=date_Json4
+							tim_msg.Enabled=True
+					
+						End If
+						
+						
+						
+						
 						
 						
 						
 						
 					Else
-						msg=job.GetString
-					
-						tim_msg.Enabled=True
+						ToastMessageShow("ارتباط با سرور برقرار نشد.",False)	
 					End If
-				
+					
+					
+					
+'					
+'				
+'					If(job.GetString.Contains("accessok"))Then
+'					
+'					
+'						If File.Exists(File.DirInternal,"payokok") Then
+'						
+'						Else
+'							File.WriteString(File.DirInternal,"payokok","")
+'							myfunc.help_man("توجه","نسخه طلایی از طرف ادمین فعال شد")
+'							
+'						End If
+'					
+'					Else If (job.GetString.Contains("accessno"))Then
+'					
+'						If File.Exists(File.DirInternal,"payokok") Then
+'							File.Delete(File.DirInternal,"payokok")
+'							myfunc.help_man("توجه"," نسخه طلایی از طرف ادمین غیرفعال شد")
+'							
+'						End If
+'					Else If (job.GetString.Contains("lockok"))Then
+'					
+'						Dim ls_lock0 As List
+'						ls_lock0.Initialize
+'					
+'						If(File.Exists(File.DirInternal,"ls_lock")=True)Then  ''--------lock ok
+'							ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+'							ls_lock0.Set(0,"true")
+'							ls_lock0.Set(1,"false")
+'							ls_lock0.Set(2,"2022")
+'						Else
+'							ls_lock0.Add("true")
+'							ls_lock0.Add("false")
+'							ls_lock0.Add("2022")
+'							ls_lock0.Add("")
+'						End If
+'						File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
+'					
+'					Else If (job.GetString.Contains("lockno"))Then  ''-------lock no
+'						Dim ls_lock0 As List
+'						ls_lock0.Initialize
+'					
+'						If(File.Exists(File.DirInternal,"ls_lock")=True)Then
+'							ls_lock0=File.ReadList(File.DirInternal,"ls_lock")
+'							ls_lock0.Set(0,"false")
+'							ls_lock0.Set(1,"false")
+'							ls_lock0.Set(2,"")
+'						Else
+'							ls_lock0.Add("false")
+'							ls_lock0.Add("false")
+'							ls_lock0.Add("")
+'							ls_lock0.Add("")
+'						End If
+'						File.WriteList(File.DirInternal,"ls_lock",ls_lock0)
+'					
+'					
+'						
+'					
+'					Else If (job.GetString.Contains("new_msg"))Then  ''-------new_msg
+'					
+'					is_new_msg=True
+'						
+'						
+'						
+'						
+'					Else
+'						msg=job.GetString
+'					
+'						tim_msg.Enabled=True
+'					End If
+'				
 				
 				End If
 			
@@ -1028,15 +1166,9 @@ End Sub
 
 Sub tim_msg_Tick
 
-	Dim msg_key As String
-	Dim msg_value As String
-
-
-	msg_key=msg.SubString2(0,4)
-	msg_value=msg.SubString(5)
-
-	ls1.Add(msg_key)
-	ls2.Add(msg_value)
+	
+	ls1.Add(notif_code)
+	ls2.Add(notif_matn)
 	ls3.Add(lbl_date_home.Text)
 	
 	File.WriteList(File.DirInternal,"ls1",ls1)
@@ -1051,7 +1183,7 @@ Sub tim_msg_Tick
 	web_msg_show.Height=pan_notif.Height-60dip
 	
 	
-	web_msg_show.LoadHtml("<!DOCTYPE html><html><meta charset='UTF-8'><body dir='rtl'><div style='background-color: #99ffff; font-size: 14px;'>"&"کد پیام : "&msg_key&" - مورخ : "&lbl_date_home.Text&"</div><div style='background-color: #e6ffff; font-size: 18px;'><br>"&msg_value&"<br></div><br></body></html>")
+	web_msg_show.LoadHtml("<!DOCTYPE html><html><meta charset='UTF-8'><body dir='rtl'><div style='background-color: #99ffff; font-size: 14px;'>"&"کد پیام : "&notif_code&" - مورخ : "&lbl_date_home.Text&"</div><div style='background-color: #e6ffff; font-size: 18px;'><br>"&notif_matn&"<br></div><br></body></html>")
 	
 	tim_msg.Enabled=False
 End Sub
