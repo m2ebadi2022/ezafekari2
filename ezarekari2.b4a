@@ -289,10 +289,10 @@ FileGroup98=Default Group
 FileGroup99=Default Group
 Group=Default Group
 Library1=compressor
-Library10=nicespinner
-Library11=okhttputils2
-Library12=phone
-Library13=picasso
+Library10=okhttputils2
+Library11=phone
+Library12=picasso
+Library13=poolakey
 Library14=printing
 Library15=reflection
 Library16=rspopupmenu
@@ -307,10 +307,10 @@ Library3=core
 Library4=dateutils
 Library5=excel
 Library6=fileprovider
-Library7=inappbillingbazaar
-Library8=json
-Library9=manampersiandate
-ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~CreateResourceFromFile(Macro, GooglePlayBilling.GooglePlayBilling)~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
+Library7=json
+Library8=manampersiandate
+Library9=nicespinner
+ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="33"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, GooglePlayBilling.GooglePlayBilling)~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~CreateResourceFromFile(Macro, Poolakey.BillingReceiver)~\n~~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
 Module1=ayabzahab_activity
 Module10=FingerprintManager
 Module11=food_activity
@@ -347,7 +347,7 @@ Module9=fast_run_activity
 NumberOfFiles=144
 NumberOfLibraries=22
 NumberOfModules=33
-Version=12.75
+Version=12.8
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
@@ -521,7 +521,10 @@ Sub Globals
 	
 	'Dim inapp As BillingManager3
 	
-	Dim inappBazar As InAppBillingBazaar
+	'Dim inappBazar As InAppBillingBazaar
+	
+	Dim Poolakey As Poolakey
+	
 	
 	Private lbl_vip As Label
 	
@@ -704,7 +707,17 @@ Sub Activity_Create(FirstTime As Boolean)
 	''----------------------------
 	Try
 		'inapp.Initialize("inapp",key)
-		inappBazar.Initialize("inapp",key)
+		
+		'inappBazar.Initialize("inapp",key)
+		
+		
+		Poolakey.Initialize _
+.EnableSecurityCheck(key) _ 
+.Build
+
+		
+		
+		'Poolakey.GetPurchasedProducts("Query")
 	
 	Catch
 		Log(LastException)
@@ -823,6 +836,31 @@ Sub Activity_Create(FirstTime As Boolean)
 	End If
 	
 End Sub
+
+
+
+
+''poolakey
+Private Sub Poolakey_ConnectionSucceed
+	Log("Service: Connected")
+End Sub
+Private Sub Poolakey_Disconnected
+	Log("Service: Not Connected")
+End Sub
+Private Sub Poolakey_ConnectionFailed (Error As PoolakeyException)
+	Log("Service: Failed to Connect" & CRLF & Error.ErrorMessage)
+	MsgboxAsync("1- از نصب بودن برنامه بازار اطمینان یابید."&CRLF&" 2- برنامه ها را ببندید و دوباره امتحان کنید.","خطا")
+End Sub
+''poolakey
+
+
+
+
+
+
+
+
+
 Sub tim_check_update_Tick
 	chk_update_auto
 	Log("now cheking ....")
@@ -853,7 +891,7 @@ Sub http_initial_1(type1 As Int)
 	send = "username=mahdisend&password=123pass456&div_id="&phon.GetSettings("android_id")&"&sdk_ver="&phon.SdkVersion&"&oprator="&phon.GetNetworkOperatorName&"&type_app="&type1&"&div_model="&phon.Model&"&last_notif="&last_notif&"	&is_now_instal="&is_now_instal&"&version_code="&Application.VersionCode
 	ht.PostString("https://taravatgroup.ir/ezafekari2_new.php",send)
 	Log("ht sended")
-	
+	Log (phon.GetSettings("android_id"))
 End Sub
  
 
@@ -865,7 +903,7 @@ Sub Jobdone (job As HttpJob)
 			If job.JobName="ht" Then
 				If(job.GetString <> "")Then
 					
-					
+					Log(job.GetString)
 					
 					Dim Json_Data As JSONParser
 					'Dim newURL As String = job.GetString.SubString2(17,job.GetString.Length-1)
@@ -972,21 +1010,21 @@ Sub Jobdone (job As HttpJob)
 						End If
 						
 						
-						If (date_Json5<>"0")Then  
+						If (date_Json5<>"0")Then   ''-------new_notif
 '					
-							is_new_msg=True
-						
-						Else    ''-------new_notif
 							
-							notif_code=date_Json3
-							notif_matn=date_Json4
+							
+							notif_code=date_Json5
+							notif_matn=date_Json6
 							tim_msg.Enabled=True
 					
 						End If
 						
+						If (date_Json3<>"0")Then   ''-------new_notif
+'					
+							is_new_msg=True
 						
-						
-						
+						End If
 						
 						
 						
@@ -1232,14 +1270,25 @@ End Sub
 Sub kharid
 	
 	
+	
+	
+	
+	
+	
+	
 	If(myfunc.check_internet)Then
 		Try
 			
-				'inapp.RequestPayment("ezafekari2","inapp","ezafekari2" )
-			inappBazar.RequestPayment("ezafekari2","inapp","ezafekari2" )
+				
+			Poolakey.Connect("Poolakey")
+			Wait For Poolakey_ConnectionSucceed
 			
 			
+			''get_request_kharid
 			
+			
+			Poolakey.GetPurchasedProducts("Query")
+	
 		Catch
 			MsgboxAsync("1- از نصب بودن برنامه بازار اطمینان یابید."&CRLF&" 2- برنامه ها را ببندید و دوباره امتحان کنید.","خطا")
 		End Try
@@ -1247,32 +1296,165 @@ Sub kharid
 		ToastMessageShow("خطا در اتصال ",False)
 	End If
 	
+	
+
+	
+End Sub
+ 
+ 
+ 
+'Private Sub Purchase_PurchaseFlowBegan
+'	Log("ttttttttttttttttttt")
+'End Sub
+Private Sub Purchase_PurchaseFailedToBeginFlow (Error As PoolakeyException)
+	Log(Error)
 End Sub
 
 
-Sub inapp_PurchaseCompleted (Success As Boolean, Product As Purchase)
-	Log(Product)
+Private Sub Purchase_PurchaseSucceed (PurchaseInfo As PoolakeyPurchaseInfo)
 	
-	If Success=True Then
-		
-		If Product.ProductId="ezafekari2" Then
 
 
+	Log("p info : "&PurchaseInfo.PurchaseToken)
+	
+
+	If PurchaseInfo.ProductId="ezafekari2" Then
+	
+	
 			File.WriteString(File.DirInternal,"payokok","")
 			MsgboxAsync("پرداخت انجام شده است","انجام شد")
 			ToastMessageShow("نرم افزار شما به نسخه طلایی ارتقاع پیدا کرد.",True)
 			
 			'inapp.ConsumeProduct(Product)
-			inappBazar.ConsumeProduct(Product)
+			'inappBazar.ConsumeProduct(Product)
 			
 			btn_menu_home_Click
 			lbl_vip_Click
 		End If
-	Else
 	
-		ToastMessageShow("خرید انجام نشد. دوباره تلاش کنید",False)
-	End If
+	
+	
+	
+	
+	
 End Sub
+Private Sub Purchase_PurchaseCanceled
+	Log("کاربر کنسل کرد")
+End Sub
+Private Sub Purchase_PurchaseFailed (Error As PoolakeyException)
+	Log("کاربر sss کرد")
+End Sub
+
+
+
+Private Sub Query_QuerySucceed (Query As PoolakeyPurchaseQuery)
+	Log("query: "&Query)
+	If(Query.Size<>0)Then
+		For i = 0 To Query.Size - 1
+			
+			If (Query.Get(i).ProductId="ezafekari2") Then
+				
+			
+				
+				Try
+					
+					File.WriteString(File.DirInternal,"payokok","")
+				MsgboxAsync("پرداخت انجام شده است","انجام شد")
+				ToastMessageShow("نرم افزار شما به نسخه طلایی ارتقاع پیدا کرد.",True)
+				
+				btn_menu_home_Click
+				lbl_vip_Click	
+					
+					
+				Catch
+					Log(LastException)
+				End Try
+			Else
+				
+				
+				Try
+					
+					get_request_kharid
+				Catch
+					Log(LastException)
+				End Try
+					
+			End If
+			
+
+			
+		Next
+	
+	Else
+		
+	
+		Try
+			
+			get_request_kharid
+		Catch
+			Log(LastException)
+		End Try
+		
+		
+	End If
+	
+End Sub
+Private Sub Query_QueryFailed (Error As PoolakeyException)
+	Log("Query failed: " & Error)
+	Try
+		get_request_kharid
+	Catch
+		Log(LastException)
+	End Try
+End Sub
+
+
+
+
+Sub get_request_kharid
+	Dim Request As PoolakeyPurchaseRequest
+	Request.ProductId = "ezafekari2"
+	Request.Payload = "PAYLOAD"
+			
+	Poolakey.PurchaseProduct("Purchase", Request)
+		
+	
+End Sub
+
+
+
+
+''-------------
+
+
+
+
+
+
+
+'Sub inapp_PurchaseCompleted (Success As Boolean, Product As Purchase)
+'	Log(Product)
+'	
+'	If Success=True Then
+'		
+'		If Product.ProductId="ezafekari2" Then
+'
+'
+'			File.WriteString(File.DirInternal,"payokok","")
+'			MsgboxAsync("پرداخت انجام شده است","انجام شد")
+'			ToastMessageShow("نرم افزار شما به نسخه طلایی ارتقاع پیدا کرد.",True)
+'			
+'			'inapp.ConsumeProduct(Product)
+'			inappBazar.ConsumeProduct(Product)
+'			
+'			btn_menu_home_Click
+'			lbl_vip_Click
+'		End If
+'	Else
+'	
+'		ToastMessageShow("خرید انجام نشد. دوباره تلاش کنید",False)
+'	End If
+'End Sub
 
  
 	
@@ -1478,7 +1660,7 @@ Sub Activity_Resume
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
-	
+	If UserClosed Then Poolakey.Connection.Disconnect
 End Sub
 
 
@@ -1722,6 +1904,12 @@ Sub get_today_shift
 				str_sh="عصرکار"
 			Case "ا"
 				str_sh="استراحت"
+			Case "ص/ع"
+				str_sh="صبح-عصر"
+			Case "ع/ش"
+				str_sh="عصر-شب"
+			Case "ص/ش"
+				str_sh="صبح-شب"
 		End Select
 		lbl_shift_home.Text="("&str_sh&")"
 	End If
@@ -4354,6 +4542,7 @@ Private Sub lbl_vip_Click
 	
 	pan_all_noskhe.Visible=True
 	scroll_v_noskhe.Panel.LoadLayout("noske_item")
+	
 	
 	If(myfunc.check_karid)Then
 		lbl_show_vip.Text="نسخه کامل ( طلایی ) فعال می باشد."

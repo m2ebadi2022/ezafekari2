@@ -6,11 +6,14 @@
 	android:versionName="6.2"
 	android:installLocation="preferExternal">
 	
-	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="34"/>
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="33"/>
 	<supports-screens android:largeScreens="true" 
 	    android:normalScreens="true" 
 	    android:smallScreens="true" 
 	    android:anyDensity="true"/>
+	<queries>
+	        <package android:name="com.farsitel.bazaar" />
+	    </queries>
 	<queries>
 	    <package android:name="com.farsitel.bazaar" />
 	 </queries>
@@ -46,6 +49,18 @@
 		            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
 		            android:exported="false"
 		            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		<receiver
+			    android:name="ir.cafebazaar.poolakey.receiver.BillingReceiver"
+			    android:exported="true" >
+			    <intent-filter>
+			        <action android:name="com.farsitel.bazaar.purchase" />
+			        <action android:name="com.farsitel.bazaar.billingSupport" />
+			        <action android:name="com.farsitel.bazaar.consume" />
+			        <action android:name="com.farsitel.bazaar.getPurchase" />
+			        <action android:name="com.farsitel.bazaar.skuDetail" />
+			        <action android:name="com.farsitel.bazaar.checkTrialSubscription" />
+			    </intent-filter>
+			</receiver>
 		<uses-library
 		      android:name="org.apache.http.legacy"
 		      android:required="false" />
@@ -65,7 +80,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".vam_activity"
+			android:name=".shift_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -249,14 +264,6 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".shift_activity"
-			android:label="اضافه کاری من"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
 			android:name=".show_gozaresh_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
@@ -290,6 +297,14 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".step2_activity"
+			android:label="اضافه کاری من"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".vam_activity"
 			android:label="اضافه کاری من"
 			android:screenOrientation="portrait"
 			android:exported="true">

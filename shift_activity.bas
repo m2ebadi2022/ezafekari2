@@ -336,6 +336,7 @@ Sub Globals
 	Private CheckBox_tatil_garardadi As CheckBox
 	Private lbl_CheckBox_tatil_garardadi As Label
 	Private lbl_title_day_menu As Label
+	Private CheckBox_tatil_rasmi As CheckBox
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -389,7 +390,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	
 	
-	sp_noe_shift.AddAll(Array As String("روزکار(ر)","عصرکار(ع)","شبکار(ش)","استراحت(ا)"))
+	sp_noe_shift.AddAll(Array As String("روزکار(ر)","عصرکار(ع)","شبکار(ش)","استراحت(ا)","صبح-عصر(ص/ع)","عصر-شب(ع/ش)","صبح-شب(ص/ش)"))
 	
 	
 	''---- today--- constant-------
@@ -635,7 +636,7 @@ Sub rsPOP_mah_MenuItemClick (ItemId As Int) As Boolean
 	End Select
 	
 	
-	'lbl_mah.Text=mmah
+	lbl_mah.Text=mmah
 	lbl_mah_tagID=ItemId
 	
 	Return False
@@ -650,9 +651,9 @@ Private Sub lbl_years_Click
 	rsPOP_year.Show
 End Sub
 '
-'Private Sub lbl_mah_Click
-'	rsPOP_mah.Show
-'End Sub
+Private Sub lbl_mah_Click
+	rsPOP_mah.Show
+End Sub
 
 Private Sub lbl_roz_Click
 	rsPOP_roz.Show
@@ -806,6 +807,12 @@ Sub get_monasebat ( id As Int)
 				str_sh="عصرکار"
 			Case "ا"
 				str_sh="استراحت"
+			Case "ص/ع"
+				str_sh="صبح-عصر"
+			Case "ع/ش"
+				str_sh="عصر-شب"
+			Case "ص/ش"
+				str_sh="صبح-شب"
 		End Select
 		
 		lbl_today.Text=lbl_today.Text&"- (( شیفت : "&str_sh&" )) "
@@ -1070,11 +1077,17 @@ Sub generat_taghvim(year As Int , moon As Int)
 				If(SH(i).Text="ر")Then
 					SH(i).Color=0x96FFFA00
 				Else If (SH(i).Text="ع")Then
-					SH(i).Color=0x960066FF
+					SH(i).Color=0x961CA4FF
 				Else If (SH(i).Text="ش")Then
 					SH(i).Color=0x96414141
 				Else If (SH(i).Text="ا")Then
 					SH(i).Color=0x9600FF24
+				Else If (SH(i).Text="ص/ع")Then
+					SH(i).Color=0x96FF9452
+				Else If (SH(i).Text="ع/ش")Then
+					SH(i).Color=0xFF50FF89
+				Else If (SH(i).Text="ص/ش")Then
+					SH(i).Color=0x963356DA
 				Else
 					SH(i).Color=Colors.Transparent
 				End If
@@ -1268,7 +1281,12 @@ Private Sub lbl_new_line_Click
 				list_sift_olgo.Add("ش")
 			Case 3
 				list_sift_olgo.Add("ا")
-			
+			Case 4
+				list_sift_olgo.Add("ص/ع")
+			Case 5
+				list_sift_olgo.Add("ع/ش")
+			Case 6
+				list_sift_olgo.Add("ص/ش")
 		End Select
 		
 		
@@ -1457,18 +1475,21 @@ Sub mod_tatil_garardadi (id As Int)
 	
 	
 	If(dbCode.res.GetString("state")="tatil") Then
-		CheckBox_tatil_garardadi.Enabled=False
-		lbl_CheckBox_tatil_garardadi.Enabled=False
+		'CheckBox_tatil_garardadi.Enabled=False
+		'lbl_CheckBox_tatil_garardadi.Enabled=False
 		CheckBox_tatil_garardadi.Checked=False
+		CheckBox_tatil_rasmi.Checked=True
 		
 	Else If(dbCode.res.GetString("state")="tatil1") Then
-		CheckBox_tatil_garardadi.Enabled=True
-		lbl_CheckBox_tatil_garardadi.Enabled=True
+		'CheckBox_tatil_garardadi.Enabled=True
+		'lbl_CheckBox_tatil_garardadi.Enabled=True
 		CheckBox_tatil_garardadi.Checked=True
+		CheckBox_tatil_rasmi.Checked=False
 	Else
-		CheckBox_tatil_garardadi.Enabled=True
-		lbl_CheckBox_tatil_garardadi.Enabled=True
+		'CheckBox_tatil_garardadi.Enabled=True
+		'lbl_CheckBox_tatil_garardadi.Enabled=True
 		CheckBox_tatil_garardadi.Checked=False
+		CheckBox_tatil_rasmi.Checked=False
 	End If
 
 
@@ -1547,4 +1568,47 @@ End Sub
 
 Private Sub lbl_help_shift_Click
 	myfunc.help_man("راهنما","1- با نگهداشتن انگشت روی روزها منو ابزارها باز میشود. "&CRLF&" 2- برای شیفت بندی روزها از قسمت تنظیم شیفت اقدام کنید.")
+End Sub
+
+Private Sub lbl_CheckBox_tatil_rasmi_Click
+	If(CheckBox_tatil_rasmi.Checked=True)Then
+		CheckBox_tatil_rasmi.Checked=False
+	Else
+		CheckBox_tatil_rasmi.Checked=True
+	End If
+	
+	
+	
+End Sub
+
+Private Sub CheckBox_tatil_rasmi_CheckedChange(Checked As Boolean)
+	
+	dbCode.connect_db
+	If(Checked=True)Then
+		
+		dbCode.sql.ExecNonQuery("UPDATE 'my_calander' set state='tatil' WHERE id="&selectedDay_id)
+
+		
+	Else
+		dbCode.sql.ExecNonQuery("UPDATE 'my_calander' set state='' WHERE id="&selectedDay_id)
+			
+	End If
+	generat_taghvim(lbl_year_tagvim.Text,lbl_moon_name.Tag)
+
+	pan_all_menu_day_Click
+	ToastMessageShow(" ذخیره شد",True)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 End Sub
