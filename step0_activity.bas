@@ -46,7 +46,7 @@ Sub Activity_Create(FirstTime As Boolean)
 		Main.phon_num=File.ReadString(File.DirInternal,"phonNum_step0")
 	End If
 	
-	
+	''befor sms changes
 
 End Sub
 
