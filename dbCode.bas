@@ -15,6 +15,8 @@ Sub Process_Globals
 	Private Workbook1 As ReadableWorkbook
 	Private Sheet1 As ReadableSheet
 	
+	Dim aaa As String
+	
 End Sub
 
 Sub connect_db
@@ -148,13 +150,17 @@ End Sub
 Sub install_db_tbl_myCalander
 	connect_db
 	Try
-		res = sql.ExecQuery("SELECT id FROM 'my_calander' WHERE id=1")
-		Log( "tbl my_calander exist")
+		res = sql.ExecQuery("SELECT * FROM 'my_calander' WHERE year=1404 And moon=12 " )
+		 
+		res.Position=0
+		aaa=res.GetString("key")
+		Log( "tbl my_calander1404 exist---"&aaa)
 	Catch
-		sql.ExecNonQuery("CREATE TABLE 'my_calander' ('id' INTEGER,'year'	INTEGER,'key' INTEGER,'moon' INTEGER,'day_c' INTEGER,'day_h' INTEGER,'monasebat' TEXT,'state'	TEXT,'shift' TEXT,'note' TEXT)")
+		Log( "tbl my_calander1404 not exist---")
+'		sql.ExecNonQuery("CREATE TABLE 'my_calander' ('id' INTEGER,'year'	INTEGER,'key' INTEGER,'moon' INTEGER,'day_c' INTEGER,'day_h' INTEGER,'monasebat' TEXT,'state'	TEXT,'shift' TEXT,'note' TEXT)")
 		
 		insert_calander_exl
-		Log ( "tbl myCalander created")
+		'Log ( "tbl myCalander created")
 	End Try
 	
 End Sub

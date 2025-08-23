@@ -407,7 +407,7 @@ End If
 	
 	'maliat
 	'maliat_end=mohasebe_maliat(hogog_nakhales,sp_year.SelectedItem)
-	maliat_end=mohasebe_maliat(nak_mal,1403)
+	maliat_end=mohasebe_maliat(nak_mal, myfunc.fa2en(Main.persianDate.PersianYear))
 	
 	
 	jame_kosorat=bime_tamin_end+maliat_end+bime_takmil+ksorat
@@ -558,7 +558,36 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 	
 	
 	
+	'' sal 1404  eslah
 	
+	If (year=1404)Then
+		If(hogog>24000001 And hogog<30000001)Then	  ''-----stat1
+			state1=(hogog-24000000)*0.1
+		End If
+		If(hogog>30000001 And hogog<38000001)Then	  ''-----stat2
+			state1=(6000000)*0.1
+			state2=(hogog-30000000)*0.15
+		End If
+		If(hogog>38000001 And hogog<50000001)Then	  ''-----stat3
+			state1=(6000000)*0.1
+			state2=(8000000)*0.15
+			state3=(hogog-38000000)*0.2
+		End If
+	
+		If(hogog>50000001 And hogog<66700001)Then	  ''-----stat4
+			state1=(6000000)*0.1
+			state2=(8000000)*0.15
+			state3=(12000000)*0.2
+			state4=(hogog-50000001)*0.25
+		End If
+		If(hogog>66700001)Then	  ''-----stat5
+			state1=(6000000)*0.1
+			state2=(8000000)*0.15
+			state3=(12000000)*0.2
+			state4=(16700000)*0.25
+			state5=(hogog-66700001)*0.3
+		End If
+	End If
 	
 	
 	

@@ -93,15 +93,35 @@ End Sub
 
 Sub check_internet As Boolean
 	
-	Dim connected As Boolean
+	
+	
+	'method1
 	If Main.phon.GetDataState="CONNECTED" Then
-		connected=True
+		Return True
+
 	Else If Main.phon.GetSettings("wifi_on")=1 Then
-		connected=True
+		Return True
+
 	End If
+	Return False
 	
 	
-	Return connected
+	
+	'method2
+	
+'	Dim r As Reflector
+'	r.Target = r.GetContext
+'	r.Target = r.RunMethod2("getSystemService", "connectivity", "java.lang.String")
+'	r.Target = r.RunMethod("getActiveNetworkInfo")
+'	If r.Target <> Null Then
+'		Return r.RunMethod("isConnectedOrConnecting")
+'	End If
+'	Return False
+	
+	
+	
+	
+	
 End Sub
 
 '

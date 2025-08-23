@@ -289,10 +289,10 @@ FileGroup98=Default Group
 FileGroup99=Default Group
 Group=Default Group
 Library1=compressor
-Library10=nicespinner
-Library11=okhttputils2
-Library12=phone
-Library13=picasso
+Library10=okhttputils2
+Library11=phone
+Library12=picasso
+Library13=poolakey
 Library14=printing
 Library15=reflection
 Library16=rspopupmenu
@@ -307,10 +307,10 @@ Library3=core
 Library4=dateutils
 Library5=excel
 Library6=fileprovider
-Library7=inappbillingbazaar
-Library8=json
-Library9=manampersiandate
-ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~CreateResourceFromFile(Macro, GooglePlayBilling.GooglePlayBilling)~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
+Library7=json
+Library8=manampersiandate
+Library9=nicespinner
+ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="33"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, GooglePlayBilling.GooglePlayBilling)~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~CreateResourceFromFile(Macro, Poolakey.BillingReceiver)~\n~~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
 Module1=ayabzahab_activity
 Module10=FingerprintManager
 Module11=food_activity
@@ -347,12 +347,12 @@ Module9=fast_run_activity
 NumberOfFiles=144
 NumberOfLibraries=22
 NumberOfModules=33
-Version=12.75
+Version=13.1
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 34
-	#VersionName: 6.2
+	#VersionCode: 36
+	#VersionName: 6.4
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true
@@ -521,7 +521,10 @@ Sub Globals
 	
 	'Dim inapp As BillingManager3
 	
-	Dim inappBazar As InAppBillingBazaar
+	'Dim inappBazar As InAppBillingBazaar
+	
+	Dim Poolakey As Poolakey
+	
 	
 	Private lbl_vip As Label
 	
@@ -704,7 +707,17 @@ Sub Activity_Create(FirstTime As Boolean)
 	''----------------------------
 	Try
 		'inapp.Initialize("inapp",key)
-		inappBazar.Initialize("inapp",key)
+		
+		'inappBazar.Initialize("inapp",key)
+		
+		
+		Poolakey.Initialize _
+.EnableSecurityCheck(key) _ 
+.Build
+
+		
+		
+		'Poolakey.GetPurchasedProducts("Query")
 	
 	Catch
 		Log(LastException)
@@ -713,6 +726,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	If(FirstTime=True)Then
 		dbCode.cheng_tagvim2
 		dbCode.check_old_adds
+		dbCode.install_db_tbl_myCalander
+		
 		dbCode.check_new_add
 		dbCode.init_notfound("hag_hamsar",0)
 		dbCode.init_notfound_onvanha(14,"hamsar","حق تأهل")
@@ -823,6 +838,31 @@ Sub Activity_Create(FirstTime As Boolean)
 	End If
 	
 End Sub
+
+
+
+
+''poolakey
+Private Sub Poolakey_ConnectionSucceed
+	Log("Service: Connected")
+End Sub
+Private Sub Poolakey_Disconnected
+	Log("Service: Not Connected")
+End Sub
+Private Sub Poolakey_ConnectionFailed (Error As PoolakeyException)
+	Log("Service: Failed to Connect" & CRLF & Error.ErrorMessage)
+	MsgboxAsync("1- از نصب بودن برنامه بازار اطمینان یابید."&CRLF&" 2- برنامه ها را ببندید و دوباره امتحان کنید.","خطا")
+End Sub
+''poolakey
+
+
+
+
+
+
+
+
+
 Sub tim_check_update_Tick
 	chk_update_auto
 	Log("now cheking ....")
@@ -865,7 +905,7 @@ Sub Jobdone (job As HttpJob)
 			If job.JobName="ht" Then
 				If(job.GetString <> "")Then
 					
-					
+					Log(job.GetString)
 					
 					Dim Json_Data As JSONParser
 					'Dim newURL As String = job.GetString.SubString2(17,job.GetString.Length-1)
@@ -972,21 +1012,21 @@ Sub Jobdone (job As HttpJob)
 						End If
 						
 						
-						If (date_Json5<>"0")Then  
+						If (date_Json5<>"0")Then   ''-------new_notif
 '					
-							is_new_msg=True
-						
-						Else    ''-------new_notif
 							
-							notif_code=date_Json3
-							notif_matn=date_Json4
+							
+							notif_code=date_Json5
+							notif_matn=date_Json6
 							tim_msg.Enabled=True
 					
 						End If
 						
+						If (date_Json3<>"0")Then   ''-------new_notif
+'					
+						''	is_new_msg=True
 						
-						
-						
+						End If
 						
 						
 						
@@ -1232,14 +1272,25 @@ End Sub
 Sub kharid
 	
 	
+	
+	
+	
+	
+	
+	
 	If(myfunc.check_internet)Then
 		Try
 			
-				'inapp.RequestPayment("ezafekari2","inapp","ezafekari2" )
-			inappBazar.RequestPayment("ezafekari2","inapp","ezafekari2" )
+				
+			Poolakey.Connect("Poolakey")
+			Wait For Poolakey_ConnectionSucceed
 			
 			
+			''get_request_kharid
 			
+			
+			Poolakey.GetPurchasedProducts("Query")
+	
 		Catch
 			MsgboxAsync("1- از نصب بودن برنامه بازار اطمینان یابید."&CRLF&" 2- برنامه ها را ببندید و دوباره امتحان کنید.","خطا")
 		End Try
@@ -1247,32 +1298,165 @@ Sub kharid
 		ToastMessageShow("خطا در اتصال ",False)
 	End If
 	
+	
+
+	
+End Sub
+ 
+ 
+ 
+'Private Sub Purchase_PurchaseFlowBegan
+'	Log("ttttttttttttttttttt")
+'End Sub
+Private Sub Purchase_PurchaseFailedToBeginFlow (Error As PoolakeyException)
+	Log(Error)
 End Sub
 
 
-Sub inapp_PurchaseCompleted (Success As Boolean, Product As Purchase)
-	Log(Product)
+Private Sub Purchase_PurchaseSucceed (PurchaseInfo As PoolakeyPurchaseInfo)
 	
-	If Success=True Then
-		
-		If Product.ProductId="ezafekari2" Then
 
 
+	Log("p info : "&PurchaseInfo.PurchaseToken)
+	
+
+	If PurchaseInfo.ProductId="ezafekari2" Then
+	
+	
 			File.WriteString(File.DirInternal,"payokok","")
 			MsgboxAsync("پرداخت انجام شده است","انجام شد")
 			ToastMessageShow("نرم افزار شما به نسخه طلایی ارتقاع پیدا کرد.",True)
 			
 			'inapp.ConsumeProduct(Product)
-			inappBazar.ConsumeProduct(Product)
+			'inappBazar.ConsumeProduct(Product)
 			
 			btn_menu_home_Click
 			lbl_vip_Click
 		End If
-	Else
 	
-		ToastMessageShow("خرید انجام نشد. دوباره تلاش کنید",False)
-	End If
+	
+	
+	
+	
+	
 End Sub
+Private Sub Purchase_PurchaseCanceled
+	Log("کاربر کنسل کرد")
+End Sub
+Private Sub Purchase_PurchaseFailed (Error As PoolakeyException)
+	Log("کاربر sss کرد")
+End Sub
+
+
+
+Private Sub Query_QuerySucceed (Query As PoolakeyPurchaseQuery)
+	Log("query: "&Query)
+	If(Query.Size<>0)Then
+		For i = 0 To Query.Size - 1
+			
+			If (Query.Get(i).ProductId="ezafekari2") Then
+				
+			
+				
+				Try
+					
+					File.WriteString(File.DirInternal,"payokok","")
+				MsgboxAsync("پرداخت انجام شده است","انجام شد")
+				ToastMessageShow("نرم افزار شما به نسخه طلایی ارتقاع پیدا کرد.",True)
+				
+				btn_menu_home_Click
+				lbl_vip_Click	
+					
+					
+				Catch
+					Log(LastException)
+				End Try
+			Else
+				
+				
+				Try
+					
+					get_request_kharid
+				Catch
+					Log(LastException)
+				End Try
+					
+			End If
+			
+
+			
+		Next
+	
+	Else
+		
+	
+		Try
+			
+			get_request_kharid
+		Catch
+			Log(LastException)
+		End Try
+		
+		
+	End If
+	
+End Sub
+Private Sub Query_QueryFailed (Error As PoolakeyException)
+	Log("Query failed: " & Error)
+	Try
+		get_request_kharid
+	Catch
+		Log(LastException)
+	End Try
+End Sub
+
+
+
+
+Sub get_request_kharid
+	Dim Request As PoolakeyPurchaseRequest
+	Request.ProductId = "ezafekari2"
+	Request.Payload = "PAYLOAD"
+			
+	Poolakey.PurchaseProduct("Purchase", Request)
+		
+	
+End Sub
+
+
+
+
+''-------------
+
+
+
+
+
+
+
+'Sub inapp_PurchaseCompleted (Success As Boolean, Product As Purchase)
+'	Log(Product)
+'	
+'	If Success=True Then
+'		
+'		If Product.ProductId="ezafekari2" Then
+'
+'
+'			File.WriteString(File.DirInternal,"payokok","")
+'			MsgboxAsync("پرداخت انجام شده است","انجام شد")
+'			ToastMessageShow("نرم افزار شما به نسخه طلایی ارتقاع پیدا کرد.",True)
+'			
+'			'inapp.ConsumeProduct(Product)
+'			inappBazar.ConsumeProduct(Product)
+'			
+'			btn_menu_home_Click
+'			lbl_vip_Click
+'		End If
+'	Else
+'	
+'		ToastMessageShow("خرید انجام نشد. دوباره تلاش کنید",False)
+'	End If
+'End Sub
 
  
 	
@@ -1478,7 +1662,7 @@ Sub Activity_Resume
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
-	
+	If UserClosed Then Poolakey.Connection.Disconnect
 End Sub
 
 
@@ -1708,23 +1892,32 @@ Sub get_today_shift
 	dbCode.res =  dbCode.sql.ExecQuery("SELECT * FROM 'my_calander' WHERE id="&id_today)
 	
 	dbCode.res.Position = 0
-	
-	
-	
-	If (dbCode.res.GetString("shift") <> "")Then
+	Try
+			If (dbCode.res.GetString("shift") <> "")Then
 		Dim str_sh As String
-		Select dbCode.res.GetString("shift")
-			Case "ر"
-				str_sh="روزکار"
-			Case "ش"
-				str_sh="شبکار"
-			Case "ع"
-				str_sh="عصرکار"
-			Case "ا"
-				str_sh="استراحت"
-		End Select
+			Select dbCode.res.GetString("shift")
+				Case "ر"
+					str_sh="روزکار"
+				Case "ش"
+					str_sh="شبکار"
+				Case "ع"
+					str_sh="عصرکار"
+				Case "ا"
+					str_sh="استراحت"
+				Case "ص/ع"
+					str_sh="صبح-عصر"
+				Case "ع/ش"
+					str_sh="عصر-شب"
+				Case "ص/ش"
+					str_sh="صبح-شب"
+			End Select
 		lbl_shift_home.Text="("&str_sh&")"
 	End If
+	Catch
+		Log(LastException)
+	End Try
+	
+
 		
 		
 	
@@ -1740,6 +1933,7 @@ Private Sub btn_menu_list_Click
 	pan_main.RemoveAllViews
 	pan_main.LoadLayout("list_layout")
 	
+	sp_year.Add("1404")
 	sp_year.Add("1403")
 	sp_year.Add("1402")
 	sp_year.Add("1401")
@@ -2169,6 +2363,7 @@ Private Sub btn_menu_gozaresh_Click
 	pan_main.RemoveAllViews
 	pan_main.LoadLayout("gozaresh_layout")
 	
+	sp_year_gozaresh.Add("1404")
 	sp_year_gozaresh.Add("1403")
 	sp_year_gozaresh.Add("1402")
 	sp_year_gozaresh.Add("1401")
@@ -3425,6 +3620,97 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 End Sub
 
 
+Sub time_show_2
+	Try
+		' مقداردهی اولیه
+		Dim list_date_per1, list_date_per2 As List
+		Dim list_date_miladi1, list_date_miladi2 As List
+		list_date_per1.Initialize
+		list_date_per2.Initialize
+		list_date_miladi1.Initialize
+		list_date_miladi2.Initialize
+        
+		' دریافت تاریخ‌های شمسی از لیبل‌ها و تبدیل به لیست
+		list_date_per1 = strfun.Split(lbl_date1.Text, "/")
+		list_date_per2 = strfun.Split(lbl_date2.Text, "/")
+        
+		' تبدیل به تاریخ میلادی
+		Dim dat_mil_1 As String = persianDate.PersianToGregorian(list_date_per1.Get(0), list_date_per1.Get(1), list_date_per1.Get(2))
+		Dim dat_mil_2 As String = persianDate.PersianToGregorian(list_date_per2.Get(0), list_date_per2.Get(1), list_date_per2.Get(2))
+        
+		' تبدیل رشته تاریخ میلادی به لیست
+		list_date_miladi1 = strfun.Split(dat_mil_1, "/")
+		list_date_miladi2 = strfun.Split(dat_mil_2, "/")
+        
+		' ساخت تاریخ نهایی برای محاسبه
+		Dim date_end1 As String = list_date_miladi1.Get(1) & "/" & list_date_miladi1.Get(2) & "/" & list_date_miladi1.Get(0)
+		Dim date_end2 As String = list_date_miladi2.Get(1) & "/" & list_date_miladi2.Get(2) & "/" & list_date_miladi2.Get(0)
+		Dim time_end1 As String = lbl_tim1.Text & ":00"
+		Dim time_end2 As String = lbl_tim2.Text & ":00"
+        
+		' محاسبه timestamp ها
+		Dim tim1_long As Long = DateTime.DateTimeParse(myfunc.fa2en(date_end1), myfunc.fa2en(time_end1))
+		Dim tim2_long As Long = DateTime.DateTimeParse(myfunc.fa2en(date_end2), myfunc.fa2en(time_end2))
+        
+		' محاسبه فاصله زمانی
+		Dim period_between As Period = DateUtils.PeriodBetween(tim1_long, tim2_long)
+        
+		' ساخت خروجی نمایشی
+		Dim str_show As StringBuilder
+		str_show.Initialize
+		If period_between.Years <> 0 Then str_show.Append(period_between.Years & " سال و ")
+		If period_between.Months <> 0 Then str_show.Append(period_between.Months & " ماه و ")
+		If period_between.Days <> 0 Then str_show.Append(period_between.Days & " روز و ")
+		str_show.Append(period_between.Hours & " ساعت و ")
+		str_show.Append(period_between.Minutes & " دقیقه ")
+        
+		' نمایش نتیجه در لیبل‌ها
+		lbl_time_show.Text = str_show.ToString
+		lbl_time_show_fs.Text = lbl_time_show.Text
+        
+		' ذخیره مقادیر در متغیرهای سراسری
+		year_bt = period_between.Years
+		moon_bt = period_between.Months
+		day_bt = period_between.Days
+		hour_bt = period_between.Hours
+		min_bt = period_between.Minutes
+
+		' بررسی برای حالت خاص
+		If index_box = 3 Then
+			' محاسبه کل زمان به دقیقه
+			tim_min = (day_bt * 24 * 60) + (hour_bt * 60) + min_bt
+            
+			' بررسی تعطیلات
+			Select state_tatil_setting
+				Case 0
+					tatil_nist
+				Case 1
+					If state_tatil = 1 Or state_tatil = 2 Then tatil_hast Else tatil_nist
+				Case 11
+					If state_tatil = 1 Then tatil_hast Else tatil_nist
+				Case 22
+					If state_tatil = 2 Then tatil_hast Else tatil_nist
+			End Select
+
+			' اگر حالت ویرایش فعال باشد، عناصر غیرفعال شوند
+			If is_for_edit Then
+				lbl_ezaf_taradod.Text = ""
+				ckb_ezaf_taradod.Enabled = False
+				ckb_ezaf_taradod.Visible = False
+				radio_ez_adi.Enabled = False
+				radio_ez_fog.Enabled = False
+                
+				lbl_ezaf_taradod_fs.Text = ""
+				ckb_ezaf_taradod_fs.Enabled = False
+				ckb_ezaf_taradod_fs.Visible = False
+			End If
+		End If
+        
+	Catch
+		ToastMessageShow("خطا در پردازش زمان", False)
+	End Try
+End Sub
+
 
 Sub time_show
 	
@@ -4354,6 +4640,7 @@ Private Sub lbl_vip_Click
 	
 	pan_all_noskhe.Visible=True
 	scroll_v_noskhe.Panel.LoadLayout("noske_item")
+	
 	
 	If(myfunc.check_karid)Then
 		lbl_show_vip.Text="نسخه کامل ( طلایی ) فعال می باشد."

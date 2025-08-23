@@ -34,7 +34,7 @@ public class sabt2_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.sabt2_activity");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.sabt2_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,6 +335,15 @@ public class sabt2_activity extends Activity implements B4AActivity{
             
     }
 
+
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pan_hed_sabt2 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lbl_title_sayer = null;
@@ -342,7 +351,6 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
-public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
@@ -370,114 +378,161 @@ public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
+public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 41;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 43;BA.debugLine="Activity.LoadLayout(\"sabt2_layout\")";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=43384832;
+ //BA.debugLineNum = 43384832;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=43384834;
+ //BA.debugLineNum = 43384834;BA.debugLine="Activity.LoadLayout(\"sabt2_layout\")";
 mostCurrent._activity.LoadLayout("sabt2_layout",mostCurrent.activityBA);
- //BA.debugLineNum = 56;BA.debugLine="pan_hed_sabt2.Color=Main.color4";
+RDebugUtils.currentLine=43384847;
+ //BA.debugLineNum = 43384847;BA.debugLine="pan_hed_sabt2.Color=Main.color4";
 mostCurrent._pan_hed_sabt2.setColor(mostCurrent._main._color4 /*int*/ );
- //BA.debugLineNum = 57;BA.debugLine="lbl_title_sayer.Color=Main.color4";
+RDebugUtils.currentLine=43384848;
+ //BA.debugLineNum = 43384848;BA.debugLine="lbl_title_sayer.Color=Main.color4";
 mostCurrent._lbl_title_sayer.setColor(mostCurrent._main._color4 /*int*/ );
- //BA.debugLineNum = 58;BA.debugLine="myfunc.set_font(Activity)";
+RDebugUtils.currentLine=43384849;
+ //BA.debugLineNum = 43384849;BA.debugLine="myfunc.set_font(Activity)";
 mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,mostCurrent._activity);
- //BA.debugLineNum = 59;BA.debugLine="End Sub";
+RDebugUtils.currentLine=43384850;
+ //BA.debugLineNum = 43384850;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 74;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 75;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
+	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
+RDebugUtils.currentLine=43646976;
+ //BA.debugLineNum = 43646976;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+RDebugUtils.currentLine=43646977;
+ //BA.debugLineNum = 43646977;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 76;BA.debugLine="lbl_back_Click";
+RDebugUtils.currentLine=43646978;
+ //BA.debugLineNum = 43646978;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
- //BA.debugLineNum = 77;BA.debugLine="Return True";
+RDebugUtils.currentLine=43646979;
+ //BA.debugLineNum = 43646979;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 79;BA.debugLine="Return False";
+RDebugUtils.currentLine=43646981;
+ //BA.debugLineNum = 43646981;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 81;BA.debugLine="End Sub";
+RDebugUtils.currentLine=43646983;
+ //BA.debugLineNum = 43646983;BA.debugLine="End Sub";
 return false;
 }
+public static String  _lbl_back_click() throws Exception{
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
+RDebugUtils.currentLine=43581440;
+ //BA.debugLineNum = 43581440;BA.debugLine="Private Sub lbl_back_Click";
+RDebugUtils.currentLine=43581441;
+ //BA.debugLineNum = 43581441;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+RDebugUtils.currentLine=43581442;
+ //BA.debugLineNum = 43581442;BA.debugLine="End Sub";
+return "";
+}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 65;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 67;BA.debugLine="End Sub";
+RDebugUtils.currentModule="sabt2_activity";
+RDebugUtils.currentLine=43515904;
+ //BA.debugLineNum = 43515904;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=43515906;
+ //BA.debugLineNum = 43515906;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 61;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 63;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="Private pan_hed_sabt2 As Panel";
-mostCurrent._pan_hed_sabt2 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 36;BA.debugLine="Private lbl_title_sayer As Label";
-mostCurrent._lbl_title_sayer = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 39;BA.debugLine="End Sub";
-return "";
-}
-public static String  _lbl_back_click() throws Exception{
- //BA.debugLineNum = 70;BA.debugLine="Private Sub lbl_back_Click";
- //BA.debugLineNum = 71;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
- //BA.debugLineNum = 72;BA.debugLine="End Sub";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=43450368;
+ //BA.debugLineNum = 43450368;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=43450370;
+ //BA.debugLineNum = 43450370;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_aybzahab_click() throws Exception{
- //BA.debugLineNum = 408;BA.debugLine="Private Sub pan_aybZahab_Click";
- //BA.debugLineNum = 412;BA.debugLine="StartActivity(ayabzahab_activity)";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_aybzahab_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_aybzahab_click", null));}
+RDebugUtils.currentLine=44040192;
+ //BA.debugLineNum = 44040192;BA.debugLine="Private Sub pan_aybZahab_Click";
+RDebugUtils.currentLine=44040196;
+ //BA.debugLineNum = 44040196;BA.debugLine="StartActivity(ayabzahab_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._ayabzahab_activity.getObject()));
- //BA.debugLineNum = 414;BA.debugLine="End Sub";
+RDebugUtils.currentLine=44040198;
+ //BA.debugLineNum = 44040198;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_gaza_click() throws Exception{
- //BA.debugLineNum = 102;BA.debugLine="Private Sub pan_gaza_Click";
- //BA.debugLineNum = 104;BA.debugLine="StartActivity(food_activity)";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_gaza_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_gaza_click", null));}
+RDebugUtils.currentLine=43843584;
+ //BA.debugLineNum = 43843584;BA.debugLine="Private Sub pan_gaza_Click";
+RDebugUtils.currentLine=43843586;
+ //BA.debugLineNum = 43843586;BA.debugLine="StartActivity(food_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._food_activity.getObject()));
- //BA.debugLineNum = 105;BA.debugLine="End Sub";
+RDebugUtils.currentLine=43843587;
+ //BA.debugLineNum = 43843587;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_mosaede_click() throws Exception{
- //BA.debugLineNum = 91;BA.debugLine="Private Sub pan_mosaede_Click";
- //BA.debugLineNum = 93;BA.debugLine="StartActivity(mosaedeh_activity)";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_mosaede_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_mosaede_click", null));}
+RDebugUtils.currentLine=43712512;
+ //BA.debugLineNum = 43712512;BA.debugLine="Private Sub pan_mosaede_Click";
+RDebugUtils.currentLine=43712514;
+ //BA.debugLineNum = 43712514;BA.debugLine="StartActivity(mosaedeh_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._mosaedeh_activity.getObject()));
- //BA.debugLineNum = 94;BA.debugLine="End Sub";
+RDebugUtils.currentLine=43712515;
+ //BA.debugLineNum = 43712515;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_padash_click() throws Exception{
- //BA.debugLineNum = 108;BA.debugLine="Private Sub pan_padash_Click";
- //BA.debugLineNum = 110;BA.debugLine="StartActivity(padash_activity)";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_padash_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_padash_click", null));}
+RDebugUtils.currentLine=43909120;
+ //BA.debugLineNum = 43909120;BA.debugLine="Private Sub pan_padash_Click";
+RDebugUtils.currentLine=43909122;
+ //BA.debugLineNum = 43909122;BA.debugLine="StartActivity(padash_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._padash_activity.getObject()));
- //BA.debugLineNum = 111;BA.debugLine="End Sub";
+RDebugUtils.currentLine=43909123;
+ //BA.debugLineNum = 43909123;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_sayer_click() throws Exception{
- //BA.debugLineNum = 114;BA.debugLine="Private Sub pan_sayer_Click";
- //BA.debugLineNum = 116;BA.debugLine="StartActivity(sayer_activity)";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_sayer_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_sayer_click", null));}
+RDebugUtils.currentLine=43974656;
+ //BA.debugLineNum = 43974656;BA.debugLine="Private Sub pan_sayer_Click";
+RDebugUtils.currentLine=43974658;
+ //BA.debugLineNum = 43974658;BA.debugLine="StartActivity(sayer_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._sayer_activity.getObject()));
- //BA.debugLineNum = 117;BA.debugLine="End Sub";
+RDebugUtils.currentLine=43974659;
+ //BA.debugLineNum = 43974659;BA.debugLine="End Sub";
 return "";
 }
 public static String  _pan_vam_click() throws Exception{
- //BA.debugLineNum = 96;BA.debugLine="Private Sub pan_vam_Click";
- //BA.debugLineNum = 98;BA.debugLine="StartActivity(vam_activity)";
+RDebugUtils.currentModule="sabt2_activity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pan_vam_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pan_vam_click", null));}
+RDebugUtils.currentLine=43778048;
+ //BA.debugLineNum = 43778048;BA.debugLine="Private Sub pan_vam_Click";
+RDebugUtils.currentLine=43778050;
+ //BA.debugLineNum = 43778050;BA.debugLine="StartActivity(vam_activity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._vam_activity.getObject()));
- //BA.debugLineNum = 99;BA.debugLine="End Sub";
-return "";
-}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+RDebugUtils.currentLine=43778051;
+ //BA.debugLineNum = 43778051;BA.debugLine="End Sub";
 return "";
 }
 }

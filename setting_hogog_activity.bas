@@ -111,11 +111,13 @@ Sub Activity_Create(FirstTime As Boolean)
 	'sanavat_vahed=140000
 	'olad_vahed=417975   sal 1401
 	'olad_vahed=530828    ' sal 1402
-	olad_vahed=716618    ' sal 1403
+	'olad_vahed=716618    ' sal 1403
+	olad_vahed=1039096    ' sal 1404  eslah
 	
 	
 	
 	
+	sp_ganon_kar.Add("سال 1404")
 	sp_ganon_kar.Add("سال 1403")
 	sp_ganon_kar.Add("سال 1402")
 	sp_ganon_kar.Add("سال 1401")
@@ -236,22 +238,24 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	Dim pay_ch As Int=et_paye.tag
 	
-	If (pay_ch=7166184)Then   '' sal 1403
-	sp_ganon_kar.SelectedIndex=0
-	
-	else If (pay_ch=5308284)Then    ''sal 1402
+	If (pay_ch=10390968)Then   '' sal 1404  eslah
+		sp_ganon_kar.SelectedIndex=0
+	else If (pay_ch=7166184)Then   '' sal 1403
 	sp_ganon_kar.SelectedIndex=1
 	
-	else If (pay_ch=4179755)Then
+	else If (pay_ch=5308284)Then    ''sal 1402
 	sp_ganon_kar.SelectedIndex=2
 	
+	else If (pay_ch=4179755)Then
+	sp_ganon_kar.SelectedIndex=3
+	
 	else If (pay_ch=2655492)Then
-		sp_ganon_kar.SelectedIndex=3
+		sp_ganon_kar.SelectedIndex=4
 		
 	Else If (pay_ch=1910427) Then
-		sp_ganon_kar.SelectedIndex=4
-	Else
 		sp_ganon_kar.SelectedIndex=5
+	Else
+		sp_ganon_kar.SelectedIndex=6
 		
 	End If
 	
@@ -434,6 +438,31 @@ Private Sub sp_ganon_kar_ItemClick (Position As Int, Value As Object)
 	
 	
 	Select Value
+		''   eslah
+		Case "سال 1404"
+			et_paye.Text=10390968
+			et_maskan.Text=900000
+			et_bon.Text=2200000
+			
+			hamsar_int=500000
+			
+			et_bime_tamin.Text=7
+			'et_maliat.Text=10
+		
+			et_fani.Text=0
+			et_masoliat.Text=0
+			et_sarparast.Text=0
+			et_mazaya.Text=0
+			
+			'olad har farzand   265549
+			olad_vahed=1039096
+			et_olad.Text=0
+		
+			'sanavat - har sal       140000
+			'sanavat_vahed=140000
+			et_sanavat.Text=0
+		
+		
 		Case "سال 1403"
 			et_paye.Text=7166184
 			et_maskan.Text=900000
