@@ -384,85 +384,85 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="help_kharid_activity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=31457280;
- //BA.debugLineNum = 31457280;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=31457282;
- //BA.debugLineNum = 31457282;BA.debugLine="Activity.LoadLayout(\"help_kharid_layout\")";
+RDebugUtils.currentLine=20840448;
+ //BA.debugLineNum = 20840448;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=20840450;
+ //BA.debugLineNum = 20840450;BA.debugLine="Activity.LoadLayout(\"help_kharid_layout\")";
 mostCurrent._activity.LoadLayout("help_kharid_layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=31457283;
- //BA.debugLineNum = 31457283;BA.debugLine="web_helpKharid.LoadUrl(\"https://taravatgroup.ir/h";
+RDebugUtils.currentLine=20840451;
+ //BA.debugLineNum = 20840451;BA.debugLine="web_helpKharid.LoadUrl(\"https://taravatgroup.ir/h";
 mostCurrent._web_helpkharid.LoadUrl("https://taravatgroup.ir/help_kharid/index.html");
-RDebugUtils.currentLine=31457287;
- //BA.debugLineNum = 31457287;BA.debugLine="pan_hed_help.Color=Main.color4";
+RDebugUtils.currentLine=20840455;
+ //BA.debugLineNum = 20840455;BA.debugLine="pan_hed_help.Color=Main.color4";
 mostCurrent._pan_hed_help.setColor(mostCurrent._main._color4 /*int*/ );
-RDebugUtils.currentLine=31457289;
- //BA.debugLineNum = 31457289;BA.debugLine="myfunc.set_font(Activity)";
+RDebugUtils.currentLine=20840457;
+ //BA.debugLineNum = 20840457;BA.debugLine="myfunc.set_font(Activity)";
 mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,mostCurrent._activity);
-RDebugUtils.currentLine=31457292;
- //BA.debugLineNum = 31457292;BA.debugLine="End Sub";
+RDebugUtils.currentLine=20840460;
+ //BA.debugLineNum = 20840460;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
 RDebugUtils.currentModule="help_kharid_activity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
 	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=31719424;
- //BA.debugLineNum = 31719424;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=31719425;
- //BA.debugLineNum = 31719425;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+RDebugUtils.currentLine=21102592;
+ //BA.debugLineNum = 21102592;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+RDebugUtils.currentLine=21102593;
+ //BA.debugLineNum = 21102593;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=31719426;
- //BA.debugLineNum = 31719426;BA.debugLine="If(web_helpKharid.Url<>\"https://taravatgroup.ir/";
+RDebugUtils.currentLine=21102594;
+ //BA.debugLineNum = 21102594;BA.debugLine="If(web_helpKharid.Url<>\"https://taravatgroup.ir/";
 if (((mostCurrent._web_helpkharid.getUrl()).equals("https://taravatgroup.ir/help_kharid/index.html") == false)) { 
-RDebugUtils.currentLine=31719427;
- //BA.debugLineNum = 31719427;BA.debugLine="web_helpKharid.LoadUrl(\"https://taravatgroup.ir";
+RDebugUtils.currentLine=21102595;
+ //BA.debugLineNum = 21102595;BA.debugLine="web_helpKharid.LoadUrl(\"https://taravatgroup.ir";
 mostCurrent._web_helpkharid.LoadUrl("https://taravatgroup.ir/help_kharid/index.html");
  }else {
-RDebugUtils.currentLine=31719429;
- //BA.debugLineNum = 31719429;BA.debugLine="lbl_back_Click";
+RDebugUtils.currentLine=21102597;
+ //BA.debugLineNum = 21102597;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
  };
-RDebugUtils.currentLine=31719432;
- //BA.debugLineNum = 31719432;BA.debugLine="Return True";
+RDebugUtils.currentLine=21102600;
+ //BA.debugLineNum = 21102600;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=31719434;
- //BA.debugLineNum = 31719434;BA.debugLine="Return False";
+RDebugUtils.currentLine=21102602;
+ //BA.debugLineNum = 21102602;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=31719436;
- //BA.debugLineNum = 31719436;BA.debugLine="End Sub";
+RDebugUtils.currentLine=21102604;
+ //BA.debugLineNum = 21102604;BA.debugLine="End Sub";
 return false;
 }
 public static String  _lbl_back_click() throws Exception{
 RDebugUtils.currentModule="help_kharid_activity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
-RDebugUtils.currentLine=31653888;
- //BA.debugLineNum = 31653888;BA.debugLine="Private Sub lbl_back_Click";
-RDebugUtils.currentLine=31653889;
- //BA.debugLineNum = 31653889;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=21037056;
+ //BA.debugLineNum = 21037056;BA.debugLine="Private Sub lbl_back_Click";
+RDebugUtils.currentLine=21037057;
+ //BA.debugLineNum = 21037057;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=31653890;
- //BA.debugLineNum = 31653890;BA.debugLine="End Sub";
+RDebugUtils.currentLine=21037058;
+ //BA.debugLineNum = 21037058;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="help_kharid_activity";
-RDebugUtils.currentLine=31588352;
- //BA.debugLineNum = 31588352;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=31588354;
- //BA.debugLineNum = 31588354;BA.debugLine="End Sub";
+RDebugUtils.currentLine=20971520;
+ //BA.debugLineNum = 20971520;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=20971522;
+ //BA.debugLineNum = 20971522;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="help_kharid_activity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=31522816;
- //BA.debugLineNum = 31522816;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=31522818;
- //BA.debugLineNum = 31522818;BA.debugLine="End Sub";
+RDebugUtils.currentLine=20905984;
+ //BA.debugLineNum = 20905984;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=20905986;
+ //BA.debugLineNum = 20905986;BA.debugLine="End Sub";
 return "";
 }
 }

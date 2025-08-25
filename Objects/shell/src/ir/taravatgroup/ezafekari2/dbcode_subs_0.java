@@ -2043,7 +2043,7 @@ dbcode._res.runVoidMethod ("Close");
        catch (Exception e53) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e53.toString()); BA.debugLineNum = 290;BA.debugLine="Log(\"error\")";
 Debug.ShouldStop(2);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","613172810",RemoteObject.createImmutable("error"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32555978",RemoteObject.createImmutable("error"),0);
  };
  BA.debugLineNum = 294;BA.debugLine="End Sub";
 Debug.ShouldStop(32);
@@ -2082,7 +2082,7 @@ dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable(
        catch (Exception e8) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e8.toString()); BA.debugLineNum = 205;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(4096);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","613107212",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32490380",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
  };
  BA.debugLineNum = 208;BA.debugLine="res.Close";
 Debug.ShouldStop(32768);
@@ -2923,7 +2923,7 @@ Debug.CheckDeviceExceptions();if (true) return dbcode._res.runMethod(true,"GetIn
        catch (Exception e9) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e9.toString()); BA.debugLineNum = 1292;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(2048);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","617563663",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","36946831",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
  };
  BA.debugLineNum = 1295;BA.debugLine="Return -1";
 Debug.ShouldStop(16384);
@@ -3113,7 +3113,7 @@ Debug.ShouldStop(32);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_savabeg"))));
  BA.debugLineNum = 135;BA.debugLine="Log( \"tbl savabeg exist\")";
 Debug.ShouldStop(64);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612910597",RemoteObject.createImmutable("tbl savabeg exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32293765",RemoteObject.createImmutable("tbl savabeg exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e6) {
@@ -3122,7 +3122,7 @@ Debug.ShouldStop(512);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_savabeg' ('id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'title'	TEXT, 'date'	TEXT, 'matn'	TEXT,'state'	INTEGER DEFAULT 0);")));
  BA.debugLineNum = 140;BA.debugLine="Log ( \"tbl savabeg created\")";
 Debug.ShouldStop(2048);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612910602",RemoteObject.createImmutable("tbl savabeg created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32293770",RemoteObject.createImmutable("tbl savabeg created"),0);
  };
  BA.debugLineNum = 142;BA.debugLine="End Sub";
 Debug.ShouldStop(8192);
@@ -3157,13 +3157,13 @@ Debug.ShouldStop(2097152);
 dbcode._aaa = dbcode._res.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("key")));
  BA.debugLineNum = 151;BA.debugLine="Log( \"tbl my_calander1404 exist---\"&aaa)";
 Debug.ShouldStop(4194304);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612976135",RemoteObject.concat(RemoteObject.createImmutable("tbl my_calander1404 exist---"),dbcode._aaa),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32359303",RemoteObject.concat(RemoteObject.createImmutable("tbl my_calander1404 exist---"),dbcode._aaa),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e8) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e8.toString()); BA.debugLineNum = 153;BA.debugLine="Log( \"tbl my_calander1404 not exist---\")";
 Debug.ShouldStop(16777216);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612976137",RemoteObject.createImmutable("tbl my_calander1404 not exist---"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32359305",RemoteObject.createImmutable("tbl my_calander1404 not exist---"),0);
  BA.debugLineNum = 156;BA.debugLine="insert_calander_exl";
 Debug.ShouldStop(134217728);
 _insert_calander_exl(_ba);
@@ -3195,7 +3195,7 @@ Debug.ShouldStop(16);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT id FROM 'tbl_onvanha' WHERE id=1"))));
  BA.debugLineNum = 166;BA.debugLine="Log( \"tbl tbl_onvanha exist\")";
 Debug.ShouldStop(32);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","613041668",RemoteObject.createImmutable("tbl tbl_onvanha exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32424836",RemoteObject.createImmutable("tbl tbl_onvanha exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e6) {
@@ -3246,7 +3246,7 @@ Debug.ShouldStop(8388608);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("INSERT INTO 'tbl_onvanha' ('id', 'name', 'def_name', 'custom_name') VALUES ('14', 'hamsar',  'حق تأهل','حق تأهل');")));
  BA.debugLineNum = 188;BA.debugLine="Log ( \"tbl tbl_onvanha created\")";
 Debug.ShouldStop(134217728);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","613041690",RemoteObject.createImmutable("tbl tbl_onvanha created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32424858",RemoteObject.createImmutable("tbl tbl_onvanha created"),0);
  };
  BA.debugLineNum = 190;BA.debugLine="sql.Close";
 Debug.ShouldStop(536870912);
@@ -3278,7 +3278,7 @@ Debug.ShouldStop(134217728);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_taradod"))));
  BA.debugLineNum = 29;BA.debugLine="Log( \"tbl taradod exist\")";
 Debug.ShouldStop(268435456);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845061",RemoteObject.createImmutable("tbl taradod exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228229",RemoteObject.createImmutable("tbl taradod exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e6) {
@@ -3287,7 +3287,7 @@ Debug.ShouldStop(-2147483648);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_taradod' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date_from'	TEXT, 'date_to'	TEXT, 'time_from'	TEXT, 'time_to'	TEXT, 'end_tim_d'	INTEGER DEFAULT 0, 'end_tim_h'	INTEGER DEFAULT 0, 'end_tim_m'	INTEGER DEFAULT 0, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 34;BA.debugLine="Log ( \"tbl taradod created\")";
 Debug.ShouldStop(2);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845066",RemoteObject.createImmutable("tbl taradod created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228234",RemoteObject.createImmutable("tbl taradod created"),0);
  };
  BA.debugLineNum = 39;BA.debugLine="Try";
 Debug.ShouldStop(64);
@@ -3296,7 +3296,7 @@ Debug.ShouldStop(128);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_mamoriat"))));
  BA.debugLineNum = 41;BA.debugLine="Log( \"tbl mamoriat exist\")";
 Debug.ShouldStop(256);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845073",RemoteObject.createImmutable("tbl mamoriat exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228241",RemoteObject.createImmutable("tbl mamoriat exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e13) {
@@ -3305,7 +3305,7 @@ Debug.ShouldStop(2048);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_mamoriat' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'date_from'	TEXT, 'date_to'	TEXT, 'time_from'	TEXT, 'time_to'	TEXT, 'end_tim_d'	INTEGER DEFAULT 0, 'end_tim_h'	INTEGER DEFAULT 0, 'end_tim_m'	INTEGER DEFAULT 0, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 46;BA.debugLine="Log ( \"tbl mamoriat created\")";
 Debug.ShouldStop(8192);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845078",RemoteObject.createImmutable("tbl mamoriat created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228246",RemoteObject.createImmutable("tbl mamoriat created"),0);
  };
  BA.debugLineNum = 50;BA.debugLine="Try";
 Debug.ShouldStop(131072);
@@ -3314,7 +3314,7 @@ Debug.ShouldStop(262144);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_mosaedeh"))));
  BA.debugLineNum = 52;BA.debugLine="Log( \"tbl mosaedeh exist\")";
 Debug.ShouldStop(524288);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845084",RemoteObject.createImmutable("tbl mosaedeh exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228252",RemoteObject.createImmutable("tbl mosaedeh exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e20) {
@@ -3323,7 +3323,7 @@ Debug.ShouldStop(4194304);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_mosaedeh' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan'	TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 57;BA.debugLine="Log ( \"tbl mosaedeh created\")";
 Debug.ShouldStop(16777216);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845089",RemoteObject.createImmutable("tbl mosaedeh created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228257",RemoteObject.createImmutable("tbl mosaedeh created"),0);
  };
  BA.debugLineNum = 61;BA.debugLine="Try";
 Debug.ShouldStop(268435456);
@@ -3332,7 +3332,7 @@ Debug.ShouldStop(536870912);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_food"))));
  BA.debugLineNum = 63;BA.debugLine="Log( \"tbl food exist\")";
 Debug.ShouldStop(1073741824);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845095",RemoteObject.createImmutable("tbl food exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228263",RemoteObject.createImmutable("tbl food exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e27) {
@@ -3341,7 +3341,7 @@ Debug.ShouldStop(2);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_food' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 68;BA.debugLine="Log ( \"tbl food created\")";
 Debug.ShouldStop(8);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845100",RemoteObject.createImmutable("tbl food created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228268",RemoteObject.createImmutable("tbl food created"),0);
  };
  BA.debugLineNum = 73;BA.debugLine="Try";
 Debug.ShouldStop(256);
@@ -3350,7 +3350,7 @@ Debug.ShouldStop(512);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_padash"))));
  BA.debugLineNum = 75;BA.debugLine="Log( \"tbl tb_padash exist\")";
 Debug.ShouldStop(1024);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845107",RemoteObject.createImmutable("tbl tb_padash exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228275",RemoteObject.createImmutable("tbl tb_padash exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e34) {
@@ -3359,7 +3359,7 @@ Debug.ShouldStop(8192);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_padash' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 80;BA.debugLine="Log ( \"tbl tb_padash created\")";
 Debug.ShouldStop(32768);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845112",RemoteObject.createImmutable("tbl tb_padash created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228280",RemoteObject.createImmutable("tbl tb_padash created"),0);
  };
  BA.debugLineNum = 83;BA.debugLine="Try";
 Debug.ShouldStop(262144);
@@ -3368,7 +3368,7 @@ Debug.ShouldStop(524288);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_sayer"))));
  BA.debugLineNum = 85;BA.debugLine="Log( \"tbl sayer exist\")";
 Debug.ShouldStop(1048576);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845117",RemoteObject.createImmutable("tbl sayer exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228285",RemoteObject.createImmutable("tbl sayer exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e41) {
@@ -3377,7 +3377,7 @@ Debug.ShouldStop(8388608);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_sayer' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 90;BA.debugLine="Log ( \"tbl sayer created\")";
 Debug.ShouldStop(33554432);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845122",RemoteObject.createImmutable("tbl sayer created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228290",RemoteObject.createImmutable("tbl sayer created"),0);
  };
  BA.debugLineNum = 95;BA.debugLine="Try";
 Debug.ShouldStop(1073741824);
@@ -3386,7 +3386,7 @@ Debug.ShouldStop(-2147483648);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_ayabzahab"))));
  BA.debugLineNum = 97;BA.debugLine="Log( \"tbl tb_ayabzahab exist\")";
 Debug.ShouldStop(1);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845129",RemoteObject.createImmutable("tbl tb_ayabzahab exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228297",RemoteObject.createImmutable("tbl tb_ayabzahab exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e48) {
@@ -3395,7 +3395,7 @@ Debug.ShouldStop(8);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_ayabzahab' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'onvan' TEXT , 'date'	TEXT,'mablagh'	TEXT DEFAULT 0 , 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 102;BA.debugLine="Log ( \"tbl tb_ayabzahab created\")";
 Debug.ShouldStop(32);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845134",RemoteObject.createImmutable("tbl tb_ayabzahab created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228302",RemoteObject.createImmutable("tbl tb_ayabzahab created"),0);
  };
  BA.debugLineNum = 107;BA.debugLine="Try";
 Debug.ShouldStop(1024);
@@ -3404,7 +3404,7 @@ Debug.ShouldStop(2048);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_vam"))));
  BA.debugLineNum = 109;BA.debugLine="Log( \"tbl tb_vam exist\")";
 Debug.ShouldStop(4096);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845141",RemoteObject.createImmutable("tbl tb_vam exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228309",RemoteObject.createImmutable("tbl tb_vam exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e55) {
@@ -3413,7 +3413,7 @@ Debug.ShouldStop(32768);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_vam' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT, 'idvam' TEXT , 'onvan' TEXT ,'mablag' TEXT , 'count'	TEXT,'rate'	TEXT , 'doreh'	TEXT DEFAULT 1 ,'date'	TEXT ,'bazpardakht' TEXT,'harghest' TEXT, 'tozihat'	TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 114;BA.debugLine="Log ( \"tbl tb_vam created\")";
 Debug.ShouldStop(131072);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845146",RemoteObject.createImmutable("tbl tb_vam created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228314",RemoteObject.createImmutable("tbl tb_vam created"),0);
  };
  BA.debugLineNum = 118;BA.debugLine="Try";
 Debug.ShouldStop(2097152);
@@ -3422,7 +3422,7 @@ Debug.ShouldStop(4194304);
 dbcode._res = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.sql.SQL.ResultSetWrapper"), dbcode._sql.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT * FROM tb_gestha"))));
  BA.debugLineNum = 120;BA.debugLine="Log( \"tbl tb_gestha exist\")";
 Debug.ShouldStop(8388608);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845152",RemoteObject.createImmutable("tbl tb_gestha exist"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228320",RemoteObject.createImmutable("tbl tb_gestha exist"),0);
  Debug.CheckDeviceExceptions();
 } 
        catch (Exception e62) {
@@ -3431,7 +3431,7 @@ Debug.ShouldStop(67108864);
 dbcode._sql.runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("CREATE TABLE 'tb_gestha' ( 'id'	INTEGER Not Null PRIMARY KEY AUTOINCREMENT,'idvam' TEXT , 'date' TEXT,'mablag'	TEXT , 'tozihat' TEXT, 'state'	INTEGER DEFAULT 0)")));
  BA.debugLineNum = 125;BA.debugLine="Log ( \"tbl tb_gestha created\")";
 Debug.ShouldStop(268435456);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","612845157",RemoteObject.createImmutable("tbl tb_gestha created"),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","32228325",RemoteObject.createImmutable("tbl tb_gestha created"),0);
  };
  BA.debugLineNum = 128;BA.debugLine="End Sub";
 Debug.ShouldStop(-2147483648);
@@ -3482,7 +3482,7 @@ dbcode._res.runVoidMethod ("Close");
        catch (Exception e12) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e12.toString()); BA.debugLineNum = 1183;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1073741824);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","617235980",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","36619148",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
  };
  BA.debugLineNum = 1186;BA.debugLine="Return chk1";
 Debug.ShouldStop(2);
@@ -3536,7 +3536,7 @@ dbcode._res.runVoidMethod ("Close");
        catch (Exception e12) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e12.toString()); BA.debugLineNum = 1242;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(33554432);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","617432588",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","36815756",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
  };
  BA.debugLineNum = 1245;BA.debugLine="Return chk1";
 Debug.ShouldStop(268435456);
@@ -3590,7 +3590,7 @@ dbcode._res.runVoidMethod ("Close");
        catch (Exception e12) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e12.toString()); BA.debugLineNum = 1203;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(262144);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","617301516",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","36684684",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
  };
  BA.debugLineNum = 1206;BA.debugLine="Return chk1";
 Debug.ShouldStop(2097152);
@@ -3644,7 +3644,7 @@ dbcode._res.runVoidMethod ("Close");
        catch (Exception e12) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e12.toString()); BA.debugLineNum = 1221;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(16);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","617367052",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","36750220",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
  };
  BA.debugLineNum = 1223;BA.debugLine="Return chk1";
 Debug.ShouldStop(64);
@@ -3701,7 +3701,7 @@ dbcode._res.runVoidMethod ("Close");
        catch (Exception e13) {
 			BA.rdebugUtils.runVoidMethod("setLastException",BA.rdebugUtils.runMethod(false, "processBAFromBA", _ba), e13.toString()); BA.debugLineNum = 1266;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(131072);
-dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","617498127",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
+dbcode.mostCurrent.__c.runVoidMethod ("LogImpl","36881295",BA.ObjectToString(dbcode.mostCurrent.__c.runMethod(false,"LastException",_ba)),0);
  };
  BA.debugLineNum = 1269;BA.debugLine="Return chk1";
 Debug.ShouldStop(1048576);

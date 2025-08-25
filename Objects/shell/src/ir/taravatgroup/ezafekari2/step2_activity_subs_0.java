@@ -428,7 +428,7 @@ step2_activity.mostCurrent._http3.runClassMethod (ir.taravatgroup.ezafekari2.htt
        catch (Exception e54) {
 			BA.rdebugUtils.runVoidMethod("setLastException",step2_activity.processBA, e54.toString()); BA.debugLineNum = 276;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(524288);
-step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","659572311",BA.ObjectToString(step2_activity.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","362324823",BA.ObjectToString(step2_activity.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  };
  BA.debugLineNum = 281;BA.debugLine="End Sub";
 Debug.ShouldStop(16777216);
@@ -662,7 +662,7 @@ Debug.ShouldStop(2);
 if (RemoteObject.solveBoolean("=",_job.getField(true,"_jobname" /*RemoteObject*/ ),BA.ObjectToString("ht9"))) { 
  BA.debugLineNum = 419;BA.debugLine="Log(job.GetString)";
 Debug.ShouldStop(4);
-step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","659637894",_job.runClassMethod (ir.taravatgroup.ezafekari2.httpjob.class, "_getstring" /*RemoteObject*/ ),0);
+step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","362390406",_job.runClassMethod (ir.taravatgroup.ezafekari2.httpjob.class, "_getstring" /*RemoteObject*/ ),0);
  }}}}}}}}}
 ;
  BA.debugLineNum = 421;BA.debugLine="If (Main.backup_page_show<>1)Then";
@@ -716,7 +716,7 @@ step2_activity.mostCurrent._img_p_edit.runMethod(false,"setBitmap",(step2_activi
        catch (Exception e97) {
 			BA.rdebugUtils.runVoidMethod("setLastException",step2_activity.processBA, e97.toString()); BA.debugLineNum = 457;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(256);
-step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","659637932",BA.ObjectToString(step2_activity.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+step2_activity.mostCurrent.__c.runVoidMethod ("LogImpl","362390444",BA.ObjectToString(step2_activity.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 458;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 Debug.ShouldStop(512);
 step2_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در اتصال")),(Object)(step2_activity.mostCurrent.__c.getField(true,"False")));
@@ -1040,7 +1040,7 @@ Debug.ShouldStop(536870912);
 parent.mostCurrent.__c.getField(false,"File").runVoidMethod ("Copy",(Object)(_dir),(Object)(_filename),(Object)(parent.mostCurrent._starter._provider /*RemoteObject*/ .getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(parent.mostCurrent._picname));
  BA.debugLineNum = 543;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1073741824);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","660030992",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","362783504",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1078,7 +1078,7 @@ Debug.ShouldStop(256);
 parent.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در بارگزاری")),(Object)(parent.mostCurrent.__c.getField(true,"True")));
  BA.debugLineNum = 554;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(512);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","660031003",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","362783515",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1462,7 +1462,7 @@ Debug.ShouldStop(131072);
 parent.mostCurrent.__c.getField(false,"File").runVoidMethod ("Copy",(Object)(_dir),(Object)(_filename),(Object)(parent.mostCurrent._starter._provider /*RemoteObject*/ .getField(true,"_sharedfolder" /*RemoteObject*/ )),(Object)(parent.mostCurrent._tempfile));
  BA.debugLineNum = 693;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1048576);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","660751898",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","363504410",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1503,7 +1503,7 @@ Debug.ShouldStop(-2147483648);
 parent.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در بارگزاری")),(Object)(parent.mostCurrent.__c.getField(true,"True")));
  BA.debugLineNum = 705;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","660751910",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","363504422",BA.ObjectToString(parent.mostCurrent.__c.runMethod(false,"LastException",step2_activity.mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 

@@ -214,7 +214,7 @@ _job.runClassMethod (ir.taravatgroup.ezafekari2.httpjob.class, "_release" /*Remo
        catch (Exception e18) {
 			BA.rdebugUtils.runVoidMethod("setLastException",step1_activity.processBA, e18.toString()); BA.debugLineNum = 108;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(2048);
-step1_activity.mostCurrent.__c.runVoidMethod ("LogImpl","658851352",BA.ObjectToString(step1_activity.mostCurrent.__c.runMethod(false,"LastException",step1_activity.mostCurrent.activityBA)),0);
+step1_activity.mostCurrent.__c.runVoidMethod ("LogImpl","361603864",BA.ObjectToString(step1_activity.mostCurrent.__c.runMethod(false,"LastException",step1_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 109;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 Debug.ShouldStop(4096);
 step1_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در اتصال")),(Object)(step1_activity.mostCurrent.__c.getField(true,"False")));

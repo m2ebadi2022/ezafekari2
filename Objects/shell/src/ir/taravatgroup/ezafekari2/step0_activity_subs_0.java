@@ -274,7 +274,7 @@ Debug.ShouldStop(524288);
 if (RemoteObject.solveBoolean("=",_job.getField(true,"_success" /*RemoteObject*/ ),step0_activity.mostCurrent.__c.getField(true,"True"))) { 
  BA.debugLineNum = 213;BA.debugLine="Log(job.GetString)";
 Debug.ShouldStop(1048576);
-step0_activity.mostCurrent.__c.runVoidMethod ("LogImpl","658064899",_job.runClassMethod (ir.taravatgroup.ezafekari2.httpjob.class, "_getstring" /*RemoteObject*/ ),0);
+step0_activity.mostCurrent.__c.runVoidMethod ("LogImpl","360817411",_job.runClassMethod (ir.taravatgroup.ezafekari2.httpjob.class, "_getstring" /*RemoteObject*/ ),0);
  BA.debugLineNum = 214;BA.debugLine="If job.JobName=\"ht1\" Then";
 Debug.ShouldStop(2097152);
 if (RemoteObject.solveBoolean("=",_job.getField(true,"_jobname" /*RemoteObject*/ ),BA.ObjectToString("ht1"))) { 
@@ -331,7 +331,7 @@ _job.runClassMethod (ir.taravatgroup.ezafekari2.httpjob.class, "_release" /*Remo
        catch (Exception e24) {
 			BA.rdebugUtils.runVoidMethod("setLastException",step0_activity.processBA, e24.toString()); BA.debugLineNum = 245;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1048576);
-step0_activity.mostCurrent.__c.runVoidMethod ("LogImpl","658064931",BA.ObjectToString(step0_activity.mostCurrent.__c.runMethod(false,"LastException",step0_activity.mostCurrent.activityBA)),0);
+step0_activity.mostCurrent.__c.runVoidMethod ("LogImpl","360817443",BA.ObjectToString(step0_activity.mostCurrent.__c.runMethod(false,"LastException",step0_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 246;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 Debug.ShouldStop(2097152);
 step0_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در اتصال")),(Object)(step0_activity.mostCurrent.__c.getField(true,"False")));

@@ -152,7 +152,7 @@ info_activity.mostCurrent.__c.runVoidMethod ("StartActivity",info_activity.proce
        catch (Exception e6) {
 			BA.rdebugUtils.runVoidMethod("setLastException",info_activity.processBA, e6.toString()); BA.debugLineNum = 66;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(2);
-info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","635651595",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
+info_activity.mostCurrent.__c.runVoidMethod ("LogImpl","325034763",BA.ObjectToString(info_activity.mostCurrent.__c.runMethod(false,"LastException",info_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 68;BA.debugLine="ToastMessageShow(\"خطا در تماس\",False)";
 Debug.ShouldStop(8);
 info_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در تماس")),(Object)(info_activity.mostCurrent.__c.getField(true,"False")));

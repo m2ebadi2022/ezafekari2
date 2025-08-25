@@ -731,7 +731,7 @@ shift_activity.mostCurrent._ls_note_moon.runVoidMethod ("Add",(Object)((shift_ac
  }else {
  BA.debugLineNum = 1047;BA.debugLine="Log(\"nooop data\")";
 Debug.ShouldStop(4194304);
-shift_activity.mostCurrent.__c.runVoidMethod ("LogImpl","654329450",RemoteObject.createImmutable("nooop data"),0);
+shift_activity.mostCurrent.__c.runVoidMethod ("LogImpl","357081962",RemoteObject.createImmutable("nooop data"),0);
  };
  BA.debugLineNum = 1052;BA.debugLine="For  j=start_day-1 To 0 Step -1";
 Debug.ShouldStop(134217728);
@@ -919,7 +919,7 @@ _counter = RemoteObject.solve(new RemoteObject[] {_counter,RemoteObject.createIm
        catch (Exception e133) {
 			BA.rdebugUtils.runVoidMethod("setLastException",shift_activity.processBA, e133.toString()); BA.debugLineNum = 1149;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(268435456);
-shift_activity.mostCurrent.__c.runVoidMethod ("LogImpl","654329552",BA.ObjectToString(shift_activity.mostCurrent.__c.runMethod(false,"LastException",shift_activity.mostCurrent.activityBA)),0);
+shift_activity.mostCurrent.__c.runVoidMethod ("LogImpl","357082064",BA.ObjectToString(shift_activity.mostCurrent.__c.runMethod(false,"LastException",shift_activity.mostCurrent.activityBA)),0);
  };
  BA.debugLineNum = 1153;BA.debugLine="End Sub";
 Debug.ShouldStop(1);
@@ -3372,7 +3372,7 @@ shift_activity.mostCurrent.__c.runVoidMethod ("ProgressDialogHide");
        catch (Exception e21) {
 			BA.rdebugUtils.runVoidMethod("setLastException",shift_activity.processBA, e21.toString()); BA.debugLineNum = 1391;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(16384);
-shift_activity.mostCurrent.__c.runVoidMethod ("LogImpl","654853667",BA.ObjectToString(shift_activity.mostCurrent.__c.runMethod(false,"LastException",shift_activity.mostCurrent.activityBA)),0);
+shift_activity.mostCurrent.__c.runVoidMethod ("LogImpl","357606179",BA.ObjectToString(shift_activity.mostCurrent.__c.runMethod(false,"LastException",shift_activity.mostCurrent.activityBA)),0);
  BA.debugLineNum = 1392;BA.debugLine="ToastMessageShow(\"خطا در تاریخ\",False)";
 Debug.ShouldStop(32768);
 shift_activity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("خطا در تاریخ")),(Object)(shift_activity.mostCurrent.__c.getField(true,"False")));
