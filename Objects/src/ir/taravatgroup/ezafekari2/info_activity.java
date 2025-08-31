@@ -34,7 +34,7 @@ public class info_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.info_activity");
+			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.info_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class info_activity extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pan_hed_info = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lbl_version_app = null;
@@ -381,112 +372,93 @@ public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="info_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=24707072;
- //BA.debugLineNum = 24707072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=24707074;
- //BA.debugLineNum = 24707074;BA.debugLine="Activity.LoadLayout(\"info_layout\")";
+ //BA.debugLineNum = 22;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"info_layout\")";
 mostCurrent._activity.LoadLayout("info_layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=24707076;
- //BA.debugLineNum = 24707076;BA.debugLine="pan_hed_info.Color=Main.color4";
+ //BA.debugLineNum = 26;BA.debugLine="pan_hed_info.Color=Main.color4";
 mostCurrent._pan_hed_info.setColor(mostCurrent._main._color4 /*int*/ );
-RDebugUtils.currentLine=24707077;
- //BA.debugLineNum = 24707077;BA.debugLine="myfunc.set_font(Activity)";
+ //BA.debugLineNum = 27;BA.debugLine="myfunc.set_font(Activity)";
 mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,mostCurrent._activity);
-RDebugUtils.currentLine=24707078;
- //BA.debugLineNum = 24707078;BA.debugLine="lbl_version_app.Text=Main.app_vesion";
+ //BA.debugLineNum = 28;BA.debugLine="lbl_version_app.Text=Main.app_vesion";
 mostCurrent._lbl_version_app.setText(BA.ObjectToCharSequence(mostCurrent._main._app_vesion /*String*/ ));
-RDebugUtils.currentLine=24707079;
- //BA.debugLineNum = 24707079;BA.debugLine="End Sub";
+ //BA.debugLineNum = 29;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
-RDebugUtils.currentModule="info_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
-	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=24969216;
- //BA.debugLineNum = 24969216;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=24969217;
- //BA.debugLineNum = 24969217;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 44;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 45;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=24969218;
- //BA.debugLineNum = 24969218;BA.debugLine="lbl_back_Click";
+ //BA.debugLineNum = 46;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
-RDebugUtils.currentLine=24969219;
- //BA.debugLineNum = 24969219;BA.debugLine="Return True";
+ //BA.debugLineNum = 47;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=24969221;
- //BA.debugLineNum = 24969221;BA.debugLine="Return False";
+ //BA.debugLineNum = 49;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=24969223;
- //BA.debugLineNum = 24969223;BA.debugLine="End Sub";
+ //BA.debugLineNum = 51;BA.debugLine="End Sub";
 return false;
 }
-public static String  _lbl_back_click() throws Exception{
-RDebugUtils.currentModule="info_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
-RDebugUtils.currentLine=24903680;
- //BA.debugLineNum = 24903680;BA.debugLine="Private Sub lbl_back_Click";
-RDebugUtils.currentLine=24903682;
- //BA.debugLineNum = 24903682;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
-RDebugUtils.currentLine=24903683;
- //BA.debugLineNum = 24903683;BA.debugLine="End Sub";
-return "";
-}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="info_activity";
-RDebugUtils.currentLine=24838144;
- //BA.debugLineNum = 24838144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=24838146;
- //BA.debugLineNum = 24838146;BA.debugLine="End Sub";
+ //BA.debugLineNum = 35;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 37;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="info_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=24772608;
- //BA.debugLineNum = 24772608;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=24772610;
- //BA.debugLineNum = 24772610;BA.debugLine="End Sub";
+ //BA.debugLineNum = 31;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 33;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 16;BA.debugLine="Private pan_hed_info As Panel";
+mostCurrent._pan_hed_info = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private lbl_version_app As Label";
+mostCurrent._lbl_version_app = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Dim mail As Email";
+mostCurrent._mail = new anywheresoftware.b4a.phone.Phone.Email();
+ //BA.debugLineNum = 20;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_back_click() throws Exception{
+ //BA.debugLineNum = 39;BA.debugLine="Private Sub lbl_back_Click";
+ //BA.debugLineNum = 41;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ //BA.debugLineNum = 42;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbl_whatsapp_click() throws Exception{
-RDebugUtils.currentModule="info_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_whatsapp_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_whatsapp_click", null));}
 anywheresoftware.b4a.objects.IntentWrapper _intent1 = null;
-RDebugUtils.currentLine=25034752;
- //BA.debugLineNum = 25034752;BA.debugLine="Private Sub lbl_whatsapp_Click";
-RDebugUtils.currentLine=25034753;
- //BA.debugLineNum = 25034753;BA.debugLine="Try";
-try {RDebugUtils.currentLine=25034755;
- //BA.debugLineNum = 25034755;BA.debugLine="Dim Intent1 As Intent";
+ //BA.debugLineNum = 55;BA.debugLine="Private Sub lbl_whatsapp_Click";
+ //BA.debugLineNum = 56;BA.debugLine="Try";
+try { //BA.debugLineNum = 58;BA.debugLine="Dim Intent1 As Intent";
 _intent1 = new anywheresoftware.b4a.objects.IntentWrapper();
-RDebugUtils.currentLine=25034757;
- //BA.debugLineNum = 25034757;BA.debugLine="Intent1.Initialize(Intent1.ACTION_VIEW, \"tel:092";
+ //BA.debugLineNum = 60;BA.debugLine="Intent1.Initialize(Intent1.ACTION_VIEW, \"tel:092";
 _intent1.Initialize(_intent1.ACTION_VIEW,"tel:09233176420");
-RDebugUtils.currentLine=25034760;
- //BA.debugLineNum = 25034760;BA.debugLine="StartActivity(Intent1)";
+ //BA.debugLineNum = 63;BA.debugLine="StartActivity(Intent1)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_intent1.getObject()));
  } 
        catch (Exception e6) {
-			processBA.setLastException(e6);RDebugUtils.currentLine=25034763;
- //BA.debugLineNum = 25034763;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("325034763",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
-RDebugUtils.currentLine=25034765;
- //BA.debugLineNum = 25034765;BA.debugLine="ToastMessageShow(\"خطا در تماس\",False)";
+			processBA.setLastException(e6); //BA.debugLineNum = 66;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("138404107",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 68;BA.debugLine="ToastMessageShow(\"خطا در تماس\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در تماس"),anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=25034770;
- //BA.debugLineNum = 25034770;BA.debugLine="End Sub";
+ //BA.debugLineNum = 73;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 }

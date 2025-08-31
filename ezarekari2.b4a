@@ -2729,6 +2729,7 @@ Private Sub pan_add_taradod_Click
 				
 				save_box_allow=False
 				
+				
 			Else if (temp_finger=1)Then
 				
 				
@@ -2761,6 +2762,7 @@ Private Sub pan_add_taradod_Click
 				
 				
 				save_box_allow=False
+				
 				
 			Else if (temp_finger=2)Then
 					
@@ -2979,7 +2981,8 @@ Private Sub lbl_save_box_Click
 	''\\\\\\\\\\\\\\\
 	If(save_box_allow=False)Then
 		ToastMessageShow("ورود یا خروج ناقص است.",False)
-		''Log(date1,date2)
+		
+		
 	Else
 		time_show
 		add_end	
@@ -3254,8 +3257,9 @@ Sub add_taradod_sub
 		If(hour_bt<0 Or min_bt<0 )Then
 			ToastMessageShow("خطا! زمان منفی نمی شود",True)
 		
-		Else If (moon_bt<>0 Or year_bt<>0 Or day_bt>2)Then
+		Else If (moon_bt<>0 Or year_bt<>0 Or day_bt>2)Then   ''    3     eeeeeeee
 			ToastMessageShow("خطا! زمان نادرست است",True)
+			
 		Else If (hour_bt=0 And min_bt=0 )Then
 			ToastMessageShow("خطا! انتخاب زمان  ",True)
 		Else
@@ -3283,6 +3287,7 @@ Sub add_taradod_sub
 'eeeeeeeeeee
 							
 							Dim tim_ezaf_min As Int=tim_min-(myfunc.get_saatKari_inWeek(day_inWeek_id))
+							Log("tim_ezaf_min   :  "&tim_ezaf_min)
 							
 						    Dim ls_res_tim1 As List
 							ls_res_tim1.Initialize
@@ -3291,8 +3296,11 @@ Sub add_taradod_sub
 							Dim date1_refind As String=""
 							If(ls_res_tim1.Get(1)=1) Then
 								date1_refind=date2
-							Else
+							Else if(ls_res_tim1.Get(1)=2) Then
 								date1_refind=date1
+							Else
+								ToastMessageShow("خطا! زمان نادرست است",True)
+								Return
 							End If
 							
 							'kkk
@@ -3341,8 +3349,11 @@ Sub add_taradod_sub
 						Dim date1_refind As String=""
 						If(ls_res_tim1.Get(1)=1) Then
 							date1_refind=date2
-						Else
+						Else if(ls_res_tim1.Get(1)=2) Then
 							date1_refind=date1
+						Else
+							ToastMessageShow("خطا! زمان نادرست است",True)
+							Return
 						End If
 							
 						'kkk
@@ -4437,6 +4448,7 @@ Private Sub lbl_save_picker_Click
 	
 	
 	pan_all2.Visible=False
+	save_box_allow=True
 	time_show
 End Sub
 

@@ -6,7 +6,6 @@ C:\SDK\platforms\android-36\android.jar
 --min-api
 21
 C:\SDK\tools\..\extras\b4a_local\unpacked-b4ashared-63888245686000\dex_v1\b4ashared.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-debug-63888245686000\dex_v1\debug.zip
 c:\sdk\tools\..\extras\b4a_local\unpacked-compressor-63643033920000\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_local\unpacked-poolakey-2.2.0-63845677746000\jars\classes.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\legacy\legacy-support-v4\1.0.0\unpacked-legacy-support-v4-1.0.0\jars\classes.zip
@@ -67,7 +66,6 @@ C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-63888245686000\dex_v1\okhttp.zi
 C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-4.9.0-63888245686000\dex_v1\okhttp-4.9.0.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-okio-2.8.0-63888245686000\dex_v1\okio-2.8.0.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-okhttp-urlconnection-4.9.3-63888245686000\dex_v1\okhttp-urlconnection-4.9.3.zip
-C:\SDK\tools\..\extras\b4a_local\unpacked-remotelogger-63888245688000\dex_v1\remotelogger.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\annotation\annotation\1.9.1\annotation-1.9.1.zip
 c:\sdk\tools\..\extras\b4a_remote\androidx\annotation\annotation-jvm\1.9.1\annotation-jvm-1.9.1.zip
 C:\SDK\tools\..\extras\b4a_local\unpacked-org.jetbrains.kotlin-kotlin-stdlib-63888245686000\dex_v1\org.jetbrains.kotlin-kotlin-stdlib.zip

@@ -34,7 +34,7 @@ public class help_kharid_activity extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.help_kharid_activity");
+			processBA = new BA(this.getApplicationContext(), null, null, "ir.taravatgroup.ezafekari2", "ir.taravatgroup.ezafekari2.help_kharid_activity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class help_kharid_activity extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.WebViewWrapper _web_helpkharid = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pan_hed_help = null;
@@ -380,89 +371,77 @@ public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
 public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="help_kharid_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=20840448;
- //BA.debugLineNum = 20840448;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=20840450;
- //BA.debugLineNum = 20840450;BA.debugLine="Activity.LoadLayout(\"help_kharid_layout\")";
+ //BA.debugLineNum = 20;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 22;BA.debugLine="Activity.LoadLayout(\"help_kharid_layout\")";
 mostCurrent._activity.LoadLayout("help_kharid_layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=20840451;
- //BA.debugLineNum = 20840451;BA.debugLine="web_helpKharid.LoadUrl(\"https://taravatgroup.ir/h";
+ //BA.debugLineNum = 23;BA.debugLine="web_helpKharid.LoadUrl(\"https://taravatgroup.ir/h";
 mostCurrent._web_helpkharid.LoadUrl("https://taravatgroup.ir/help_kharid/index.html");
-RDebugUtils.currentLine=20840455;
- //BA.debugLineNum = 20840455;BA.debugLine="pan_hed_help.Color=Main.color4";
+ //BA.debugLineNum = 27;BA.debugLine="pan_hed_help.Color=Main.color4";
 mostCurrent._pan_hed_help.setColor(mostCurrent._main._color4 /*int*/ );
-RDebugUtils.currentLine=20840457;
- //BA.debugLineNum = 20840457;BA.debugLine="myfunc.set_font(Activity)";
+ //BA.debugLineNum = 29;BA.debugLine="myfunc.set_font(Activity)";
 mostCurrent._myfunc._set_font /*String*/ (mostCurrent.activityBA,mostCurrent._activity);
-RDebugUtils.currentLine=20840460;
- //BA.debugLineNum = 20840460;BA.debugLine="End Sub";
+ //BA.debugLineNum = 32;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
-RDebugUtils.currentModule="help_kharid_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
-	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
-RDebugUtils.currentLine=21102592;
- //BA.debugLineNum = 21102592;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=21102593;
- //BA.debugLineNum = 21102593;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 48;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 49;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=21102594;
- //BA.debugLineNum = 21102594;BA.debugLine="If(web_helpKharid.Url<>\"https://taravatgroup.ir/";
+ //BA.debugLineNum = 50;BA.debugLine="If(web_helpKharid.Url<>\"https://taravatgroup.ir/";
 if (((mostCurrent._web_helpkharid.getUrl()).equals("https://taravatgroup.ir/help_kharid/index.html") == false)) { 
-RDebugUtils.currentLine=21102595;
- //BA.debugLineNum = 21102595;BA.debugLine="web_helpKharid.LoadUrl(\"https://taravatgroup.ir";
+ //BA.debugLineNum = 51;BA.debugLine="web_helpKharid.LoadUrl(\"https://taravatgroup.ir";
 mostCurrent._web_helpkharid.LoadUrl("https://taravatgroup.ir/help_kharid/index.html");
  }else {
-RDebugUtils.currentLine=21102597;
- //BA.debugLineNum = 21102597;BA.debugLine="lbl_back_Click";
+ //BA.debugLineNum = 53;BA.debugLine="lbl_back_Click";
 _lbl_back_click();
  };
-RDebugUtils.currentLine=21102600;
- //BA.debugLineNum = 21102600;BA.debugLine="Return True";
+ //BA.debugLineNum = 56;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=21102602;
- //BA.debugLineNum = 21102602;BA.debugLine="Return False";
+ //BA.debugLineNum = 58;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=21102604;
- //BA.debugLineNum = 21102604;BA.debugLine="End Sub";
+ //BA.debugLineNum = 60;BA.debugLine="End Sub";
 return false;
 }
-public static String  _lbl_back_click() throws Exception{
-RDebugUtils.currentModule="help_kharid_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbl_back_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbl_back_click", null));}
-RDebugUtils.currentLine=21037056;
- //BA.debugLineNum = 21037056;BA.debugLine="Private Sub lbl_back_Click";
-RDebugUtils.currentLine=21037057;
- //BA.debugLineNum = 21037057;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
-RDebugUtils.currentLine=21037058;
- //BA.debugLineNum = 21037058;BA.debugLine="End Sub";
-return "";
-}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="help_kharid_activity";
-RDebugUtils.currentLine=20971520;
- //BA.debugLineNum = 20971520;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=20971522;
- //BA.debugLineNum = 20971522;BA.debugLine="End Sub";
+ //BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 40;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="help_kharid_activity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=20905984;
- //BA.debugLineNum = 20905984;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=20905986;
- //BA.debugLineNum = 20905986;BA.debugLine="End Sub";
+ //BA.debugLineNum = 34;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 36;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 16;BA.debugLine="Private web_helpKharid As WebView";
+mostCurrent._web_helpkharid = new anywheresoftware.b4a.objects.WebViewWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private pan_hed_help As Panel";
+mostCurrent._pan_hed_help = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbl_back_click() throws Exception{
+ //BA.debugLineNum = 44;BA.debugLine="Private Sub lbl_back_Click";
+ //BA.debugLineNum = 45;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ //BA.debugLineNum = 46;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 }
