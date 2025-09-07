@@ -57,7 +57,7 @@ Sub Globals
 	Private sp_type_state As Spinner
 	Private lbl_sp_type As Label
 	Dim addEdit_id As Int=0
-	
+	Private printer As Printer
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -569,4 +569,225 @@ Private Sub lbl_add_ayabzahab_Click
 	
 	
 	item_edit_box_mod("ثبت ایاب ذهاب","",myfunc.fa2en(Main.persianDate.PersianShortDate),"0","",0)
+End Sub
+
+
+
+
+Private Sub lbl_share_Click
+	
+	Dim str_file_matn As StringBuilder
+	str_file_matn.Initialize
+	Dim name_gozaresh As String=""
+	Dim name_gozaresh_en As String=""
+	Dim majmoe_mablagh_dariaft As Int = 0
+	Dim majmoe_mablagh_pardakht As Int = 0
+	
+	dbCode.connect_db
+	
+
+	name_gozaresh="هزینه ایاب ذهاب-"
+	name_gozaresh_en="ayab"
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ayabzahab WHERE date LIKE '%"&myfunc.fa2en(sp_year.SelectedItem)&"/"&myfunc.convert_adad(sp_moon.SelectedIndex+1)&"%' ORDER BY  date DESC;")
+	
+	
+	
+
+	
+	
+	
+	
+	str_file_matn.Append("<!DOCTYPE html><html dir='rtl' lang='fa'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /> <body style='font-family:tahoma,Arial,sans-serif;'>")
+	str_file_matn.Append("<style>table , td {border: 1px solid #707070;border-collapse: collapse; font-size:11pt;} tr:nth-child(even) { background-color: #9fd6e0; } tr:nth-child(odd) { background-color: #e8fbff; }	details {	border: 1px solid #aaa;	border-radius: 4px;	padding: .5em .5em 0;}	</style>")
+	
+	str_file_matn.Append("<h3>").Append(" گزارش "&name_gozaresh& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
+	
+	
+	
+	
+	
+	str_file_matn.Append("<div style=' background-color: #f5f5f5;'>")
+		
+	
+	str_file_matn.Append("<table style='width:100%;'><tr style='text-align: center;'>")
+	str_file_matn.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> عنوان</b></td><td><b> مبلغ</b></td><td><b> نوع</b></td><td><b> توضیح</b></td><br></tr>")
+		
+	Do While dbCode.res.NextRow
+		str_file_matn.Append("<tr style='text-align: center;'>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date"))).Append("</td>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("onvan"))).Append("</td>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("mablagh"))).Append("</td>")
+		
+		str_file_matn.Append("<td>")
+		
+		If(dbCode.res.GetInt("state")=1)Then
+			
+			str_file_matn.Append("<span style='color:green;'> اضافه شدن </span>")
+		Else
+			str_file_matn.Append("<span style='color:red;'>کم شدن </span>")
+		End If
+	 
+		str_file_matn.Append("</td>")
+		
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("tozihat"))).Append("</td>")
+			
+		
+		
+		If(dbCode.res.GetInt("state")=1)Then
+			
+			majmoe_mablagh_dariaft=majmoe_mablagh_dariaft+dbCode.res.GetString("mablagh")
+		Else
+			majmoe_mablagh_pardakht=majmoe_mablagh_pardakht+dbCode.res.GetString("mablagh")
+		End If
+		str_file_matn.Append("</tr>")
+	Loop
+		
+		
+	str_file_matn.Append("</table>")
+	str_file_matn.Append(" مجموع مبلغ دریافتی  :<span style='color:green;'> "& majmoe_mablagh_dariaft &" </span><br> ")
+	str_file_matn.Append(" مجموع مبلغ پرداختی  :<span style='color:red;'> "& majmoe_mablagh_pardakht &" </span><br></div><br> ")
+		
+		
+	
+	
+	
+	str_file_matn.Append("<br></details></div>")
+		
+	str_file_matn.Append("<footer style=' text-align: center; '><h6> اپلیکیشن اضافه کاری من </h6></footer>")
+		
+	str_file_matn.Append("</body></html>")
+
+	
+		
+	
+	dbCode.res.Close
+	dbCode.sql.Close
+	
+	
+	
+	
+	
+	
+	Dim FileName As String =name_gozaresh_en&"-"&myfunc.fa2en(sp_year.SelectedItem)&myfunc.convert_adad(sp_moon.SelectedIndex+1)&".html"
+	
+	
+	File.WriteString(Starter.Provider.SharedFolder,FileName,str_file_matn.ToString)
+	
+	Dim email As Email
+	email.To.Add("aaa@bbb.com")
+	email.Subject = "subject"
+	email.Body = " گزارش  "&name_gozaresh&CRLF&"اپلیکیشن اضافه کاری من" &CRLF& "دانلود از بازار"
+	email.Attachments.Add(Starter.Provider.GetFileUri(FileName))
+	
+	Dim in As Intent = email.GetIntent
+	in.Flags = 1 'FLAG_GRANT_READ_URI_PERMISSION
+	StartActivity(in)
+	
+	
+End Sub
+
+
+Private Sub lbl_print_Click
+	
+	Dim str_file_matn As StringBuilder
+	str_file_matn.Initialize
+	Dim name_gozaresh As String=""
+	Dim name_gozaresh_en As String=""
+	Dim majmoe_mablagh_dariaft As Int = 0
+	Dim majmoe_mablagh_pardakht As Int = 0
+	
+	dbCode.connect_db
+	
+
+	name_gozaresh="هزینه ایاب ذهاب-"
+	name_gozaresh_en="ayab"
+	dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ayabzahab WHERE date LIKE '%"&myfunc.fa2en(sp_year.SelectedItem)&"/"&myfunc.convert_adad(sp_moon.SelectedIndex+1)&"%' ORDER BY  date DESC;")
+	
+	
+	
+
+	
+	
+	
+	
+	str_file_matn.Append("<!DOCTYPE html><html dir='rtl' lang='fa'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /> <body style='font-family:tahoma,Arial,sans-serif;'>")
+	str_file_matn.Append("<style>table , td {border: 1px solid #707070;border-collapse: collapse; font-size:11pt;} tr:nth-child(even) { background-color: #9fd6e0; } tr:nth-child(odd) { background-color: #e8fbff; }	details {	border: 1px solid #aaa;	border-radius: 4px;	padding: .5em .5em 0;}	</style>")
+	
+	str_file_matn.Append("<h3>").Append(" گزارش "&name_gozaresh& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
+	
+	
+	
+	
+	
+	str_file_matn.Append("<div style=' background-color: #f5f5f5;'>")
+		
+	
+	str_file_matn.Append("<table style='width:100%;'><tr style='text-align: center;'>")
+	str_file_matn.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> عنوان</b></td><td><b> مبلغ</b></td><td><b> نوع</b></td><td><b> توضیح</b></td><br></tr>")
+		
+	Do While dbCode.res.NextRow
+		str_file_matn.Append("<tr style='text-align: center;'>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date"))).Append("</td>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("onvan"))).Append("</td>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("mablagh"))).Append("</td>")
+		
+		str_file_matn.Append("<td>")
+		
+		If(dbCode.res.GetInt("state")=1)Then
+			
+			str_file_matn.Append("<span style='color:green;'> اضافه شدن </span>")
+		Else
+			str_file_matn.Append("<span style='color:red;'>کم شدن </span>")
+		End If
+	 
+		str_file_matn.Append("</td>")
+		
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("tozihat"))).Append("</td>")
+			
+		
+		
+		If(dbCode.res.GetInt("state")=1)Then
+			
+			majmoe_mablagh_dariaft=majmoe_mablagh_dariaft+dbCode.res.GetString("mablagh")
+		Else
+			majmoe_mablagh_pardakht=majmoe_mablagh_pardakht+dbCode.res.GetString("mablagh")
+		End If
+		str_file_matn.Append("</tr>")
+	Loop
+		
+		
+	str_file_matn.Append("</table>")
+	str_file_matn.Append(" مجموع مبلغ دریافتی  :<span style='color:green;'> "& majmoe_mablagh_dariaft &" </span><br> ")
+	str_file_matn.Append(" مجموع مبلغ پرداختی  :<span style='color:red;'> "& majmoe_mablagh_pardakht &" </span><br></div><br> ")
+		
+		
+	
+	
+	
+	str_file_matn.Append("<br></details></div>")
+		
+	str_file_matn.Append("<footer style=' text-align: center; '><h6> اپلیکیشن اضافه کاری من </h6></footer>")
+		
+	str_file_matn.Append("</body></html>")
+
+	
+		
+	
+	dbCode.res.Close
+	dbCode.sql.Close
+	
+	
+	
+	
+	
+	go_printer(str_file_matn.ToString)
+End Sub
+
+Sub go_printer(strToPrint As String)
+	printer.Initialize("")
+
+	printer.PrintHtml("job", strToPrint)
+	'printer.PrintWebView("job",WebView_gozaresh)
 End Sub

@@ -40,13 +40,15 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
+public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
+public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
+public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
 public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
-public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.food_activity _food_activity = null;
 public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
@@ -62,12 +64,10 @@ public ir.taravatgroup.ezafekari2.savabeg_activity _savabeg_activity = null;
 public ir.taravatgroup.ezafekari2.sayer_activity _sayer_activity = null;
 public ir.taravatgroup.ezafekari2.setting_activity _setting_activity = null;
 public ir.taravatgroup.ezafekari2.setting_hogog_activity _setting_hogog_activity = null;
-public ir.taravatgroup.ezafekari2.shift_activity _shift_activity = null;
 public ir.taravatgroup.ezafekari2.show_gozaresh_activity _show_gozaresh_activity = null;
 public ir.taravatgroup.ezafekari2.starter _starter = null;
 public ir.taravatgroup.ezafekari2.step0_activity _step0_activity = null;
 public ir.taravatgroup.ezafekari2.step1_activity _step1_activity = null;
-public ir.taravatgroup.ezafekari2.step2_activity _step2_activity = null;
 public ir.taravatgroup.ezafekari2.vam_activity _vam_activity = null;
 public ir.taravatgroup.ezafekari2.httputils2service _httputils2service = null;
 public static class _multipartfiledata{
@@ -146,7 +146,7 @@ _req.InitializeDelete(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 266;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("919267589",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("911927557",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 267;BA.debugLine="req.InitializeDelete(InvalidURL)";
 _req.InitializeDelete(_invalidurl);
  };
@@ -165,7 +165,7 @@ _req.InitializeDelete(_escapelink(_link,_parameters));
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 277;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("919333125",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("911993093",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 278;BA.debugLine="req.InitializeDelete(escapeLink(InvalidURL, Para";
 _req.InitializeDelete(_escapelink(_invalidurl,_parameters));
  };
@@ -184,7 +184,7 @@ _req.InitializeGet(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 224;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("919070981",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("911730949",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 225;BA.debugLine="req.InitializeGet(InvalidURL)";
 _req.InitializeGet(_invalidurl);
  };
@@ -203,7 +203,7 @@ _req.InitializeGet(_escapelink(_link,_parameters));
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 240;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("919136517",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("911796485",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 241;BA.debugLine="req.InitializeGet(escapeLink(InvalidURL, Paramet";
 _req.InitializeGet(_escapelink(_invalidurl,_parameters));
  };
@@ -327,7 +327,7 @@ _req.InitializeHead(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 124;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("918808837",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("911468805",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 125;BA.debugLine="req.InitializeHead(InvalidURL)";
 _req.InitializeHead(_invalidurl);
  };
@@ -381,7 +381,7 @@ _req.InitializePatch2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 109;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("918743308",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("911403276",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 110;BA.debugLine="req.InitializePatch2(InvalidURL, Data)";
 _req.InitializePatch2(_invalidurl,_data);
  };
@@ -407,7 +407,7 @@ _req.InitializePost2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 68;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("918481157",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("911141125",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 69;BA.debugLine="req.InitializePost2(InvalidURL, Data)";
 _req.InitializePost2(_invalidurl,_data);
  };
@@ -428,7 +428,7 @@ _length = 0;
  //BA.debugLineNum = 197;BA.debugLine="If Dir = File.DirAssets Then";
 if ((_dir).equals(__c.File.getDirAssets())) { 
  //BA.debugLineNum = 198;BA.debugLine="Log(\"Cannot send files from the assets folder.\")";
-__c.LogImpl("919005448","Cannot send files from the assets folder.",0);
+__c.LogImpl("911665416","Cannot send files from the assets folder.",0);
  //BA.debugLineNum = 199;BA.debugLine="Return";
 if (true) return "";
  };
@@ -565,7 +565,7 @@ _req.InitializePut2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 85;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("918612229",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("911272197",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 86;BA.debugLine="req.InitializePut2(InvalidURL, Data)";
 _req.InitializePut2(_invalidurl,_data);
  };

@@ -391,7 +391,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	
 	sp_noe_shift.AddAll(Array As String("روزکار(ر)","عصرکار(ع)","شبکار(ش)","استراحت(ا)","صبح-عصر(ص/ع)","عصر-شب(ع/ش)","صبح-شب(ص/ش)"))
-	
+	''sp_noe_shift.Add("افزودن مورد جدید")
 	
 	''---- today--- constant-------
 	this_year=date.PersianYear
@@ -1613,5 +1613,12 @@ Private Sub CheckBox_tatil_rasmi_CheckedChange(Checked As Boolean)
 	
 	
 	
+	
+End Sub
+
+Private Sub sp_noe_shift_ItemClick (Position As Int, Value As Object)
+	If(Value="افزودن مورد جدید")Then
+		ToastMessageShow("hhhhhhh",False)
+	End If
 	
 End Sub

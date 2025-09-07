@@ -373,6 +373,11 @@ Sub Process_Globals
 	Dim timer1 As Timer
 	Dim tim_msg As Timer
 	
+	
+	
+	
+	
+	
 	Dim tim_lock_lbl As Timer
 	Dim tim_msg_newYear As Timer
 	Dim tim_check_update As Timer
@@ -698,6 +703,8 @@ Sub Globals
 	
 	Dim notif_code As String
 	Dim notif_matn As String
+	
+	Private printer As Printer
 	
 End Sub
 
@@ -5448,6 +5455,126 @@ str_file_matn.Append("</body></html>")
 	
 End Sub
 
+
+Private Sub lbl_print_Click
+	
+	Dim str_file_matn As StringBuilder
+	str_file_matn.Initialize
+	Dim name_gozaresh As String=""
+	Dim name_gozaresh_en As String=""
+	
+	dbCode.connect_db
+	
+	Select TabHost1.CurrentTab
+		Case 0
+			'ezafekari
+			name_gozaresh="اضافه کاری ها-"
+			name_gozaresh_en="ezafekari"
+			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&myfunc.fa2en(sp_year.SelectedItem)&"/"&myfunc.convert_adad(sp_moon.SelectedIndex+1)&"%' ORDER BY  date_from DESC;")
+		Case 1
+			'morakhasi
+			name_gozaresh="مرخصی ها-"
+			name_gozaresh_en="morakhasi"
+			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_morakhasi WHERE date_from LIKE '%"&myfunc.fa2en(sp_year.SelectedItem)&"/"&myfunc.convert_adad(sp_moon.SelectedIndex+1)&"%' ORDER BY  date_from DESC;")
+		Case 2
+			'taradod
+			name_gozaresh="ترددها-"
+			name_gozaresh_en="taradod"
+			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_taradod WHERE date_from LIKE '%"&myfunc.fa2en(sp_year.SelectedItem)&"/"&myfunc.convert_adad(sp_moon.SelectedIndex+1)&"%' ORDER BY  date_from DESC;")
+		Case 3
+			'mamoriat
+			name_gozaresh="مأموریت ها-"
+			name_gozaresh_en="mamoriat"
+			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_mamoriat WHERE date_from LIKE '%"&myfunc.fa2en(sp_year.SelectedItem)&"/"&myfunc.convert_adad(sp_moon.SelectedIndex+1)&"%' ORDER BY  date_from DESC;")
+	End Select
+	
+	
+
+	
+	
+	
+	str_file_matn.Append("<!DOCTYPE html><html dir='rtl' lang='fa'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /> <body style='font-family:tahoma,Arial,sans-serif;'>")
+	str_file_matn.Append("<style>table , td {border: 1px solid #707070;border-collapse: collapse; font-size:11pt;} tr:nth-child(even) { background-color: #9fd6e0; } tr:nth-child(odd) { background-color: #e8fbff; }	details {	border: 1px solid #aaa;	border-radius: 4px;	padding: .5em .5em 0;}	</style>")
+	
+	str_file_matn.Append("<h3>").Append(" گزارش "&name_gozaresh& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
+	
+	
+	
+	
+		
+	str_file_matn.Append("نام کاربر :").Append("<span> "&user_nameFamili&"</span>").Append("<br>")
+		
+	str_file_matn.Append("<div style=' background-color: #f5f5f5;'>")
+		
+	
+	str_file_matn.Append("<table style='width:100%;'><tr style='text-align: center;'>")
+	str_file_matn.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b> زمان</b></td><br></tr>")
+		
+	Do While dbCode.res.NextRow
+		str_file_matn.Append("<tr style='text-align: center;'>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("date_to"))).Append("</td>")
+		str_file_matn.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
+			
+		str_file_matn.Append("<td>")
+		
+		
+		Dim ls_ezafe As List
+		ls_ezafe.Initialize
+
+		If( TabHost1.CurrentTab=0 Or  TabHost1.CurrentTab=2)Then
+			ls_ezafe=myfunc.Min_to_saatMinRoz2_dontDay(dbCode.res.GetString("end_tim_m"))
+		Else
+			ls_ezafe=myfunc.Min_to_saatMinRoz(dbCode.res.GetString("end_tim_m"))
+			str_file_matn.Append(ls_ezafe.Get(2))
+			str_file_matn.Append(":")
+			
+		End If
+		
+		
+		
+		
+	
+		str_file_matn.Append(ls_ezafe.Get(0))
+		str_file_matn.Append(":")
+		str_file_matn.Append(ls_ezafe.Get(1)).Append("</td>")
+			
+		str_file_matn.Append("</tr>")
+	Loop
+		
+		
+	str_file_matn.Append("</table>")
+	str_file_matn.Append("مجموع ساعت  :<span style='color:#5E35B1;'> "&lbl_majmoe_saat.Text&" </span><br></div><br> ")
+		
+		
+	
+	
+	
+	str_file_matn.Append("<br></details></div>")
+		
+	str_file_matn.Append("<footer style=' text-align: center; '><h6> اپلیکیشن اضافه کاری من </h6></footer>")
+		
+	str_file_matn.Append("</body></html>")
+
+	
+		
+	
+	dbCode.res.Close
+	dbCode.sql.Close
+	
+	
+	
+	
+	go_printer(str_file_matn.ToString)
+End Sub
+
+Sub go_printer(strToPrint As String)
+	printer.Initialize("")
+
+	printer.PrintHtml("job", strToPrint)
+	'printer.PrintWebView("job",WebView_gozaresh)
+End Sub
+
 Private Sub lbl_setting_date_Click
 	
 	Try
@@ -5734,3 +5861,4 @@ End Sub
 Private Sub lbl_help_saatKari_inWeek_Click
 	myfunc.help_man("راهنما","اگر در روزهای هفته ساعت کاری مختلف دارید آنها را تنظیم کنید تا در موقع ثبت تردد با آن حساب شود. ")
 End Sub
+
