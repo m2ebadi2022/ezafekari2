@@ -51,7 +51,6 @@ views.get("pik_pan_hour1").vw.setLeft((int)((65d / 100 * width)));
 views.get("pik_pan_hour1").vw.setWidth((int)((80d / 100 * width) - ((65d / 100 * width))));
 views.get("pik_hour_bala1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_hour_bala1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
-//BA.debugLineNum = 44;BA.debugLine="pik_hour1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]
 views.get("pik_hour1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pik_hour1").vw.setWidth((int)((15d / 100 * width) - ((0d / 100 * width))));
 //BA.debugLineNum = 45;BA.debugLine="pik_hour_paeen1.SetLeftAndRight(0%x,15%x)"[main_layout/General script]

@@ -7,49 +7,51 @@ File102=padash.png
 File103=padash_layout.bal
 File104=payankar_layout.bal
 File105=percentage.png
-File106=sabt2_layout.bal
-File107=savabeg_layout.bal
-File108=sayer_layout.bal
-File109=set_hogog.png
+File106=saati.png
+File107=saati_layout.bal
+File108=sabt2_layout.bal
+File109=savabeg_layout.bal
 File11=add_morakhasi.png
-File110=set_moh.png
-File111=sett_hogog_item.bal
-File112=setting.png
-File113=setting_hogog_layout.bal
-File114=setting_layout.bal
-File115=setting_layout_items.bal
-File116=shift_layout.bal
-File117=shift_page_items.bal
-File118=shift_work.png
-File119=show_gozaresh_layout.bal
+File110=sayer_layout.bal
+File111=set_hogog.png
+File112=set_moh.png
+File113=sett_hogog_item.bal
+File114=setting.png
+File115=setting_hogog_layout.bal
+File116=setting_layout.bal
+File117=setting_layout_items.bal
+File118=shift_layout.bal
+File119=shift_page_items.bal
 File12=add_other.png
-File120=speed_run.png
-File121=splash_layout.bal
-File122=step0.bal
-File123=step1.bal
-File124=step2.bal
-File125=sudan bd_mrt.ttf
-File126=SYEKAN.TTF
-File127=tab_layout_ezafekari.bal
-File128=tab_layout_food.bal
-File129=tab_layout_mamoriat.bal
+File120=shift_work.png
+File121=show_gozaresh_layout.bal
+File122=speed_run.png
+File123=splash_layout.bal
+File124=step0.bal
+File125=step1.bal
+File126=step2.bal
+File127=sudan bd_mrt.ttf
+File128=SYEKAN.TTF
+File129=tab_layout_ezafekari.bal
 File13=add_other2.png
-File130=tab_layout_morakhasi.bal
-File131=tab_layout_mosaedeh.bal
-File132=tab_layout_padash.bal
-File133=tab_layout_sayer.bal
-File134=tab_layout_taradod.bal
-File135=tab_layout_vam.bal
-File136=telegram_icon.png
-File137=textBox.png
-File138=textbox2.png
-File139=transfer_time.png
+File130=tab_layout_food.bal
+File131=tab_layout_mamoriat.bal
+File132=tab_layout_morakhasi.bal
+File133=tab_layout_mosaedeh.bal
+File134=tab_layout_padash.bal
+File135=tab_layout_sayer.bal
+File136=tab_layout_taradod.bal
+File137=tab_layout_vam.bal
+File138=telegram_icon.png
+File139=textBox.png
 File14=attention.png
-File140=user.png
-File141=vam.png
-File142=vam_layout.bal
-File143=Vazir.ttf
-File144=whatsapp_icon.png
+File140=textbox2.png
+File141=transfer_time.png
+File142=user.png
+File143=vam.png
+File144=vam_layout.bal
+File145=Vazir.ttf
+File146=whatsapp_icon.png
 File15=ayabzahab_layout.bal
 File16=bg.jpg
 File17=bg1.jpg
@@ -194,6 +196,8 @@ FileGroup141=Default Group
 FileGroup142=Default Group
 FileGroup143=Default Group
 FileGroup144=Default Group
+FileGroup145=Default Group
+FileGroup146=Default Group
 FileGroup15=Default Group
 FileGroup16=Default Group
 FileGroup17=Default Group
@@ -325,34 +329,35 @@ Module19=myfunc
 Module2=B4XLoadingIndicator
 Module20=padash_activity
 Module21=payankar_activity
-Module22=sabt2_activity
-Module23=savabeg_activity
-Module24=sayer_activity
-Module25=setting_activity
-Module26=setting_hogog_activity
-Module27=shift_activity
-Module28=show_gozaresh_activity
-Module29=Starter
+Module22=saati_activity
+Module23=sabt2_activity
+Module24=savabeg_activity
+Module25=sayer_activity
+Module26=setting_activity
+Module27=setting_hogog_activity
+Module28=shift_activity
+Module29=show_gozaresh_activity
 Module3=bime_activity
-Module30=step0_activity
-Module31=step1_activity
-Module32=step2_activity
-Module33=vam_activity
+Module30=Starter
+Module31=step0_activity
+Module32=step1_activity
+Module33=step2_activity
+Module34=vam_activity
 Module4=calc_activity
 Module5=comment_activity
 Module6=darsad_activity
 Module7=dbCode
 Module8=eidi_activity
 Module9=fast_run_activity
-NumberOfFiles=144
+NumberOfFiles=146
 NumberOfLibraries=22
-NumberOfModules=33
+NumberOfModules=34
 Version=13.4
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 37
-	#VersionName: 6.5
+	#VersionCode: 38
+	#VersionName: 6.6
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true
@@ -5862,3 +5867,8 @@ Private Sub lbl_help_saatKari_inWeek_Click
 	myfunc.help_man("راهنما","اگر در روزهای هفته ساعت کاری مختلف دارید آنها را تنظیم کنید تا در موقع ثبت تردد با آن حساب شود. ")
 End Sub
 
+
+
+Private Sub pan_run_saati_Click
+	StartActivity(saati_activity)  
+End Sub

@@ -304,6 +304,7 @@ Sub calc_vahed_ezafekari
 
 '' ezafekari ady
 	vahed_ezafekari=((paye+sanavat)/220)*1.4
+	
 	'vahed_ezafekari=((paye+sanavat)/192)*1.4
 	'vahed_ezafekari=((paye+sanavat+maskan+bon)/220)*1.4
 	
@@ -552,13 +553,7 @@ Private Sub lbl_run_mohasebe_Click
 		
 		''--------------  table ezafkari --------------
 		dbCode.connect_db
-		If(type_mohasebe=1)Then
-			dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
-			str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
-		Else
-				dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&date2_fixed&"' ;")
-				str1.Append("<h3>").Append("گزارش از تاریخ ").Append(lbl_date_from.Text).Append(" تا ").Append(date2_fixed).Append("</h3>")
-		End If
+		
 		
 		
 		
@@ -568,6 +563,71 @@ Private Sub lbl_run_mohasebe_Click
 		
 		str1.Append("نام کاربر :").Append("<span> "&Main.user_nameFamili&"</span>").Append("<br>")
 		
+		
+		
+			'----------------taradodha -------------
+			If(type_mohasebe=1)Then
+				dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_taradod WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
+				str1.Append("<h3>").Append("گزارش "& sp_moon.SelectedItem&" "&myfunc.en2fa(sp_year.SelectedItem)).Append("</h3>")
+			Else
+				dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_taradod WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&lbl_date_to.Text&"' ;")
+				str1.Append("<h3>").Append("گزارش از تاریخ ").Append(lbl_date_from.Text).Append(" تا ").Append(date2_fixed).Append("</h3>")
+			End If
+			
+			
+			str1.Append("<div style=' background-color: #f5f5f5;'><details>")
+		
+			str1.Append("<summary><b>  تردد های این ماه</b></summary>")
+			str1.Append("<table style='width:100%;'><tr style='text-align: center;'>")
+			str1.Append("<td><b> ردیف</b></td><td><b> تاریخ</b></td><td><b> ساعت</b></td><td><b> زمان</b></td> <td>توضیحات</td> <br></tr>")
+		Dim majmoe_min As Int =0
+			Do While dbCode.res.NextRow
+				str1.Append("<tr style='text-align: center;'>")
+				str1.Append("<td>").Append(myfunc.en2fa((dbCode.res.Position)+1)).Append("</td>")
+				str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("date_from"))).Append("</td>")
+				str1.Append("<td>").Append(myfunc.en2fa(dbCode.res.GetString("time_from"))&" - "&myfunc.en2fa(dbCode.res.GetString("time_to"))).Append("</td>")
+			
+				str1.Append("<td>")
+				
+				Dim ls_ezafe As List
+				ls_ezafe.Initialize
+
+				ls_ezafe=myfunc.Min_to_saatMinRoz2_dontDay(dbCode.res.GetString("end_tim_m"))
+				majmoe_min=majmoe_min+dbCode.res.GetString("end_tim_m")
+	
+				str1.Append(myfunc.en2fa(ls_ezafe.Get(0)))
+				str1.Append(":")
+				str1.Append(myfunc.en2fa(ls_ezafe.Get(1)))
+			
+				str1.Append("</td>")
+			
+				str1.Append("<td>")
+				str1.Append(dbCode.res.GetString("tozihat"))
+				str1.Append("</td>")
+			
+				str1.Append("</tr>")
+			Loop
+		
+			str1.Append("</table>")
+			Dim ls_taradod_show As List
+			ls_taradod_show.Initialize
+			ls_taradod_show=myfunc.Min_to_saatMinRoz2_dontDay(majmoe_min)
+			str1.Append("مجموع ساعت تردد :<span style='color:#5E35B1;'> "&myfunc.en2fa(ls_taradod_show.Get(0))&" ساعت و"&myfunc.en2fa(ls_taradod_show.Get(1))&"دقیقه </span><br></details></div><br> ")
+		
+		
+		
+		
+		
+			''------------ezafekari --------------
+		
+			If(type_mohasebe=1)Then
+				dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from LIKE '%"&sp_year.SelectedItem&"/"&moon_num&"%';")
+				
+			Else
+				dbCode.res= dbCode.sql.ExecQuery("SELECT * FROM tb_ezafekari WHERE date_from BETWEEN '"&lbl_date_from.Text&"' AND '"&date2_fixed&"' ;")
+				
+			End If
+			
 		str1.Append("<div style=' background-color: #f5f5f5;'><details>")
 		
 		str1.Append("<summary><b> اضافه کاری های این ماه</b></summary>")

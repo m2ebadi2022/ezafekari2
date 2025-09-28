@@ -38,6 +38,8 @@ views.get("pan_fast_run").vw.setLeft((int)((views.get("pan_run_morakhasi").vw.ge
 views.get("pan_payankar").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_payankar").vw.getWidth() / 2)));
 //BA.debugLineNum = 26;BA.debugLine="pan_eidi.Left=pan_payankar.Right"[home_item/General script]
 views.get("pan_eidi").vw.setLeft((int)((views.get("pan_payankar").vw.getLeft() + views.get("pan_payankar").vw.getWidth())));
+//BA.debugLineNum = 27;BA.debugLine="pan_run_saati.Right=pan_payankar.Left"[home_item/General script]
+views.get("pan_run_saati").vw.setLeft((int)((views.get("pan_payankar").vw.getLeft()) - (views.get("pan_run_saati").vw.getWidth())));
 //BA.debugLineNum = 29;BA.debugLine="pan_darsad.HorizontalCenter=50%x"[home_item/General script]
 views.get("pan_darsad").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_darsad").vw.getWidth() / 2)));
 //BA.debugLineNum = 30;BA.debugLine="pan_calc.Left=pan_darsad.Right"[home_item/General script]
