@@ -11,6 +11,11 @@ java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAnd
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 views.get("pan_picker").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_picker").vw.getWidth() / 2)));
 views.get("pan_picker").vw.setTop((int)((30d / 100 * height) - (views.get("pan_picker").vw.getHeight() / 2)));
+views.get("pan_btn").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_btn").vw.getWidth() / 2)));
+views.get("wb_end_mohasebe").vw.setLeft((int)((50d / 100 * width) - (views.get("wb_end_mohasebe").vw.getWidth() / 2)));
+views.get("pan_date").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_date").vw.getWidth() / 2)));
+views.get("pan_saat").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_saat").vw.getWidth() / 2)));
+views.get("pan_mablag").vw.setLeft((int)((50d / 100 * width) - (views.get("pan_mablag").vw.getWidth() / 2)));
 
 }
 }

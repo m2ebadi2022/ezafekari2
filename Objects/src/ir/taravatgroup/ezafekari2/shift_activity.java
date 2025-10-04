@@ -1110,7 +1110,7 @@ mostCurrent._ls_note_moon.Add((Object)(anywheresoftware.b4a.keywords.Common.True
 };
  }else {
  //BA.debugLineNum = 1047;BA.debugLine="Log(\"nooop data\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("362259306","nooop data",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("762455914","nooop data",0);
  };
  //BA.debugLineNum = 1052;BA.debugLine="For  j=start_day-1 To 0 Step -1";
 {
@@ -1226,7 +1226,7 @@ _counter = (int) (_counter+1);
  } 
        catch (Exception e133) {
 			processBA.setLastException(e133); //BA.debugLineNum = 1149;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("362259408",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("762456016",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 1153;BA.debugLine="End Sub";
 return "";
@@ -2867,7 +2867,7 @@ anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  } 
        catch (Exception e21) {
 			processBA.setLastException(e21); //BA.debugLineNum = 1391;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("362783523",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("762980131",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 1392;BA.debugLine="ToastMessageShow(\"خطا در تاریخ\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در تاریخ"),anywheresoftware.b4a.keywords.Common.False);
  };

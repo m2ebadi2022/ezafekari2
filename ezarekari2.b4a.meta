@@ -103,6 +103,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=18,20,21,22,23
 ModuleClosedNodes9=
-NavigationStack=saati_activity,pan_all_set_date_Click,449,0,saati_activity,lbl_back_Click,157,0,saati_activity,Activity_KeyPress,165,5,saati_activity,Activity_Pause,150,0,saati_activity,Activity_Create,46,6,saati_activity,Globals,42,0,hogog_activity,lbl_run_mohasebe_Click,903,0,saati_activity,get_karkard,121,6,Visual Designer,saati_layout.bal,-100,6,saati_activity,btn_mohasebe_Click,232,6
+NavigationStack=saati_activity,pan_all_set_date_Click,449,0,saati_activity,lbl_back_Click,157,0,saati_activity,Activity_KeyPress,165,5,saati_activity,Activity_Pause,150,0,saati_activity,Globals,43,0,hogog_activity,lbl_run_mohasebe_Click,754,0,Visual Designer,saati_layout.bal,-100,6,saati_activity,btn_mohasebe_Click,240,6,saati_activity,Activity_Create,98,6,saati_activity,get_karkard,131,6
 SelectedBuild=0
 VisibleModules=19,7,33,25,22,15

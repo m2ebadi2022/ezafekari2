@@ -41,12 +41,13 @@ Sub Globals
 	Dim paye As Int=0
 	Dim sanavat As Int=0
 	Dim majmoe_min As Int =0
-	Private lbl_end_mohasebe As Label
+
 	Private pan_show_list As Panel
 	Private et_majmoe_hour As EditText
 	Private et_majmoe_min As EditText
 	
 	Private wb_show_taradod As WebView
+	Private wb_end_mohasebe As WebView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -101,7 +102,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	''-----------------
 	
 	
-	et_mablagh.Color=Colors.White
+	'et_mablagh.Color=Colors.White
 	lbl_date1.Color=Colors.White
 	lbl_date2.Color=Colors.White
 	
@@ -236,8 +237,23 @@ Private Sub btn_mohasebe_Click
 	Dim sum_min As Int
 	sum_min=(et_majmoe_hour.Text * 60)+(et_majmoe_min.Text)
 	
-	lbl_end_mohasebe.Text=show_num_pool((et_mablagh.Tag / 60)*sum_min)
+	 
 	
+	Dim str1 As StringBuilder
+	str1.Initialize
+	str1.Append("<!DOCTYPE html><html dir='rtl' lang='fa'><meta charset='UTF-8' />  <meta name='viewport' content='width=device-width, initial-scale=1.0' /> <body style='font-family:tahoma,Arial,sans-serif;'><br><hr>")
+	'str1.Append("<style></style>")
+	
+	str1.Append("<span style='font-size:16px; color:black;' >مبلغ کل دریافتی : <span style='font-size:18px; color:green;'>"&myfunc.en2fa(show_num_pool((et_mablagh.Tag / 60)*sum_min))&"  </span>تومان</span>")
+	
+	
+	
+	
+	str1.Append("</body></html>")
+	
+	
+	
+	wb_end_mohasebe.LoadHtml(str1.ToString)
 	File.WriteString(File.DirInternal,"temp_mablagh_saati.txt",et_mablagh.Tag)
 	
 End Sub

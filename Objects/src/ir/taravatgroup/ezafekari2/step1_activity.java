@@ -498,7 +498,7 @@ _job._release /*String*/ ();
  } 
        catch (Exception e18) {
 			processBA.setLastException(e18); //BA.debugLineNum = 108;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("366846744",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("767043352",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 109;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
