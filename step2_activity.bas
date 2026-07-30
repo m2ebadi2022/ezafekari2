@@ -15,6 +15,7 @@ Sub Process_Globals
 	Dim comp As Compressor
 	Dim CC As ContentChooser 'Phone Library
 	Dim tim_send_backup As Timer
+	dim time_pass as Timer
 End Sub
 
 Sub Globals
@@ -27,6 +28,7 @@ Sub Globals
 	Private lbl_noske As Label
 	Private lbl_nameFamili As Label
 	Private lbl_email As Label
+	Dim my_ramz As String=""
 	
 	Dim http3 As HttpJob
 	Private lbl_phoneNum As Label
@@ -65,6 +67,7 @@ Sub Globals
 	Private ProgressBar1 As ProgressBar
 	Private pan_progressBar As Panel
 	Private lbl_progressBar1 As Label
+	Private et_pass As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -111,6 +114,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 		
 		http_initial_1(1)
+		time_pass.Initialize("time_pass1", 1000)
 		
 '		If(File.Exists(File.DirInternal,picName))Then
 '			img_pofil.Bitmap=myfunc.CircleImage( LoadBitmap(File.DirInternal,picName))
@@ -139,6 +143,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	
 End Sub
+Private Sub time_pass1_Tick
+	lbl_edit_Click
+	time_pass.Enabled=False
+End Sub
 
 Sub Activity_Resume
 
@@ -163,6 +171,9 @@ Private Sub lbl_save_edit_Click
 	Else If(myfunc.Validate_Email(et_email.Text)=False)Then
 		
 		ToastMessageShow(" ایمیل نامعتبر است ",False)
+	Else If(et_pass.Text="")Then
+		
+		ToastMessageShow(" رمز عبور خالی است ",False)
 	Else
 		http_initial_1(2)
 	End If
@@ -217,7 +228,7 @@ Sub http_initial_1(type1 As Int)
 				End If
 			
 				http3.Initialize("ht2",Me)
-				Dim send As String="var=2&name="&et_nameFamili.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic&"&pic_name="&picName
+				Dim send As String="var=2&name="&et_nameFamili.Text&"&code="&et_pass.Text&"&email="&et_email.Text&"&phone="&Main.phon_num&"&exist_pic="&exist_pic&"&pic_name="&picName
 				http3.PostString("https://taravatgroup.ir/save_acc.php",send)
 			
 			
@@ -309,6 +320,7 @@ Sub Jobdone (job As HttpJob)
 			
 					lbl_nameFamili.Text=a(0)
 					lbl_email.Text=a(1)
+					
 '				
 '				If(a(2)=1)Then
 '					lbl_noske.Text="نسخه هدیه"
@@ -319,8 +331,16 @@ Sub Jobdone (job As HttpJob)
 					lbl_phoneNum.Text=a(2)
 					
 					user_key=a(4)
+					my_ramz=a(5)
 					
 					
+					If(my_ramz="none2026none")Then
+					 
+						
+						time_pass.Enabled = True
+
+
+					End If
 					
 					If(Main.msg_page_show=1)Then
 						lbl_all_msg_Click
@@ -493,6 +513,13 @@ Private Sub lbl_edit_Click
 	
 		et_nameFamili.Text=	lbl_nameFamili.Text
 		et_email.Text=lbl_email.Text
+		If(my_ramz="none2026none")Then
+			et_pass.Text=""
+		Else
+				
+		et_pass.Text=my_ramz
+		End If
+		
 		comp.Initialize("Compressor")
 		comp.Quality=30
 		lbl_image_up.Text=Chr(0xF0EE)

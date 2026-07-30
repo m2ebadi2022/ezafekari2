@@ -150,7 +150,7 @@ End Sub
 Sub install_db_tbl_myCalander
 	connect_db
 	Try
-		res = sql.ExecQuery("SELECT * FROM 'my_calander' WHERE year=1404 And moon=12 " )
+		res = sql.ExecQuery("SELECT * FROM 'my_calander' WHERE year=1405 And moon=12 " )
 		 
 		res.Position=0
 		aaa=res.GetString("key")

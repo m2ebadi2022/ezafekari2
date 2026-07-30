@@ -590,6 +590,36 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 	End If
 	
 	
+	'' sal 1405  eslah
+	
+	If (year=1405)Then
+		If(hogog>40000001 And hogog<80000001)Then	  ''-----stat1
+			state1=(hogog-40000000)*0.1
+		End If
+		If(hogog>80000001 And hogog<100000001)Then	  ''-----stat2
+			state1=(40000000)*0.1
+			state2=(hogog-80000000)*0.15
+		End If
+		If(hogog>100000001 And hogog<120000001)Then	  ''-----stat3
+			state1=(40000000)*0.1
+			state2=(20000000)*0.15
+			state3=(hogog-100000000)*0.2
+		End If
+	
+		If(hogog>120000001 And hogog<140000001)Then	  ''-----stat4
+			state1=(40000000)*0.1
+			state2=(20000000)*0.15
+			state3=(20000000)*0.2
+			state4=(hogog-120000000)*0.25
+		End If
+		If(hogog>140000001)Then	  ''-----stat5
+			state1=(40000000)*0.1
+			state2=(20000000)*0.15
+			state3=(20000000)*0.2
+			state4=(20000000)*0.25
+			state5=(hogog-140000000)*0.3
+		End If
+	End If
 	
 	
 	
@@ -750,7 +780,7 @@ Private Sub lbl_help_2_Click
 End Sub
 
 Private Sub lbl_help_1_Click
-	myfunc.help_man("راهنما","اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1403 می باشد. ")
+	myfunc.help_man("راهنما","اطلاعات حقوق خود را برای 30 روز وارد کنید. توجه داشته باشید محاسبات بر اساس قانون کار سال 1405 می باشد. ")
 End Sub
 
 Private Sub lbl_save_result_Click

@@ -421,6 +421,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	rsPOP_year_tagvim.AddMenuItem(1402,1402,myfunc.en2fa("1402"))
 	rsPOP_year_tagvim.AddMenuItem(1403,1403,myfunc.en2fa("1403"))
 	rsPOP_year_tagvim.AddMenuItem(1404,1404,myfunc.en2fa("1404"))
+	rsPOP_year_tagvim.AddMenuItem(1405,1405,myfunc.en2fa("1405"))
 	'-------------moon-------------
 	rsPOP_moon_tagvim.Initialize("rsPOP_moon_tagvim",lbl_moon_name)
 	
@@ -453,6 +454,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	rsPOP_year.AddMenuItem(1402,1402,myfunc.en2fa("1402"))
 	rsPOP_year.AddMenuItem(1403,1403,myfunc.en2fa("1403"))
 	rsPOP_year.AddMenuItem(1404,1404,myfunc.en2fa("1404"))
+	rsPOP_year.AddMenuItem(1405,1405,myfunc.en2fa("1405"))
 
 	rsPOP_mah.Initialize("rsPOP_mah",lbl_mah)
 	
@@ -490,6 +492,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	rsPOP_year_end.AddMenuItem(1402,1402,myfunc.en2fa("1402"))
 	rsPOP_year_end.AddMenuItem(1403,1403,myfunc.en2fa("1403"))
 	rsPOP_year_end.AddMenuItem(1404,1404,myfunc.en2fa("1404"))
+	rsPOP_year_end.AddMenuItem(1405,1405,myfunc.en2fa("1405"))
 
 
 	rsPOP_mah_end.Initialize("rsPOP_mah_end",lbl_mah_end)
@@ -1222,7 +1225,7 @@ Private Sub lbl_next_Click
 	
 	If (current_moon>=12)Then
 		
-		If(lbl_year_tagvim.Text<1404)Then
+		If(lbl_year_tagvim.Text<1405)Then
 			Dim adad As Int=lbl_year_tagvim.Text
 			lbl_year_tagvim.Text=adad+1
 			current_moon=1

@@ -32,6 +32,9 @@ Sub Globals
 	
 	Dim pp1 As Phone
 	Private lbl_run1_step0 As Label
+	Private et_mobil_vorod As EditText
+	Private et_ramz_vorod As EditText
+	Private pan_all_ramz As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -41,6 +44,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	et_phonNum.Color=Colors.ARGB(0,0,0,0)
 	et_code_num.Color=Colors.ARGB(0,0,0,0)
+	
+	et_mobil_vorod.Color=Colors.ARGB(0,0,0,0)
+	et_ramz_vorod.Color=Colors.ARGB(0,0,0,0)
+	
 	
 	If (File.Exists(File.DirInternal,"phonNum_step0"))Then
 		Main.phon_num=File.ReadString(File.DirInternal,"phonNum_step0")
@@ -205,6 +212,13 @@ Sub http_initial_1(type1 As Int)
 		Dim send As String
 		send = "id=2&num="&Main.phon_num&"&code="&et_code_num.Text&"&div_id="&pp1.GetSettings("android_id")&"&div_model="&pp1.Model
 		http1.PostString("https://taravatgroup.ir/sms_req.php",send)
+		
+	Else If (type1=3) Then
+		http1.Initialize("ht3",Me)
+		Dim send As String
+		send = "id=3&num="&et_mobil_vorod.Text.Trim&"&code="&et_ramz_vorod.Text&"&div_id="&pp1.GetSettings("android_id")&"&div_model="&pp1.Model
+		http1.PostString("https://taravatgroup.ir/sms_req.php",send)
+			
 	End If
 	
 	
@@ -241,8 +255,31 @@ Sub Jobdone (job As HttpJob)
 					ToastMessageShow("کد تائید اشتباه است",False)
 				End If
 			
-			End If
+		 
+	else if job.JobName="ht3" Then
+		If(job.GetString.Contains("okuser")=True) Then
+			File.WriteString(File.DirInternal,"phonNum",et_mobil_vorod.Text.Trim)
+			job.Release
+					
+			Activity.Finish
+			StartActivity(step2_activity)
+					
+				
+				
+		Else if (job.GetString.Contains("noramz")=True)Then
+				
+			'File.WriteString(File.DirInternal,"phonNum_step1",et_mobil_vorod.Text.Trim)
+			'job.Release
+			''Activity.Finish
+			''StartActivity(step1_activity)
+			ToastMessageShow("رمز نادرست!",False)
+					
+		Else
+			ToastMessageShow("حساب کاربری وجود ندارد. ",False)
+		End If
 			
+	End If
+	
 			job.Release
 		Else
 			'ToastMessageShow("خطا در برقراری اتصال" , False)
@@ -287,4 +324,27 @@ End Sub
 Private Sub lbl_code_recived_Click
 	lbl_time_remind.Text="00:00"
 	pan_all_send.Visible=True
+End Sub
+
+Private Sub lbl_vorod_ramz_Click
+	pan_all_ramz.Visible=True
+End Sub
+
+Private Sub lbl_chek_ramz_Click
+	'' request server 
+	If (et_mobil_vorod.Text.Trim == "" Or et_ramz_vorod.Text=="" ) Then
+		ToastMessageShow("آیتم خالی!",False)
+		
+		Else
+		http_initial_1(3)
+			 
+	End If
+	
+	
+	
+	
+End Sub
+
+Private Sub lbl_back_run2_Click
+	pan_all_ramz.Visible=False
 End Sub

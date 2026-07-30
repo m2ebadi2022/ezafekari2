@@ -153,6 +153,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	Main.time_page_load.Enabled=True
 	B4XLoadingIndicator1.Show
 	
+	sp_year.Add("1405")
 	sp_year.Add("1404")
 	sp_year.Add("1403")
 	sp_year.Add("1402")
@@ -219,8 +220,18 @@ str_web1.Initialize
 	moon_dataPik.AddAll(Array As String("فروردین", "اردیبهشت","خرداد", "تیر","مرداد", "شهریور","مهر", "آبان","آذر", "دی","بهمن", "اسفند"))
 	
 	lbl_date_from.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad( myfunc.fa2en((Main.persianDate.PersianMonth)))&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
-	lbl_date_to.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianMonth)+1)&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
+	If(Main.persianDate.PersianMonth+1 > 12)Then
+		'Log("biger 12")
+		
+		lbl_date_to.Text=myfunc.fa2en(Main.persianDate.PersianYear+1)&"/"&myfunc.convert_adad(myfunc.fa2en(1))&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))
+	Else
+		lbl_date_to.Text=myfunc.fa2en(Main.persianDate.PersianYear)&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianMonth)+1)&"/"&myfunc.convert_adad(myfunc.fa2en(Main.persianDate.PersianDay))	
+	End If
 	
+	'Log(Main.persianDate.PersianYear)
+	'Log(Main.persianDate.PersianMonth)
+	
+
 	''-----------------
 	
 	
@@ -1298,6 +1309,36 @@ Sub mohasebe_maliat (hogog As Int , year As Int) As Int
 	
 	
 	
+	'' sal 1405  
+	
+	If (year=1405)Then
+		If(hogog>40000001 And hogog<80000001)Then	  ''-----stat1
+			state1=(hogog-40000000)*0.1
+		End If
+		If(hogog>80000001 And hogog<100000001)Then	  ''-----stat2
+			state1=(40000000)*0.1
+			state2=(hogog-80000000)*0.15
+		End If
+		If(hogog>100000001 And hogog<120000001)Then	  ''-----stat3
+			state1=(40000000)*0.1
+			state2=(20000000)*0.15
+			state3=(hogog-100000000)*0.2
+		End If
+	
+		If(hogog>120000001 And hogog<140000001)Then	  ''-----stat4
+			state1=(40000000)*0.1
+			state2=(20000000)*0.15
+			state3=(20000000)*0.2
+			state4=(hogog-120000000)*0.25
+		End If
+		If(hogog>140000001)Then	  ''-----stat5
+			state1=(40000000)*0.1
+			state2=(20000000)*0.15
+			state3=(20000000)*0.2
+			state4=(20000000)*0.25
+			state5=(hogog-140000000)*0.3
+		End If
+	End If
 	
 	
 	
@@ -1542,6 +1583,10 @@ Sub check_date_iscorrect As Boolean
 	Else if ((m2_shamsi-m1_shamsi)=-11 ) Then
 		rozzzz=(mah1-d1_shamsi) + (d2_shamsi)
 		If(y2_shamsi-y1_shamsi <> 0) Then
+		Else If (y2_shamsi-y1_shamsi = 1)Then
+			check_date=True
+		Else
+				
 			check_date=False
 		End If
 	Else if ((m2_shamsi-m1_shamsi)>-11  And (m2_shamsi-m1_shamsi)<0) Then
@@ -1555,9 +1600,11 @@ Sub check_date_iscorrect As Boolean
 		If(rozzzz>31)Then
 			ToastMessageShow("تاریخ را اصلاح کنید - حداکثر 31 روز باشد",False)
 			check_date=False
+			
 		End If
 	Else
 		ToastMessageShow("تاریخ را اصلاح کنید - حداکثر 31 روز باشد",False)
+		
 	End If
 	
 	

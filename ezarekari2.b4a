@@ -314,7 +314,7 @@ Library6=fileprovider
 Library7=json
 Library8=manampersiandate
 Library9=nicespinner
-ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="36"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, GooglePlayBilling.GooglePlayBilling)~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~CreateResourceFromFile(Macro, Poolakey.BillingReceiver)~\n~~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
+ManifestCode=AddManifestText(~\n~<uses-sdk android:minSdkVersion="34" android:targetSdkVersion="36"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~	)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~''----------main~\n~AddPermission(android.permission-group.STORAGE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.PERMISSION_READ_EXTERNAL_STORAGE)~\n~AddPermission(android.permission.PERMISSION_WRITE_EXTERNAL_STORAGE)~\n~~\n~AddPermission(com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR)~\n~~\n~~\n~AddApplicationText(~\n~  <provider~\n~  android:name="android.support.v4.content.FileProvider"~\n~  android:authorities="$PACKAGE$.provider"~\n~  android:exported="false"~\n~  android:grantUriPermissions="true">~\n~  <meta-data~\n~  android:name="android.support.FILE_PROVIDER_PATHS"~\n~  android:resource="@xml/provider_paths"/>~\n~  </provider>~\n~)~\n~CreateResource(xml, provider_paths,~\n~   <files-path name="name" path="shared" />~\n~)~\n~~\n~~\n~CreateResourceFromFile(Macro, GooglePlayBilling.GooglePlayBilling)~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~CreateResourceFromFile(Macro, Poolakey.BillingReceiver)~\n~~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddManifestText(~\n~<queries>~\n~    <package android:name="com.farsitel.bazaar" />~\n~ </queries>~\n~  )~\n~~\n~AddPermission(android.permission.USE_FINGERPRINT)
 Module1=ayabzahab_activity
 Module10=FingerprintManager
 Module11=food_activity
@@ -356,8 +356,8 @@ Version=13.4
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: اضافه کاری من
-	#VersionCode: 38
-	#VersionName: 6.6
+	#VersionCode: 40
+	#VersionName: 7.1
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: true
@@ -1920,6 +1920,7 @@ Private Sub btn_menu_list_Click
 	pan_main.RemoveAllViews
 	pan_main.LoadLayout("list_layout")
 	
+	sp_year.Add("1405")
 	sp_year.Add("1404")
 	sp_year.Add("1403")
 	sp_year.Add("1402")
@@ -2350,6 +2351,7 @@ Private Sub btn_menu_gozaresh_Click
 	pan_main.RemoveAllViews
 	pan_main.LoadLayout("gozaresh_layout")
 	
+	sp_year_gozaresh.Add("1405")
 	sp_year_gozaresh.Add("1404")
 	sp_year_gozaresh.Add("1403")
 	sp_year_gozaresh.Add("1402")
