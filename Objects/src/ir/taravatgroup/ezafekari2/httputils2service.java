@@ -52,15 +52,17 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
-public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
+public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
+public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
+public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
+public ir.taravatgroup.ezafekari2.saati_activity _saati_activity = null;
+public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
-public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.food_activity _food_activity = null;
-public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
@@ -68,8 +70,6 @@ public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.padash_activity _padash_activity = null;
-public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
-public ir.taravatgroup.ezafekari2.saati_activity _saati_activity = null;
 public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
 public ir.taravatgroup.ezafekari2.savabeg_activity _savabeg_activity = null;
 public ir.taravatgroup.ezafekari2.sayer_activity _sayer_activity = null;
@@ -90,7 +90,7 @@ _job = (ir.taravatgroup.ezafekari2.httpjob)(_taskidtojob.Get((Object)(_taskid)))
  //BA.debugLineNum = 157;BA.debugLine="If job = Null Then";
 if (_job== null) { 
  //BA.debugLineNum = 158;BA.debugLine="Log(\"HttpUtils2Service: job completed multiple t";
-anywheresoftware.b4a.keywords.Common.LogImpl("350003974","HttpUtils2Service: job completed multiple times - "+BA.NumberToString(_taskid),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("314417926","HttpUtils2Service: job completed multiple times - "+BA.NumberToString(_taskid),0);
  //BA.debugLineNum = 159;BA.debugLine="Return";
 if (true) return "";
  };
@@ -109,7 +109,7 @@ public static String  _hc_responseerror(anywheresoftware.b4h.okhttp.OkHttpClient
 ir.taravatgroup.ezafekari2.httpjob _job = null;
  //BA.debugLineNum = 115;BA.debugLine="Sub hc_ResponseError (Response As OkHttpResponse,";
  //BA.debugLineNum = 117;BA.debugLine="Log($\"ResponseError. Reason: ${Reason}, Response:";
-anywheresoftware.b4a.keywords.Common.LogImpl("349938434",("ResponseError. Reason: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_reason))+", Response: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_response.getErrorResponse()))+""),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("314352386",("ResponseError. Reason: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_reason))+", Response: "+anywheresoftware.b4a.keywords.Common.SmartStringFormatter("",(Object)(_response.getErrorResponse()))+""),0);
  //BA.debugLineNum = 119;BA.debugLine="Response.Release";
 _response.Release();
  //BA.debugLineNum = 120;BA.debugLine="Dim job As HttpJob = TaskIdToJob.Get(TaskId)";
@@ -117,7 +117,7 @@ _job = (ir.taravatgroup.ezafekari2.httpjob)(_taskidtojob.Get((Object)(_taskid)))
  //BA.debugLineNum = 121;BA.debugLine="If job = Null Then";
 if (_job== null) { 
  //BA.debugLineNum = 122;BA.debugLine="Log(\"HttpUtils2Service (hc_ResponseError): job c";
-anywheresoftware.b4a.keywords.Common.LogImpl("349938439","HttpUtils2Service (hc_ResponseError): job completed multiple times - "+BA.NumberToString(_taskid),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("314352391","HttpUtils2Service (hc_ResponseError): job completed multiple times - "+BA.NumberToString(_taskid),0);
  //BA.debugLineNum = 123;BA.debugLine="Return";
 if (true) return "";
  };
@@ -143,7 +143,7 @@ _job = (ir.taravatgroup.ezafekari2.httpjob)(_taskidtojob.Get((Object)(_taskid)))
  //BA.debugLineNum = 94;BA.debugLine="If job = Null Then";
 if (_job== null) { 
  //BA.debugLineNum = 95;BA.debugLine="Log(\"HttpUtils2Service (hc_ResponseSuccess): job";
-anywheresoftware.b4a.keywords.Common.LogImpl("349807363","HttpUtils2Service (hc_ResponseSuccess): job completed multiple times - "+BA.NumberToString(_taskid),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("314221315","HttpUtils2Service (hc_ResponseSuccess): job completed multiple times - "+BA.NumberToString(_taskid),0);
  //BA.debugLineNum = 96;BA.debugLine="Return";
 if (true) return "";
  };
@@ -205,9 +205,9 @@ anywheresoftware.b4a.keywords.Common.File.Delete(_tempfolder,"~test.test");
  } 
        catch (Exception e6) {
 			processBA.setLastException(e6); //BA.debugLineNum = 34;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("349479687",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(processBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("313893639",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(processBA)),0);
  //BA.debugLineNum = 35;BA.debugLine="Log(\"Switching to File.DirInternal\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("349479688","Switching to File.DirInternal",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("313893640","Switching to File.DirInternal",0);
  //BA.debugLineNum = 36;BA.debugLine="TempFolder = File.DirInternal";
 _tempfolder = anywheresoftware.b4a.keywords.Common.File.getDirInternal();
  };

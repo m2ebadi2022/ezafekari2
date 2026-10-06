@@ -40,15 +40,17 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
-public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
+public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
+public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
+public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
+public ir.taravatgroup.ezafekari2.saati_activity _saati_activity = null;
+public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
-public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.food_activity _food_activity = null;
-public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
@@ -56,8 +58,6 @@ public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.padash_activity _padash_activity = null;
-public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
-public ir.taravatgroup.ezafekari2.saati_activity _saati_activity = null;
 public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
 public ir.taravatgroup.ezafekari2.savabeg_activity _savabeg_activity = null;
 public ir.taravatgroup.ezafekari2.sayer_activity _sayer_activity = null;
@@ -147,7 +147,7 @@ _req.InitializeDelete(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 266;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("951118085",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("915532037",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 267;BA.debugLine="req.InitializeDelete(InvalidURL)";
 _req.InitializeDelete(_invalidurl);
  };
@@ -166,7 +166,7 @@ _req.InitializeDelete(_escapelink(_link,_parameters));
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 277;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("951183621",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("915597573",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 278;BA.debugLine="req.InitializeDelete(escapeLink(InvalidURL, Para";
 _req.InitializeDelete(_escapelink(_invalidurl,_parameters));
  };
@@ -185,7 +185,7 @@ _req.InitializeGet(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 224;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("950921477",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("915335429",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 225;BA.debugLine="req.InitializeGet(InvalidURL)";
 _req.InitializeGet(_invalidurl);
  };
@@ -204,7 +204,7 @@ _req.InitializeGet(_escapelink(_link,_parameters));
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 240;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("950987013",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("915400965",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 241;BA.debugLine="req.InitializeGet(escapeLink(InvalidURL, Paramet";
 _req.InitializeGet(_escapelink(_invalidurl,_parameters));
  };
@@ -328,7 +328,7 @@ _req.InitializeHead(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 124;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("950659333",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("915073285",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 125;BA.debugLine="req.InitializeHead(InvalidURL)";
 _req.InitializeHead(_invalidurl);
  };
@@ -340,7 +340,7 @@ return "";
 public String  _initialize(anywheresoftware.b4a.BA _ba,String _name,Object _targetmodule) throws Exception{
 innerInitialize(_ba);
 anywheresoftware.b4j.object.JavaObject _jo = null;
- //BA.debugLineNum = 38;BA.debugLine="Public Sub Initialize (Name As String, TargetModul";
+ //BA.debugLineNum = 38;BA.debugLine="Public Sub Initialize (Name As String = \"\", Target";
  //BA.debugLineNum = 39;BA.debugLine="JobName = Name";
 _jobname = _name;
  //BA.debugLineNum = 40;BA.debugLine="target = TargetModule";
@@ -382,7 +382,7 @@ _req.InitializePatch2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 109;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("950593804",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("915007756",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 110;BA.debugLine="req.InitializePatch2(InvalidURL, Data)";
 _req.InitializePatch2(_invalidurl,_data);
  };
@@ -393,8 +393,8 @@ return "";
 }
 public String  _patchstring(String _link,String _text) throws Exception{
  //BA.debugLineNum = 92;BA.debugLine="Public Sub PatchString(Link As String, Text As Str";
- //BA.debugLineNum = 93;BA.debugLine="PatchBytes(Link, Text.GetBytes(\"UTF8\"))";
-_patchbytes(_link,_text.getBytes("UTF8"));
+ //BA.debugLineNum = 93;BA.debugLine="PatchBytes(Link, Text.GetBytes)";
+_patchbytes(_link,_text.getBytes("UTF-8"));
  //BA.debugLineNum = 94;BA.debugLine="End Sub";
 return "";
 }
@@ -408,7 +408,7 @@ _req.InitializePost2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 68;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("950331653",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("914745605",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 69;BA.debugLine="req.InitializePost2(InvalidURL, Data)";
 _req.InitializePost2(_invalidurl,_data);
  };
@@ -429,7 +429,7 @@ _length = 0;
  //BA.debugLineNum = 197;BA.debugLine="If Dir = File.DirAssets Then";
 if ((_dir).equals(__c.File.getDirAssets())) { 
  //BA.debugLineNum = 198;BA.debugLine="Log(\"Cannot send files from the assets folder.\")";
-__c.LogImpl("950855944","Cannot send files from the assets folder.",0);
+__c.LogImpl("915269896","Cannot send files from the assets folder.",0);
  //BA.debugLineNum = 199;BA.debugLine="Return";
 if (true) return "";
  };
@@ -499,8 +499,8 @@ _value = BA.ObjectToString(_namevalues.Get((Object)(_key)));
 _empty = _multipartstartsection(_stream,_empty);
  //BA.debugLineNum = 144;BA.debugLine="Dim s As String = _ $\"--${boundary} Content-Dis";
 _s = ("--"+__c.SmartStringFormatter("",(Object)(_boundary))+"\n"+"Content-Disposition: form-data; name=\""+__c.SmartStringFormatter("",(Object)(_key))+"\"\n"+"\n"+""+__c.SmartStringFormatter("",(Object)(_value))+"");
- //BA.debugLineNum = 149;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
-_b = _s.replace(__c.CRLF,_eol).getBytes("UTF8");
+ //BA.debugLineNum = 149;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes";
+_b = _s.replace(__c.CRLF,_eol).getBytes("UTF-8");
  //BA.debugLineNum = 150;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
 _stream.WriteBytes(_b,(int) (0),_b.length);
  }
@@ -520,8 +520,8 @@ _fd = (ir.taravatgroup.ezafekari2.httpjob._multipartfiledata)(group17.Get(index1
 _empty = _multipartstartsection(_stream,_empty);
  //BA.debugLineNum = 156;BA.debugLine="Dim s As String = _ $\"--${boundary} Content-Dis";
 _s = ("--"+__c.SmartStringFormatter("",(Object)(_boundary))+"\n"+"Content-Disposition: form-data; name=\""+__c.SmartStringFormatter("",(Object)(_fd.KeyName /*String*/ ))+"\"; filename=\""+__c.SmartStringFormatter("",(Object)(_fd.FileName /*String*/ ))+"\"\n"+"Content-Type: "+__c.SmartStringFormatter("",(Object)(_fd.ContentType /*String*/ ))+"\n"+"\n"+"");
- //BA.debugLineNum = 162;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
-_b = _s.replace(__c.CRLF,_eol).getBytes("UTF8");
+ //BA.debugLineNum = 162;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes";
+_b = _s.replace(__c.CRLF,_eol).getBytes("UTF-8");
  //BA.debugLineNum = 163;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
 _stream.WriteBytes(_b,(int) (0),_b.length);
  //BA.debugLineNum = 164;BA.debugLine="Dim in As InputStream = File.OpenInput(fd.Dir,";
@@ -536,8 +536,8 @@ __c.File.Copy2((java.io.InputStream)(_in.getObject()),(java.io.OutputStream)(_st
 _empty = _multipartstartsection(_stream,_empty);
  //BA.debugLineNum = 169;BA.debugLine="s = _ $\"--${boundary}-- \"$";
 _s = ("--"+__c.SmartStringFormatter("",(Object)(_boundary))+"--\n"+"");
- //BA.debugLineNum = 172;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes(\"UTF8\")";
-_b = _s.replace(__c.CRLF,_eol).getBytes("UTF8");
+ //BA.debugLineNum = 172;BA.debugLine="b = s.Replace(CRLF, eol).GetBytes";
+_b = _s.replace(__c.CRLF,_eol).getBytes("UTF-8");
  //BA.debugLineNum = 173;BA.debugLine="stream.WriteBytes(b, 0, b.Length)";
 _stream.WriteBytes(_b,(int) (0),_b.length);
  //BA.debugLineNum = 174;BA.debugLine="PostBytes(Link, stream.ToBytesArray)";
@@ -551,8 +551,8 @@ return "";
 }
 public String  _poststring(String _link,String _text) throws Exception{
  //BA.debugLineNum = 58;BA.debugLine="Public Sub PostString(Link As String, Text As Stri";
- //BA.debugLineNum = 59;BA.debugLine="PostBytes(Link, Text.GetBytes(\"UTF8\"))";
-_postbytes(_link,_text.getBytes("UTF8"));
+ //BA.debugLineNum = 59;BA.debugLine="PostBytes(Link, Text.GetBytes)";
+_postbytes(_link,_text.getBytes("UTF-8"));
  //BA.debugLineNum = 60;BA.debugLine="End Sub";
 return "";
 }
@@ -566,7 +566,7 @@ _req.InitializePut2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 85;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("950462725",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("914876677",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 86;BA.debugLine="req.InitializePut2(InvalidURL, Data)";
 _req.InitializePut2(_invalidurl,_data);
  };
@@ -577,8 +577,8 @@ return "";
 }
 public String  _putstring(String _link,String _text) throws Exception{
  //BA.debugLineNum = 75;BA.debugLine="Public Sub PutString(Link As String, Text As Strin";
- //BA.debugLineNum = 76;BA.debugLine="PutBytes(Link, Text.GetBytes(\"UTF8\"))";
-_putbytes(_link,_text.getBytes("UTF8"));
+ //BA.debugLineNum = 76;BA.debugLine="PutBytes(Link, Text.GetBytes)";
+_putbytes(_link,_text.getBytes("UTF-8"));
  //BA.debugLineNum = 77;BA.debugLine="End Sub";
 return "";
 }

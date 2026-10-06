@@ -100,7 +100,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 
 	''-----------------
-	
+	wb_end_mohasebe.Color=Colors.ARGB(0,0,0,0)
 	
 	'et_mablagh.Color=Colors.White
 	lbl_date1.Color=Colors.White

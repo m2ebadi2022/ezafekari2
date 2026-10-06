@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0d0221">
+<title>ماشین حساب</title>
+<style>
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+  }
+
+  :root {
+    --bg: #0d0221;
+    --card-bg: rgba(255,255,255,0.06);
+    --card-border: rgba(255,255,255,0.15);
+    --display-bg: rgba(0,0,0,0.25);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255,255,255,0.42);
+    --btn-num-bg: rgba(255,255,255,0.1);
+    --btn-num-text: #ffffff;
+    --btn-func-bg: rgba(255,255,255,0.16);
+    --btn-func-text: #c9d4ff;
+    --pill-bg: rgba(255,255,255,0.08);
+    --pill-text: #d7defd;
+    --pill-border: rgba(255,255,255,0.12);
+    --op-grad: linear-gradient(145deg,#ff8bcb,#ff6ec4);
+    --op-shadow: rgba(255,110,196,0.45);
+    --equal-grad: linear-gradient(145deg,#8b87ff,#7873f5);
+    --equal-shadow: rgba(120,115,245,0.55);
+    --current-grad: linear-gradient(135deg,#ffffff 0%, #d4d9ff 100%);
+    --overlay-bg: rgba(10,5,30,0.7);
+    --panel-bg: #17102f;
+    --shadow-1: rgba(0,0,0,0.15);
+  }
+
+  body.light-theme {
+    --bg: #e9ecf5;
+    --card-bg: rgba(255,255,255,0.55);
+    --card-border: rgba(255,255,255,0.9);
+    --display-bg: rgba(255,255,255,0.55);
+    --text-primary: #2c2f45;
+    --text-secondary: rgba(44,47,69,0.5);
+    --btn-num-bg: rgba(255,255,255,0.75);
+    --btn-num-text: #2c2f45;
+    --btn-func-bg: rgba(120,115,245,0.15);
+    --btn-func-text: #5b54e0;
+    --pill-bg: rgba(120,115,245,0.1);
+    --pill-text: #5b54e0;
+    --pill-border: rgba(120,115,245,0.2);
+    --current-grad: linear-gradient(135deg,#2c2f45 0%, #5b54e0 100%);
+    --overlay-bg: rgba(200,200,220,0.55);
+    --panel-bg: #f4f5fb;
+    --shadow-1: rgba(150,150,180,0.3);
+  }
+
+  html, body { height: 100%; overflow-x: hidden; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+    background: var(--bg);
+    display: flex; justify-content: center; align-items: center;
+    padding: 10px; min-height: 100vh; position: relative;
+    transition: background 0.4s ease;
+    overflow-y: auto;
+  }
+
+  .bg-orb {
+    position: fixed; border-radius: 50%; filter: blur(80px);
+    opacity: 0.4; z-index: 0; animation: float 12s ease-in-out infinite;
+    pointer-events: none; transition: opacity 0.4s ease;
+  }
+  body.light-theme .bg-orb { opacity: 0.15; }
+  .orb1 { width: 260px; height: 260px; background: #ff6ec4; top: -50px; left: -50px; }
+  .orb2 { width: 300px; height: 300px; background: #7873f5; bottom: -70px; right: -50px; animation-delay: 2s; }
+  .orb3 { width: 180px; height: 180px; background: #4facfe; top: 40%; left: 60%; animation-delay: 4s; }
+
+  @keyframes float {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(25px,-25px) scale(1.1); }
+    66% { transform: translate(-15px,15px) scale(0.95); }
+  }
+
+  .wrap { width: 100%; max-width: 400px; position: relative; z-index: 1; }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 4px 6px 10px;
+  }
+  .topbar-title { color: var(--text-primary); font-size: 15px; font-weight: 600; opacity: 0.85; }
+  .topbar-actions { display: flex; gap: 8px; }
+
+  .icon-btn {
+    width: 36px; height: 36px; border-radius: 12px; border: none;
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    color: var(--text-primary); font-size: 16px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.15s ease;
+  }
+  .icon-btn:active { transform: scale(0.9); }
+
+  .calculator {
+    background: var(--card-bg);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border-radius: 32px; padding: 18px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 25px 70px var(--shadow-1), inset 0 1px 1px rgba(255,255,255,0.15);
+    transition: background 0.4s ease, border 0.4s ease;
+  }
+
+  .display {
+    background: var(--display-bg);
+    border-radius: 22px;
+    padding: clamp(14px,3vh,22px) clamp(14px,4vw,20px) clamp(10px,2vh,16px);
+    margin-bottom: 14px;
+    min-height: clamp(90px,16vh,120px);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    border: 1px solid var(--card-border);
+    position: relative; overflow: hidden;
+  }
+
+  .mem-badge {
+    position: absolute; top: 10px; left: 14px;
+    background: var(--equal-grad); color: #fff;
+    font-size: 11px; font-weight: 700;
+    padding: 2px 8px; border-radius: 8px;
+    opacity: 0; transform: scale(0.6);
+    transition: all 0.25s ease;
+  }
+  .mem-badge.show { opacity: 1; transform: scale(1); }
+
+  .history {
+    color: var(--text-secondary); font-size: clamp(13px,3.5vw,16px);
+    min-height: 20px; text-align: left; direction: ltr;
+    letter-spacing: 0.4px; word-break: break-all;
+  }
+
+  .current {
+    background: var(--current-grad); -webkit-background-clip: text; background-clip: text;
+    color: transparent; font-size: clamp(26px,8.5vw,44px); font-weight: 600;
+    text-align: left; direction: ltr; word-break: break-all;
+    margin-top: 4px; line-height: 1.15;
+  }
+
+  .error-text {
+    background: linear-gradient(135deg,#ff6b6b,#ff4757) !important;
+    -webkit-background-clip: text !important; background-clip: text !important;
+    color: transparent !important;
+  }
+
+  .extra-row {
+    display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 6px;
+    scrollbar-width: none;
+  }
+  .extra-row::-webkit-scrollbar { display: none; }
+
+  .pill {
+    flex: 0 0 auto; border: 1px solid var(--pill-border);
+    background: var(--pill-bg); color: var(--pill-text);
+    font-size: 14px; font-weight: 600; padding: 9px 14px;
+    border-radius: 14px; cursor: pointer; white-space: nowrap;
+    transition: transform 0.12s ease, background 0.2s ease;
+  }
+  .pill:active { transform: scale(0.92); }
+  .pill.mem-active { background: var(--equal-grad); color: #fff; border-color: transparent; }
+
+  .buttons {
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: clamp(7px,2vw,13px);
+  }
+
+  button.calc-btn {
+    border: none; outline: none; cursor: pointer; font-family: inherit;
+    height: clamp(46px,10vh,66px);
+    border-radius: clamp(15px,4vw,21px);
+    font-size: clamp(18px,5.2vw,24px); font-weight: 500;
+    position: relative; overflow: hidden;
+    transition: transform 0.12s ease, box-shadow 0.2s ease;
+  }
+  button.calc-btn::after {
+    content:''; position:absolute; top:50%; left:50%; width:0; height:0;
+    border-radius:50%; background: rgba(255,255,255,0.5);
+    transform: translate(-50%,-50%); transition: width .4s ease, height .4s ease, opacity .5s ease;
+    opacity:0;
+  }
+  button.calc-btn:active::after { width:220px; height:220px; opacity:1; transition:0s; }
+  button.calc-btn:active { transform: scale(0.93); }
+
+  .btn-number { background: var(--btn-num-bg); color: var(--btn-num-text); border: 1px solid var(--card-border); }
+  .btn-func { background: var(--btn-func-bg); color: var(--btn-func-text); font-size: clamp(15px,4.5vw,20px); font-weight: 600; border: 1px solid var(--card-border); }
+  .btn-op { background: var(--op-grad); color:#fff; font-size: clamp(20px,5.5vw,26px); font-weight:600; box-shadow: 0 8px 18px var(--op-shadow), inset 0 1px 0 rgba(255,255,255,0.4); }
+  .btn-op.active { background: linear-gradient(145deg,#ffffff,#ffe0f2); color:#ff4fa8; box-shadow: 0 4px 12px rgba(255,255,255,0.5), inset 0 2px 6px rgba(255,110,196,0.3); }
+  .btn-equal { background: var(--equal-grad); color:#fff; font-size: clamp(22px,6vw,28px); font-weight:600; box-shadow: 0 8px 20px var(--equal-shadow), inset 0 1px 0 rgba(255,255,255,0.4); }
+
+  /* ---- Overlay / History ---- */
+  .overlay {
+    position: fixed; inset: 0; background: var(--overlay-bg);
+    backdrop-filter: blur(6px); z-index: 20;
+    display: flex; align-items: flex-end; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  }
+  .overlay.show { opacity: 1; pointer-events: auto; }
+
+  .overlay-panel {
+    width: 100%; max-width: 420px; background: var(--panel-bg);
+    border-radius: 26px 26px 0 0; padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+    max-height: 65vh; display: flex; flex-direction: column;
+    transform: translateY(100%); transition: transform 0.35s cubic-bezier(.2,.9,.3,1);
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.3);
+  }
+  .overlay.show .overlay-panel { transform: translateY(0); }
+
+  .overlay-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 10px; margin-bottom: 6px; border-bottom: 1px solid var(--card-border);
+    color: var(--text-primary); font-weight: 700; font-size: 16px;
+  }
+  .text-btn { background: none; border: none; color: #ff6ec4; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+  .history-list { overflow-y: auto; flex: 1; }
+  .history-item {
+    padding: 12px 6px; border-bottom: 1px solid var(--card-border);
+    display: flex; flex-direction: column; gap: 3px; cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .history-item:active { background: rgba(120,115,245,0.1); }
+  .history-item .expr { color: var(--text-secondary); font-size: 13px; direction: ltr; text-align: left; }
+  .history-item .res { color: var(--text-primary); font-size: 20px; font-weight: 600; direction: ltr; text-align: left; }
+  .empty-history { text-align: center; color: var(--text-secondary); padding: 30px 0; font-size: 14px; }
+
+  .toast {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: rgba(20,20,35,0.9); color: #fff; padding: 10px 20px; border-radius: 14px;
+    font-size: 14px; z-index: 30; opacity: 0; pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+  .shake { animation: shake 0.3s ease; }
+</style>
+</head>
+<body>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
+  <div class="wrap">
+    <div class="topbar">
+      <button class="icon-btn" id="historyBtn" title="تاریخچه">🕐</button>
+      <div class="topbar-title"> </div>
+      <div class="topbar-actions">
+        <button class="icon-btn" id="soundBtn" title="صدا">🔊</button>
+        <button class="icon-btn" id="themeBtn" title="تم">🌙</button>
+      </div>
+    </div>
+
+    <div class="calculator">
+      <div class="display" id="displayArea">
+        <div class="mem-badge" id="memBadge">M</div>
+        <div class="history" id="history"></div>
+        <div class="current" id="current">0</div>
+      </div>
+
+      <div class="extra-row" id="extraRow">
+        <button class="pill" id="mcBtn" data-mem="mc">MC</button>
+        <button class="pill" id="mrBtn" data-mem="mr">MR</button>
+        <button class="pill" data-mem="mplus">M+</button>
+        <button class="pill" data-mem="mminus">M−</button>
+        <button class="pill" data-sci="sqrt">√</button>
+        <button class="pill" data-sci="square">x²</button>
+        <button class="pill" data-sci="inv">1/x</button>
+        <button class="pill" data-sci="pi">π</button>
+      </div>
+
+      <div class="buttons">
+        <button class="calc-btn btn-func" data-action="clear">AC</button>
+        <button class="calc-btn btn-func" data-action="back">⌫</button>
+        <button class="calc-btn btn-func" data-action="percent">%</button>
+        <button class="calc-btn btn-op" data-action="op" data-op="÷">÷</button>
+
+        <button class="calc-btn btn-number" data-action="num" data-val="7">7</button>
+        <button class="calc-btn btn-number" data-action="num" data-val="8">8</button>
+        <button class="calc-btn btn-number" data-action="num" data-val="9">9</button>
+        <button class="calc-btn btn-op" data-action="op" data-op="×">×</button>
+
+        <button class="calc-btn btn-number" data-action="num" data-val="4">4</button>
+        <button class="calc-btn btn-number" data-action="num" data-val="5">5</button>
+        <button class="calc-btn btn-number" data-action="num" data-val="6">6</button>
+        <button class="calc-btn btn-op" data-action="op" data-op="−">−</button>
+
+        <button class="calc-btn btn-number" data-action="num" data-val="1">1</button>
+        <button class="calc-btn btn-number" data-action="num" data-val="2">2</button>
+        <button class="calc-btn btn-number" data-action="num" data-val="3">3</button>
+        <button class="calc-btn btn-op" data-action="op" data-op="+">+</button>
+
+        <button class="calc-btn btn-func" data-action="sign">±</button>
+        <button class="calc-btn btn-number" data-action="num" data-val="0">0</button>
+        <button class="calc-btn btn-number" data-action="dot">.</button>
+        <button class="calc-btn btn-equal" data-action="equal">=</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="historyOverlay">
+    <div class="overlay-panel">
+      <div class="overlay-header">
+        <span>تاریخچه محاسبات</span>
+        <div style="display:flex; gap:14px; align-items:center;">
+          <button class="text-btn" id="clearHistoryBtn">پاک کردن</button>
+          <button class="icon-btn" id="closeHistoryBtn">✕</button>
+        </div>
+      </div>
+      <div class="history-list" id="historyList">
+        <div class="empty-history" id="emptyHistory">تاریخچه‌ای موجود نیست</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">کپی شد</div>
+
+<script>
+(() => {
+  const currentEl = document.getElementById('current');
+  const historyEl = document.getElementById('history');
+  const memBadge = document.getElementById('memBadge');
+  const toastEl = document.getElementById('toast');
+  const historyOverlay = document.getElementById('historyOverlay');
+  const historyList = document.getElementById('historyList');
+  const emptyHistory = document.getElementById('emptyHistory');
+  const mcBtn = document.getElementById('mcBtn');
+  const mrBtn = document.getElementById('mrBtn');
+  const soundBtn = document.getElementById('soundBtn');
+  const themeBtn = document.getElementById('themeBtn');
+
+  let current = '0';
+  let previous = null;
+  let operator = null;
+  let justEvaluated = false;
+  let memoryValue = 0;
+
+  // Safe Storage Access
+  const getStorage = (key, fallback) => {
+    try {
+      return localStorage.getItem(key) ?? fallback;
+    } catch {
+      return fallback;
+    }
+  };
+
+  const setStorage = (key, value) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch {}
+  };
+
+  let soundEnabled = getStorage('calc-sound', 'on') !== 'off';
+  let lightTheme = getStorage('calc-theme', 'dark') === 'light';
+  let historyData = [];
+  try {
+    historyData = JSON.parse(getStorage('calc-history', '[]'));
+  } catch {
+    historyData = [];
+  }
+
+  const applyTheme = () => {
+    document.body.classList.toggle('light-theme', lightTheme);
+    if (themeBtn) themeBtn.textContent = lightTheme ? '☀️' : '🌙';
+  };
+
+  const applySound = () => {
+    if (soundBtn) soundBtn.textContent = soundEnabled ? '🔊' : '🔇';
+  };
+
+  applyTheme();
+  applySound();
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      lightTheme = !lightTheme;
+      setStorage('calc-theme', lightTheme ? 'light' : 'dark');
+      applyTheme();
+    });
+  }
+
+  if (soundBtn) {
+    soundBtn.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      setStorage('calc-sound', soundEnabled ? 'on' : 'off');
+      applySound();
+    });
+  }
+
+  // ---- Safe Audio ----
+  let audioCtx = null;
+  const playClick = () => {
+    if (!soundEnabled) return;
+    try {
+      const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtxClass) return;
+      if (!audioCtx) audioCtx = new AudioCtxClass();
+      
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = 720;
+      gain.gain.setValueAtTime(0.07, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.09);
+    } catch {}
+  };
+
+  const vibrate = () => {
+    try {
+      if (navigator.vibrate) navigator.vibrate(8);
+    } catch {}
+  };
+
+  // ---- Format & Display ----
+  const formatNumber = (numStr) => {
+    if (numStr === '' || numStr === '-') return numStr;
+    const parts = String(numStr).split('.');
+    const intPart = parts[0];
+    const decPart = parts[1];
+    const isNeg = intPart.startsWith('-');
+    const digits = isNeg ? intPart.slice(1) : intPart;
+    const formatted = digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const result = `${isNeg ? '-' : ''}${formatted}`;
+    return decPart !== undefined ? `${result}.${decPart}` : result;
+  };
+
+  const updateDisplay = () => {
+    if (currentEl) {
+      currentEl.classList.remove('error-text');
+      currentEl.textContent = formatNumber(current);
+    }
+    if (memBadge) {
+      memBadge.classList.toggle('show', memoryValue !== 0);
+    }
+  };
+
+  const updateHistoryLine = () => {
+    if (historyEl) {
+      historyEl.textContent = (previous !== null && operator) ? `${formatNumber(previous)} ${operator}` : '';
+    }
+  };
+
+  const clearActiveOp = () => {
+    document.querySelectorAll('.btn-op').forEach(b => b.classList.remove('active'));
+  };
+
+  const highlightOp = (op) => {
+    clearActiveOp();
+    document.querySelectorAll('.btn-op').forEach(b => { 
+      if (b.dataset.op === op) b.classList.add('active'); 
+    });
+  };
+
+  const showError = () => {
+    if (historyEl) historyEl.textContent = '';
+    if (currentEl) {
+      currentEl.textContent = 'خطا';
+      currentEl.classList.add('shake', 'error-text');
+      setTimeout(() => currentEl.classList.remove('shake'), 300);
+    }
+    current = '0'; previous = null; operator = null; justEvaluated = true;
+  };
+
+  // ---- Core ops ----
+  const inputNumber = (val) => {
+    if (justEvaluated) { current = val; previous = null; operator = null; justEvaluated = false; }
+    else if (current === '0') current = val;
+    else if (current.replace('-','').replace('.','').length < 15) current += val;
+    updateDisplay(); clearActiveOp();
+  };
+
+  const inputDot = () => {
+    if (justEvaluated) { current = '0.'; previous = null; operator = null; justEvaluated = false; }
+    else if (!current.includes('.')) current += '.';
+    updateDisplay();
+  };
+
+  const backspace = () => {
+    if (justEvaluated) return;
+    current = current.length > 1 ? current.slice(0, -1) : '0';
+    updateDisplay();
+  };
+
+  const setOperator = (op) => {
+    if (operator && !justEvaluated && previous !== null) evaluate(false);
+    previous = current; operator = op; current = '0'; justEvaluated = false;
+    updateHistoryLine(); updateDisplay(); highlightOp(op);
+  };
+
+  const calc = (a, b, op) => {
+    const numA = Number.parseFloat(a);
+    const numB = Number.parseFloat(b);
+    switch (op) {
+      case '+': return numA + numB;
+      case '−': return numA - numB;
+      case '×': return numA * numB;
+      case '÷': return numB === 0 ? 'Error' : numA / numB;
+      default: return 'Error';
+    }
+  };
+
+  const trimResult = (result) => {
+    let s = String(result);
+    if (s.includes('.') && s.split('.')[1].length > 10) {
+      s = Number.parseFloat(result).toPrecision(10).replace(/\.?0+$/, '');
+    }
+    return s;
+  };
+
+  const evaluate = (record = true) => {
+    if (operator === null || previous === null) return;
+    const result = calc(previous, current, operator);
+    if (result === 'Error') { showError(); return; }
+    const resultStr = trimResult(result);
+    const exprStr = `${formatNumber(previous)} ${operator} ${formatNumber(current)}`;
+    if (record) {
+      if (historyEl) historyEl.textContent = `${exprStr} =`;
+      addHistory(exprStr, formatNumber(resultStr));
+    }
+    current = resultStr; previous = null; operator = null; justEvaluated = true;
+    updateDisplay(); clearActiveOp();
+  };
+
+  const clearAll = () => {
+    current = '0'; previous = null; operator = null; justEvaluated = false;
+    updateDisplay(); updateHistoryLine(); clearActiveOp();
+  };
+
+  const toggleSign = () => {
+    if (current === '0') return;
+    current = current.startsWith('-') ? current.slice(1) : `-${current}`;
+    updateDisplay();
+  };
+
+  const percent = () => {
+    current = trimResult(Number.parseFloat(current) / 100);
+    updateDisplay();
+  };
+
+  // ---- Scientific ----
+  const applyUnary = (type) => {
+    const val = Number.parseFloat(current);
+    const old = formatNumber(current);
+    let result;
+    let label;
+
+    switch (type) {
+      case 'sqrt':
+        if (val < 0) { showError(); updateDisplay(); return; }
+        result = Math.sqrt(val); label = `√(${old})`; break;
+      case 'square':
+        result = val ** 2; label = `${old}²`; break;
+      case 'inv':
+        if (val === 0) { showError(); updateDisplay(); return; }
+        result = 1 / val; label = `1/(${old})`; break;
+      case 'pi':
+        result = Math.PI; label = 'π'; break;
+    }
+    const resultStr = trimResult(result);
+    if (historyEl) historyEl.textContent = `${label} =`;
+    addHistory(label, formatNumber(resultStr));
+    current = resultStr; justEvaluated = true;
+    updateDisplay();
+  };
+
+  // ---- Memory ----
+  const memAction = (type) => {
+    const val = Number.parseFloat(current) || 0;
+    switch (type) {
+      case 'mc': memoryValue = 0; break;
+      case 'mr': current = trimResult(memoryValue); justEvaluated = true; updateDisplay(); break;
+      case 'mplus': memoryValue += val; break;
+      case 'mminus': memoryValue -= val; break;
+    }
+    updateDisplay();
+    if (mcBtn) mcBtn.classList.toggle('mem-active', memoryValue !== 0);
+    if (mrBtn) mrBtn.classList.toggle('mem-active', memoryValue !== 0);
+  };
+
+  // ---- History storage ----
+  const addHistory = (expr, resultFormatted) => {
+    historyData.unshift({ expr, result: resultFormatted });
+    if (historyData.length > 30) historyData.pop();
+    setStorage('calc-history', JSON.stringify(historyData));
+  };
+
+  const renderHistory = () => {
+    if (!historyList) return;
+    historyList.innerHTML = '';
+    if (historyData.length === 0) {
+      if (emptyHistory) historyList.appendChild(emptyHistory);
+      return;
+    }
+    historyData.forEach(({ expr, result }) => {
+      const div = document.createElement('div');
+      div.className = 'history-item';
+      div.innerHTML = `<div class="expr">${expr} =</div><div class="res">${result}</div>`;
+      div.addEventListener('click', () => {
+        current = result.replace(/,/g, '');
+        justEvaluated = true;
+        updateDisplay();
+        closeHistory();
+      });
+      historyList.appendChild(div);
+    });
+  };
+
+  const openHistory = () => { renderHistory(); if (historyOverlay) historyOverlay.classList.add('show'); };
+  const closeHistory = () => { if (historyOverlay) historyOverlay.classList.remove('show'); };
+
+  const histBtn = document.getElementById('historyBtn');
+  const closeHistBtn = document.getElementById('closeHistoryBtn');
+  const clearHistBtn = document.getElementById('clearHistoryBtn');
+
+  if (histBtn) histBtn.addEventListener('click', openHistory);
+  if (closeHistBtn) closeHistBtn.addEventListener('click', closeHistory);
+  if (clearHistBtn) {
+    clearHistBtn.addEventListener('click', () => {
+      historyData = [];
+      setStorage('calc-history', '[]');
+      renderHistory();
+    });
+  }
+  if (historyOverlay) {
+    historyOverlay.addEventListener('click', (e) => {
+      if (e.target === historyOverlay) closeHistory();
+    });
+  }
+
+  // ---- Toast ----
+  let toastTimer = null;
+  const showToast = (msg) => {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1600);
+  };
+
+  // ---- Long Press ----
+  const displayArea = document.getElementById('displayArea');
+  let pressTimer = null;
+
+  const startPress = () => {
+    pressTimer = setTimeout(() => {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(current)
+            .then(() => showToast('کپی شد ✅'))
+            .catch(() => showToast('امکان کپی نبود'));
+        } else {
+          showToast('امکان کپی نبود');
+        }
+      } catch {
+        showToast('امکان کپی نبود');
+      }
+      vibrate();
+    }, 550);
+  };
+
+  const cancelPress = () => clearTimeout(pressTimer);
+
+  if (displayArea) {
+    displayArea.addEventListener('touchstart', startPress, { passive: true });
+    displayArea.addEventListener('touchend', cancelPress);
+    displayArea.addEventListener('touchmove', cancelPress);
+    displayArea.addEventListener('mousedown', startPress);
+    displayArea.addEventListener('mouseup', cancelPress);
+    displayArea.addEventListener('mouseleave', cancelPress);
+  }
+
+  // ---- Button Bindings ----
+  document.querySelectorAll('.calc-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      playClick(); vibrate();
+      const action = btn.getAttribute('data-action');
+      const val = btn.getAttribute('data-val');
+      const op = btn.getAttribute('data-op');
+
+      switch (action) {
+        case 'num': inputNumber(val); break;
+        case 'dot': inputDot(); break;
+        case 'op': setOperator(op); break;
+        case 'equal': evaluate(); break;
+        case 'clear': clearAll(); break;
+        case 'sign': toggleSign(); break;
+        case 'percent': percent(); break;
+        case 'back': backspace(); break;
+      }
+    });
+  });
+
+  document.querySelectorAll('.pill').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      playClick(); vibrate();
+      const mem = btn.getAttribute('data-mem');
+      const sci = btn.getAttribute('data-sci');
+      if (mem) memAction(mem);
+      else if (sci) applyUnary(sci);
+    });
+  });
+
+  // ---- Keyboard ----
+  document.addEventListener('keydown', (e) => {
+    const key = e.key;
+    if (/^[0-9]$/.test(key)) inputNumber(key);
+    else if (key === '.' || key === ',') inputDot();
+    else if (key === '+') setOperator('+');
+    else if (key === '-') setOperator('−');
+    else if (key === '*') setOperator('×');
+    else if (key === '/') { e.preventDefault(); setOperator('÷'); }
+    else if (key === 'Enter' || key === '=') { e.preventDefault(); evaluate(); }
+    else if (key === 'Escape') clearAll();
+    else if (key === '%') percent();
+    else if (key === 'Backspace') backspace();
+  });
+
+  updateDisplay();
+})();
+</script>
+</body>
+</html>

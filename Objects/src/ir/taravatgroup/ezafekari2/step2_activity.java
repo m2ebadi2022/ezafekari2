@@ -59,6 +59,7 @@ public class step2_activity extends Activity implements B4AActivity{
 		
         processBA.sharedProcessBA.activityBA = null;
 		layout = new BALayout(this);
+        
 		setContentView(layout);
 		afterFirstLayout = false;
         WaitForLayout wl = new WaitForLayout();
@@ -378,15 +379,17 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
-public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
+public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
+public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
+public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
+public ir.taravatgroup.ezafekari2.saati_activity _saati_activity = null;
+public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
-public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.food_activity _food_activity = null;
-public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
@@ -394,8 +397,6 @@ public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.padash_activity _padash_activity = null;
-public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
-public ir.taravatgroup.ezafekari2.saati_activity _saati_activity = null;
 public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
 public ir.taravatgroup.ezafekari2.savabeg_activity _savabeg_activity = null;
 public ir.taravatgroup.ezafekari2.sayer_activity _sayer_activity = null;
@@ -689,7 +690,7 @@ mostCurrent._http3._poststring /*String*/ ("https://taravatgroup.ir/save_acc.php
  } 
        catch (Exception e54) {
 			processBA.setLastException(e54); //BA.debugLineNum = 287;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("365667159",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("365405015",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  };
  //BA.debugLineNum = 292;BA.debugLine="End Sub";
 return "";
@@ -837,7 +838,7 @@ mostCurrent._img_p_edit.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc.
 mostCurrent._wb_show_mymsg.LoadHtml(_job._getstring /*String*/ ());
  }else if((_job._jobname /*String*/ ).equals("ht9")) { 
  //BA.debugLineNum = 439;BA.debugLine="Log(job.GetString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("365732751",_job._getstring /*String*/ (),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("365470607",_job._getstring /*String*/ (),0);
  };
  //BA.debugLineNum = 441;BA.debugLine="If (Main.backup_page_show<>1)Then";
 if ((mostCurrent._main._backup_page_show /*int*/ !=1)) { 
@@ -874,7 +875,7 @@ mostCurrent._img_p_edit.setBitmap((android.graphics.Bitmap)(mostCurrent._myfunc.
  } 
        catch (Exception e101) {
 			processBA.setLastException(e101); //BA.debugLineNum = 477;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("365732789",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("365470645",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 478;BA.debugLine="ToastMessageShow(\"خطا در اتصال\",False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در اتصال"),anywheresoftware.b4a.keywords.Common.False);
  };
@@ -979,9 +980,9 @@ public ResumableSub_lbl_image_up_Click(ir.taravatgroup.ezafekari2.step2_activity
 this.parent = parent;
 }
 ir.taravatgroup.ezafekari2.step2_activity parent;
-boolean _success = false;
-String _dir = "";
-String _filename = "";
+boolean _success;
+String _dir;
+String _filename;
 anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper _out = null;
 
 @Override
@@ -1073,7 +1074,7 @@ this.catchState = 17;
  //BA.debugLineNum = 569;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.Shared";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,parent.mostCurrent._picname);
  //BA.debugLineNum = 570;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("366125840",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("365863696",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1106,7 +1107,7 @@ this.catchState = 0;
  //BA.debugLineNum = 580;BA.debugLine="ToastMessageShow(\"خطا در بارگزاری\",True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در بارگزاری"),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 581;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("366125851",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("365863707",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1247,9 +1248,9 @@ public ResumableSub_lbl_send_up_Click(ir.taravatgroup.ezafekari2.step2_activity 
 this.parent = parent;
 }
 ir.taravatgroup.ezafekari2.step2_activity parent;
-boolean _success = false;
-String _dir = "";
-String _filename = "";
+boolean _success;
+String _dir;
+String _filename;
 anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper _out = null;
 
 @Override
@@ -1343,7 +1344,7 @@ this.catchState = 17;
  //BA.debugLineNum = 717;BA.debugLine="File.Copy(Dir,FileName,Starter.Provider.Shared";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,parent.mostCurrent._starter._provider /*ir.taravatgroup.ezafekari2.fileprovider*/ ._sharedfolder /*String*/ ,parent.mostCurrent._tempfile);
  //BA.debugLineNum = 720;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("366846746",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("366584602",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 
@@ -1378,7 +1379,7 @@ this.catchState = 0;
  //BA.debugLineNum = 731;BA.debugLine="ToastMessageShow(\"خطا در بارگزاری\",True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("خطا در بارگزاری"),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 732;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("366846758",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("366584614",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  if (true) break;
 if (true) break;
 

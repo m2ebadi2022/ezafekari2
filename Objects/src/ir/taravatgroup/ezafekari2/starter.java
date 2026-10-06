@@ -63,6 +63,7 @@ public class starter extends android.app.Service{
                 stopSelf();
             }
 		}
+        BA.LogInfo("*** Service (starter) Create completed ***");
     }
 		@Override
 	public void onStart(android.content.Intent intent, int startId) {
@@ -70,6 +71,7 @@ public class starter extends android.app.Service{
     }
     @Override
     public int onStartCommand(final android.content.Intent intent, int flags, int startId) {
+        BA.LogInfo("*** Service (starter) Started ***");
     	if (ServiceHelper.StarterHelper.onStartCommand(processBA, new Runnable() {
             public void run() {
                 handleStart(intent);
@@ -87,6 +89,7 @@ public class starter extends android.app.Service{
 			});
 		}
         processBA.runHook("onstartcommand", this, new Object[] {intent, flags, startId});
+        BA.LogInfo("*** Service (starter) Started completed ***");
 		return android.app.Service.START_NOT_STICKY;
     }
     public void onTaskRemoved(android.content.Intent rootIntent) {
@@ -142,15 +145,17 @@ public b4a.example.dateutils _dateutils = null;
 public ir.taravatgroup.ezafekari2.main _main = null;
 public ir.taravatgroup.ezafekari2.dbcode _dbcode = null;
 public ir.taravatgroup.ezafekari2.hogog_activity _hogog_activity = null;
-public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
+public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.bime_activity _bime_activity = null;
+public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
+public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
 public ir.taravatgroup.ezafekari2.calc_activity _calc_activity = null;
+public ir.taravatgroup.ezafekari2.saati_activity _saati_activity = null;
+public ir.taravatgroup.ezafekari2.ayabzahab_activity _ayabzahab_activity = null;
 public ir.taravatgroup.ezafekari2.comment_activity _comment_activity = null;
 public ir.taravatgroup.ezafekari2.darsad_activity _darsad_activity = null;
-public ir.taravatgroup.ezafekari2.eidi_activity _eidi_activity = null;
 public ir.taravatgroup.ezafekari2.fast_run_activity _fast_run_activity = null;
 public ir.taravatgroup.ezafekari2.food_activity _food_activity = null;
-public ir.taravatgroup.ezafekari2.ganon_activity _ganon_activity = null;
 public ir.taravatgroup.ezafekari2.gestha_activity _gestha_activity = null;
 public ir.taravatgroup.ezafekari2.help_kharid_activity _help_kharid_activity = null;
 public ir.taravatgroup.ezafekari2.info_activity _info_activity = null;
@@ -158,8 +163,6 @@ public ir.taravatgroup.ezafekari2.morakhasi_activity _morakhasi_activity = null;
 public ir.taravatgroup.ezafekari2.mosaedeh_activity _mosaedeh_activity = null;
 public ir.taravatgroup.ezafekari2.myfunc _myfunc = null;
 public ir.taravatgroup.ezafekari2.padash_activity _padash_activity = null;
-public ir.taravatgroup.ezafekari2.payankar_activity _payankar_activity = null;
-public ir.taravatgroup.ezafekari2.saati_activity _saati_activity = null;
 public ir.taravatgroup.ezafekari2.sabt2_activity _sabt2_activity = null;
 public ir.taravatgroup.ezafekari2.savabeg_activity _savabeg_activity = null;
 public ir.taravatgroup.ezafekari2.sayer_activity _sayer_activity = null;
